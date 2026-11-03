@@ -1,0 +1,16 @@
+{
+  "id": "ut-thesis",
+  "description": "ut-thesis v3.1.8 (2024/07/26, CTAN and MiKTeX), the University of Toronto thesis class built on book; one column, with the class's default options. The preamble gives the SGS title-page metadata (\\degree, \\department, \\gradyear) neutral sample values in place of the class's '(degree)' placeholders. It also makes \\and a comma, because the class's own \\maketitle and abstract print \\@author inside a center environment with no tabular, so the kernel's \\and (which runs \\end{tabular}...\\begin{tabular}) would fail with several authors.",
+  "class": "ut-thesis",
+  "options": [],
+  "preamble": [
+    "\\degree{Doctor of Philosophy}",
+    "\\department{Computer Science}",
+    "\\gradyear{2026}",
+    "\\renewcommand\\and{\\unskip, }"
+  ],
+  "files": [],
+  "setups": [
+    "A"
+  ]
+}

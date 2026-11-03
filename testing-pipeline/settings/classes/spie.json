@@ -1,0 +1,13 @@
+{
+  "id": "spie",
+  "description": "SPIE's proceedings class spie.cls v3.25 (2007-04-14, CTAN and MiKTeX package spie), one column on US letter and built on article, with no class options needed. The one preamble line switches footnote marks back to arabic after \\maketitle: the class's \\maketitle sets them to \\fnsymbol, which stops with 'Counter too large' at a tenth footnote, and its own comments tell authors to reset the counter by hand.",
+  "class": "spie",
+  "options": [],
+  "preamble": [
+    "\\makeatletter\\g@addto@macro\\maketitle{\\renewcommand\\thefootnote{\\arabic{footnote}}}\\makeatother"
+  ],
+  "files": [],
+  "setups": [
+    "A"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "elsarticle-preprint",
+  "description": "Elsevier's elsarticle in its single-column preprint format. Its preamble (batch 1, round 2, from GitHub run 41584963423; elsarticle-5p's is the same): (1) \\title takes a paragraph, otherwise as elsarticle.cls l.123-125: General's title ends its \\parbox with \\par, and elsarticle's \\def\\title stopped at 'Paragraph ended before \\title was complete' (15 documents per pair). (2) Where a way loads titlesec, \\paragraph gets a format: elsarticle defines it through \\secdef, not \\@startsection (elsarticle.cls l.1069-1076), so titlesec finds it non-standard and gives it none (titlesec.sty l.1579-1591), and every \\paragraph without its own \\titleformat stopped at 'No format for this command' (titlesec.sty l.292-296). The format is elsarticle's own: run-in, italic, a full stop after the title, 10pt plus 6pt minus 3pt above and 6pt after (l.1073-1076).",
+  "class": "elsarticle",
+  "options": ["preprint"],
+  "preamble": [
+    "\\makeatletter\\long\\def\\title#1{\\g@addto@macro\\@title{#1\\global\\let\\tnoteref\\@gobble}\\g@addto@macro\\useelstitle{#1}}\\makeatother",
+    "\\makeatletter\\AddToHook{package/titlesec/after}{\\titleformat{\\paragraph}[runin]{\\normalfont\\itshape}{\\@seccntformat{paragraph}}{\\z@}{\\ttl@passexplicit}[.]\\titlespacing{\\paragraph}{0pt}{10pt plus 6pt minus 3pt}{6pt}}\\makeatother"
+  ],
+  "files": []
+}

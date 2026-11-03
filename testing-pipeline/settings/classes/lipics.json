@@ -1,0 +1,24 @@
+{
+  "id": "lipics",
+  "description": "The LIPIcs proceedings class, lipics-v2021 (v3.1.3, 2023/05/12); its layout is fixed. Not on the engine's mirror or CTAN: the class and its two logos are from Dagstuhl Publishing's styles repository (github.com/dagstuhl-publishing/styles, LIPIcs/authors). Its orcid.pdf is left out, as another class's file has that name; the class falls back without it. lipics sets hyperref's PDF title from \\@title at \\begin{document} (lipics-v2021.cls l.663-692). General's title ends its \\parbox with \\par, which no PDF string takes (beamer.A, batch 3b: 19 of 19 such documents stopped at \\HyPsd@@ProtectSpacesFi). So PDF strings read \\par as a space, which hyperref allows since its pre-hook runs before it makes \\space unexpandable (hyperref.dtx l.1500, l.1507); the pages are unchanged. lipics counts its authors in \\c@author, made with \\newcount (lipics-v2021.cls l.762), and biblatex makes a counter for each name list with \\newcounter (biblatex.sty l.7679-7685: \\newcounter{author}), so every document with General's biblatex bibliography or a library biblatex way stopped at 'Command \\c@author already defined' (GitHub run 41584963423: 539 lipics.A documents hold it, the first failure of 11,260 not-denied branches, result fdf5a28b58d2 l.7685). The second preamble line clears \\c@author just before biblatex loads and copies lipics's count into biblatex's new counter after it, so both read one register, as they did once LaTeX ignored the failed \\newcounter; it does nothing where biblatex is not loaded.",
+  "class": "lipics-v2021",
+  "options": [],
+  "preamble": ["\\pdfstringdefDisableCommands{\\let\\par\\space}", "\\makeatletter\\AddToHook{package/biblatex/before}{\\let\\lipics@authors\\c@author\\let\\c@author\\relax}\\AddToHook{package/biblatex/after}{\\global\\c@author\\lipics@authors}\\makeatother"],
+  "files": [
+    {
+      "path": "lipics-v2021.cls",
+      "sha256": "ecae53dfd29c7b22d02a9065327c104760fb726a028b146d556732021a5977f0"
+    },
+    {
+      "path": "lipics-logo-bw.pdf",
+      "sha256": "23cf408069b707ff63ca2a92565197c7aa9c93a029f210fc7197e01bb37de5e0"
+    },
+    {
+      "path": "cc-by.pdf",
+      "sha256": "91ab98989270efcbd884dff88f0cb67e48e4a7b8368895d761a070b2c43cf58a"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

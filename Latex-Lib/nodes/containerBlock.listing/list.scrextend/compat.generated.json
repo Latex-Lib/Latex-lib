@@ -1,0 +1,208 @@
+{
+  "handler": "list.scrextend",
+  "node": "containerBlock/listing",
+  "generatedFrom": {
+    "key": "sha256:4bfa35ad61c08aa8dab14055c434aa41abc73a0c3d48f46db4bb3bfb58be0efb",
+    "contexts": "sha256:ae98ee71e74024eba70779c9cc36286c79c42e9462f43fd29b2ef1fcfdc715ba",
+    "matrix": null
+  },
+  "parents": {
+    "body": {
+      "(document body)": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/appendix": {
+      "num.appendix": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/acknowledgement": {
+      "ack.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/columns": {
+      "cols.multicol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.paracol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.twocolumn-cmd": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.vwcol": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs paragraph",
+        "lacks": [
+          "needs paragraph"
+        ]
+      }
+    },
+    "containerBlock/footnote": {
+      "(General)": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/note": {
+      "box.awesomebox": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "box.fancybox": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "box.mdframed": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "box.mdframed[breakable=false]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "box.tcolorbox": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "box.tcolorbox[breakable=false]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "note.marginnote": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "note.marginpar": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "note.notecolumn": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "note.sidenotes": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "note.todonotes": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/abstract": {
+      "abs.abstract-pkg": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.class-native[form=command]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/mathElement": {
+      "thm.amsthm": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.mdframed": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.ntheorem": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.tcolorbox": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.tcolorbox[breakable=false]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.thmtools": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "table_cell": {
+      "tbl.multirow": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "table_header": {
+      "tbl.header": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    }
+  },
+  "packageCombos": {
+    "deny": []
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "moderncv",
+  "description": "moderncv, a CV class; it needs a style before it defines its sections, so the classic style is set, and a \\name, which \\begin{document} reads for the PDF's author.",
+  "class": "moderncv",
+  "options": [],
+  "preamble": [
+    "\\moderncvstyle{classic}",
+    "\\moderncvcolor{blue}",
+    "\\name{Ada}{Lovelace}"
+  ],
+  "files": [],
+  "setups": [
+    "A"
+  ]
+}

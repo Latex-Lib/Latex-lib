@@ -1,0 +1,59 @@
+{
+  "handler": "head.sectsty",
+  "node": "paragraph/heading",
+  "generatedFrom": {
+    "key": "sha256:7a40c9f2ee97f585a177aa69ef3206669813a9b06d90f2fcc6d1a58d61911a23",
+    "contexts": "sha256:962d1e07224a0609e217957524abdd93c5524300f5c19fc5499008ae2e8c159e",
+    "matrix": null
+  },
+  "parents": {
+    "containerBlock/columns": {
+      "cols.multicol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.paracol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.twocolumn-cmd": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.vwcol": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs paragraph",
+        "lacks": [
+          "needs paragraph"
+        ]
+      }
+    },
+    "containerBlock/appendix": {
+      "num.appendix": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/acknowledgement": {
+      "ack.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    }
+  },
+  "packageCombos": {
+    "deny": []
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "elsarticle-5p",
+  "description": "Elsevier's elsarticle in its two-column 5p format. Its preamble, as elsarticle-preprint's (batch 1, round 2): \\title takes a paragraph (elsarticle.cls l.123-125 with \\long; General's title ends its \\parbox with \\par), and where a way loads titlesec \\paragraph gets elsarticle's own run-in format, since elsarticle defines it through \\secdef (l.1069-1076) and titlesec gives such a command no format ('No format for this command').",
+  "class": "elsarticle",
+  "options": ["5p"],
+  "preamble": [
+    "\\makeatletter\\long\\def\\title#1{\\g@addto@macro\\@title{#1\\global\\let\\tnoteref\\@gobble}\\g@addto@macro\\useelstitle{#1}}\\makeatother",
+    "\\makeatletter\\AddToHook{package/titlesec/after}{\\titleformat{\\paragraph}[runin]{\\normalfont\\itshape}{\\@seccntformat{paragraph}}{\\z@}{\\ttl@passexplicit}[.]\\titlespacing{\\paragraph}{0pt}{10pt plus 6pt minus 3pt}{6pt}}\\makeatother"
+  ],
+  "files": [],
+  "setups": ["A"]
+}

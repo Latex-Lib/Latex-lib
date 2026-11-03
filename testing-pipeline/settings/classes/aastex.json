@@ -1,0 +1,15 @@
+{
+  "id": "aastex",
+  "description": "The AAS journals' class, AASTeX 7.0.1 (CTAN's copy, in case the mirror's snapshot predates it). Its preamble (round 2 of batch 1, GitHub run 41584963423) redefines three of the class's footnote macros, copied from the pinned aastex701.cls with two changes. (1) \\make@footnotetext (l.527-541) adds \\vadjust{\\vskip\\z@skip} after the footnote's last line only in horizontal mode. footnotehyper, which General's footnotes load, releases its saved notes through the class's \\@footnotetext with \\@makefntext, \\@finalstrut and \\rule emptied, so the \\vadjust came after \\unvbox in internal vertical mode: 'You can't use \\vadjust in internal vertical mode' in every General footnote (F19: 1,547 not-denied branches, 1,179 failing on nothing else; 16 cells ended at TeX's 100-error stop). In horizontal mode, where every footnote of the class's own path ends, it is unchanged. (2) \\@makefntext (l.7567-7569) and \\@mpmakefntext (l.6209-6215, footnotes in floats and minipages) take paragraphs (\\long), as the kernel's and revtex4-2's aps4-2.rtx \\@makefntext do: General's block footnotes stopped at 'Paragraph ended before \\@makefntext was complete' (F31: 596 branches; F49: 114 more, whose runaway argument ran to the end of the file). A footnote without a paragraph break sets as before.",
+  "class": "aastex701",
+  "options": [],
+  "preamble": [
+    "\\makeatletter\\long\\def\\make@footnotetext#1{\\set@footnotefont\\set@footnotewidth\\@parboxrestore\\protected@edef\\@currentlabel{\\csname p@\\@mpfn\\endcsname\\@thefnmark}\\color@begingroup\\@makefntext{\\rule\\z@\\footnotesep\\ignorespaces#1\\@finalstrut\\strutbox\\ifhmode\\vadjust{\\vskip\\z@skip}\\fi}\\color@endgroup\\minipagefootnote@drop}\\long\\def\\@makefntext#1{\\@ifnum{\\pagegrid@col=\\@ne}{\\onecolumngrid}{}\\leavevmode\\@hangfrom{\\hb@xt@3mm{\\hss\\@makefnmark}~}#1}\\long\\def\\@mpmakefntext#1{\\flushing\\parindent=1em\\noindent\\hb@xt@1em{\\hss\\@makefnmark}#1}\\makeatother"
+  ],
+  "files": [
+    {
+      "path": "aastex701.cls",
+      "sha256": "c1bb436807f8bb37eb5203056db5a5a60e1c9ae6a3feb6501d7c414b9b08b062"
+    }
+  ]
+}

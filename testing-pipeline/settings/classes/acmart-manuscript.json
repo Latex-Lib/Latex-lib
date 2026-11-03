@@ -1,0 +1,17 @@
+{
+  "id": "acmart-manuscript",
+  "description": "ACM's acmart in its single-column manuscript format, as Flouest's acm template loads it: without General's font and AMS lines, since the template writes only mathtools after the class line, and with an empty \\title, which the template writes for a document without one. Under XeTeX acmart sets its maths with unicode-math (acmart.dtx l.4058-4065), and General's lmodern, loaded after it, took the maths fonts back to 8-bit Latin Modern, so every maths letter and symbol printed nothing (batch 3b: 3,008 missing glyphs in 193 of 512 documents, each failing its whole document). acmart's page heads print \\shorttitle on odd pages (acmart.dtx l.8076, l.8118, l.8142), which only amsart's \\title defines, so a document with no title stopped at 'Undefined control sequence \\shorttitle' on every odd page from the third (batch 3b: 216 of 512 documents, document-wide in 111). A title way's own \\title replaces the empty one.",
+  "class": "acmart",
+  "options": ["manuscript"],
+  "preamble": ["\\title{}"],
+  "omitPreamble": [
+    "\\usepackage{lmodern}",
+    "\\usepackage{fontspec}",
+    "\\setmainfont{Latin Modern Roman}[SmallCapsFont={Latin Modern Roman Caps}]",
+    "\\setsansfont{Latin Modern Sans}",
+    "\\setmonofont{Inconsolatazi4-Regular.otf}[BoldFont=Inconsolatazi4-Bold.otf]",
+    "\\usepackage{amsmath}",
+    "\\usepackage{amssymb}"
+  ],
+  "files": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "amsart",
+  "description": "The AMS article class; preloads amsmath and amsthm. amsart's \\@seccntformat ends in \\protect\\@secnumpunct, which amsart defines only inside its own \\@sect (an \\edef, '.\\enspace' for a titled head; amsclass.dtx). titlesec sets every level it has no \\titleformat for with that label but not through \\@sect (titlesec.sty \\ttl@@extract, separator zero), so each numbered heading at such a level stopped at 'Undefined control sequence \\@secnumpunct' (batch 3b: 54 amsart.A and 53 amsart.B documents, every one holding a titlesec way; num.appendix's own \\section among them). The preamble provides amsart's own '.\\enspace'; amsart's \\@sect still sets it again before each of its own headings, so a document without titlesec typesets as before.",
+  "class": "amsart",
+  "options": [],
+  "preamble": ["\\makeatletter\\providecommand\\@secnumpunct{.\\enspace}\\makeatother"],
+  "files": []
+}

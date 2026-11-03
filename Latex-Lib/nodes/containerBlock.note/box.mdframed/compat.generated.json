@@ -1,0 +1,138 @@
+{
+  "handler": "box.mdframed",
+  "node": "containerBlock/note",
+  "generatedFrom": {
+    "key": "sha256:3da59d988c81f509cd1e3cb508e45ef7dacf8d217621cea14851ef26b8a0f77c",
+    "contexts": "sha256:e73be1339b4a4bbda6e1232f22e35cee0fb0c3ecedee54605a32de789342b896",
+    "matrix": null
+  },
+  "parents": {
+    "body": {
+      "(document body)": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/columns": {
+      "cols.multicol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.paracol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.twocolumn-cmd": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.vwcol": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs paragraph",
+        "lacks": [
+          "needs paragraph"
+        ]
+      }
+    },
+    "containerBlock/listing": {
+      "list.enumerate-pkg": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.enumitem": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.paralist": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.scrextend": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/abstract": {
+      "abs.abstract-pkg": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.class-native[form=command]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/mathElement": {
+      "thm.amsthm": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.mdframed": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.ntheorem": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.tcolorbox": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.tcolorbox[breakable=false]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.thmtools": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    }
+  },
+  "packageCombos": {
+    "deny": []
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "handler": "math.amsmath",
+  "node": "paragraph/mathPara",
+  "generatedFrom": {
+    "key": "sha256:c37cabc9dd71ab048cbc205a01c119cc7c0e046efbdaae7c21fec147fc1b8b53",
+    "contexts": "sha256:787099a853859857997af49c116c90ed6a6c2c00c763867312bfb0ac363f50e2",
+    "matrix": null
+  },
+  "parents": {
+    "containerBlock/blockMath": {
+      "math.amsmath": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "math.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "math.mathtools": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    }
+  },
+  "packageCombos": {
+    "deny": []
+  }
+}

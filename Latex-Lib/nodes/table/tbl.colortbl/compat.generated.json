@@ -1,0 +1,210 @@
+{
+  "handler": "tbl.colortbl",
+  "node": "table",
+  "generatedFrom": {
+    "key": "sha256:b7eecfad85f5305ab7d5843bb2164f25bfdc436d92943c487dd8fdfdbac6fc57",
+    "contexts": "sha256:6473710baf815dcb7640d4ff65dd6f43384b488e7508f2e8c9b6309e7a7e11b9",
+    "matrix": null
+  },
+  "parents": {
+    "body": {
+      "(document body)": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/appendix": {
+      "num.appendix": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/acknowledgement": {
+      "ack.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/columns": {
+      "cols.multicol": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      },
+      "cols.paracol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.twocolumn-cmd": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.vwcol": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      }
+    },
+    "containerBlock/footnote": {
+      "(General)": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      }
+    },
+    "containerBlock/listing": {
+      "list.enumerate-pkg": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.enumitem": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.paralist": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.scrextend": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/abstract": {
+      "abs.abstract-pkg": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.class-native[form=command]": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      },
+      "abs.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/mathElement": {
+      "thm.amsthm": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.mdframed": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      },
+      "thm.ntheorem": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.tcolorbox": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      },
+      "thm.tcolorbox[breakable=false]": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      },
+      "thm.thmtools": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "table_cell": {
+      "tbl.multirow": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      }
+    },
+    "table_header": {
+      "tbl.header": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      }
+    }
+  },
+  "packageCombos": {
+    "deny": []
+  }
+}

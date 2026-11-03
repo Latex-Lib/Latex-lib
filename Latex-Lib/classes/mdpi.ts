@@ -1,0 +1,23 @@
+import { defineClass } from '../schema/class.ts';
+import { ctan } from '../schema/minimal.ts';
+
+/**
+ * MDPI's journal class: it loads some thirty packages itself (titlesec, enumitem, tocloft, hyperref, cleveref, natbib…), prints the title block by itself, \abstract{} as a command, capitalised theorem environments.
+ * Read from its requirement document and source; measured by the class probe (mdpi.A: loads, preloads, names it already defines, refused packages, layout). Its name is the class as its setting loads it, Definitions/mdpi: the host finds a profile by that name. It loads article (cls l.32), so \part and \subparagraph exist.
+ * \maketitle runs by itself after the preamble and is then disabled (line 55), so the profile does not offer it.
+ */
+export default defineClass({
+  id: 'class.mdpi',
+  name: "Definitions/mdpi",
+  zerotex: "yes",
+  preloads: [{"pkg": "amsmath"}, {"pkg": "amssymb"}, {"pkg": "titlesec"}, {"pkg": "setspace"}, {"pkg": "enumitem"}, {"pkg": "amsthm"}, {"pkg": "hyperref"}, {"pkg": "marginnote"}, {"pkg": "xcolor"}, {"pkg": "tocloft", "options": ["subfigure", "titles"]}, {"pkg": "graphicx"}, {"pkg": "caption"}, {"pkg": "float"}, {"pkg": "tabularx"}, {"pkg": "booktabs"}, {"pkg": "colortbl"}, {"pkg": "fontenc", "options": ["T1"]}, {"pkg": "inputenc", "options": ["utf8"]}, {"pkg": "lineno", "options": ["right", "mathlines"]}, {"pkg": "soul"}, {"pkg": "microtype"}, {"pkg": "tikz"}, {"pkg": "changepage"}, {"pkg": "enotez"}, {"pkg": "subfig", "options": ["labelformat=simple"]}, {"pkg": "newfloat"}, {"pkg": "natbib", "options": ["sort&compress", "sectionbib"]}, {"pkg": "geometry"}, {"pkg": "cleveref"}, {"pkg": "ulem", "options": ["normalem"]}],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "cmd:\\abstract", "env:Theorem", "env:Lemma", "env:Corollary", "env:Proposition", "env:Property", "env:Problem", "env:Example", "env:Remark", "env:Definition", "env:Hypothesis", "env:Notation", "env:Assumption", "env:figure", "env:table", "env:thebibliography", "cmd:\\tableofcontents", "cmd:\\appendix", "counter:theorem", "counter:lemma", "counter:corollary", "counter:proposition", "counter:characterization", "counter:property", "counter:problem", "counter:example", "counter:remark", "counter:definition", "counter:hypothesis", "counter:notation", "counter:assumption", "counter:algorithm", "env:proof", "env:Characterization", "env:Algorithm", "env:listing", "env:boxenv", "env:chart", "env:scheme", "env:graph"],
+  options: {},
+  forbids: {
+    technical: [{ pkg: "hyperref", reason: "its load test stops: LaTeX Error: Missing \\begin{document}.", evidence: [{ kind: 'compile', cell: 'testing-pipeline/out/profiles/mdpi.A.json' }] }, { pkg: "cleveref", reason: "mdpi loads cleveref [capitalise,noabbrev] after its own hyperref at \\begin{document}, so a preamble cleveref clashes or comes before hyperref", evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/Definitions/mdpi.cls', line: '481, 511-519' }] }],
+    policy: [],
+  },
+  layout: { columns: 1, textwidth: "394.35522pt", fontsize: "10pt" },
+  vocabulary: {},
+  evidence: [{ kind: 'compile', cell: 'testing-pipeline/out/profiles/mdpi.A.json' }, { kind: 'requirement', file: 'Template/template-requirement/MDPI.md', line: '55' }, { kind: 'requirement', file: 'Template/template-requirement/MDPI.md', line: '66' }, { kind: 'requirement', file: 'Template/template-requirement/MDPI.md', line: '83' }, { kind: 'requirement', file: 'Template/template-requirement/MDPI.md', line: '127' }, { kind: 'requirement', file: 'Template/template-requirement/MDPI.md', line: '143' }, { kind: 'requirement', file: 'Template/template-requirement/MDPI.md', line: '60' }, { kind: 'source', file: 'testing-pipeline/settings/classes/files/Definitions/mdpi.cls', line: '230, 255-307 (amsthm and the statement counters)' }, { kind: 'source', file: 'testing-pipeline/settings/classes/files/Definitions/mdpi.cls', line: '44, 71, 77, 81, 243, 273, 309, 340, 1662-1667 (preload options, further environments)' }],
+});

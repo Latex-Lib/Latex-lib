@@ -1,0 +1,183 @@
+{
+  "handler": "fig.float",
+  "node": "atomicBlock/image",
+  "generatedFrom": {
+    "key": "sha256:60052e585d0ff62d420ab6e3cf642d6356e9603c6ee5a459b1086f3a7022898d",
+    "contexts": "sha256:b84d5bace47f085f6d549c19a87e2f6956e4194f127832425493080981f05b92",
+    "matrix": null
+  },
+  "parents": {
+    "body": {
+      "(document body)": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/appendix": {
+      "num.appendix": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/acknowledgement": {
+      "ack.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/columns": {
+      "cols.multicol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.paracol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.twocolumn-cmd": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.vwcol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/listing": {
+      "list.enumerate-pkg": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.enumitem": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.paralist": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.scrextend": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/mathElement": {
+      "thm.amsthm": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.mdframed": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.ntheorem": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.tcolorbox": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.tcolorbox[breakable=false]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.thmtools": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/abstract": {
+      "abs.abstract-pkg": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.class-native[form=command]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "table_cell": {
+      "tbl.multirow": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "table_header": {
+      "tbl.header": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    }
+  },
+  "packageCombos": {
+    "deny": [
+      {
+        "with": "fig.wrapfig",
+        "reason": "\\restylefloat{figure} (ruled, boxed) sends every figure \\caption to float.sty's \\float@caption, which needs \\@fs@capt, set only inside float.sty's own figure: a wrapfigure's caption stopped at 'Undefined control sequence' (\\@fs@capt). A way conflict holds for every preset, so plain is filed apart too",
+        "status": "untested"
+      },
+      {
+        "with": "fig.rotating",
+        "reason": "the same for a sidewaysfigure's caption (\\float@caption, \\@fs@capt undefined)",
+        "status": "untested"
+      },
+      {
+        "with": "fig.floatrow",
+        "reason": "the same for sidecap's SCfigure (fig.floatrow's sidecap presets), whose \\caption reaches float.sty's \\float@caption outside float.sty's figure: 'Undefined control sequence' in \\float@caption (\\@fs@capt); its floatrow presets load floatrow, which refuses float anyway",
+        "status": "untested"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "sn-jnl",
+  "description": "Springer Nature's journal class. Not on CTAN: sn-jnl.cls is from the publisher's journal article template package (December 2024), the zip its requirement document names. Options as the template's default (sn-article.tex:65): pdflatex only stops the class loading breakurl, which writes dvips PostScript. The class calls amsmath's \\allowdisplaybreaks at \\begin{document} and leaves loading amsmath to the document, as the template does. Two more preamble lines (batch 1, round 2, from GitHub run 41584963423): (1) the kernel's \\cline (latex.ltx l.16972) is restored: sn-jnl.cls l.1321 lets \\cline be booktabs' \\cmidrule, which nothing has defined yet when the class loads, so \\cline was undefined in every document ('Undefined control sequence \\abShortLine ->\\cline' in awesomebox's block, and arydshln saved the undefined \\cline as \\adl@org@cline). (2) \\labelitemi leaves vertical mode first: sn-jnl.cls l.1118 makes it \\raise1pt\\hbox{\\textbullet}, and \\raise cannot start a paragraph, so an inline list (paralist's inparaitem) whose label began a paragraph stopped at 'You can't use \\raise in vertical mode'. In a list's label box \\leavevmode does nothing.",
+  "class": "sn-jnl",
+  "options": ["pdflatex", "sn-mathphys-num"],
+  "preamble": ["\\usepackage{amsmath}", "\\makeatletter\\def\\cline#1{\\@cline#1\\@nil}\\makeatother", "\\renewcommand\\labelitemi{\\leavevmode\\raise1pt\\hbox{\\textbullet}}"],
+  "files": [
+    {
+      "path": "sn-jnl.cls",
+      "sha256": "36d0c3273a59d48dc6a9c7b080dfa1ec50dc10229d8751568d1f2e490ffa5ecc"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

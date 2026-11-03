@@ -1,0 +1,18 @@
+{
+  "id": "acmart-sigconf",
+  "description": "ACM's acmart in its two-column conference format. As for acmart-manuscript, and as Flouest's acm template loads acmart: without General's font and AMS lines (acmart sets its own fonts and maths under XeTeX, and General's lmodern after its unicode-math emptied every maths glyph: 3,018 missing in 193 of 512 documents in batch 3b), and with an empty \\title, since its page heads print \\shorttitle, which only amsart's \\title defines (a document with no title stopped on every odd page from the third: 200 of 512 documents, document-wide in 96). The page turns two-column only at \\maketitle (acmart.dtx l.6898-6910), so a document with no title way is set in one 506pt column.",
+  "class": "acmart",
+  "options": ["sigconf"],
+  "preamble": ["\\title{}"],
+  "omitPreamble": [
+    "\\usepackage{lmodern}",
+    "\\usepackage{fontspec}",
+    "\\setmainfont{Latin Modern Roman}[SmallCapsFont={Latin Modern Roman Caps}]",
+    "\\setsansfont{Latin Modern Sans}",
+    "\\setmonofont{Inconsolatazi4-Regular.otf}[BoldFont=Inconsolatazi4-Bold.otf]",
+    "\\usepackage{amsmath}",
+    "\\usepackage{amssymb}"
+  ],
+  "files": [],
+  "setups": ["A"]
+}

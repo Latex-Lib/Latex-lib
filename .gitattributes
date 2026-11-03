@@ -1,0 +1,8 @@
+# Files whose bytes are hashed must reach a checkout unchanged: the class
+# settings pin their class files by SHA-256 (testing-pipeline/core/src/config.ts),
+# and those bytes go into every result key, so a line-ending conversion stops
+# the run on Linux.
+testing-pipeline/settings/classes/files/** -text
+
+# The CI scripts run on Linux machines, whatever the checkout they come from.
+testing-pipeline/ci/*.sh text eol=lf

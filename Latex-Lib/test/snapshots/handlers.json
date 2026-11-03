@@ -1,0 +1,694 @@
+{
+  "thm.amsthm ams-section": [
+    {
+      "packages": [
+        "\\usepackage{amsthm}"
+      ],
+      "declarations": [
+        "\\theoremstyle{plain}\n\\newtheorem{theorem}{Theorem}[section]"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{amsthm}"
+      ],
+      "declarations": [
+        "\\theoremstyle{plain}\n\\newtheorem{theorem}{Theorem}[section]",
+        "\\theoremstyle{plain}\n\\newtheorem{lemma}[theorem]{Lemma}"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{amsthm}"
+      ],
+      "declarations": [
+        "\\theoremstyle{plain}\n\\newtheorem{theorem}{Theorem}[section]",
+        "\\theoremstyle{definition}\n\\newtheorem{definition}[theorem]{Definition}"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.amsthm chapter": [
+    {
+      "packages": [
+        "\\usepackage{amsthm}"
+      ],
+      "declarations": [
+        "\\theoremstyle{plain}\n\\newtheorem{theorem}{Theorem}[chapter]"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{amsthm}"
+      ],
+      "declarations": [
+        "\\theoremstyle{plain}\n\\newtheorem{theorem}{Theorem}[chapter]",
+        "\\theoremstyle{plain}\n\\newtheorem{lemma}[theorem]{Lemma}"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{amsthm}"
+      ],
+      "declarations": [
+        "\\theoremstyle{plain}\n\\newtheorem{theorem}{Theorem}[chapter]",
+        "\\theoremstyle{definition}\n\\newtheorem{definition}[theorem]{Definition}"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.amsthm global": [
+    {
+      "packages": [
+        "\\usepackage{amsthm}"
+      ],
+      "declarations": [
+        "\\theoremstyle{plain}\n\\newtheorem{theorem}{Theorem}"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{amsthm}"
+      ],
+      "declarations": [
+        "\\theoremstyle{plain}\n\\newtheorem{lemma}{Lemma}"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{amsthm}"
+      ],
+      "declarations": [
+        "\\theoremstyle{plain}\n\\newtheorem{definition}{Definition}"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.amsthm upright": [
+    {
+      "packages": [
+        "\\usepackage{amsthm}"
+      ],
+      "declarations": [
+        "\\theoremstyle{definition}\n\\newtheorem{theorem}{Theorem}[section]"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{amsthm}"
+      ],
+      "declarations": [
+        "\\theoremstyle{definition}\n\\newtheorem{theorem}{Theorem}[section]",
+        "\\theoremstyle{definition}\n\\newtheorem{lemma}[theorem]{Lemma}"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{amsthm}"
+      ],
+      "declarations": [
+        "\\theoremstyle{definition}\n\\newtheorem{theorem}{Theorem}[section]",
+        "\\theoremstyle{definition}\n\\newtheorem{definition}[theorem]{Definition}"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.amsthm colored-head": [
+    {
+      "packages": [
+        "\\usepackage{amsthm}",
+        "\\usepackage{xcolor}"
+      ],
+      "declarations": [
+        "\\newtheoremstyle{libcustom}{0.75em}{0.75em}{\\itshape}{}{\\bfseries\\color{blue!50!black}}{:}{0.5em}{}",
+        "\\theoremstyle{libcustom}\n\\newtheorem{theorem}{Theorem}[section]"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{amsthm}",
+        "\\usepackage{xcolor}"
+      ],
+      "declarations": [
+        "\\newtheoremstyle{libcustom}{0.75em}{0.75em}{\\itshape}{}{\\bfseries\\color{blue!50!black}}{:}{0.5em}{}",
+        "\\theoremstyle{libcustom}\n\\newtheorem{theorem}{Theorem}[section]",
+        "\\theoremstyle{libcustom}\n\\newtheorem{lemma}[theorem]{Lemma}"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{amsthm}",
+        "\\usepackage{xcolor}"
+      ],
+      "declarations": [
+        "\\newtheoremstyle{libcustom}{0.75em}{0.75em}{\\itshape}{}{\\bfseries\\color{blue!50!black}}{:}{0.5em}{}",
+        "\\theoremstyle{libcustom}\n\\newtheorem{theorem}{Theorem}[section]",
+        "\\theoremstyle{libcustom}\n\\newtheorem{definition}[theorem]{Definition}"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.class-native native": [
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{theorem}{\\ifdefined\\aa@newtheorem\\newtheorem{theorem}{Theorem}{\\bfseries}{\\itshape}\\else\\newtheorem{theorem}{Theorem}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{lemma}{\\ifdefined\\aa@newtheorem\\newtheorem{lemma}{Lemma}{\\bfseries}{\\itshape}\\else\\newtheorem{lemma}{Lemma}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{definition}{\\ifdefined\\aa@newtheorem\\newtheorem{definition}{Definition}{\\bfseries}{\\rmfamily}\\else\\newtheorem{definition}{Definition}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.class-native elsarticle": [
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{theorem}{\\ifdefined\\aa@newtheorem\\newtheorem{theorem}{Theorem}{\\bfseries}{\\itshape}\\else\\newtheorem{theorem}{Theorem}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{lemma}{\\ifdefined\\aa@newtheorem\\newtheorem{lemma}{Lemma}{\\bfseries}{\\itshape}\\else\\newtheorem{lemma}{Lemma}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{definition}{\\ifdefined\\newdefinition\\newdefinition{definition}{Definition}\\else\\ifdefined\\aa@newtheorem\\newtheorem{definition}{Definition}{\\bfseries}{\\rmfamily}\\else\\newtheorem{definition}{Definition}\\fi\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.kernel global": [
+    {
+      "packages": [],
+      "declarations": [
+        "\\newtheorem{theorem}{Theorem}"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\newtheorem{lemma}{Lemma}"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\newtheorem{definition}{Definition}"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.kernel shared": [
+    {
+      "packages": [],
+      "declarations": [
+        "\\newtheorem{theorem}{Theorem}"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\newtheorem{theorem}{Theorem}",
+        "\\newtheorem{lemma}[theorem]{Lemma}"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\newtheorem{theorem}{Theorem}",
+        "\\newtheorem{definition}[theorem]{Definition}"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.kernel section": [
+    {
+      "packages": [],
+      "declarations": [
+        "\\newtheorem{theorem}{Theorem}[section]"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\newtheorem{theorem}{Theorem}[section]",
+        "\\newtheorem{lemma}[theorem]{Lemma}"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\newtheorem{theorem}{Theorem}[section]",
+        "\\newtheorem{definition}[theorem]{Definition}"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.kernel chapter": [
+    {
+      "packages": [],
+      "declarations": [
+        "\\newtheorem{theorem}{Theorem}[chapter]"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\newtheorem{lemma}{Lemma}[chapter]"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\newtheorem{definition}{Definition}[chapter]"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.mdframed framed": [
+    {
+      "packages": [
+        "\\usepackage{xcolor}",
+        "\\usepackage{mdframed}"
+      ],
+      "declarations": [
+        "\\newmdtheoremenv[linecolor=blue!60!black,backgroundcolor=blue!60!black!10,linewidth=1pt,innertopmargin=13pt,innerbottommargin=7pt,innerleftmargin=5pt,innerrightmargin=6pt]{theorem}{Theorem}[section]"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{xcolor}",
+        "\\usepackage{mdframed}"
+      ],
+      "declarations": [
+        "\\newmdtheoremenv[linecolor=blue!60!black,backgroundcolor=blue!60!black!10,linewidth=1pt,innertopmargin=13pt,innerbottommargin=7pt,innerleftmargin=5pt,innerrightmargin=6pt]{theorem}{Theorem}[section]",
+        "\\newmdtheoremenv[linecolor=blue!60!black,backgroundcolor=blue!60!black!10,linewidth=1pt,innertopmargin=13pt,innerbottommargin=7pt,innerleftmargin=5pt,innerrightmargin=6pt]{lemma}[theorem]{Lemma}"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{xcolor}",
+        "\\usepackage{mdframed}"
+      ],
+      "declarations": [
+        "\\newmdtheoremenv[linecolor=blue!60!black,backgroundcolor=blue!60!black!10,linewidth=1pt,innertopmargin=13pt,innerbottommargin=7pt,innerleftmargin=5pt,innerrightmargin=6pt]{theorem}{Theorem}[section]",
+        "\\newmdtheoremenv[linecolor=blue!60!black,backgroundcolor=blue!60!black!10,linewidth=1pt,innertopmargin=13pt,innerbottommargin=7pt,innerleftmargin=5pt,innerrightmargin=6pt]{definition}[theorem]{Definition}"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.mdframed thick": [
+    {
+      "packages": [
+        "\\usepackage{xcolor}",
+        "\\usepackage{mdframed}"
+      ],
+      "declarations": [
+        "\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=1.5pt]{theorem}{Theorem}[section]"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{xcolor}",
+        "\\usepackage{mdframed}"
+      ],
+      "declarations": [
+        "\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=1.5pt]{theorem}{Theorem}[section]",
+        "\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=1.5pt]{lemma}[theorem]{Lemma}"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{xcolor}",
+        "\\usepackage{mdframed}"
+      ],
+      "declarations": [
+        "\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=1.5pt]{theorem}{Theorem}[section]",
+        "\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=1.5pt]{definition}[theorem]{Definition}"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.ntheorem plain-upright": [
+    {
+      "packages": [
+        "\\usepackage[amsmath,thmmarks]{ntheorem}"
+      ],
+      "declarations": [
+        "\\theoremstyle{plain}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\upshape}\\theoremseparator{.}\\theoremsymbol{}\n\\newtheorem{theorem}{Theorem}[chapter]"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage[amsmath,thmmarks]{ntheorem}"
+      ],
+      "declarations": [
+        "\\theoremstyle{plain}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\upshape}\\theoremseparator{.}\\theoremsymbol{}\n\\newtheorem{lemma}{Lemma}[chapter]"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage[amsmath,thmmarks]{ntheorem}"
+      ],
+      "declarations": [
+        "\\theoremstyle{plain}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\upshape}\\theoremseparator{.}\\theoremsymbol{}\n\\newtheorem{definition}{Definition}[chapter]"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.ntheorem break": [
+    {
+      "packages": [
+        "\\usepackage[amsmath,thmmarks]{ntheorem}"
+      ],
+      "declarations": [
+        "\\theoremstyle{break}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\normalfont}\\theoremseparator{}\\theoremsymbol{\\rule{1ex}{1ex}}\n\\newtheorem{theorem}{Theorem}[section]"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage[amsmath,thmmarks]{ntheorem}"
+      ],
+      "declarations": [
+        "\\theoremstyle{break}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\normalfont}\\theoremseparator{}\\theoremsymbol{\\rule{1ex}{1ex}}\n\\newtheorem{theorem}{Theorem}[section]",
+        "\\theoremstyle{break}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\normalfont}\\theoremseparator{}\\theoremsymbol{\\rule{1ex}{1ex}}\n\\newtheorem{lemma}[theorem]{Lemma}"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage[amsmath,thmmarks]{ntheorem}"
+      ],
+      "declarations": [
+        "\\theoremstyle{break}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\normalfont}\\theoremseparator{}\\theoremsymbol{\\rule{1ex}{1ex}}\n\\newtheorem{theorem}{Theorem}[section]",
+        "\\theoremstyle{break}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\normalfont}\\theoremseparator{}\\theoremsymbol{\\rule{1ex}{1ex}}\n\\newtheorem{definition}[theorem]{Definition}"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.ntheorem thesis": [
+    {
+      "packages": [
+        "\\usepackage[amsmath,thmmarks]{ntheorem}"
+      ],
+      "declarations": [
+        "\\theoremstyle{plain}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\itshape}\\theoremseparator{}\\theoremsymbol{$\\square$}\n\\newtheorem{theorem}{Theorem}[chapter]"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage[amsmath,thmmarks]{ntheorem}"
+      ],
+      "declarations": [
+        "\\theoremstyle{plain}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\itshape}\\theoremseparator{}\\theoremsymbol{$\\square$}\n\\newtheorem{lemma}{Lemma}[chapter]"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage[amsmath,thmmarks]{ntheorem}"
+      ],
+      "declarations": [
+        "\\theoremstyle{plain}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\itshape}\\theoremseparator{}\\theoremsymbol{$\\square$}\n\\newtheorem{definition}{Definition}[chapter]"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.tcolorbox boxed": [
+    {
+      "packages": [
+        "\\usepackage{tcolorbox}"
+      ],
+      "declarations": [
+        "\\tcbuselibrary{theorems,skins,breakable}",
+        "\\makeatletter\\providecommand*\\LatexLibFlushLabel{\\if@inlabel\\leavevmode\\fi}\\makeatother",
+        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=blue!5,colframe=blue!55!black,coltitle=white,fonttitle=\\bfseries,boxrule=0.8pt,arc=4pt,enhanced,left=6pt,right=6pt,top=6pt,bottom=6pt,add to width=-\\leftskip}{theorem}"
+      ],
+      "body": "\\begin{theorem}[breakable]{Note}{}\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{tcolorbox}"
+      ],
+      "declarations": [
+        "\\tcbuselibrary{theorems,skins,breakable}",
+        "\\makeatletter\\providecommand*\\LatexLibFlushLabel{\\if@inlabel\\leavevmode\\fi}\\makeatother",
+        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=blue!5,colframe=blue!55!black,coltitle=white,fonttitle=\\bfseries,boxrule=0.8pt,arc=4pt,enhanced,left=6pt,right=6pt,top=6pt,bottom=6pt,add to width=-\\leftskip}{theorem}",
+        "\\newtcbtheorem[use counter from=theorem]{lemma}{Lemma}{colback=blue!5,colframe=blue!55!black,coltitle=white,fonttitle=\\bfseries,boxrule=0.8pt,arc=4pt,enhanced,left=6pt,right=6pt,top=6pt,bottom=6pt,add to width=-\\leftskip}{lemma}"
+      ],
+      "body": "\\begin{lemma}[breakable]{Note}{}\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{tcolorbox}"
+      ],
+      "declarations": [
+        "\\tcbuselibrary{theorems,skins,breakable}",
+        "\\makeatletter\\providecommand*\\LatexLibFlushLabel{\\if@inlabel\\leavevmode\\fi}\\makeatother",
+        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=blue!5,colframe=blue!55!black,coltitle=white,fonttitle=\\bfseries,boxrule=0.8pt,arc=4pt,enhanced,left=6pt,right=6pt,top=6pt,bottom=6pt,add to width=-\\leftskip}{theorem}",
+        "\\newtcbtheorem[use counter from=theorem]{definition}{Definition}{colback=blue!5,colframe=blue!55!black,coltitle=white,fonttitle=\\bfseries,boxrule=0.8pt,arc=4pt,enhanced,left=6pt,right=6pt,top=6pt,bottom=6pt,add to width=-\\leftskip}{definition}"
+      ],
+      "body": "\\begin{definition}[breakable]{Note}{}\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.tcolorbox sharp": [
+    {
+      "packages": [
+        "\\usepackage{tcolorbox}"
+      ],
+      "declarations": [
+        "\\tcbuselibrary{theorems,skins,breakable}",
+        "\\makeatletter\\providecommand*\\LatexLibFlushLabel{\\if@inlabel\\leavevmode\\fi}\\makeatother",
+        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=yellow!35!white,colframe=yellow!35!white,coltitle=white,fonttitle=\\bfseries,boxrule=0pt,arc=0pt,sharp corners,enhanced,top=5pt,bottom=3pt,left=2pt,right=2pt,add to width=-\\leftskip}{theorem}"
+      ],
+      "body": "\\begin{theorem}[breakable]{Note}{}\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{tcolorbox}"
+      ],
+      "declarations": [
+        "\\tcbuselibrary{theorems,skins,breakable}",
+        "\\makeatletter\\providecommand*\\LatexLibFlushLabel{\\if@inlabel\\leavevmode\\fi}\\makeatother",
+        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=yellow!35!white,colframe=yellow!35!white,coltitle=white,fonttitle=\\bfseries,boxrule=0pt,arc=0pt,sharp corners,enhanced,top=5pt,bottom=3pt,left=2pt,right=2pt,add to width=-\\leftskip}{theorem}",
+        "\\newtcbtheorem[use counter from=theorem]{lemma}{Lemma}{colback=yellow!35!white,colframe=yellow!35!white,coltitle=white,fonttitle=\\bfseries,boxrule=0pt,arc=0pt,sharp corners,enhanced,top=5pt,bottom=3pt,left=2pt,right=2pt,add to width=-\\leftskip}{lemma}"
+      ],
+      "body": "\\begin{lemma}[breakable]{Note}{}\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{tcolorbox}"
+      ],
+      "declarations": [
+        "\\tcbuselibrary{theorems,skins,breakable}",
+        "\\makeatletter\\providecommand*\\LatexLibFlushLabel{\\if@inlabel\\leavevmode\\fi}\\makeatother",
+        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=yellow!35!white,colframe=yellow!35!white,coltitle=white,fonttitle=\\bfseries,boxrule=0pt,arc=0pt,sharp corners,enhanced,top=5pt,bottom=3pt,left=2pt,right=2pt,add to width=-\\leftskip}{theorem}",
+        "\\newtcbtheorem[use counter from=theorem]{definition}{Definition}{colback=yellow!35!white,colframe=yellow!35!white,coltitle=white,fonttitle=\\bfseries,boxrule=0pt,arc=0pt,sharp corners,enhanced,top=5pt,bottom=3pt,left=2pt,right=2pt,add to width=-\\leftskip}{definition}"
+      ],
+      "body": "\\begin{definition}[breakable]{Note}{}\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.tcolorbox titled": [
+    {
+      "packages": [
+        "\\usepackage{tcolorbox}"
+      ],
+      "declarations": [
+        "\\tcbuselibrary{theorems,skins}",
+        "\\makeatletter\\providecommand*\\LatexLibFlushLabel{\\if@inlabel\\leavevmode\\fi}\\makeatother",
+        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=green!5!white,colframe=green!25!white,coltitle=black,colbacktitle=green!25!white,fonttitle=\\bfseries\\large,boxrule=0pt,arc=0pt,enhanced,titlerule=0mm,toptitle=1mm,bottomtitle=1mm,add to width=-\\leftskip}{theorem}"
+      ],
+      "body": "\\begin{theorem}{Note}{}\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{tcolorbox}"
+      ],
+      "declarations": [
+        "\\tcbuselibrary{theorems,skins}",
+        "\\makeatletter\\providecommand*\\LatexLibFlushLabel{\\if@inlabel\\leavevmode\\fi}\\makeatother",
+        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=green!5!white,colframe=green!25!white,coltitle=black,colbacktitle=green!25!white,fonttitle=\\bfseries\\large,boxrule=0pt,arc=0pt,enhanced,titlerule=0mm,toptitle=1mm,bottomtitle=1mm,add to width=-\\leftskip}{theorem}",
+        "\\newtcbtheorem[use counter from=theorem]{lemma}{Lemma}{colback=green!5!white,colframe=green!25!white,coltitle=black,colbacktitle=green!25!white,fonttitle=\\bfseries\\large,boxrule=0pt,arc=0pt,enhanced,titlerule=0mm,toptitle=1mm,bottomtitle=1mm,add to width=-\\leftskip}{lemma}"
+      ],
+      "body": "\\begin{lemma}{Note}{}\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{tcolorbox}"
+      ],
+      "declarations": [
+        "\\tcbuselibrary{theorems,skins}",
+        "\\makeatletter\\providecommand*\\LatexLibFlushLabel{\\if@inlabel\\leavevmode\\fi}\\makeatother",
+        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=green!5!white,colframe=green!25!white,coltitle=black,colbacktitle=green!25!white,fonttitle=\\bfseries\\large,boxrule=0pt,arc=0pt,enhanced,titlerule=0mm,toptitle=1mm,bottomtitle=1mm,add to width=-\\leftskip}{theorem}",
+        "\\newtcbtheorem[use counter from=theorem]{definition}{Definition}{colback=green!5!white,colframe=green!25!white,coltitle=black,colbacktitle=green!25!white,fonttitle=\\bfseries\\large,boxrule=0pt,arc=0pt,enhanced,titlerule=0mm,toptitle=1mm,bottomtitle=1mm,add to width=-\\leftskip}{definition}"
+      ],
+      "body": "\\begin{definition}{Note}{}\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.thmtools kao": [
+    {
+      "packages": [
+        "\\usepackage{amsthm}",
+        "\\let\\libAmsNewtheorem\\newtheorem\\usepackage{thmtools}\\let\\newtheorem\\libAmsNewtheorem"
+      ],
+      "declarations": [
+        "\\declaretheoremstyle[spaceabove=\\topsep, spacebelow=\\topsep, headfont=\\bfseries, bodyfont=\\normalfont\\itshape, headpunct={}, postheadspace=.5em plus .1em minus .1em]{libthm}",
+        "\\declaretheoremstyle[spaceabove=\\topsep, spacebelow=\\topsep, headfont=\\bfseries, bodyfont=\\normalfont, headpunct={}, postheadspace=.5em plus .1em minus .1em]{libthmupright}",
+        "\\declaretheorem[style=libthm, name=Theorem, numberwithin=section]{theorem}"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{amsthm}",
+        "\\let\\libAmsNewtheorem\\newtheorem\\usepackage{thmtools}\\let\\newtheorem\\libAmsNewtheorem"
+      ],
+      "declarations": [
+        "\\declaretheoremstyle[spaceabove=\\topsep, spacebelow=\\topsep, headfont=\\bfseries, bodyfont=\\normalfont\\itshape, headpunct={}, postheadspace=.5em plus .1em minus .1em]{libthm}",
+        "\\declaretheoremstyle[spaceabove=\\topsep, spacebelow=\\topsep, headfont=\\bfseries, bodyfont=\\normalfont, headpunct={}, postheadspace=.5em plus .1em minus .1em]{libthmupright}",
+        "\\declaretheorem[style=libthm, name=Theorem, numberwithin=section]{theorem}",
+        "\\declaretheorem[style=libthm, name=Lemma]{lemma}\n\\makeatletter\\let\\c@lemma\\c@theorem\\let\\thelemma\\thetheorem\\makeatother"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{amsthm}",
+        "\\let\\libAmsNewtheorem\\newtheorem\\usepackage{thmtools}\\let\\newtheorem\\libAmsNewtheorem"
+      ],
+      "declarations": [
+        "\\declaretheoremstyle[spaceabove=\\topsep, spacebelow=\\topsep, headfont=\\bfseries, bodyfont=\\normalfont\\itshape, headpunct={}, postheadspace=.5em plus .1em minus .1em]{libthm}",
+        "\\declaretheoremstyle[spaceabove=\\topsep, spacebelow=\\topsep, headfont=\\bfseries, bodyfont=\\normalfont, headpunct={}, postheadspace=.5em plus .1em minus .1em]{libthmupright}",
+        "\\declaretheorem[style=libthm, name=Theorem, numberwithin=section]{theorem}",
+        "\\declaretheorem[style=libthmupright, name=Definition]{definition}\n\\makeatletter\\let\\c@definition\\c@theorem\\let\\thedefinition\\thetheorem\\makeatother"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.thmtools beauty": [
+    {
+      "packages": [
+        "\\usepackage{amsthm}",
+        "\\let\\libAmsNewtheorem\\newtheorem\\usepackage{thmtools}\\let\\newtheorem\\libAmsNewtheorem",
+        "\\usepackage{xcolor}"
+      ],
+      "declarations": [
+        "\\declaretheoremstyle[spaceabove=3pt, spacebelow=3pt, headfont=\\normalfont\\bfseries, bodyfont=\\normalfont, headpunct={.}, postheadspace=.5em, qed={\\color{cyan!40!black}$\\blacksquare$}]{libthm}",
+        "\\declaretheoremstyle[spaceabove=3pt, spacebelow=3pt, headfont=\\normalfont\\bfseries, bodyfont=\\normalfont, headpunct={.}, postheadspace=.5em, qed={\\color{cyan!40!black}$\\blacksquare$}]{libthmupright}",
+        "\\declaretheorem[style=libthm, name=Theorem, numberwithin=section]{theorem}"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{amsthm}",
+        "\\let\\libAmsNewtheorem\\newtheorem\\usepackage{thmtools}\\let\\newtheorem\\libAmsNewtheorem",
+        "\\usepackage{xcolor}"
+      ],
+      "declarations": [
+        "\\declaretheoremstyle[spaceabove=3pt, spacebelow=3pt, headfont=\\normalfont\\bfseries, bodyfont=\\normalfont, headpunct={.}, postheadspace=.5em, qed={\\color{cyan!40!black}$\\blacksquare$}]{libthm}",
+        "\\declaretheoremstyle[spaceabove=3pt, spacebelow=3pt, headfont=\\normalfont\\bfseries, bodyfont=\\normalfont, headpunct={.}, postheadspace=.5em, qed={\\color{cyan!40!black}$\\blacksquare$}]{libthmupright}",
+        "\\declaretheorem[style=libthm, name=Theorem, numberwithin=section]{theorem}",
+        "\\declaretheorem[style=libthm, name=Lemma]{lemma}\n\\makeatletter\\let\\c@lemma\\c@theorem\\let\\thelemma\\thetheorem\\makeatother"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{amsthm}",
+        "\\let\\libAmsNewtheorem\\newtheorem\\usepackage{thmtools}\\let\\newtheorem\\libAmsNewtheorem",
+        "\\usepackage{xcolor}"
+      ],
+      "declarations": [
+        "\\declaretheoremstyle[spaceabove=3pt, spacebelow=3pt, headfont=\\normalfont\\bfseries, bodyfont=\\normalfont, headpunct={.}, postheadspace=.5em, qed={\\color{cyan!40!black}$\\blacksquare$}]{libthm}",
+        "\\declaretheoremstyle[spaceabove=3pt, spacebelow=3pt, headfont=\\normalfont\\bfseries, bodyfont=\\normalfont, headpunct={.}, postheadspace=.5em, qed={\\color{cyan!40!black}$\\blacksquare$}]{libthmupright}",
+        "\\declaretheorem[style=libthm, name=Theorem, numberwithin=section]{theorem}",
+        "\\declaretheorem[style=libthmupright, name=Definition]{definition}\n\\makeatletter\\let\\c@definition\\c@theorem\\let\\thedefinition\\thetheorem\\makeatother"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.thmtools chapter": [
+    {
+      "packages": [
+        "\\usepackage{amsthm}",
+        "\\let\\libAmsNewtheorem\\newtheorem\\usepackage{thmtools}\\let\\newtheorem\\libAmsNewtheorem"
+      ],
+      "declarations": [
+        "\\declaretheoremstyle[spaceabove=\\topsep, spacebelow=\\topsep, headfont=\\bfseries, bodyfont=\\itshape, headpunct={.}, postheadspace=.5em]{libthm}",
+        "\\declaretheoremstyle[spaceabove=\\topsep, spacebelow=\\topsep, headfont=\\bfseries, bodyfont=\\normalfont, headpunct={.}, postheadspace=.5em]{libthmupright}",
+        "\\declaretheorem[style=libthm, name=Theorem, numberwithin=chapter]{theorem}"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{amsthm}",
+        "\\let\\libAmsNewtheorem\\newtheorem\\usepackage{thmtools}\\let\\newtheorem\\libAmsNewtheorem"
+      ],
+      "declarations": [
+        "\\declaretheoremstyle[spaceabove=\\topsep, spacebelow=\\topsep, headfont=\\bfseries, bodyfont=\\itshape, headpunct={.}, postheadspace=.5em]{libthm}",
+        "\\declaretheoremstyle[spaceabove=\\topsep, spacebelow=\\topsep, headfont=\\bfseries, bodyfont=\\normalfont, headpunct={.}, postheadspace=.5em]{libthmupright}",
+        "\\declaretheorem[style=libthm, name=Theorem, numberwithin=chapter]{theorem}",
+        "\\declaretheorem[style=libthm, name=Lemma]{lemma}\n\\makeatletter\\let\\c@lemma\\c@theorem\\let\\thelemma\\thetheorem\\makeatother"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [
+        "\\usepackage{amsthm}",
+        "\\let\\libAmsNewtheorem\\newtheorem\\usepackage{thmtools}\\let\\newtheorem\\libAmsNewtheorem"
+      ],
+      "declarations": [
+        "\\declaretheoremstyle[spaceabove=\\topsep, spacebelow=\\topsep, headfont=\\bfseries, bodyfont=\\itshape, headpunct={.}, postheadspace=.5em]{libthm}",
+        "\\declaretheoremstyle[spaceabove=\\topsep, spacebelow=\\topsep, headfont=\\bfseries, bodyfont=\\normalfont, headpunct={.}, postheadspace=.5em]{libthmupright}",
+        "\\declaretheorem[style=libthm, name=Theorem, numberwithin=chapter]{theorem}",
+        "\\declaretheorem[style=libthmupright, name=Definition]{definition}\n\\makeatletter\\let\\c@definition\\c@theorem\\let\\thedefinition\\thetheorem\\makeatother"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ]
+}

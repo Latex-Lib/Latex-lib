@@ -1,0 +1,28 @@
+{
+  "id": "acmart-acmsmall",
+  "description": "ACM's acmart (CTAN, v2.20 of 2026/08/16) in its acmsmall format, the small single-column journal layout used by JACM, PACM and most ACM Transactions. A journal format needs no \\acmConference; the preamble names a journal (JACM, a valid \\acmJournal key) and sample volume, number and article so the running footers and bibstrip read 'J. ACM, Vol. 1, No. 1, Article 1' instead of an empty journal name and 'Article .'; CCS concepts, keywords and affiliations are optional and left out. As batch 6 found for the other acmart settings: General's font and AMS lines are left out (omitPreamble), since under XeTeX acmart sets its maths with unicode-math and lmodern after it took the maths fonts back to 8-bit Latin Modern; and an empty \\title gives acmart's page heads the \\shorttitle they print.",
+  "class": "acmart",
+  "options": [
+    "acmsmall"
+  ],
+  "preamble": [
+    "\\title{}",
+    "\\acmJournal{JACM}",
+    "\\acmVolume{1}",
+    "\\acmNumber{1}",
+    "\\acmArticle{1}"
+  ],
+  "omitPreamble": [
+    "\\usepackage{lmodern}",
+    "\\usepackage{fontspec}",
+    "\\setmainfont{Latin Modern Roman}[SmallCapsFont={Latin Modern Roman Caps}]",
+    "\\setsansfont{Latin Modern Sans}",
+    "\\setmonofont{Inconsolatazi4-Regular.otf}[BoldFont=Inconsolatazi4-Bold.otf]",
+    "\\usepackage{amsmath}",
+    "\\usepackage{amssymb}"
+  ],
+  "files": [],
+  "setups": [
+    "A"
+  ]
+}

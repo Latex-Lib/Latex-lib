@@ -1,0 +1,20 @@
+{
+  "id": "achemso",
+  "description": "achemso v3.14 (2025-09-22, CTAN/MiKTeX package achemso), the ACS submission class. It is built on article (12pt, letter paper, double spaced, one column), and journal=jacsat with manuscript=article is both its default and its demo's choice: one column, with section numbers turned off. The class runs \\maketitle by itself at \\begin{document}, and article's \\@title raises an error when no \\title was given. So the preamble sets a sample title, which the document's own \\title replaces, and one author with the \\affiliation and \\email that the title block lists. The \\AtBeginDocument \\affiliation, run before the kernel shuts off preamble-only commands, gives the same affiliation to an author the document adds. Without it that author gets a 'No affiliation given' warning, which writes the author's text, fragile commands included, to the log.",
+  "class": "achemso",
+  "options": [
+    "journal=jacsat",
+    "manuscript=article"
+  ],
+  "preamble": [
+    "\\title{A Sample Article}",
+    "\\author{A. N. Author}",
+    "\\affiliation{Department of Chemistry, Sample University, Sample City}",
+    "\\email{author@example.com}",
+    "\\AtBeginDocument{\\affiliation{Department of Chemistry, Sample University, Sample City}}"
+  ],
+  "files": [],
+  "setups": [
+    "A"
+  ]
+}

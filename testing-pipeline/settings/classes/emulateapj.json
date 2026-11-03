@@ -1,0 +1,13 @@
+{
+  "id": "emulateapj",
+  "description": "emulateapj (CTAN, 2025/02/19; MiKTeX package emulateapj), the ApJ two-column look built on REVTeX, two columns by default. The revtex4 option makes it load REVTeX 4.0 straight away. That is MiKTeX's revtex4 package, v4.0a 2020/09/30, which is patched for the 2020-10 kernel. MiKTeX has no revtex4-1, so the class's \\IfFileExists{revtex4-1.cls} would fall back to the same file anyway. The preamble is empty: \\journalinfo, \\submitted and the running heads have defaults, and an author with no \\affiliation only gives a warning.",
+  "class": "emulateapj",
+  "options": [
+    "revtex4"
+  ],
+  "preamble": [],
+  "files": [],
+  "setups": [
+    "A"
+  ]
+}

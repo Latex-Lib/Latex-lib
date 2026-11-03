@@ -1,0 +1,221 @@
+{
+  "handler": "tbl.arydshln",
+  "node": "table",
+  "generatedFrom": {
+    "key": "sha256:e0a8fb8f3ddabadef848511d761d471c85130a7c73e0ea9bbf8774b78c57b10f",
+    "contexts": "sha256:6473710baf815dcb7640d4ff65dd6f43384b488e7508f2e8c9b6309e7a7e11b9",
+    "matrix": null
+  },
+  "parents": {
+    "body": {
+      "(document body)": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/appendix": {
+      "num.appendix": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/acknowledgement": {
+      "ack.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/columns": {
+      "cols.multicol": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      },
+      "cols.paracol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.twocolumn-cmd": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.vwcol": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      }
+    },
+    "containerBlock/footnote": {
+      "(General)": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      }
+    },
+    "containerBlock/listing": {
+      "list.enumerate-pkg": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.enumitem": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.paralist": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.scrextend": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/abstract": {
+      "abs.abstract-pkg": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.class-native[form=command]": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      },
+      "abs.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/mathElement": {
+      "thm.amsthm": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.mdframed": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      },
+      "thm.ntheorem": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.tcolorbox": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      },
+      "thm.tcolorbox[breakable=false]": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      },
+      "thm.thmtools": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "table_cell": {
+      "tbl.multirow": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      }
+    },
+    "table_header": {
+      "tbl.header": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      }
+    }
+  },
+  "packageCombos": {
+    "deny": [
+      {
+        "with": "tbl.colortbl",
+        "reason": "tbl.colortbl loads \\usepackage[table]{xcolor}, so colortbl patches array again when its line comes after arydshln's, and array loaded first does not stop that; the package fact's colortbl conflict does not see a load made through xcolor's option, and the host does not honour load order. In the copy's batch-3b article.A run all 17 tbl.arydshln branches of the 10 documents where tbl.colortbl came after arydshln stop at 'Illegal pream-token (;)' or \\adl@hline (report.A: 18 of 18); the 22 documents (33 branches) where colortbl came first had no error, and are filed apart too.",
+        "status": "untested"
+      },
+      {
+        "with": "general:table",
+        "reason": "arydshln's \\multicolumn is not \\long, and every one of General's table ways ends an aligned paragraph in a spanning cell with \\par (\\multicolumn{1}{|>{\\raggedright\\arraybackslash}X|}{{\\bfseries {\\centering Run...\\par}}}); the library's own tables keep \\par out of spanning cells (node.ts noPar). With arydshln's patches in force (no array or colortbl loaded after it) such a document never finishes: ZeroTeX's 120 s tool watchdog stops XeTeX and leaves no log. In the copy's article, report, amsart and scrartcl A runs, every document holding tbl.arydshln and such a cell either hung (67, one of them, report.A d478b2bae1389876cf39d, also holding tbl.nicematrix) or compiled with arydshln undone by a colortbl, xcolor[table] or tabularx load after it ('Illegal pream-token (;)', e.g. 47bbc3df1fa8); with arydshln in force and no such cell, 826 compiled and 1 hung (another cause).",
+        "status": "untested"
+      }
+    ]
+  }
+}

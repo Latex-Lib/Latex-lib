@@ -1,0 +1,20 @@
+{
+  "id": "iopjournal",
+  "description": "IOP Publishing's journal class, from IOP's template bundle (not on CTAN); one column, fixed layout. Its text block leaves a 12.7mm right margin for 25mm margin notes; as \\articletype does in IOP's template (cls l.95), notes go to the 44mm left margin (\\reversemarginpar). In two columns (\\twocolumn) the kernel ignores it for a right column's notes, and note.notecolumn places its own column, so those still run off the paper until off-paper notes are judged (MN6).",
+  "class": "iopjournal",
+  "options": [],
+  "preamble": ["\\reversemarginpar"],
+  "files": [
+    {
+      "path": "iopjournal.cls",
+      "sha256": "a9b4c1ed8f9cd7a96ba39a042ce6cfe534a6db5a430e6e6ca809f727f0845fd9"
+    },
+    {
+      "path": "orcid.pdf",
+      "sha256": "7276a964b7439d1a69b55f63568a0f4f2126874712d3850d242dde3e2394047f"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

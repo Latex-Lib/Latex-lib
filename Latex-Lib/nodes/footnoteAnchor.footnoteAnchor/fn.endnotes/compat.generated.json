@@ -1,0 +1,92 @@
+{
+  "handler": "fn.endnotes",
+  "node": "footnoteAnchor/footnoteAnchor",
+  "generatedFrom": {
+    "key": "sha256:210bc70d5b3da17e8a8d3bb660c52125c1c7a4b6ed92f88a8cc970305e085a32",
+    "contexts": "sha256:0cbb0e02388e8e6e55437f1413593ce684c00d621040b47e1542fcfbfc928bff",
+    "matrix": null
+  },
+  "parents": {
+    "paragraph/paragraph": {
+      "para.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "paragraph/heading": {
+      "head.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "head.fncychap": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "head.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "head.koma-fonts": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "head.memoir-style": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "head.sectsty": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "head.titlesec": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "paragraph/lstParagraph": {
+      "list.item": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "paragraph/title": {
+      "front.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.koma-title": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.maketitle": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.titlepage-env": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.titling": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    }
+  },
+  "packageCombos": {
+    "deny": []
+  }
+}

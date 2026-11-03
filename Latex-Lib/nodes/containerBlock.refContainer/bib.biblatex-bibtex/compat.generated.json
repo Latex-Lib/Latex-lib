@@ -1,0 +1,27 @@
+{
+  "handler": "bib.biblatex-bibtex",
+  "node": "containerBlock/refContainer",
+  "generatedFrom": {
+    "key": "sha256:e47b5a47db1e399975cb749b988da4e2b130d3eee41137992030cbee007337c0",
+    "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
+    "matrix": null
+  },
+  "parents": {
+    "body": {
+      "(document body)": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    }
+  },
+  "packageCombos": {
+    "deny": [
+      {
+        "with": "natbib",
+        "reason": "biblatex refuses natbib (\"Incompatible package natbib\"), which acmart, elsarticle and revtex4-2 load",
+        "status": "untested"
+      }
+    ]
+  }
+}

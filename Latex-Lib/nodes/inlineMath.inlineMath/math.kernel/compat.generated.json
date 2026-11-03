@@ -1,0 +1,106 @@
+{
+  "handler": "math.kernel",
+  "node": "inlineMath/inlineMath",
+  "generatedFrom": {
+    "key": "sha256:f38e6a4787fc9c902e20b851844856d5f107d877480e31a817c99fa3f2a49b07",
+    "contexts": "sha256:9ae6f4b70bb91cd9dafaa9820beb76375b15edac764557178c660d2f42cbc266",
+    "matrix": null
+  },
+  "parents": {
+    "paragraph/paragraph": {
+      "para.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "paragraph/heading": {
+      "head.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "head.fncychap": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "head.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "head.koma-fonts": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "head.memoir-style": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "head.sectsty": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "head.titlesec": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "paragraph/lstParagraph": {
+      "list.item": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "paragraph/refPara": {
+      "bib.entry": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "paragraph/title": {
+      "front.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.koma-title": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.maketitle": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.titlepage-env": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.titling": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "codeEscape/codeEscape": {
+      "code.escape": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    }
+  },
+  "packageCombos": {
+    "deny": []
+  }
+}

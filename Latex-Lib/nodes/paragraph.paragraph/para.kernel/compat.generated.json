@@ -1,0 +1,183 @@
+{
+  "handler": "para.kernel",
+  "node": "paragraph/paragraph",
+  "generatedFrom": {
+    "key": "sha256:5a96796035589681e9a4cec790bef11443e623a740cc4b299b2aeba7ea507838",
+    "contexts": "sha256:98f5b16bd31728201fcc97c5bead8a144fd9d4f7a63bc646516bbfd88902119b",
+    "matrix": null
+  },
+  "parents": {
+    "containerBlock/abstract": {
+      "abs.abstract-pkg": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.class-native[form=command]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/mathElement": {
+      "thm.amsthm": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.mdframed": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.ntheorem": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.tcolorbox": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.tcolorbox[breakable=false]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.thmtools": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/columns": {
+      "cols.multicol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.paracol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.twocolumn-cmd": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.vwcol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/note": {
+      "box.awesomebox": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "box.fancybox": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "box.mdframed": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "box.mdframed[breakable=false]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "box.tcolorbox": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "box.tcolorbox[breakable=false]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "note.marginnote": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "note.marginpar": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "note.notecolumn": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "note.sidenotes": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "note.todonotes": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/footnote": {
+      "(General)": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/appendix": {
+      "num.appendix": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/acknowledgement": {
+      "ack.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    }
+  },
+  "packageCombos": {
+    "deny": []
+  }
+}

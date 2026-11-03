@@ -1,0 +1,192 @@
+#!/usr/bin/env bash
+# Runs the matrix on a Linux machine against the shared store
+# (testing-pipeline/ARCHITECTURE.md section 7, `ci/`).
+#
+#   ci/run-pairs.sh plan [--pairs-out <file>] [PAIRS]   file once, centrally, and list the pairs
+#   ci/run-pairs.sh run PAIRS                            each pair in turn: fetch its results, compile the rest, push
+#   ci/run-pairs.sh smoke                                every handler alone under article A (ci/smoke.ts): stops if
+#                                                        the engine or its setup is broken
+#   ci/run-pairs.sh explain                              the whole store down, `compat explain --library --limit 300`, push
+#                                                        (all pairs in one process: give it a large NODE_HEAP_MB)
+#
+# PAIRS is `all` (the default), `batch:<id>` or `batch:current` (the classes of
+# that batch, or of the newest running one, in settings/batches.json:
+# testing-pipeline/BATCHES.md), or names, comma- or
+# space-separated: class.setup (article.A) or a class alone for every setup
+# that applies to it (amsart). Each pair runs in a process of its own, as on the
+# laptop. Only one plan may run against a store at a time. Plan runs before any
+# job of a fan-out, so the jobs find nothing left to file and agree on every
+# document; a run that files anyway pushes nothing.
+#
+# A pair's log always goes to the store (logs/<time>/), and what it compiled
+# is pushed even when it fails: results are keyed by their inputs and written
+# whole. ENGINES (a number, `default`, or `auto`: what RAM and cores allow) is
+# written into compat.config.json when set; NODE_HEAP_MB is Node's heap
+# (8192). With QUIET=1 the console shows a pair's summary lines, not its
+# output: a public repository's CI console is public. PULL=all fetches every
+# result once instead of each pair's own. The store variables are
+# ci/store.sh's. Node options already set (the workflow's crash guard,
+# ci/no-source.cjs) are kept.
+set -euo pipefail
+
+here=$(cd "$(dirname "$0")" && pwd)
+tp=$(cd "$here/.." && pwd)
+out="$tp/out"
+store() { bash "$here/store.sh" "$@"; }
+cd "$tp"
+export NODE_OPTIONS="${NODE_OPTIONS:+$NODE_OPTIONS }--max-old-space-size=${NODE_HEAP_MB:-8192}"
+stamp=$(date -u +%Y%m%dT%H%M%SZ)
+s3=("${AWS_CLI:-aws}" ${S3_ENDPOINT:+--endpoint-url "$S3_ENDPOINT"} s3)
+if [ -n "${STORE_URI:-}" ]; then store mask; fi
+
+# The pairs named in $@ (or all), one class.setup per line, checked against the plan's.
+pairs_of() {
+  local all=$1; shift
+  local wanted="${*:-all}"
+  node -e '
+    const fs = require("fs");
+    const pairs = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
+    const all = pairs.map((p) => `${p.class}.${p.setup}`);
+    const unknown = [];
+    const expand = (name) => {
+      if (name === "all") return all;
+      if (name.startsWith("batch:")) {
+        const batches = JSON.parse(fs.readFileSync("settings/batches.json", "utf8")).batches;
+        const id = name.slice(6);
+        const batch = id === "current" ? batches.filter((b) => b.status === "running").at(-1) : batches.find((b) => String(b.id) === id);
+        if (batch === undefined) { unknown.push(name); return []; }
+        return batch.classes.flatMap(expand);
+      }
+      const of = name.includes(".") ? all.filter((p) => p === name) : pairs.filter((p) => p.class === name).map((p) => `${p.class}.${p.setup}`);
+      if (of.length === 0) unknown.push(name);
+      return of;
+    };
+    const picked = [...new Set(process.argv[2].split(/[\s,]+/).filter(Boolean).flatMap(expand))];
+    if (unknown.length > 0) { console.error(`no such pair, class or batch: ${unknown.join(", ")}`); process.exit(1); }
+    console.log(picked.join("\n"));
+  ' "$all" "$wanted"
+}
+
+set_engines() {
+  [ -n "${ENGINES:-}" ] || return 0
+  local engines=$ENGINES
+  if [ "$engines" = auto ]; then
+    # About 2 GB an engine beside Node's heap and 2 GB for the system, and no more engines than cores.
+    local mem_mb cores
+    mem_mb=$(awk '/MemTotal/ {print int($2 / 1024)}' /proc/meminfo)
+    cores=$(nproc)
+    engines=$(( (mem_mb - ${NODE_HEAP_MB:-8192} - 2048) / 2048 ))
+    [ "$engines" -gt "$cores" ] && engines=$cores
+    [ "$engines" -lt 1 ] && engines=1
+  fi
+  node -e '
+    const fs = require("fs");
+    const config = JSON.parse(fs.readFileSync("compat.config.json", "utf8"));
+    config.engines = process.argv[1] === "default" ? "default" : Number(process.argv[1]);
+    fs.writeFileSync("compat.config.json", `${JSON.stringify(config, null, 2)}\n`);
+  ' "$engines"
+  export ENGINES=$engines
+  echo "engines: $engines"
+}
+
+# Stops if the store here has branches no document of the bucket's holds: then the plan step has not run.
+filed_already() {
+  npm run --silent compat -- ci/prepare.ts --library --pairs "$out/.all-pairs.json" > /dev/null
+  cmp -s "$out/manifest.jsonl" "$out/.manifest.pulled" || { echo "$1: this store has branches no document holds; run the plan step first" >&2; exit 1; }
+}
+
+# Runs compat with the rest of the arguments, its output into the log $1; returns its status.
+compat_logged() {
+  local log=$1; shift
+  local rc=0
+  npm run --silent compat -- "$@" > "$log" 2>&1 || rc=$?
+  if [ -n "${STORE_URI:-}" ]; then "${s3[@]}" cp --only-show-errors "$log" "${STORE_URI%/}/logs/$stamp/$(basename "$log")" || true; fi
+  [ "${QUIET:-}" = 1 ] || cat "$log"
+  return "$rc"
+}
+
+plan() {
+  local pairs_out="$out/.pairs" list
+  if [ "${1:-}" = --pairs-out ]; then pairs_out=$2; shift 2; fi
+  store pull-index
+  npm run --silent compat -- ci/prepare.ts --library --pairs "$out/.all-pairs.json"
+  store push-index
+  list=$(pairs_of "$out/.all-pairs.json" "$@")
+  echo "$list" | node -e '
+    const lines = require("fs").readFileSync(0, "utf8").split("\n").filter(Boolean);
+    console.log(JSON.stringify(lines.map((p) => { const at = p.lastIndexOf("."); return { class: p.slice(0, at), setup: p.slice(at + 1) }; })));
+  ' > "$pairs_out"
+  echo "plan: $(echo "$list" | wc -l) pair(s) in $pairs_out"
+}
+
+run() {
+  set_engines
+  store pull-index
+  filed_already run
+  local list pair class setup log rc failed=""
+  list=$(pairs_of "$out/.all-pairs.json" "$@")
+  mkdir -p "$out/logs"
+  store pull-profiles
+  if [ "${PULL:-keys}" = all ]; then store pull-results; fi
+  for pair in $list; do
+    class=${pair%.*}
+    setup=${pair##*.}
+    log="$out/logs/run-$pair.log"
+    echo "== $pair ($(date -u +%H:%M:%S))"
+    if [ -n "${STORE_URI:-}" ] && [ "${PULL:-keys}" != all ]; then
+      npm run --silent compat -- ci/prepare.ts --library --classes "$class" --setups "$setup" --keys "$out/.keys"
+      store pull-keys "$out/.keys"
+    fi
+    rc=0
+    compat_logged "$log" run --classes "$class" --setups "$setup" --library || rc=$?
+    grep -E "^(run|solo) |^  $class\.$setup " "$log" | cut -c1-200 || true
+    if ! cmp -s "$out/manifest.jsonl" "$out/.manifest.pulled"; then
+      echo "run: $pair filed documents the plan step did not; nothing pushed" >&2
+      exit 1
+    fi
+    LEDGER_NAME="$pair" store push
+    if [ "$rc" -ne 0 ]; then
+      echo "run: $pair stopped with status $rc; what it compiled is pushed, its log is in the store (logs/$stamp/)" >&2
+      failed="$failed $pair"
+    fi
+  done
+  store push-profiles
+  [ -z "$failed" ] || { echo "run: failed:$failed" >&2; exit 1; }
+}
+
+smoke() {
+  set_engines
+  mkdir -p "$out/logs"
+  local rc=0
+  compat_logged "$out/logs/smoke.log" ci/smoke.ts || rc=$?
+  grep '^smoke:' "$out/logs/smoke.log" | cut -c1-300 || true
+  return "$rc"
+}
+
+explain() {
+  set_engines
+  store pull-all
+  filed_already explain
+  local log="$out/logs/explain-$stamp.log" rc=0
+  mkdir -p "$out/logs"
+  compat_logged "$log" explain --library --limit 300 || rc=$?
+  cmp -s "$out/manifest.jsonl" "$out/.manifest.pulled" || { echo "explain: it filed documents the plan step did not; nothing pushed" >&2; exit 1; }
+  # The push sends the review queue explain wrote (review/ and latest/explain). Its compat tables go under
+  # explain/<time>/ (ci/store.sh pull-explain): the library's from Latex-Lib/nodes/**/matrix.generated.json,
+  # General's ways' from out/compat/.
+  LEDGER_NAME=explain store push
+  if [ -d "$out/compat" ]; then "${s3[@]}" sync --only-show-errors "$out/compat/" "${STORE_URI%/}/explain/$stamp/compat/"; fi
+  (cd "$tp/.." && find Latex-Lib/nodes -name matrix.generated.json -print0 | tar -czf "$out/matrix-tables.tar.gz" --null -T -)
+  "${s3[@]}" cp --only-show-errors "$out/matrix-tables.tar.gz" "${STORE_URI%/}/explain/$stamp/matrix-tables.tar.gz"
+  return "$rc"
+}
+
+command=${1:-}
+[ $# -gt 0 ] && shift
+case "$command" in
+  plan) plan "$@" ;;
+  run) run "$@" ;;
+  smoke) smoke ;;
+  explain) explain ;;
+  *) sed -n '2,/^set -euo/p' "$0" | sed '$d' >&2; exit 2 ;;
+esac

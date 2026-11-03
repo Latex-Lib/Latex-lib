@@ -1,0 +1,211 @@
+{
+  "handler": "thm.tcolorbox",
+  "node": "containerBlock/mathElement",
+  "generatedFrom": {
+    "key": "sha256:6dcfdb09b1a8e8eea8eb8086a90815660848acc7a13a0510c9138c3b71975ec6",
+    "contexts": "sha256:6473710baf815dcb7640d4ff65dd6f43384b488e7508f2e8c9b6309e7a7e11b9",
+    "matrix": null
+  },
+  "parents": {
+    "body": {
+      "(document body)": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/appendix": {
+      "num.appendix": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/acknowledgement": {
+      "ack.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/columns": {
+      "cols.multicol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.paracol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.twocolumn-cmd": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.vwcol": {
+        "verdict": "fallback",
+        "source": "derived",
+        "status": "derived",
+        "to": "thm.amsthm",
+        "reason": "needs paragraph",
+        "lacks": [
+          "needs paragraph"
+        ]
+      }
+    },
+    "containerBlock/footnote": {
+      "(General)": {
+        "verdict": "adapt",
+        "source": "authored",
+        "status": "untested",
+        "set": {
+          "breakable": false
+        },
+        "reason": "a confined parent: a box there cannot use the page-breaking machinery"
+      }
+    },
+    "containerBlock/listing": {
+      "list.enumerate-pkg": {
+        "verdict": "adapt",
+        "source": "authored",
+        "status": "untested",
+        "set": {
+          "breakable": false
+        },
+        "reason": "a confined parent: a box there cannot use the page-breaking machinery"
+      },
+      "list.enumitem": {
+        "verdict": "adapt",
+        "source": "authored",
+        "status": "untested",
+        "set": {
+          "breakable": false
+        },
+        "reason": "a confined parent: a box there cannot use the page-breaking machinery"
+      },
+      "list.kernel": {
+        "verdict": "adapt",
+        "source": "authored",
+        "status": "untested",
+        "set": {
+          "breakable": false
+        },
+        "reason": "a confined parent: a box there cannot use the page-breaking machinery"
+      },
+      "list.paralist": {
+        "verdict": "adapt",
+        "source": "authored",
+        "status": "untested",
+        "set": {
+          "breakable": false
+        },
+        "reason": "a confined parent: a box there cannot use the page-breaking machinery"
+      },
+      "list.scrextend": {
+        "verdict": "adapt",
+        "source": "authored",
+        "status": "untested",
+        "set": {
+          "breakable": false
+        },
+        "reason": "a confined parent: a box there cannot use the page-breaking machinery"
+      }
+    },
+    "containerBlock/abstract": {
+      "abs.abstract-pkg": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.class-native[form=command]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "containerBlock/mathElement": {
+      "thm.amsthm": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.mdframed": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.ntheorem": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.tcolorbox": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.tcolorbox[breakable=false]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "thm.thmtools": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "table_cell": {
+      "tbl.multirow": {
+        "verdict": "adapt",
+        "source": "authored",
+        "status": "untested",
+        "set": {
+          "breakable": false
+        },
+        "reason": "a confined parent: a box there cannot use the page-breaking machinery"
+      }
+    },
+    "table_header": {
+      "tbl.header": {
+        "verdict": "adapt",
+        "source": "authored",
+        "status": "untested",
+        "set": {
+          "breakable": false
+        },
+        "reason": "a confined parent: a box there cannot use the page-breaking machinery"
+      }
+    }
+  },
+  "packageCombos": {
+    "deny": []
+  }
+}

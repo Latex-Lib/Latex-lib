@@ -1,0 +1,73 @@
+{
+  "handler": "tbl.row",
+  "node": "table_row",
+  "generatedFrom": {
+    "key": "sha256:e49a258694d0b09bc9ceb8782c1b9b2e8275b2943099cdf475f4cae38c802def",
+    "contexts": "sha256:7d6443207c97245e9c07ce0f10470a1be9e7450a009513e55a0397354e8f14d8",
+    "matrix": null
+  },
+  "parents": {
+    "body": {
+      "(document body)": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "table": {
+      "tbl.arydshln": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "tbl.booktabs": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "tbl.colortbl": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "tbl.longtable": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "tbl.nicematrix": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "tbl.nicematrix[package=tabularray]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "tbl.tabbing": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "tbl.tabular": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "tbl.tabularx": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "tbl.threeparttable": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    }
+  },
+  "packageCombos": {
+    "deny": []
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "siamart",
+  "description": "SIAM's article class, siamart251216, from SIAM's bundle (not on CTAN); one column, fixed layout. Its \\ifpdf is false under XeTeX, so it would load hypdvips for dvips (the class's own nohypdvips option stops that) and breakurl, whose first page writes dvips PostScript through hdvips's \\headerps@out; the preamble makes that a no-op.",
+  "class": "siamart251216",
+  "options": [
+    "nohypdvips"
+  ],
+  "preamble": [
+    "\\makeatletter\\providecommand\\headerps@out[1]{}\\makeatother"
+  ],
+  "files": [
+    {
+      "path": "siamart251216.cls",
+      "sha256": "33f2eb091c8bcbda9baed2e868489460da868047b0a518b4ce1b2f2c15fda530"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

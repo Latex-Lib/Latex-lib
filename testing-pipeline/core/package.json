@@ -1,0 +1,21 @@
+{
+  "name": "compat-core",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Tests every legal nesting under each class setting, with every handler each node can use; host, engine and library come in through ports.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "check": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.3"
+  }
+}

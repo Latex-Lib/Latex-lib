@@ -1,0 +1,16 @@
+{
+  "id": "elegantpaper",
+  "description": "ElegantLaTeX's elegantpaper (CTAN/MiKTeX, v0.12 of 2026/02/27), a working-paper class built on article, one column. It loads fontspec under XeTeX with TeX Gyre Termes and Heros, picked by .otf file name, and passes unknown options on to article, so twocolumn works. lang=en (its default, named here) gives English theorem names and labels and keeps ctex out. bibend=bibtex runs the biblatex it loads itself on the BibTeX backend, the one General's bibliography uses in this engine, instead of Biber, which is untested here. The preamble line is there because the class starts every verbatim environment with \\microtypesetup but never loads microtype, so it adds a no-op at \\begin{document} only when nothing else has defined the command.",
+  "class": "elegantpaper",
+  "options": [
+    "lang=en",
+    "bibend=bibtex"
+  ],
+  "preamble": [
+    "\\AtBeginDocument{\\providecommand\\microtypesetup[1]{}}"
+  ],
+  "files": [],
+  "setups": [
+    "A"
+  ]
+}

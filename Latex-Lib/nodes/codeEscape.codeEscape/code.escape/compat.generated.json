@@ -1,0 +1,41 @@
+{
+  "handler": "code.escape",
+  "node": "codeEscape/codeEscape",
+  "generatedFrom": {
+    "key": "sha256:6d721db5a367c359f79bf65ab8b282ec17aab4a975cf49e79349dca2fd7395a8",
+    "contexts": "sha256:a1a299ce102c88c79f49733b5ea8d84dca202e0a91c8fc447b7479177eca40d3",
+    "matrix": null
+  },
+  "parents": {
+    "code/code": {
+      "code.listings": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "code.minted": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "code.tcblisting": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "code.tcblisting[breakable=false]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "code.verbatim": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    }
+  },
+  "packageCombos": {
+    "deny": []
+  }
+}

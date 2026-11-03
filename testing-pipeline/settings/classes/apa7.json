@@ -1,0 +1,21 @@
+{
+  "id": "apa7",
+  "description": "apa7 v2.16 (2022/07/25, CTAN), APA 7th edition papers on article, in one-column man mode, with natbib (apacite plus natbib through BibTeX, so no biber or biblatex-apa), floatsintext so figures and tables stay where they are instead of endfloat moving them to the end, and nofontenc so XeLaTeX keeps its TU Latin Modern instead of the class's T1 fontenc, which turns Unicode text into missing characters. The preamble loads etoolbox, which the class's \\author and \\authorsaffiliations need (\\forcsvlist, \\listadd) but which it loads only without natbib or without floatsintext; sets a \\shorttitle, which the running head of every page reads (undefined until \\maketitle, so a page before it, or a document with no title, stops there); sets a sample affiliation; and makes \\and a comma, because apa7 sets \\author's names in a center environment where article's tabular \\and fails at \\maketitle.",
+  "class": "apa7",
+  "options": [
+    "man",
+    "natbib",
+    "floatsintext",
+    "nofontenc"
+  ],
+  "preamble": [
+    "\\usepackage{etoolbox}",
+    "\\shorttitle{Sample Short Title}",
+    "\\authorsaffiliations{Sample University}",
+    "\\renewcommand\\and{\\unskip, }"
+  ],
+  "files": [],
+  "setups": [
+    "A"
+  ]
+}

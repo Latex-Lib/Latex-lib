@@ -1,0 +1,26 @@
+{
+  "id": "oup-authoring-template",
+  "description": "Oxford University Press's journal class oup-authoring-template v1.5 (2026/07/14, CTAN), in the template's default layout without unnumsec, so headings stay numbered: contemporary and large give a 210x276 mm page in two columns (the class calls \\twocolumn itself), and webpdf makes the media the trim size, with no crop marks. The preamble supplies what the class leaves undefined: the journal metadata its running heads and first-page footer print (\\journaltitle, \\pubyear, \\copyrightyear, \\vol, \\issue, with neutral values); \\societylogo, which v1.4 commented out of the class, empty as the template sets it; and \\authormark, which \\title without a short title calls, as a no-op (the contemporary heads never print it). \\@abstract defaults to empty, because \\maketitle prints it and only the class's \\abstract{} command defines it. \\and becomes a comma, because the class sets each \\author in its own \\hbox, where the kernel's tabular-based \\and breaks. The class loads footnote.sty, which defines \\savenotes and \\endsavenotes; the kernel's \\newenvironment refuses a name when either is defined, so footnotehyper's own \\newenvironment{savenotes} would fail at \\begin{document}. Both are therefore made undefined just after footnotehyper loads.",
+  "class": "oup-authoring-template",
+  "options": [
+    "webpdf",
+    "contemporary",
+    "large"
+  ],
+  "preamble": [
+    "\\journaltitle{Journal Title}",
+    "\\pubyear{2026}",
+    "\\copyrightyear{2026}",
+    "\\vol{1}",
+    "\\issue{1}",
+    "\\providecommand\\societylogo{}",
+    "\\providecommand\\authormark[1]{}",
+    "\\makeatletter\\def\\@abstract{}\\makeatother",
+    "\\renewcommand\\and{\\unskip, }",
+    "\\makeatletter\\AddToHook{package/footnotehyper/after}{\\let\\savenotes\\@undefined\\let\\endsavenotes\\@undefined}\\makeatother"
+  ],
+  "files": [],
+  "setups": [
+    "A"
+  ]
+}

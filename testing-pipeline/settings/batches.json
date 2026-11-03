@@ -1,0 +1,49 @@
+{
+  "batches": [
+    {
+      "id": 1,
+      "status": "running",
+      "classes": [
+        "article", "report", "book", "beamer", "amsart",
+        "revtex4-2-aps", "ieeetran-journal", "ieeetran-conference", "aastex",
+        "elsarticle-preprint", "elsarticle-5p", "cas-sc", "cas-dc",
+        "acmart-sigconf", "acmart-manuscript", "aa", "mnras", "llncs", "lipics",
+        "iopjournal", "sn-jnl", "siamart", "mdpi",
+        "scrartcl", "scrreprt", "scrbook", "memoir", "exam", "extarticle",
+        "ctexart", "ctexbook", "tufte-handout"
+      ],
+      "added": {
+        "classes": ["the 46 class profiles and 48 class settings of M1/M3 (16 settings left out of the batch: see why)"],
+        "handlers": ["every handler of M1 and M3: 110 handlers over 28 nodes"]
+      },
+      "why": "The commonly used journal, conference and student classes among the first 48 settings, by the ar5iv class tally (https://gist.github.com/dginev/a642cbc6ae106786d24e2f271cf2941d), publisher volumes (OpenAlex) and Overleaf's template tags. Left out as rarely used or out of scope: minimal, ltxdoc, proc (test, documentation, obsolete); letter, scrlttr2, moderncv (letters, CVs); a0poster, tikzposter (posters); extbook, extreport, amsbook, amsproc, tufte-book, ctexbeamer, ctexrep (covered by a sibling that stays); easychair (not on CTAN, licence unstated, little use)."
+    },
+    {
+      "id": 2,
+      "status": "planned",
+      "classes": [
+        "revtex4-2-aip", "acmart-acmsmall", "ieeetran-compsoc",
+        "achemso", "spie", "oup-authoring-template", "emulateapj", "apa7", "jacow",
+        "thuthesis", "elegantpaper", "ut-thesis"
+      ],
+      "added": {
+        "classes": [
+          "revtex4-2-aip: revtex4-2 with [aip,jcp] (AIP journals)",
+          "acmart-acmsmall: acmart [acmsmall] (PACM and ACM journals)",
+          "ieeetran-compsoc: IEEEtran [journal,compsoc] (IEEE Computer Society)",
+          "achemso: https://ctan.org/pkg/achemso, [journal=jacsat,manuscript=article] (ACS journals)",
+          "spie: https://ctan.org/pkg/spie (SPIE proceedings)",
+          "oup-authoring-template: https://ctan.org/pkg/oup-authoring-template, [webpdf,contemporary,large] (Oxford journals)",
+          "emulateapj: https://ctan.org/pkg/emulateapj (ApJ two-column look)",
+          "apa7: https://ctan.org/pkg/apa7, [man,natbib] (APA papers, student reports)",
+          "jacow: https://ctan.org/pkg/jacow, [a4paper] (accelerator conferences)",
+          "thuthesis: https://ctan.org/pkg/thuthesis, [degree=bachelor,fontset=fandol] (Chinese theses; needs XeTeX)",
+          "elegantpaper: https://ctan.org/pkg/elegantpaper, [lang=en] (student papers)",
+          "ut-thesis: https://ctan.org/pkg/ut-thesis (theses)"
+        ],
+        "handlers": []
+      },
+      "why": "The most used classes not in batch 1 that are on CTAN and MiKTeX (fetched on demand), plus three settings of batch 1 classes in their other common modes. To ship once their licence headers allow it: iopart (27k on arXiv), svjour3 (15.6k), PoS (9.9k), imsart (4.5k). After that: mitthesis, bxjsarticle, elegantbook, iacrj, aiaa, ametsoc, jmlr, quantumarticle, and the publisher classes that must be shipped. Venues that use article with a style file (ACL, NeurIPS, ICLR, ICML, AAAI, CVPR, IJCAI, USENIX, JHEP) become setups on article."
+    }
+  ]
+}

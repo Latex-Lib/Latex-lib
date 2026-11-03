@@ -1,0 +1,18 @@
+{
+  "id": "mnras",
+  "description": "The Monthly Notices' class, two columns by default, without usenatbib (owner decision O-MNRAS1). mnras.cls is not built on article and leaves out names that packages and General's LaTeX read. The preamble (b21, from GitHub run 41584963423) gives them without changing what the class prints: (1) \\bibhang is cleared just before natbib or biblatex loads, since both \\newlength{\\bibhang} (natbib.sty l.637, biblatex.sty l.916) and mnras.cls already allocates it without usenatbib (l.1641-1644): 'Command \\bibhang already defined' failed 5,614 mnras.A branches (585 documents hold it); (2) article's \\if@titlepage, false, which abstract.sty (l.57, l.103) and titling.sty test while they load: 'Undefined control sequence', 'Extra \\else', 'Extra \\fi', 3,230 branches; (3) article's \\abstractname, \\contentsname, \\listfigurename, \\listtablename and \\appendixname, which abstract.sty, tocloft and General's appendix (titlesec) and contents lines read (891 branches); mnras's own headings stay its fixed ABSTRACT, CONTENTS and APPENDIX (l.1118, l.1273, l.760-775); (4) \\title takes a paragraph, as the kernel's does (l.1188-1190 are not \\long, and General's title is a \\parbox ending in \\par: 19 branches); (5) \\cite and \\shortcite are e-TeX \\protected, with mnras's own bodies (l.1664-1666), so a citation in a heading or a mark is not expanded there ('\\citename' undefined, 'Illegal parameter number': 32 branches); not \\DeclareRobustCommand, which would redefine the kernel's inner \\cite that mnras's \\@internalcite calls (l.1664 lets it to the kernel's robust \\cite), so that every citation would call itself without end; written '\\cite {' so that the host's scan for citation commands (keepCitationCase) does not take the line for one; (6) at \\begin{document}, when no package gave them (listings, caption and caption3 do), mnras's figure or table caption as \\@makecaption and empty \\abovecaptionskip and \\belowcaptionskip: mnras sets \\@makecaption only inside its own figure and table (l.1547-1571), so captions under floatrow, wrapfig, rotating, sidecap and threeparttable stopped (190 branches).",
+  "class": "mnras",
+  "options": [],
+  "preamble": [
+    "\\AddToHook{package/natbib/before}{\\let\\bibhang\\relax}\\AddToHook{package/biblatex/before}{\\let\\bibhang\\relax}",
+    "\\makeatletter\\newif\\if@titlepage\\makeatother",
+    "\\providecommand\\abstractname{Abstract}\\providecommand\\contentsname{Contents}\\providecommand\\listfigurename{List of Figures}\\providecommand\\listtablename{List of Tables}\\providecommand\\appendixname{Appendix}",
+    "\\makeatletter\\long\\def\\@titleone#1{\\gdef\\@title{#1}\\gdef\\@shorttitle{#1}}\\long\\def\\@titletwo[#1]#2{\\gdef\\@title{#2}\\gdef\\@shorttitle{#1}}\\makeatother",
+    "\\makeatletter\\protected\\def\\cite {\\def\\citename##1{##1}\\@internalcite}\\protected\\def\\shortcite{\\def\\citename##1{}\\@internalcite}\\makeatother",
+    "\\makeatletter\\long\\def\\mnras@makecaption#1#2{\\@ifundefined{SFB@make\\@captype caption}{\\SFB@makefigurecaption}{\\@nameuse{SFB@make\\@captype caption}}{#1}{#2}}\\AtBeginDocument{\\@ifundefined{@makecaption}{\\let\\@makecaption\\mnras@makecaption}{}\\@ifundefined{abovecaptionskip}{\\newskip\\abovecaptionskip}{}\\@ifundefined{belowcaptionskip}{\\newskip\\belowcaptionskip}{}}\\makeatother"
+  ],
+  "files": [],
+  "setups": [
+    "A"
+  ]
+}

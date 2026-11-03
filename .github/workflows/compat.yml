@@ -1,0 +1,486 @@
+# The matrix on GitHub's runners (testing-pipeline/BATCHES.md): a plan job checks the
+# library (nothing compiles) and files once, one job per class setting and setup
+# of the current batch compiles, and a last job sums them up.
+#
+# The store's results live in the Actions cache (`store-v1-<run>`): every pair
+# job starts from the newest, and the summary job saves it again with what the
+# run compiled, so a later run compiles only the documents whose LaTeX changed.
+# The first run starts from the release `store-seed` (encrypted). Between the
+# jobs the rest moves as artifacts (`index`, `pair-<class>.<setup>`,
+# `log-<class>.<setup>`, `summary`, `diff`, `triage`), each sealed with
+# FLOUEST_KEY by ci/seal.sh; `ci/fetch-run.sh` brings a run back.
+#
+# The engine and the host the pipeline tests against are not public. Each job
+# that needs them checks out the private companion repository (secret
+# PRIVATE_DEPLOY_KEY, a read-only deploy key) over this one; FLOUEST_KEY opens
+# what it holds. A crash prints no source line (ci/no-source.cjs). The engine's
+# TeX packages come from the release miktex-<snapshot>. Nothing compiles with a
+# timer: timeout-minutes ends a job, not a compile.
+name: compat
+
+on:
+  push:
+    branches: [latex-ci, latex-ci-keys]
+  workflow_dispatch:
+    inputs:
+      pairs:
+        description: "batch:current, batch:<id>, all, or class and class.setup names, comma-separated"
+        default: batch:current
+      engines:
+        description: "engines per job (a runner has 4 cores and 16 GB; Node takes 8 GB)"
+        default: "3"
+      bisect:
+        description: "compiles each pair may spend splitting documents that failed with an untied error (ci/bisect.ts); 0 for none"
+        default: "120"
+
+permissions:
+  contents: read
+
+# A newer push replaces a run still going: filing happens once per run, in its plan job.
+concurrency:
+  group: compat-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_HEAP_MB: "8192"
+  QUIET: "1"
+  ENGINES: ${{ inputs.engines || '3' }}
+  CHROME_VERSION: "156.0.8078.80"
+  BISECT_BUDGET: ${{ inputs.bisect || '120' }}
+
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    outputs:
+      pairs: ${{ steps.plan.outputs.pairs }}
+    steps:
+      - name: The secrets are set
+        env:
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+          PRIVATE_DEPLOY_KEY: ${{ secrets.PRIVATE_DEPLOY_KEY }}
+        run: |
+          for name in FLOUEST_KEY PRIVATE_DEPLOY_KEY; do
+            if [ -z "${!name}" ]; then
+              echo "::error::The repository secret $name is not set: add it (Settings > Secrets and variables > Actions), then re-run this workflow."
+              exit 1
+            fi
+          done
+      - uses: actions/checkout@v4
+      # The private companion repository's files, over this checkout (the host, the engine archive, the docs).
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/Latex-lib-private
+          ref: ci-private
+          ssh-key: ${{ secrets.PRIVATE_DEPLOY_KEY }}
+          persist-credentials: false
+          path: .private
+      - name: Private files
+        run: |
+          tar -C .private --exclude=.git -cf - . | tar -xf -
+          rm -rf .private
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Flouest
+        env:
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+          FLOUEST_ARCHIVE: ${{ github.workspace }}/testing-pipeline/ci/flouest.tar.gz.enc
+        run: bash testing-pipeline/ci/setup-linux.sh fetch
+      # Flouest's installed app (node_modules) between jobs and runs: the same archive installs the same tree.
+      # Saved right after the install, so a later failure in the job does not lose it.
+      - id: modules
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.workspace }}/StartUp/Flouest-dev-main/app/node_modules
+          key: flouest-app-modules-${{ runner.os }}-${{ hashFiles('testing-pipeline/ci/flouest.tar.gz.enc') }}
+      - name: Install
+        run: bash testing-pipeline/ci/setup-linux.sh install
+      - if: steps.modules.outputs.cache-hit != 'true'
+        continue-on-error: true
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ runner.workspace }}/StartUp/Flouest-dev-main/app/node_modules
+          key: flouest-app-modules-${{ runner.os }}-${{ hashFiles('testing-pipeline/ci/flouest.tar.gz.enc') }}
+      - name: Checks (nothing compiles)
+        run: |
+          (cd Latex-Lib && npm test && npm run verify)
+          (cd testing-pipeline && npm test)
+      # The engine's TeX packages from our own copy (release miktex-<snapshot>), never from a Flouest server.
+      - name: TeX packages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash testing-pipeline/ci/packages.sh install
+      # The newest store first, so everything this job compiles (oracle, smoke) only adds to it. The first run
+      # with no store in the cache starts from the seed.
+      - id: store
+        if: github.ref_name == 'latex-ci'
+        uses: actions/cache/restore@v4
+        with:
+          path: testing-pipeline/out/results
+          key: store-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: store-v1-
+      - id: seed
+        name: Seed the store
+        if: github.ref_name == 'latex-ci' && steps.store.outputs.cache-matched-key == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+        run: |
+          mkdir -p testing-pipeline/out/results
+          if gh release view store-seed --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
+            gh release download store-seed --repo "$GITHUB_REPOSITORY" --pattern 'store-seed.tar.gz.enc.part*' --dir "$RUNNER_TEMP/seed"
+            cat "$RUNNER_TEMP"/seed/store-seed.tar.gz.enc.part* | openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:FLOUEST_KEY | tar -xz -C testing-pipeline/out
+            echo "seed: $(find testing-pipeline/out/results -name '*.json.gz' | wc -l) results"
+          else
+            echo "seed: no release store-seed"
+          fi
+      # The engine and the judge work before any pair compiles: 16 seeded cases with known outcomes (README step 5).
+      - name: Oracle
+        working-directory: testing-pipeline
+        env:
+          NODE_OPTIONS: --require ${{ github.workspace }}/testing-pipeline/ci/no-source.cjs
+        run: |
+          mkdir -p out/logs
+          npm run --silent compat -- oracle > out/logs/oracle.log 2>&1 || { grep -E 'asserted cases|^Step|^[A-Za-z]*Error: ' out/logs/oracle.log | tail -20 | cut -c1-200; echo "oracle: failed; the whole log is in the sealed artifact log-oracle"; exit 1; }
+          tail -5 out/logs/oracle.log | cut -c1-200
+      - name: Seal log-oracle
+        if: always()
+        env:
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+        run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/log-oracle.tar.gz.enc" testing-pipeline/out logs/oracle.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: log-oracle
+          path: ${{ runner.temp }}/sealed/log-oracle.tar.gz.enc
+          if-no-files-found: ignore
+          retention-days: 30
+      - name: Plan and file
+        id: plan
+        env:
+          PAIRS: ${{ inputs.pairs || 'batch:current' }}
+          NODE_OPTIONS: --require ${{ github.workspace }}/testing-pipeline/ci/no-source.cjs
+        run: |
+          bash testing-pipeline/ci/run-pairs.sh plan --pairs-out "$RUNNER_TEMP/pairs.json" $PAIRS
+          echo "pairs=$(cat "$RUNNER_TEMP/pairs.json")" >> "$GITHUB_OUTPUT"
+      - name: Seal index
+        env:
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+        run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/index.tar.gz.enc" testing-pipeline/out manifest.jsonl documents
+      - uses: actions/upload-artifact@v4
+        with:
+          name: index
+          path: ${{ runner.temp }}/sealed/index.tar.gz.enc
+          if-no-files-found: error
+          retention-days: 30
+      # Static checks on the emitted LaTeX under article A, compiling nothing (ci/lint.ts): the same package
+      # loaded with two option sets, a package the class refuses, unbalanced groups, a paragraph break in an
+      # argument that cannot take one. A report on the run's page, not a gate.
+      - name: Lint
+        if: github.ref_name == 'latex-ci'
+        continue-on-error: true
+        working-directory: testing-pipeline
+        env:
+          NODE_OPTIONS: --max-old-space-size=8192 --require ${{ github.workspace }}/testing-pipeline/ci/no-source.cjs
+        run: |
+          mkdir -p out/logs
+          npm run --silent compat -- ci/lint.ts --classes article --setups A --out out/logs/lint-article.A.md > out/logs/lint.log 2>&1 || true
+          grep -E '^lint' out/logs/lint.log | cut -c1-200 || true
+          if [ -f out/logs/lint-article.A.md ]; then { echo; head -c 20000 out/logs/lint-article.A.md; } >> "$GITHUB_STEP_SUMMARY"; fi
+      # Every handler alone under article A before the matrix: the run stops here if the engine or its
+      # setup is broken (a package it cannot get, a crashed page), not after every pair has tried.
+      - name: Smoke
+        if: github.ref_name == 'latex-ci'
+        env:
+          NODE_OPTIONS: --require ${{ github.workspace }}/testing-pipeline/ci/no-source.cjs
+        run: bash testing-pipeline/ci/run-pairs.sh smoke
+      # The store with the seed and what this job compiled, for the pair jobs: only when the store was restored
+      # or seeded, so a job that stopped early never leaves a nearly empty store as the newest.
+      - if: always() && github.ref_name == 'latex-ci' && steps.store.outcome == 'success' && (steps.store.outputs.cache-matched-key != '' || steps.seed.outcome == 'success')
+        continue-on-error: true
+        uses: actions/cache/save@v4
+        with:
+          path: testing-pipeline/out/results
+          key: store-v1-plan-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Seal log-plan
+        if: always()
+        env:
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+        run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/log-plan.tar.gz.enc" testing-pipeline/out 'logs/lint*' logs/smoke.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: log-plan
+          path: ${{ runner.temp }}/sealed/log-plan.tar.gz.enc
+          if-no-files-found: ignore
+          retention-days: 30
+
+  pair:
+    needs: plan
+    if: github.ref_name != 'latex-ci-keys'
+    name: ${{ matrix.class }}.${{ matrix.setup }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      max-parallel: 40
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.pairs) }}
+    env:
+      PAIR: ${{ matrix.class }}.${{ matrix.setup }}
+    steps:
+      - uses: actions/checkout@v4
+      # The private companion repository's files, over this checkout (the host, the engine archive, the docs).
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/Latex-lib-private
+          ref: ci-private
+          ssh-key: ${{ secrets.PRIVATE_DEPLOY_KEY }}
+          persist-credentials: false
+          path: .private
+      - name: Private files
+        run: |
+          tar -C .private --exclude=.git -cf - . | tar -xf -
+          rm -rf .private
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Flouest
+        env:
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+          FLOUEST_ARCHIVE: ${{ github.workspace }}/testing-pipeline/ci/flouest.tar.gz.enc
+        run: bash testing-pipeline/ci/setup-linux.sh fetch
+      - id: modules
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.workspace }}/StartUp/Flouest-dev-main/app/node_modules
+          key: flouest-app-modules-${{ runner.os }}-${{ hashFiles('testing-pipeline/ci/flouest.tar.gz.enc') }}
+      - name: Install
+        run: bash testing-pipeline/ci/setup-linux.sh install
+      - if: steps.modules.outputs.cache-hit != 'true'
+        continue-on-error: true
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ runner.workspace }}/StartUp/Flouest-dev-main/app/node_modules
+          key: flouest-app-modules-${{ runner.os }}-${{ hashFiles('testing-pipeline/ci/flouest.tar.gz.enc') }}
+      - name: TeX packages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash testing-pipeline/ci/packages.sh install
+      - uses: actions/download-artifact@v4
+        with:
+          name: index
+          path: ${{ runner.temp }}/opened-index
+      - name: Open index
+        env:
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+        run: bash testing-pipeline/ci/seal.sh open testing-pipeline/out "$RUNNER_TEMP"/opened-index/*.tar.gz.enc
+      - uses: actions/cache/restore@v4
+        with:
+          path: testing-pipeline/out/results
+          key: store-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: store-v1-
+      - id: profiles
+        uses: actions/cache/restore@v4
+        with:
+          path: testing-pipeline/out/_shared
+          key: zerotex-profiles-e${{ env.ENGINES }}-c${{ env.CHROME_VERSION }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: zerotex-profiles-e${{ env.ENGINES }}-c${{ env.CHROME_VERSION }}-
+      - name: Compile
+        id: compile
+        env:
+          NODE_OPTIONS: --require ${{ github.workspace }}/testing-pipeline/ci/no-source.cjs
+        run: |
+          mkdir -p testing-pipeline/out/results
+          echo "store: $(find testing-pipeline/out/results -name '*.json.gz' | wc -l) results from the cache"
+          touch testing-pipeline/out/.restored
+          bash testing-pipeline/ci/run-pairs.sh run "$PAIR"
+      # Documents that failed with an error the judge could tie to no branch are split under this pair, one per
+      # symptom group, until the branch (or the branches together) causing it is found (ci/bisect.ts). Its trial
+      # compiles go into the store; its report goes up with the pair's log.
+      - name: Bisect
+        if: always() && steps.compile.outcome != 'skipped' && env.BISECT_BUDGET != '0'
+        continue-on-error: true
+        working-directory: testing-pipeline
+        env:
+          NODE_OPTIONS: --max-old-space-size=8192 --require ${{ github.workspace }}/testing-pipeline/ci/no-source.cjs
+        run: |
+          mkdir -p out/logs
+          npm run --silent compat -- ci/bisect.ts --library --classes "${PAIR%.*}" --setups "${PAIR##*.}" --budget "$BISECT_BUDGET" --out "out/logs/bisect-$PAIR.json" > "out/logs/bisect-$PAIR.log" 2>&1 || true
+          grep -E '^bisect' "out/logs/bisect-$PAIR.log" | cut -c1-300 || true
+      - name: Gather
+        if: always()
+        run: |
+          cd testing-pipeline/out
+          mkdir -p upload/results upload/ledger.d results logs
+          # Only what this job compiled goes up; the rest came from the cache.
+          if [ -f .restored ]; then
+            find results -maxdepth 1 -name '*.json.gz' -newer .restored -print0 | xargs -0 -r cp -t upload/results/
+          fi
+          echo "gather: $(ls upload/results | wc -l) new results"
+          if [ -f ledger.jsonl ]; then mv ledger.jsonl "upload/ledger.d/$PAIR.jsonl"; fi
+          # The profiles keep only the engine's stores: not Chrome's HTTP caches (they can hold the engine page's
+          # script) and not its lock files (a profile restored with them looks in use).
+          if [ -d _shared ]; then
+            find _shared -type d \( -name Cache -o -name 'Code Cache' -o -name GPUCache \) -prune -exec rm -rf {} +
+            find _shared -maxdepth 2 -name 'Singleton*' -exec rm -f {} +
+          fi
+      - name: Seal pair
+        if: always()
+        env:
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+        run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/pair-${{ env.PAIR }}.tar.gz.enc" testing-pipeline/out/upload results ledger.d
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pair-${{ env.PAIR }}
+          path: ${{ runner.temp }}/sealed/pair-${{ env.PAIR }}.tar.gz.enc
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Seal log
+        if: always()
+        env:
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+        run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/log-${{ env.PAIR }}.tar.gz.enc" testing-pipeline/out logs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: log-${{ env.PAIR }}
+          path: ${{ runner.temp }}/sealed/log-${{ env.PAIR }}.tar.gz.enc
+          if-no-files-found: warn
+          retention-days: 30
+      - if: always() && steps.profiles.outputs.cache-hit != 'true'
+        continue-on-error: true
+        uses: actions/cache/save@v4
+        with:
+          path: testing-pipeline/out/_shared
+          key: zerotex-profiles-e${{ env.ENGINES }}-c${{ env.CHROME_VERSION }}-${{ github.run_id }}-${{ github.run_attempt }}
+
+  summary:
+    needs: [plan, pair]
+    if: always() && github.ref_name != 'latex-ci-keys'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      # The store with everything this run compiled, for the next run: saved first, so no report can lose it,
+      # and only when the plan job ran through (its store is the base the pairs added to).
+      - id: store
+        uses: actions/cache/restore@v4
+        with:
+          path: testing-pipeline/out/results
+          key: store-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: store-v1-
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: pair-*
+          merge-multiple: true
+          path: ${{ runner.temp }}/opened-pairs
+      - name: Open pairs
+        env:
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+        run: bash testing-pipeline/ci/seal.sh open testing-pipeline/out "$RUNNER_TEMP"/opened-pairs/*.tar.gz.enc
+      - name: Store size
+        run: |
+          echo "store: $(find testing-pipeline/out/results -name '*.json.gz' 2>/dev/null | wc -l) results"
+      - if: needs.plan.result == 'success' && steps.store.outputs.cache-matched-key != ''
+        uses: actions/cache/save@v4
+        with:
+          path: testing-pipeline/out/results
+          key: store-v1-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: log-*
+          merge-multiple: true
+          path: ${{ runner.temp }}/opened-logs
+      - name: Open logs
+        env:
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+        run: bash testing-pipeline/ci/seal.sh open . "$RUNNER_TEMP"/opened-logs/*.tar.gz.enc
+      - name: Sum up
+        run: |
+          {
+            echo "## compat run"
+            echo
+            echo '| pair | run | solo | bisect |'
+            echo '|---|---|---|---|'
+            for log in logs/run-*.log; do
+              [ -f "$log" ] || continue
+              pair=${log#logs/run-}; pair=${pair%.log}
+              line=$(grep -E "^  $pair " "$log" | head -1 | sed -E 's/^ +[^ ]+ +//' | cut -c1-140)
+              solo=$(grep -E "^  $pair " "$log" | sed -n 2p | sed -E 's/^ +[^ ]+ +//' | cut -c1-140)
+              bisect=$(grep -E "^bisect: $pair: [0-9]+ group" "logs/bisect-$pair.log" 2>/dev/null | head -1 | sed -E 's/^bisect: [^:]+: //' | cut -c1-160)
+              echo "| $pair | ${line:-(no summary: see its log)} | $solo | $bisect |"
+            done
+          } | tee summary.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Seal summary
+        env:
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+        run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/summary.tar.gz.enc" . summary.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: summary
+          path: ${{ runner.temp }}/sealed/summary.tar.gz.enc
+          if-no-files-found: warn
+          retention-days: 30
+      # What changed since the previous run, branch by branch (ci/diff.mjs): newly passing, newly failing, by way.
+      # The previous run's verdicts come from the cache; the document files (for the ways) from the plan's index.
+      - uses: actions/download-artifact@v4
+        with:
+          name: index
+          path: ${{ runner.temp }}/opened-index
+      - name: Open index
+        env:
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+        run: bash testing-pipeline/ci/seal.sh open testing-pipeline/out "$RUNNER_TEMP"/opened-index/*.tar.gz.enc
+      - id: verdicts
+        uses: actions/cache/restore@v4
+        with:
+          path: testing-pipeline/out/verdicts-cache
+          key: verdicts-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: verdicts-v1-
+      - name: Diff
+        id: diff
+        continue-on-error: true
+        run: |
+          node testing-pipeline/ci/diff.mjs testing-pipeline/out --previous testing-pipeline/out/verdicts-cache/verdicts.json.gz > /dev/null
+          if [ -f testing-pipeline/out/diff.md ]; then { echo; head -c 30000 testing-pipeline/out/diff.md; } >> "$GITHUB_STEP_SUMMARY"; else echo "diff: first run, nothing to compare" >> "$GITHUB_STEP_SUMMARY"; fi
+          mkdir -p testing-pipeline/out/verdicts-cache
+          cp testing-pipeline/out/verdicts.json.gz testing-pipeline/out/verdicts-cache/verdicts.json.gz
+      - name: Seal diff
+        if: always()
+        env:
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+        run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/diff.tar.gz.enc" testing-pipeline/out diff.md verdicts.json.gz
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: diff
+          path: ${{ runner.temp }}/sealed/diff.tar.gz.enc
+          if-no-files-found: ignore
+          retention-days: 30
+      - if: needs.plan.result == 'success' && steps.diff.outcome == 'success'
+        uses: actions/cache/save@v4
+        with:
+          path: testing-pipeline/out/verdicts-cache
+          key: verdicts-v1-${{ github.run_id }}-${{ github.run_attempt }}
+      # Every failing cell of the run grouped by its first TeX error, biggest group first, with an example log:
+      # where fixing starts (BATCHES.md step 6). The head goes on the run's page; the whole report is `triage`.
+      - name: Triage
+        continue-on-error: true
+        run: |
+          node testing-pipeline/ci/triage.mjs testing-pipeline/out > /dev/null
+          { echo; head -c 60000 testing-pipeline/out/triage.md; } >> "$GITHUB_STEP_SUMMARY"
+      - name: Seal triage
+        if: always()
+        env:
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+        run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/triage.tar.gz.enc" testing-pipeline/out triage.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: triage
+          path: ${{ runner.temp }}/sealed/triage.tar.gz.enc
+          if-no-files-found: warn
+          retention-days: 30

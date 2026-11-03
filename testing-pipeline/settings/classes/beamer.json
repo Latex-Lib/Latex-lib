@@ -1,0 +1,15 @@
+{
+  "id": "beamer",
+  "description": "The beamer presentation class: frames, its own theorem blocks; one column only. The host sets every document's body on the page, never in a frame, so three things beamer does only in a frame, or only for the PDF's metadata, are set here. \\beamer@cramped is defined empty, as each frame's start defines it: beamer's itemize, enumerate and description call it, and outside a frame they stopped at 'Undefined control sequence' (beamer.A, batch 3b: 722 branches in 220 documents). \\beamer@smuggle moves a skip past its markers only in internal vertical mode, where it can: on the main vertical list the skip is already on the page, and a theorem block stopped at 'You can't use \\unskip in vertical mode' (1,773 branches in 92 documents). usepdftitle=false keeps \\title out of hyperref's PDF title, which beamer otherwise sets from \\inserttitle at \\begin{document}: General's title ends its \\parbox with \\par, which no PDF string takes ('Paragraph ended before \\HyPsd@@ProtectSpacesFi was complete': 19 of 19 documents holding it stopped), and a marked title's \\ul stopped there too (24 documents). It also drops the PDF's author, which nothing judges. Past \\begin{document}, General's title is still expected to overflow: its box is \\linewidth wide inside beamer's title template, which insets it by 8pt on each side (about 16pt over; owner decision O-T).",
+  "class": "beamer",
+  "options": [
+    "usepdftitle=false"
+  ],
+  "preamble": [
+    "\\makeatletter\\providecommand\\beamer@cramped{}\\patchcmd\\beamer@smuggle{\\ifvmode\\unskip\\fi}{\\ifvmode\\ifinner\\unskip\\fi\\fi}{}{}\\patchcmd\\beamer@smuggle{\\ifvmode\\vskip\\beamer@lastskipcover\\fi}{\\ifvmode\\ifinner\\vskip\\beamer@lastskipcover\\fi\\fi}{}{}\\makeatother"
+  ],
+  "files": [],
+  "setups": [
+    "A"
+  ]
+}

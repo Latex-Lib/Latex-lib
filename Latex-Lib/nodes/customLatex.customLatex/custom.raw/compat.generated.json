@@ -1,0 +1,69 @@
+{
+  "handler": "custom.raw",
+  "node": "customLatex/customLatex",
+  "generatedFrom": {
+    "key": "sha256:40b805cc03b53f2577891ceb631a130af7f158cba8a9ccec0b8338682696780a",
+    "contexts": "sha256:3b1c0a9499ced9640cf7d828561bbbda80daf5d7787b89c71686d6350c970af4",
+    "matrix": null
+  },
+  "parents": {
+    "paragraph/paragraph": {
+      "para.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "paragraph/lstParagraph": {
+      "list.item": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "paragraph/refPara": {
+      "bib.entry": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "paragraph/title": {
+      "front.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.koma-title": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.maketitle": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.titlepage-env": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.titling": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "codeEscape/codeEscape": {
+      "code.escape": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    }
+  },
+  "packageCombos": {
+    "deny": []
+  }
+}

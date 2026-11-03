@@ -1,0 +1,15 @@
+{
+  "id": "thuthesis",
+  "description": "thuthesis 7.7.1 (2026/05/26, CTAN and MiKTeX), the Tsinghua University thesis class. It is built on ctexbook, needs XeLaTeX or LuaLaTeX, and is one column with chapters. degree=bachelor gives the one-page undergraduate cover: the graduate degrees add an English title page, and every cover field has a default value, so \\maketitle needs no \\thusetup. fontset=fandol picks the Fandol CJK fonts and TeX Gyre Latin fonts, so nothing depends on which system fonts are installed. math-font=none stops the class loading unicode-math with XITS at the end of the preamble: that code runs \\newcommand\\square, which fails once the document has loaded amssymb.",
+  "class": "thuthesis",
+  "options": [
+    "degree=bachelor",
+    "fontset=fandol",
+    "math-font=none"
+  ],
+  "preamble": [],
+  "files": [],
+  "setups": [
+    "A"
+  ]
+}
