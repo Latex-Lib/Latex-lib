@@ -10,8 +10,8 @@
 # the host's macros, so they never go to a public repository), the probe workflow is started (on latex-ci, or
 # on main while latex-ci does not have it yet) in --repo (Latex-Lib/Latex-lib by default), and, unless
 # --no-wait, it waits for the run and brings it back with ci/fetch-run.sh into --out
-# (C:/dev/template-ai/probes/<run> by default): probe/<case>/ with main.log, main.pdf, main.aux, main.bbl,
-# main.blg and result.json, and each job's log. --shards is how many jobs share the cases (one per 15 cases by
+# (C:/dev/template-ai/probes/<run> by default): probe/<case>/ with main.log, main.pdf, main.aux, main.bbl
+# and result.json (main.blg too if the engine ever keeps it), and each job's log. --shards is how many jobs share the cases (one per 15 cases by
 # default, at most 40). The key that opens the outputs is FLOUEST_KEY or the file FLOUEST_KEY_FILE names. It
 # touches no store and no batch run.
 set -euo pipefail
@@ -66,6 +66,7 @@ echo "probe: $n cases, $shards job(s), on $repo"
 
 # The cases to the private companion, as one commit of their own.
 git -C "$tmp" init -q
+git -C "$tmp" config core.autocrlf false
 git -C "$tmp" add -A
 git -C "$tmp" -c user.name="${GIT_AUTHOR_NAME:-probe}" -c user.email="${GIT_AUTHOR_EMAIL:-probe@localhost}" commit -q -m "probe: $n cases"
 git -C "$tmp" push -q --force "https://github.com/$private_repo.git" HEAD:refs/heads/probe-cases

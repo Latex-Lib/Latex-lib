@@ -133,7 +133,7 @@ plan() {
         owner.set(c, r.repository);
       }
     }
-    // An entry is a class or one class.setup pair (ci/balance.mjs); the pair's own entry wins.
+    // An entry is a class or one class.setup pair (ci/balance.mjs); the entry for the pair itself wins.
     const ownerOf = (p) => owner.get(p) ?? owner.get(classOf(p)) ?? runners.default;
     const here = process.env.GITHUB_REPOSITORY;
     const same = (a, b) => a.toLowerCase() === b.toLowerCase();
