@@ -25,7 +25,9 @@ export default defineKey(
     // complete", 43769b446a l.290; General code below it 0 of 36). A footnote in it loses its text (0 of 31 footnote
     // containers below it pass, 7 documents, e.g. d427fbe58a7a4d3dc128c result 4ed4a7dc95). General's code, footnote anchors,
     // footnote containers, headings, tables and (since b21) tcolorbox statements are denied below it through GENERAL_NEEDS
-    // (contexts.ts); General's plain statements and lists are not (owner item O7).
+    // (contexts.ts), and since b22 General's plain statements and list items too (owner item O7: a trivlist's \@item and
+    // \@setpar replace vwcol's \everypar and \par, so their lines take the full \linewidth; General's list with no item prints
+    // only its child and is not denied).
     // The library's \linewidth boxes need paragraph too (thm.tcolorbox, box.tcolorbox, box.mdframed, box.awesomebox: 1 of
     // 328 fit article.A branches with one of them below vwcol pass), so they are denied below it as well.
     // Headings need paragraph too (0 of 827 heading branch-cells below vwcol pass over 5 pairs; the 55 head.sectsty@smallcaps \subparagraph passes are run-in titles that never print).

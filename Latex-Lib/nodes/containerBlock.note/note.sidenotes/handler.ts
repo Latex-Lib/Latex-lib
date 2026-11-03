@@ -7,8 +7,9 @@
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
 import { param } from '../../protocol.ts';
-import { titled } from '../node.ts';
+import { FIT_NOTE_COLUMN, titled } from '../node.ts';
 import key from './key.ts';
+import { keepingFootnotes } from '../node.ts';
 
 export const realize = (given: { readonly [name: string]: unknown } = {}): Realization => {
   const p = withDefaults(key.params, given as never) as { readonly [name: string]: unknown };
@@ -21,9 +22,12 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
     // \maxdeadcycles is raised as there, never lowered (mdpi.cls sets 10000).
     preamble: () => ({
       packages: [p['oneside'] === true ? '\\usepackage[oneside]{sidenotes}' : '\\usepackage{sidenotes}'],
-      ...(offset === '' ? { declarations: ['\\ifnum\\maxdeadcycles<1000 \\maxdeadcycles=1000 \\fi'] } : {}),
+      // Either way the note is \marginparwidth wide, fitted to the margin where the class's column is under 2cm or runs off the
+      // paper (b22 MC1, `FIT_NOTE_COLUMN`).
+      declarations: [...(offset === '' ? ['\\ifnum\\maxdeadcycles<1000 \\maxdeadcycles=1000 \\fi'] : []), FIT_NOTE_COLUMN],
     }),
-    emit: (node, content) => `\\sidenote${offset === '' ? '' : `[][${offset}]`}{${titled(node, content)}}`,
+    // A footnote in the note reaches the page's foot: footnotehyper's \savenotes around it (b22 OV2-alt, `keepingFootnotes`).
+    emit: (node, content) => keepingFootnotes(content, `\\sidenote${offset === '' ? '' : `[][${offset}]`}{${titled(node, content)}}`),
   };
 };
 

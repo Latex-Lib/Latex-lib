@@ -1,0 +1,24 @@
+{
+  "id": "acl",
+  "description": "The *ACL style acl.sty (commit 2427282, 2025-08-19; no version line), on plain article, used by ACL, EMNLP, NAACL, EACL, AACL and Findings. Not on CTAN or the engine's mirror: from github.com/acl-org/acl-style-files. 11pt as the official template sets it. With no option the style is in final mode (its default): authors shown, no line numbers, no page numbers. Two columns on A4: it calls \\twocolumn and loads geometry with a4paper and margin=2.5cm, and it loads natbib, caption, xcolor and hyperref (unless nohyperref). Its only TFM font, \\font\\aclhv = phvb at 8pt, is for review-mode line numbers. The repository has a separate XeLaTeX/LuaLaTeX template (acl_lualatex.tex) that sets TeX Gyre Termes X with babel; the font choice is left to the document.",
+  "class": "article",
+  "options": [
+    "11pt"
+  ],
+  "preamble": [
+    "\\usepackage[final]{acl}"
+  ],
+  "files": [
+    {
+      "path": "acl.sty",
+      "sha256": "19dfeddc2c0e448f3926a0bef048a9db3f3611b46265b760caabd7ada4f361de"
+    },
+    {
+      "path": "acl_natbib.bst",
+      "sha256": "6fbb306202290f4b68e74ac1460a8b27398500cb6dfeb4492e74c457eae7cd1e"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

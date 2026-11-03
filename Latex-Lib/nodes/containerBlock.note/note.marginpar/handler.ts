@@ -7,8 +7,9 @@
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
 import { param } from '../../protocol.ts';
-import { titled } from '../node.ts';
+import { FIT_NOTE_COLUMN, NOTE_WIDTH_GIVEN, titled } from '../node.ts';
 import key from './key.ts';
+import { keepingFootnotes } from '../node.ts';
 
 export const ALIGN: { readonly [align: string]: string } = { ragged: '\\raggedright', justified: '', center: '\\centering' };
 
@@ -23,14 +24,17 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
     // lowered: mdpi.cls sets 10000 (l.590), lineno adds 100 (lineno.sty l.3283).
     '\\ifnum\\maxdeadcycles<1000 \\maxdeadcycles=1000 \\fi',
     ...(param(p, 'side', 'outer') === 'reverse' ? ['\\reversemarginpar'] : []),
-    ...(param(p, 'width') === '' ? [] : [`\\setlength{\\marginparwidth}{${param(p, 'width')}}`]),
+    ...(param(p, 'width') === '' ? [] : [`\\setlength{\\marginparwidth}{${param(p, 'width')}}`, NOTE_WIDTH_GIVEN]),
     ...(param(p, 'sep') === '' ? [] : [`\\setlength{\\marginparsep}{${param(p, 'sep')}}`]),
+    // The class's column fitted to the margin where it is under 2cm or runs off the paper (b22 MC1, `FIT_NOTE_COLUMN`).
+    FIT_NOTE_COLUMN,
   ];
   // A reversed note sits left of the text, so ragged means flush against it.
   const align = param(p, 'side', 'outer') === 'reverse' && param(p, 'align', 'ragged') === 'ragged' ? '\\raggedleft' : ALIGN[param(p, 'align', 'ragged')] ?? '';
   return {
     preamble: () => ({ declarations }),
-    emit: (node, content) => `\n\\marginpar{${param(p, 'font')}${align}\n${p['title'] === false ? content.trim() || '\\mbox{}' : titled(node, content)}}\n`,
+    // A footnote in the note reaches the page's foot: footnotehyper's \savenotes around it (b22 OV2-alt, `keepingFootnotes`).
+    emit: (node, content) => keepingFootnotes(content, `\n\\marginpar{${param(p, 'font')}${align}\n${p['title'] === false ? content.trim() || '\\mbox{}' : titled(node, content)}}\n`),
   };
 };
 

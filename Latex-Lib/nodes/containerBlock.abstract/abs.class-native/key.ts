@@ -7,7 +7,7 @@ export default defineKey(
     id: 'abs.class-native',
     node: 'containerBlock/abstract',
     description:
-      "The class's own abstract, unstyled: \\begin{abstract} … \\end{abstract} as acmart, IEEEtran or elsarticle print it, or \\abstract{…} in the preamble where the class makes it a command that \\maketitle prints (sn-jnl, mdpi, aa). 140 templates.",
+      "The class's own abstract, unstyled: \\begin{abstract} … \\end{abstract} as acmart, IEEEtran or elsarticle print it, or \\abstract{…} in the preamble where the class makes it a command that \\maketitle prints (sn-jnl, mdpi, aa). Where the class keeps the environment's abstract for \\maketitle (amsart, elsarticle, acmart, cas), the class's own code prints it where it stands; the command's too under sn-jnl and aa, in a document with no title yet. 140 templates.",
     ctan: ['latex-base'],
     features: ['class-styled'],
     params: {
@@ -53,6 +53,19 @@ export default defineKey(
         unless: { form: 'command' },
         reason: "sn-jnl's \\abstract is a one-argument command that \\maketitle prints, so \\begin{abstract} stores only the first token and prints the rest as body text, with no heading",
         evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/sn-jnl.cls', line: '631-635 (CR line ends)' }],
+      },
+      {
+        // b22 (owner items R3, R3/O3 under aastex): an interim deny until Flouest prints one \maketitle after all front matter (revtex O3).
+        class: 'class.revtex4-2',
+        reason:
+          "revtex4-2 keeps the abstract in \\absbox for \\maketitle (revtex4-2.cls l.2548-2574, l.2629-2654) and undefines the environment after it (l.2685): a title-first abstract stops at \"Environment abstract undefined\", a title-less one never prints, and the box is set at \\textwidth, for aps 400pt centred (aps4-2.rtx l.148-160), which a two-column page cannot take in place",
+        evidence: [{ kind: 'source', file: 'revtex4-2.cls (MiKTeX package revtex)', line: '2548-2574, 2629-2654, 2685' }],
+      },
+      {
+        class: 'class.aastex',
+        reason:
+          "aastex701 keeps the abstract in \\absbox for \\maketitle (aastex701.cls l.2342-2373), its first \\section calls \\maketitle itself (l.7583-7593) and that \\maketitle undefines the environment (l.13248), so an abstract after a heading or a title stops at \"Environment abstract undefined\" and one in a document with neither never prints",
+        evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/aastex701.cls', line: '2342-2373, 7583-7593, 13248' }],
       },
       {
         class: 'class.mdpi',

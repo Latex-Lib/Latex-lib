@@ -27,6 +27,14 @@
 # result once instead of each pair's own. The store variables are
 # ci/store.sh's. Node options already set (the workflow's crash guard,
 # ci/no-source.cjs) are kept.
+#
+# On GitHub (GITHUB_REPOSITORY set) plan keeps only the pairs of the classes
+# this repository runs (settings/runners.json): `all` and `batch:` keep this
+# repository's part, a class or pair named outright that another repository
+# runs stops the plan. Elsewhere it keeps every pair. It writes the run record
+# out/runs/<owner>--<name>.json (commit, private commit checked out, what was asked, every
+# pair picked, this repository's, the manifest's sha256), which
+# ci/fetch-run.sh checks before it joins two runs.
 set -euo pipefail
 
 here=$(cd "$(dirname "$0")" && pwd)
@@ -113,10 +121,41 @@ plan() {
   store push-index
   list=$(pairs_of "$out/.all-pairs.json" "$@")
   echo "$list" | node -e '
-    const lines = require("fs").readFileSync(0, "utf8").split("\n").filter(Boolean);
-    console.log(JSON.stringify(lines.map((p) => { const at = p.lastIndexOf("."); return { class: p.slice(0, at), setup: p.slice(at + 1) }; })));
-  ' > "$pairs_out"
-  echo "plan: $(echo "$list" | wc -l) pair(s) in $pairs_out"
+    const fs = require("fs");
+    const picked = fs.readFileSync(0, "utf8").split("\n").filter(Boolean);
+    const asked = process.argv[1].split(/[\s,]+/).filter(Boolean);
+    const classOf = (p) => p.slice(0, p.lastIndexOf("."));
+    const runners = JSON.parse(fs.readFileSync("settings/runners.json", "utf8"));
+    const owner = new Map();
+    for (const r of runners.runners.filter((r) => r.active)) {
+      for (const c of r.classes) {
+        if (owner.has(c)) { console.error(`plan: settings/runners.json gives ${c} to ${owner.get(c)} and ${r.repository}`); process.exit(1); }
+        owner.set(c, r.repository);
+      }
+    }
+    // An entry is a class or one class.setup pair (ci/balance.mjs); the pair's own entry wins.
+    const ownerOf = (p) => owner.get(p) ?? owner.get(classOf(p)) ?? runners.default;
+    const here = process.env.GITHUB_REPOSITORY;
+    const same = (a, b) => a.toLowerCase() === b.toLowerCase();
+    let mine = picked;
+    if (here) {
+      const known = [runners.default, ...owner.values()];
+      if (!known.some((r) => same(r, here))) { console.error(`plan: ${here} runs no classes: it is not the default or an active runner in settings/runners.json`); process.exit(1); }
+      const named = new Set(asked.filter((a) => a !== "all" && !a.startsWith("batch:")));
+      const elsewhere = picked.filter((p) => (named.has(p) || named.has(classOf(p))) && !same(ownerOf(p), here));
+      if (elsewhere.length > 0) { console.error(`plan: ${elsewhere.map((p) => `${p} runs in ${ownerOf(p)}`).join(", ")}; start it there (its store is there)`); process.exit(1); }
+      mine = picked.filter((p) => same(ownerOf(p), here));
+    }
+    const manifest = fs.existsSync("out/manifest.jsonl") ? require("crypto").createHash("sha256").update(fs.readFileSync("out/manifest.jsonl")).digest("hex") : null;
+    // The private commit the job checked out (compat.yml sets PRIVATE_COMMIT), else the one ci/private.ref names.
+    const ref = process.env.PRIVATE_COMMIT || (fs.existsSync("ci/private.ref") ? fs.readFileSync("ci/private.ref", "utf8").trim() : null);
+    const record = { repository: here ?? "local", run: process.env.GITHUB_RUN_ID ?? null, sha: process.env.GITHUB_SHA ?? null, private: ref, asked, picked, mine, manifest };
+    fs.mkdirSync("out/runs", { recursive: true });
+    fs.writeFileSync(`out/runs/${record.repository.replace("/", "--")}.json`, `${JSON.stringify(record, null, 2)}\n`);
+    console.log(JSON.stringify(mine.map((p) => ({ class: classOf(p), setup: p.slice(p.lastIndexOf(".") + 1) }))));
+    console.error(`plan: ${mine.length} of ${picked.length} pair(s) run here${here ? ` (${here})` : ""}`);
+  ' "${*:-all}" > "$pairs_out"
+  echo "plan: the pairs are in $pairs_out"
 }
 
 run() {

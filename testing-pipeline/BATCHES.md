@@ -26,6 +26,10 @@ fixed in one round, closed, and followed by the next. This page is the cycle;
   batch lists the classes it compiles.
 - **why** says why these classes, with their CTAN pages.
 
+Which repository compiles a class is not the batch's business: `settings/runners.json`
+gives each class to one runner repository for good (README step 5a), so a batch
+runs in both at once and its two runs join into one store.
+
 A run compiles every handler under every class of the batch. A handler added in
 batch 3 is also compiled under batch 1's classes when batch 1 is run again;
 that costs only the documents its branches are in.
@@ -141,12 +145,14 @@ needs pdfLaTeX or LuaLaTeX only waits. Classes nobody writes papers in
 
 | Batch | Status | Classes | Added |
 |---|---|---|---|
-| 1 | running | 32 of the first 48 settings: article, report, book, beamer, amsart; revtex4-2 (APS), IEEEtran (journal, conference), aastex, elsarticle (preprint, 5p), cas-sc, cas-dc, acmart (sigconf, manuscript), aa, mnras, llncs, lipics, iopjournal, sn-jnl, siamart, mdpi; scrartcl, scrreprt, scrbook, memoir, exam, extarticle; ctexart, ctexbook, tufte-handout | the first 46 class profiles and every handler of M1/M3 |
-| 2 | planned | revtex4-2 (AIP), acmart (acmsmall), IEEEtran (compsoc); achemso, spie, oup-authoring-template, emulateapj, apa7, jacow, thuthesis, elegantpaper, ut-thesis | 9 classes from CTAN and 3 more settings of batch 1 classes, each under setup A only (their real use is one layout); settings drafted from each class's documentation and source and checked against the source |
+| 1 | running | 30 of the first 48 settings: article, report, book, beamer, amsart; revtex4-2 (APS), IEEEtran (journal, conference), aastex, elsarticle (preprint, 5p), cas-sc, cas-dc, acmart (sigconf, manuscript), aa, mnras, llncs, lipics, iopjournal, sn-jnl, siamart, mdpi; scrartcl, scrreprt, scrbook, memoir, exam, extarticle; tufte-handout | the first 46 class profiles and every handler of M1/M3 |
+| 2 | planned | revtex4-2 (AIP), acmart (acmsmall), IEEEtran (compsoc); achemso, spie, oup-authoring-template, emulateapj, apa7, jacow, elegantpaper, ut-thesis; jmlr (PMLR), quantumarticle, asmejour, asmeconf, ascelike; conference styles on article: NeurIPS, ICML, ICLR, ACL, CVPR, ECCV (on llncs), AAAI, IJCAI, USENIX, ICASSP, AISTATS, COLM, TMLR | 13 classes from CTAN, 13 conference styles (their files private: settings/classes/files/private.txt) and 3 more settings of batch 1 classes, each under setup A only (their real use is one layout); settings drafted from each class's documentation and source and checked against the source |
 
 Left out of batch 1, as rarely used or out of scope (their settings stay, in no
 batch): minimal, ltxdoc, proc; letter, scrlttr2, moderncv; a0poster,
 tikzposter; extbook, extreport, amsbook, amsproc, tufte-book, ctexbeamer,
 ctexrep (a sibling covers each); easychair (not on CTAN, licence unstated).
+Set aside for now as little used outside China (owner, 2026-11-03): ctexart,
+ctexbook (batch 1) and thuthesis (batch 2); their settings stay, in no batch.
 `settings/batches.json` says why for each batch, with the evidence: the ar5iv
 class tally of arXiv sources, publishers' volumes and Overleaf's templates.

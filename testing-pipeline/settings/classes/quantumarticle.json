@@ -1,0 +1,16 @@
+{
+  "id": "quantumarticle",
+  "description": "Quantum's journal class quantumarticle v6.1 (2022/11/08, CTAN and MiKTeX package quantumarticle, LPPL 1.3c), built on article. Options as the journal's template (quantum-template.tex: a4paper,twocolumn,11pt) without its accepted=<date> key, which prints an 'Accepted in Quantum' box for accepted papers; twocolumn is also the class default. a4paper is needed: without a paper size the class stops with a ClassError (quantumarticle.cls l.236-245). nopdfoutputerror is needed under XeTeX: without it the class ends with \\pdfoutput=0 (l.1558), a pdfTeX primitive XeTeX lacks ('Undefined control sequence' in every document), and wraps \\usepackage to stop when \\pdfoutput=1 is missing (l.256-272); the option skips only those two checks. The class loads geometry and fancyhdr itself and silently skips a later \\usepackage of geometry, fancyhdr, titlesec or authblk. It stops with a ClassError on a \\usepackage of a font package (times, mathptmx, lmodern, newtx and others, l.1514-1556), on \\today (an arXiv guard, l.296-308; allowtoday makes it a warning) and on font commands in \\title. At \\begin{document} it loads lmodern, which under XeTeX selects the TU Latin Modern fonts.",
+  "class": "quantumarticle",
+  "options": [
+    "a4paper",
+    "twocolumn",
+    "11pt",
+    "nopdfoutputerror"
+  ],
+  "preamble": [],
+  "files": [],
+  "setups": [
+    "A"
+  ]
+}

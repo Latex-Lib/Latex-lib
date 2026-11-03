@@ -8,8 +8,9 @@
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
 import { param } from '../../protocol.ts';
-import { titled } from '../node.ts';
+import { FIT_NOTE_COLUMN, NOTE_WIDTH_GIVEN, titled } from '../node.ts';
 import key from './key.ts';
+import { keepingFootnotes } from '../node.ts';
 
 const ALIGN: { readonly [align: string]: readonly string[] } = {
   package: [],
@@ -28,12 +29,15 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
     ...(ALIGN[param(p, 'align', 'package')] ?? []),
     ...(param(p, 'vadjust') === '' ? [] : [`\\renewcommand*{\\marginnotevadjust}{${param(p, 'vadjust')}}`]),
     ...(param(p, 'side', 'outer') === 'reverse' ? ['\\reversemarginpar'] : []),
-    ...(param(p, 'width') === '' ? [] : [`\\setlength{\\marginparwidth}{${param(p, 'width')}}`]),
+    ...(param(p, 'width') === '' ? [] : [`\\setlength{\\marginparwidth}{${param(p, 'width')}}`, NOTE_WIDTH_GIVEN]),
+    // The class's column fitted to the margin where it is under 2cm or runs off the paper (b22 MC1, `FIT_NOTE_COLUMN`).
+    FIT_NOTE_COLUMN,
   ];
   const offset = param(p, 'offset');
   return {
-    preamble: () => ({ packages, ...(declarations.length === 0 ? {} : { declarations }) }),
-    emit: (node, content) => `\n\\marginnote{${p['title'] === false ? content.trim() || '\\mbox{}' : titled(node, content)}}${offset === '' ? '' : `[${offset}]`}\n`,
+    preamble: () => ({ packages, declarations }),
+    // A footnote in the note reaches the page's foot: footnotehyper's \savenotes around it, its offset included (b22 OV2-alt).
+    emit: (node, content) => keepingFootnotes(content, `\n\\marginnote{${p['title'] === false ? content.trim() || '\\mbox{}' : titled(node, content)}}${offset === '' ? '' : `[${offset}]`}\n`),
   };
 };
 

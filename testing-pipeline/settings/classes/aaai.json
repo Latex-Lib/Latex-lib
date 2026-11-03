@@ -1,0 +1,25 @@
+{
+  "id": "aaai",
+  "description": "AAAI-27's style file aaai2027.sty ('2027/10/21 AAAI 2027 Submission format'), on plain article. Not on CTAN or the engine's mirror: from AuthorKit27.zip (aaai.org/authorkit27 redirects to wp-content/uploads/2026/10/AuthorKit27.zip). letterpaper as its template sets it. Two columns, set by the style. The style stops under XeTeX by design: it calls iftex's \\RequirePDFTeX (aaai2027.sty l.58-59). So the first preamble line loads iftex first and makes \\RequirePDFTeX do nothing. The style then loads [T1]{fontenc} and newtxtext, which under XeTeX loads fontspec and TeX Gyre Termes X (OpenType, in the mirror's newtx), and sets \\pdfpagewidth/\\pdfpageheight, which XeTeX has. At \\begin{document} it raises a PackageError for each of 17 packages it forbids, by design: hyperref, bbm, authblk, balance, CJK, flushend, fullpage, geometry, navigator, savetrees, setspace, stfloats, tabu, titlesec, tocbibind, ulem and wrapfig (l.433-502). With natbib loaded it sets \\bibliographystyle{aaai2027} itself (l.432), so aaai2027.bst is shipped.",
+  "class": "article",
+  "options": [
+    "letterpaper"
+  ],
+  "preamble": [
+    "\\RequirePackage{iftex}\\let\\RequirePDFTeX\\relax",
+    "\\usepackage{aaai2027}"
+  ],
+  "files": [
+    {
+      "path": "aaai2027.sty",
+      "sha256": "01990f8d3716f8e39c5b28a7478f3ac6e28630d1161de6105a7217f5e7f60e43"
+    },
+    {
+      "path": "aaai2027.bst",
+      "sha256": "5db7765ba99de5c1e4686f9b3940a0add9c5e702f2164514462bec130ccb6e3c"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

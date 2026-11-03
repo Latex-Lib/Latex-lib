@@ -1,0 +1,165 @@
+# A probe (README step 5a, ci/probe.sh): a handful of documents handed in as files, compiled on the engine every
+# pair job uses, each case's outputs sealed and handed back. It never reads or writes the store, and its runs are
+# apart from the batch's (their own workflow, never cancelled by a push).
+#
+# ci/probe.sh pushes the cases to the private companion's branch probe-cases (they are emitted LaTeX, which
+# carries the host's macros) and starts this workflow on latex-ci, so the jobs restore the engine's installed app
+# and its Chrome profiles from the batch runs' caches. Started on main (before latex-ci has this workflow) it
+# keeps caches of its own there, under keys no pair job reads. Each job compiles every n-th case with the
+# host's `compat cases` command and uploads probe-<shard>, sealed with FLOUEST_KEY. ci/probe.sh finds its run by
+# the run name, which carries the cases' commit.
+name: probe
+run-name: probe ${{ inputs.cases }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      cases:
+        description: "the private companion's commit (branch probe-cases) holding probe/<case>/"
+        required: true
+      shards:
+        description: "jobs to share the cases"
+        default: "4"
+      engines:
+        description: "engines per job"
+        default: "3"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: probe-${{ inputs.cases }}
+  cancel-in-progress: false
+
+env:
+  QUIET: "1"
+  ENGINES: ${{ inputs.engines || '3' }}
+  CHROME_VERSION: "156.0.8078.80"
+  RELEASES: Latex-Lib/Latex-lib
+
+jobs:
+  shards:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      list: ${{ steps.list.outputs.list }}
+    steps:
+      - id: list
+        env:
+          SHARDS: ${{ inputs.shards }}
+        run: |
+          case "$SHARDS" in '' | *[!0-9]*) echo "shards: not a number" >&2; exit 1 ;; esac
+          [ "$SHARDS" -ge 1 ] && [ "$SHARDS" -le 40 ] || { echo "shards: 1 to 40" >&2; exit 1; }
+          case "$ENGINES" in '' | *[!0-9]*) echo "engines: not a whole number" >&2; exit 1 ;; esac
+          [ "$ENGINES" -ge 1 ] && [ "$ENGINES" -le 8 ] || { echo "engines: 1 to 8" >&2; exit 1; }
+          echo "list=$(seq 0 $((SHARDS - 1)) | paste -sd, | sed 's/^/[/; s/$/]/')" >> "$GITHUB_OUTPUT"
+
+  probe:
+    needs: shards
+    name: probe ${{ matrix.shard }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: ${{ fromJSON(needs.shards.outputs.list) }}
+    steps:
+      - uses: actions/checkout@v4
+      # The private companion's files at the commit this one names, as in every pair job (compat.yml).
+      - id: private
+        name: The private commit
+        run: echo "ref=$(cat testing-pipeline/ci/private.ref 2>/dev/null || echo ci-private)" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        with:
+          repository: yguo499/Latex-lib-private
+          ref: ${{ steps.private.outputs.ref }}
+          ssh-key: ${{ secrets.PRIVATE_DEPLOY_KEY }}
+          persist-credentials: false
+          path: .private
+      - name: Private files
+        run: |
+          tar -C .private --exclude=.git -cf - . | tar -xf -
+          rm -rf .private
+      # The cases, from the same private companion at the commit ci/probe.sh pushed.
+      - uses: actions/checkout@v4
+        with:
+          repository: yguo499/Latex-lib-private
+          ref: ${{ inputs.cases }}
+          ssh-key: ${{ secrets.PRIVATE_DEPLOY_KEY }}
+          persist-credentials: false
+          path: .cases
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Flouest
+        env:
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+          FLOUEST_ARCHIVE: ${{ github.workspace }}/testing-pipeline/ci/flouest.tar.gz.enc
+        run: bash testing-pipeline/ci/setup-linux.sh fetch
+      - id: modules
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.workspace }}/StartUp/Flouest-dev-main/app/node_modules
+          key: flouest-app-modules-${{ runner.os }}-${{ hashFiles('testing-pipeline/ci/flouest.tar.gz.enc') }}
+          restore-keys: flouest-probe-app-modules-${{ runner.os }}-${{ hashFiles('testing-pipeline/ci/flouest.tar.gz.enc') }}
+      - name: Install
+        run: bash testing-pipeline/ci/setup-linux.sh install
+      # On main (where the batch's caches are out of reach) a probe keeps its own, so the next one starts warm.
+      - if: github.ref_name == 'main' && steps.modules.outputs.cache-matched-key == '' && matrix.shard == 0
+        continue-on-error: true
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ runner.workspace }}/StartUp/Flouest-dev-main/app/node_modules
+          key: flouest-probe-app-modules-${{ runner.os }}-${{ hashFiles('testing-pipeline/ci/flouest.tar.gz.enc') }}
+      - name: TeX packages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash testing-pipeline/ci/packages.sh install
+      - id: profiles
+        uses: actions/cache/restore@v4
+        with:
+          path: testing-pipeline/out/_shared
+          key: zerotex-probe-profiles-e${{ env.ENGINES }}-c${{ env.CHROME_VERSION }}-${{ github.run_id }}
+          restore-keys: |
+            zerotex-profiles-e${{ env.ENGINES }}-c${{ env.CHROME_VERSION }}-
+            zerotex-probe-profiles-e${{ env.ENGINES }}-c${{ env.CHROME_VERSION }}-
+      - name: Compile
+        working-directory: testing-pipeline
+        env:
+          NODE_OPTIONS: --max-old-space-size=8192 --require ${{ github.workspace }}/testing-pipeline/ci/no-source.cjs
+          SHARD: ${{ matrix.shard }}
+          SHARDS: ${{ inputs.shards }}
+        run: |
+          # Counts only on the public console; the whole log is in the sealed artifact.
+          mkdir -p out/probe
+          npm run --silent compat -- cases ../.cases/probe --out out/probe --shard "$SHARD/$SHARDS" --engines "$ENGINES" > "out/probe-$SHARD.log" 2>&1 || { grep -E '^cases:' "out/probe-$SHARD.log" | cut -c1-200; echo "probe: the job stopped; its log is in the sealed artifact probe-$SHARD"; exit 1; }
+          grep -E '^cases:' "out/probe-$SHARD.log" | cut -c1-200
+      - name: Seal probe
+        if: always()
+        env:
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+        run: |
+          rm -rf testing-pipeline/out/probe/.engine-cache
+          bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/probe-${{ matrix.shard }}.tar.gz.enc" testing-pipeline/out probe 'probe-*.log'
+      # Its own key, never the batch's (a pair job takes the newest zerotex-profiles- entry), and only on main.
+      - if: always() && github.ref_name == 'main' && steps.profiles.outputs.cache-matched-key == '' && matrix.shard == 0
+        continue-on-error: true
+        run: |
+          cd testing-pipeline/out
+          if [ -d _shared ]; then
+            find _shared -type d \( -name Cache -o -name 'Code Cache' -o -name GPUCache \) -prune -exec rm -rf {} +
+            find _shared -maxdepth 2 -name 'Singleton*' -exec rm -f {} +
+          fi
+      - if: always() && github.ref_name == 'main' && steps.profiles.outputs.cache-matched-key == '' && matrix.shard == 0
+        continue-on-error: true
+        uses: actions/cache/save@v4
+        with:
+          path: testing-pipeline/out/_shared
+          key: zerotex-probe-profiles-e${{ env.ENGINES }}-c${{ env.CHROME_VERSION }}-${{ github.run_id }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: probe-${{ matrix.shard }}
+          path: ${{ runner.temp }}/sealed/probe-${{ matrix.shard }}.tar.gz.enc
+          if-no-files-found: warn
+          retention-days: 14

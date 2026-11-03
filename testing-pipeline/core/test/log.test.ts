@@ -54,6 +54,86 @@ test("showsLine tells the document's line from a package's line of the same numb
   assert.equal(showsLine(undefined, undefined), true);
 });
 
+test("readLog names the file TeX was reading at an error, from the log's open files, when it is not the document", () => {
+  // A package's name cut at the log's width, as TeX writes it.
+  const cut = `${'x'.repeat(LOG_WIDTH - '(/texmf/tex/latex/ab'.length)}(/texmf/tex/latex/ab`;
+  const log = [
+    '(main.tex',
+    '(/texmf/tex/latex/mnras/mnras.cls',
+    'Document Class: mnras 2023/07/20 v3.2 (see the manual)',
+    ')',
+    cut,
+    'stract/abstract.sty',
+    '! Extra \\else.',
+    'l.62 \\else',
+    '          ',
+    "I'm ignoring this; it doesn't match any \\if (e.g., this).",
+    '',
+    ')',
+    '! Extra \\fi.',
+    '<argument> ...op@@ }\\expandafter \\@firstofone \\fi )',
+    '',
+    'l.19 \\usepackage',
+    '                {enumerate}',
+    '',
+    '(/texmf/tex/latex/tcolorbox/tcolorbox.sty (/texmf/tex/latex/pgf/frontendlayer/tikz.sty',
+    'Runaway argument?',
+    '{escapeinside={(*@}{@ETC.',
+    'Overfull \\hbox (3.0pt too wide) in paragraph at lines 5--6',
+    '[]\\TU/lmr/m/n/10 a box showing an unmatched ) and (two',
+    '',
+    '! Undefined control sequence.',
+    'l.7 \\pgf@x',
+    '',
+    '))',
+    '! Undefined control sequence.',
+    'l.40 \\foo',
+    '',
+  ].join('\n');
+  const [inPackage, back, nested, after] = readLog(log).errors;
+  assert.equal(inPackage?.file, 'abstract.sty');
+  assert.equal(inPackage?.through, 'abstract.sty');
+  assert.equal(back?.file, undefined);
+  assert.equal(back?.line, 19);
+  // Neither an error's context, a box's display nor a runaway argument's tokens opens or closes a file.
+  assert.equal(nested?.file, 'tikz.sty');
+  assert.equal(nested?.through, 'tcolorbox.sty');
+  assert.equal(after?.file, undefined);
+  // No file open (a log without the document's own): TeX's line as before.
+  assert.equal(readLog('! Extra \\else.\nl.62 \\else\n').errors[0]?.file, undefined);
+});
+
+test("readLog reads the error right after an empty runaway argument as an error, not its context's brackets as files; a stack that lost the document names no file", () => {
+  // An empty argument shows no tokens, so the `! ` line follows `Runaway argument?` at once (aastex.A, run 41584963423,
+  // result 7ce35b6261: skipped, the error's `l.129 ...ulewidth)/3-2...` closed main.tex itself).
+  const log = [
+    '(main.tex',
+    '(/texmf/tex/latex/foo/foo.sty',
+    'Runaway argument?',
+    '! Paragraph ended before \\foo@x was complete.',
+    '<to be read again> ',
+    '                   \\par ',
+    'l.40 \\foo@x{see (fig.png',
+    '                         ',
+    "I suspect you've forgotten a `}', causing me to apply this",
+    'control sequence to too much text. How can we recover?',
+    'My plan is to forget the whole thing and hope for the best.',
+    '',
+    ')',
+    '! Undefined control sequence.',
+    'l.90 \\bar',
+    '',
+  ].join('\n');
+  const [runaway, after] = readLog(log).errors;
+  assert.equal(runaway?.file, 'foo.sty');
+  assert.equal(runaway?.line, 40);
+  assert.equal(after?.file, undefined);
+  assert.equal(after?.line, 90);
+  // A `)` read in text closed the document's file, then two files opened: the stack no longer says what TeX reads.
+  const lost = ['(main.tex', 'see fig.~1)', '(/texmf/tex/latex/a/a.sty (/texmf/tex/latex/b/b.sty', '! Undefined control sequence.', 'l.7 \\x', '', '))'].join('\n');
+  assert.equal(readLog(lost).errors[0]?.file, undefined);
+});
+
 test('readLog tells a fatal stop and a run with no pages', () => {
   const reading = readLog('! Emergency stop.\n!  ==> Fatal error occurred, no output PDF file produced!\nNo pages of output.\n');
   assert.equal(reading.fatal, true);

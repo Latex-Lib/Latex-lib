@@ -44,19 +44,31 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
       const colspec = param(p, 'colspec', 'X');
       if (nice) {
         // \Block reads its text as an argument, so a cell's paragraph end is kept out of it too (`noPar`). Its text keeps its natural
-        // width. Set in a \parbox of the span's share (batch 4's C5(b)), it still shipped right of the text block: the probe of
-        // d8d9bc7a7d361b6b16f25's branches (staging article.A document db9e308a4b8819cd9ca3e, result 57d65009bc) put a span's
-        // sentinel at x 570.1pt unmarked and 571.9pt marked, past the block's 479.3pt (oracle 4, natural: 584.8pt and 1062.3pt).
-        // So the width nicematrix gives the block is not the outer \linewidth, and the parbox was dropped, as its gate said. A span
-        // wider than its columns still sticks out with no Overfull report (47 only-outside cases in article.A, oracle 4).
+        // width; a span wider than its columns sticks out with no Overfull report. Batch 4's C5(b) set it in a \parbox of the span's
+        // share and dropped that again, because the probe of d8d9bc7a7d361b6b16f25's branches (staging article.A document
+        // db9e308a4b8819cd9ca3e, result 57d65009bc) put a span's sentinel at x 570.1pt, past the block's 479.3pt. That reading was a
+        // PGF node's, not the page's (below): nicematrix draws each \Block after the array, as a node the driver moves into place
+        // (`\__nicematrix_draw_blocks:`), so it said nothing of where the span's text went. Not set again: the only spans here are
+        // the sample's short group rows (the host keeps the runs and the sentinel out of NiceTabular's spans, host.ts
+        // `NATURAL_SPANS`).
         const g = gridOf(node, content, (n, cell) => `\\Block{1-${n}}{${noPar(cell)}}${' &'.repeat(n - 1)}`);
-        // X columns share the width given by the width key (nicematrix, 8.3).
-        const keys = [...(colspec === 'X' ? ['width=\\linewidth'] : []), ...(NICE_LINES[lines] === '' || NICE_LINES[lines] === undefined ? [] : [NICE_LINES[lines]])].join(',');
+        // no-cell-nodes: each cell's box goes in by TeX (nicematrix's `\__nicematrix_node_cell_inactive:`, `\box_use_drop:N`), not
+        // as a PGF node at the cell's base (`\pgfnode{rectangle}{base}`, inner sep 0: the same place on the page). xdvipdfmx moves a
+        // node's box by the node's translation (pgfsys-dvipdfmx.def `\pgfsys@hboxsynced`: `pdf:btrans`), which TeX never sees, so a
+        // `\pdfsavepos` in a cell (the pipeline's sentinel) read a place half the cell's width right of the real one. In run
+        // 41584963423, 2,343 nice-hvlines and nice-zebra verdicts failed only on a sentinel right of the block (A 1,818, B 525), and
+        // 2,330 of them (A 1,818, B 512) lie within the 10pt tolerance once that half width is taken off (article.A
+        // d0bb6b22f845b272c2039, result 9f58a1b8d717: x 514.0pt against the block's 479.3pt, a 103pt cell; unmarked, no overfull
+        // box). Only dotted lines (\Cdots and the like), corners, \SubMatrix, trees and the medium and large nodes need the cell
+        // nodes, and this way writes none of them; hvlines, \Block and the \CodeBefore use the row and column nodes (nicematrix.sty
+        // 7.11d: the key's errors, `no-cell-nodes` in the Global keys; its manual gives it to speed compilation up). X columns share
+        // the width given by the width key (nicematrix, 8.3).
+        const keys = ['no-cell-nodes', ...(colspec === 'X' ? ['width=\\linewidth'] : []), ...(NICE_LINES[lines] === '' || NICE_LINES[lines] === undefined ? [] : [NICE_LINES[lines]])].join(',');
         const before = zebra === '' ? '' : `\\CodeBefore\n\\rowcolors{2}{${zebra}}{}\n\\Body\n`;
         // l, c and r are p-columns sharing the line, set ragged right, centred or ragged left (columnSpec; nicematrix loads array):
         // a natural column is as wide as its cell's paragraph.
         const letters = colspec === 'X' ? 'X'.repeat(g.columns) : columnSpec(colspec, g.columns, false);
-        return floated(node, withSetup(p, `\\begin{NiceTabular}{${letters}}${keys === '' ? '' : `[${keys}]`}\n${before}${rowLines(g).join('\n')}\n\\end{NiceTabular}`), context);
+        return floated(node, withSetup(p, `\\begin{NiceTabular}{${letters}}[${keys}]\n${before}${rowLines(g).join('\n')}\n\\end{NiceTabular}`), context);
       }
       const g = gridOf(node, content, (n, cell) => `\\SetCell[c=${n}]{c} ${tblrCell(cell)}${' &'.repeat(n - 1)}`, tblrCell);
       const inner = [

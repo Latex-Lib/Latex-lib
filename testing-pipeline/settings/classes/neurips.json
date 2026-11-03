@@ -1,0 +1,18 @@
+{
+  "id": "neurips",
+  "description": "NeurIPS 2026's style file neurips_2026.sty (2026-01-29, 'last revision: January 2026'), on plain article. Not on CTAN or the engine's mirror: from Formatting_Instructions_For_NeurIPS_2026.zip on media.neurips.cc, linked from the NeurIPS 2026 call for papers. One column on US letter: the style loads geometry and sets the 5.5in x 9in text block again with \\newgeometry at \\begin{document}, so it overrides a document's own geometry. preprint is the non-anonymous mode for arXiv: no line numbers, the footer says it is a preprint. final is not used, because final without a track option (main, position, eandd, ...) leaves \\@trackname undefined at the first-page footer (neurips_2026.sty l.392-402). The style loads natbib unless given nonatbib, and sets \\rmdefault to ptm and \\sfdefault to phv (l.101-102). Under XeTeX the default TU encoding has no ptm or phv shapes, so the text falls back to Latin Modern with font warnings; the official template's [T1]{fontenc} line is left to the document.",
+  "class": "article",
+  "options": [],
+  "preamble": [
+    "\\usepackage[preprint]{neurips_2026}"
+  ],
+  "files": [
+    {
+      "path": "neurips_2026.sty",
+      "sha256": "c3fc2894e83d2517ca18b66741d6c595986d97957dc08ec08bb2125a7ec4555a"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

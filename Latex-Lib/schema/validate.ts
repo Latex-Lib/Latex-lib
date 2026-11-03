@@ -218,6 +218,7 @@ export const validateLibrary = (library: Library, nesting: Nesting): string[] =>
     }
     for (const [option, effect] of Object.entries(profile.options)) {
       for (const r of [...(effect.removes ?? []), ...(effect.adds ?? [])]) if (!RESOURCE.test(r)) problems.push(`${at} option ${option}: ${r} is not kind:name`);
+      for (const pkg of effect.unloads ?? []) if (!profile.preloads.some((p) => p.pkg === pkg)) problems.push(`${at} option ${option}: unloads ${pkg}, which is not among its preloads`);
     }
     evidenceProblems(at, profile.evidence);
   }

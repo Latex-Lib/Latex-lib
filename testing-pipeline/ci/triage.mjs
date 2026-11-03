@@ -20,7 +20,7 @@ if (!store) {
   process.exit(2);
 }
 const parts = join(store, 'ledger.d');
-const files = existsSync(parts) ? readdirSync(parts).filter((f) => f.endsWith('.jsonl')) : [];
+const files = existsSync(parts) ? readdirSync(parts).filter((f) => f.endsWith('.jsonl')).sort() : [];
 
 const normal = (message) => message.replace(/\s+/g, ' ').replace(/[0-9a-f]{12,}/g, 'H').replace(/\d+(\.\d+)?/g, 'N').trim().slice(0, 160);
 const pairOf = (l) => `${l.classSetting}.${l.setup}`;

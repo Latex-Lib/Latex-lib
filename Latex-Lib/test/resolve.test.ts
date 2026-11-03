@@ -75,6 +75,11 @@ test("what a class lacks stops the ways that need it: book has no abstract, lett
   assert.ok(at('class.article', 'paragraph/heading', 'head.fncychap', ['section']).some((v) => v.includes('needs counter:chapter')));
 });
 
+test("sectsty goes under extarticle, whose sectioning is article's (its handler marks article as loaded while sectsty loads, b22), and not under the classes with sectioning of their own", () => {
+  assert.deepEqual(at('class.extarticle', 'paragraph/heading', 'head.sectsty', ['section']), []);
+  for (const c of ['class.mnras', 'class.siamart', 'class.aastex']) assert.ok(at(c, 'paragraph/heading', 'head.sectsty', ['section']).some((v) => v.includes("doesn't work with this document class")), c);
+});
+
 test("llncs refuses \\subparagraph, whose warning recurses, unless sectsty replaces it", () => {
   for (const way of ['head.kernel', 'head.class-native', 'head.fncychap']) {
     assert.ok(at('class.llncs', 'paragraph/heading', way, ['subparagraph']).some((v) => v.includes('forbids cmd:\\subparagraph')), way);
@@ -135,6 +140,10 @@ test('journal classes: AASTeX refuses cite, multicol and a second hyperref; LIPI
   assert.ok(at('class.aastex', 'containerBlock/refContainer', 'bib.cite-pkg').some((v) => v.includes('forbids cite')));
   assert.ok(at('class.aastex', 'hyperlink/hyperlink', 'meta.hyperref').some((v) => v.includes('do not import hyperref')));
   assert.ok(at('class.lipics', 'containerBlock/listing', 'list.enumitem').some((v) => v.includes('forbids enumitem')));
+  // enumitem against enumerate needs enumerate loaded after it: mdpi's own enumitem refuses a way's enumerate, while aa's own enumerate,
+  // loaded first, is left out of its profile and refuses no enumitem branch (b22, O-ENUM).
+  assert.ok(at('class.mdpi', 'containerBlock/listing', 'list.enumerate-pkg').some((v) => v.includes('enumitem cannot be loaded with enumerate')));
+  assert.ok(!at('class.aa', 'containerBlock/listing', 'list.enumitem').some((v) => v.includes('enumerate')));
   assert.ok(at('class.mdpi', 'paragraph/title', 'front.maketitle').some((v) => v.includes('needs cmd:\\maketitle')));
 });
 
@@ -147,11 +156,26 @@ test('a class whose abstract is a command takes the class-native abstract in its
 });
 
 test("a class whose \\abstract is the environment refuses the class-native command form and takes its environment form", () => {
-  for (const cls of ['class.article', 'class.report', 'class.ieeetran', 'class.revtex4-2']) {
+  for (const cls of ['class.article', 'class.report', 'class.ieeetran', 'class.amsart', 'class.elsarticle', 'class.acmart', 'class.cas-sc']) {
     const command = at(cls, 'containerBlock/abstract', 'abs.class-native', [], { form: 'command' });
     assert.ok(command.some((v) => v.includes('only for class.aa, class.mdpi, class.sn-jnl')), `${cls}: ${command.join('\n')}`);
     assert.deepEqual(at(cls, 'containerBlock/abstract', 'abs.class-native'), [], cls);
   }
+});
+
+test("revtex4-2 and aastex701 undefine the abstract at \\maketitle, so neither abstract way that prints the class's environment goes there (b22, R3)", () => {
+  for (const cls of ['class.revtex4-2', 'class.aastex']) {
+    assert.ok(at(cls, 'containerBlock/abstract', 'abs.kernel').some((v) => v.includes('Environment abstract undefined')), cls);
+    assert.ok(at(cls, 'containerBlock/abstract', 'abs.class-native').some((v) => v.includes('Environment abstract undefined')), cls);
+  }
+});
+
+test("a renamed abstract heading goes only where the class prints \\abstractname (b22, JR1-3)", () => {
+  for (const cls of ['class.mnras', 'class.iopjournal']) {
+    assert.ok(at(cls, 'containerBlock/abstract', 'abs.kernel', [], { name: 'Executive Summary' }).some((v) => v.includes('renamed heading never shows')), cls);
+    assert.deepEqual(at(cls, 'containerBlock/abstract', 'abs.kernel'), [], `${cls}: its fixed heading is no bar to an unrenamed preset`);
+  }
+  assert.deepEqual(at('class.elsarticle', 'containerBlock/abstract', 'abs.kernel', [], { name: 'Executive Summary' }), [], 'elsarticle takes the name through \\abstracttitle');
 });
 
 test("theorems: aa's \\newtheorem takes two more arguments, siamart loads ntheorem, both predefine their environments", () => {
@@ -179,6 +203,8 @@ test("Tufte's own \\sidenote and \\marginnote clash with the packages of those n
   assert.ok(at('class.tufte-book', 'containerBlock/note', 'note.marginnote').some((v) => v.includes('defines cmd:\\marginnote')));
   assert.deepEqual(at('class.tufte-handout', 'containerBlock/note', 'note.marginpar'), []);
   assert.ok(at('class.tufte-handout', 'containerBlock/refContainer', 'bib.biblatex-bibtex').some((v) => v.includes('natbib')));
+  // Its nobib loads neither natbib nor bibentry (OptionEffect.unloads, b22), so biblatex goes under a template that gives it.
+  assert.deepEqual(resolve(library, { classId: 'class.tufte-handout', classOptions: ['nobib'], choices: [{ way: 'bib.biblatex-bibtex', node: 'containerBlock/refContainer' }] }).filter((v) => v.includes('natbib')), []);
 });
 
 test("tufte-handout refuses footnotehyper under its sidenote \\footnote, and \\subsubsection and \\subparagraph are its errors (round 2 of batch 1)", () => {
@@ -211,9 +237,11 @@ test('class audit (batch 6): what the journal classes load, define and refuse, r
   assert.deepEqual(at('class.aa', 'containerBlock/refContainer', 'bib.bibtex-bst', [], { bst: 'apalike' }), []);
   assert.ok(at('class.aastex', 'containerBlock/refContainer', 'bib.thebibliography').some((v) => v.includes('author-year')));
   assert.ok(at('class.aa', 'containerBlock/refContainer', 'bib.cite-pkg').some((v) => v.includes('author-year')));
-  // A class that sets its own \bibliographystyle (CA11), and apacite after natbib (CA5).
+  // A class that sets its own \bibliographystyle (CA11), and apacite after natbib (CA5; a package fact since b22, O-APA, so revtex4-2's
+  // preloaded natbib refuses it too, besides its own deny).
   for (const cls of ['class.sn-jnl', 'class.mdpi']) for (const way of ['bib.bibtex-bst', 'bib.natbib', 'bib.cite-pkg']) assert.ok(at(cls, 'containerBlock/refContainer', way).some((v) => v.includes('\\bibstyle')), `${way} under ${cls}`);
-  for (const cls of ['class.aa', 'class.elsarticle']) assert.ok(at(cls, 'containerBlock/refContainer', 'bib.apacite').some((v) => v.includes('natbib')), cls);
+  for (const cls of ['class.aa', 'class.elsarticle', 'class.revtex4-2']) assert.ok(at(cls, 'containerBlock/refContainer', 'bib.apacite').some((v) => v.includes('apacite cannot be loaded with natbib')), cls);
+  assert.deepEqual(at('class.article', 'containerBlock/refContainer', 'bib.apacite'), []);
   // elsarticle's natbib takes cite.sty's one-optional \@citex call apart, as acmart's does (AC8; TU5, round 2 of batch 1).
   assert.ok(at('class.elsarticle', 'containerBlock/refContainer', 'bib.cite-pkg').some((v) => v.includes('forbids cite')));
   // aastex701 lacks \if@titlepage and stops at multicol; it and mnras lack \contentsname (CA3, CA4).
@@ -245,6 +273,7 @@ test('class audit (batch 6): what the journal classes load, define and refuse, r
   assert.ok(!columns('preprint').some((v) => v.includes('one column only')));
   // LIPIcs's checklist forbids wrapfig (CA34).
   assert.ok(at('class.lipics', 'atomicBlock/image', 'fig.wrapfig').some((v) => v.includes('forbids wrapfig')));
+  for (const way of ['head.titlesec', 'head.sectsty']) assert.ok(at('class.lipics', 'paragraph/heading', way, ['section']).some((v) => v.includes('class.lipics forbids')), way);
 });
 
 test("aastex701 copies revtex4-2's tables and page grid, and loads array itself: it refuses what that code breaks (round 2 of batch 1)", () => {

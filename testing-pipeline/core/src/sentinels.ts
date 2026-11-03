@@ -10,7 +10,10 @@
  *
  * What the host says of a sentinel when it places one is recorded with it
  * (`recordingProbes`, `SentinelSpec`): `outside` for a margin note's, whose
- * position is not checked; `nextRun` for one typeset from an auxiliary file an
+ * position against the text block is not checked, only that it is on the
+ * paper sideways (`offPaperSideways`); `drawn` for one in a TikZ node
+ * (todonotes' note), whose position as TeX records it is not where XeTeX's
+ * driver prints it; `nextRun` for one typeset from an auxiliary file an
  * earlier run wrote (a note column's `.slnc`), whose absence the oracle judges
  * only on a settled build; and the `role` a feature probe reads.
  *
@@ -136,5 +139,15 @@ export const inTextBlock = (hit: SentinelHit, g: Geometry, h: number, v: number)
   const down = hit.y <= g.textTop + v && hit.y >= g.textTop - g.textHeight - v;
   return across && down;
 };
+
+/**
+ * Whether a hit lies past the paper's left or right edge by more than `h` sp: for a sentinel placed `outside` (a margin
+ * note's), whose position against the text block is not judged, its text was cut by the paper's edge (MN6, P-d3). Only
+ * sideways: a note set below the paper's foot is one that other notes on its page pushed down, as filing many note
+ * branches into one document does, which the branch alone would not do (run 41584963423: 7,897 such hits, 1,840 of them
+ * in passing branches, against 10,206 past a side). The oracle asks it only on a settled build and never for a `drawn`
+ * sentinel (`oracle.ts`).
+ */
+export const offPaperSideways = (hit: SentinelHit, g: Geometry, h: number): boolean => hit.x !== null && (hit.x < -h || hit.x > g.paperWidth + h);
 
 export const ptOf = (value: number): string => `${(value / SP_PER_PT).toFixed(1)}pt`;

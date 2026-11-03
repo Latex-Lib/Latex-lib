@@ -10,13 +10,13 @@
         "acmart-sigconf", "acmart-manuscript", "aa", "mnras", "llncs", "lipics",
         "iopjournal", "sn-jnl", "siamart", "mdpi",
         "scrartcl", "scrreprt", "scrbook", "memoir", "exam", "extarticle",
-        "ctexart", "ctexbook", "tufte-handout"
+        "tufte-handout"
       ],
       "added": {
         "classes": ["the 46 class profiles and 48 class settings of M1/M3 (16 settings left out of the batch: see why)"],
         "handlers": ["every handler of M1 and M3: 110 handlers over 28 nodes"]
       },
-      "why": "The commonly used journal, conference and student classes among the first 48 settings, by the ar5iv class tally (https://gist.github.com/dginev/a642cbc6ae106786d24e2f271cf2941d), publisher volumes (OpenAlex) and Overleaf's template tags. Left out as rarely used or out of scope: minimal, ltxdoc, proc (test, documentation, obsolete); letter, scrlttr2, moderncv (letters, CVs); a0poster, tikzposter (posters); extbook, extreport, amsbook, amsproc, tufte-book, ctexbeamer, ctexrep (covered by a sibling that stays); easychair (not on CTAN, licence unstated, little use)."
+      "why": "The commonly used journal, conference and student classes among the first 48 settings, by the ar5iv class tally (https://gist.github.com/dginev/a642cbc6ae106786d24e2f271cf2941d), publisher volumes (OpenAlex) and Overleaf's template tags. Left out as rarely used or out of scope: minimal, ltxdoc, proc (test, documentation, obsolete); letter, scrlttr2, moderncv (letters, CVs); a0poster, tikzposter (posters); extbook, extreport, amsbook, amsproc, tufte-book, ctexbeamer, ctexrep (covered by a sibling that stays); easychair (not on CTAN, licence unstated, little use). Set aside on 2026-11-03 by the owner (\"ignore the not commonly used document class for now like the Chinese one\"): ctexart, ctexbook (their settings stay, in no batch; they were also batch 1's slowest jobs, 116 to 148 minutes each)."
     },
     {
       "id": 2,
@@ -24,7 +24,10 @@
       "classes": [
         "revtex4-2-aip", "acmart-acmsmall", "ieeetran-compsoc",
         "achemso", "spie", "oup-authoring-template", "emulateapj", "apa7", "jacow",
-        "thuthesis", "elegantpaper", "ut-thesis"
+        "elegantpaper", "ut-thesis",
+        "jmlr-pmlr", "quantumarticle", "asmejour", "asmeconf", "ascelike",
+        "neurips", "icml", "iclr", "acl", "cvpr", "eccv", "aaai", "ijcai", "usenix",
+        "icassp", "aistats", "colm", "tmlr"
       ],
       "added": {
         "classes": [
@@ -37,13 +40,30 @@
           "emulateapj: https://ctan.org/pkg/emulateapj (ApJ two-column look)",
           "apa7: https://ctan.org/pkg/apa7, [man,natbib] (APA papers, student reports)",
           "jacow: https://ctan.org/pkg/jacow, [a4paper] (accelerator conferences)",
-          "thuthesis: https://ctan.org/pkg/thuthesis, [degree=bachelor,fontset=fandol] (Chinese theses; needs XeTeX)",
           "elegantpaper: https://ctan.org/pkg/elegantpaper, [lang=en] (student papers)",
-          "ut-thesis: https://ctan.org/pkg/ut-thesis (theses)"
+          "ut-thesis: https://ctan.org/pkg/ut-thesis (theses)",
+          "jmlr-pmlr: https://ctan.org/pkg/jmlr, [pmlr] (Proceedings of Machine Learning Research: COLT, ACML, MIDL and other PMLR volumes)",
+          "quantumarticle: https://ctan.org/pkg/quantumarticle, [a4paper,twocolumn,11pt,nopdfoutputerror] (Quantum)",
+          "asmejour: https://ctan.org/pkg/asmejour (ASME journals)",
+          "asmeconf: https://ctan.org/pkg/asmeconf (ASME conferences)",
+          "ascelike: https://ctan.org/pkg/ascelike, [Journal] (ASCE journals and proceedings)",
+          "neurips: article with neurips_2026.sty [preprint] (NeurIPS)",
+          "icml: article with icml2026.sty [preprint] (ICML)",
+          "iclr: article with iclr2027_conference.sty, \\iclrfinalcopy (ICLR)",
+          "acl: article [11pt] with acl.sty [final] and acl_natbib.bst (ACL, EMNLP, NAACL, EACL, AACL, Findings)",
+          "cvpr: article [10pt,twocolumn,letterpaper] with cvpr.sty (CVPR, ICCV, WACV)",
+          "eccv: llncs [runningheads] with eccv.sty and eccvabbrv.sty (ECCV)",
+          "aaai: article [letterpaper] with aaai2027.sty and aaai2027.bst (AAAI)",
+          "ijcai: article with ijcai27.sty (IJCAI)",
+          "usenix: article [letterpaper,twocolumn,10pt] with usenix2019_v3.sty (USENIX Security, OSDI, NSDI, ATC)",
+          "icassp: article with spconf.sty (ICASSP and other IEEE signal processing conferences)",
+          "aistats: article [twoside] with aistats2027.sty [preprint] (AISTATS)",
+          "colm: article with colm2026_conference.sty [preprint] (COLM)",
+          "tmlr: article with tmlr.sty [preprint] (TMLR)"
         ],
         "handlers": []
       },
-      "why": "The most used classes not in batch 1 that are on CTAN and MiKTeX (fetched on demand), plus three settings of batch 1 classes in their other common modes. To ship once their licence headers allow it: iopart (27k on arXiv), svjour3 (15.6k), PoS (9.9k), imsart (4.5k). After that: mitthesis, bxjsarticle, elegantbook, iacrj, aiaa, ametsoc, jmlr, quantumarticle, and the publisher classes that must be shipped. Venues that use article with a style file (ACL, NeurIPS, ICLR, ICML, AAAI, CVPR, IJCAI, USENIX, JHEP) become setups on article."
+      "why": "The most used classes not in batch 1 that are on CTAN and MiKTeX (fetched on demand), plus three settings of batch 1 classes in their other common modes. To ship once their licence headers allow it: iopart (27k on arXiv), svjour3 (15.6k), PoS (9.9k), imsart (4.5k). After that: mitthesis, bxjsarticle, elegantbook, iacrj, and the publisher classes that must be shipped. Added on 2026-11-03 at the owner's request ('make the common journal and conference to be in batch 2'): jmlr [pmlr], quantumarticle, asmejour, asmeconf and ascelike, the common venue classes in MiKTeX 9766 (its aiaa-tc, ametsoc and IEEEconf are older than what those venues use now; IEEEtran covers IEEE). Then, at the owner's word ('add the big conference styles to batch 2'): NeurIPS, ICML, ICLR, ACL, CVPR, ECCV, AAAI, IJCAI, USENIX, ICASSP, AISTATS, COLM and TMLR, each a setting on article (ECCV on llncs) with the venue's own style file from its 2026/2027 author kit. Those kits are not in MiKTeX and carry no licence that allows a public copy, so their files are listed in settings/classes/files/private.txt and come in through the private companion, not the public tree. Interspeech's kit is on Overleaf only and is left for later."
     }
   ]
 }

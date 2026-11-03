@@ -16,6 +16,13 @@
 # what it holds. A crash prints no source line (ci/no-source.cjs). The engine's
 # TeX packages come from the release miktex-<snapshot>. Nothing compiles with a
 # timer: timeout-minutes ends a job, not a compile.
+#
+# Two repositories run the same commit, each on its own account's concurrent jobs: Latex-Lib/Latex-lib (the
+# organization's) and yguo499/Latex-lib-runner (the personal account's). Each class belongs to one of them
+# (testing-pipeline/settings/runners.json; the organization's when unlisted), so a push to latex-ci in both
+# runs every pair once, each always in the same repository, and each keeps its own store. The private files are
+# pinned to the commit ci/release.sh wrote into testing-pipeline/ci/private.ref, so the two runs file the same
+# documents; `ci/fetch-run.sh sha:<commit>` checks that and joins the two runs into one store.
 name: compat
 
 on:
@@ -47,6 +54,8 @@ env:
   ENGINES: ${{ inputs.engines || '3' }}
   CHROME_VERSION: "156.0.8078.80"
   BISECT_BUDGET: ${{ inputs.bisect || '120' }}
+  # The releases (store-seed, miktex-<snapshot>) are the organization repository's, for every runner repository.
+  RELEASES: Latex-Lib/Latex-lib
 
 jobs:
   plan:
@@ -67,16 +76,22 @@ jobs:
             fi
           done
       - uses: actions/checkout@v4
-      # The private companion repository's files, over this checkout (the host, the engine archive, the docs).
+      # The private companion repository's files, over this checkout (the host, the engine archive, the docs), at
+      # the commit this one names (ci/release.sh), so every job and both runner repositories get the same tree.
+      - id: private
+        name: The private commit
+        run: echo "ref=$(cat testing-pipeline/ci/private.ref 2>/dev/null || echo ci-private)" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
         with:
-          repository: ${{ github.repository_owner }}/Latex-lib-private
-          ref: ci-private
+          repository: yguo499/Latex-lib-private
+          ref: ${{ steps.private.outputs.ref }}
           ssh-key: ${{ secrets.PRIVATE_DEPLOY_KEY }}
           persist-credentials: false
           path: .private
       - name: Private files
         run: |
+          # The commit actually checked out, for the run record (run-pairs.sh plan; ci/fetch-run.sh compares it).
+          git -C .private rev-parse HEAD > "$RUNNER_TEMP/private.resolved"
           tar -C .private --exclude=.git -cf - . | tar -xf -
           rm -rf .private
       - uses: actions/setup-node@v4
@@ -128,13 +143,14 @@ jobs:
           FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
         run: |
           mkdir -p testing-pipeline/out/results
-          if gh release view store-seed --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
-            gh release download store-seed --repo "$GITHUB_REPOSITORY" --pattern 'store-seed.tar.gz.enc.part*' --dir "$RUNNER_TEMP/seed"
-            cat "$RUNNER_TEMP"/seed/store-seed.tar.gz.enc.part* | openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:FLOUEST_KEY | tar -xz -C testing-pipeline/out
-            echo "seed: $(find testing-pipeline/out/results -name '*.json.gz' | wc -l) results"
-          else
-            echo "seed: no release store-seed"
+          # Only a release that is not there means no seed: any other failure stops, or this repository's store
+          # would start without the seed for good. Only results/ comes out of it: filing starts from nothing.
+          if ! view=$(gh release view store-seed --repo "$RELEASES" 2>&1 > /dev/null); then
+            case "$view" in *"release not found"*) echo "seed: no release store-seed"; exit 0 ;; *) echo "$view" >&2; exit 1 ;; esac
           fi
+          gh release download store-seed --repo "$RELEASES" --pattern 'store-seed.tar.gz.enc.part*' --dir "$RUNNER_TEMP/seed"
+          cat "$RUNNER_TEMP"/seed/store-seed.tar.gz.enc.part* | openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:FLOUEST_KEY | tar -xz -C testing-pipeline/out results
+          echo "seed: $(find testing-pipeline/out/results -name '*.json.gz' | wc -l) results"
       # The engine and the judge work before any pair compiles: 16 seeded cases with known outcomes (README step 5).
       - name: Oracle
         working-directory: testing-pipeline
@@ -162,12 +178,13 @@ jobs:
           PAIRS: ${{ inputs.pairs || 'batch:current' }}
           NODE_OPTIONS: --require ${{ github.workspace }}/testing-pipeline/ci/no-source.cjs
         run: |
+          export PRIVATE_COMMIT=$(cat "$RUNNER_TEMP/private.resolved")
           bash testing-pipeline/ci/run-pairs.sh plan --pairs-out "$RUNNER_TEMP/pairs.json" $PAIRS
           echo "pairs=$(cat "$RUNNER_TEMP/pairs.json")" >> "$GITHUB_OUTPUT"
       - name: Seal index
         env:
           FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
-        run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/index.tar.gz.enc" testing-pipeline/out manifest.jsonl documents
+        run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/index.tar.gz.enc" testing-pipeline/out manifest.jsonl documents runs
       - uses: actions/upload-artifact@v4
         with:
           name: index
@@ -218,29 +235,34 @@ jobs:
 
   pair:
     needs: plan
-    if: github.ref_name != 'latex-ci-keys'
+    if: github.ref_name != 'latex-ci-keys' && needs.plan.outputs.pairs != '[]'
     name: ${{ matrix.class }}.${{ matrix.setup }}
     runs-on: ubuntu-24.04
     timeout-minutes: 350
     strategy:
       fail-fast: false
-      max-parallel: 40
       matrix:
         include: ${{ fromJSON(needs.plan.outputs.pairs) }}
     env:
       PAIR: ${{ matrix.class }}.${{ matrix.setup }}
     steps:
       - uses: actions/checkout@v4
-      # The private companion repository's files, over this checkout (the host, the engine archive, the docs).
+      # The private companion repository's files, over this checkout (the host, the engine archive, the docs), at
+      # the commit this one names (ci/release.sh), so every job and both runner repositories get the same tree.
+      - id: private
+        name: The private commit
+        run: echo "ref=$(cat testing-pipeline/ci/private.ref 2>/dev/null || echo ci-private)" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
         with:
-          repository: ${{ github.repository_owner }}/Latex-lib-private
-          ref: ci-private
+          repository: yguo499/Latex-lib-private
+          ref: ${{ steps.private.outputs.ref }}
           ssh-key: ${{ secrets.PRIVATE_DEPLOY_KEY }}
           persist-credentials: false
           path: .private
       - name: Private files
         run: |
+          # The commit actually checked out, for the run record (run-pairs.sh plan; ci/fetch-run.sh compares it).
+          git -C .private rev-parse HEAD > "$RUNNER_TEMP/private.resolved"
           tar -C .private --exclude=.git -cf - . | tar -xf -
           rm -rf .private
       - uses: actions/setup-node@v4
@@ -398,22 +420,9 @@ jobs:
         env:
           FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
         run: bash testing-pipeline/ci/seal.sh open . "$RUNNER_TEMP"/opened-logs/*.tar.gz.enc
+      # The table of pairs (ci/summary.sh): the same script rebuilds it over two joined runs (ci/fetch-run.sh).
       - name: Sum up
-        run: |
-          {
-            echo "## compat run"
-            echo
-            echo '| pair | run | solo | bisect |'
-            echo '|---|---|---|---|'
-            for log in logs/run-*.log; do
-              [ -f "$log" ] || continue
-              pair=${log#logs/run-}; pair=${pair%.log}
-              line=$(grep -E "^  $pair " "$log" | head -1 | sed -E 's/^ +[^ ]+ +//' | cut -c1-140)
-              solo=$(grep -E "^  $pair " "$log" | sed -n 2p | sed -E 's/^ +[^ ]+ +//' | cut -c1-140)
-              bisect=$(grep -E "^bisect: $pair: [0-9]+ group" "logs/bisect-$pair.log" 2>/dev/null | head -1 | sed -E 's/^bisect: [^:]+: //' | cut -c1-160)
-              echo "| $pair | ${line:-(no summary: see its log)} | $solo | $bisect |"
-            done
-          } | tee summary.md >> "$GITHUB_STEP_SUMMARY"
+        run: bash testing-pipeline/ci/summary.sh . | tee summary.md >> "$GITHUB_STEP_SUMMARY"
       - name: Seal summary
         env:
           FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
@@ -444,6 +453,8 @@ jobs:
         id: diff
         continue-on-error: true
         run: |
+          # The previous verdicts go into the artifact too: two joined runs compare with both repositories'.
+          if [ -f testing-pipeline/out/verdicts-cache/verdicts.json.gz ]; then cp testing-pipeline/out/verdicts-cache/verdicts.json.gz testing-pipeline/out/verdicts.previous.json.gz; fi
           node testing-pipeline/ci/diff.mjs testing-pipeline/out --previous testing-pipeline/out/verdicts-cache/verdicts.json.gz > /dev/null
           if [ -f testing-pipeline/out/diff.md ]; then { echo; head -c 30000 testing-pipeline/out/diff.md; } >> "$GITHUB_STEP_SUMMARY"; else echo "diff: first run, nothing to compare" >> "$GITHUB_STEP_SUMMARY"; fi
           mkdir -p testing-pipeline/out/verdicts-cache
@@ -452,7 +463,7 @@ jobs:
         if: always()
         env:
           FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
-        run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/diff.tar.gz.enc" testing-pipeline/out diff.md verdicts.json.gz
+        run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/diff.tar.gz.enc" testing-pipeline/out diff.md verdicts.json.gz verdicts.previous.json.gz
       - uses: actions/upload-artifact@v4
         if: always()
         with:

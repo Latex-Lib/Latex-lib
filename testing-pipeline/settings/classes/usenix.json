@@ -1,0 +1,24 @@
+{
+  "id": "usenix",
+  "description": "USENIX's style file usenix2019_v3.sty (2018-12-19 revision 'for ATC'19', the file USENIX's paper-templates page links today), on plain article. Not on CTAN or the engine's mirror: from usenix.org/conferences/author-resources/paper-templates. letterpaper, twocolumn and 10pt are its template's class options; without twocolumn the style tries \\input twocolumn.sty, which does not exist. The style loads mathptmx, [T1]{fontenc}, [utf8]{inputenc} (ignored under XeTeX), pslatex, microtype [kerning,spacing] (pdfTeX-only features), flushend, cite, breakurl, url, xcolor and hyperref. breakurl, when not under pdfTeX, stops with 'The breakurl depends on hyperref package' unless hyperref is loaded first (breakurl.sty l.55-61), and the style loads it before hyperref. So the first preamble line marks breakurl as loaded and the last makes \\burl a synonym of \\url, which is what breakurl itself does under pdfTeX (l.38-53).",
+  "class": "article",
+  "options": [
+    "letterpaper",
+    "twocolumn",
+    "10pt"
+  ],
+  "preamble": [
+    "\\makeatletter\\@namedef{ver@breakurl.sty}{2013/04/10 not loaded under XeTeX}\\makeatother",
+    "\\usepackage{usenix2019_v3}",
+    "\\DeclareRobustCommand\\burl{\\url}"
+  ],
+  "files": [
+    {
+      "path": "usenix2019_v3.sty",
+      "sha256": "4ed9aa9d0c5daec54ce3b4188a4bf6d3bef3462c79ff65551d567511d3c45ff6"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

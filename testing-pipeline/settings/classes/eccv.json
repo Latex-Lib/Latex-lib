@@ -1,0 +1,28 @@
+{
+  "id": "eccv",
+  "description": "ECCV 2026's eccv.sty and eccvabbrv.sty (commit 791fe5b, 2026-01-12), on Springer's llncs with runningheads, as the template sets it. Not on CTAN or the engine's mirror: from github.com/paolo-favaro/paper-template (MIT), linked from eccv.ecva.net. The repository's llncs.cls is not shipped: the mirror's llncs is used, as in the llncs setting, whose three preamble lines are repeated here for the same reasons. With no option eccv.sty is the camera-ready version (review crops the page with geometry and replaces the authors). It loads [T1]{fontenc}, lineno, xcolor, amsmath, amssymb, cite, caption, subcaption and silence, and stops at \\begin{document} if the class is not llncs.",
+  "class": "llncs",
+  "options": [
+    "runningheads"
+  ],
+  "preamble": [
+    "\\usepackage{eccv}",
+    "\\usepackage{eccvabbrv}",
+    "\\makeatletter\\AtBeginDocument{\\providecommand\\chaptermark[1]{}\\providecommand\\@chapapp{\\chaptername}}\\makeatother",
+    "\\makeatletter\\def\\compat@llncs@acl#1#2#3{{\\let\\par\\@@par\\compat@llncs@origacl{#1}{#2}{#3}}}\\AddToHook{cmd/maketitle/before}{\\let\\compat@llncs@origacl\\addcontentsline\\let\\addcontentsline\\compat@llncs@acl}\\AddToHook{cmd/maketitle/after}{\\let\\addcontentsline\\compat@llncs@origacl}\\makeatother",
+    "\\AddToHook{package/hyperref/after}{\\pdfstringdefDisableCommands{\\let\\par\\space}}"
+  ],
+  "files": [
+    {
+      "path": "eccv.sty",
+      "sha256": "07785f87dd4741a761e5064d6752e59dbca308b7999de35df983e70dc0a33d80"
+    },
+    {
+      "path": "eccvabbrv.sty",
+      "sha256": "1c9aba814d428d8d90bfdfde53e3ad8edc9f1db0e5f12e052f713fd5b38e483f"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

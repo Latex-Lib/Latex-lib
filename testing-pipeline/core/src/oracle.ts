@@ -5,13 +5,17 @@
  * 1. No TeX error in its lines.
  * 2. No damaging warning in its lines (`warnings.ts`).
  * 3. Every sentinel it placed shipped exactly once, inside the text block
- *    unless placed as `outside` (`sentinels.ts`).
+ *    unless placed as `outside`, and then, on a settled build, not past the
+ *    paper's left or right edge unless TikZ drew it (`sentinels.ts`).
  * 4. Each feature it declares passes its probe (`features.ts`).
  *
  * An error is tied to the branch whose lines hold the line TeX names, when TeX
  * shows that line's text (`showsLine`: a package's line number is not the
  * document's), else to the line its message names (`on input line N`, `after
- * line N`). A preamble line is each branch's that put it there
+ * line N`). One TeX raised in a file the document read in (the log's open
+ * files, `TexError.file`: abstract.sty's own l.62) is the branches' whose
+ * preamble lines load the package it came through, else the document's. A
+ * preamble line is each branch's that put it there
  * (`Emitted.preamble`). Preamble entries stand on consecutive lines and LaTeX
  * looks past a line for an optional argument (`\usepackage{x}[date]`,
  * `\newtheorem{x}{X}[within]`), so there an error naming a package is the
@@ -32,7 +36,10 @@
  * started to ship (`BoxReport.named`), skipping a branch whose sentinels
  * shipped elsewhere: a box too tall for the page, alone on it, holding no
  * sentinel (an image, a list in an unbreakable box). A report whose window
- * names no such line is the document's.
+ * names no such line is the document's. An overfull hbox on a body line no
+ * branch holds goes to the branch that ends just before it with a margin note
+ * whose text closes its line: TeX read that line for the note's trailing
+ * optional argument, so the note's paragraph began there (`noteBefore`).
  *
  * scrlayer-notecolumn does two things a log shows as the kernel's: it sets the
  * rerun flag itself when its `.slnc` file changed ("Label(s) may have
@@ -86,7 +93,7 @@
 import type { BranchId, CellId, Emitted, Failure, RawResult, SentinelSpec, Verdict } from './model.ts';
 import { FEATURE_PROBES } from './features.ts';
 import { readLog, showsLine, type TexError } from './log.ts';
-import { inTextBlock, ptOf, readSentinels } from './sentinels.ts';
+import { inTextBlock, offPaperSideways, ptOf, readSentinels } from './sentinels.ts';
 import { CROSS_PASS, damagingWarnings, type Damage } from './warnings.ts';
 
 /**
@@ -98,7 +105,15 @@ import { CROSS_PASS, damagingWarnings, type Damage } from './warnings.ts';
  * before it (`BoxReport.named`), not to the document. With CL1 (batch 6, still before any run used 5), an hbox overfull
  * during output that no branch's box matches and whose display is a running head goes to the branch whose \chapter or
  * \section set its mark (`markOwner`). 6 (b21, after GitHub run 41584963423 judged with 5): an error inside fancyhdr's
- * running head or foot goes to the document (`OUTPUT_HEAD`, AC5), not to the branch whose line the page broke on.
+ * running head or foot goes to the document (`OUTPUT_HEAD`, AC5), not to the branch whose line the page broke on. With
+ * b22, still before any run used 6: an error raised in a file the document read in goes to the branches loading the
+ * package (`TexError.file`, `throughLoaders`; JR1 P2), an overfull hbox on the body line after a branch whose margin note
+ * closes its last line goes to that branch (`noteBefore`; OV P1), and an `outside` sentinel past the paper's side fails
+ * on a settled build unless TikZ drew it (`sentinel:off-paper`; MN6/P-d3). Re-judged in memory on run 41584963423's
+ * stored results with the run's own LaTeX (b22 ORACLE): staging's oracle reproduces all 472,643 verdicts of the 11,057
+ * cells these rules can touch; b22's turns 8,826 of them into passes (8,576 not denied: 6,070 from package files, 2,468
+ * from margin-note lines, 38 both) and 4,455 into fails (4,454 not denied), each a margin note past the paper's side
+ * but one denied branch that loads sidenotes under aa, now charged its own load error.
  */
 export const ORACLE_VERSION = 6;
 
@@ -154,6 +169,23 @@ const FLOATS_LOST = /^LaTeX Error: Float\(s\) lost\./;
  * (27,406 branches, staging's oracle 5 reproducing the run's ledger), and no error message in the run's 48 pairs matches it.
  */
 const OUTPUT_HEAD = /\\f@nch@[oe][lcr][hf]\b/;
+
+/** Where a margin note's text argument opens: `\marginnote{`, or `\marginnote[left]{`. */
+const NOTE_START = /\\marginnote(?:\[[^\]]*\])?\{/g;
+
+/**
+ * Whether `line` ends with a margin note TeX looks past for a trailing optional argument: marginnote.sty's
+ * `\marginnote[left]{right}[offset]` reads its last argument with `\@ifnextchar[`, and paracol's emulation the same, so
+ * when the note's text closes the line TeX reads the next line's first token before it sets the note, and the note's
+ * paragraph is reported "at lines L--…" with L that next line (article.B d0e00c1c7382c4790e3d5, run 41584963423:
+ * `\marginnote{…}` last at l.236, its words overfull "at lines 237--237", the host's `\nocite{*}`, the document's).
+ */
+const endsWithNote = (line: string): boolean =>
+  [...line.matchAll(NOTE_START)].some((m) => {
+    const from = (m.index ?? 0) + m[0].length;
+    const close = from + argumentAt(line, from).length;
+    return close < line.length && line.slice(close + 1).trim() === '';
+  });
 
 /** A float a branch's lines open: its loss is the branch's, though no sentinel (an image places none) shows it. */
 const FLOAT = /\\begin\{(?:figure|table|sidewaysfigure|sidewaystable|SCfigure|SCtable|marginfigure|margintable)\*?\}/;
@@ -311,6 +343,33 @@ export const judge = (input: {
     return charged;
   };
   const at = (line: number | undefined): readonly BranchId[] => (line === undefined ? [] : branchesAt(emitted, line));
+  /**
+   * An error TeX raised in a file the document read in (`TexError.file`, from the log's open files): its `l.<n>` is that
+   * file's line, not the document's. It is the branches' whose preamble line loads the package the document read it
+   * through (`\usepackage{abstract}` for abstract.sty's "Extra \else" at its own l.62), as an option clash is; with none
+   * (a class's or the setting's package, the .aux, the .bbl), the document's. Re-judged on run 41584963423's stored
+   * results (b22 ORACLE): 27 such errors had been charged to the branch holding the document's line of that number
+   * (abstract.sty under mnras.A 9, sidenotes.sty under aa.A 18), and the rest were the document's; both now go to the
+   * loaders, which frees the branches that only carried them.
+   */
+  const throughLoaders = (through: string | undefined): readonly BranchId[] =>
+    through !== undefined && through.endsWith('.sty') ? loadersOf(emitted, source, through.slice(0, -'.sty'.length)) : [];
+  /**
+   * The branch whose lines end just before `line`, a body line no branch holds, with a margin note that TeX looked past
+   * its line for a trailing optional argument (`endsWithNote`): the note's paragraph began on `line`, so a box TeX
+   * reports there is the note's. In run 41584963423's stored results, 839 of the 841 overfull hboxes reported on a body
+   * line no branch holds (the host's `\nocite{*}`, `\begin{thebibliography}` and guard lines, F3's "reference-list"
+   * boxes) follow a branch that ends so; re-judged, 2,468 not-denied branches that carried only them pass (38 more with
+   * a package file's error, `throughLoaders`), none fails.
+   */
+  const noteBefore = (line: number): readonly BranchId[] => {
+    if (emitted.spans.some((s) => s.from <= line && line <= s.to)) return [];
+    const span = emitted.spans.find((s) => s.to === line - 1);
+    if (span === undefined) return [];
+    let last = span.to;
+    while (last > span.from && (source[last - 1] ?? '').trim() === '') last--;
+    return endsWithNote(source[last - 1] ?? '') ? [span.branch] : [];
+  };
 
   // 1. Errors. TeX's `l.<n>` is the document's line only when the text TeX shows is that line's (`errorBranchesAt` then
   // says whose, from the error before it too); else the line the message names; an "Emergency stop" with no line goes
@@ -332,8 +391,13 @@ export const judge = (input: {
     }
     const named = NAMED_LINE.exec(error.message);
     let branches: readonly BranchId[] =
-      error.line !== undefined && showsLine(error.shown, source[error.line - 1]) ? errorBranchesAt(emitted, source, error, error.line, before) : [];
-    if (branches.length === 0 && named !== null) branches = at(Number(named[1]));
+      error.file !== undefined
+        ? throughLoaders(error.through)
+        : error.line !== undefined && showsLine(error.shown, source[error.line - 1])
+          ? errorBranchesAt(emitted, source, error, error.line, before)
+          : [];
+    // A line a message names ("on input line N") is the line of the file TeX was reading: only the document's is a branch's.
+    if (branches.length === 0 && named !== null && error.file === undefined) branches = at(Number(named[1]));
     if (branches.length === 0 && error.line === undefined && error.message.startsWith('Emergency stop')) branches = before?.branches ?? [];
     before = { error, branches: fail(branches, failure) };
     // With no branch to own it, the skip's error is already the document's; what came after it still never ran.
@@ -441,7 +505,8 @@ export const judge = (input: {
       fail(packed.length > 0 ? packed : markOwner(damage), failure);
       continue;
     }
-    fail(damage.line === undefined && damage.pages !== undefined ? onPages(damage.pages, damage.named) : at(damage.line), failure);
+    const owners = damage.line === undefined && damage.pages !== undefined ? onPages(damage.pages, damage.named) : at(damage.line);
+    fail(owners.length === 0 && damage.name === 'overfull-hbox' && damage.line !== undefined ? noteBefore(damage.line) : owners, failure);
   }
 
   // 3. Sentinels.
@@ -469,6 +534,18 @@ export const judge = (input: {
         fail([e.branch], {
           check: 'sentinel:outside',
           evidence: `${spec.id} shipped outside the text block, at x ${ptOf(first.x ?? 0)}, y ${ptOf(first.y ?? 0)} on page ${first.page}`,
+        });
+      } else if (spec.outside === true && spec.drawn !== true && settled && geometry !== undefined && offPaperSideways(first, geometry, h)) {
+        // A margin note's text past the paper's left or right edge: cut off where it printed (MN6). Only on a settled build:
+        // marginnote places a note from the position an earlier run wrote to the .aux (its side, and its offset from a list's
+        // or a column's indent, marginnote.sty l.213-317 and l.368-386), so after one run it can stand where the document's
+        // note would not. Not for a note TikZ draws (`drawn`): XeTeX's driver moves a node's text where it prints
+        // (pgfsys-dvipdfmx.def, `\pgfsys@hboxsynced`: pdf:btrans), so its position as TeX records it is not where it printed.
+        // Re-judged on run 41584963423's stored results: 4,454 not-denied passes fail on this alone (without the two
+        // conditions 6,058: 3,751 of the moves on builds an error ended, 781 todonotes notes).
+        fail([e.branch], {
+          check: 'sentinel:off-paper',
+          evidence: `${spec.id} shipped past the paper's edge, at x ${ptOf(first.x ?? 0)} on page ${first.page} (the paper is ${ptOf(geometry.paperWidth)} wide)`,
         });
       }
     }

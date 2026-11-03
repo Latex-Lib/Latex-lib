@@ -1,12 +1,14 @@
 /**
  * code.tcblisting: tcolorbox's listings library, \begin{tcblisting}{listing
  * only, title={…}, colback, colframe, left, width, listing options={…}} …
- * \end{tcblisting}; breakable through the breakable library.
+ * \end{tcblisting}; breakable through the breakable library. A head still
+ * waiting where the box opens (a list label reaching into the line) is set on
+ * its own line first (`code={\LatexLibHeadOwnLine}`, protocol.ts). [F3]
  * CTAN: https://ctan.org/pkg/tcolorbox
  */
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
-import { param } from '../../protocol.ts';
+import { HEAD_OWN_LINE, HEAD_OWN_LINE_KEY, param } from '../../protocol.ts';
 import { codeText, listingsLanguage } from '../node.ts';
 import key from './key.ts';
 
@@ -14,12 +16,13 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
   const p = withDefaults(key.params, given as never) as { readonly [name: string]: unknown };
   const libraries = ['listings', ...(p['breakable'] === true ? ['breakable'] : [])];
   return {
-    preamble: () => ({ packages: ['\\usepackage{tcolorbox}'], declarations: [`\\tcbuselibrary{${libraries.join(',')}}`] }),
+    preamble: () => ({ packages: ['\\usepackage{tcolorbox}'], declarations: [`\\tcbuselibrary{${libraries.join(',')}}`, HEAD_OWN_LINE] }),
     emit: (node, content, context) => {
       const lang = listingsLanguage(node);
       const listing = [`basicstyle=${param(p, 'font', '\\ttfamily\\small')}`, 'breaklines=true', ...(lang === undefined ? [] : [`language=${lang}`]), ...(param(p, 'numbers', 'none') === 'none' ? [] : [`numbers=${param(p, 'numbers')}`, 'numberstyle=\\tiny'])];
       const keys = [
         'listing only',
+        HEAD_OWN_LINE_KEY,
         ...(context !== undefined && context.trim() !== '' ? [`title={${context.trim()}}`] : []),
         ...(param(p, 'colback') === '' ? [] : [`colback=${param(p, 'colback')}`]),
         ...(param(p, 'colframe') === '' ? [] : [`colframe=${param(p, 'colframe')}`]),

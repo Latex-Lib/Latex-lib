@@ -10,7 +10,7 @@
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
 import { param } from '../../protocol.ts';
-import { titled } from '../node.ts';
+import { FIT_NOTE_COLUMN, titled } from '../node.ts';
 import key from './key.ts';
 
 /**
@@ -69,7 +69,9 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
   return {
     // Declarations: the column (where declared) and FC2's empty box at \end{document} (`declare`), then M1-NC's clearing on the
     // page's own list only, then LP3's one conversion per page style (b21; none of the three touches what the others change).
-    preamble: () => ({ packages: ['\\usepackage{scrlayer-notecolumn}'], declarations: [...declare, CLEAR_ON_THE_PAGE_ONLY, layerizeOnce] }),
+    // Last, b22 MC1's fit: the marginpar column, and a declared one with no width, are \marginparwidth wide, read as the page
+    // ships (`FIT_NOTE_COLUMN`).
+    preamble: () => ({ packages: ['\\usepackage{scrlayer-notecolumn}'], declarations: [...declare, CLEAR_ON_THE_PAGE_ONLY, layerizeOnce, FIT_NOTE_COLUMN] }),
     // The starred form writes the body to the .slnc file detokenized. Unstarred, it expands the body in \protected@write,
     // where a list's \item breaks ("Use of \slnc@makenote doesn't match its definition", then Incomplete \iffalse and no page:
     // 0 of 280 list children passed, article.A, e.g. d77bcaaf762a result e65157ea7c). Probed under batch 4 (the branches of

@@ -8,7 +8,7 @@
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
 import { param } from '../../protocol.ts';
-import { titled, titleOf } from '../node.ts';
+import { FIT_NOTE_COLUMN, titled, titleOf } from '../node.ts';
 import key from './key.ts';
 
 export const realize = (given: { readonly [name: string]: unknown } = {}): Realization => {
@@ -31,7 +31,9 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
     // 41584963423: d2f9893f01482515bc703, 63 notes, article.A result 2588eefa38 l.328 after 50 notes; 42 pairs, 496 branches
     // charged "Float(s) lost", 42 the output loop). Raised, never lowered (mdpi.cls sets 10000). The inline and disabled notes
     // place no \marginpar.
-    preamble: () => (p['inline'] === true || p['disable'] === true ? { packages } : { packages, declarations: ['\\ifnum\\maxdeadcycles<1000 \\maxdeadcycles=1000 \\fi'] }),
+    // A margin note's node is \marginparwidth wide (less 1.6ex+1pt), fitted to the margin where the class's column is under 2cm
+    // or runs off the paper (b22 MC1, `FIT_NOTE_COLUMN`); todonotes' own warning at \begin{document} still prints for the class's.
+    preamble: () => (p['inline'] === true || p['disable'] === true ? { packages } : { packages, declarations: ['\\ifnum\\maxdeadcycles<1000 \\maxdeadcycles=1000 \\fi', FIT_NOTE_COLUMN] }),
     // caption=: the list of todos gets the title, not the body. Otherwise todonotes writes the body into the .aux for
     // \listoftodos (\protected@write), and a list in it (\item) breaks there: "Paragraph ended before \reserved@a was complete"
     // at the note, then "Missing control sequence inserted" when main.aux is read back (989 of 2,710 branches with a list in the

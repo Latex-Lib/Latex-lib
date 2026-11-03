@@ -22,6 +22,8 @@ export type OptionEffect = {
   readonly adds?: readonly Resource[];
   /** The column count the option sets where the class's layout was measured without it (elsarticle's 5p: two columns, though the class declares no twocolumn option). */
   readonly columns?: 1 | 2;
+  /** Packages among `preloads` the class does not load under the option (tufte-handout's nobib: natbib and bibentry). A template that gives the option may load what refuses them; one that does not still may not. */
+  readonly unloads?: readonly PackageId[];
   readonly description: string;
 };
 

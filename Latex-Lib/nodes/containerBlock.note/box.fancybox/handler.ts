@@ -2,13 +2,18 @@
  * box.fancybox: the note in a paragraph box inside a frame. fancybox's
  * \shadowbox, \doublebox, \ovalbox and \Ovalbox (\shadowsize, \cornersize),
  * or the kernel's \fbox and xcolor's \colorbox and \fcolorbox; \fboxsep and
- * \fboxrule for every one. None breaks across pages.
+ * \fboxrule for every one. None breaks across pages. Set flush (`\noindent`),
+ * a head still waiting there (a statement's above it) is first set on its own
+ * line (`\LatexLibHeadOwnLine`, protocol.ts): beside the frame it ran past the
+ * line by its width (run 41584963423: 961 not-denied branches failed on that
+ * alone, all flush). Centred, the head ends its own line before the frame
+ * (the center environment's \centering stretch lets the line break there). [F3]
  * CTAN: https://ctan.org/pkg/fancybox (section 1, Fancy frames)
  */
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
-import { param } from '../../protocol.ts';
-import { colorFor, titled, toneDefinition } from '../node.ts';
+import { HEAD_OWN_LINE, headOwnLine, param } from '../../protocol.ts';
+import { colorFor, keepingFootnotes, titled, toneDefinition } from '../node.ts';
 import key from './key.ts';
 
 export const FANCY = ['shadowbox', 'doublebox', 'ovalbox', 'Ovalbox'];
@@ -27,7 +32,7 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
     preamble: (_params, _parentType, node) => {
       const tone = colored ? toneDefinition([param(p, 'background'), param(p, 'frameColor')], node) : [];
       const packages = [...(FANCY.includes(frame) ? ['\\usepackage{fancybox}'] : []), ...(colored ? ['\\usepackage{xcolor}'] : [])];
-      const declarations = [...lengths, ...tone];
+      const declarations = [...lengths, ...tone, ...(p['center'] === false ? [HEAD_OWN_LINE] : [])];
       return { ...(packages.length === 0 ? {} : { packages }), ...(declarations.length === 0 ? {} : { declarations }) };
     },
     emit: (node, content) => {
@@ -36,7 +41,9 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
         frame === 'colorbox' ? `\\colorbox{${colorFor(param(p, 'background', 'gray!15'), node)}}{${inner}}`
         : frame === 'fcolorbox' ? `\\fcolorbox{${colorFor(param(p, 'frameColor', 'black'), node)}}{${colorFor(param(p, 'background', 'white'), node)}}{${inner}}`
         : `\\${frame}{${inner}}`;
-      return p['center'] === false ? `\\noindent${box}\n\n` : `\\begin{center}\n${box}\n\\end{center}\n\n`;
+      // A footnote in the \parbox reaches the page's foot: footnotehyper's \savenotes around the box (b22 OV2-alt).
+      // Merge (b22): the waiting head goes first, on its own line, outside MARGIN-4's \savenotes scope (RUNIN-1 [F3] + OV2-alt).
+      return p['center'] === false ? headOwnLine(keepingFootnotes(content, `\\noindent${box}\n\n`)) : keepingFootnotes(content, `\\begin{center}\n${box}\n\\end{center}\n\n`);
     },
   };
 };

@@ -1,0 +1,19 @@
+{
+  "id": "iclr",
+  "description": "ICLR 2027's style file iclr2027_conference.sty (commit 46ed6f4, 2026-09-01), on plain article. Not on CTAN or the engine's mirror: from github.com/ICLR/Master-Template, folder iclr2027. The folder's fancyhdr.sty (v3.2) and natbib.sty are old copies of mirror packages and are not shipped. One column on US letter. \\iclrfinalcopy, the style's switch for the camera-ready and arXiv versions, shows the authors instead of 'Anonymous authors'. The template loads times beside the style (\\usepackage{iclr2027_conference,times}); it is left to the document, since under XeTeX ptm has no TU shape. The style defines \\font\\iclrtenhv = phvb at 8pt, a TFM font from the helvetic package, which XeTeX loads.",
+  "class": "article",
+  "options": [],
+  "preamble": [
+    "\\usepackage{iclr2027_conference}",
+    "\\iclrfinalcopy"
+  ],
+  "files": [
+    {
+      "path": "iclr2027_conference.sty",
+      "sha256": "797deef41724e93761426ac0cbcca46279a91cc650dd1f0ce76a4f08d2098ea6"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

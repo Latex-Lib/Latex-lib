@@ -10,7 +10,8 @@
  *   class forbids (technically or by policy), a heading at a level whose
  *   command the class forbids though it defines it, unless a chosen way
  *   loads a package that replaces it (`forbids.names`), or a way that
- *   requires such a name, an option clash with what the class preloads;
+ *   requires such a name, an option clash with what the class preloads
+ *   (less what the class options given unload: tufte-handout's nobib);
  * - the document: two handlers owning one claim, a package or way a handler
  *   conflicts with, two packages whose facts refuse each other, options a
  *   package's facts mark exclusive, a requirement nobody supplies (a counter
@@ -74,7 +75,9 @@ export const resolve = (
     return [{ key, params, kinds: input.kinds?.[key.node] ?? [] }];
   });
   const loaded = new Map<string, Set<string>>();
-  for (const pre of profile?.preloads ?? []) loaded.set(pre.pkg, new Set(pre.options ?? []));
+  // What the class loads itself, less what an option given leaves out (tufte-handout's nobib: natbib and bibentry, so biblatex goes there).
+  const unloaded = new Set((input.classOptions ?? []).flatMap((o) => profile?.options[o]?.unloads ?? []));
+  for (const pre of profile?.preloads ?? []) if (!unloaded.has(pre.pkg)) loaded.set(pre.pkg, new Set(pre.options ?? []));
   for (const { key, params } of chosen) {
     for (const load of key.loads) {
       if (!matches(load.when, params)) continue;

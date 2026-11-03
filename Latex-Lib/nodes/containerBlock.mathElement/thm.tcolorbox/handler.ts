@@ -9,10 +9,14 @@
  * (`add to width=-\leftskip`, last, so an `extra` width is narrowed too). [W1]
  * A box that holds a list-based statement first ends a list or statement label still pending where it opens
  * (`\LatexLibFlushLabel`), so the label stands on its own line above the box. [LP1]
+ * A head still waiting where any box opens (a statement's above it) is set on its own line first, by the key
+ * `code={\LatexLibHeadOwnLine}` (protocol.ts `HEAD_OWN_LINE`): it stood beside an unbreakable box and ran past the line by its
+ * width (run 41584963423: 3,754 not-denied branches failed on that box alone). [F3]
  */
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
 import { bodyOf, declarations, displayName, elementOf, environmentOf, holdsStatement, labelLine, numberingOf, text } from '../statement.ts';
+import { HEAD_OWN_LINE, HEAD_OWN_LINE_KEY } from '../../protocol.ts';
 import key from './key.ts';
 
 /**
@@ -49,6 +53,8 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
     ...(params['sharp'] === true ? ['sharp corners'] : []),
     'enhanced',
     ...(extra === '' ? [] : [extra]),
+    // A head still waiting where the box opens goes on its own line first (protocol.ts). [F3]
+    HEAD_OWN_LINE_KEY,
     // KOMA-Script (3.22 on) indents a footnote's text with \leftskip 1.5em (scrkernel-footnotes.dtx l.335-349), so a box
     // \linewidth wide on such a line ran 13.5pt past it: 1,685 fit branches in scrartcl.A, scrreprt.A and scrartcl.B, each
     // below a footnote (scrartcl.A d01da35462b7f58c0fb58 result d24700ae2d75 l.1644, display ' [] ' after the glue).
@@ -65,6 +71,7 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
         declarations: [
           `\\tcbuselibrary{theorems,skins${breakable ? ',breakable' : ''}}`,
           FLUSH_LABEL,
+          HEAD_OWN_LINE,
           ...declarations(elementOf(node), numbering, (env, element, counter) => {
             const counting = 'shared' in counter ? `use counter from=${counter.shared}` : counter.within === 'none' ? 'auto counter' : `auto counter,number within=${counter.within}`;
             return `\\newtcbtheorem[${counting}]{${env}}{${displayName(element)}}{${options}}{${env}}`;

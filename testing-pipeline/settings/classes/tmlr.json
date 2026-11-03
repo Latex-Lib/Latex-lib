@@ -1,0 +1,18 @@
+{
+  "id": "tmlr",
+  "description": "Transactions on Machine Learning Research's tmlr.sty (commit 7bf90ef, 2023-06-30), on plain article. Not on CTAN or the engine's mirror: from github.com/JmlrOrg/tmlr-style-file (Apache-2.0). The repository's fancyhdr.sty is an old copy of a mirror package and is not shipped. One column on US letter. preprint shows the authors, as accepted does, with a preprint header. The style loads [T1]{fontenc} and lmodern, so under XeTeX the text is in T1 Latin Modern Type 1 fonts, not TU.",
+  "class": "article",
+  "options": [],
+  "preamble": [
+    "\\usepackage[preprint]{tmlr}"
+  ],
+  "files": [
+    {
+      "path": "tmlr.sty",
+      "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

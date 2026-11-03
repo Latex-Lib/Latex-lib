@@ -26,12 +26,13 @@ import type {
  * expects it in the log. The host places each sentinel in running text inside
  * the node's content, never in a moving argument (a heading, a caption), where
  * the table of contents or a running head would print it again. Its options
- * are `SentinelSpec`'s: `outside` (a margin note's), `nextRun` (typeset from
- * an earlier run's auxiliary file, as a note column is) and `role`. `marked`:
+ * are `SentinelSpec`'s: `outside` (a margin note's), `drawn` (in a TikZ node,
+ * as todonotes' note is), `nextRun` (typeset from an earlier run's auxiliary
+ * file, as a note column is) and `role`. `marked`:
  * the branch carries the marked runs, not the escape run.
  */
 export type BuildProbes = {
-  readonly sentinel: (id: string, options?: { readonly outside?: boolean; readonly nextRun?: boolean; readonly role?: string }) => string;
+  readonly sentinel: (id: string, options?: { readonly outside?: boolean; readonly drawn?: boolean; readonly nextRun?: boolean; readonly role?: string }) => string;
   readonly marked: boolean;
 };
 

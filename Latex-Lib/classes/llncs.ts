@@ -5,14 +5,17 @@ import { defineClass } from '../schema/class.ts';
  * names it already defines, refused packages, layout), with what its
  * requirement document says it defines and forbids, the theorem-like
  * environments its source predefines (llncs.cls l.1153-1183), and the name
- * its source defines but refuses (`forbids.names`).
+ * its source defines but refuses (`forbids.names`). Its counters include
+ * article's part counter, which llncs's own \part numbers (llncs.cls v2.26
+ * l.257-300, a page of its own; b22, owner item O-L7): without it the host
+ * read llncs as lacking `part`, so no part heading was ever compiled under it.
  */
 export default defineClass({
   id: 'class.llncs',
   name: "llncs",
   zerotex: "yes",
   preloads: [{"pkg": "multicol"}],
-  defines: ["counter:chapter", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:theorem", "env:lemma", "env:corollary", "env:definition", "env:proposition", "env:remark", "env:example", "env:property", "env:note", "env:conjecture", "env:claim", "env:proof", "env:case", "env:exercise", "env:problem", "env:question", "env:solution", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:part", "counter:chapter", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:theorem", "env:lemma", "env:corollary", "env:definition", "env:proposition", "env:remark", "env:example", "env:property", "env:note", "env:conjecture", "env:claim", "env:proof", "env:case", "env:exercise", "env:problem", "env:question", "env:solution", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
   options: {},
   forbids: {
     technical: [{ pkg: "titlesec", reason: "its load test stops: Argument of \\subparagraph has an extra }.", evidence: [{ kind: 'compile', cell: 'testing-pipeline/out/profiles/llncs.A.json' }] }, { pkg: "amsthm", reason: "its load test stops: LaTeX Error: Command \\proof already defined. Or name \\end... illegal, see p.192 of the manual.", evidence: [{ kind: 'compile', cell: 'testing-pipeline/out/profiles/llncs.A.json' }] }],
@@ -21,5 +24,5 @@ export default defineClass({
   },
   layout: { columns: 1, textwidth: "347.12354pt", fontsize: "10pt" },
   vocabulary: {"\\institute": "affiliations", "\\keywords": "keywords", "\\orcidID": "an author's ORCID"},
-  evidence: [{ kind: 'compile', cell: 'testing-pipeline/out/profiles/llncs.A.json' }, { kind: 'requirement', file: 'Template/template-requirement/Springer_LNCS.md', line: '81' }, { kind: 'requirement', file: 'Template/template-requirement/Springer_LNCS.md', line: '79' }, { kind: 'source', file: 'Latex Related Research/Latex-lib-main/Source/0712-llncs/llncs.cls', line: '1153' }],
+  evidence: [{ kind: 'compile', cell: 'testing-pipeline/out/profiles/llncs.A.json' }, { kind: 'source', file: 'llncs.cls (llncs 2025/02/25 v2.26, MiKTeX snapshot 9766)', line: '257-300 (\\part, \\@part with \\refstepcounter{part}, \\@endpart)' }, { kind: 'requirement', file: 'Template/template-requirement/Springer_LNCS.md', line: '81' }, { kind: 'requirement', file: 'Template/template-requirement/Springer_LNCS.md', line: '79' }, { kind: 'source', file: 'Latex Related Research/Latex-lib-main/Source/0712-llncs/llncs.cls', line: '1153' }],
 });

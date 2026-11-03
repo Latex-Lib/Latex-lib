@@ -17,7 +17,7 @@ export default defineKey(
       font: { type: 'tex', default: '\\footnotesize', description: "the note's font and size" },
       align: { type: 'enum', values: ['ragged', 'justified', 'center'], default: 'ragged', description: "the note's alignment (\\raggedright, justified, \\centering)" },
       title: { type: 'boolean', default: true, description: "the note's title in bold above its text (or as the box's title)" },
-      width: { type: 'dimen', default: '', description: "\\marginparwidth; '' keeps the class's" },
+      width: { type: 'dimen', default: '', description: "\\marginparwidth; '' keeps the class's, or the room its margin has where the class's is under 2cm or runs off the paper (memoir's rule: the narrower margin, on both pages when they alternate, less twice \\marginparsep)" },
       sep: { type: 'dimen', default: '', description: "\\marginparsep, between text and note; '' keeps the class's" },
     },
     presets: PRESETS,
@@ -33,6 +33,14 @@ export default defineKey(
           { kind: 'requirement', file: 'Template/template-requirement/Beamer.md', line: '29' },
         ],
       },
+      {
+        class: 'class.cas-sc',
+        reason:
+          "cas-sc leaves no margin a note fits in: its text block is 468.33pt wide on a 546.29pt page, 38.98pt from either edge, and it keeps article's 65pt \\marginparwidth and 11pt \\marginparsep, so a note ran 37pt off the paper; the room that margin has, 38.98pt less \\marginparsep on either side (memoir's rule, which the library's note-column fit applies), is 16.98pt, narrower than a note's own bold title (20.84pt in \\footnotesize)",
+        evidence: [
+          { kind: 'compile', cell: "GitHub run 41584963423, cas-sc.A: COMPAT-GEOMETRY paperWidth 546.29291pt, oddLeft 38.98026pt, textWidth 468.3324pt; d13e0dcf2f1aebba0760a result e6ed0775a7, note.marginnote@italic-unadjusted's sentinel at x 682.8pt; 987 of the 2,980 passing not-denied branches below a margin note shipped their sentinel off the paper, which the oracle did not check for a margin note's until b22's `sentinel:off-paper` (b22 MC1/O-MNJ)" },
+        ],
+      },
     ],
     // Its body is a box: a float in it is "Not in outer par mode" (04b32896a8, article.A run: branch b9b4ea177bc18de6f86b4,
     // note.marginpar@ragged-small > list.enumerate-pkg > fig.floatrow, l.288); 136 of 324 float branches below it (8 core pairs).
@@ -40,7 +48,10 @@ export default defineKey(
     // the output routine places, and the insert in it never reaches the page's footnotes (GitHub run 41584963423: 0 of 94
     // not-denied branches with General's footnote anchor below it pass, 90 never ship the text, e.g. acmart-manuscript.A
     // d08f06e41bd6b4c059d1f result a8ef3c1a69, branch bd90e9d63c66d9e558e41, '.t never shipped'). [OV2]
-    gives: { floats: false, footnotes: false, boxDepth: 1 },
+    // Since b22 the handler sets a note that holds a footnote inside footnotehyper's \savenotes … \spewnotes, as Flouest's
+    // General note does, so the text is set after the note at the page's foot (`keepingFootnotes`), and the footnote is no
+    // longer denied below it. [OV2-alt]
+    gives: { floats: false, boxDepth: 1 },
     needs: { floats: true, argument: false },
     zerotex: 'untested',
   }),

@@ -7,7 +7,7 @@ export default defineKey(
     id: 'note.notecolumn',
     node: 'containerBlock/note',
     description:
-      "KOMA's scrlayer-notecolumn: \\makenote*[column]{…} (the starred form, its text kept detokenized for the column) into a note column beside the text, synchronised with it across pages; the marginpar column, or one of its own declared with \\DeclareNewNoteColumn[font=…,width=…]{name}. 1 template.",
+      "KOMA's scrlayer-notecolumn: \\makenote*[column]{…} (the starred form, its text kept detokenized for the column) into a note column beside the text, synchronised with it across pages; the marginpar column, or one of its own declared with \\DeclareNewNoteColumn[font=…,width=…]{name}. Without a width a column is \\marginparwidth wide: the class's, or the room its margin has where the class's is under 2cm or runs off the paper. 1 template.",
     ctan: ['koma-script'],
     features: ['margin-note', 'note-column', 'colored', 'small-type'],
     params: {
@@ -25,6 +25,14 @@ export default defineKey(
         evidence: [
           { kind: 'compile', cell: "ce4fa63c8b20370d9e5ae (copy batch-3b beamer.A, result 2c53bf729dfd: @colored-column, 128 such boxes; 8 of the 9 notecolumn documents that built with no TeX error show them, with either preset; the ninth, c64f0227f269b08a2c706, result 59ef036f38be, had its notes set 142.26pt wide by a @wide marginpar and shipped them at x 485.6pt on a 364.2pt page)" },
           { kind: 'requirement', file: 'Template/template-requirement/Beamer.md', line: '29' },
+        ],
+      },
+      {
+        class: 'class.cas-sc',
+        reason:
+          "cas-sc leaves no margin a note column fits in: its text block is 468.33pt wide on a 546.29pt page, 38.98pt from either edge, and it keeps article's 65pt \\marginparwidth and 11pt \\marginparsep, so the column ran 37pt off the paper; the room that margin has, 38.98pt less \\marginparsep on either side (memoir's rule, which the library's note-column fit applies), is 16.98pt, narrower than a note's own bold title",
+        evidence: [
+          { kind: 'compile', cell: "GitHub run 41584963423, cas-sc.A: COMPAT-GEOMETRY paperWidth 546.29291pt, oddLeft 38.98026pt, textWidth 468.3324pt; 987 of the 2,980 passing not-denied branches below a margin note shipped their sentinel off the paper (94 below this way), which the oracle did not check for a margin note's until b22's `sentinel:off-paper` (b22 MC1/O-MNJ)" },
         ],
       },
     ],

@@ -1,0 +1,13 @@
+{
+  "id": "jmlr-pmlr",
+  "description": "Nicola Talbot's jmlr class v1.30 (2022/02/09, CTAN and MiKTeX package jmlr, LPPL 1.3 or later), the class of the Proceedings of Machine Learning Research (COLT, ACML, CLeaR, L4DC, MIDL and other PMLR volumes). The JMLR journal itself uses article with jmlr2e.sty, which is not in this package or in MiKTeX. pmlr is the option the package README asks for ('Please use class option pmlr for new articles'); it only sets the series name, 'Proceedings of Machine Learning Research', in the first page's head (jmlr.cls l.104-109, \\ps@jmlrtps l.499). The class is article at 11pt, twoside, letter paper, one column. It loads amsmath, amssymb, natbib (author-year, plainnat), graphicx, xcolor, algorithm2e (algo2e) and hyperref itself, and jmlrutils.sty defines the algorithm environment, proof, and theorem, lemma, proposition, remark, corollary, definition, conjecture, axiom and example (jmlrutils.sty l.187, l.445, l.551-608). It needs nothing before \\begin{document}: \\jmlrvolume, \\jmlryear, \\jmlrworkshop and \\editor default to empty and the first-page head leaves them out, the page range there comes from the class's own jmlrstart and jmlrend labels (l.555), and the running head's short title is the \\title, or \\jobname when there is none (l.254). It loads no fontenc and has no engine test, so under XeTeX it keeps the engine's TU Latin Modern. PMLR papers are one column, so only setup A.",
+  "class": "jmlr",
+  "options": [
+    "pmlr"
+  ],
+  "preamble": [],
+  "files": [],
+  "setups": [
+    "A"
+  ]
+}

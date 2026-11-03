@@ -250,6 +250,35 @@ test("an error in fancyhdr's running head belongs to the document, not to the br
   assert.deepEqual(checksOf(judgement), { A: ['error:document'], B: ['error:document'] });
 });
 
+test("an error raised in a package's own file is the branches' that load the package, not the branch holding the document's line of that number", () => {
+  // abstract.sty's "Extra \else" at its own l.62 under mnras (run 41584963423, F117): here line 12 is A's and holds `\else` too.
+  const loading = withLines({ 3: '\\usepackage{abstract}', 12: '\\ifx\\a\\b\\else' }, { preamble: [{ branch: 'B', from: 3, to: 3 }] });
+  const judged = (...lines: string[]) => checksOf(judge({ cell: 'c', emitted: loading, result: result('(main.tex', ...lines, hit('A.0'), hit('B.0')), expected: expected() }));
+  assert.deepEqual(judged('(/texmf/tex/latex/abstract/abstract.sty', '! Extra \\else.', 'l.12 \\else', '', ')'), { A: [], B: ['error'] });
+  // In a file no branch loads (the class's own), the document's.
+  assert.deepEqual(judged('(/texmf/tex/latex/base/size10.clo', '! Extra \\else.', 'l.12 \\else', '', ')'), { A: ['error:document'], B: ['error:document'] });
+  // Back in the document once the package's file closed: the document's line.
+  assert.deepEqual(judged('(/texmf/tex/latex/abstract/abstract.sty', ')', '! Extra \\else.', 'l.12 \\else', ''), { A: ['error'], B: [] });
+  // Raised in a file another package loaded (tikz.sty under tcolorbox.sty): the branches' that load the package the
+  // document opened (`TexError.through`: B's tcolorbox), not those that load the inner file (A's tikz, a no-op by then).
+  const nested = withLines(
+    { 3: '\\usepackage{tcolorbox}', 4: '\\usepackage{tikz}', 12: '\\ifx\\a\\b\\else' },
+    {
+      preamble: [
+        { branch: 'B', from: 3, to: 3 },
+        { branch: 'A', from: 4, to: 4 },
+      ],
+    },
+  );
+  const inner = judge({
+    cell: 'c',
+    emitted: nested,
+    result: result('(main.tex', '(/texmf/tex/latex/tcolorbox/tcolorbox.sty (/texmf/tex/latex/pgf/frontendlayer/tikz.sty', '! Extra \\else.', 'l.12 \\else', '', '))', hit('A.0'), hit('B.0')),
+    expected: expected(),
+  });
+  assert.deepEqual(checksOf(inner), { A: [], B: ['error'] });
+});
+
 test('damaging warnings fail the branch whose line they name; harmless ones fail nothing', () => {
   const judgement = judge({
     cell: 'c',
@@ -391,6 +420,18 @@ test("on a build that never settled, an overfull hbox its citations printed as k
   assert.deepEqual(checksOf(plain), { A: ['error'], B: ['warning:overfull-hbox'] });
 });
 
+test("a box reported on the line after a branch that ends with a margin note is the note's: TeX read that line for the note's trailing optional argument", () => {
+  // article.B d0e00c1c7382c4790e3d5 (run 41584963423): `\marginnote{…}` last at l.236, its words overfull "at lines 237--237", the host's \nocite{*}.
+  const judged = (lines: Readonly<Record<number, string>>, box: string) =>
+    checksOf(judge({ cell: 'c', emitted: withLines(lines), result: result(box, hit('A.0'), hit('B.0')), expected: expected() }));
+  const box = 'Overfull \\hbox (12.5pt too wide) in paragraph at lines 30--30';
+  assert.deepEqual(judged({ 29: 'text\\marginnote{{\\raggedleft \\textbf{bold} words\\par}}', 30: '\\nocite{*}' }, box), { A: [], B: ['warning:overfull-hbox'] });
+  // A note that does not end its line, a note with its offset given, or a box two lines on: the document's.
+  assert.deepEqual(judged({ 29: '\\marginnote{words} and more', 30: '\\nocite{*}' }, box), { A: ['warning:overfull-hbox:document'], B: ['warning:overfull-hbox:document'] });
+  assert.deepEqual(judged({ 29: '\\marginnote{words}[2pt]', 30: '\\nocite{*}' }, box), { A: ['warning:overfull-hbox:document'], B: ['warning:overfull-hbox:document'] });
+  assert.deepEqual(judged({ 29: '\\marginnote{words}', 31: '\\nocite{*}' }, box.replace(/30--30/, '31--31')), { A: ['warning:overfull-hbox:document'], B: ['warning:overfull-hbox:document'] });
+});
+
 test('a note column sentinel (nextRun) that never shipped is judged only on a settled build', () => {
   const notecolumn = expected({}, { sentinels: [{ id: 'B.0', nextRun: true }] });
   // A TeX error ended the build after its first run: the note column's text, from the .slnc an earlier run writes, never shipped.
@@ -520,6 +561,32 @@ test('a sentinel lost, shipped twice, or outside the text block fails its branch
   });
   assert.deepEqual(checksOf(judgement), { A: ['sentinel:duplicated', 'sentinel:missing'], B: ['sentinel:outside'] });
   assert.match(judgement.verdicts[1]?.failures[0]?.evidence ?? '', /x 560\.0pt, y 600\.0pt on page 1/);
+});
+
+test("a margin note's sentinel past the paper's left or right edge fails its branch on a settled build; one below the paper's foot, one TikZ draws, or one after an error does not", () => {
+  const judged = (...before: string[]) =>
+    judge({
+      cell: 'c',
+      emitted,
+      result: result(...before, hit('A.0'), hit('A.n', 1, 640, 600), hit('B.0'), hit('B.n', 1, 600, -30), hit('B.m', 1, -5, 600), hit('B.d', 1, 700, 600)),
+      expected: expected(
+        { sentinels: [{ id: 'A.0' }, { id: 'A.n', outside: true }] },
+        { sentinels: [{ id: 'B.0' }, { id: 'B.n', outside: true }, { id: 'B.m', outside: true }, { id: 'B.d', outside: true, drawn: true }] },
+      ),
+    });
+  const judgement = judged();
+  assert.deepEqual(checksOf(judgement), { A: ['sentinel:off-paper'], B: [] });
+  assert.match(judgement.verdicts[0]?.failures[0]?.evidence ?? '', /A\.n shipped past the paper's edge, at x 640\.0pt on page 1 \(the paper is 612\.0pt wide\)/);
+  // Past the left edge by more than the tolerance (B.m, 5pt past it, is within it).
+  const left = judge({
+    cell: 'c',
+    emitted,
+    result: result(hit('A.0'), hit('B.0'), hit('B.l', 1, -15, 600)),
+    expected: expected({}, { sentinels: [{ id: 'B.0' }, { id: 'B.l', outside: true }] }),
+  });
+  assert.deepEqual(checksOf(left), { A: [], B: ['sentinel:off-paper'] });
+  // A build a TeX error ended after its first run: marginnote placed the note from no earlier run's position.
+  assert.deepEqual(checksOf(judged('! Undefined control sequence.', 'l.12 \\begin{figure}', '')), { A: ['error'], B: [] });
 });
 
 test('sentinels placed with no text block in the log fail the document', () => {

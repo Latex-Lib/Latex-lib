@@ -7,14 +7,14 @@ export default defineKey(
     id: 'fig.floatrow',
     node: 'atomicBlock/image',
     description:
-      "A caption beside the image: sidecap's \\begin{SCfigure} … \\end{SCfigure} (leftcaption, rightcaption, outercaption, innercaption; \\sidecaptionrelwidth, \\sidecaptionvpos), or floatrow's \\fcapside under \\floatsetup[figure]{capposition=beside,capbesideposition=…}. sidecap's image is at most half the line wide, so the caption keeps the other half less the separation. 11 templates.",
+      "A caption beside the image: sidecap's \\begin{SCfigure}[factor] … \\end{SCfigure} (leftcaption, rightcaption, outercaption, innercaption; the caption's width as a factor of the image's; \\sidecaptionvpos), or floatrow's \\fcapside under \\floatsetup[figure]{capposition=beside,capbesideposition=…}. sidecap's image is at most half the line wide, so the caption keeps the other half less the separation. 11 templates.",
     ctan: ['sidecap', 'floatrow'],
     features: ['side-caption', 'floating', 'captioned', 'scaled'],
     params: {
       engine: { type: 'enum', values: ['sidecap', 'floatrow'], default: 'sidecap', compat: true, description: "sidecap's SCfigure, or floatrow's \\fcapside" },
       position: { type: 'enum', values: ['outer', 'inner', 'left', 'right'], default: 'outer', description: 'which side the caption goes' },
       vpos: { type: 'enum', values: ['t', 'c', 'b'], default: 'b', description: 'the caption at the top, centre or bottom of the image' },
-      relWidth: { type: 'number', default: 1, description: "sidecap: the caption's width relative to the image (\\sidecaptionrelwidth, 1 = as wide)" },
+      relWidth: { type: 'number', default: 1, description: "sidecap: the caption's width as a factor of the image's, SCfigure's first optional argument (1 = as wide); sidecap cuts it to what the line leaves, so a large factor gives the caption the rest" },
     },
     presets: PRESETS,
     loads: [

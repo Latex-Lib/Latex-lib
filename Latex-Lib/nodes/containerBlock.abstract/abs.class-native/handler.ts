@@ -5,7 +5,7 @@
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
 import { param } from '../../protocol.ts';
-import { abstractBody } from '../node.ts';
+import { abstractBody, CLASS_ABSTRACT_HERE, STORED_ABSTRACT_RELEASE } from '../node.ts';
 import key from './key.ts';
 
 // The command form hands \abstract a \protected macro holding the body, not the body itself: aa expands its argument at once to
@@ -25,8 +25,13 @@ const commandForm = (content: string): string => {
 export const realize = (given: { readonly [name: string]: unknown } = {}): Realization => {
   const p = withDefaults(key.params, given as never) as { readonly [name: string]: unknown };
   return {
-    preamble: (_params, _parentType, node, content) => param(p, 'form') === 'command' && node !== undefined && content !== undefined ? { declarations: [commandForm(content)] } : {},
-    emit: (node, content, context, parentType) => param(p, 'form') === 'command' ? '' : `\\begin{abstract}\n${abstractBody(node, content)}\n\\end{abstract}\n\n`,
+    // The command form also prints its body where the node stands under sn-jnl and aa when the document has no title
+    // (CLASS_ABSTRACT_HERE); the environment form's abstract a class keeps for \maketitle is printed where it stands
+    // (STORED_ABSTRACT_RELEASE). Both are b22's interim forms for Flouest's one \maketitle after all front matter (revtex O3).
+    preamble: (_params, _parentType, node, content) =>
+      param(p, 'form') === 'command' ? (node !== undefined && content !== undefined ? { declarations: [commandForm(content), CLASS_ABSTRACT_HERE] } : {}) : { declarations: [STORED_ABSTRACT_RELEASE] },
+    emit: (node, content, context, parentType) =>
+      param(p, 'form') === 'command' ? (content.trim() === '' ? '' : `\\LatexLibClassAbstractHere{${content.trim()}}\n\n`) : `\\begin{abstract}\n${abstractBody(node, content)}\n\\end{abstract}\n\n`,
   };
 };
 

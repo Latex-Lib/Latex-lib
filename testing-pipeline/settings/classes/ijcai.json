@@ -1,0 +1,20 @@
+{
+  "id": "ijcai",
+  "description": "IJCAI-27's style file ijcai27.sty ('Conference Style, version of November 2018', a copy of ijcai22.sty), on plain article. Not on CTAN or the engine's mirror: from FormattingGuidelines-IJCAI-27.zip, linked from ijcai.org/authors_kit. Two columns, set by the style. The first two lines are the template's own page size (ijcai27.tex l.8-9); XeTeX has both primitives. The template also loads times; it is left to the document, since under XeTeX ptm has no TU shape.",
+  "class": "article",
+  "options": [],
+  "preamble": [
+    "\\pdfpagewidth=8.5in",
+    "\\pdfpageheight=11in",
+    "\\usepackage{ijcai27}"
+  ],
+  "files": [
+    {
+      "path": "ijcai27.sty",
+      "sha256": "cdf7ca9a28c6b1ba60cde0f42019ccea3722838242b69471db572d21f879d3b2"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

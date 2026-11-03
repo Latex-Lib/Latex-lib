@@ -1,0 +1,20 @@
+{
+  "id": "aistats",
+  "description": "AISTATS 2027's style file aistats2027.sty ('2026/09/02 AISTATS2027 submission/camera-ready style file'), on article with twoside as its template sets it. Not on CTAN or the engine's mirror: from AISTATS2027PaperPack.zip on aistats.org, linked from the 2027 call for papers. Its fancyhdr.sty copy is not shipped. Two columns, set by the style. preprint suppresses the venue and copyright block; accepted would stop with a PackageError if natbib is loaded with numbers (l.509-520). The style sets \\pdfpagewidth only when it is defined, which XeTeX has. With the default or preprint mode the running heading is fixed text; in accepted mode a title wider than \\textwidth stops with 'Running heading title exceeds size limitations' (l.228).",
+  "class": "article",
+  "options": [
+    "twoside"
+  ],
+  "preamble": [
+    "\\usepackage[preprint]{aistats2027}"
+  ],
+  "files": [
+    {
+      "path": "aistats2027.sty",
+      "sha256": "33ab38f8aac4b2f1df9fe67e354928598200584e9568385f32deb889e1b81d42"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

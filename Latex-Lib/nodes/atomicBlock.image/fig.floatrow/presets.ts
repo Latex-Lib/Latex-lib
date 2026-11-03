@@ -6,9 +6,9 @@ import { solution } from '../../evidence.ts';
 
 export const PRESETS = {
   'sidecap-outer': {
-    description: "sidecap's SCfigure: the caption beside the image at the outer edge, the caption half as wide as the image (\\sidecaptionrelwidth).",
+    description: "sidecap's SCfigure: the caption beside the image at the outer edge, taking all the line leaves it (the template's \\sidecaptionrelwidth of 50, a factor sidecap cuts to the rest).",
     features: ['side-caption', 'floating', 'captioned', 'scaled'],
-    params: { engine: 'sidecap', relWidth: 0.5 },
+    params: { engine: 'sidecap', relWidth: 50 },
     evidence: [solution('0315-valentjn-uni-stuttgart-phdthesis-templat', '105')],
   },
   'sidecap-left': {

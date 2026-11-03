@@ -1,0 +1,19 @@
+{
+  "id": "asmeconf",
+  "description": "John Lienhard's asmeconf class v1.46 (2026/01/10, CTAN and MiKTeX package asmeconf, MIT licence), ASME's conference paper format as on ASME's conference pages: article at 10pt, twoside, two columns started by \\maketitle, inline author names. No options: the template's (colorlinks,upint,subscriptcorrection,varvw,hyphenate,balance,greek,russian,vietnamese,german) demonstrate features and languages. The class is written for pdfLaTeX and LuaLaTeX; XeTeX takes its non-pdfTeX branch with fontspec on (the nofontspec option is meant for LuaLaTeX), loading unicode-math and TeX Gyre Termes X, TeX Gyre Heros, Inconsolatazi4 and STIX Two Math by file name (asmeconf.cls l.652-705, all in MiKTeX). The preamble fills the header and the author line with the class's own commands, as the template does: \\ConfName, \\ConfAcronym, \\ConfDate, \\ConfCity and \\PaperNo for the conference header (all optional), and \\SetAuthors with one \\SetAffiliation, since the class prints its own author list, not \\author's. The class makes \\date a footnote (\\versionfootnote, l.2195) and \\thanks do nothing (l.2184).",
+  "class": "asmeconf",
+  "options": [],
+  "preamble": [
+    "\\ConfName{Proceedings of the ASME International Mechanical Engineering Congress and Exposition}",
+    "\\ConfAcronym{IMECE2026}",
+    "\\ConfDate{November 8-12, 2026}",
+    "\\ConfCity{Sample City, USA}",
+    "\\PaperNo{IMECE2026-00001}",
+    "\\SetAuthors{A. N. Author\\affil{1}}",
+    "\\SetAffiliation{1}{Sample University, Sample City, USA}"
+  ],
+  "files": [],
+  "setups": [
+    "A"
+  ]
+}

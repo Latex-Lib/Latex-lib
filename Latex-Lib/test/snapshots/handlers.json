@@ -307,7 +307,7 @@
         "\\usepackage{mdframed}"
       ],
       "declarations": [
-        "\\newmdtheoremenv[linecolor=blue!60!black,backgroundcolor=blue!60!black!10,linewidth=1pt,innertopmargin=13pt,innerbottommargin=7pt,innerleftmargin=5pt,innerrightmargin=6pt]{theorem}{Theorem}[section]"
+        "\\newmdtheoremenv[linecolor=blue!60!black,backgroundcolor=blue!60!black!10,linewidth=1pt,usetwoside=false,innertopmargin=13pt,innerbottommargin=7pt,innerleftmargin=5pt,innerrightmargin=6pt]{theorem}{Theorem}[section]"
       ],
       "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
     },
@@ -317,8 +317,8 @@
         "\\usepackage{mdframed}"
       ],
       "declarations": [
-        "\\newmdtheoremenv[linecolor=blue!60!black,backgroundcolor=blue!60!black!10,linewidth=1pt,innertopmargin=13pt,innerbottommargin=7pt,innerleftmargin=5pt,innerrightmargin=6pt]{theorem}{Theorem}[section]",
-        "\\newmdtheoremenv[linecolor=blue!60!black,backgroundcolor=blue!60!black!10,linewidth=1pt,innertopmargin=13pt,innerbottommargin=7pt,innerleftmargin=5pt,innerrightmargin=6pt]{lemma}[theorem]{Lemma}"
+        "\\newmdtheoremenv[linecolor=blue!60!black,backgroundcolor=blue!60!black!10,linewidth=1pt,usetwoside=false,innertopmargin=13pt,innerbottommargin=7pt,innerleftmargin=5pt,innerrightmargin=6pt]{theorem}{Theorem}[section]",
+        "\\newmdtheoremenv[linecolor=blue!60!black,backgroundcolor=blue!60!black!10,linewidth=1pt,usetwoside=false,innertopmargin=13pt,innerbottommargin=7pt,innerleftmargin=5pt,innerrightmargin=6pt]{lemma}[theorem]{Lemma}"
       ],
       "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
     },
@@ -328,8 +328,8 @@
         "\\usepackage{mdframed}"
       ],
       "declarations": [
-        "\\newmdtheoremenv[linecolor=blue!60!black,backgroundcolor=blue!60!black!10,linewidth=1pt,innertopmargin=13pt,innerbottommargin=7pt,innerleftmargin=5pt,innerrightmargin=6pt]{theorem}{Theorem}[section]",
-        "\\newmdtheoremenv[linecolor=blue!60!black,backgroundcolor=blue!60!black!10,linewidth=1pt,innertopmargin=13pt,innerbottommargin=7pt,innerleftmargin=5pt,innerrightmargin=6pt]{definition}[theorem]{Definition}"
+        "\\newmdtheoremenv[linecolor=blue!60!black,backgroundcolor=blue!60!black!10,linewidth=1pt,usetwoside=false,innertopmargin=13pt,innerbottommargin=7pt,innerleftmargin=5pt,innerrightmargin=6pt]{theorem}{Theorem}[section]",
+        "\\newmdtheoremenv[linecolor=blue!60!black,backgroundcolor=blue!60!black!10,linewidth=1pt,usetwoside=false,innertopmargin=13pt,innerbottommargin=7pt,innerleftmargin=5pt,innerrightmargin=6pt]{definition}[theorem]{Definition}"
       ],
       "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
     }
@@ -341,7 +341,7 @@
         "\\usepackage{mdframed}"
       ],
       "declarations": [
-        "\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=1.5pt]{theorem}{Theorem}[section]"
+        "\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=1.5pt,usetwoside=false]{theorem}{Theorem}[section]"
       ],
       "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
     },
@@ -351,8 +351,8 @@
         "\\usepackage{mdframed}"
       ],
       "declarations": [
-        "\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=1.5pt]{theorem}{Theorem}[section]",
-        "\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=1.5pt]{lemma}[theorem]{Lemma}"
+        "\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=1.5pt,usetwoside=false]{theorem}{Theorem}[section]",
+        "\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=1.5pt,usetwoside=false]{lemma}[theorem]{Lemma}"
       ],
       "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
     },
@@ -362,8 +362,8 @@
         "\\usepackage{mdframed}"
       ],
       "declarations": [
-        "\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=1.5pt]{theorem}{Theorem}[section]",
-        "\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=1.5pt]{definition}[theorem]{Definition}"
+        "\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=1.5pt,usetwoside=false]{theorem}{Theorem}[section]",
+        "\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=1.5pt,usetwoside=false]{definition}[theorem]{Definition}"
       ],
       "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
     }
@@ -465,7 +465,8 @@
       "declarations": [
         "\\tcbuselibrary{theorems,skins,breakable}",
         "\\makeatletter\\providecommand*\\LatexLibFlushLabel{\\if@inlabel\\leavevmode\\fi}\\makeatother",
-        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=blue!5,colframe=blue!55!black,coltitle=white,fonttitle=\\bfseries,boxrule=0.8pt,arc=4pt,enhanced,left=6pt,right=6pt,top=6pt,bottom=6pt,add to width=-\\leftskip}{theorem}"
+        "\\makeatletter\\providecommand*\\LatexLibHeadOwnLine{\\ifvmode\\if@noskipsec\\noindent\\par\\nobreak\\else\\if@inlabel\\ifdim\\wd\\@labels>\\z@\\noindent\\par\\nobreak\\fi\\fi\\fi\\fi}\\makeatother",
+        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=blue!5,colframe=blue!55!black,coltitle=white,fonttitle=\\bfseries,boxrule=0.8pt,arc=4pt,enhanced,left=6pt,right=6pt,top=6pt,bottom=6pt,code={\\LatexLibHeadOwnLine},add to width=-\\leftskip}{theorem}"
       ],
       "body": "\\begin{theorem}[breakable]{Note}{}\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
     },
@@ -476,8 +477,9 @@
       "declarations": [
         "\\tcbuselibrary{theorems,skins,breakable}",
         "\\makeatletter\\providecommand*\\LatexLibFlushLabel{\\if@inlabel\\leavevmode\\fi}\\makeatother",
-        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=blue!5,colframe=blue!55!black,coltitle=white,fonttitle=\\bfseries,boxrule=0.8pt,arc=4pt,enhanced,left=6pt,right=6pt,top=6pt,bottom=6pt,add to width=-\\leftskip}{theorem}",
-        "\\newtcbtheorem[use counter from=theorem]{lemma}{Lemma}{colback=blue!5,colframe=blue!55!black,coltitle=white,fonttitle=\\bfseries,boxrule=0.8pt,arc=4pt,enhanced,left=6pt,right=6pt,top=6pt,bottom=6pt,add to width=-\\leftskip}{lemma}"
+        "\\makeatletter\\providecommand*\\LatexLibHeadOwnLine{\\ifvmode\\if@noskipsec\\noindent\\par\\nobreak\\else\\if@inlabel\\ifdim\\wd\\@labels>\\z@\\noindent\\par\\nobreak\\fi\\fi\\fi\\fi}\\makeatother",
+        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=blue!5,colframe=blue!55!black,coltitle=white,fonttitle=\\bfseries,boxrule=0.8pt,arc=4pt,enhanced,left=6pt,right=6pt,top=6pt,bottom=6pt,code={\\LatexLibHeadOwnLine},add to width=-\\leftskip}{theorem}",
+        "\\newtcbtheorem[use counter from=theorem]{lemma}{Lemma}{colback=blue!5,colframe=blue!55!black,coltitle=white,fonttitle=\\bfseries,boxrule=0.8pt,arc=4pt,enhanced,left=6pt,right=6pt,top=6pt,bottom=6pt,code={\\LatexLibHeadOwnLine},add to width=-\\leftskip}{lemma}"
       ],
       "body": "\\begin{lemma}[breakable]{Note}{}\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
     },
@@ -488,8 +490,9 @@
       "declarations": [
         "\\tcbuselibrary{theorems,skins,breakable}",
         "\\makeatletter\\providecommand*\\LatexLibFlushLabel{\\if@inlabel\\leavevmode\\fi}\\makeatother",
-        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=blue!5,colframe=blue!55!black,coltitle=white,fonttitle=\\bfseries,boxrule=0.8pt,arc=4pt,enhanced,left=6pt,right=6pt,top=6pt,bottom=6pt,add to width=-\\leftskip}{theorem}",
-        "\\newtcbtheorem[use counter from=theorem]{definition}{Definition}{colback=blue!5,colframe=blue!55!black,coltitle=white,fonttitle=\\bfseries,boxrule=0.8pt,arc=4pt,enhanced,left=6pt,right=6pt,top=6pt,bottom=6pt,add to width=-\\leftskip}{definition}"
+        "\\makeatletter\\providecommand*\\LatexLibHeadOwnLine{\\ifvmode\\if@noskipsec\\noindent\\par\\nobreak\\else\\if@inlabel\\ifdim\\wd\\@labels>\\z@\\noindent\\par\\nobreak\\fi\\fi\\fi\\fi}\\makeatother",
+        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=blue!5,colframe=blue!55!black,coltitle=white,fonttitle=\\bfseries,boxrule=0.8pt,arc=4pt,enhanced,left=6pt,right=6pt,top=6pt,bottom=6pt,code={\\LatexLibHeadOwnLine},add to width=-\\leftskip}{theorem}",
+        "\\newtcbtheorem[use counter from=theorem]{definition}{Definition}{colback=blue!5,colframe=blue!55!black,coltitle=white,fonttitle=\\bfseries,boxrule=0.8pt,arc=4pt,enhanced,left=6pt,right=6pt,top=6pt,bottom=6pt,code={\\LatexLibHeadOwnLine},add to width=-\\leftskip}{definition}"
       ],
       "body": "\\begin{definition}[breakable]{Note}{}\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
     }
@@ -502,7 +505,8 @@
       "declarations": [
         "\\tcbuselibrary{theorems,skins,breakable}",
         "\\makeatletter\\providecommand*\\LatexLibFlushLabel{\\if@inlabel\\leavevmode\\fi}\\makeatother",
-        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=yellow!35!white,colframe=yellow!35!white,coltitle=white,fonttitle=\\bfseries,boxrule=0pt,arc=0pt,sharp corners,enhanced,top=5pt,bottom=3pt,left=2pt,right=2pt,add to width=-\\leftskip}{theorem}"
+        "\\makeatletter\\providecommand*\\LatexLibHeadOwnLine{\\ifvmode\\if@noskipsec\\noindent\\par\\nobreak\\else\\if@inlabel\\ifdim\\wd\\@labels>\\z@\\noindent\\par\\nobreak\\fi\\fi\\fi\\fi}\\makeatother",
+        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=yellow!35!white,colframe=yellow!35!white,coltitle=white,fonttitle=\\bfseries,boxrule=0pt,arc=0pt,sharp corners,enhanced,top=5pt,bottom=3pt,left=2pt,right=2pt,code={\\LatexLibHeadOwnLine},add to width=-\\leftskip}{theorem}"
       ],
       "body": "\\begin{theorem}[breakable]{Note}{}\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
     },
@@ -513,8 +517,9 @@
       "declarations": [
         "\\tcbuselibrary{theorems,skins,breakable}",
         "\\makeatletter\\providecommand*\\LatexLibFlushLabel{\\if@inlabel\\leavevmode\\fi}\\makeatother",
-        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=yellow!35!white,colframe=yellow!35!white,coltitle=white,fonttitle=\\bfseries,boxrule=0pt,arc=0pt,sharp corners,enhanced,top=5pt,bottom=3pt,left=2pt,right=2pt,add to width=-\\leftskip}{theorem}",
-        "\\newtcbtheorem[use counter from=theorem]{lemma}{Lemma}{colback=yellow!35!white,colframe=yellow!35!white,coltitle=white,fonttitle=\\bfseries,boxrule=0pt,arc=0pt,sharp corners,enhanced,top=5pt,bottom=3pt,left=2pt,right=2pt,add to width=-\\leftskip}{lemma}"
+        "\\makeatletter\\providecommand*\\LatexLibHeadOwnLine{\\ifvmode\\if@noskipsec\\noindent\\par\\nobreak\\else\\if@inlabel\\ifdim\\wd\\@labels>\\z@\\noindent\\par\\nobreak\\fi\\fi\\fi\\fi}\\makeatother",
+        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=yellow!35!white,colframe=yellow!35!white,coltitle=white,fonttitle=\\bfseries,boxrule=0pt,arc=0pt,sharp corners,enhanced,top=5pt,bottom=3pt,left=2pt,right=2pt,code={\\LatexLibHeadOwnLine},add to width=-\\leftskip}{theorem}",
+        "\\newtcbtheorem[use counter from=theorem]{lemma}{Lemma}{colback=yellow!35!white,colframe=yellow!35!white,coltitle=white,fonttitle=\\bfseries,boxrule=0pt,arc=0pt,sharp corners,enhanced,top=5pt,bottom=3pt,left=2pt,right=2pt,code={\\LatexLibHeadOwnLine},add to width=-\\leftskip}{lemma}"
       ],
       "body": "\\begin{lemma}[breakable]{Note}{}\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
     },
@@ -525,8 +530,9 @@
       "declarations": [
         "\\tcbuselibrary{theorems,skins,breakable}",
         "\\makeatletter\\providecommand*\\LatexLibFlushLabel{\\if@inlabel\\leavevmode\\fi}\\makeatother",
-        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=yellow!35!white,colframe=yellow!35!white,coltitle=white,fonttitle=\\bfseries,boxrule=0pt,arc=0pt,sharp corners,enhanced,top=5pt,bottom=3pt,left=2pt,right=2pt,add to width=-\\leftskip}{theorem}",
-        "\\newtcbtheorem[use counter from=theorem]{definition}{Definition}{colback=yellow!35!white,colframe=yellow!35!white,coltitle=white,fonttitle=\\bfseries,boxrule=0pt,arc=0pt,sharp corners,enhanced,top=5pt,bottom=3pt,left=2pt,right=2pt,add to width=-\\leftskip}{definition}"
+        "\\makeatletter\\providecommand*\\LatexLibHeadOwnLine{\\ifvmode\\if@noskipsec\\noindent\\par\\nobreak\\else\\if@inlabel\\ifdim\\wd\\@labels>\\z@\\noindent\\par\\nobreak\\fi\\fi\\fi\\fi}\\makeatother",
+        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=yellow!35!white,colframe=yellow!35!white,coltitle=white,fonttitle=\\bfseries,boxrule=0pt,arc=0pt,sharp corners,enhanced,top=5pt,bottom=3pt,left=2pt,right=2pt,code={\\LatexLibHeadOwnLine},add to width=-\\leftskip}{theorem}",
+        "\\newtcbtheorem[use counter from=theorem]{definition}{Definition}{colback=yellow!35!white,colframe=yellow!35!white,coltitle=white,fonttitle=\\bfseries,boxrule=0pt,arc=0pt,sharp corners,enhanced,top=5pt,bottom=3pt,left=2pt,right=2pt,code={\\LatexLibHeadOwnLine},add to width=-\\leftskip}{definition}"
       ],
       "body": "\\begin{definition}[breakable]{Note}{}\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
     }
@@ -539,7 +545,8 @@
       "declarations": [
         "\\tcbuselibrary{theorems,skins}",
         "\\makeatletter\\providecommand*\\LatexLibFlushLabel{\\if@inlabel\\leavevmode\\fi}\\makeatother",
-        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=green!5!white,colframe=green!25!white,coltitle=black,colbacktitle=green!25!white,fonttitle=\\bfseries\\large,boxrule=0pt,arc=0pt,enhanced,titlerule=0mm,toptitle=1mm,bottomtitle=1mm,add to width=-\\leftskip}{theorem}"
+        "\\makeatletter\\providecommand*\\LatexLibHeadOwnLine{\\ifvmode\\if@noskipsec\\noindent\\par\\nobreak\\else\\if@inlabel\\ifdim\\wd\\@labels>\\z@\\noindent\\par\\nobreak\\fi\\fi\\fi\\fi}\\makeatother",
+        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=green!5!white,colframe=green!25!white,coltitle=black,colbacktitle=green!25!white,fonttitle=\\bfseries\\large,boxrule=0pt,arc=0pt,enhanced,titlerule=0mm,toptitle=1mm,bottomtitle=1mm,code={\\LatexLibHeadOwnLine},add to width=-\\leftskip}{theorem}"
       ],
       "body": "\\begin{theorem}{Note}{}\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
     },
@@ -550,8 +557,9 @@
       "declarations": [
         "\\tcbuselibrary{theorems,skins}",
         "\\makeatletter\\providecommand*\\LatexLibFlushLabel{\\if@inlabel\\leavevmode\\fi}\\makeatother",
-        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=green!5!white,colframe=green!25!white,coltitle=black,colbacktitle=green!25!white,fonttitle=\\bfseries\\large,boxrule=0pt,arc=0pt,enhanced,titlerule=0mm,toptitle=1mm,bottomtitle=1mm,add to width=-\\leftskip}{theorem}",
-        "\\newtcbtheorem[use counter from=theorem]{lemma}{Lemma}{colback=green!5!white,colframe=green!25!white,coltitle=black,colbacktitle=green!25!white,fonttitle=\\bfseries\\large,boxrule=0pt,arc=0pt,enhanced,titlerule=0mm,toptitle=1mm,bottomtitle=1mm,add to width=-\\leftskip}{lemma}"
+        "\\makeatletter\\providecommand*\\LatexLibHeadOwnLine{\\ifvmode\\if@noskipsec\\noindent\\par\\nobreak\\else\\if@inlabel\\ifdim\\wd\\@labels>\\z@\\noindent\\par\\nobreak\\fi\\fi\\fi\\fi}\\makeatother",
+        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=green!5!white,colframe=green!25!white,coltitle=black,colbacktitle=green!25!white,fonttitle=\\bfseries\\large,boxrule=0pt,arc=0pt,enhanced,titlerule=0mm,toptitle=1mm,bottomtitle=1mm,code={\\LatexLibHeadOwnLine},add to width=-\\leftskip}{theorem}",
+        "\\newtcbtheorem[use counter from=theorem]{lemma}{Lemma}{colback=green!5!white,colframe=green!25!white,coltitle=black,colbacktitle=green!25!white,fonttitle=\\bfseries\\large,boxrule=0pt,arc=0pt,enhanced,titlerule=0mm,toptitle=1mm,bottomtitle=1mm,code={\\LatexLibHeadOwnLine},add to width=-\\leftskip}{lemma}"
       ],
       "body": "\\begin{lemma}{Note}{}\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
     },
@@ -562,8 +570,9 @@
       "declarations": [
         "\\tcbuselibrary{theorems,skins}",
         "\\makeatletter\\providecommand*\\LatexLibFlushLabel{\\if@inlabel\\leavevmode\\fi}\\makeatother",
-        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=green!5!white,colframe=green!25!white,coltitle=black,colbacktitle=green!25!white,fonttitle=\\bfseries\\large,boxrule=0pt,arc=0pt,enhanced,titlerule=0mm,toptitle=1mm,bottomtitle=1mm,add to width=-\\leftskip}{theorem}",
-        "\\newtcbtheorem[use counter from=theorem]{definition}{Definition}{colback=green!5!white,colframe=green!25!white,coltitle=black,colbacktitle=green!25!white,fonttitle=\\bfseries\\large,boxrule=0pt,arc=0pt,enhanced,titlerule=0mm,toptitle=1mm,bottomtitle=1mm,add to width=-\\leftskip}{definition}"
+        "\\makeatletter\\providecommand*\\LatexLibHeadOwnLine{\\ifvmode\\if@noskipsec\\noindent\\par\\nobreak\\else\\if@inlabel\\ifdim\\wd\\@labels>\\z@\\noindent\\par\\nobreak\\fi\\fi\\fi\\fi}\\makeatother",
+        "\\newtcbtheorem[auto counter,number within=section]{theorem}{Theorem}{colback=green!5!white,colframe=green!25!white,coltitle=black,colbacktitle=green!25!white,fonttitle=\\bfseries\\large,boxrule=0pt,arc=0pt,enhanced,titlerule=0mm,toptitle=1mm,bottomtitle=1mm,code={\\LatexLibHeadOwnLine},add to width=-\\leftskip}{theorem}",
+        "\\newtcbtheorem[use counter from=theorem]{definition}{Definition}{colback=green!5!white,colframe=green!25!white,coltitle=black,colbacktitle=green!25!white,fonttitle=\\bfseries\\large,boxrule=0pt,arc=0pt,enhanced,titlerule=0mm,toptitle=1mm,bottomtitle=1mm,code={\\LatexLibHeadOwnLine},add to width=-\\leftskip}{definition}"
       ],
       "body": "\\begin{definition}{Note}{}\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
     }

@@ -274,16 +274,20 @@ export type RawResult = {
 /**
  * A sentinel the host placed (`BuildProbes.sentinel`). `outside`: its content
  * belongs outside the text block (a margin note), so its position is not
- * checked. `nextRun`: its content is typeset from an auxiliary file an earlier
+ * checked against the text block, only against the paper's sides on a settled
+ * build (`sentinel:off-paper`). `drawn`: its content is in a TikZ node
+ * (todonotes' note), which XeTeX's driver moves where it prints, so its
+ * position as TeX records it is not judged against the paper either.
+ * `nextRun`: its content is typeset from an auxiliary file an earlier
  * run wrote (a note column's `.slnc`), so on a build that never settled (a TeX
  * error ended it after its first run) its absence is not judged. `role`: what
  * a feature probe reads it as (`breakable:start`, `footnote:mark`…).
  */
-export type SentinelSpec = { readonly id: string; readonly outside?: boolean; readonly nextRun?: boolean; readonly role?: string };
+export type SentinelSpec = { readonly id: string; readonly outside?: boolean; readonly drawn?: boolean; readonly nextRun?: boolean; readonly role?: string };
 
 /**
  * One check a branch failed. `check` names it: `error`, `warning:<name>`,
- * `sentinel:missing`, `sentinel:duplicated`, `sentinel:outside`,
+ * `sentinel:missing`, `sentinel:duplicated`, `sentinel:outside`, `sentinel:off-paper`,
  * `feature:<name>`; and for the whole run, `fatal`, `no-pages`, `no-bbl`,
  * `no-log`. A `:document` suffix means the log could not tie it to one branch,
  * so every branch of the document carries it until the explainer separates

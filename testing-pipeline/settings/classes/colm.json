@@ -1,0 +1,18 @@
+{
+  "id": "colm",
+  "description": "The Conference on Language Modeling's colm2026_conference.sty (commit 963ddd1, 2025-12-08), on plain article. Not on CTAN or the engine's mirror: from github.com/COLM-org/Template. The repository's fancyhdr.sty and natbib.sty are copies of mirror packages and are not shipped. One column. preprint shows the authors without the submission line numbers. The style loads tgpagella, mathpazo and inconsolata; under XeTeX qpl and pplx have no TU shape, so the text falls back to Latin Modern with font warnings, while inconsolata uses fontspec.",
+  "class": "article",
+  "options": [],
+  "preamble": [
+    "\\usepackage[preprint]{colm2026_conference}"
+  ],
+  "files": [
+    {
+      "path": "colm2026_conference.sty",
+      "sha256": "55962ae80c25a50335825c85d23eb5f1cd9015aa8e77f7af32b483b646c7483e"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

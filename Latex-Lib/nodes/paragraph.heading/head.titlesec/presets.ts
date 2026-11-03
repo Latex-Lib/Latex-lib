@@ -6,9 +6,15 @@ import { solution } from '../../evidence.ts';
 
 export const PRESETS = {
   'sans-colored': {
-    description: 'Journal headings: sans-serif bold in an accent colour, the section title upper-cased, half an em after the number, tighter space below.',
+    description: 'Journal headings: sans-serif bold in an accent colour, one size down (sections in \\large), the section title upper-cased, half an em after the number, tighter space below.',
     features: ['hang-head', 'sans-serif', 'bold-head', 'colored', 'uppercase', 'numbered'],
-    params: { font: '\\normalfont\\sffamily\\bfseries', color: 'blue!50!black', uppercase: true, sep: '0.5em', spacing: 'custom', before: '3ex plus 4pt minus 3pt', after: '5pt' },
+    // One size down (`scale: 'smaller'`): the two templates that upper-case the section title set it in \large, not the kernel's
+    // \Large (0012 olplainarticle.cls:67-79, `\color{color1}\large\sffamily\bfseries`, `\MakeUppercase{#1}`; 0016 rho.cls:376-413,
+    // sf \large bold, `\MakeUppercase{#1}`), and their subsections at the text size (0012 l.80-85). Upper case at \Large widened
+    // every word: in run 41584963423, 457 sans-colored branches failed only on overfull boxes on their heading line (A 375, B 82),
+    // all but 16 of them marked, and the headings of other branches its \titleformat restyled failed so 9.7% of the time in
+    // setup A, against 5.1% for headings in documents without it (b22 NOTE-4).
+    params: { font: '\\normalfont\\sffamily\\bfseries', scale: 'smaller', color: 'blue!50!black', uppercase: true, sep: '0.5em', spacing: 'custom', before: '3ex plus 4pt minus 3pt', after: '5pt' },
     evidence: [solution('0012-basic-academic-journal-article', '51'), solution('0016-rho-class-research-article', '66'), solution('0021-elife', '40'), solution('0042-jankapunkt-master-thesis', '48')],
   },
   'cv-ruled': {

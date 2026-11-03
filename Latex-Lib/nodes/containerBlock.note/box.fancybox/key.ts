@@ -29,7 +29,10 @@ export default defineKey(
     // A footnote in it is lost: the note is a \parbox (a \vbox) in the frame's \hbox, and the insert stays there (GitHub run
     // 41584963423: 0 of 92 not-denied branches with General's footnote anchor below it pass, 88 never ship the text, e.g. aa.A
     // dc33c32dbf8153dbecd7e result d96f8218ca, branch b5c7f2b2488c7acd6a1da). [OV2]
-    gives: { floats: false, breakable: false, footnotes: false, boxDepth: 1 },
+    // Since b22 the handler sets a box that holds a footnote inside footnotehyper's \savenotes … \spewnotes, as for a minipage
+    // or tabular, so the text is set after the box at the page's foot (`keepingFootnotes`), and the footnote is no longer
+    // denied below it. [OV2-alt]
+    gives: { floats: false, breakable: false, boxDepth: 1 },
     zerotex: 'untested',
   }),
 );

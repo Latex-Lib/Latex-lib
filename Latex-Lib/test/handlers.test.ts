@@ -1,7 +1,8 @@
 /**
  * The theorem handlers (ARCHITECTURE.md 9.1): each preset's LaTeX fixed by
  * snapshot, and what each way must do whatever its preset (shared counters,
- * renaming, breaking where the box opens, the class's own environments).
+ * renaming, breaking where the box opens, the class's own environments), and
+ * the box ways' rule for a head still waiting where they set a box (F3).
  *
  * The snapshot is written when missing; `UPDATE_SNAPSHOTS=1 npm test` writes
  * it again after a deliberate change.
@@ -21,6 +22,10 @@ import mdframedKey from '../nodes/containerBlock.mathElement/thm.mdframed/key.ts
 import ntheoremKey from '../nodes/containerBlock.mathElement/thm.ntheorem/key.ts';
 import tcolorboxKey from '../nodes/containerBlock.mathElement/thm.tcolorbox/key.ts';
 import thmtoolsKey from '../nodes/containerBlock.mathElement/thm.thmtools/key.ts';
+import { HANDLERS as IMAGES } from '../nodes/atomicBlock.image/index.ts';
+import { HANDLERS as CODE } from '../nodes/code.code/index.ts';
+import { HANDLERS as NOTES } from '../nodes/containerBlock.note/index.ts';
+import { HEAD_OWN_LINE } from '../nodes/protocol.ts';
 import type { HandlerKey } from '../schema/key.ts';
 import type { Realization, Subject } from '../schema/realization.ts';
 
@@ -64,7 +69,7 @@ test("a kind on the theorem's counter declares the theorem first, and each decla
     '\\declaretheorem[style=libthm, name=Lemma]{lemma}\n\\makeatletter\\let\\c@lemma\\c@theorem\\let\\thelemma\\thetheorem\\makeatother',
   ]);
   assert.deepEqual(printed(handler('thm.mdframed')({ sharedCounter: false, numberWithin: 'chapter' }), statement('remark')).declarations, [
-    '\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=0.4pt]{remark}{Remark}[chapter]',
+    '\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=0.4pt,usetwoside=false]{remark}{Remark}[chapter]',
   ]);
 });
 
@@ -123,6 +128,40 @@ test('a thm.tcolorbox box that holds a list-based statement first ends a label p
   }
   // Another thm.tcolorbox box inside is no list-based statement.
   assert.doesNotMatch(r.emit(node, '\\begin{theorem}[breakable]{}{}\nText.\n\\end{theorem}', 'Note', 'doc'), /LatexLibFlushLabel/);
+});
+
+test('a box set at the start of a line first sets a head still waiting there on its own line; a centred or floated one does not', () => {
+  const image: Subject = { type: 'image', attrs: { data: { imagePath: 'figures/theme-sample.png', widthFraction: 1 } } };
+  const note: Subject = { type: 'note', attrs: { data: { title: 'Note' } } };
+  const flush: [Realization, Subject][] = [
+    [IMAGES['fig.graphicx']!({ float: false, center: false }), image],
+    [IMAGES['fig.adjustbox']!({ float: false, background: 'white', center: false }), image],
+    [IMAGES['fig.adjustbox']!({ float: false }), image],
+    [NOTES['box.fancybox']!({ frame: 'colorbox', center: false }), note],
+    [NOTES['box.awesomebox']!({}), note],
+    [NOTES['box.awesomebox']!({ block: 'custom' }), note],
+  ];
+  for (const [r, node] of flush) {
+    assert.match(r.emit(node, 'Text.', undefined, 'doc'), /^\\LatexLibHeadOwnLine\n(\\noindent|\\begin\{)/);
+    assert.ok((r.preamble({}, 'doc', node).declarations ?? []).includes(HEAD_OWN_LINE));
+  }
+  // The tcolorbox ways run it as a key where the box opens, so their text still opens with the box (General's and bodyOf's tests).
+  assert.match(NOTES['box.tcolorbox']!({}).emit(note, 'Text.', undefined, 'doc'), /^\\begin\{tcolorbox\}\[[^\n]*code=\{\\LatexLibHeadOwnLine\}/);
+  assert.match(CODE['code.tcblisting']!({}).emit({ type: 'code', attrs: { data: {} } }, 'x', undefined, 'doc'), /^\\begin\{tcblisting\}\{listing only, code=\{\\LatexLibHeadOwnLine\}/);
+  const declared = handler('thm.tcolorbox')().preamble({}, 'doc', statement('lemma')).declarations ?? [];
+  assert.ok(declared.includes(HEAD_OWN_LINE));
+  assert.ok(declared.some((d) => d.startsWith('\\newtcbtheorem') && d.includes('code={\\LatexLibHeadOwnLine}')));
+  // A float leaves the head waiting for the next line, and a centred box lets the head end its own line: neither changes.
+  const kept: [Realization, Subject][] = [
+    [IMAGES['fig.graphicx']!({}), image],
+    [IMAGES['fig.graphicx']!({ float: false }), image],
+    [IMAGES['fig.adjustbox']!({}), image],
+    [NOTES['box.fancybox']!({}), note],
+  ];
+  for (const [r, node] of kept) {
+    assert.doesNotMatch(r.emit(node, 'Text.', undefined, 'doc'), /LatexLibHeadOwnLine/);
+    assert.ok(!(r.preamble({}, 'doc', node).declarations ?? []).includes(HEAD_OWN_LINE));
+  }
 });
 
 test('a denied parent emits the fallback', () => {

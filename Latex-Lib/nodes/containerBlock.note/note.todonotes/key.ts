@@ -7,7 +7,7 @@ export default defineKey(
     id: 'note.todonotes',
     node: 'containerBlock/note',
     description:
-      'todonotes: \\todo[keys]{…}, a coloured note in the margin joined to its place by a line; color, linecolor, bordercolor, textcolor, size, line, noline, fancyline, inline, shadow per note; colorinlistoftodos and disable as package options. Uses TikZ. 17 templates.',
+      'todonotes: \\todo[keys]{…}, a coloured note in the margin joined to its place by a line; color, linecolor, bordercolor, textcolor, size, line, noline, fancyline, inline, shadow per note; colorinlistoftodos and disable as package options. Uses TikZ. A margin note is \\marginparwidth wide: the class column, or the room its margin has where that column is under 2cm or runs off the paper. 17 templates.',
     ctan: ['todonotes'],
     features: ['margin-note', 'connector-line', 'background', 'colored', 'shadow', 'small-type'],
     params: {
@@ -35,6 +35,16 @@ export default defineKey(
           { kind: 'requirement', file: 'Template/template-requirement/Beamer.md', line: '29' },
         ],
         // Inline, a note prints in the text at \linewidth, not in the margin (no preset sets it yet; untested under beamer).
+        unless: { inline: true },
+      },
+      {
+        class: 'class.cas-sc',
+        reason:
+          "cas-sc leaves no margin a note fits in: its text block is 468.33pt wide on a 546.29pt page, 38.98pt from either edge, and it keeps article's 65pt \\marginparwidth and 11pt \\marginparsep, so a note ran 37pt off the paper; the room that margin has, 38.98pt less \\marginparsep on either side (memoir's rule, which the library's note-column fit applies), is 16.98pt, narrower than a note's own bold title (20.84pt in \\footnotesize) and than todonotes' 2cm",
+        evidence: [
+          { kind: 'compile', cell: "GitHub run 41584963423, cas-sc.A: COMPAT-GEOMETRY paperWidth 546.29291pt, oddLeft 38.98026pt, textWidth 468.3324pt; 987 of the 2,980 passing not-denied branches below a margin note shipped their sentinel off the paper (76 below this way), which the oracle did not check for a margin note's; since b22 it does (`sentinel:off-paper`), but not in this way's TikZ node, whose sentinels are placed `drawn` (b22 MC1/O-MNJ)" },
+        ],
+        // Inline, a note prints in the text at \linewidth, not in the margin.
         unless: { inline: true },
       },
     ],

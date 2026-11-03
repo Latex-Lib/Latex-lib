@@ -24,6 +24,21 @@ export default definePackage({
         { kind: 'compile', cell: "batch-4 staging probe: dfad84dff4c247fb83103 with hyperref before apacite (result f174fe9f3f91, l.62 \\begin{document}); with [natbibapa]{apacite} (83d0ead94f8e, Undefined control sequence \\citeA)" },
       ],
     },
+    {
+      pkg: 'natbib',
+      // b22 (owner item O-APA): a package fact instead of the class denies bib.apacite held for aa and elsarticle (batch 6, CL5), so it
+      // holds under every class whose profile lists natbib among its preloads, which load before any way's apacite: aa, elsarticle and
+      // revtex4-2 (whose own deny stays, for its \st@rtbibchapter), and aastex, acmart, mdpi, sn-jnl and tufte-handout, which load hyperref
+      // too (not under tufte-handout's nobib, as its setting runs it: nobib unloads natbib, and hyperref alone keeps apacite out
+      // there); and under any batch-2 class that will list natbib. [natbibapa]{apacite} loads natbib itself, after its own code, and names
+      // no natbib load, so a branch is never refused against itself.
+      reason:
+        "apacite.sty v6.03 read after natbib.sty stops while it loads ('Undefined control sequence' \\st@rtbibchapter at line 1216 of apacite.sty, then 'Too many }'s'; or 'Too many }'s' at l.1882/1896): 18 of 18 apacite documents stop once natbib.sty is read in each elsarticle pair of the batch-3b run and 15 of 16 in acmart-manuscript.A, 0 of 18 in article.A and 0 of 17 in amsart.A, which load no natbib",
+      evidence: [
+        { kind: 'compile', cell: "elsarticle-preprint.A and elsarticle-5p.A runs: d1bfe3ac99a4575ba5d35 (result d0be2dd3397d, l.1216) and dfad84dff4c247fb83103 (result 002a8a4162e1, l.1882/1896); acmart-manuscript.A 15 of 16 at l.1216" },
+        { kind: 'source', file: 'testing-pipeline/settings/classes/files/aa.cls', line: '140-146, 232 (natbib, bibauthoryear)' },
+      ],
+    },
   ],
   loadOrder: [],
   defines: [],

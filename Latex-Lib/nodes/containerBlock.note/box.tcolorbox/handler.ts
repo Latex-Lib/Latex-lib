@@ -4,12 +4,14 @@
  * sharp corners, a left bar (leftrule with the other rules at 0pt), a
  * filled panel; the breakable library to split across pages and the skins
  * library for enhanced and drop shadow. The box is \linewidth (or its width)
- * less a paragraph \leftskip, the line it starts on [W1].
+ * less a paragraph \leftskip, the line it starts on [W1]. A head still waiting
+ * where the box opens (a statement's above it) is set on its own line first
+ * (`code={\LatexLibHeadOwnLine}`, protocol.ts). [F3]
  * CTAN: https://ctan.org/pkg/tcolorbox
  */
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
-import { param } from '../../protocol.ts';
+import { HEAD_OWN_LINE, HEAD_OWN_LINE_KEY, param } from '../../protocol.ts';
 import { colorFor, titleOf, toneDefinition } from '../node.ts';
 import key from './key.ts';
 
@@ -22,7 +24,7 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
       const tone = toneDefinition(colors, node);
       return {
         packages: ['\\usepackage{tcolorbox}', ...(tone.length === 0 ? [] : ['\\usepackage{xcolor}'])],
-        declarations: [...(libraries.length === 0 ? [] : [`\\tcbuselibrary{${libraries.join(',')}}`]), ...tone],
+        declarations: [...(libraries.length === 0 ? [] : [`\\tcbuselibrary{${libraries.join(',')}}`]), ...tone, HEAD_OWN_LINE],
       };
     },
     emit: (node, content) => {
@@ -39,6 +41,8 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
         ...(p['shadow'] === true ? ['enhanced', 'drop shadow'] : []),
         ...(p['breakable'] === true ? ['breakable'] : []),
         ...(param(p, 'width') === '' ? [] : [`width=${param(p, 'width')}`]),
+        // A head still waiting where the box opens goes on its own line first (protocol.ts). [F3]
+        HEAD_OWN_LINE_KEY,
         // The line it starts on: KOMA-Script indents a footnote's text by \leftskip (thm.tcolorbox's handler). [W1]
         'add to width=-\\leftskip',
       ];
