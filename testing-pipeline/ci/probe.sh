@@ -7,8 +7,7 @@
 # A case is a folder: main.tex, any text files it reads (main.bib), and case.json naming its class setting and
 # setup, { "setting": "aastex.A" } (add "dump": false to leave out the line that brings main.aux, main.bbl and
 # main.blg back). The cases are pushed to the private companion's branch probe-cases (emitted LaTeX carries
-# the host's macros, so they never go to a public repository), the probe workflow is started (on latex-ci, or
-# on main while latex-ci does not have it yet) in --repo (Latex-Lib/Latex-lib by default), and, unless
+# the host's macros, so they never go to a public repository), the probe workflow is started on main of --repo (Latex-Lib/Latex-lib by default), and, unless
 # --no-wait, it waits for the run and brings it back with ci/fetch-run.sh into --out
 # (C:/dev/template-ai/probes/<run> by default): probe/<case>/ with main.log, main.pdf, main.aux, main.bbl
 # and result.json (main.blg too if the engine ever keeps it), and each job's log. --shards is how many jobs share the cases (one per 15 cases by
@@ -73,14 +72,10 @@ git -C "$tmp" push -q --force "https://github.com/$private_repo.git" HEAD:refs/h
 sha=$(git -C "$tmp" rev-parse HEAD)
 echo "probe: cases at $private_repo@${sha:0:12}"
 
-# Start the workflow on latex-ci, whose caches hold the batch's engine setup, once a release has put it there;
-# on main until then. Its run is the one named after the cases' commit (probe.yml's run-name).
-status=$(curl -s -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $token" "https://api.github.com/repos/$repo/contents/.github/workflows/probe.yml?ref=latex-ci")
-case "$status" in
-  200) ref=latex-ci ;;
-  404) ref=main ;;
-  *) echo "probe: GitHub answered $status when asked for latex-ci's probe.yml" >&2; exit 1 ;;
-esac
+# Start the workflow on main: a release puts the newest workflow there without starting a batch (a push to latex-ci
+# does), and probes keep caches of their own on main. Its run is the one named after the cases' commit
+# (probe.yml's run-name).
+ref=main
 api -X POST "https://api.github.com/repos/$repo/actions/workflows/probe.yml/dispatches" \
   -d "{\"ref\":\"$ref\",\"inputs\":{\"cases\":\"$sha\",\"shards\":\"$shards\",\"engines\":\"$engines\"}}" > /dev/null
 run=""

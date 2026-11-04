@@ -162,7 +162,10 @@ plan() {
     const units = mine.flatMap((p) => Array.from({ length: count(p) }, (_, i) => ({ pair: p, shard: i, shards: count(p) })));
     // GitHub runs at most 256 jobs from one matrix.
     if (units.length > 256) { console.error(`plan: ${units.length} jobs is more than a matrix may hold (256); lower settings/shards.json`); process.exit(1); }
-    const record = { repository: here ?? "local", run: process.env.GITHUB_RUN_ID ?? null, sha: process.env.GITHUB_SHA ?? null, private: ref, asked, picked, mine, units: units.map((u) => `${u.pair}@${u.shard}`), manifest };
+    // The versions that decide filing and judging, read from their sources (the host is the private overlay).
+    const version = (file, name) => { try { return Number(fs.readFileSync(file, "utf8").match(new RegExp("const " + name + " = ([0-9]+)"))?.[1]) || null; } catch { return null; } };
+    const versions = { filer: version("host-flouest/src/host.ts", "FILER_VERSION"), oracle: version("core/src/oracle.ts", "ORACLE_VERSION"), probe: version("core/src/classProbe.ts", "PROBE_VERSION") };
+    const record = { repository: here ?? "local", run: process.env.GITHUB_RUN_ID ?? null, sha: process.env.GITHUB_SHA ?? null, private: ref, versions, asked, picked, mine, units: units.map((u) => `${u.pair}@${u.shard}`), manifest };
     fs.mkdirSync("out/runs", { recursive: true });
     fs.writeFileSync(`out/runs/${record.repository.replace("/", "--")}.json`, `${JSON.stringify(record, null, 2)}
 `);

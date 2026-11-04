@@ -3,9 +3,8 @@
 # apart from the batch's (their own workflow, never cancelled by a push).
 #
 # ci/probe.sh pushes the cases to the private companion's branch probe-cases (they are emitted LaTeX, which
-# carries the host's macros) and starts this workflow on latex-ci, so the jobs restore the engine's installed app
-# and its Chrome profiles from the batch runs' caches. Started on main (before latex-ci has this workflow) it
-# keeps caches of its own there, under keys no pair job reads. Each job compiles every n-th case with the
+# carries the host's macros) and starts this workflow on main, where a release puts it without starting a batch.
+# There it keeps caches of its own (the engine's installed app, its Chrome profiles), under keys no pair job reads. Each job compiles every n-th case with the
 # host's `compat cases` command and uploads probe-<shard>, sealed with FLOUEST_KEY. ci/probe.sh finds its run by
 # the run name, which carries the cases' commit.
 name: probe
@@ -69,25 +68,24 @@ jobs:
       - id: private
         name: The private commit
         run: echo "ref=$(cat testing-pipeline/ci/private.ref 2>/dev/null || echo ci-private)" >> "$GITHUB_OUTPUT"
-      - uses: actions/checkout@v4
-        with:
-          repository: yguo499/Latex-lib-private
-          ref: ${{ steps.private.outputs.ref }}
-          ssh-key: ${{ secrets.PRIVATE_DEPLOY_KEY }}
-          persist-credentials: false
-          path: .private
+      # Retried for minutes: GitHub's Git operations fail in short spells (ci/private-checkout.sh).
+      - name: Private checkout
+        env:
+          PRIVATE_DEPLOY_KEY: ${{ secrets.PRIVATE_DEPLOY_KEY }}
+          GITHUB_TOKEN: ${{ github.token }}
+          REF: ${{ steps.private.outputs.ref }}
+        run: bash testing-pipeline/ci/private-checkout.sh "$REF" .private
       - name: Private files
         run: |
           tar -C .private --exclude=.git -cf - . | tar -xf -
           rm -rf .private
       # The cases, from the same private companion at the commit ci/probe.sh pushed.
-      - uses: actions/checkout@v4
-        with:
-          repository: yguo499/Latex-lib-private
-          ref: ${{ inputs.cases }}
-          ssh-key: ${{ secrets.PRIVATE_DEPLOY_KEY }}
-          persist-credentials: false
-          path: .cases
+      - name: Cases checkout
+        env:
+          PRIVATE_DEPLOY_KEY: ${{ secrets.PRIVATE_DEPLOY_KEY }}
+          GITHUB_TOKEN: ${{ github.token }}
+          CASES: ${{ inputs.cases }}
+        run: bash testing-pipeline/ci/private-checkout.sh "$CASES" .cases
       - uses: actions/setup-node@v4
         with:
           node-version: "24"

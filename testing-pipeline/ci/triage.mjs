@@ -9,7 +9,8 @@
 // how many cells, documents, branches and pairs it holds, and shows one
 // example: the pair, the document, the result's key and the log's lines from
 // the error on (<store>/results/<key>.json.gz). Fixing starts from the biggest
-// groups. Plain Node, nothing to install.
+// groups. A verdict the ledger marks denied (CP-5) is left out of the counts, and a cell whose only failing
+// branches are denied is no failing cell. Plain Node, nothing to install.
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { gunzipSync } from 'node:zlib';
@@ -40,14 +41,19 @@ for (const f of files) for (const text of readFileSync(join(parts, f), 'utf8').s
   }
   cells++;
   const pair = pairOf(l);
-  const p = pairs.get(pair) ?? { cells: 0, pass: 0, fail: 0, failingCells: 0 };
+  const p = pairs.get(pair) ?? { cells: 0, pass: 0, fail: 0, denied: 0, failingCells: 0 };
   p.cells++;
-  const failing = (l.verdicts ?? []).filter((v) => !v.pass);
-  p.pass += (l.verdicts ?? []).length - failing.length;
+  // A branch denied in its context (the ledger's `denied`) is meant to fail there: it is counted apart, and a cell
+  // whose only failing branches are denied is no failing cell.
+  const judged = (l.verdicts ?? []).filter((v) => !v.denied);
+  const failing = judged.filter((v) => !v.pass);
+  const deniedFailing = (l.verdicts ?? []).filter((v) => v.denied && !v.pass).length;
+  p.pass += judged.length - failing.length;
   p.fail += failing.length;
+  p.denied += (l.verdicts ?? []).length - judged.length;
   pairs.set(pair, p);
   const first = l.errors?.[0]?.message ?? (l.status === 'threw' ? `the engine could not compile: ${l.threw ?? ''}` : l.status === 'no-output' ? 'no output' : undefined);
-  if (first === undefined && failing.length === 0) continue;
+  if (failing.length === 0 && (first === undefined || deniedFailing > 0)) continue;
   p.failingCells++;
   if (first !== undefined) {
     const key = normal(first);
@@ -95,8 +101,8 @@ const excerpt = (result) => {
 
 const fmt = (n) => n.toLocaleString('en-US');
 const out = [];
-const total = [...pairs.values()].reduce((t, p) => ({ pass: t.pass + p.pass, fail: t.fail + p.fail, cells: t.cells + p.cells }), { pass: 0, fail: 0, cells: 0 });
-out.push('# Triage', '', `${fmt(cells)} cells in ${pairs.size} pair(s): ${fmt(total.pass)} branches pass, ${fmt(total.fail)} fail. Biggest groups first; fix the cause of a group, not its cells (BATCHES.md step 6).`, '');
+const total = [...pairs.values()].reduce((t, p) => ({ pass: t.pass + p.pass, fail: t.fail + p.fail, denied: t.denied + p.denied, cells: t.cells + p.cells }), { pass: 0, fail: 0, denied: 0, cells: 0 });
+out.push('# Triage', '', `${fmt(cells)} cells in ${pairs.size} pair(s): ${fmt(total.pass)} branches pass, ${fmt(total.fail)} fail${total.denied === 0 ? '' : ` (${fmt(total.denied)} denied in their context, left out)`}. Biggest groups first; fix the cause of a group, not its cells (BATCHES.md step 6).`, '');
 out.push('## By pair', '', '| Pair | Cells | Branches pass | Fail | Pass rate | Cells failing |', '|---|---|---|---|---|---|');
 for (const [pair, p] of [...pairs].sort((a, b) => b[1].fail - a[1].fail)) {
   out.push(`| ${pair} | ${fmt(p.cells)} | ${fmt(p.pass)} | ${fmt(p.fail)} | ${p.pass + p.fail === 0 ? '-' : `${Math.round((100 * p.pass) / (p.pass + p.fail))}%`} | ${fmt(p.failingCells)} |`);

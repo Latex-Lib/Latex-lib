@@ -83,13 +83,13 @@ jobs:
       - id: private
         name: The private commit
         run: echo "ref=$(cat testing-pipeline/ci/private.ref 2>/dev/null || echo ci-private)" >> "$GITHUB_OUTPUT"
-      - uses: actions/checkout@v4
-        with:
-          repository: yguo499/Latex-lib-private
-          ref: ${{ steps.private.outputs.ref }}
-          ssh-key: ${{ secrets.PRIVATE_DEPLOY_KEY }}
-          persist-credentials: false
-          path: .private
+      # Retried for minutes: GitHub's Git operations fail in short spells (ci/private-checkout.sh).
+      - name: Private checkout
+        env:
+          PRIVATE_DEPLOY_KEY: ${{ secrets.PRIVATE_DEPLOY_KEY }}
+          GITHUB_TOKEN: ${{ github.token }}
+          REF: ${{ steps.private.outputs.ref }}
+        run: bash testing-pipeline/ci/private-checkout.sh "$REF" .private
       - name: Private files
         run: |
           # The commit actually checked out, for the run record (run-pairs.sh plan; ci/fetch-run.sh compares it).
@@ -261,13 +261,13 @@ jobs:
       - id: private
         name: The private commit
         run: echo "ref=$(cat testing-pipeline/ci/private.ref 2>/dev/null || echo ci-private)" >> "$GITHUB_OUTPUT"
-      - uses: actions/checkout@v4
-        with:
-          repository: yguo499/Latex-lib-private
-          ref: ${{ steps.private.outputs.ref }}
-          ssh-key: ${{ secrets.PRIVATE_DEPLOY_KEY }}
-          persist-credentials: false
-          path: .private
+      # Retried for minutes: GitHub's Git operations fail in short spells (ci/private-checkout.sh).
+      - name: Private checkout
+        env:
+          PRIVATE_DEPLOY_KEY: ${{ secrets.PRIVATE_DEPLOY_KEY }}
+          GITHUB_TOKEN: ${{ github.token }}
+          REF: ${{ steps.private.outputs.ref }}
+        run: bash testing-pipeline/ci/private-checkout.sh "$REF" .private
       - name: Private files
         run: |
           # The commit actually checked out, for the run record (run-pairs.sh plan; ci/fetch-run.sh compares it).

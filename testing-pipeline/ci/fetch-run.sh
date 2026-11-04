@@ -153,6 +153,7 @@ else
       if (r.sha !== first.sha) stop(`${r.repo} ran ${r.sha}, ${first.repo} ran ${first.sha}`);
       if (r.private !== first.private) stop(`${r.repo} used the private commit ${r.private}, ${first.repo} ${first.private}`);
       if (r.manifest !== first.manifest) stop(`${r.repo} filed another manifest than ${first.repo}`);
+      if (JSON.stringify(r.versions ?? null) !== JSON.stringify(first.versions ?? null)) stop(`${r.repo} ran versions ${JSON.stringify(r.versions)}, ${first.repo} ${JSON.stringify(first.versions)}`);
       if (JSON.stringify(r.picked) !== JSON.stringify(first.picked)) stop(`${r.repo} was asked for other pairs (${r.asked.join(" ")}) than ${first.repo} (${first.asked.join(" ")})`);
     }
     const seen = new Map();

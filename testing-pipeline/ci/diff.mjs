@@ -32,6 +32,8 @@
 // skipped and counted in the headline. A --previous that names no file is
 // warned about and the run is taken as the first: verdicts.json.gz is still
 // written, and it exits 0, so a lost artifact does not stop the run's report.
+// A verdict the ledger marks denied (a branch the library denies in its context, CP-5) is left out of every
+// count and comparison, and counted apart in the Denied column; runs from before CP-5 have none.
 // Plain Node, nothing to install.
 import { closeSync, existsSync, openSync, readdirSync, readFileSync, readSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -51,6 +53,9 @@ const previousMissing = previousFile !== undefined && !existsSync(previousFile);
 if (previousMissing) console.warn(`diff: warning: no previous verdicts at ${previousFile}; comparing with nothing, as a first run.`);
 
 const PASS = true;
+// A verdict on a branch the library denies in its context (the ledger's `denied`, CP-5): it is meant to fail there,
+// so it is neither a pass nor a failure here. It is kept, so the branch is not gone, and counted apart.
+const DENIED = 'denied';
 const pairOf = (l) => `${l.classSetting}.${l.setup}`;
 
 /** A file's lines a chunk at a time: a part can outgrow the longest string Node will hold. */
@@ -113,7 +118,7 @@ for (const f of files) {
     // fails the first of them. Older lines kept every failure on each verdict, and still read right.
     const first = l.problems?.[0]?.check;
     const shared = typeof first !== 'string' ? 'unknown' : first.endsWith(':document') ? first : `${first}:document`;
-    const verdicts = Array.isArray(l.verdicts) ? l.verdicts.map((v) => [v.branch, v.pass ? PASS : (v.failures?.[0]?.check ?? shared)]) : undefined;
+    const verdicts = Array.isArray(l.verdicts) ? l.verdicts.map((v) => [v.branch, v.denied ? DENIED : v.pass ? PASS : (v.failures?.[0]?.check ?? shared)]) : undefined;
     r.cells.set(l.cell, { document: l.document, verdicts });
   }
 }
@@ -169,16 +174,19 @@ writeFileSync(join(store, 'verdicts.json.gz'), gzipSync(JSON.stringify({ version
 
 const fmt = (n) => n.toLocaleString('en-US');
 const passing = (m) => [...m.values()].filter((v) => v === PASS).length;
+const denying = (m) => [...m.values()].filter((v) => v === DENIED).length;
 let branchCount = 0;
 let passCount = 0;
+let deniedCount = 0;
 for (const p of now.values()) {
-  branchCount += p.branches.size;
+  branchCount += p.branches.size - denying(p.branches);
   passCount += passing(p.branches);
+  deniedCount += denying(p.branches);
 }
 let cellsKept = 0;
 for (const r of runs.values()) cellsKept += r.cells.size;
 const skipped = unparsable === 0 ? '' : ` (${fmt(unparsable)} not JSON, skipped)`;
-const headline = `${fmt(lineCount)} ledger lines read${skipped}, ${fmt(cellsKept)} cells kept for this run, ${now.size} pair(s): ${fmt(passCount)} of ${fmt(branchCount)} judged branches pass.`;
+const headline = `${fmt(lineCount)} ledger lines read${skipped}, ${fmt(cellsKept)} cells kept for this run, ${now.size} pair(s): ${fmt(passCount)} of ${fmt(branchCount)} judged branches pass${deniedCount === 0 ? '' : ` (${fmt(deniedCount)} more are denied in their context and left out)`}.`;
 if (previous === undefined) {
   const why = previousMissing ? `the previous verdicts at ${previousFile} are missing` : 'with no --previous';
   console.log(`diff: ${headline} Wrote ${join(store, 'verdicts.json.gz')}; ${why}, there is nothing to compare.`);
@@ -189,12 +197,14 @@ if (previous === undefined) {
 const rows = [];
 const regressions = [];
 const fixes = [];
-const total = { pairs: now.size, fixed: 0, regressed: 0, still: 0, changed: 0, fresh: 0, freshFail: 0, gone: 0, unjudged: 0, unknown: 0 };
+const total = { pairs: now.size, fixed: 0, regressed: 0, still: 0, changed: 0, fresh: 0, freshFail: 0, gone: 0, unjudged: 0, unknown: 0, denied: 0 };
 for (const [pair, p] of now) {
   const was = before.get(pair)?.branches ?? new Map();
-  const row = { pair, branches: p.branches.size, pass: passing(p.branches), fixed: 0, regressed: 0, still: 0, changed: 0, fresh: 0, freshFail: 0, gone: 0, unjudged: p.unjudged, unknown: p.unknown, previous: before.has(pair) };
+  const row = { pair, branches: p.branches.size - denying(p.branches), pass: passing(p.branches), fixed: 0, regressed: 0, still: 0, changed: 0, fresh: 0, freshFail: 0, gone: 0, unjudged: p.unjudged, unknown: p.unknown, denied: denying(p.branches), previous: before.has(pair) };
   for (const [branch, verdict] of p.branches) {
     const old = was.get(branch);
+    // Denied now or before: no regression, fix or failure to compare (a run before CP-5 has no denied verdicts).
+    if (verdict === DENIED || old === DENIED) continue;
     const where = { pair, branch, document: p.judgedIn.get(branch), check: verdict, was: old };
     if (old === undefined) {
       row.fresh++;
@@ -211,7 +221,7 @@ for (const [pair, p] of now) {
     }
   }
   for (const branch of was.keys()) if (!p.branches.has(branch)) row.gone++;
-  for (const k of ['fixed', 'regressed', 'still', 'changed', 'fresh', 'freshFail', 'gone', 'unjudged', 'unknown']) total[k] += row[k];
+  for (const k of ['fixed', 'regressed', 'still', 'changed', 'fresh', 'freshFail', 'gone', 'unjudged', 'unknown', 'denied']) total[k] += row[k];
   rows.push(row);
 }
 const notRun = [...before].filter(([pair]) => !now.has(pair));
@@ -266,12 +276,12 @@ const runsOf = (m) => {
 const out = [];
 out.push('# What changed since the previous run', '');
 out.push(`This run (${runsOf(now)}) against the previous verdicts (${previousFile}, written ${previous.at ?? '?'}; ${runsOf(before)}). ${headline}`, '');
-out.push(`**${fmt(total.regressed)} newly failing** (regressions), **${fmt(total.fixed)} newly passing**, ${fmt(total.still)} still failing (${fmt(total.changed)} with another first check), ${fmt(total.fresh)} new (${fmt(total.freshFail)} failing), ${fmt(total.gone)} gone. Branches are compared by pair and branch id.`, '');
+out.push(`**${fmt(total.regressed)} newly failing** (regressions), **${fmt(total.fixed)} newly passing**, ${fmt(total.still)} still failing (${fmt(total.changed)} with another first check), ${fmt(total.fresh)} new (${fmt(total.freshFail)} failing), ${fmt(total.gone)} gone. Branches are compared by pair and branch id${total.denied === 0 ? '' : `; ${fmt(total.denied)} denied in their context are left out of every count`}.`, '');
 if (total.unjudged > 0) out.push(`${fmt(total.unjudged)} cell(s) had no verdict (the engine threw): their branches the previous run judged count as failing with \`threw\`; ${fmt(total.unknown)} of those cells held none the previous run knew.`, '');
-out.push('## By pair', '', '| Pair | Branches | Pass | Newly failing | Newly passing | Still failing | New (failing) | Gone | No verdict |', '|---|---|---|---|---|---|---|---|---|');
+out.push('## By pair', '', '| Pair | Branches | Pass | Newly failing | Newly passing | Still failing | New (failing) | Gone | No verdict | Denied |', '|---|---|---|---|---|---|---|---|---|---|');
 for (const r of rows.sort((a, b) => b.regressed - a.regressed || b.fixed - a.fixed || (a.pair < b.pair ? -1 : 1))) {
   const still = r.changed > 0 ? `${fmt(r.still)} (${fmt(r.changed)} changed check)` : fmt(r.still);
-  out.push(`| ${r.pair}${r.previous ? '' : ' (new pair)'} | ${fmt(r.branches)} | ${fmt(r.pass)} | ${fmt(r.regressed)} | ${fmt(r.fixed)} | ${still} | ${fmt(r.fresh)} (${fmt(r.freshFail)}) | ${fmt(r.gone)} | ${r.unjudged === 0 ? '-' : fmt(r.unjudged)} |`);
+  out.push(`| ${r.pair}${r.previous ? '' : ' (new pair)'} | ${fmt(r.branches)} | ${fmt(r.pass)} | ${fmt(r.regressed)} | ${fmt(r.fixed)} | ${still} | ${fmt(r.fresh)} (${fmt(r.freshFail)}) | ${fmt(r.gone)} | ${r.unjudged === 0 ? '-' : fmt(r.unjudged)} | ${r.denied === 0 ? '-' : fmt(r.denied)} |`);
 }
 out.push('');
 out.push(...wayTable('Regressions by way', regressions, (w) => w.check, 'First failing check now', 'None: no branch that passed before fails now.'));
