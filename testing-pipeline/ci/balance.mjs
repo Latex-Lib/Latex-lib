@@ -46,9 +46,10 @@ const expand = (name) => {
   if (name === 'all') return allPairs;
   if (name.startsWith('batch:')) {
     const id = name.slice(6);
-    const batch = id === 'current' ? batches.filter((b) => b.status === 'running').at(-1) : batches.find((b) => String(b.id) === id);
-    if (batch === undefined) throw new Error(`no batch ${name}`);
-    return batch.classes.flatMap(expand);
+    // batch:current is every running batch (ci/run-pairs.sh).
+    const picked = id === 'current' ? batches.filter((b) => b.status === 'running') : batches.filter((b) => String(b.id) === id);
+    if (picked.length === 0) throw new Error(`no batch ${name}`);
+    return picked.flatMap((b) => b.classes).flatMap(expand);
   }
   const of = allPairs.filter((p) => p === name || classOf(p) === name);
   if (of.length === 0) throw new Error(`no such pair or class: ${name}`);

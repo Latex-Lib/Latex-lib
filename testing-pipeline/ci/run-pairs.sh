@@ -10,7 +10,7 @@
 #                                                        (all pairs in one process: give it a large NODE_HEAP_MB)
 #
 # PAIRS is `all` (the default), `batch:<id>` or `batch:current` (the classes of
-# that batch, or of the newest running one, in settings/batches.json:
+# that batch, or of every running one, in settings/batches.json:
 # testing-pipeline/BATCHES.md), or names, comma- or
 # space-separated: class.setup (article.A) or a class alone for every setup
 # that applies to it (amsart). Each pair runs in a process of its own, as on the
@@ -63,9 +63,10 @@ pairs_of() {
       if (name.startsWith("batch:")) {
         const batches = JSON.parse(fs.readFileSync("settings/batches.json", "utf8")).batches;
         const id = name.slice(6);
-        const batch = id === "current" ? batches.filter((b) => b.status === "running").at(-1) : batches.find((b) => String(b.id) === id);
-        if (batch === undefined) { unknown.push(name); return []; }
-        return batch.classes.flatMap(expand);
+        // batch:current is every running batch: a new batch and the earlier ones kept running beside it as a check.
+        const picked = id === "current" ? batches.filter((b) => b.status === "running") : batches.filter((b) => String(b.id) === id);
+        if (picked.length === 0) { unknown.push(name); return []; }
+        return picked.flatMap((b) => b.classes).flatMap(expand);
       }
       const of = name.includes(".") ? all.filter((p) => p === name) : pairs.filter((p) => p.class === name).map((p) => `${p.class}.${p.setup}`);
       if (of.length === 0) unknown.push(name);

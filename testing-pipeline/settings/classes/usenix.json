@@ -1,6 +1,6 @@
 {
   "id": "usenix",
-  "description": "USENIX's style file usenix2019_v3.sty (2018-12-19 revision 'for ATC'19', the file USENIX's paper-templates page links today), on plain article. Not on CTAN or the engine's mirror: from usenix.org/conferences/author-resources/paper-templates. letterpaper, twocolumn and 10pt are its template's class options; without twocolumn the style tries \\input twocolumn.sty, which does not exist. The style loads mathptmx, [T1]{fontenc}, [utf8]{inputenc} (ignored under XeTeX), pslatex, microtype [kerning,spacing] (pdfTeX-only features), flushend, cite, breakurl, url, xcolor and hyperref. breakurl, when not under pdfTeX, stops with 'The breakurl depends on hyperref package' unless hyperref is loaded first (breakurl.sty l.55-61), and the style loads it before hyperref. So the first preamble line marks breakurl as loaded and the last makes \\burl a synonym of \\url, which is what breakurl itself does under pdfTeX (l.38-53).",
+  "description": "USENIX's style file usenix2019_v3.sty (2018-12-19 revision 'for ATC'19', the file USENIX's paper-templates page links today), on plain article. Not on CTAN or the engine's mirror: from usenix.org/conferences/author-resources/paper-templates. letterpaper, twocolumn and 10pt are its template's class options; without twocolumn the style tries \\input twocolumn.sty, which does not exist. The style loads mathptmx, [T1]{fontenc}, [utf8]{inputenc} (ignored under XeTeX), pslatex, microtype [kerning,spacing] (pdfTeX-only features), flushend, cite, breakurl, url, xcolor and hyperref. breakurl, when not under pdfTeX, stops with 'The breakurl depends on hyperref package' unless hyperref is loaded first (breakurl.sty l.55-61), and the style loads it before hyperref. So the first preamble line marks breakurl as loaded and the last makes \\burl a synonym of \\url, which is what breakurl itself does under pdfTeX (l.38-53). microtype is loaded first with kerning and spacing off, and its option list then names the two, so usenix2019_v3.sty's \\usepackage[kerning,spacing]{microtype} (l.30), which fails under XeTeX, is taken as already met (batch 2 probe; not yet compiled).",
   "class": "article",
   "options": [
     "letterpaper",
@@ -9,6 +9,7 @@
   ],
   "preamble": [
     "\\makeatletter\\@namedef{ver@breakurl.sty}{2013/04/10 not loaded under XeTeX}\\makeatother",
+    "\\RequirePackage[kerning=false,spacing=false]{microtype}\\makeatletter\\@namedef{opt@microtype.sty}{kerning=false,spacing=false,kerning,spacing}\\makeatother",
     "\\usepackage{usenix2019_v3}",
     "\\DeclareRobustCommand\\burl{\\url}"
   ],

@@ -17,7 +17,8 @@ fixed in one round, closed, and followed by the next. This page is the cycle;
 ```
 
 - **id** counts up. **status** is `planned`, `running` or `closed`. The workflow
-  runs the newest `running` batch unless told otherwise (`batch:current`).
+  runs every `running` batch unless told otherwise (`batch:current`): a new batch, and an
+  earlier one kept `running` beside it while it is still being checked.
 - **classes** are class-setting ids (`settings/classes/<id>.json`). Each runs
   under every setup that applies to it (`settings/setups.json`: A, the class's
   defaults; B, two columns for a one-column class).
@@ -146,7 +147,7 @@ needs pdfLaTeX or LuaLaTeX only waits. Classes nobody writes papers in
 | Batch | Status | Classes | Added |
 |---|---|---|---|
 | 1 | running | 30 of the first 48 settings: article, report, book, beamer, amsart; revtex4-2 (APS), IEEEtran (journal, conference), aastex, elsarticle (preprint, 5p), cas-sc, cas-dc, acmart (sigconf, manuscript), aa, mnras, llncs, lipics, iopjournal, sn-jnl, siamart, mdpi; scrartcl, scrreprt, scrbook, memoir, exam, extarticle; tufte-handout | the first 46 class profiles and every handler of M1/M3 |
-| 2 | planned | revtex4-2 (AIP), acmart (acmsmall), IEEEtran (compsoc); achemso, spie, oup-authoring-template, emulateapj, apa7, jacow, elegantpaper, ut-thesis; jmlr (PMLR), quantumarticle, asmejour, asmeconf, ascelike; conference styles on article: NeurIPS, ICML, ICLR, ACL, CVPR, ECCV (on llncs), AAAI, IJCAI, USENIX, ICASSP, AISTATS, COLM, TMLR | 13 classes from CTAN, 13 conference styles (their files private: settings/classes/files/private.txt) and 3 more settings of batch 1 classes, each under setup A only (their real use is one layout); settings drafted from each class's documentation and source and checked against the source |
+| 2 | running | revtex4-2 (AIP), acmart (acmsmall), IEEEtran (compsoc); achemso, spie, oup-authoring-template, emulateapj, apa7, jacow, elegantpaper, ut-thesis; jmlr (PMLR), quantumarticle, asmejour, asmeconf, ascelike; conference styles on article: NeurIPS, ICML, ICLR, ACL, CVPR, ECCV (on llncs), AAAI, IJCAI, USENIX, ICASSP, AISTATS, COLM, TMLR | 13 classes from CTAN, 13 conference styles (their files private: settings/classes/files/private.txt) and 3 more settings of batch 1 classes, each under setup A only (their real use is one layout); settings drafted from each class's documentation and source and checked against the source |
 
 Left out of batch 1, as rarely used or out of scope (their settings stay, in no
 batch): minimal, ltxdoc, proc; letter, scrlttr2, moderncv; a0poster,

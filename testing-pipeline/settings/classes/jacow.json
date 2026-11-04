@@ -1,6 +1,6 @@
 {
   "id": "jacow",
-  "description": "JACoW's class for accelerator conference proceedings, jacow v2.7 (2022/02/02) from CTAN and MiKTeX. It is always two columns. a4paper is the option the class's own A4 template uses; it only sets geometry's paper size. Under XeTeX the class loads unicode-math and sets TeX Gyre Termes itself, and it needs nothing declared before \\begin{document}, so the preamble is empty.",
+  "description": "JACoW's class for accelerator conference proceedings, jacow v2.7 (2022/02/02) from CTAN and MiKTeX. It is always two columns. a4paper is the option the class's own A4 template uses; it only sets geometry's paper size. Under XeTeX the class loads unicode-math and sets TeX Gyre Termes itself, and it needs nothing declared before \\begin{document}, so the preamble is empty. General's lmodern, fontspec, font lines, amsmath and amssymb are left out (omitPreamble, as acmart-manuscript's): the class's XeTeX branch loads unicode-math (jacow.cls l.292-298), so amssymb stops at \"\\eth already defined\", and General's Latin Modern would replace the class's TeX Gyre Termes and lose glyphs (batch 2 probe).",
   "class": "jacow",
   "options": [
     "a4paper"
@@ -9,5 +9,14 @@
   "files": [],
   "setups": [
     "A"
+  ],
+  "omitPreamble": [
+    "\\usepackage{lmodern}",
+    "\\usepackage{fontspec}",
+    "\\setmainfont{Latin Modern Roman}[SmallCapsFont={Latin Modern Roman Caps}]",
+    "\\setsansfont{Latin Modern Sans}",
+    "\\setmonofont{Inconsolatazi4-Regular.otf}[BoldFont=Inconsolatazi4-Bold.otf]",
+    "\\usepackage{amsmath}",
+    "\\usepackage{amssymb}"
   ]
 }

@@ -1,10 +1,12 @@
 /**
  * thm.mdframed: `\newmdtheoremenv[options]{env}[shared]{Name}[within]` per kind,
- * the same arguments as `\newtheorem` after mdframed's options.
+ * the same arguments as `\newtheorem` after mdframed's options. mdframed
+ * declares the environment with `\newtheorem` (mdframed.sty l.591-601), so its
+ * note head wraps as thm.kernel's does (`NOTE_HEAD`, `noteHeadFor`, b26 MB-LO5).
  */
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
-import { declarations, displayName, elementOf, environmentOf, numberingOf, statementIn, text, withinArgument } from '../statement.ts';
+import { declarations, displayName, elementOf, environmentOf, NOTE_HEAD, noteHeadFor, numberingOf, statementIn, text, withinArgument } from '../statement.ts';
 import key from './key.ts';
 
 export const realize = (given: { readonly [name: string]: unknown } = {}): Realization => {
@@ -35,11 +37,17 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
       if (node === undefined) return { packages };
       return {
         packages,
-        declarations: declarations(elementOf(node), numbering, (env, element, counter) =>
-          'shared' in counter
-            ? `\\newmdtheoremenv[${options}]{${env}}[${counter.shared}]{${displayName(element)}}`
-            : `\\newmdtheoremenv[${options}]{${env}}{${displayName(element)}}${withinArgument(counter.within)}`,
-        ),
+        declarations: [
+          NOTE_HEAD,
+          ...declarations(elementOf(node), numbering, (env, element, counter) =>
+            noteHeadFor(
+              env,
+              'shared' in counter
+                ? `\\newmdtheoremenv[${options}]{${env}}[${counter.shared}]{${displayName(element)}}`
+                : `\\newmdtheoremenv[${options}]{${env}}{${displayName(element)}}${withinArgument(counter.within)}`,
+            ),
+          ),
+        ],
       };
     },
     // Not list-based for a listed box: the frame passes General's enumitem list opening with a boxed statement (28 of 28, index5).

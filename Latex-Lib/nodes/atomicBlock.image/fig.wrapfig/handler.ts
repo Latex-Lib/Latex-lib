@@ -12,6 +12,13 @@
  * 13.11pt at 0.45, the amsart.A control unchanged). A captioned figure keeps its length: in a framed box in a column its
  * caption set in 0.35 of the line overran on 42 lines, up to 70pt, against one 20.5pt line at 40mm (probe b25-1,
  * scrreprt.B d6adb999483bbcde157df), and the narrower `right` preset's captions already fail more often than outer-raised's.
+ * The cap also keeps 120pt of text beside the figure (the line less `\columnsep` less 120pt), but never goes below a
+ * quarter of the line (FIGBOX-W2, b26). In llncs.B's 168.6pt column 0.35 left 99.6pt beside the figure, and llncs's 12pt
+ * bold "Acknowledgements" head (111.7pt) overran by 12.10786pt on all 51 rows that W1 fixed in the other .B pairs (run
+ * r5-ec4a757, d9e41854a76a0a8cc63e9); a quarter (42.1pt) leaves 116.4pt. Wherever the line is 200pt or more (every
+ * one-column page, and the .B columns of article, book, report, memoir, exam, elsarticle and KOMA-Script) the room term
+ * is at least 0.35 of the line, so the figure is as W1 printed it; narrower lines (amsart.B's 175pt column, notes,
+ * nested columns) get a figure between a quarter and 0.35 of the line.
  * Widths given as a share of the line (`right` 0.25, `left` 0.45) are printed as before.
  * CTAN: https://ctan.org/pkg/wrapfig (the package's usage notes)
  */
@@ -21,8 +28,13 @@ import { param } from '../../protocol.ts';
 import { captionLines, pathOf } from '../node.ts';
 import key from './key.ts';
 
-/** `\LatexLibWrapWidth{w}`: `\LatexLibWrapW` = w, or 0.35\linewidth when that is less (FIGBOX-W1). */
-export const WRAP_WIDTH = String.raw`\ifdefined\LatexLibWrapW\else\newlength\LatexLibWrapW\fi\providecommand*\LatexLibWrapWidth[1]{\setlength\LatexLibWrapW{#1}\ifdim\LatexLibWrapW>0.35\linewidth\setlength\LatexLibWrapW{0.35\linewidth}\fi}`;
+/**
+ * `\LatexLibWrapWidth{w}`: `\LatexLibWrapW` = w, or the room when that is less (FIGBOX-W1, W2). The room
+ * (`\LatexLibWrapRoom`) is the line less `\columnsep` less 120pt, at most 0.35\linewidth and at least 0.25\linewidth;
+ * primitive register arithmetic (each step ends in `\relax`, so no `plus` keyword scan expands the next `\ifdim`), so it
+ * reads the same with or without calc.
+ */
+export const WRAP_WIDTH = String.raw`\ifdefined\LatexLibWrapW\else\newlength\LatexLibWrapW\fi\ifdefined\LatexLibWrapRoom\else\newlength\LatexLibWrapRoom\fi\providecommand*\LatexLibWrapWidth[1]{\setlength\LatexLibWrapW{#1}\LatexLibWrapRoom\linewidth\relax\advance\LatexLibWrapRoom-\columnsep\relax\advance\LatexLibWrapRoom-120pt\relax\ifdim\LatexLibWrapRoom>0.35\linewidth\LatexLibWrapRoom0.35\linewidth\relax\fi\ifdim\LatexLibWrapRoom<0.25\linewidth\LatexLibWrapRoom0.25\linewidth\relax\fi\ifdim\LatexLibWrapW>\LatexLibWrapRoom\LatexLibWrapW\LatexLibWrapRoom\relax\fi}`;
 
 /** A width given as a share of the line (`0.45\linewidth`, `\linewidth`), which needs no cap. */
 const ofLine = (width: string): boolean => /^\s*(\d*\.?\d+)?\s*\\(linewidth|hsize|columnwidth|textwidth)\s*$/.test(width);

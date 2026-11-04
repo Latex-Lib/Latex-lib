@@ -36,6 +36,16 @@ export default defineKey(
     // The classes that set their own \bibliographystyle (CA11).
     deny: [
       {
+        // b2p (batch 2, G4). The conference styles that load natbib themselves (neurips, icml, iclr, asmeconf) need no deny here:
+        // every preset loads natbib with an option, an "Option clash" their profiles' preloads already keep out.
+        class: 'class.ascelike',
+        reason: "ascelike.cls calls \\bibliographystyle{ascelike} in its \\AtEndOfClass block, unconditionally, so main.aux opens with that \\bibstyle; this way's own \\bibliographystyle{plainnat} (or unsrtnat) writes a second one, which BibTeX rejects ('Illegal, another \\bibstyle command'), as under mdpi and sn-jnl",
+        evidence: [
+          { kind: 'source', file: 'ascelike.cls (ascelike 2025/03/17 v3.0, CTAN macros/latex/contrib/ascelike)', line: '\\AtEndOfClass{... \\bibliographystyle{ascelike} ...}' },
+          { kind: 'compile', cell: 'b10 reference-list investigation: a repeated \\bibstyle in main.aux makes BibTeX fail and the build end (index4 no-bbl problems)' },
+        ],
+      },
+      {
         class: 'class.sn-jnl',
         reason: "sn-jnl's sn-mathphys-num option (its setting's) calls \\bibliographystyle{sn-mathphys-num} while the class loads, so main.aux opens with that \\bibstyle; this way's own \\bibliographystyle writes a second one, which BibTeX rejects ('Illegal, another \\bibstyle command') and fails, ending the build with every citation undefined; and sn-mathphys-num.bst is not among the setting's files",
         evidence: [
@@ -48,6 +58,14 @@ export default defineKey(
         reason: "mdpi calls \\bibliographystyle{Definitions/mdpi} while the class loads, so main.aux opens with that \\bibstyle; this way's own \\bibliographystyle writes a second one, which BibTeX rejects ('Illegal, another \\bibstyle command'), and without one BibTeX cannot open Definitions/mdpi.bst, which is not among the setting's files; either way the build ends with no .bbl",
         evidence: [
           { kind: 'source', file: 'testing-pipeline/settings/classes/files/Definitions/mdpi.cls', line: '373-382' },
+          { kind: 'compile', cell: 'b10 reference-list investigation: a repeated \\bibstyle in main.aux makes BibTeX fail and the build end (index4 no-bbl problems)' },
+        ],
+      },
+      {
+        class: 'class.aaai',
+        reason: "aaai2027.sty, when natbib is loaded, calls \\bibliographystyle{aaai2027} at \\begin{document} (l.425-433), so main.aux opens with that \\bibstyle; this way loads natbib and writes its own \\bibliographystyle, a second one, which BibTeX rejects ('Illegal, another \\bibstyle command'), ending the build with every citation undefined",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/aaai2027.sty (2027/10/21)', line: '425-433' },
           { kind: 'compile', cell: 'b10 reference-list investigation: a repeated \\bibstyle in main.aux makes BibTeX fail and the build end (index4 no-bbl problems)' },
         ],
       },

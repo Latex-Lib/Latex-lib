@@ -9,7 +9,7 @@ export default defineKey({
   id: 'thm.mdframed',
   node: 'containerBlock/mathElement',
   description:
-    "mdframed's \\newmdtheoremenv: a kernel-style statement in a frame drawn with TeX rules (the default frame method), a line colour, background and width of its own; the frame splits across pages.",
+    "mdframed's \\newmdtheoremenv: a kernel-style statement in a frame drawn with TeX rules (the default frame method), a line colour, background and width of its own; the frame splits across pages. Its note follows the label as text of the paragraph, so a long note wraps (b26 MB-LO5).",
   features: ['framed', 'background', 'colored', 'left-rule', 'breakable', 'numbered', 'numbered-within', 'shared-counter'],
   params: {
     linecolor: { type: 'color', default: 'black', description: 'frame colour' },

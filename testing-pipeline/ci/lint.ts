@@ -527,7 +527,9 @@ try {
  */
 function lintFiles(given: readonly string[], classes: Classes): number {
   const setting = ws.classSettings[0];
-  const refuses = new Set(classes.get(setting?.class ?? '')?.refuses ?? []);
+  // The host keys a class's facts by the setting when a profile has its id (a style on article, eccv on llncs), else by
+  // the documentclass name.
+  const refuses = new Set(classes.get(setting === undefined ? '' : classes.has(setting.id) ? setting.id : setting.class)?.refuses ?? []);
   const files = given.flatMap((f) => (statSync(f).isDirectory() ? readdirSync(f).filter((n) => n.endsWith('.tex')).sort().map((n) => join(f, n)) : [f]));
   let found = 0;
   for (const file of files) {
@@ -551,7 +553,7 @@ async function lintCells(classes: Classes): Promise<number> {
   const ways = new Map(library.all.map((w) => [w.id, w]));
   const rules = host.documentRules();
   const reports = new Map(ws.under.map((u) => [underName(u), newReport()]));
-  const refusing = new Map(ws.classSettings.map((s) => [s.id, new Set(classes.get(s.class)?.refuses ?? [])]));
+  const refusing = new Map(ws.classSettings.map((s) => [s.id, new Set(classes.get(classes.has(s.id) ? s.id : s.class)?.refuses ?? [])]));
   const texDir = option('tex');
   if (texDir !== undefined) mkdirSync(texDir, { recursive: true });
 

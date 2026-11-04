@@ -15,6 +15,7 @@ import { test } from 'node:test';
 import { adapted } from '../engine/adapt.ts';
 import type { Nesting } from '../nesting.ts';
 import { HANDLERS } from '../nodes/containerBlock.mathElement/index.ts';
+import { NOTE_HEAD } from '../nodes/containerBlock.mathElement/statement.ts';
 import amsthmKey from '../nodes/containerBlock.mathElement/thm.amsthm/key.ts';
 import classNativeKey from '../nodes/containerBlock.mathElement/thm.class-native/key.ts';
 import kernelKey from '../nodes/containerBlock.mathElement/thm.kernel/key.ts';
@@ -68,15 +69,34 @@ test("a kind on the theorem's counter declares the theorem first, and each decla
   assert.deepEqual(printed(handler('thm.thmtools')({}), statement('lemma')).declarations.slice(-1), [
     '\\declaretheorem[style=libthm, name=Lemma]{lemma}\n\\makeatletter\\let\\c@lemma\\c@theorem\\let\\thelemma\\thetheorem\\makeatother',
   ]);
+  // thm.kernel and thm.mdframed declare the wrapping note head once, then each environment with its begin hook (b26 MB-LO5).
   assert.deepEqual(printed(handler('thm.mdframed')({ sharedCounter: false, numberWithin: 'chapter' }), statement('remark')).declarations, [
-    '\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=0.4pt,usetwoside=false]{remark}{Remark}[chapter]',
+    NOTE_HEAD,
+    '\\newmdtheoremenv[linecolor=black,backgroundcolor=white,linewidth=0.4pt,usetwoside=false]{remark}{Remark}[chapter]\n\\AddToHook{env/remark/begin}{\\LatexLibNoteHead}',
   ]);
 });
 
 test('renaming prefixes every environment, the shared counter included', () => {
   const r = printed(handler('thm.kernel')({ rename: 'yes' }), statement('lemma', 'l:1'));
-  assert.deepEqual(r.declarations, ['\\newtheorem{libtheorem}{Theorem}[section]', '\\newtheorem{liblemma}[libtheorem]{Lemma}']);
+  assert.deepEqual(r.declarations, [
+    NOTE_HEAD,
+    '\\newtheorem{libtheorem}{Theorem}[section]\n\\AddToHook{env/libtheorem/begin}{\\LatexLibNoteHead}',
+    '\\newtheorem{liblemma}[libtheorem]{Lemma}\n\\AddToHook{env/liblemma/begin}{\\LatexLibNoteHead}',
+  ]);
   assert.equal(r.body, '\\begin{liblemma}[{Note}]\n\\label{l:1}\nA body.\n\\end{liblemma}\n\n');
+});
+
+test('the wrapping note head knows each head token for token and swaps only inside the environment (b26 MB-LO5)', () => {
+  // The kernel's head as latex.ltx defines it (ltthm.dtx v1.0h), mnras's, cas-common's and ntheorem's plain, each with its twin.
+  assert.ok(NOTE_HEAD.includes(String.raw`\def\LatexLib@nhK#1#2#3{\trivlist\item[\MakeLinkTarget{\@currentcounter}\hskip\labelsep{\bfseries #1\ #2\ (#3)}]\itshape}`));
+  assert.ok(NOTE_HEAD.includes(String.raw`\def\LatexLib@nhM#1#2#3{\reset@font\rm\trivlist\item[\hskip\labelsep{\reset@font\bf #1\ #2.\ (#3)}]}`));
+  assert.ok(NOTE_HEAD.includes(String.raw`\def\LatexLib@nhC#1#2#3{\trivlist\let\baselinestretch\@blstr\item[\hskip\labelsep{\bfseries #1\ #2\ (#3).}]\itshape}`));
+  assert.ok(NOTE_HEAD.includes(String.raw`\def\LatexLib@nhN#1#2#3{\item[\hskip\labelsep\theorem@headerfont #1\ #2\ (#3)\theorem@separator]}`));
+  // Defined once, and the `\th@plain` wrapper is never wrapped again by a nested environment.
+  assert.ok(NOTE_HEAD.startsWith(String.raw`\makeatletter\ifdefined\LatexLibNoteHead\else`));
+  assert.ok(NOTE_HEAD.includes(String.raw`\ifx\th@plain\LatexLib@thwrap\else`));
+  // The body is unchanged: the note stays the optional argument.
+  assert.equal(printed(handler('thm.kernel')({}), statement('lemma', 'l:1')).body, '\\begin{lemma}[{Note}]\n\\label{l:1}\nA body.\n\\end{lemma}\n\n');
 });
 
 test('a body that opens with a box or a table gets \\leavevmode first, as General does', () => {

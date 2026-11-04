@@ -27,6 +27,15 @@ export default defineKey(
     ],
     deny: [
       {
+        // b2p (batch 2, G4): apacite writes \bibliographystyle{apacite} beside ascelike's own.
+        class: 'class.ascelike',
+        reason: "ascelike.cls calls \\bibliographystyle{ascelike} in its \\AtEndOfClass block, unconditionally, so main.aux opens with that \\bibstyle; this way's \\bibliographystyle{apacite} writes a second one, which BibTeX rejects ('Illegal, another \\bibstyle command')",
+        evidence: [
+          { kind: 'source', file: 'ascelike.cls (ascelike 2025/03/17 v3.0, CTAN macros/latex/contrib/ascelike)', line: '\\AtEndOfClass{... \\bibliographystyle{ascelike} ...}' },
+          { kind: 'compile', cell: 'b10 reference-list investigation: a repeated \\bibstyle in main.aux makes BibTeX fail and the build end (index4 no-bbl problems)' },
+        ],
+      },
+      {
         class: 'class.book',
         reason: 'apacite under book stops in its bibliography at an undefined \\st@rtbibchapter',
         evidence: [{ kind: 'compile', cell: 'testing-pipeline/out/results/d010676ebf88 (book.A, a title citing with bib.apacite@cite)' }],

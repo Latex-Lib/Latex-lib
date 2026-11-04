@@ -23,6 +23,17 @@ export default defineKey(
       { pkg: 'biblatex', options: ['backend=bibtex'] },
     ],
     claims: ['bibliography-engine'],
+    // b2p (batch 2, G4): with backend=bibtex, biblatex writes \bibstyle{biblatex} to main.aux and BibTeX makes the .bbl.
+    deny: [
+      {
+        class: 'class.ascelike',
+        reason: "ascelike.cls calls \\bibliographystyle{ascelike} in its \\AtEndOfClass block, unconditionally, so main.aux opens with \\bibstyle{ascelike}; biblatex's backend=bibtex writes \\bibstyle{biblatex} after it, which BibTeX rejects ('Illegal, another \\bibstyle command'), and the .bbl BibTeX makes with ascelike.bst is not biblatex's (biber, ascelike's default and General's, writes no \\bibstyle and is not affected)",
+        evidence: [
+          { kind: 'source', file: 'ascelike.cls (ascelike 2025/03/17 v3.0, CTAN macros/latex/contrib/ascelike)', line: '\\AtEndOfClass{... \\bibliographystyle{ascelike} ...}' },
+          { kind: 'compile', cell: 'b10 reference-list investigation: a repeated \\bibstyle in main.aux makes BibTeX fail and the build end (index4 no-bbl problems)' },
+        ],
+      },
+    ],
     conflicts: [
       { pkg: 'natbib', reason: 'biblatex refuses natbib ("Incompatible package natbib"), which acmart, elsarticle and revtex4-2 load', evidence: [{ kind: 'compile', candidate: 'r2fcdef7f012217adaebc' }] },
     ],
