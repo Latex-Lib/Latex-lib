@@ -60,7 +60,8 @@ export default defineKey(
     // article.A run: document da56460ace75e3fc774d6, note.todonotes@listed-green > list.kernel@letter-paren > fig.svg@inkscape-text,
     // twice at l.162 `\end{figure}}`). 26 of the 285 float branches below it that print show it on their own lines (10 core pairs);
     // 211 fail on other errors first, and the 48 with no failure are image leaves, which place no sentinel, so a float lost fails nothing.
-    gives: { floats: false, boxDepth: 1 },
+    // Its note is a TikZ node's minipage, which never breaks across pages (b23: tbl.longtable stays out of it).
+    gives: { floats: false, breakable: false, boxDepth: 1 },
     // \todo prints through \marginpar unless inline (disabled, it prints nothing), a float: under a box, a footnote or columns it is lost, "Float(s) lost" at
     // \end{document} (5e82acb539, memoir.A run: document d7351df521275b54fafd9, thm.tcolorbox@titled > thm.amsthm@global >
     // note.todonotes@fancy-shadow, the document's only float, l.78). article.A run: 199 of 217 lose their content under a float-less

@@ -7,7 +7,7 @@ export default defineKey(
     id: 'note.notecolumn',
     node: 'containerBlock/note',
     description:
-      "KOMA's scrlayer-notecolumn: \\makenote*[column]{…} (the starred form, its text kept detokenized for the column) into a note column beside the text, synchronised with it across pages; the marginpar column, or one of its own declared with \\DeclareNewNoteColumn[font=…,width=…]{name}. Without a width a column is \\marginparwidth wide: the class's, or the room its margin has where the class's is under 2cm or runs off the paper. 1 template.",
+      "KOMA's scrlayer-notecolumn: \\makenote*[column]{…} (the starred form, its text kept detokenized for the column) into a note column beside the text, synchronised with it across pages; the marginpar column, or one of its own declared with \\DeclareNewNoteColumn[font=…,width=…]{name}. Without a width a column is \\marginparwidth wide: the class's, or the room its margin has where the class's is under 2cm or runs off the paper. Under a two-sided class whose notes keep one side (tufte-handout), an even page's column goes right of the text, where \\marginpar sets the note, not in the package's left margin; odd pages, and a reversed document's sides, stay the package's. 1 template.",
     ctan: ['koma-script'],
     features: ['margin-note', 'note-column', 'colored', 'small-type'],
     params: {
@@ -63,7 +63,8 @@ export default defineKey(
     // typeset at shipout into the column's \vbox (l.675), where its insert stays (GitHub run 41584963423: the one document with
     // General's footnote anchor below it that printed, mdpi.A d7f1d4153e60aee6e0ba2 result 9f5c788f77, 2 of 2 branches '.t never
     // shipped'; in the other 46 pairs that notes-only document printed no page, FC2). [OV2]
-    gives: { floats: false, footnotes: false, boxDepth: 1 },
+    // Its notes are boxes set as the page ships; none breaks across pages (b23: tbl.longtable stays out of it).
+    gives: { floats: false, footnotes: false, breakable: false, boxDepth: 1 },
     // The handler has \clearnotecolumns do nothing in internal vertical mode (`CLEAR_ON_THE_PAGE_ONLY`): every \clearpage
     // clears the note columns first and loops until their notes have shipped, which in a box or in the output routine never
     // happens. A breakable tcolorbox's last-part \clearpage in a footnote's text or thm.mdframed's body ran main memory out so

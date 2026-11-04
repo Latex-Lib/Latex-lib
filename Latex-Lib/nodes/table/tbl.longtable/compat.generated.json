@@ -2,7 +2,7 @@
   "handler": "tbl.longtable",
   "node": "table",
   "generatedFrom": {
-    "key": "sha256:519a021fe865ea2d572df5b9a0e96ea86005fa6f144d7b166de46f55c00909a3",
+    "key": "sha256:a0807e0fe2284c46b099b79a45a9070b9bedb2aa37ca604b975eb6a02a76aa51",
     "contexts": "sha256:6473710baf815dcb7640d4ff65dd6f43384b488e7508f2e8c9b6309e7a7e11b9",
     "matrix": null
   },
@@ -144,13 +144,9 @@
         "status": "derived"
       },
       "thm.mdframed": {
-        "verdict": "deny",
+        "verdict": "ok",
         "source": "derived",
-        "status": "derived",
-        "reason": "at most 0 boxes above, not 1",
-        "lacks": [
-          "at most 0 boxes above, not 1"
-        ]
+        "status": "derived"
       },
       "thm.ntheorem": {
         "verdict": "ok",
@@ -158,22 +154,17 @@
         "status": "derived"
       },
       "thm.tcolorbox": {
-        "verdict": "deny",
+        "verdict": "ok",
         "source": "derived",
-        "status": "derived",
-        "reason": "at most 0 boxes above, not 1",
-        "lacks": [
-          "at most 0 boxes above, not 1"
-        ]
+        "status": "derived"
       },
       "thm.tcolorbox[breakable=false]": {
         "verdict": "deny",
         "source": "derived",
         "status": "derived",
-        "reason": "needs breakable; at most 0 boxes above, not 1",
+        "reason": "needs breakable",
         "lacks": [
-          "needs breakable",
-          "at most 0 boxes above, not 1"
+          "needs breakable"
         ]
       },
       "thm.thmtools": {

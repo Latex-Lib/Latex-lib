@@ -93,6 +93,7 @@ import {
 } from 'compat-core';
 
 import { latexLibClasses, latexLibWays } from '../host-flouest/src/latexLib.ts';
+import { inShard } from '../host-flouest/src/shard.ts';
 import { loadSubject } from '../host-flouest/src/subject.ts';
 import { flag, numberOption, openWorkspace, option, underName } from '../host-flouest/src/workspace.ts';
 
@@ -220,7 +221,8 @@ try {
   type Target = { readonly document: string; readonly cell: string; readonly key: string; readonly branches: readonly BranchSpec[]; readonly symptom: Symptom; readonly owners: readonly BranchId[] };
   const targets: Target[] = [];
   const read = { cells: 0, missing: 0, emptyLog: 0, attributed: 0 };
-  for (const { document } of filing.documents) {
+  // A pair split over several jobs bisects only the documents this job compiled (src/shard.ts).
+  for (const { document } of inShard(filing.documents)) {
     for (const job of cellsOf(document)) {
       read.cells++;
       if (!stored(keyOf(job))) {

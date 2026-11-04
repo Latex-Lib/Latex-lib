@@ -1,13 +1,14 @@
 # The matrix on GitHub's runners (testing-pipeline/BATCHES.md): a plan job checks the
-# library (nothing compiles) and files once, one job per class setting and setup
-# of the current batch compiles, and a last job sums them up.
+# library (nothing compiles) and files once, one job per shard of each class setting and setup of the current
+# batch compiles (a long pair is split into shards of its documents: settings/shards.json, ci/balance.mjs), longest
+# first, and a last job sums them up.
 #
 # The store's results live in the Actions cache (`store-v1-<run>`): every pair
 # job starts from the newest, and the summary job saves it again with what the
 # run compiled, so a later run compiles only the documents whose LaTeX changed.
 # The first run starts from the release `store-seed` (encrypted). Between the
-# jobs the rest moves as artifacts (`index`, `pair-<class>.<setup>`,
-# `log-<class>.<setup>`, `summary`, `diff`, `triage`), each sealed with
+# jobs the rest moves as artifacts (`index`, `pair-<class>.<setup>@<shard>`,
+# `log-<class>.<setup>@<shard>`, `summary`, `diff`, `triage`), each sealed with
 # FLOUEST_KEY by ci/seal.sh; `ci/fetch-run.sh` brings a run back.
 #
 # The engine and the host the pipeline tests against are not public. Each job
@@ -37,8 +38,8 @@ on:
         description: "engines per job (a runner has 4 cores and 16 GB; Node takes 8 GB)"
         default: "3"
       bisect:
-        description: "compiles each pair may spend splitting documents that failed with an untied error (ci/bisect.ts); 0 for none"
-        default: "120"
+        description: "compiles each pair may spend splitting documents that failed with an untied error (ci/bisect.ts), shared by its shards (at least 40 each); 0 for none"
+        default: "200"
 
 permissions:
   contents: read
@@ -53,7 +54,7 @@ env:
   QUIET: "1"
   ENGINES: ${{ inputs.engines || '3' }}
   CHROME_VERSION: "156.0.8078.80"
-  BISECT_BUDGET: ${{ inputs.bisect || '120' }}
+  BISECT_BUDGET: ${{ inputs.bisect || '200' }}
   # The releases (store-seed, miktex-<snapshot>) are the organization repository's, for every runner repository.
   RELEASES: Latex-Lib/Latex-lib
 
@@ -63,6 +64,7 @@ jobs:
     timeout-minutes: 90
     outputs:
       pairs: ${{ steps.plan.outputs.pairs }}
+      at: ${{ steps.plan.outputs.at }}
     steps:
       - name: The secrets are set
         env:
@@ -181,6 +183,8 @@ jobs:
           export PRIVATE_COMMIT=$(cat "$RUNNER_TEMP/private.resolved")
           bash testing-pipeline/ci/run-pairs.sh plan --pairs-out "$RUNNER_TEMP/pairs.json" $PAIRS
           echo "pairs=$(cat "$RUNNER_TEMP/pairs.json")" >> "$GITHUB_OUTPUT"
+          # The moment every job of this run names the ledger's run by, so a pair's shards are one run.
+          echo "at=$(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)" >> "$GITHUB_OUTPUT"
       - name: Seal index
         env:
           FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
@@ -236,7 +240,7 @@ jobs:
   pair:
     needs: plan
     if: github.ref_name != 'latex-ci-keys' && needs.plan.outputs.pairs != '[]'
-    name: ${{ matrix.class }}.${{ matrix.setup }}
+    name: ${{ matrix.class }}.${{ matrix.setup }}@${{ matrix.shard }}
     runs-on: ubuntu-24.04
     timeout-minutes: 350
     strategy:
@@ -245,6 +249,11 @@ jobs:
         include: ${{ fromJSON(needs.plan.outputs.pairs) }}
     env:
       PAIR: ${{ matrix.class }}.${{ matrix.setup }}
+      # One shard of the pair (settings/shards.json): its part of the documents, its log, ledger part and artifacts
+      # named <pair>@<shard>, its results and verdicts one run with the other shards'.
+      UNIT: ${{ matrix.class }}.${{ matrix.setup }}@${{ matrix.shard }}
+      COMPAT_SHARD: ${{ matrix.shard }}/${{ matrix.shards }}
+      COMPAT_RUN_AT: ${{ needs.plan.outputs.at }}
     steps:
       - uses: actions/checkout@v4
       # The private companion repository's files, over this checkout (the host, the engine archive, the docs), at
@@ -329,8 +338,12 @@ jobs:
           NODE_OPTIONS: --max-old-space-size=8192 --require ${{ github.workspace }}/testing-pipeline/ci/no-source.cjs
         run: |
           mkdir -p out/logs
-          npm run --silent compat -- ci/bisect.ts --library --classes "${PAIR%.*}" --setups "${PAIR##*.}" --budget "$BISECT_BUDGET" --out "out/logs/bisect-$PAIR.json" > "out/logs/bisect-$PAIR.log" 2>&1 || true
-          grep -E '^bisect' "out/logs/bisect-$PAIR.log" | cut -c1-300 || true
+          # The pair's budget shared by its shards, at least 40 compiles each.
+          n=${COMPAT_SHARD#*/}
+          budget=$(( (BISECT_BUDGET + n - 1) / n ))
+          [ "$budget" -ge 40 ] || budget=40
+          npm run --silent compat -- ci/bisect.ts --library --classes "${PAIR%.*}" --setups "${PAIR##*.}" --budget "$budget" --out "out/logs/bisect-$UNIT.json" > "out/logs/bisect-$UNIT.log" 2>&1 || true
+          grep -E '^bisect' "out/logs/bisect-$UNIT.log" | cut -c1-300 || true
       - name: Gather
         if: always()
         run: |
@@ -341,7 +354,8 @@ jobs:
             find results -maxdepth 1 -name '*.json.gz' -newer .restored -print0 | xargs -0 -r cp -t upload/results/
           fi
           echo "gather: $(ls upload/results | wc -l) new results"
-          if [ -f ledger.jsonl ]; then mv ledger.jsonl "upload/ledger.d/$PAIR.jsonl"; fi
+          # A shard that compiled and filed no cell still leaves its part, so it is not taken for one that never ran.
+          if [ -f ledger.jsonl ]; then mv ledger.jsonl "upload/ledger.d/$UNIT.jsonl"; elif [ "${{ steps.compile.outcome }}" = success ]; then : > "upload/ledger.d/$UNIT.jsonl"; fi
           # The profiles keep only the engine's stores: not Chrome's HTTP caches (they can hold the engine page's
           # script) and not its lock files (a profile restored with them looks in use).
           if [ -d _shared ]; then
@@ -352,24 +366,24 @@ jobs:
         if: always()
         env:
           FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
-        run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/pair-${{ env.PAIR }}.tar.gz.enc" testing-pipeline/out/upload results ledger.d
+        run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/pair-${{ env.UNIT }}.tar.gz.enc" testing-pipeline/out/upload results ledger.d
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: pair-${{ env.PAIR }}
-          path: ${{ runner.temp }}/sealed/pair-${{ env.PAIR }}.tar.gz.enc
+          name: pair-${{ env.UNIT }}
+          path: ${{ runner.temp }}/sealed/pair-${{ env.UNIT }}.tar.gz.enc
           if-no-files-found: warn
           retention-days: 30
       - name: Seal log
         if: always()
         env:
           FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
-        run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/log-${{ env.PAIR }}.tar.gz.enc" testing-pipeline/out logs
+        run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/log-${{ env.UNIT }}.tar.gz.enc" testing-pipeline/out logs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: log-${{ env.PAIR }}
-          path: ${{ runner.temp }}/sealed/log-${{ env.PAIR }}.tar.gz.enc
+          name: log-${{ env.UNIT }}
+          path: ${{ runner.temp }}/sealed/log-${{ env.UNIT }}.tar.gz.enc
           if-no-files-found: warn
           retention-days: 30
       - if: always() && steps.profiles.outputs.cache-hit != 'true'
@@ -455,7 +469,14 @@ jobs:
         run: |
           # The previous verdicts go into the artifact too: two joined runs compare with both repositories'.
           if [ -f testing-pipeline/out/verdicts-cache/verdicts.json.gz ]; then cp testing-pipeline/out/verdicts-cache/verdicts.json.gz testing-pipeline/out/verdicts.previous.json.gz; fi
-          node testing-pipeline/ci/diff.mjs testing-pipeline/out --previous testing-pipeline/out/verdicts-cache/verdicts.json.gz > /dev/null
+          # A pair with a shard that did not run (ci/incomplete.mjs) is left out of the diff, so its previous
+          # verdicts are kept whole; its parts come back for the triage.
+          incomplete=$(node testing-pipeline/ci/incomplete.mjs testing-pipeline/out)
+          mkdir -p testing-pipeline/out/ledger.aside
+          for p in $incomplete; do mv testing-pipeline/out/ledger.d/"$p"@*.jsonl testing-pipeline/out/ledger.aside/ 2>/dev/null || true; done
+          if [ -n "$incomplete" ]; then echo "diff: left out, a shard did not run: $(echo $incomplete)" >> "$GITHUB_STEP_SUMMARY"; fi
+          node testing-pipeline/ci/diff.mjs testing-pipeline/out --previous testing-pipeline/out/verdicts-cache/verdicts.json.gz > /dev/null || { mv testing-pipeline/out/ledger.aside/*.jsonl testing-pipeline/out/ledger.d/ 2>/dev/null || true; exit 1; }
+          mv testing-pipeline/out/ledger.aside/*.jsonl testing-pipeline/out/ledger.d/ 2>/dev/null || true
           if [ -f testing-pipeline/out/diff.md ]; then { echo; head -c 30000 testing-pipeline/out/diff.md; } >> "$GITHUB_STEP_SUMMARY"; else echo "diff: first run, nothing to compare" >> "$GITHUB_STEP_SUMMARY"; fi
           mkdir -p testing-pipeline/out/verdicts-cache
           cp testing-pipeline/out/verdicts.json.gz testing-pipeline/out/verdicts-cache/verdicts.json.gz

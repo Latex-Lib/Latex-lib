@@ -8,7 +8,7 @@
  */
 import { shapeOf, statusOf } from './log.ts';
 import { ORACLE_VERSION, type Judgement } from './oracle.ts';
-import type { CellId, CellStatus, DocumentId, Failure, Json, Verdict } from './model.ts';
+import type { BranchId, CellId, CellStatus, DocumentId, Failure, Json, Verdict } from './model.ts';
 import type { Store } from './ports.ts';
 import type { CellOutcome } from './run.ts';
 
@@ -41,10 +41,20 @@ export type LedgerLine = {
    * (those a skipped end of file never reached, `oracle.ts`) stays in theirs.
    */
   readonly oracle?: number;
-  readonly verdicts?: readonly Pick<Verdict, 'branch' | 'pass' | 'failures'>[];
+  readonly verdicts?: readonly LedgerVerdict[];
   /** What the log could not tie to one branch. */
   readonly problems?: readonly Failure[];
 };
+
+/**
+ * A branch's verdict as the ledger keeps it. `denied` is the host's reason when its nesting contexts deny the branch (the host's
+ * `contextDenied`, as `<giver> > <way>`): such a branch is compiled only to test the denial, so reports count it apart (b23; a run
+ * before b23 wrote none, and a reader recomputes it from that run's tree).
+ */
+export type LedgerVerdict = Pick<Verdict, 'branch' | 'pass' | 'failures'> & { readonly denied?: string };
+
+/** The denial of a branch the host's nesting contexts deny, else nothing (`LedgerVerdict.denied`). */
+export type DeniedOf = (branch: BranchId) => string | undefined;
 
 export type Run = { readonly id: string; readonly at: string };
 
@@ -65,7 +75,7 @@ export const newRun = (now: Date = new Date()): Run => {
   return { id: `r${at.replace(/[-:.TZ]/g, '')}`, at };
 };
 
-export const ledgerLine = (outcome: CellOutcome, run: Run, engine: string, judgement?: Judgement): LedgerLine => {
+export const ledgerLine = (outcome: CellOutcome, run: Run, engine: string, judgement?: Judgement, deniedOf?: DeniedOf): LedgerLine => {
   const { cell, result } = outcome;
   const { status, reading } = statusOf(result);
   const pages = reading.pages;
@@ -94,24 +104,29 @@ export const ledgerLine = (outcome: CellOutcome, run: Run, engine: string, judge
           oracle: ORACLE_VERSION,
           // Each verdict ends with the document's failures (`judge`), written once under `problems`. A `:document`
           // failure before them is one only some branches carry (`oracle.ts`, a skipped end of file): it stays.
-          verdicts: judgement.verdicts.map(({ branch, pass, failures }) => ({ branch, pass, failures: failures.slice(0, Math.max(0, failures.length - judgement.document.length)) })),
+          // A denied branch's verdict names its denial (`LedgerVerdict.denied`).
+          verdicts: judgement.verdicts.map(({ branch, pass, failures }) => {
+            const denied = deniedOf?.(branch);
+            return { branch, pass, failures: failures.slice(0, Math.max(0, failures.length - judgement.document.length)), ...(denied === undefined ? {} : { denied }) };
+          }),
           problems: judgement.document,
         }),
   };
 };
 
-/** Appends one line per outcome to the ledger, with its judgement when there is one, and says what the run did. */
+/** Appends one line per outcome to the ledger, with its judgement when there is one (each denied branch's verdict naming its denial, `deniedOf`), and says what the run did. */
 export const recordRun = (
   store: Store,
   outcomes: readonly CellOutcome[],
   run: Run,
   engine: string,
   judgements: ReadonlyMap<CellId, Judgement> = new Map(),
+  deniedOf?: DeniedOf,
 ): RunSummary => {
   const status = { ok: 0, errors: 0, 'no-output': 0, threw: 0 };
   const branches = { pass: 0, fail: 0 };
   for (const outcome of outcomes) {
-    const line = ledgerLine(outcome, run, engine, judgements.get(outcome.cell.id));
+    const line = ledgerLine(outcome, run, engine, judgements.get(outcome.cell.id), deniedOf);
     store.append('ledger', line);
     status[line.status] += 1;
     for (const verdict of line.verdicts ?? []) branches[verdict.pass ? 'pass' : 'fail'] += 1;

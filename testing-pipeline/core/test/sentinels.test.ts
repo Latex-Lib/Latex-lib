@@ -21,7 +21,8 @@ test('the preamble defines the sentinel and writes the text block once the docum
   assert.match(preamble, /\\pdfsavepos\\fi\\write-1\{COMPAT-SENTINEL\{#1\}\{\\the\\c@page\}/);
   assert.match(preamble, /\\AddToHook\{begindocument\/end\}/);
   assert.match(preamble, /\\ifdim\\pdfpageheight=0pt \\global\\pdfpageheight=\\paperheight\\fi/, 'positions measured against the paper');
-  assert.equal((preamble.match(/COMPAT-GEOMETRY/g) ?? []).length, 7);
+  assert.equal((preamble.match(/COMPAT-GEOMETRY/g) ?? []).length, 8);
+  assert.match(preamble, /COMPAT-GEOMETRY\{maxDepth\}\{\\the\\maxdepth\}/, "the class's \\maxdepth beside the text block");
 });
 
 test('a sentinel id passes through TeX unchanged, or is refused', () => {
@@ -58,6 +59,9 @@ test('the log gives each sentinel its pages and positions, and the text block in
   assert.equal(geometry?.textWidth, 345 * PT);
   assert.equal(geometry?.oddLeft, Math.round(134.26999 * PT));
   assert.equal(readSentinels('COMPAT-GEOMETRY{paperWidth}{1pt}').geometry, undefined, 'a partial text block is none');
+  assert.equal(geometry?.maxDepth, undefined, 'a log with no \\maxdepth gives none');
+  assert.equal(readSentinels(`${GEOMETRY_LOG}\nCOMPAT-GEOMETRY{maxDepth}{5.0pt}`).geometry?.maxDepth, 5 * PT);
+  assert.equal(readSentinels('COMPAT-GEOMETRY{maxDepth}{5.0pt}').geometry, undefined, '\\maxdepth alone is no text block');
 });
 
 test('a hit is in the text block within the tolerances, on either side of a two-sided layout', () => {
@@ -71,4 +75,9 @@ test('a hit is in the text block within the tolerances, on either side of a two-
   assert.equal(inTextBlock(at(530, 400), g, h, v), false, 'into the right margin');
   assert.equal(inTextBlock(at(300, 90), g, h, v), false, 'below the block');
   assert.equal(inTextBlock({ page: 1, x: null, y: null }, g, h, v), true, 'no position, nothing to judge');
+  assert.equal(inTextBlock(at(300, 94.8), g, h, v), false, '5.2pt below the bottom, with no \\maxdepth');
+  const deep = { ...g, maxDepth: 5 * PT };
+  assert.equal(inTextBlock(at(300, 94.8), deep, h, v), true, "5.2pt below: in a page's last box, within \\maxdepth and the tolerance");
+  assert.equal(inTextBlock(at(300, 90.5), deep, h, v), false, '9.5pt below: past \\maxdepth and the tolerance');
+  assert.equal(inTextBlock(at(300, 704.5), deep, h, v), false, '\\maxdepth leaves the top as it was');
 });

@@ -2,13 +2,15 @@
  * list.paralist: the lists in paralist's forms. compactitem, compactenum,
  * compactdesc; inparaitem, inparaenum (run into the paragraph); asparaitem,
  * asparaenum, asparadesc (each item a paragraph); a label template for
- * numbered lists ([(a)]); \setdefaultenum and \setdefaultleftmargin.
+ * numbered lists ([(a)]); \setdefaultenum and \setdefaultleftmargin. In a
+ * measure under 2in a list indents at most a fifth of it (`NARROW_LISTS`,
+ * OVL-3).
  * CTAN: https://ctan.org/pkg/paralist
  */
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
 import { param } from '../../protocol.ts';
-import { nested, styleOf } from '../node.ts';
+import { NARROW_LISTS, nested, styleOf } from '../node.ts';
 import key from './key.ts';
 
 const FORMS: { readonly [form: string]: { readonly [style: string]: string } } = {
@@ -24,7 +26,7 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
     ...(param(p, 'defaultMargins') === '' ? [] : [`\\setdefaultleftmargin${param(p, 'defaultMargins')}`]),
   ];
   return {
-    preamble: () => ({ packages: ['\\usepackage{paralist}'], ...(declarations.length === 0 ? {} : { declarations }) }),
+    preamble: () => ({ packages: ['\\usepackage{paralist}'], declarations: [...declarations, NARROW_LISTS] }),
     emit: (node, content) => {
       const style = styleOf(node);
       const env = (FORMS[param(p, 'form', 'compact')] ?? FORMS['compact'] ?? {})[style] ?? 'compactitem';

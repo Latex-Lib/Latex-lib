@@ -31,7 +31,8 @@ export default defineKey(
     // Since b22 the handler sets a block that holds a footnote inside footnotehyper's \savenotes … \spewnotes, what the package
     // is for (a tabular's footnotes), so the text is set after the block at the page's foot (`keepingFootnotes`), and the
     // footnote is no longer denied below it. [OV2-alt]
-    gives: { floats: false, boxDepth: 1 },
+    // Its block is a tabular, which never breaks across pages (b23: tbl.longtable stays out of it).
+    gives: { floats: false, breakable: false, boxDepth: 1 },
     // A block as wide as \linewidth: below cols.vwcol, which fits only paragraph lines to its columns, it comes out 172.7
     // or 345.4pt over (copy batch-3b, oracle 4: 0 of 30 fit article.A branches with it below vwcol pass, report.A 0 of 31,
     // amsart.A 0 of 30; e.g. d6284954b0b417341a525 result 3c462b887c l.404, 172.7pt).

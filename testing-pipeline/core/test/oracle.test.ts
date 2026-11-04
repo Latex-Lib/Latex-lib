@@ -617,6 +617,26 @@ test('feature probes: a box that never broke, a note away from its mark, a featu
   assert.deepEqual(checksOf(broke).A, []);
 });
 
+test('the footnote probe passes a note TeX held over to the next page after another note split there, and no other', () => {
+  // B's text starts on page 2, its mark on page 1; A's note started on page 1 and ended on page 2 (split), so TeX held B over.
+  const notes = (aEnd: number, bText: number) =>
+    judge({
+      cell: 'c',
+      emitted,
+      result: result(hit('A.mark', 1), hit('A.text', 1), hit('A.end', aEnd), hit('B.mark', 1), hit('B.text', bText), hit('B.end', bText)),
+      expected: expected(
+        { sentinels: [{ id: 'A.mark', role: 'footnote:mark' }, { id: 'A.text', role: 'footnote:text' }, { id: 'A.end', role: 'footnote:end' }], features: ['footnote'] },
+        { sentinels: [{ id: 'B.mark', role: 'footnote:mark' }, { id: 'B.text', role: 'footnote:text' }, { id: 'B.end', role: 'footnote:end' }], features: ['footnote'] },
+      ),
+    });
+  assert.deepEqual(checksOf(notes(2, 2)), { A: [], B: [] });
+  // No note split on page 1: B's text a page late is not TeX's hold-over.
+  assert.deepEqual(checksOf(notes(1, 2)), { A: [], B: ['feature:footnote'] });
+  // Two pages late, with only page 1 split: page 2 holds no split note.
+  assert.deepEqual(checksOf(notes(2, 3)), { A: [], B: ['feature:footnote'] });
+  assert.match(notes(2, 3).verdicts[1]?.failures[0]?.evidence ?? '', /note 1: mark on page 1, text on page 3/);
+});
+
 test('a fatal stop or no page fails every branch as the document, and no unshipped sentinel or feature is charged to its branch', () => {
   const stopped = judge({
     cell: 'c',

@@ -4,7 +4,7 @@
  * \ChNameUpperCase … \ChTitleAsIs) when a preset sets them. Only chapters
  * change; every heading prints with the kernel command. A style's own fonts in
  * NFSS (`STYLE_FONTS`). Bjornstrup's starred head across both columns under
- * two columns (`SCHAPTER_ACROSS`).
+ * two columns (`SCHAPTER_ACROSS`), and as wide as its line (`DOTIS_LINE`).
  * CTAN: https://ctan.org/pkg/fncychap (section 2.1)
  */
 import { withDefaults } from '../../../schema/params.ts';
@@ -26,6 +26,17 @@ const CASE: { readonly [c: string]: string } = { upper: 'UpperCase', lower: 'Low
  * which fncychap's own form is for.
  */
 const SCHAPTER_ACROSS = String.raw`\makeatletter\ifdefined\KOMAClassName\else\ifdefined\LatexLibSchapter\else\let\LatexLibSchapter\@schapter\def\@schapter#1{\if@twocolumn\@topnewpage[\LatexLibSchapter{#1}]\else\LatexLibSchapter{#1}\fi}\fi\fi\makeatother`;
+
+/**
+ * Bjornstrup's starred head (\DOTIS, fncychap.sty v1.34 l.428-435) as wide as the line it is set in: its grey bar \parbox[b]{\linewidth}
+ * and its title box \linewidth less twice \myhi, where the package gives \textwidth and \mylen (\textwidth less twice \myhi,
+ * fixed at load, l.408-409). Under KOMA-Script (b23), which `SCHAPTER_ACROSS` leaves alone, a starred head still came out in the
+ * column: GitHub run r2-461ed0e, 40 scrbook.B and scrreprt.B cells, each with two "Overfull \hbox (214.12778pt too wide)" boxes
+ * on one line of the host's \printbibliography (scrbook.B d9adfc6a5d685cc316db5 result 9c1cda9c9b l.117, `[][][][][][][]`),
+ * which names no branch's line, so all 466 not-denied branches of those cells failed. Across the page (\@topnewpage, \twocolumn)
+ * and in one column \linewidth is \textwidth there, so those heads print as before; numbered heads (\DOCH, \DOTI) are untouched.
+ */
+const DOTIS_LINE = String.raw`\makeatletter\renewcommand{\DOTIS}[1]{\fboxsep=0pt \colorbox[gray]{.85}{\rule{0pt}{40pt}\parbox[b]{\linewidth}{\hfill}}\\\nointerlineskip\raggedright\fboxsep=\myhi \setlength{\mylen}{\linewidth}\addtolength{\mylen}{-2\myhi}\colorbox[gray]{.85}{\parbox[t]{\mylen}{\CTV\FmTi{#1}}}\par\nobreak\vskip 40\p@}\makeatother`;
 
 /**
  * Each style's own \ChNameVar and \ChTitleVar written in NFSS. fncychap.sty v1.34 gives them as LaTeX 2.09 font commands (Sonny
@@ -59,7 +70,7 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
     ...(CASE[param(p, 'nameCase', 'style')] === undefined ? [] : [`\\ChName${CASE[param(p, 'nameCase')]}`]),
     // The manual names \ChNameAsIs for the title's default case too; \ChTitleAsIs is what the package defines.
     ...(CASE[param(p, 'titleCase', 'style')] === undefined ? [] : [`\\ChTitle${CASE[param(p, 'titleCase')]}`]),
-    ...(style === 'Bjornstrup' ? [SCHAPTER_ACROSS] : []),
+    ...(style === 'Bjornstrup' ? [SCHAPTER_ACROSS, DOTIS_LINE] : []),
   ];
   return {
     preamble: (_params, _parentType, node) => {

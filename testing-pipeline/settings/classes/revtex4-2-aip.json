@@ -1,13 +1,18 @@
 {
   "id": "revtex4-2-aip",
-  "description": "REVTeX 4.2 (4.2f, June 2022, CTAN/MiKTeX package revtex) with its AIP substyle aip4-2.rtx for J. Chem. Phys. (jcp), in the two-column reprint format. aip picks the society and jcp the journal (superscript numbered citations, aipnum4-2.bst). reprint is set explicitly because AIP's default, unlike APS's, is preprint (one column, 12pt).",
+  "description": "REVTeX 4.2 (4.2f, June 2022, CTAN/MiKTeX package revtex) with its AIP substyle aip4-2.rtx for J. Chem. Phys. (jcp), in the two-column reprint format. aip picks the society and jcp the journal (superscript numbered citations, aipnum4-2.bst). reprint is set explicitly because AIP's default, unlike APS's, is preprint (one column, 12pt). Its preamble takes four of revtex4-2-aps.json's lines, since aip runs the same revtex4-2.cls code (fix-notes, batch 1 round 3): the float end ltxgrid needs (LTXGRID-FLOAT), the title kept from the preamble (REVTEX-TITLE), \\@mkpream@relax relaxing \\@endpbox (CLASS1-4; needed once CP-1 lifted the profile's array and tabularx refusals, or array tables stop with Extra \\or) and the contents names (ABS-7). Not aps's page-footnote line (CLASS1-3): aip journals set footnotes as endnotes.",
   "class": "revtex4-2",
   "options": [
     "aip",
     "jcp",
     "reprint"
   ],
-  "preamble": [],
+  "preamble": [
+    "\\makeatletter\\def\\end@@float#1{\\minipagefootnote@here\\@endfloatbox#1\\@ifnum{\\@floatpenalty<\\z@}{\\@largefloatcheck\\@cons\\@currlist\\@currbox\\@ifnum{\\@floatpenalty<-\\@Mii}{\\do@output@cclv{\\@add@float}}{\\ifvmode\\do@output@cclv{\\@add@float}\\else\\vadjust{\\do@output@cclv{\\@add@float}}\\@Esphack\\fi}}{}}\\makeatother",
+    "\\makeatletter\\let\\LatexLibTitleAtClass\\@title\\AddToHook{begindocument/before}{\\ifx\\@title\\LatexLibTitleAtClass\\else\\global\\let\\LatexLibPreambleTitle\\@title\\global\\let\\LatexLibPreambleShortTitle\\@shorttitle\\fi}\\AddToHook{begindocument/end}{\\ifdefined\\LatexLibPreambleTitle\\let\\@title\\LatexLibPreambleTitle\\let\\@shorttitle\\LatexLibPreambleShortTitle\\let\\@AF@join\\@title@join\\fi}\\makeatother",
+    "\\makeatletter\\g@addto@macro\\@mkpream@relax{\\let\\@endpbox\\relax\\let\\do@row@strut\\relax\\let\\ar@align@mcell\\relax}\\makeatother",
+    "\\providecommand\\contentsname{Contents}\\providecommand\\listfigurename{List of Figures}\\providecommand\\listtablename{List of Tables}\\def\\tocname{\\contentsname}\\def\\lofname{\\listfigurename}\\def\\lotname{\\listtablename}"
+  ],
   "files": [],
   "setups": [
     "A"

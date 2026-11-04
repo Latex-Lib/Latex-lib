@@ -5,9 +5,15 @@ import { ctan } from '../schema/minimal.ts';
  * The AAS journals' class: no chapter, no usable \part or \subparagraph numbers, no theorem environments; it refuses cite, mcite and multicol, and loads natbib and hyperref itself.
  * It is built on revtex4-2's code (its tables, its page grid ltxgrid, its footnotes) and loads array itself, so it also refuses what that code
  * breaks: nicematrix, arydshln and paracol (round 2 of batch 1, from the class source and GitHub run 41584963423).
- * tabularx and colortbl, which revtex4-2 refuses for the same array swap, are not refused here: the aastex setting relaxes \@endpbox in
- * the class's \@mkpream@relax, as array's own \@mkpream does, so the swapped preamble builder no longer expands it in array's \xdef
- * (b22, owner item JR2-2: every tabularx begun in vertical mode had stopped at 'Extra \or', 317 aastex cells).
+ * tabularx and colortbl are not refused here: the aastex setting relaxes \@endpbox in the class's \@mkpream@relax, as array's own
+ * \@mkpream does, so the swapped preamble builder no longer expands it in array's \xdef (b22, owner item JR2-2: every tabularx begun in
+ * vertical mode had stopped at 'Extra \or', 317 aastex cells). Since b23 revtex4-2, whose setting has the same line, no longer refuses
+ * tabularx and array either; it still refuses colortbl, whose row colours the copied \@array (\everycr{} before its \halign, l.12190
+ * here) and \endarray lose (array 2.7b's row hooks never run, and colortbl's \CT@end is dropped). The same holds here: b23's GitHub
+ * probe (CLASSPIPE-colortbl-rows-aastex against -article; the oracle cannot see colour, the PDF's fills were counted) painted the header
+ * colour of 16 General colortbl tables on 288 cells, every row, against 48, the header rows, under article. colortbl stays fit here
+ * for now: refusing it would take General's colortbl tables out of aastex, and a setting line that gives the copied \@array the row
+ * reset back is to be probed first (b23 CLASSPIPE CP-9, probe cases2 CLASSPIPE-colortbl-fix-aastex).
  * Read from its requirement document and source; measured by the class probe (aastex.A: loads, preloads, names it already defines, refused packages, layout).
  * Its preloads are read from aastex701.cls, since the probe asks only for the packages General writes: natbib with sort&compress (l.6421, run at l.6893), author-year through \@citestyle{aas} (l.6914-6915), so biblatex is refused, as under revtex4-2, whose code it copies.
  */

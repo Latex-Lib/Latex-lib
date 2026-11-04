@@ -34,7 +34,9 @@
 # runs stops the plan. Elsewhere it keeps every pair. It writes the run record
 # out/runs/<owner>--<name>.json (commit, private commit checked out, what was asked, every
 # pair picked, this repository's, the manifest's sha256), which
-# ci/fetch-run.sh checks before it joins two runs.
+# ci/fetch-run.sh checks before it joins two runs. A pair split over several
+# jobs (settings/shards.json, from ci/balance.mjs) is n jobs, each COMPAT_SHARD=i/n:
+# run compiles that part of its documents, its log and ledger part named <pair>@<i>.
 set -euo pipefail
 
 here=$(cd "$(dirname "$0")" && pwd)
@@ -149,11 +151,27 @@ plan() {
     const manifest = fs.existsSync("out/manifest.jsonl") ? require("crypto").createHash("sha256").update(fs.readFileSync("out/manifest.jsonl")).digest("hex") : null;
     // The private commit the job checked out (compat.yml sets PRIVATE_COMMIT), else the one ci/private.ref names.
     const ref = process.env.PRIVATE_COMMIT || (fs.existsSync("ci/private.ref") ? fs.readFileSync("ci/private.ref", "utf8").trim() : null);
-    const record = { repository: here ?? "local", run: process.env.GITHUB_RUN_ID ?? null, sha: process.env.GITHUB_SHA ?? null, private: ref, asked, picked, mine, manifest };
+    // Each pair in as many jobs as settings/shards.json says (ci/balance.mjs), each job one shard: <pair>@<i>. A pair
+    // it does not list is sized the same way from its minutes (settings/job-minutes.json; the median when unknown).
+    const split = fs.existsSync("settings/shards.json") ? JSON.parse(fs.readFileSync("settings/shards.json", "utf8")) : { overhead: 0, target: 0, shards: {} };
+    const minutes = fs.existsSync("settings/job-minutes.json") ? JSON.parse(fs.readFileSync("settings/job-minutes.json", "utf8")).minutes : {};
+    const known = Object.values(minutes).sort((x, y) => x - y);
+    const median = known.length > 0 ? known[Math.floor(known.length / 2)] : 60;
+    const minutesOf = (p) => minutes[p] ?? median;
+    const count = (p) => Math.max(1, Math.floor(split.shards[p] ?? (split.target > 0 ? Math.min(8, Math.ceil((minutesOf(p) - split.overhead) / split.target)) : 1)));
+    const units = mine.flatMap((p) => Array.from({ length: count(p) }, (_, i) => ({ pair: p, shard: i, shards: count(p) })));
+    // GitHub runs at most 256 jobs from one matrix.
+    if (units.length > 256) { console.error(`plan: ${units.length} jobs is more than a matrix may hold (256); lower settings/shards.json`); process.exit(1); }
+    const record = { repository: here ?? "local", run: process.env.GITHUB_RUN_ID ?? null, sha: process.env.GITHUB_SHA ?? null, private: ref, asked, picked, mine, units: units.map((u) => `${u.pair}@${u.shard}`), manifest };
     fs.mkdirSync("out/runs", { recursive: true });
-    fs.writeFileSync(`out/runs/${record.repository.replace("/", "--")}.json`, `${JSON.stringify(record, null, 2)}\n`);
-    console.log(JSON.stringify(mine.map((p) => ({ class: classOf(p), setup: p.slice(p.lastIndexOf(".") + 1) }))));
-    console.error(`plan: ${mine.length} of ${picked.length} pair(s) run here${here ? ` (${here})` : ""}`);
+    fs.writeFileSync(`out/runs/${record.repository.replace("/", "--")}.json`, `${JSON.stringify(record, null, 2)}
+`);
+    // Longest first, by the last runs minutes shared out over the shards: GitHub starts a matrix in this order as its
+    // job slots free up, so the long jobs do not wait behind short ones.
+    const length = (u) => split.overhead + Math.max(0, minutesOf(u.pair) - split.overhead) / u.shards;
+    const order = [...units].sort((x, y) => length(y) - length(x) || (x.pair < y.pair ? -1 : x.pair > y.pair ? 1 : x.shard - y.shard));
+    console.log(JSON.stringify(order.map((u) => ({ class: classOf(u.pair), setup: u.pair.slice(u.pair.lastIndexOf(".") + 1), shard: u.shard, shards: u.shards }))));
+    console.error(`plan: ${mine.length} of ${picked.length} pair(s) run here${here ? ` (${here})` : ""}, in ${units.length} job(s)`);
   ' "${*:-all}" > "$pairs_out"
   echo "plan: the pairs are in $pairs_out"
 }
@@ -162,7 +180,7 @@ run() {
   set_engines
   store pull-index
   filed_already run
-  local list pair class setup log rc failed=""
+  local list pair class setup unit log rc failed=""
   list=$(pairs_of "$out/.all-pairs.json" "$@")
   mkdir -p "$out/logs"
   store pull-profiles
@@ -170,8 +188,10 @@ run() {
   for pair in $list; do
     class=${pair%.*}
     setup=${pair##*.}
-    log="$out/logs/run-$pair.log"
-    echo "== $pair ($(date -u +%H:%M:%S))"
+    # One shard of the pair (COMPAT_SHARD=i/n, host-flouest/src/shard.ts) names its log and ledger part <pair>@<i>.
+    unit=$pair${COMPAT_SHARD:+@${COMPAT_SHARD%/*}}
+    log="$out/logs/run-$unit.log"
+    echo "== $unit ($(date -u +%H:%M:%S))"
     if [ -n "${STORE_URI:-}" ] && [ "${PULL:-keys}" != all ]; then
       npm run --silent compat -- ci/prepare.ts --library --classes "$class" --setups "$setup" --keys "$out/.keys"
       store pull-keys "$out/.keys"
@@ -183,7 +203,7 @@ run() {
       echo "run: $pair filed documents the plan step did not; nothing pushed" >&2
       exit 1
     fi
-    LEDGER_NAME="$pair" store push
+    LEDGER_NAME="$unit" store push
     if [ "$rc" -ne 0 ]; then
       echo "run: $pair stopped with status $rc; what it compiled is pushed, its log is in the store (logs/$stamp/)" >&2
       failed="$failed $pair"

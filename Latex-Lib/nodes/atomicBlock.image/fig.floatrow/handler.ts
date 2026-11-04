@@ -5,6 +5,8 @@
  * \floatsetup[figure]{capposition=beside, capbesideposition=…}.
  * sidecap's image is at most half the line wide, so the caption beside it
  * keeps the other half less the separation (`besideWidth`). [OV1]
+ * floatrow's presets also give two-column pages their own widths back when
+ * a page is shipped inside a float (`FLOAT_OUTPUT`, b23).
  * CTAN: https://ctan.org/pkg/sidecap, https://ctan.org/pkg/floatrow
  */
 import { withDefaults } from '../../../schema/params.ts';
@@ -34,6 +36,27 @@ const besideWidth = (node: Subject): string => {
   return Number.parseFloat(asked) <= 0.5 ? asked : '0.5\\linewidth';
 };
 
+/**
+ * floatrow's floats leave the output routine the page's widths (FLOATROW-2, b23). floatrow restyles figure and table when it
+ * loads (floatrow.sty l.1459), and its restyled environment sets \textwidth to \columnwidth for the float (l.117; its
+ * sidewaysfigure and sidewaystable set \columnwidth to \textheight, l.131-145). LaTeX ends a float with a penalty that runs the
+ * output routine while the environment is still open (\end@float; floatrow's [H] float puts its box on the page there too,
+ * \float@endH, l.426), so a page that fills there is shipped inside it, and in two columns the kernel's \@outputdblcol builds
+ * that page \hb@xt@\textwidth: two columns in one column's width, a column's width over. TeX packs it while \output is active,
+ * so the box names no line and fails every branch of the document. GitHub run r2-461ed0e: 84 cells holding floatrow's presets
+ * had such a box, `[] []|[] []`, exactly one column wide over (article.B dea0743335b92e81de95e result 3d2692a634, "Overfull
+ * \hbox (229.5pt too wide) has occurred while \output is active", right after a table's \end{table}), and no cell without
+ * floatrow had one; 1,738 not-denied branches failed on nothing else. Moving the preamble's \floatsetup[figure] into the figure
+ * left the box in place (probe b23-1, GitHub run 41775212344: article.B and amsart.B).
+ *
+ * So each float environment records the widths around it (an environment's begin hook runs inside its group, before the
+ * environment's own code: \begin in ltmiscen.dtx), and \@outputdblcol puts them back for the page it builds, inside the output
+ * routine's own group. Outside a float nothing is recorded; in one column \textwidth is \columnwidth already; a first column is
+ * only saved. So only a page that was shipped one column too narrow changes. Guarded, so a second floatrow preset in the
+ * document does not wrap \@outputdblcol twice.
+ */
+const FLOAT_OUTPUT = String.raw`\makeatletter\ifdefined\LatexLibFloatOuter\else\def\LatexLibFloatOuter{\edef\LatexLibFloatWidths{\textwidth\the\textwidth\relax\columnwidth\the\columnwidth\relax}}\AddToHook{env/figure/begin}{\LatexLibFloatOuter}\AddToHook{env/table/begin}{\LatexLibFloatOuter}\AddToHook{env/sidewaysfigure/begin}{\LatexLibFloatOuter}\AddToHook{env/sidewaystable/begin}{\LatexLibFloatOuter}\let\LatexLibOutputdblcol\@outputdblcol\def\@outputdblcol{\ifdefined\LatexLibFloatWidths\LatexLibFloatWidths\fi\LatexLibOutputdblcol}\fi\makeatother`;
+
 /** sidecap's caption factor: the param as a plain number (1 when it is not one), as SCfigure's first optional argument takes it. */
 const relWidthOf = (p: { readonly [name: string]: unknown }): string => {
   const factor = p['relWidth'];
@@ -52,7 +75,7 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
         return { packages: ['\\usepackage{graphicx}', position === 'outer' ? '\\usepackage{sidecap}' : `\\usepackage[${position}caption]{sidecap}`], ...(declarations.length === 0 ? {} : { declarations }) };
       }
       const side = position === 'outer' || position === 'inner' ? position : position === 'left' ? 'left' : 'right';
-      return { packages: ['\\usepackage{graphicx}', '\\usepackage{floatrow}'], declarations: [`\\floatsetup[figure]{capposition=beside,capbesideposition={${VPOS[vpos] ?? 'bottom'},${side}},capbesidesep=quad}`] };
+      return { packages: ['\\usepackage{graphicx}', '\\usepackage{floatrow}'], declarations: [`\\floatsetup[figure]{capposition=beside,capbesideposition={${VPOS[vpos] ?? 'bottom'},${side}},capbesidesep=quad}`, FLOAT_OUTPUT] };
     },
     emit: (node, content, context) => {
       if (pathOf(node) === '') return '';

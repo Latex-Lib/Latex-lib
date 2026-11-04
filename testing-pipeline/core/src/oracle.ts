@@ -5,8 +5,10 @@
  * 1. No TeX error in its lines.
  * 2. No damaging warning in its lines (`warnings.ts`).
  * 3. Every sentinel it placed shipped exactly once, inside the text block
- *    unless placed as `outside`, and then, on a settled build, not past the
- *    paper's left or right edge unless TikZ drew it (`sentinels.ts`).
+ *    (below its bottom by up to the class's `\maxdepth` more, where a page's
+ *    last box may reach) unless placed as `outside`, and then, on a settled
+ *    build, not past the paper's left or right edge unless TikZ drew it
+ *    (`sentinels.ts`).
  * 4. Each feature it declares passes its probe (`features.ts`).
  *
  * An error is tied to the branch whose lines hold the line TeX names, when TeX
@@ -113,9 +115,13 @@ import { CROSS_PASS, damagingWarnings, type Damage } from './warnings.ts';
  * stored results with the run's own LaTeX (b22 ORACLE): staging's oracle reproduces all 472,643 verdicts of the 11,057
  * cells these rules can touch; b22's turns 8,826 of them into passes (8,576 not denied: 6,070 from package files, 2,468
  * from margin-note lines, 38 both) and 4,455 into fails (4,454 not denied), each a margin note past the paper's side
- * but one denied branch that loads sidenotes under aa, now charged its own load error.
+ * but one denied branch that loads sidenotes under aa, now charged its own load error. 7 (b23, after GitHub run r2-461ed0e
+ * judged with 6): a sentinel in the text may sit below the text block's bottom by the class's `\maxdepth`, which the
+ * sentinel preamble logs as `COMPAT-GEOMETRY{maxDepth}` (`sentinels.ts`, TC1-DEPTH: TeX lets a page's last box reach that
+ * far); and a footnote's text that starts on a later page than its mark passes when every page in between holds another
+ * note split across it (`features.ts`, PG-2): TeX held it over (tex.web §1008).
  */
-export const ORACLE_VERSION = 6;
+export const ORACLE_VERSION = 7;
 
 /** What one branch of the document is expected to show: the sentinels its host placed, and the features its ways declare. */
 export type Expected = {
@@ -562,12 +568,15 @@ export const judge = (input: {
     for (const failure of lost) fail(losers, failure);
   }
 
-  // 4. Features, read from the sentinels a branch shipped, so not for one TeX did not run past.
+  // 4. Features, read from the sentinels a branch shipped, so not for one TeX did not run past. A probe also sees every
+  // branch's sentinels (`cell`): the footnote probe reads the notes split across a page, after which TeX holds the page's
+  // later notes over to the next one.
+  const sentinelsOfCell = expected.map((e) => e.sentinels);
   for (const e of expected) {
     if (!ran(e.branch)) continue;
     for (const name of e.features) {
       const probe = FEATURE_PROBES[name];
-      const evidence = probe === undefined ? 'no probe for this feature' : probe({ placed: e.sentinels, hits });
+      const evidence = probe === undefined ? 'no probe for this feature' : probe({ placed: e.sentinels, hits, cell: sentinelsOfCell });
       if (evidence !== undefined) fail([e.branch], { check: `feature:${name}`, evidence });
     }
   }

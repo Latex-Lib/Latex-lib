@@ -142,9 +142,10 @@ else
       const record = JSON.parse(fs.readFileSync(`${dir}/${files[0]}`, "utf8"));
       if (record.repository.toLowerCase() !== repo.toLowerCase()) stop(`${repo}: its run record is for ${record.repository}`);
       if (!record.private) stop(`${repo}: its run record names no private commit`);
-      // Every pair the run took on has its artifact (the pair job uploads its ledger part even when it fails).
-      const absent = record.mine.filter((p) => !fs.existsSync(`${tmp}/run.${n}/ledger.d/${p}.jsonl`));
-      if (absent.length > 0) stop(`${repo}: no pair artifact for ${absent.join(", ")}; its pair jobs did not all run`);
+      // Every job the run took on (each shard of each pair, <pair>@<i>) has its artifact: the pair job uploads its
+      // ledger part even when it fails. Older records list pairs only.
+      const absent = (record.units ?? record.mine).filter((u) => !fs.existsSync(`${tmp}/run.${n}/ledger.d/${u}.jsonl`));
+      if (absent.length > 0) stop(`${repo}: no pair artifact for ${absent.join(", ")}; its jobs did not all run`);
       runs.push({ ...record, repo, sha });
     }
     const [first] = runs;

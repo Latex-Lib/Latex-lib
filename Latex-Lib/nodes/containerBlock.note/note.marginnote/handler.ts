@@ -29,7 +29,8 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
     ...(ALIGN[param(p, 'align', 'package')] ?? []),
     ...(param(p, 'vadjust') === '' ? [] : [`\\renewcommand*{\\marginnotevadjust}{${param(p, 'vadjust')}}`]),
     ...(param(p, 'side', 'outer') === 'reverse' ? ['\\reversemarginpar'] : []),
-    ...(param(p, 'width') === '' ? [] : [`\\setlength{\\marginparwidth}{${param(p, 'width')}}`, NOTE_WIDTH_GIVEN]),
+    // A width of its own, the class's kept first for the fit, which keeps this one only on the paper (b23 MARGIN-1W).
+    ...(param(p, 'width') === '' ? [] : [NOTE_WIDTH_GIVEN, `\\setlength{\\marginparwidth}{${param(p, 'width')}}`]),
     // The class's column fitted to the margin where it is under 2cm or runs off the paper (b22 MC1, `FIT_NOTE_COLUMN`).
     FIT_NOTE_COLUMN,
   ];

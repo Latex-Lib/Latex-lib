@@ -1,11 +1,12 @@
 {
   "id": "siamart",
-  "description": "SIAM's article class, siamart251216, from SIAM's bundle (not on CTAN); one column, fixed layout. Its \\ifpdf is false under XeTeX, so it would load hypdvips for dvips (the class's own nohypdvips option stops that) and breakurl, whose first page writes dvips PostScript through hdvips's \\headerps@out; the preamble makes that a no-op.",
+  "description": "SIAM's article class, siamart251216, from SIAM's bundle (not on CTAN); one column, fixed layout. Its \\ifpdf is false under XeTeX, so it would load hypdvips for dvips (the class's own nohypdvips option stops that) and breakurl, whose first page writes dvips PostScript through hdvips's \\headerps@out; the preamble makes that a no-op. Display maths (b23, ERRORS SIAM-DISPLAY): the class loads ntheorem with amsmath and thmmarks (siamart251216.cls l.333), whose \\[ and \\] (ntheorem.sty l.85-117) are plain $$ displays that open and close an array for a pending end mark and, in vertical mode, start the paragraph with a .6\\linewidth box; General's displayed maths after a heading or a list (\\[\\begin{split}…\\end{split}\\], \\begin{gather}) stopped at 'Bad math environment delimiter' at \\], and TeX ended in internal vertical mode (GitHub run r2-461ed0e: 8 documents, 115 failing not-denied branches outside the note-column document, e.g. dab1037bfc567852f9718 l.162; the same LaTeX passes under article.A and amsart.A). At \\begin{document} \\[ and \\] are amsmath's again (\\begin{equation*}, \\end{equation*}, amsmath.sty); ntheorem's end mark after a display that ends a proof is then set after the display, not beside it.",
   "class": "siamart251216",
   "options": [
     "nohypdvips"
   ],
   "preamble": [
+    "\\AtBeginDocument{\\DeclareRobustCommand{\\[}{\\begin{equation*}}\\DeclareRobustCommand{\\]}{\\end{equation*}}}",
     "\\makeatletter\\providecommand\\headerps@out[1]{}\\makeatother"
   ],
   "files": [

@@ -4,12 +4,14 @@
  * (\setlist[itemize,1]{…});
  * nosep, noitemsep, itemsep, leftmargin (* fits the widest label),
  * labelindent, label (\alph*) for numbers), style=nextline for descriptions.
+ * In a measure under 2in the list indents at most a fifth of it, its
+ * leftmargin key's value included (`NARROW_LISTS`, OVL-3).
  * CTAN: https://ctan.org/pkg/enumitem
  */
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
 import { param } from '../../protocol.ts';
-import { nested, styleOf } from '../node.ts';
+import { NARROW_LISTS, nested, styleOf } from '../node.ts';
 import key from './key.ts';
 
 export const realize = (given: { readonly [name: string]: unknown } = {}): Realization => {
@@ -27,10 +29,10 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
   return {
     preamble: (_params, _parentType, node) => {
       const packages = ['\\usepackage{enumitem}'];
-      if (!document || node === undefined) return { packages };
+      if (!document || node === undefined) return { packages, declarations: [NARROW_LISTS] };
       const style = styleOf(node);
       const options = optionsFor(style);
-      return options.length === 0 ? { packages } : { packages, declarations: [`\\setlist[${style},1]{${options.join(', ')}}`] };
+      return { packages, declarations: [...(options.length === 0 ? [] : [`\\setlist[${style},1]{${options.join(', ')}}`]), NARROW_LISTS] };
     },
     emit: (node, content) => {
       const style = styleOf(node);

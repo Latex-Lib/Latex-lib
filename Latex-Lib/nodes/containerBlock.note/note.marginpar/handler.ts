@@ -1,12 +1,14 @@
 /**
  * note.marginpar: the kernel's \marginpar{…}, a float in the margin;
  * \reversemarginpar for the other side, \marginparwidth and \marginparsep
- * for the column.
+ * for the column. Where a statement's head or a list label still waits, the
+ * paragraph starts first, so the head prints in the text and not in the note
+ * (`\LatexLibLabelInText`, protocol.ts `LABEL_IN_TEXT`, OVL-2).
  * CTAN: https://ctan.org/pkg/latex-base (usrguide, \marginpar)
  */
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
-import { param } from '../../protocol.ts';
+import { LABEL_IN_TEXT, labelInText, param } from '../../protocol.ts';
 import { FIT_NOTE_COLUMN, NOTE_WIDTH_GIVEN, titled } from '../node.ts';
 import key from './key.ts';
 import { keepingFootnotes } from '../node.ts';
@@ -24,17 +26,21 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
     // lowered: mdpi.cls sets 10000 (l.590), lineno adds 100 (lineno.sty l.3283).
     '\\ifnum\\maxdeadcycles<1000 \\maxdeadcycles=1000 \\fi',
     ...(param(p, 'side', 'outer') === 'reverse' ? ['\\reversemarginpar'] : []),
-    ...(param(p, 'width') === '' ? [] : [`\\setlength{\\marginparwidth}{${param(p, 'width')}}`, NOTE_WIDTH_GIVEN]),
+    // A width of its own (@wide's 50mm), the class's kept first for the fit, which keeps this one only on the paper (b23 MARGIN-1W).
+    ...(param(p, 'width') === '' ? [] : [NOTE_WIDTH_GIVEN, `\\setlength{\\marginparwidth}{${param(p, 'width')}}`]),
     ...(param(p, 'sep') === '' ? [] : [`\\setlength{\\marginparsep}{${param(p, 'sep')}}`]),
     // The class's column fitted to the margin where it is under 2cm or runs off the paper (b22 MC1, `FIT_NOTE_COLUMN`).
     FIT_NOTE_COLUMN,
+    // A head still waiting prints in the text before the note (b23 OVL-2, `LABEL_IN_TEXT`).
+    LABEL_IN_TEXT,
   ];
   // A reversed note sits left of the text, so ragged means flush against it.
   const align = param(p, 'side', 'outer') === 'reverse' && param(p, 'align', 'ragged') === 'ragged' ? '\\raggedleft' : ALIGN[param(p, 'align', 'ragged')] ?? '';
   return {
     preamble: () => ({ declarations }),
     // A footnote in the note reaches the page's foot: footnotehyper's \savenotes around it (b22 OV2-alt, `keepingFootnotes`).
-    emit: (node, content) => keepingFootnotes(content, `\n\\marginpar{${param(p, 'font')}${align}\n${p['title'] === false ? content.trim() || '\\mbox{}' : titled(node, content)}}\n`),
+    // A head still waiting prints first, outside that scope (b23 OVL-2, `labelInText`).
+    emit: (node, content) => labelInText(keepingFootnotes(content, `\n\\marginpar{${param(p, 'font')}${align}\n${p['title'] === false ? content.trim() || '\\mbox{}' : titled(node, content)}}\n`)),
   };
 };
 

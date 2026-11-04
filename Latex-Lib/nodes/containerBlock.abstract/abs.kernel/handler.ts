@@ -15,7 +15,8 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
     // At \begin{document}, after babel's or polyglossia's own hook, which sets \abstractname again from the language's captions there
     // (a template that loads one with a language). elsarticle prints its own heading, \@elsarticleabstitle, which its
     // \abstracttitle sets (elsarticle.cls l.671-676), so there the name goes through that too (b22, JR1-3). Under amsart,
-    // elsarticle, acmart and cas the abstract the class keeps for \maketitle is printed where it stands (STORED_ABSTRACT_RELEASE).
+    // elsarticle, acmart and cas the abstract the class keeps for \maketitle is printed where it stands, in place, not in
+    // the class's box or collected body (STORED_ABSTRACT_RELEASE; b23, ERRORS ABS-INPLACE).
     preamble: () => ({
       declarations: [
         ...(param(p, 'name') === '' ? [] : [`\\AtBeginDocument{\\renewcommand{\\abstractname}{${param(p, 'name')}}}`, `\\makeatletter\\@ifclassloaded{elsarticle}{\\abstracttitle{${param(p, 'name')}}}{}\\makeatother`]),

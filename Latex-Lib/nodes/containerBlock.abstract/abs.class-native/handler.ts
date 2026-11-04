@@ -25,8 +25,9 @@ const commandForm = (content: string): string => {
 export const realize = (given: { readonly [name: string]: unknown } = {}): Realization => {
   const p = withDefaults(key.params, given as never) as { readonly [name: string]: unknown };
   return {
-    // The command form also prints its body where the node stands under sn-jnl and aa when the document has no title
-    // (CLASS_ABSTRACT_HERE); the environment form's abstract a class keeps for \maketitle is printed where it stands
+    // The command form also prints its body where the node stands, under sn-jnl and aa when the document has no title and
+    // always under mdpi, whose own print after the preamble is emptied (CLASS_ABSTRACT_HERE, b23 PG-4); the environment
+    // form's abstract a class keeps for \maketitle is printed where it stands
     // (STORED_ABSTRACT_RELEASE). Both are b22's interim forms for Flouest's one \maketitle after all front matter (revtex O3).
     preamble: (_params, _parentType, node, content) =>
       param(p, 'form') === 'command' ? (node !== undefined && content !== undefined ? { declarations: [commandForm(content), CLASS_ABSTRACT_HERE] } : {}) : { declarations: [STORED_ABSTRACT_RELEASE] },

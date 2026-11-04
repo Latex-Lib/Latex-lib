@@ -85,6 +85,26 @@ test('a cell the engine gave nothing for is threw; one with no pages and no erro
   assert.equal(ledgerLine(empty, run, 'e').pages, 0);
 });
 
+test("a denied branch's verdict names its denial, and one the contexts allow names none (b23)", () => {
+  const cell = { id: 'c1', document: 'd1', classSetting: 'article', setup: 'A' };
+  const outcome: CellOutcome = { cell, key: 'k', cached: false, result: { log: '', pages: 1, ms: 1 } };
+  const own = { check: 'error', evidence: 'LaTeX Error: Not in outer par mode. (l.9)' };
+  const judgement = {
+    cell: cell.id,
+    verdicts: [
+      { branch: 'b1', cell: cell.id, pass: true, failures: [] },
+      { branch: 'b2', cell: cell.id, pass: false, failures: [own] },
+    ],
+    document: [],
+  };
+  const deniedOf = (branch: string) => (branch === 'b2' ? 'thm.tcolorbox > tbl.booktabs' : undefined);
+  assert.deepEqual(ledgerLine(outcome, newRun(), 'e', judgement, deniedOf).verdicts, [
+    { branch: 'b1', pass: true, failures: [] },
+    { branch: 'b2', pass: false, failures: [own], denied: 'thm.tcolorbox > tbl.booktabs' },
+  ]);
+  assert.deepEqual(ledgerLine(outcome, newRun(), 'e', judgement).verdicts?.map((v) => 'denied' in v), [false, false], 'no lookup, no denial');
+});
+
 test("a verdict's line holds its own failures; the document's are written once, under problems", () => {
   const cell = { id: 'c1', document: 'd1', classSetting: 'article', setup: 'A' };
   const outcome: CellOutcome = { cell, key: 'k', cached: false, result: { log: '', pages: 1, ms: 1 } };

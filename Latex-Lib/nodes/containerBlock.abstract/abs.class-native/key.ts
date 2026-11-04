@@ -7,7 +7,7 @@ export default defineKey(
     id: 'abs.class-native',
     node: 'containerBlock/abstract',
     description:
-      "The class's own abstract, unstyled: \\begin{abstract} … \\end{abstract} as acmart, IEEEtran or elsarticle print it, or \\abstract{…} in the preamble where the class makes it a command that \\maketitle prints (sn-jnl, mdpi, aa). Where the class keeps the environment's abstract for \\maketitle (amsart, elsarticle, acmart, cas), the class's own code prints it where it stands; the command's too under sn-jnl and aa, in a document with no title yet. 140 templates.",
+      "The class's own abstract, unstyled: \\begin{abstract} … \\end{abstract} as acmart, IEEEtran or elsarticle print it, or \\abstract{…} in the preamble where the class makes it a command that \\maketitle prints (sn-jnl, mdpi, aa). Where the class keeps the environment's abstract for \\maketitle (amsart, elsarticle, acmart, cas), the class's own code prints it where it stands; the command's too, under sn-jnl and aa in a document with no title yet, and always under mdpi, which then prints no abstract of its own after the preamble. 140 templates.",
     ctan: ['latex-base'],
     features: ['class-styled'],
     params: {

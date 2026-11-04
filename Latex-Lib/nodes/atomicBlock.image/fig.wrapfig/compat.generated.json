@@ -2,7 +2,7 @@
   "handler": "fig.wrapfig",
   "node": "atomicBlock/image",
   "generatedFrom": {
-    "key": "sha256:031cbd2b063b50709feef8817be65e41d0c3ce45fbb522dcf03f6ed9cbf191da",
+    "key": "sha256:3658bd8c57973cf0dca022202e56bb3dfca43de14408719c41d340a1572cc2b7",
     "contexts": "sha256:b84d5bace47f085f6d549c19a87e2f6956e4194f127832425493080981f05b92",
     "matrix": null
   },
@@ -35,40 +35,27 @@
     },
     "containerBlock/columns": {
       "cols.multicol": {
-        "verdict": "deny",
+        "verdict": "ok",
         "source": "derived",
-        "status": "derived",
-        "reason": "cannot have columns",
-        "lacks": [
-          "cannot have columns"
-        ]
+        "status": "derived"
       },
       "cols.paracol": {
-        "verdict": "deny",
+        "verdict": "ok",
         "source": "derived",
-        "status": "derived",
-        "reason": "cannot have columns",
-        "lacks": [
-          "cannot have columns"
-        ]
+        "status": "derived"
       },
       "cols.twocolumn-cmd": {
-        "verdict": "deny",
+        "verdict": "ok",
         "source": "derived",
-        "status": "derived",
-        "reason": "cannot have columns",
-        "lacks": [
-          "cannot have columns"
-        ]
+        "status": "derived"
       },
       "cols.vwcol": {
         "verdict": "deny",
         "source": "derived",
         "status": "derived",
-        "reason": "needs paragraph; cannot have columns",
+        "reason": "needs paragraph",
         "lacks": [
-          "needs paragraph",
-          "cannot have columns"
+          "needs paragraph"
         ]
       }
     },

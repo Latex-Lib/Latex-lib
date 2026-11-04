@@ -8,7 +8,7 @@ export default defineKey(
     id: 'head.fncychap',
     node: 'paragraph/heading',
     description:
-      'fncychap: a ready-made chapter opening, \\usepackage[Sonny]{fncychap} (Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup, PetersLenny), adjusted with \\ChNameVar, \\ChNumVar, \\ChTitleVar, \\ChRuleWidth and the case commands; only chapters change, every heading prints with the kernel command. A style\'s own fonts are written in NFSS, since KOMA-Script refuses fncychap\'s \\rm and \\sf. Under two columns Bjornstrup\'s \\chapter* head goes across the page (\\@topnewpage), as the kernel\'s does, since its boxes are \\textwidth wide. 3 templates.',
+      'fncychap: a ready-made chapter opening, \\usepackage[Sonny]{fncychap} (Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup, PetersLenny), adjusted with \\ChNameVar, \\ChNumVar, \\ChTitleVar, \\ChRuleWidth and the case commands; only chapters change, every heading prints with the kernel command. A style\'s own fonts are written in NFSS, since KOMA-Script refuses fncychap\'s \\rm and \\sf. Under two columns Bjornstrup\'s \\chapter* head goes across the page (\\@topnewpage), as the kernel\'s does, since its boxes are \\textwidth wide; they are also as wide as the line the head is set in (\\linewidth), for the starred head KOMA-Script still sets in the column. 3 templates.',
     ctan: ['fncychap'],
     features: ['chapter-opening', 'ruled', 'sans-serif', 'bold-head', 'smallcaps-head', 'uppercase', 'centered', 'flush-right', 'background', 'numbered'],
     params: {

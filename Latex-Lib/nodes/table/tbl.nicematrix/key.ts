@@ -7,7 +7,7 @@ export default defineKey(
     id: 'tbl.nicematrix',
     node: 'table',
     description:
-      "A key-value table: tabularray's \\begin{tblr}{colspec={XX}, hspan=minimal, hlines, vlines} (hline{1,Z}={1pt}, row{1}={font=\\bfseries}, row{even}={bg=…}; spans by \\SetCell[c=2]{c}, wrapped in their columns), or nicematrix's \\begin{NiceTabular}{>{\\raggedright\\arraybackslash}p{…}…}[hvlines] (\\rowcolors in the \\CodeBefore; spans by \\Block); in a table float. 33 templates.",
+      "A key-value table: tabularray's \\begin{tblr}{colspec={XX}, hspan=minimal, hlines, vlines} (hline{1,Z}={1pt}, row{1}={font=\\bfseries}, row{even}={bg=…}; spans by \\SetCell[c=2]{c}, wrapped in their columns), or nicematrix's \\begin{NiceTabular}{>{\\raggedright\\arraybackslash}p{…}…}[hvlines] (\\rowcolors in the \\CodeBefore; spans as \\multicolumn paragraphs of their columns' share); in a table float. 33 templates.",
     ctan: ['tabularray', 'nicematrix'],
     features: ['floating', 'captioned', 'full-width', 'vertical-rules', 'horizontal-rules', 'booktabs-rules', 'zebra-rows', 'background', 'cell-spans'],
     params: {

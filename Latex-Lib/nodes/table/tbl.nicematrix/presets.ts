@@ -25,7 +25,7 @@ export const PRESETS = {
     evidence: [manual('tabularray', 'inner specifications: cells, rows and columns')],
   },
   'nice-hvlines': {
-    description: "nicematrix's NiceTabular with every rule drawn by its own key (hvlines), left-aligned columns as ragged-right p-columns sharing the line, spans by \\Block.",
+    description: "nicematrix's NiceTabular with every rule drawn by its own key (hvlines), left-aligned columns as ragged-right p-columns sharing the line, spans as \\multicolumn paragraphs.",
     features: ['floating', 'captioned', 'vertical-rules', 'horizontal-rules', 'cell-spans'],
     params: { package: 'nicematrix', colspec: 'l' },
     evidence: [solution('0030-seu-ml-assign', '38'), manual('nicematrix', '5.3.2 The keys hvlines, hlines-except-borders and hvlines-except-borders')],

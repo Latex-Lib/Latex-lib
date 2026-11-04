@@ -17,7 +17,7 @@ export default defineKey(
       font: { type: 'tex', default: '\\footnotesize', description: "the note's font and size" },
       align: { type: 'enum', values: ['ragged', 'justified', 'center'], default: 'ragged', description: "the note's alignment (\\raggedright, justified, \\centering)" },
       title: { type: 'boolean', default: true, description: "the note's title in bold above its text (or as the box's title)" },
-      width: { type: 'dimen', default: '', description: "\\marginparwidth; '' keeps the class's, or the room its margin has where the class's is under 2cm or runs off the paper (memoir's rule: the narrower margin, on both pages when they alternate, less twice \\marginparsep)" },
+      width: { type: 'dimen', default: '', description: "\\marginparwidth, for the whole document; '' keeps the class's, or the room its margin has where the class's is under 2cm or runs off the paper (memoir's rule: the narrower margin, on both pages when they alternate, less twice \\marginparsep); a width given here is kept where it is on the paper, otherwise the wider of the class's column and that room" },
       sep: { type: 'dimen', default: '', description: "\\marginparsep, between text and note; '' keeps the class's" },
     },
     presets: PRESETS,
@@ -51,7 +51,8 @@ export default defineKey(
     // Since b22 the handler sets a note that holds a footnote inside footnotehyper's \savenotes … \spewnotes, as Flouest's
     // General note does, so the text is set after the note at the page's foot (`keepingFootnotes`), and the footnote is no
     // longer denied below it. [OV2-alt]
-    gives: { floats: false, boxDepth: 1 },
+    // A \marginpar box never breaks across pages (b23: tbl.longtable, which may sit in one box that breaks, stays out of it).
+    gives: { floats: false, breakable: false, boxDepth: 1 },
     needs: { floats: true, argument: false },
     zerotex: 'untested',
   }),

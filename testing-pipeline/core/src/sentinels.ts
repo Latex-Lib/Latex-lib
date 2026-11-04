@@ -21,7 +21,9 @@
  * The position is in sp from the page's lower-left corner, recorded by
  * `\pdfsavepos`, which XeTeX provides. The text block is written once, at the
  * end of `\begin{document}` (after every package has set the page), one
- * dimension per line so that no line reaches the log's width.
+ * dimension per line so that no line reaches the log's width, and with it the
+ * class's `\maxdepth`, how far below the block's last baseline TeX lets the
+ * last box of a page reach (b23): a sentinel may sit that much lower.
  *
  * XeTeX measures that corner against `\pdfpageheight`. LaTeX tells XeTeX's
  * driver the paper size by a special and leaves `\pdfpageheight` at 0, and at
@@ -49,6 +51,12 @@ const DIMENSIONS: readonly (readonly [string, string])[] = [
   ['textHeight', '\\textheight'],
 ];
 
+/**
+ * Written beside them, but a log may lack it (one written before b23 added it), so the text block stands without it:
+ * `\maxdepth`, the depth TeX lets the last box of a page keep below the block's bottom (`inTextBlock`).
+ */
+const OPTIONAL_DIMENSIONS: readonly (readonly [string, string])[] = [['maxDepth', '\\maxdepth']];
+
 /** What the host puts in every preamble, right after the class (`EmitUnder.preamble`). */
 export const SENTINEL_PREAMBLE: readonly string[] = [
   '\\makeatletter',
@@ -56,7 +64,7 @@ export const SENTINEL_PREAMBLE: readonly string[] = [
   `\\AddToHook{begindocument/end}{${[
     '\\ifdefined\\pdfpageheight\\ifdim\\pdfpageheight=0pt \\global\\pdfpageheight=\\paperheight\\fi\\fi',
     '\\ifdefined\\pdfpagewidth\\ifdim\\pdfpagewidth=0pt \\global\\pdfpagewidth=\\paperwidth\\fi\\fi',
-    ...DIMENSIONS.map(([name, value]) => `\\immediate\\write-1{${GEOMETRY}{${name}}{\\the${value}}}`),
+    ...[...DIMENSIONS, ...OPTIONAL_DIMENSIONS].map(([name, value]) => `\\immediate\\write-1{${GEOMETRY}{${name}}{\\the${value}}}`),
   ].join('')}}`,
   '\\makeatother',
 ];
@@ -95,6 +103,8 @@ export type Geometry = {
   readonly textWidth: number;
   readonly textTop: number;
   readonly textHeight: number;
+  /** `\maxdepth`, when the log gives it: how far below the bottom a sentinel in a page's last box may sit (`inTextBlock`). */
+  readonly maxDepth?: number;
 };
 
 const SP_PER_PT = 65536;
@@ -127,16 +137,34 @@ export const readSentinels = (log: string): { readonly hits: ReadonlyMap<string,
     if (dimension) dimensions.set(dimension[1] ?? '', sp(dimension[2] ?? '0'));
   }
   const all = DIMENSIONS.every(([name]) => dimensions.has(name));
-  const geometry = all ? (Object.fromEntries(DIMENSIONS.map(([name]) => [name, dimensions.get(name) ?? 0])) as Geometry) : undefined;
+  const maxDepth = dimensions.get('maxDepth');
+  const block = all ? (Object.fromEntries(DIMENSIONS.map(([name]) => [name, dimensions.get(name) ?? 0])) as Geometry) : undefined;
+  const geometry = block === undefined || maxDepth === undefined ? block : { ...block, maxDepth };
   return geometry === undefined ? { hits } : { hits, geometry };
 };
 
-/** Whether a hit lies in the text block, within `h` sp sideways and `v` sp up or down; on either side's margins in a two-sided layout. */
+/**
+ * Whether a hit lies in the text block, within `h` sp sideways and `v` sp up or down, and below the block's bottom by the
+ * class's `\maxdepth` more when the log gives it; on either side's margins in a two-sided layout.
+ *
+ * The bottom is the last baseline of a full page, and TeX lets the last box of a page reach below it: by `\maxdepth`
+ * (the page builder's and LaTeX's output routine's `\boxmaxdepth`), and a sentinel on a line inside that box (the last row
+ * of a table, a `[c]` box about half as deep as it is tall, ending a page or its footnotes) sits there with nothing out of
+ * place. In GitHub run r2-461ed0e, 1,129 not-denied branches outside any tcolorbox failed first on a sentinel 4 to 9pt below
+ * the block (1,115 on nothing else), nearly all in the one-line last row of an unmarked table, at one offset per class
+ * whatever the table: 5.2pt under article's and book's 10pt, whose `\maxdepth` is 5pt (size10.clo and bk10.clo l.100:
+ * `.5\topskip`), 6.3pt under scrartcl, 5.5pt under mnras and aa, 6.2 to 8.3pt under aastex (aa.A d94652b33b0da71b40db6, three
+ * footnotes each holding a table: the last's sentinel bdf5eca305e9e06df0d8c.0 at y 78.4pt, the block ending at 84.0pt).
+ * GitHub probe b23-1 (run 41775212344) logged `\maxdepth` 5pt under article, llncs and aa, 5.5pt under scrartcl, 4pt under
+ * mnras and amsart and 12.5pt under aastex (its `\baselineskip`, aastex701.cls l.7192), and each of the 23 sentinels it
+ * checked in six such cells lay within it and the tolerance. A box that really runs off is an overfull page, which the
+ * oracle judges itself. A log with no `\maxdepth` keeps the bottom at the tolerance.
+ */
 export const inTextBlock = (hit: SentinelHit, g: Geometry, h: number, v: number): boolean => {
   if (hit.x === null || hit.y === null) return true;
   const x = hit.x;
   const across = [g.oddLeft, g.evenLeft].some((left) => x >= left - h && x <= left + g.textWidth + h);
-  const down = hit.y <= g.textTop + v && hit.y >= g.textTop - g.textHeight - v;
+  const down = hit.y <= g.textTop + v && hit.y >= g.textTop - g.textHeight - (g.maxDepth ?? 0) - v;
   return across && down;
 };
 

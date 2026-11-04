@@ -280,10 +280,14 @@ test("aastex701 copies revtex4-2's tables and page grid, and loads array itself:
   // nicematrix stops at any class defining \rvtx@ifformat@geq; its tabularray presets load no nicematrix (JR2-1).
   assert.ok(at('class.aastex', 'table', 'tbl.nicematrix', [], { package: 'nicematrix' }).some((v) => v.includes('forbids nicematrix')));
   assert.ok(!at('class.aastex', 'table', 'tbl.nicematrix').some((v) => v.includes('forbids nicematrix')));
-  // A plain tabular's p-columns work under the class's array swap; longtable's \LT@array, which aastex701 replaces, does not (JR2-6).
+  // A plain tabular's p-columns work under the class's array swap, and since b23 longtable's too (JR2-6): the aastex setting relaxes
+  // \@endpbox in the swapped builder, which the class's \LT@array calls as well.
   assert.ok(!at('class.aastex', 'table', 'tbl.tabular').some((v) => v.includes('forbids')));
-  assert.ok(at('class.aastex', 'table', 'tbl.longtable').some((v) => v.includes("swapped \\@mkpream")));
-  assert.ok(!at('class.article', 'table', 'tbl.longtable').some((v) => v.includes("swapped \\@mkpream")));
+  assert.deepEqual(at('class.aastex', 'table', 'tbl.longtable'), []);
+  // revtex4-2 has the same swap and since b23 no longer refuses tabularx or array: its setting relaxes \@endpbox in the swapped
+  // builder, as aastex's does. colortbl stays refused: the copies run none of array's row hooks, which its row colours need.
+  for (const way of ['tbl.tabularx', 'tbl.tabular']) assert.ok(!at('class.revtex4-2', 'table', way).some((v) => v.includes('forbids')), way);
+  assert.ok(at('class.revtex4-2', 'table', 'tbl.colortbl').length > 0, 'tbl.colortbl stays out of revtex4-2');
   // The swap drops arydshln's \@array; ltxgrid undefines \col@number and \@holdpg (JR2-3, JR2-4), under both classes.
   for (const cls of ['class.aastex', 'class.revtex4-2']) {
     assert.ok(at(cls, 'table', 'tbl.arydshln').some((v) => v.includes('forbids arydshln')), cls);

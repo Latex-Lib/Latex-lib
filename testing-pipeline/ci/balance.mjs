@@ -3,16 +3,18 @@
 //   node ci/balance.mjs [--times <owner/name:run,...> | --times <minutes.json>] [--write] [PAIRS]
 //
 // The two runner repositories in settings/runners.json run at once, each on its own account's job slots
-// (`slots`), so a run lasts as long as the slower of the two: each repository's pairs packed onto its slots,
-// longest first. Starting from the current split (a pair that moves starts without its store in the other
+// (`slots`), so a run lasts as long as the slower of the two: each repository's jobs packed onto its slots,
+// longest first. A long pair is split into shards (settings/shards.json, read by run-pairs.sh plan): enough that
+// each compiles about TARGET minutes, each job also spending OVERHEAD minutes on its setup and bisect, which
+// sharding does not shrink. All the shards of a pair run in one repository, which keeps the pair's store. Starting from the current split (a pair that moves starts without its store in the other
 // repository's cache, so moves are few), it moves or swaps pairs from the slower repository while that shortens
 // the run by at least MIN_GAIN minutes, and prints both splits. With --write it writes the new split into
 // settings/runners.json: a class whose every pair lands in one repository is named whole, otherwise its pairs
 // are named one by one; classes outside PAIRS keep their entries.
 //
-// Minutes per pair come from settings/job-minutes.json; --times first adds the pair jobs of those runs (their
-// started and completed times, read through the GitHub API; token from GITHUB_TOKEN or git's credentials) or
-// a { pair: minutes } file. A pair with no minutes counts as the median. PAIRS is run-pairs.sh's (all,
+// Minutes per pair (as one job would take) come from settings/job-minutes.json; --times first adds the pair jobs
+// of those runs (their started and completed times, read through the GitHub API; token from GITHUB_TOKEN or git's
+// credentials; a pair's shards, named <pair>@<i>, add up to one job's minutes) or a { pair: minutes } file. A pair with no minutes counts as the median. PAIRS is run-pairs.sh's (all,
 // batch:<id>, batch:current, classes, class.setup; batch:current by default). Plain Node; compiles nothing.
 import { spawnSync } from 'node:child_process';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
@@ -21,6 +23,9 @@ import { fileURLToPath } from 'node:url';
 import { appliesTo, loadClassSettings, loadSetups } from '../core/src/config.ts';
 
 const MIN_GAIN = 5;
+const OVERHEAD = 7;
+const TARGET = 25;
+const MAX_SHARDS = 8;
 const tp = join(dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
 const write = args.includes('--write');
@@ -56,6 +61,8 @@ if (times !== undefined) {
   else {
     const token = process.env.GITHUB_TOKEN ?? spawnSync('git', ['credential', 'fill'], { input: 'protocol=https\nhost=github.com\n\n', encoding: 'utf8' }).stdout.match(/^password=(.*)$/m)?.[1];
     if (!token) throw new Error('no token: set GITHUB_TOKEN');
+    const sums = new Map();
+    const partial = new Set();
     for (const spec of times.split(',')) {
       const [repo, run] = [spec.slice(0, spec.lastIndexOf(':')), spec.slice(spec.lastIndexOf(':') + 1)];
       for (let page = 1; ; page++) {
@@ -63,10 +70,23 @@ if (times !== undefined) {
         if (!res.ok) throw new Error(`${repo} run ${run}: ${res.status}`);
         const { jobs } = await res.json();
         for (const j of jobs) {
-          if (allPairs.includes(j.name) && j.conclusion !== 'cancelled' && j.started_at && j.completed_at) known.minutes[j.name] = Math.round((Date.parse(j.completed_at) - Date.parse(j.started_at)) / 60000);
+          const pair = j.name.replace(/@[0-9]+$/, '');
+          if (!allPairs.includes(pair)) continue;
+          // A pair with a shard that did not run through keeps its old minutes: its sum would be short.
+          if (j.conclusion === 'cancelled' || j.conclusion === 'skipped' || !j.started_at || !j.completed_at) {
+            partial.add(pair);
+            continue;
+          }
+          const m = (Date.parse(j.completed_at) - Date.parse(j.started_at)) / 60000;
+          // One job's worth: the overhead once, the shards' compiling added up.
+          sums.set(pair, (sums.get(pair) ?? (j.name === pair ? 0 : OVERHEAD)) + (j.name === pair ? m : Math.max(0, m - OVERHEAD)));
         }
         if (jobs.length < 100) break;
       }
+      for (const [pair, m] of sums) if (!partial.has(pair)) known.minutes[pair] = Math.round(m);
+      if (partial.size > 0) console.log(`balance: ${repo} run ${run}: kept the old minutes of ${[...partial].join(', ')} (a shard did not run through)`);
+      sums.clear();
+      partial.clear();
       known.runs = [...known.runs.filter((r) => r !== spec), spec].slice(-6);
     }
   }
@@ -84,15 +104,18 @@ const slots = (repo) => runners.slots?.[repo] ?? 20;
 const entryOwner = new Map(active.flatMap((r) => r.classes.map((c) => [c, r.repository])));
 const ownerNow = (p) => entryOwner.get(p) ?? entryOwner.get(classOf(p)) ?? runners.default;
 
-// A repository's run: its pairs packed onto its slots, longest first, each on the slot that frees first.
+// How many jobs a pair takes, and how long each runs.
+const shardsOf = (p) => Math.min(MAX_SHARDS, Math.max(1, Math.ceil((minutes(p) - OVERHEAD) / TARGET)));
+const jobsOf = (p) => Array(shardsOf(p)).fill(OVERHEAD + Math.max(0, minutes(p) - OVERHEAD) / shardsOf(p));
+// A repository's run: its jobs packed onto its slots, longest first, each on the slot that frees first.
 const makespan = (list) => {
   const free = Array(Math.max(1, slots(list.repo))).fill(0);
-  for (const m of list.items.map(minutes).sort((a, b) => b - a)) {
+  for (const m of list.items.flatMap(jobsOf).sort((a, b) => b - a)) {
     let i = 0;
     for (let k = 1; k < free.length; k++) if (free[k] < free[i]) i = k;
     free[i] += m;
   }
-  return Math.max(...free);
+  return Math.round(Math.max(...free));
 };
 const spans = (assign) => repos.map((repo) => makespan({ repo, items: pairs.filter((p) => assign.get(p) === repo) }));
 // The order of two splits: the run's length, then the busiest repository's minutes per slot (a step that does
@@ -137,10 +160,11 @@ else {
 
 const show = (label, a) => {
   const s = spans(a);
-  console.log(`${label}: the run takes about ${Math.max(...s)} min (longest pair ${Math.max(...pairs.map(minutes))} min)`);
+  console.log(`${label}: the run takes about ${Math.max(...s)} min of pair jobs (longest job ${Math.round(Math.max(...pairs.flatMap(jobsOf)))} min)`);
   repos.forEach((repo, i) => {
     const mine = pairs.filter((p) => a.get(p) === repo);
-    console.log(`  ${repo} (${slots(repo)} slots): ${mine.length} pairs, ${mine.reduce((t, p) => t + minutes(p), 0)} job-min, ${s[i]} min`);
+    const jobs = mine.flatMap(jobsOf);
+    console.log(`  ${repo} (${slots(repo)} slots): ${mine.length} pairs in ${jobs.length} jobs, ${Math.round(jobs.reduce((t, m) => t + m, 0))} job-min, ${s[i]} min`);
   });
 };
 console.log(`balance: ${pairs.length} pairs (${asked}); minutes from ${known.runs.join(', ') || 'no run'}, ${pairs.filter((p) => known.minutes[p] === undefined).length} estimated at ${median}`);
@@ -153,6 +177,12 @@ else {
 }
 
 if (write) {
+  const shardsFile = join(tp, 'settings/shards.json');
+  const before = existsSync(shardsFile) ? JSON.parse(readFileSync(shardsFile, 'utf8')).shards : {};
+  const shards = { ...before, ...Object.fromEntries(pairs.map((p) => [p, shardsOf(p)])) };
+  writeFileSync(shardsFile, `${JSON.stringify({ about: 'How many jobs each pair is split into (ci/balance.mjs; ci/run-pairs.sh plan), and the minutes each job spends besides compiling.', overhead: OVERHEAD, target: TARGET, shards: Object.fromEntries(Object.entries(shards).sort()) }, null, 2)}
+`);
+  console.log(`balance: wrote settings/shards.json (${pairs.filter((p) => shardsOf(p) > 1).length} of ${pairs.length} pairs split, ${pairs.flatMap(jobsOf).length} jobs)`);
   writeFileSync(minutesFile, `${JSON.stringify({ about: 'Minutes of each pair job in the last runs (ci/balance.mjs --times), for the split between the runner repositories.', runs: known.runs, minutes: Object.fromEntries(Object.entries(known.minutes).sort()) }, null, 2)}\n`);
   if (moved.length > 0) {
     const balancedClasses = new Set(pairs.map(classOf));

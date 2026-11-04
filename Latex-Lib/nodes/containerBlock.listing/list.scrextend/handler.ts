@@ -5,21 +5,23 @@
  * has the environment and the font element itself and leaves scrextend
  * unversioned if it is loaded there, which caption then refuses ("we need at
  * least version 2002/07/01 v3.0 of package scrextend"), so it is loaded only
- * under another class.
+ * under another class. In a measure under 2in a list indents at most a fifth
+ * of it, the labeling column included, whose wider labels then keep their
+ * width and move the first line's text (`NARROW_LISTS`, OVL-3).
  * CTAN: https://ctan.org/pkg/koma-script
  */
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
 import { param } from '../../protocol.ts';
-import { nested, styleOf } from '../node.ts';
+import { NARROW_LISTS, nested, styleOf } from '../node.ts';
 import key from './key.ts';
 
 export const realize = (given: { readonly [name: string]: unknown } = {}): Realization => {
   const p = withDefaults(key.params, given as never) as { readonly [name: string]: unknown };
   const separator = param(p, 'separator') === '' ? '' : `[${param(p, 'separator')}]`;
-  const declarations = param(p, 'labelFont') === '' ? [] : [`\\setkomafont{labelinglabel}{${param(p, 'labelFont')}}`];
+  const declarations = [...(param(p, 'labelFont') === '' ? [] : [`\\setkomafont{labelinglabel}{${param(p, 'labelFont')}}`]), NARROW_LISTS];
   return {
-    preamble: () => ({ packages: ['\\ifdefined\\KOMAClassName\\else\\usepackage{scrextend}\\fi'],...(declarations.length === 0 ? {} : { declarations }) }),
+    preamble: () => ({ packages: ['\\ifdefined\\KOMAClassName\\else\\usepackage{scrextend}\\fi'], declarations }),
     emit: (node, content) =>
       nested(
         content,

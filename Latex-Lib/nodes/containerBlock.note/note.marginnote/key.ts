@@ -21,7 +21,7 @@ export default defineKey(
       // l.5280-5290); marginnote honours it and sends the notes to the far side of the page (copy batch-3b, result 1613cd9be943: anchor
       // at x 92.27pt, note at x 582.3pt).
       side: { type: 'enum', values: ['outer', 'reverse'], default: 'outer', description: "the margin (\\reversemarginpar for the other one); in two columns, where the kernel's \\marginpar keeps each column's notes on its own side, marginnote sends them to the far side" },
-      width: { type: 'dimen', default: '', description: "\\marginparwidth; '' keeps the class's, or the room its margin has where the class's is under 2cm or runs off the paper (memoir's rule: the narrower margin, on both pages when they alternate, less twice \\marginparsep)" },
+      width: { type: 'dimen', default: '', description: "\\marginparwidth, for the whole document; '' keeps the class's, or the room its margin has where the class's is under 2cm or runs off the paper (memoir's rule: the narrower margin, on both pages when they alternate, less twice \\marginparsep); a width given here is kept where it is on the paper, otherwise the wider of the class's column and that room" },
       title: { type: 'boolean', default: true, description: "the note's title in bold above its text (or as the box's title)" },
     },
     presets: PRESETS,
@@ -58,7 +58,8 @@ export default defineKey(
     // A float in the note is never output: "Float(s) lost" at \end{document} (c76122ffd0, article.A run: the only box of document
     // d66816450114925d61971, no 'Not in outer par mode'); 42 of 57 documents where it is the only box lose floats (8 core pairs).
     // A box: \marginnote sets its text in a \vbox in the margin, as General's marginnote note is counted (GENERAL_GIVES
-    // containerBlock/note, boxDepth 1), so a longtable (maxBoxDepth 0) is not filed below it.
+    // containerBlock/note, boxDepth 1) that never breaks across pages (breakable: false, b23), so a longtable, which since b23 may
+    // sit in one box that breaks, is not filed below it.
     // A footnote in it is lost: its insert stays in the note's \vbox (marginnote.sty, \vbox to\z@ in \rlap or \llap, put in by
     // \vadjust), and TeX takes an insert to the page only from the main vertical list (GitHub run 41584963423: 4 of 182 not-denied
     // branches with General's footnote anchor below it pass, all under revtex4-2-aps, whose footnotes were then bibliography
@@ -67,7 +68,7 @@ export default defineKey(
     // Since b22 the handler sets a note that holds a footnote inside footnotehyper's \savenotes … \spewnotes, as Flouest's
     // General note does (`\savenotes\marginnote{…}\spewnotes`), so the text is set after the note at the page's foot
     // (`keepingFootnotes`), and the footnote is no longer denied below it. [OV2-alt]
-    gives: { floats: false, boxDepth: 1 },
+    gives: { floats: false, breakable: false, boxDepth: 1 },
     zerotex: 'yes',
   }),
 );
