@@ -51,12 +51,25 @@ case "$(git -C "$pub" remote get-url origin)" in
 esac
 if echo "$runners" | grep -qix "$private_repo"; then echo "release: settings/runners.json names $private_repo as a runner" >&2; exit 1; fi
 
+# A push tried again for about ten minutes: GitHub refuses pushes in short spells (500 during an incident).
+push() {
+  local i
+  for i in 1 2 3 4 5 6 7 8; do
+    if git "$@"; then return 0; fi
+    [ "$i" -lt 8 ] || break
+    echo "release: the push failed (try $i of 8); trying again in $((15 * i)) s" >&2
+    sleep $((15 * i))
+  done
+  echo "release: the push failed 8 times: git $*" >&2
+  return 1
+}
+
 bash "$here/publish.sh" "$pub" "$priv" "$archive"
 [ ! -e "$pub/testing-pipeline/ci/flouest.tar.gz.enc" ] || { echo "release: the public tree holds the engine archive" >&2; exit 1; }
 
 git -C "$priv" add -A
 if ! git -C "$priv" diff --cached --quiet; then git -C "$priv" commit -q -m "$message${trailer:+$'\n\n'$trailer}"; fi
-git -C "$priv" push -q "https://github.com/$private_repo.git" HEAD:refs/heads/ci-private
+push -C "$priv" push -q "https://github.com/$private_repo.git" HEAD:refs/heads/ci-private
 ref=$(git -C "$priv" rev-parse HEAD)
 echo "release: private ci-private at $ref"
 
@@ -68,7 +81,7 @@ sha=$(git -C "$pub" rev-parse HEAD)
 for repo in $runners; do
   refs=(HEAD:refs/heads/main)
   [ -z "$branch" ] || refs+=("HEAD:refs/heads/$branch")
-  git -C "$pub" push -q "https://github.com/$repo.git" "${refs[@]}"
+  push -C "$pub" push -q "https://github.com/$repo.git" "${refs[@]}"
   echo "release: $repo main${branch:+ and $branch} at $sha"
 done
 echo "release: fetch the runs with ci/fetch-run.sh sha:$sha <folder>"

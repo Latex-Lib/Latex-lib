@@ -1,8 +1,8 @@
 {
   "id": "scrbook",
-  "description": "KOMA-Script's book class.",
+  "description": "KOMA-Script's book class. In two columns (setup B) its preamble sets twoside=semi (b24 SN-2, a test-content choice): KOMA's two-sided type area leaves a 59.75pt inner margin beside a 119.5pt outer one, and \\twocolumn sends a left column's notes to the left margin and a right column's to the right whatever the page, so on every page one column's notes stood in the inner margin with a note column sized for the outer one and ran off the paper (GitHub run r3-7771790: 313 of 455 not-denied sentinel:off-paper rows, at x -11 to -33pt and 610 to 640pt on a 597.5pt page). twoside=semi keeps the book's two-sided pages but sets both margins as one-sided scrreprt does (89.6pt each, the same 418.26pt text width, so no line breaks change), where scrreprt.B's notes all stay on the paper. One column (setup A) is unchanged.",
   "class": "scrbook",
   "options": [],
-  "preamble": [],
+  "preamble": ["\\makeatletter\\if@twocolumn\\KOMAoptions{twoside=semi}\\recalctypearea\\fi\\makeatother"],
   "files": []
 }

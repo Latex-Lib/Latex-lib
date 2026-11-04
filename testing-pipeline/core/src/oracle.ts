@@ -47,7 +47,9 @@
  * rerun flag itself when its `.slnc` file changed ("Label(s) may have
  * changed", worded only in its trace build), and it typesets its notes while
  * `\output` is active, so a note too wide for its column is an overfull hbox
- * that names no line. In a document that loads it, both are its loaders'
+ * that names no line, and a column of notes too tall for its page (images and
+ * lists in notes) is an overfull vbox on a page no sentinel shipped on and no
+ * named line owns (PG-14). In a document that loads it, all three are its loaders'
  * (`loadersOf`: the branches whose preamble lines load it), though a genuine
  * label change there is charged to them too. Any other overfull hbox reported
  * while `\output` is active is an output routine (longtable, `\twocolumn`,
@@ -119,9 +121,12 @@ import { CROSS_PASS, damagingWarnings, type Damage } from './warnings.ts';
  * judged with 6): a sentinel in the text may sit below the text block's bottom by the class's `\maxdepth`, which the
  * sentinel preamble logs as `COMPAT-GEOMETRY{maxDepth}` (`sentinels.ts`, TC1-DEPTH: TeX lets a page's last box reach that
  * far); and a footnote's text that starts on a later page than its mark passes when every page in between holds another
- * note split across it (`features.ts`, PG-2): TeX held it over (tex.web §1008).
+ * note split across it (`features.ts`, PG-2): TeX held it over (tex.web §1008). 8 (b24, after GitHub run r3-7771790
+ * judged with 7): in a document that loads scrlayer-notecolumn, a page that overflowed and that no sentinel and no named
+ * line owns goes to its loaders, not to the document (PG-14: the note column's page, typeset while `\output` is active;
+ * r3: 1,373 not-denied rows in 38 cells failed only on it, as the document's).
  */
-export const ORACLE_VERSION = 7;
+export const ORACLE_VERSION = 8;
 
 /** What one branch of the document is expected to show: the sentinels its host placed, and the features its ways declare. */
 export type Expected = {
@@ -512,6 +517,12 @@ export const judge = (input: {
       continue;
     }
     const owners = damage.line === undefined && damage.pages !== undefined ? onPages(damage.pages, damage.named) : at(damage.line);
+    // A page that overflowed that no sentinel and no named line owns, in a document that loads scrlayer-notecolumn: the
+    // note column's page, set while \output is active, too tall for its notes (PG-14). Its loaders', as its hboxes are.
+    if (damage.name === 'page-overflow' && damage.line === undefined && owners.length === 0 && notecolumn().length > 0) {
+      fail(notecolumn(), failure);
+      continue;
+    }
     fail(owners.length === 0 && damage.name === 'overfull-hbox' && damage.line !== undefined ? noteBefore(damage.line) : owners, failure);
   }
 

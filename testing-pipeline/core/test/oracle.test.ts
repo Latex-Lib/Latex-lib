@@ -323,6 +323,19 @@ test('in a build a TeX error stopped, the first pass, undefined references and c
   assert.deepEqual(checksOf(settled), { A: ['warning:labels-changed:document'], B: ['warning:labels-changed:document'] });
 });
 
+test('in a document loading scrlayer-notecolumn, a page that overflowed with no sentinel and no named line is its loaders\'', () => {
+  // PG-14: the note column's page, typeset while \output is active (r3 scrbook.B dd1c8501d44259adc6f0b, 217.18993pt).
+  const notecolumn = withLines({ 3: '\\usepackage{scrlayer-notecolumn}' }, { preamble: [{ branch: 'B', from: 3, to: 3 }] });
+  const page = judge({
+    cell: 'c',
+    emitted: notecolumn,
+    result: result('[1', hit('A.0'), hit('B.0'), ']', 'Overfull \\vbox (217.18993pt too high) has occurred while \\output is active []', '[2]'),
+    expected: expected(),
+  });
+  assert.deepEqual(checksOf(page), { A: [], B: ['warning:page-overflow'] });
+  assert.equal(page.document.length, 0);
+});
+
 test("biblatex's undefined citation, its key in straight quotes, fails the branch whose line it names on a settled build", () => {
   const warning = "LaTeX Warning: Citation 'knuth' on page 1 undefined on input line 22.";
   const settled = judge({ cell: 'c', emitted, result: result(hit('A.0'), warning, hit('B.0')), expected: expected() });
