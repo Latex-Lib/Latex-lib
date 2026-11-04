@@ -28,13 +28,17 @@ const withRole = (context: FeatureContext, role: string) =>
  * later page (`footnote:end`, the host's end sentinel where the text has a start sentinel) was split on p and on every page
  * up to the one before its end. TeX takes no more insertions of a class on a page once one of them was split there (tex.web
  * §1008: an insertion arriving while its class is `split_up` only adds to `insert_penalties`, and `fire_up` holds it over),
- * so every later footnote of that page starts on the next one, whole.
+ * so every later footnote of that page starts on the next one, whole. An end sentinel in a note column's text (`nextRun`,
+ * scrlayer-notecolumn) shows no split: the column sets its notes on the first page with room, not where the footnote's
+ * text stood (b25 REGRESS-FNSPLIT: r3 aastex.A db1903b6bf4d7c46bf2e7 passed note 1, mark on page 1 and text on page 2,
+ * because a footnote whose body ends in such a note printed it on page 2; r4 printed it on page 1, the TeX output
+ * otherwise the same, and failed note 1).
  */
 const splitPages = (context: FeatureContext): ReadonlySet<number> => {
   const pages = new Set<number>();
   for (const sentinels of context.cell ?? []) {
     const start = sentinels.find((s) => s.role === 'footnote:text');
-    const end = sentinels.find((s) => s.role === 'footnote:end');
+    const end = sentinels.find((s) => s.role === 'footnote:end' && s.nextRun !== true);
     const from = start === undefined ? undefined : context.hits.get(start.id)?.[0]?.page;
     const to = end === undefined ? undefined : context.hits.get(end.id)?.[0]?.page;
     if (from !== undefined && to !== undefined) for (let page = from; page < to; page++) pages.add(page);

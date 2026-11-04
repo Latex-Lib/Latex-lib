@@ -43,13 +43,24 @@
  * whose text closes its line: TeX read that line for the note's trailing
  * optional argument, so the note's paragraph began there (`noteBefore`).
  *
+ * A page that overflowed that no sentinel and no named line owns, made after
+ * every page any sentinel shipped on, in a document that loads sidenotes, is
+ * its loaders' (PG-15): the notes' material the document's end put out (r4
+ * d37aaf48d89d741f51641, 13 pairs, 36.7pt to 357pt on the page after the last
+ * sentinel; b24's probe dropped every `\sidenote` and the log has no overfull
+ * box left; b25's amsart.A pair: 36.71075pt to none). An earlier such page,
+ * with sentinels after it, stays the document's (an unbreakable frame of
+ * images in the text, amsart.A dc0351b8a74f9804510ce), and so does any such
+ * page of a build that never settled.
+ *
  * scrlayer-notecolumn does two things a log shows as the kernel's: it sets the
  * rerun flag itself when its `.slnc` file changed ("Label(s) may have
  * changed", worded only in its trace build), and it typesets its notes while
  * `\output` is active, so a note too wide for its column is an overfull hbox
  * that names no line, and a column of notes too tall for its page (images and
  * lists in notes) is an overfull vbox on a page no sentinel shipped on and no
- * named line owns (PG-14). In a document that loads it, all three are its loaders'
+ * named line owns (PG-14; judged only on a settled build since b25, REGRESS-PG14S).
+ * In a document that loads it, all three are its loaders'
  * (`loadersOf`: the branches whose preamble lines load it), though a genuine
  * label change there is charged to them too. Any other overfull hbox reported
  * while `\output` is active is an output routine (longtable, `\twocolumn`,
@@ -124,9 +135,20 @@ import { CROSS_PASS, damagingWarnings, type Damage } from './warnings.ts';
  * note split across it (`features.ts`, PG-2): TeX held it over (tex.web §1008). 8 (b24, after GitHub run r3-7771790
  * judged with 7): in a document that loads scrlayer-notecolumn, a page that overflowed and that no sentinel and no named
  * line owns goes to its loaders, not to the document (PG-14: the note column's page, typeset while `\output` is active;
- * r3: 1,373 not-denied rows in 38 cells failed only on it, as the document's).
+ * r3: 1,373 not-denied rows in 38 cells failed only on it, as the document's). 9 (b25, after GitHub run r4-d5cf4a6
+ * judged with 8): that note column's page is judged only on a settled build. On a build a TeX error ended after its first
+ * run, the column was cleared from an estimate, as no earlier run wrote its `notecolumn.N` label (scrlayer-notecolumn.sty
+ * l.1077-1085, "Using estimated to low value for clearing note colums"), so its page is not judged there, as its `nextRun`
+ * sentinels are not (REGRESS-PG14S: r4 scrbook.B/scrreprt.B dc65173bde38c1bdcf908, 101.77678pt on p.50 after "Float(s)
+ * lost"; GitHub probe b25-1: the same document without that error settles, with no such overflow). A footnote's end
+ * sentinel in a note column's text (`nextRun`) no longer shows the footnote split (`features.ts`, REGRESS-FNSPLIT): the
+ * note column sets its notes where it has room, not where the footnote's text stood (r3 aastex.A/B db1903b6bf4d7c46bf2e7
+ * passed a late note on such a note; r4 failed it once the note moved a page up). And in a document that loads sidenotes,
+ * a page that overflowed with no owner, made after every page a sentinel shipped on, goes to its loaders on a settled
+ * build (PG-15: the notes' material the document's end put out; r4: 314 rows in 13 cells of d37aaf48d89d741f51641; probe
+ * b25-1's amsart.A pair: 36.71075pt to none with every `\sidenote` dropped).
  */
-export const ORACLE_VERSION = 8;
+export const ORACLE_VERSION = 9;
 
 /** What one branch of the document is expected to show: the sentinels its host placed, and the features its ways declare. */
 export type Expected = {
@@ -472,6 +494,14 @@ export const judge = (input: {
   let loaders: readonly BranchId[] | undefined;
   const notecolumn = (): readonly BranchId[] =>
     (loaders ??= emitted.latex.includes('scrlayer-notecolumn') ? loadersOf(emitted, source, 'scrlayer-notecolumn') : []);
+  // PG-15: the branches that load sidenotes, and the last page any sentinel shipped on; read only for a page that overflowed
+  // with no owner.
+  let sidenoteLoaders: readonly BranchId[] | undefined;
+  const sidenotes = (): readonly BranchId[] =>
+    (sidenoteLoaders ??= emitted.latex.includes('sidenotes') ? loadersOf(emitted, source, 'sidenotes') : []);
+  let lastPage: number | undefined;
+  const lastShipped = (): number =>
+    (lastPage ??= [...hits.values()].reduce((max, found) => found.reduce((m, hit) => Math.max(m, hit.page), max), 0));
   const sameBox = (amount: number | undefined): readonly BranchId[] => [
     ...new Set(reading.boxes.filter((b) => b.kind === 'overfull' && b.box === 'h' && b.lines !== undefined && b.amount === amount).flatMap((b) => at(b.lines?.[0]))),
   ];
@@ -519,8 +549,28 @@ export const judge = (input: {
     const owners = damage.line === undefined && damage.pages !== undefined ? onPages(damage.pages, damage.named) : at(damage.line);
     // A page that overflowed that no sentinel and no named line owns, in a document that loads scrlayer-notecolumn: the
     // note column's page, set while \output is active, too tall for its notes (PG-14). Its loaders', as its hboxes are.
+    // Not judged on a build that never settled: a TeX error ended it after its first run, so the column was cleared from
+    // an estimate (no `notecolumn.N` label from an earlier run, scrlayer-notecolumn.sty l.1077-1085), as its `nextRun`
+    // sentinels are not judged there (REGRESS-PG14S).
     if (damage.name === 'page-overflow' && damage.line === undefined && owners.length === 0 && notecolumn().length > 0) {
-      fail(notecolumn(), failure);
+      if (settled) fail(notecolumn(), failure);
+      continue;
+    }
+    // The same with no owner, on a page made after every page a sentinel shipped on, in a document that loads sidenotes: the
+    // notes' material the document's end put out (PG-15; r4 d37aaf48d89d741f51641, gone when every \sidenote is dropped). Its
+    // loaders'. A page with sentinels after it stays the document's: a frame of images in the text. Only on a settled build:
+    // where a TeX error ended the build after its first run, the last sentinel page says nothing about the document's end.
+    if (
+      settled &&
+      damage.name === 'page-overflow' &&
+      damage.line === undefined &&
+      owners.length === 0 &&
+      damage.pages !== undefined &&
+      damage.pages.length > 0 &&
+      damage.pages.every((p) => p > lastShipped()) &&
+      sidenotes().length > 0
+    ) {
+      fail(sidenotes(), failure);
       continue;
     }
     fail(owners.length === 0 && damage.name === 'overfull-hbox' && damage.line !== undefined ? noteBefore(damage.line) : owners, failure);

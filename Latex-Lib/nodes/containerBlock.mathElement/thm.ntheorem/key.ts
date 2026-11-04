@@ -12,7 +12,12 @@ export default defineKey({
     'ntheorem: \\theoremstyle (plain, break, change, margin), \\theoremheaderfont, \\theorembodyfont, \\theoremseparator and an end mark (\\theoremsymbol, with thmmarks) set before each \\newtheorem. Unboxed statements; loaded with amsmath and thmmarks, as every template using it does.',
   features: ['numbered', 'numbered-within', 'shared-counter', 'bold-head', 'italic-body', 'upright-body', 'break-after-head', 'qed-mark'],
   params: {
-    style: { type: 'enum', values: ['plain', 'break', 'change', 'margin'], default: 'plain', description: "ntheorem's head layout" },
+    style: {
+      type: 'enum',
+      values: ['plain', 'break', 'change', 'margin'],
+      default: 'plain',
+      description: "ntheorem's head layout; plain is printed as LatexLibPlain, plain's head with a note that wraps (b25 MB-1)",
+    },
     headFont: { type: 'tex', default: '\\normalfont\\bfseries', description: 'head font' },
     bodyFont: { type: 'tex', default: '\\itshape', description: 'body font' },
     separator: { type: 'string', default: '', description: 'what follows the head' },

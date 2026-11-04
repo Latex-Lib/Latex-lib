@@ -5,7 +5,8 @@
 // The two runner repositories in settings/runners.json run at once, each on its own account's job slots
 // (`slots`), so a run lasts as long as the slower of the two: each repository's jobs packed onto its slots,
 // longest first. A long pair is split into shards (settings/shards.json, read by run-pairs.sh plan): enough that
-// each compiles about TARGET minutes, each job also spending OVERHEAD minutes on its setup and bisect, which
+// each compiles about a target number of minutes (the one of TARGETS that makes the run shortest), each job also
+// spending OVERHEAD minutes on its setup and bisect, which
 // sharding does not shrink. All the shards of a pair run in one repository, which keeps the pair's store. Starting from the current split (a pair that moves starts without its store in the other
 // repository's cache, so moves are few), it moves or swaps pairs from the slower repository while that shortens
 // the run by at least MIN_GAIN minutes, and prints both splits. With --write it writes the new split into
@@ -24,7 +25,9 @@ import { appliesTo, loadClassSettings, loadSetups } from '../core/src/config.ts'
 
 const MIN_GAIN = 5;
 const OVERHEAD = 7;
-const TARGET = 25;
+/** The compile minutes a shard aims at: tried in turn, the one that makes the run shortest is kept. */
+const TARGETS = [15, 18, 20, 22, 25, 28, 32, 36, 40];
+let target = 25;
 const MAX_SHARDS = 8;
 const tp = join(dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
@@ -105,7 +108,7 @@ const entryOwner = new Map(active.flatMap((r) => r.classes.map((c) => [c, r.repo
 const ownerNow = (p) => entryOwner.get(p) ?? entryOwner.get(classOf(p)) ?? runners.default;
 
 // How many jobs a pair takes, and how long each runs.
-const shardsOf = (p) => Math.min(MAX_SHARDS, Math.max(1, Math.ceil((minutes(p) - OVERHEAD) / TARGET)));
+const shardsOf = (p) => Math.min(MAX_SHARDS, Math.max(1, Math.ceil((minutes(p) - OVERHEAD) / target)));
 const jobsOf = (p) => Array(shardsOf(p)).fill(OVERHEAD + Math.max(0, minutes(p) - OVERHEAD) / shardsOf(p));
 // A repository's run: its jobs packed onto its slots, longest first, each on the slot that frees first.
 const makespan = (list) => {
@@ -127,6 +130,8 @@ const score = (assign) => {
 };
 const better = (a, b) => a[0] < b[0] || (a[0] === b[0] && a[1] < b[1] - 1e-9);
 const before = new Map(pairs.map((p) => [p, ownerNow(p)]));
+// The split for the current target: moves and swaps from the current one, kept only when they help.
+const search = () => {
 let assign = new Map(before);
 for (let step = 0; step < 500; step++) {
   const now = score(assign);
@@ -157,6 +162,19 @@ else {
     if (score(back)[0] <= score(assign)[0]) assign = back;
   }
 }
+return assign;
+};
+let best = null;
+for (const t of TARGETS) {
+  target = t;
+  const a = search();
+  const run = score(a)[0];
+  const jobs = pairs.flatMap(jobsOf).length;
+  if (best === null || run < best.run || (run === best.run && jobs < best.jobs)) best = { target: t, assign: a, run, jobs };
+}
+target = best.target;
+const assign = best.assign;
+console.log(`balance: shards aim at ${target} compile minutes (tried ${TARGETS.join(', ')}): ${best.jobs} jobs`);
 
 const show = (label, a) => {
   const s = spans(a);
@@ -180,7 +198,7 @@ if (write) {
   const shardsFile = join(tp, 'settings/shards.json');
   const before = existsSync(shardsFile) ? JSON.parse(readFileSync(shardsFile, 'utf8')).shards : {};
   const shards = { ...before, ...Object.fromEntries(pairs.map((p) => [p, shardsOf(p)])) };
-  writeFileSync(shardsFile, `${JSON.stringify({ about: 'How many jobs each pair is split into (ci/balance.mjs; ci/run-pairs.sh plan), and the minutes each job spends besides compiling.', overhead: OVERHEAD, target: TARGET, shards: Object.fromEntries(Object.entries(shards).sort()) }, null, 2)}
+  writeFileSync(shardsFile, `${JSON.stringify({ about: 'How many jobs each pair is split into (ci/balance.mjs; ci/run-pairs.sh plan), and the minutes each job spends besides compiling.', overhead: OVERHEAD, target, shards: Object.fromEntries(Object.entries(shards).sort()) }, null, 2)}
 `);
   console.log(`balance: wrote settings/shards.json (${pairs.filter((p) => shardsOf(p) > 1).length} of ${pairs.length} pairs split, ${pairs.flatMap(jobsOf).length} jobs)`);
   writeFileSync(minutesFile, `${JSON.stringify({ about: 'Minutes of each pair job in the last runs (ci/balance.mjs --times), for the split between the runner repositories.', runs: known.runs, minutes: Object.fromEntries(Object.entries(known.minutes).sort()) }, null, 2)}\n`);

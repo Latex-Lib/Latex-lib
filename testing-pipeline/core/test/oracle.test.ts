@@ -334,6 +334,46 @@ test('in a document loading scrlayer-notecolumn, a page that overflowed with no 
   });
   assert.deepEqual(checksOf(page), { A: [], B: ['warning:page-overflow'] });
   assert.equal(page.document.length, 0);
+  // REGRESS-PG14S: not judged on a build a TeX error stopped after its first run, whose note column was cleared from an
+  // estimate (r4 scrbook.B dc65173bde38c1bdcf908, 101.77678pt after "Float(s) lost").
+  const stopped = judge({
+    cell: 'c',
+    emitted: notecolumn,
+    result: result('! LaTeX Error: Float(s) lost.', '', 'l.12 \\end{figure}', '[1', hit('A.0'), hit('B.0'), ']', 'Overfull \\vbox (101.77678pt too high) has occurred while \\output is active []', '[2]'),
+    expected: expected(),
+  });
+  assert.ok(!checksOf(stopped).B?.includes('warning:page-overflow'));
+  assert.ok(!stopped.document.some((f) => f.check.startsWith('warning:page-overflow')));
+});
+
+test('in a document loading sidenotes, a page that overflowed with no owner after every sentinel is its loaders\'', () => {
+  // PG-15: the notes the document's end put out (r4 scrbook.B d37aaf48d89d741f51641, 346.94838pt on page 8 of 9).
+  const sidenotes = withLines({ 3: '\\usepackage{sidenotes}' }, { preamble: [{ branch: 'B', from: 3, to: 3 }] });
+  const last = judge({
+    cell: 'c',
+    emitted: sidenotes,
+    result: result('[1', hit('A.0'), hit('B.0'), ']', 'Overfull \\vbox (346.94838pt too high) has occurred while \\output is active []', '', '[2]'),
+    expected: expected(),
+  });
+  assert.deepEqual(checksOf(last), { A: [], B: ['warning:page-overflow'] });
+  assert.equal(last.document.length, 0);
+  // A sentinel shipped after it: a frame in the text, still the document's (amsart.A dc0351b8a74f9804510ce).
+  const mid = judge({
+    cell: 'c',
+    emitted: sidenotes,
+    result: result('[1', hit('A.0'), ']', 'Overfull \\vbox (9.65968pt too high) has occurred while \\output is active []', '', '[2]', '<figures/theme-sample.png>', '[3', hit('B.0', 3), ']'),
+    expected: expected(),
+  });
+  assert.deepEqual(checksOf(mid), { A: ['warning:page-overflow:document'], B: ['warning:page-overflow:document'] });
+  assert.equal(mid.document.length, 1);
+  // A build a TeX error ended stays the document's: its last sentinel page says nothing about the document's end.
+  const stopped = judge({
+    cell: 'c',
+    emitted: sidenotes,
+    result: result('! LaTeX Error: Float(s) lost.', '', 'l.99 \\end{figure}', '[1', hit('A.0'), hit('B.0'), ']', 'Overfull \\vbox (346.94838pt too high) has occurred while \\output is active []', '', '[2]'),
+    expected: expected(),
+  });
+  assert.ok(stopped.document.some((f) => f.check.startsWith('warning:page-overflow')));
 });
 
 test("biblatex's undefined citation, its key in straight quotes, fails the branch whose line it names on a settled build", () => {
@@ -648,6 +688,17 @@ test('the footnote probe passes a note TeX held over to the next page after anot
   // Two pages late, with only page 1 split: page 2 holds no split note.
   assert.deepEqual(checksOf(notes(2, 3)), { A: [], B: ['feature:footnote'] });
   assert.match(notes(2, 3).verdicts[1]?.failures[0]?.evidence ?? '', /note 1: mark on page 1, text on page 3/);
+  // REGRESS-FNSPLIT: A's end in a note column's text (`nextRun`) on page 2 shows no split (r3 aastex.A db1903b6bf4d7c46bf2e7).
+  const column = judge({
+    cell: 'c',
+    emitted,
+    result: result(hit('A.mark', 1), hit('A.text', 1), hit('A.end', 2), hit('B.mark', 1), hit('B.text', 2), hit('B.end', 2)),
+    expected: expected(
+      { sentinels: [{ id: 'A.mark', role: 'footnote:mark' }, { id: 'A.text', role: 'footnote:text' }, { id: 'A.end', role: 'footnote:end', outside: true, nextRun: true }], features: ['footnote'] },
+      { sentinels: [{ id: 'B.mark', role: 'footnote:mark' }, { id: 'B.text', role: 'footnote:text' }, { id: 'B.end', role: 'footnote:end' }], features: ['footnote'] },
+    ),
+  });
+  assert.deepEqual(checksOf(column).B, ['feature:footnote']);
 });
 
 test('a fatal stop or no page fails every branch as the document, and no unshipped sentinel or feature is charged to its branch', () => {

@@ -374,7 +374,8 @@
         "\\usepackage[amsmath,thmmarks]{ntheorem}"
       ],
       "declarations": [
-        "\\theoremstyle{plain}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\upshape}\\theoremseparator{.}\\theoremsymbol{}\n\\newtheorem{theorem}{Theorem}[chapter]"
+        "\\makeatletter\\@ifundefined{th@LatexLibPlain}{\\newtheoremstyle{LatexLibPlain}{\\item[\\hskip\\labelsep \\theorem@headerfont ##1\\ ##2\\theorem@separator]}{\\item[\\hskip\\labelsep \\theorem@headerfont ##1\\ ##2]\\hskip-\\labelsep\\ {\\theorem@headerfont(##3)\\theorem@separator}\\hskip\\labelsep}}{}\\makeatother",
+        "\\theoremstyle{LatexLibPlain}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\upshape}\\theoremseparator{.}\\theoremsymbol{}\n\\newtheorem{theorem}{Theorem}[chapter]"
       ],
       "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
     },
@@ -383,7 +384,8 @@
         "\\usepackage[amsmath,thmmarks]{ntheorem}"
       ],
       "declarations": [
-        "\\theoremstyle{plain}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\upshape}\\theoremseparator{.}\\theoremsymbol{}\n\\newtheorem{lemma}{Lemma}[chapter]"
+        "\\makeatletter\\@ifundefined{th@LatexLibPlain}{\\newtheoremstyle{LatexLibPlain}{\\item[\\hskip\\labelsep \\theorem@headerfont ##1\\ ##2\\theorem@separator]}{\\item[\\hskip\\labelsep \\theorem@headerfont ##1\\ ##2]\\hskip-\\labelsep\\ {\\theorem@headerfont(##3)\\theorem@separator}\\hskip\\labelsep}}{}\\makeatother",
+        "\\theoremstyle{LatexLibPlain}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\upshape}\\theoremseparator{.}\\theoremsymbol{}\n\\newtheorem{lemma}{Lemma}[chapter]"
       ],
       "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
     },
@@ -392,7 +394,8 @@
         "\\usepackage[amsmath,thmmarks]{ntheorem}"
       ],
       "declarations": [
-        "\\theoremstyle{plain}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\upshape}\\theoremseparator{.}\\theoremsymbol{}\n\\newtheorem{definition}{Definition}[chapter]"
+        "\\makeatletter\\@ifundefined{th@LatexLibPlain}{\\newtheoremstyle{LatexLibPlain}{\\item[\\hskip\\labelsep \\theorem@headerfont ##1\\ ##2\\theorem@separator]}{\\item[\\hskip\\labelsep \\theorem@headerfont ##1\\ ##2]\\hskip-\\labelsep\\ {\\theorem@headerfont(##3)\\theorem@separator}\\hskip\\labelsep}}{}\\makeatother",
+        "\\theoremstyle{LatexLibPlain}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\upshape}\\theoremseparator{.}\\theoremsymbol{}\n\\newtheorem{definition}{Definition}[chapter]"
       ],
       "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
     }
@@ -434,7 +437,8 @@
         "\\usepackage[amsmath,thmmarks]{ntheorem}"
       ],
       "declarations": [
-        "\\theoremstyle{plain}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\itshape}\\theoremseparator{}\\theoremsymbol{$\\square$}\n\\newtheorem{theorem}{Theorem}[chapter]"
+        "\\makeatletter\\@ifundefined{th@LatexLibPlain}{\\newtheoremstyle{LatexLibPlain}{\\item[\\hskip\\labelsep \\theorem@headerfont ##1\\ ##2\\theorem@separator]}{\\item[\\hskip\\labelsep \\theorem@headerfont ##1\\ ##2]\\hskip-\\labelsep\\ {\\theorem@headerfont(##3)\\theorem@separator}\\hskip\\labelsep}}{}\\makeatother",
+        "\\theoremstyle{LatexLibPlain}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\itshape}\\theoremseparator{}\\theoremsymbol{$\\square$}\n\\newtheorem{theorem}{Theorem}[chapter]"
       ],
       "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
     },
@@ -443,7 +447,8 @@
         "\\usepackage[amsmath,thmmarks]{ntheorem}"
       ],
       "declarations": [
-        "\\theoremstyle{plain}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\itshape}\\theoremseparator{}\\theoremsymbol{$\\square$}\n\\newtheorem{lemma}{Lemma}[chapter]"
+        "\\makeatletter\\@ifundefined{th@LatexLibPlain}{\\newtheoremstyle{LatexLibPlain}{\\item[\\hskip\\labelsep \\theorem@headerfont ##1\\ ##2\\theorem@separator]}{\\item[\\hskip\\labelsep \\theorem@headerfont ##1\\ ##2]\\hskip-\\labelsep\\ {\\theorem@headerfont(##3)\\theorem@separator}\\hskip\\labelsep}}{}\\makeatother",
+        "\\theoremstyle{LatexLibPlain}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\itshape}\\theoremseparator{}\\theoremsymbol{$\\square$}\n\\newtheorem{lemma}{Lemma}[chapter]"
       ],
       "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
     },
@@ -452,7 +457,8 @@
         "\\usepackage[amsmath,thmmarks]{ntheorem}"
       ],
       "declarations": [
-        "\\theoremstyle{plain}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\itshape}\\theoremseparator{}\\theoremsymbol{$\\square$}\n\\newtheorem{definition}{Definition}[chapter]"
+        "\\makeatletter\\@ifundefined{th@LatexLibPlain}{\\newtheoremstyle{LatexLibPlain}{\\item[\\hskip\\labelsep \\theorem@headerfont ##1\\ ##2\\theorem@separator]}{\\item[\\hskip\\labelsep \\theorem@headerfont ##1\\ ##2]\\hskip-\\labelsep\\ {\\theorem@headerfont(##3)\\theorem@separator}\\hskip\\labelsep}}{}\\makeatother",
+        "\\theoremstyle{LatexLibPlain}\\theoremheaderfont{\\normalfont\\bfseries}\\theorembodyfont{\\itshape}\\theoremseparator{}\\theoremsymbol{$\\square$}\n\\newtheorem{definition}{Definition}[chapter]"
       ],
       "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
     }
