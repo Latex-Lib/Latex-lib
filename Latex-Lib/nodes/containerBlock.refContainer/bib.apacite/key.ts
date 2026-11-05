@@ -27,6 +27,16 @@ export default defineKey(
     ],
     deny: [
       {
+        // b3p (batch 3, G4): apacite writes \bibliographystyle{apacite} beside the one plos's preamble sets. corl and bmvc (hyperref)
+        // and ecai (natbib) are out through apacite's package facts.
+        class: 'class.plos',
+        reason: "the plos setting's preamble runs \\bibliographystyle{plos2025} right after \\documentclass (PLOS's template), so main.aux always opens with \\bibstyle{plos2025}; this way's \\bibliographystyle{apacite} writes a second one, which BibTeX rejects ('Illegal, another \\bibstyle command'), so no .bbl is made",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/plos.json', line: 'preamble line 19 (\\bibliographystyle{plos2025})' },
+          { kind: 'compile', cell: 'b10 reference-list investigation: a repeated \\bibstyle in main.aux makes BibTeX fail and the build end (index4 no-bbl problems)' },
+        ],
+      },
+      {
         // b2p (batch 2, G4): apacite writes \bibliographystyle{apacite} beside ascelike's own.
         class: 'class.ascelike',
         reason: "ascelike.cls calls \\bibliographystyle{ascelike} in its \\AtEndOfClass block, unconditionally, so main.aux opens with that \\bibstyle; this way's \\bibliographystyle{apacite} writes a second one, which BibTeX rejects ('Illegal, another \\bibstyle command')",

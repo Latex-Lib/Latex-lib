@@ -1,12 +1,13 @@
 {
   "id": "ijcai",
-  "description": "IJCAI-27's style file ijcai27.sty ('Conference Style, version of November 2018', a copy of ijcai22.sty), on plain article. Not on CTAN or the engine's mirror: from FormattingGuidelines-IJCAI-27.zip, linked from ijcai.org/authors_kit. Two columns, set by the style. The first two lines are the template's own page size (ijcai27.tex l.8-9); XeTeX has both primitives. The template also loads times; it is left to the document, since under XeTeX ptm has no TU shape.",
+  "description": "IJCAI-27's style file ijcai27.sty ('Conference Style, version of November 2018', a copy of ijcai22.sty), on plain article. Not on CTAN or the engine's mirror: from FormattingGuidelines-IJCAI-27.zip, linked from ijcai.org/authors_kit. Two columns, set by the style. The first two lines are the template's own page size (ijcai27.tex l.8-9); XeTeX has both primitives. The template also loads times; it is left to the document, since under XeTeX ptm has no TU shape. After the style, \\cite is made robust (its inner command cleared first), so a \\cite in a moving argument no longer overflows TeX's input stack through \\citeauthoryear (round b27: 251 branches; fix session's probe: 12 errors before, 0 after).",
   "class": "article",
   "options": [],
   "preamble": [
     "\\pdfpagewidth=8.5in",
     "\\pdfpageheight=11in",
-    "\\usepackage{ijcai27}"
+    "\\usepackage{ijcai27}",
+    "\\expandafter\\let\\csname cite\\space\\endcsname\\relax\\MakeRobust{\\cite}"
   ],
   "files": [
     {

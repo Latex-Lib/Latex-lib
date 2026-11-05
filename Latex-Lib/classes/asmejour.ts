@@ -5,6 +5,15 @@ import { ctan } from '../schema/minimal.ts';
 const CLS = 'asmejour.cls (asmejour 2025/11/30 v1.27, MiKTeX snapshot 9766)';
 
 /**
+ * b28 (batch 2, round 2, from GitHub run b27-39fa711): the setting loads `asmejour-latexlib`, asmejour.cls v1.27 with its
+ * `caption/label` socket code guarded (the CI session's patch, shipped through the setting's `files` as icassp ships
+ * spconf.sty), since 1,004 of 1,005 cells stopped at "Socket 'caption/label' undeclared!" (l.1128) at class load. A profile's
+ * `name` must be its setting's class (`latexLibClasses` stops a run where they differ), so the name follows; `classKeys` still
+ * finds this profile for the setting asmejour (one profile of that name, so it is keyed by it, and the setting's class is it).
+ * Line numbers below stay the original asmejour.cls's (`CLS`), not the patched file's.
+ */
+
+/**
  * John Lienhard's asmejour, read from its source (batch 2, setting asmejour.A, no options; not yet measured by the class probe).
  * It loads extarticle at 9pt, twoside (l.69); \maketitle starts the two columns. Then, with options a way's load of the same package
  * would clash with (the host reads that from `preloads`): geometry for ASME's 215.9 x 285.7 mm page (l.304), natbib with
@@ -20,7 +29,7 @@ const CLS = 'asmejour.cls (asmejour 2025/11/30 v1.27, MiKTeX snapshot 9766)';
  */
 export default defineClass({
   id: 'class.asmejour',
-  name: "asmejour",
+  name: "asmejour-latexlib",
   base: 'class.extarticle',
   zerotex: "untested",
   preloads: [

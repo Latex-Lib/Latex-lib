@@ -23,6 +23,12 @@ export default defineKey(
     ],
     // The classes that load natbib in author-year mode (CA2).
     deny: [
+      // b3p verify-V1 (batch 3, G2): agu's apacite has a thebibliography with no list counter.
+      {
+        class: 'class.agu',
+        reason: "agujournal2025 loads apacite after its own thebibliography (l.1970), and apacite's thebibliography opens a \\list with no \\usecounter (apacite.sty l.1199-1235), so a \\bibitem{key} with no label stops at 'Undefined control sequence' (\\@listctr) and 'You can't use \\relax after \\the' (b3p probe G2-agu-thebib main.log l.1726, 1737); apacite reads its own \\bibitem[\\citeauthoryear...] labels, which bib.apacite writes",
+        evidence: [{ kind: 'source', file: 'apacite.sty (MiKTeX package apacite, 2013/07/21 v6.03)', line: '1199-1235' }, { kind: 'source', file: 'testing-pipeline/settings/classes/files/agujournal2025.cls', line: '1939-1957, 1970-1972' }],
+      },
       {
         class: 'class.aa',
         reason: "aa loads natbib in author-year mode (its default bibauthoryear: \\RequirePackage[nonamebreak]{natbib}, \\bibpunct{(}{)}{;}{a}{}{,}); its \\bibitem{key} has no Author(Year) label, so natbib writes \\NAT@force@numbers to the .aux and the next run stops at \\begin{document}: \"Package natbib Error: Bibliography not compatible with author-year citations\". apalike's labels are author-year",

@@ -26,6 +26,15 @@ export default defineKey(
     // b2p (batch 2, G4): with backend=bibtex, biblatex writes \bibstyle{biblatex} to main.aux and BibTeX makes the .bbl.
     deny: [
       {
+        // b3p (batch 3, G4): with no unless, this also refuses biblatex for General's bibliography under plos (latexLibClasses).
+        class: 'class.plos',
+        reason: "the plos setting's preamble runs \\bibliographystyle{plos2025} right after \\documentclass and before biblatex loads (PLOS's template), so main.aux opens with \\bibstyle{plos2025}; biblatex's backend=bibtex writes \\bibstyle{biblatex} after it, which BibTeX rejects ('Illegal, another \\bibstyle command'), as under ascelike",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/plos.json', line: 'preamble line 19 (\\bibliographystyle{plos2025})' },
+          { kind: 'compile', cell: 'b10 reference-list investigation: a repeated \\bibstyle in main.aux makes BibTeX fail and the build end (index4 no-bbl problems); ascelike, whose class sets its style before biblatex loads: 236 of 299 cells in GitHub run b12-5bdc624' },
+        ],
+      },
+      {
         class: 'class.ascelike',
         reason: "ascelike.cls calls \\bibliographystyle{ascelike} in its \\AtEndOfClass block, unconditionally, so main.aux opens with \\bibstyle{ascelike}; biblatex's backend=bibtex writes \\bibstyle{biblatex} after it, which BibTeX rejects ('Illegal, another \\bibstyle command'), and the .bbl BibTeX makes with ascelike.bst is not biblatex's (biber, ascelike's default and General's, writes no \\bibstyle and is not affected)",
         evidence: [

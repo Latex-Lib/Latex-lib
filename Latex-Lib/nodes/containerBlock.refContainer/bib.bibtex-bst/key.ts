@@ -21,8 +21,47 @@ export default defineKey(
     ],
     // The classes that load natbib in author-year mode (CA2), and those that set their own \bibliographystyle (CA11).
     deny: [
+      // b3p (batch 3, G4): the classes and styles that set their own \bibliographystyle (CA11), as ascelike, acl and jmlr do.
+      {
+        class: 'class.plos',
+        reason: "the plos setting's preamble runs \\bibliographystyle{plos2025} right after \\documentclass (PLOS's template), so main.aux always opens with \\bibstyle{plos2025}; this way's own \\bibliographystyle writes a second one, which BibTeX rejects ('Illegal, another \\bibstyle command'), so no .bbl is made",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/plos.json', line: 'preamble line 19 (\\bibliographystyle{plos2025})' },
+          { kind: 'compile', cell: 'b10 reference-list investigation: a repeated \\bibstyle in main.aux makes BibTeX fail and the build end (index4 no-bbl problems)' },
+        ],
+      },
+      {
+        class: 'class.corl',
+        reason: "corl_2026.sty calls \\bibliographystyle{corlabbrvnat} while it loads, unless given nonatbib, which the setting does not give (l.76-80), so main.aux opens with that \\bibstyle; this way's own \\bibliographystyle writes a second one, which BibTeX rejects ('Illegal, another \\bibstyle command'), so no .bbl is made",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/corl_2026.sty (2026/08/15)', line: '76-80 (\\RequirePackage[square,numbers]{natbib} \\bibliographystyle{corlabbrvnat})' },
+          { kind: 'compile', cell: 'b10 reference-list investigation: a repeated \\bibstyle in main.aux makes BibTeX fail and the build end (index4 no-bbl problems)' },
+        ],
+      },
+      {
+        class: 'class.bmvc',
+        reason: "bmvc2k.cls calls \\bibliographystyle{plainnat} while it loads (l.775), so main.aux opens with that \\bibstyle; this way's own \\bibliographystyle writes a second one, which BibTeX rejects ('Illegal, another \\bibstyle command'), so no .bbl is made",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/bmvc2k.cls (v0.22, 2026/04/02)', line: '714 (bmvc2k_natbib [sort,numbers]), 775 (\\bibliographystyle{plainnat})' },
+          { kind: 'compile', cell: 'b10 reference-list investigation: a repeated \\bibstyle in main.aux makes BibTeX fail and the build end (index4 no-bbl problems)' },
+        ],
+      },
+      {
+        class: 'class.ecai',
+        reason: "ecai.cls calls \\bibliographystyle{abbrvnat} at its end (l.1327), so main.aux opens with that \\bibstyle; this way's own \\bibliographystyle writes a second one, which BibTeX rejects ('Illegal, another \\bibstyle command'), so no .bbl is made",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/ecai.cls (2023/12/10 v04)', line: '1325-1327 (natbib [numbers], \\bibliographystyle{abbrvnat})' },
+          { kind: 'compile', cell: 'b10 reference-list investigation: a repeated \\bibstyle in main.aux makes BibTeX fail and the build end (index4 no-bbl problems)' },
+        ],
+      },
       // b2p (batch 2, G4): the conference styles whose natbib is author-year (loaded with no option, natbib's default; ICML and
       // ICLR also \setcitestyle{authoryear,...}), as for aa below; and ascelike, which sets its own \bibliographystyle.
+      // b3p verify-V1 (batch 3, G2): agu loads apacite, whose thebibliography has no list counter (every bst, apalike untested).
+      {
+        class: 'class.agu',
+        reason: "agujournal2025 loads apacite (l.1970), whose thebibliography has no list counter (apacite.sty l.1199-1235): a numeric style's \\bibitem{key} stops at 'Undefined control sequence' (\\@listctr), as bib.thebibliography's does (b3p probe G2-agu-thebib), and apacite's \\cite (=\\shortcite, l.1972) reads apacite.bst's author-year labels; the class's bibliography is bib.apacite",
+        evidence: [{ kind: 'source', file: 'apacite.sty (MiKTeX package apacite, 2013/07/21 v6.03)', line: '1199-1235' }, { kind: 'source', file: 'testing-pipeline/settings/classes/files/agujournal2025.cls', line: '1939-1957, 1970-1972' }],
+      },
       {
         class: 'class.neurips',
         unless: { bst: 'apalike' },
@@ -137,6 +176,22 @@ export default defineKey(
           { kind: 'source', file: 'testing-pipeline/settings/classes/files/acl.sty (acl-style-files commit 2427282)', line: '186 (natbib), 195 (\\bibliographystyle{acl_natbib})' },
           { kind: 'compile', cell: 'b10 reference-list investigation: a repeated \\bibstyle in main.aux makes BibTeX fail and the build end (index4 no-bbl problems)' },
         ],
+      },
+      // b3p (batch 3, G3): jss calls \bibliographystyle{jss} while it loads, as jmlr and acl do; Frontiers loads natbib with no
+      // option (author-year) and sets no style, as neurips.
+      {
+        class: 'class.jss',
+        reason: "jss.cls calls \\bibliographystyle{jss} while it loads (l.64), so main.aux opens with that \\bibstyle; this way's own \\bibliographystyle writes a second one, which BibTeX rejects ('Illegal, another \\bibstyle command'), so no .bbl is made",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/jss.cls (jss 2026/04/28 v3.6)', line: '60-62 (natbib), 64 (\\bibliographystyle{jss})' },
+          { kind: 'compile', cell: 'b10 reference-list investigation: a repeated \\bibstyle in main.aux makes BibTeX fail and the build end (index4 no-bbl problems)' },
+        ],
+      },
+      {
+        class: 'class.frontiers',
+        unless: { bst: 'apalike' },
+        reason: "FrontiersinHarvard.cls loads natbib with no option (l.863), so natbib is author-year; a numeric or alpha style's \\bibitem has no Author(Year) label and natbib stops at 'Bibliography not compatible with author-year citations'",
+        evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/FrontiersinHarvard.cls (v2.6 2016/11/10)', line: '863' }],
       },
     ],
     // The list's children are written to \jobname.bib as BibTeX source (refContainer/node.ts bibFile), so a child that is not an

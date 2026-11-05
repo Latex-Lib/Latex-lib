@@ -34,6 +34,8 @@
 // written, and it exits 0, so a lost artifact does not stop the run's report.
 // A verdict the ledger marks denied (a branch the library denies in its context, CP-5) is left out of every
 // count and comparison, and counted apart in the Denied column; runs from before CP-5 have none.
+// A branch that moves between a pass and warning:labels-changed is counted apart as a flip: TeX's "Label(s) may
+// have changed" comes and goes between runs of the same LaTeX.
 // Plain Node, nothing to install.
 import { closeSync, existsSync, openSync, readdirSync, readFileSync, readSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -56,6 +58,8 @@ const PASS = true;
 // A verdict on a branch the library denies in its context (the ledger's `denied`, CP-5): it is meant to fail there,
 // so it is neither a pass nor a failure here. It is kept, so the branch is not gone, and counted apart.
 const DENIED = 'denied';
+// The check that flips between runs of the same LaTeX: a move between it and a pass is a flip, counted apart.
+const LABELS = 'warning:labels-changed';
 const pairOf = (l) => `${l.classSetting}.${l.setup}`;
 
 /** A file's lines a chunk at a time: a part can outgrow the longest string Node will hold. */
@@ -197,14 +201,18 @@ if (previous === undefined) {
 const rows = [];
 const regressions = [];
 const fixes = [];
-const total = { pairs: now.size, fixed: 0, regressed: 0, still: 0, changed: 0, fresh: 0, freshFail: 0, gone: 0, unjudged: 0, unknown: 0, denied: 0 };
+const total = { pairs: now.size, fixed: 0, regressed: 0, still: 0, changed: 0, fresh: 0, freshFail: 0, gone: 0, unjudged: 0, unknown: 0, denied: 0, flips: 0 };
 for (const [pair, p] of now) {
   const was = before.get(pair)?.branches ?? new Map();
-  const row = { pair, branches: p.branches.size - denying(p.branches), pass: passing(p.branches), fixed: 0, regressed: 0, still: 0, changed: 0, fresh: 0, freshFail: 0, gone: 0, unjudged: p.unjudged, unknown: p.unknown, denied: denying(p.branches), previous: before.has(pair) };
+  const row = { pair, branches: p.branches.size - denying(p.branches), pass: passing(p.branches), fixed: 0, regressed: 0, still: 0, changed: 0, fresh: 0, freshFail: 0, gone: 0, unjudged: p.unjudged, unknown: p.unknown, denied: denying(p.branches), flips: 0, previous: before.has(pair) };
   for (const [branch, verdict] of p.branches) {
     const old = was.get(branch);
     // Denied now or before: no regression, fix or failure to compare (a run before CP-5 has no denied verdicts).
     if (verdict === DENIED || old === DENIED) continue;
+    if ((old === PASS && verdict === LABELS) || (old === LABELS && verdict === PASS)) {
+      row.flips++;
+      continue;
+    }
     const where = { pair, branch, document: p.judgedIn.get(branch), check: verdict, was: old };
     if (old === undefined) {
       row.fresh++;
@@ -221,7 +229,7 @@ for (const [pair, p] of now) {
     }
   }
   for (const branch of was.keys()) if (!p.branches.has(branch)) row.gone++;
-  for (const k of ['fixed', 'regressed', 'still', 'changed', 'fresh', 'freshFail', 'gone', 'unjudged', 'unknown', 'denied']) total[k] += row[k];
+  for (const k of ['fixed', 'regressed', 'still', 'changed', 'fresh', 'freshFail', 'gone', 'unjudged', 'unknown', 'denied', 'flips']) total[k] += row[k];
   rows.push(row);
 }
 const notRun = [...before].filter(([pair]) => !now.has(pair));
@@ -276,7 +284,7 @@ const runsOf = (m) => {
 const out = [];
 out.push('# What changed since the previous run', '');
 out.push(`This run (${runsOf(now)}) against the previous verdicts (${previousFile}, written ${previous.at ?? '?'}; ${runsOf(before)}). ${headline}`, '');
-out.push(`**${fmt(total.regressed)} newly failing** (regressions), **${fmt(total.fixed)} newly passing**, ${fmt(total.still)} still failing (${fmt(total.changed)} with another first check), ${fmt(total.fresh)} new (${fmt(total.freshFail)} failing), ${fmt(total.gone)} gone. Branches are compared by pair and branch id${total.denied === 0 ? '' : `; ${fmt(total.denied)} denied in their context are left out of every count`}.`, '');
+out.push(`**${fmt(total.regressed)} newly failing** (regressions), **${fmt(total.fixed)} newly passing**, ${fmt(total.still)} still failing (${fmt(total.changed)} with another first check), ${fmt(total.fresh)} new (${fmt(total.freshFail)} failing), ${fmt(total.gone)} gone. Branches are compared by pair and branch id${total.denied === 0 ? '' : `; ${fmt(total.denied)} denied in their context are left out of every count`}${total.flips === 0 ? '' : `; ${fmt(total.flips)} moved between a pass and ${LABELS}, which flips between runs of the same LaTeX, and are counted apart`}.`, '');
 if (total.unjudged > 0) out.push(`${fmt(total.unjudged)} cell(s) had no verdict (the engine threw): their branches the previous run judged count as failing with \`threw\`; ${fmt(total.unknown)} of those cells held none the previous run knew.`, '');
 out.push('## By pair', '', '| Pair | Branches | Pass | Newly failing | Newly passing | Still failing | New (failing) | Gone | No verdict | Denied |', '|---|---|---|---|---|---|---|---|---|---|');
 for (const r of rows.sort((a, b) => b.regressed - a.regressed || b.fixed - a.fixed || (a.pair < b.pair ? -1 : 1))) {

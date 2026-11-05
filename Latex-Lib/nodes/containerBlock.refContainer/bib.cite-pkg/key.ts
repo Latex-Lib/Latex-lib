@@ -27,6 +27,16 @@ export default defineKey(
     ],
     // aa's author-year natbib (CA2), and the classes that set their own \bibliographystyle (CA11). Under aastex cite is a technical refusal already.
     deny: [
+      // b3p (batch 3, G4): plos's preamble sets \bibliographystyle{plos2025}. corl, bmvc and ecai, which load natbib, refuse cite in
+      // their profiles' forbids.technical, as cvpr does.
+      {
+        class: 'class.plos',
+        reason: "the plos setting's preamble runs \\bibliographystyle{plos2025} right after \\documentclass (PLOS's template), so main.aux always opens with \\bibstyle{plos2025}; this way's own \\bibliographystyle writes a second one, which BibTeX rejects ('Illegal, another \\bibstyle command'), so no .bbl is made",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/plos.json', line: 'preamble line 19 (\\bibliographystyle{plos2025})' },
+          { kind: 'compile', cell: 'b10 reference-list investigation: a repeated \\bibstyle in main.aux makes BibTeX fail and the build end (index4 no-bbl problems)' },
+        ],
+      },
       // b2p (batch 2, G4): author-year natbib from the conference style, as for aa below; ascelike's own \bibliographystyle.
       {
         class: 'class.asmeconf',

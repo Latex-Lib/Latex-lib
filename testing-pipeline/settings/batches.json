@@ -4,17 +4,44 @@
       "id": 1,
       "status": "closed",
       "classes": [
-        "article", "report", "book", "beamer", "amsart",
-        "revtex4-2-aps", "ieeetran-journal", "ieeetran-conference", "aastex",
-        "elsarticle-preprint", "elsarticle-5p", "cas-sc", "cas-dc",
-        "acmart-sigconf", "acmart-manuscript", "aa", "mnras", "llncs", "lipics",
-        "iopjournal", "sn-jnl", "siamart", "mdpi",
-        "scrartcl", "scrreprt", "scrbook", "memoir", "exam", "extarticle",
+        "article",
+        "report",
+        "book",
+        "beamer",
+        "amsart",
+        "revtex4-2-aps",
+        "ieeetran-journal",
+        "ieeetran-conference",
+        "aastex",
+        "elsarticle-preprint",
+        "elsarticle-5p",
+        "cas-sc",
+        "cas-dc",
+        "acmart-sigconf",
+        "acmart-manuscript",
+        "aa",
+        "mnras",
+        "llncs",
+        "lipics",
+        "iopjournal",
+        "sn-jnl",
+        "siamart",
+        "mdpi",
+        "scrartcl",
+        "scrreprt",
+        "scrbook",
+        "memoir",
+        "exam",
+        "extarticle",
         "tufte-handout"
       ],
       "added": {
-        "classes": ["the 46 class profiles and 48 class settings of M1/M3 (16 settings left out of the batch: see why)"],
-        "handlers": ["every handler of M1 and M3: 110 handlers over 28 nodes"]
+        "classes": [
+          "the 46 class profiles and 48 class settings of M1/M3 (16 settings left out of the batch: see why)"
+        ],
+        "handlers": [
+          "every handler of M1 and M3: 110 handlers over 28 nodes"
+        ]
       },
       "why": "The commonly used journal, conference and student classes among the first 48 settings, by the ar5iv class tally (https://gist.github.com/dginev/a642cbc6ae106786d24e2f271cf2941d), publisher volumes (OpenAlex) and Overleaf's template tags. Left out as rarely used or out of scope: minimal, ltxdoc, proc (test, documentation, obsolete); letter, scrlttr2, moderncv (letters, CVs); a0poster, tikzposter (posters); extbook, extreport, amsbook, amsproc, tufte-book, ctexbeamer, ctexrep (covered by a sibling that stays); easychair (not on CTAN, licence unstated, little use). Set aside on 2026-11-03 by the owner (\"ignore the not commonly used document class for now like the Chinese one\"): ctexart, ctexbook (their settings stay, in no batch; they were also batch 1's slowest jobs, 116 to 148 minutes each)."
     },
@@ -22,12 +49,35 @@
       "id": 2,
       "status": "running",
       "classes": [
-        "revtex4-2-aip", "acmart-acmsmall", "ieeetran-compsoc",
-        "achemso", "spie", "oup-authoring-template", "emulateapj", "apa7", "jacow",
-        "elegantpaper", "ut-thesis",
-        "jmlr-pmlr", "quantumarticle", "asmejour", "asmeconf", "ascelike",
-        "neurips", "icml", "iclr", "acl", "cvpr", "eccv", "aaai", "ijcai", "usenix",
-        "icassp", "aistats", "colm", "tmlr"
+        "revtex4-2-aip",
+        "acmart-acmsmall",
+        "ieeetran-compsoc",
+        "achemso",
+        "spie",
+        "oup-authoring-template",
+        "emulateapj",
+        "apa7",
+        "jacow",
+        "elegantpaper",
+        "ut-thesis",
+        "jmlr-pmlr",
+        "quantumarticle",
+        "asmejour",
+        "asmeconf",
+        "ascelike",
+        "neurips",
+        "icml",
+        "iclr",
+        "acl",
+        "cvpr",
+        "eccv",
+        "aaai",
+        "ijcai",
+        "usenix",
+        "icassp",
+        "aistats",
+        "colm",
+        "tmlr"
       ],
       "added": {
         "classes": [
@@ -67,7 +117,7 @@
     },
     {
       "id": 3,
-      "status": "planned",
+      "status": "running",
       "classes": [
         "acmart-acmtog",
         "acmart-sigplan",
@@ -76,10 +126,8 @@
         "imsart",
         "interact",
         "agu",
-        "copernicus",
         "jss",
         "frontiers",
-        "ieeeaccess",
         "plos",
         "ieeeconf-ras",
         "corl",
@@ -97,10 +145,10 @@
           "imsart: imsart.cls [aos] (Institute of Mathematical Statistics: Annals of Statistics)",
           "interact: Taylor & Francis interact.cls",
           "agu: agujournal2025.cls [draft] (AGU journals)",
-          "copernicus: copernicus.cls [acp,manuscript] (Copernicus / EGU journals)",
+          "copernicus: copernicus.cls patched for XeTeX [acp,manuscript] (Copernicus / EGU journals)",
           "jss: jss.cls [article] (Journal of Statistical Software)",
           "frontiers: FrontiersinHarvard.cls (Frontiers journals)",
-          "ieeeaccess: ieeeaccess.cls (IEEE Access)",
+          "ieeeaccess: ieeeaccess-latexlib.cls, IEEE Access's ieeeaccess.cls patched for XeTeX (IEEE Access)",
           "plos: article with the PLOS template preamble and plos2025.bst (PLOS journals)",
           "ieeeconf-ras: IEEE ieeeconf.cls [letterpaper,10pt,conference] (ICRA, IROS and other IEEE RAS conferences)",
           "corl: article with corl_2026.sty (CoRL)",
@@ -111,7 +159,11 @@
         ],
         "handlers": []
       },
-      "why": "More journal and conference formats, at the owner's word ('start preparing batch 3 that contains more journal and conference', 2026-11-05), picked by use: three more modes of batch 1 classes, nine publisher classes and six conference kits. The kits and publisher classes not in MiKTeX 9766 come from each publisher's or conference's own site or GitHub organization and are listed in settings/classes/files/private.txt. Looked for and left out: svjour3 (Springer now points authors to sn-jnl, in batch 1), PNAS and SAGE (their templates are on Overleaf only), PoS (behind a login), and Wiley (its NJD class is gone; the new USG.cls design can come later)."
+      "why": "More journal and conference formats, at the owner's word ('start preparing batch 3 that contains more journal and conference', 2026-11-05), picked by use: three more modes of batch 1 classes, nine publisher classes and six conference kits. The kits and publisher classes not in MiKTeX 9766 come from each publisher's or conference's own site or GitHub organization and are listed in settings/classes/files/private.txt. Looked for and left out: svjour3 (Springer now points authors to sn-jnl, in batch 1), PNAS and SAGE (their templates are on Overleaf only), PoS (behind a login), and Wiley (its NJD class is gone; the new USG.cls design can come later).",
+      "held": [
+        "copernicus: its patched XeTeX class probes clean (probe run 41977413848), but Latex-Lib has no class profile for it yet; joins the next round",
+        "ieeeaccess: its patched XeTeX class probes clean (probe run 41977413848), but Latex-Lib has no class profile for it yet; joins the next round"
+      ]
     }
   ]
 }
