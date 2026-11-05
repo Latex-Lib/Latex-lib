@@ -49,6 +49,17 @@ export default defineClass({
       { pkg: "titlesec", reason: "bmvc2k.cls redefines \\section, \\subsection and \\subsubsection with heading styles that end in \\flushleft\\textcolor{bmv@sectioncolor} (l.608-619); \\textcolor starts a paragraph (\\leavevmode), so titlesec, which runs the extracted style of each level a way does not \\titleformat, stops at \"Package titlesec Error: Entered in horizontal mode\"", evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/bmvc2k.cls (v0.22, 2026/04/02)', line: '608-619 (\\section... styles with \\textcolor)' }, { kind: 'compile', cell: 'b3p-1 probe (C:/dev/template-ai/probes/b3p-1/probe) G4-bmvc-cite main.log l.1276, 1347 (\\subsection in a doc that reformats only section, subsubsection, paragraph and part)' }] },
       // b29 (B3B-11): tocloft's [subfigure] option would adapt it, but no way gives it.
       { pkg: "tocloft", reason: "bmvc2k.cls loads subfigure (l.151), which makes the lofdepth and lotdepth counters; tocloft, unless given its subfigure option, makes them again: 'Command \\c@lofdepth already defined' (tocloft.sty l.856)", evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/bmvc2k.cls', line: '151' }, { kind: 'compile', cell: 'GitHub run b28-e9f730a, bmvc.A documents dde31eb1c8f49ec69d2e5, df5405f17f20891eb330c, d71ae77d5108a97c793fc: l.856 \\newcounter{lofdepth}; 9 branches fail with this error' }] },
+      // b30 (B3E-BMVC-NOTE): the library's margin-note ways are denied for class.bmvc already (note.marginnote, note.marginpar,
+      // note.todonotes, note.sidenotes, note.notecolumn keys); this keeps General's margin note (marginnote+xcolor) out too.
+      // Flouest root: owner item MC3 (General's note should fall back to an in-text form where the class leaves no margin).
+      {
+        pkg: "marginnote",
+        reason: "bmvc2k's page has no margin for a note: geometry sets a 410pt x 620pt page with inner=9mm and outer=6mm (bmvc2k.cls l.246), a 25.6pt and a 17.1pt margin, so \\marginnote's text overflows at every word (General's margin note, marginnote+xcolor, failed 718 of 719 not-denied rows of GitHub run b29-6a43925, overfull hboxes of 12.64pt to 31.4pt, one word to a line)",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/bmvc2k.cls', line: '246 (geometry: papersize={410pt,620pt}, inner=9mm, outer=6mm)' },
+          { kind: 'compile', cell: 'GitHub run b29-6a43925, bmvc.A d0da78699a4f72a30e763 result 8847abdf83: General\'s note, "Package marginnote Info: xpos seems to be 25.60747pt", then one overfull line per word (12.64pt, 26.22pt, 17.05pt)' },
+        ],
+      },
     ],
     policy: [],
   },

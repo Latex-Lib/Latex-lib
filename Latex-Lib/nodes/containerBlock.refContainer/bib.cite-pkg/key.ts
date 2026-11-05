@@ -37,6 +37,15 @@ export default defineKey(
           { kind: 'compile', cell: 'b10 reference-list investigation: a repeated \\bibstyle in main.aux makes BibTeX fail and the build end (index4 no-bbl problems)' },
         ],
       },
+      // b30 (B3E-AGU-CITE): agujournal2025 loads apacite and sets its style itself, as plos's preamble does.
+      {
+        class: 'class.agu',
+        reason: "agujournal2025.cls loads apacite and calls \\bibliographystyle{apacite} while it loads (l.140, l.146), so main.aux always opens with \\bibstyle{apacite}; this way's own \\bibliographystyle writes a second one, which BibTeX rejects ('Illegal, another \\bibstyle command'), so no .bbl is made",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/agujournal2025.cls', line: '140 (\\RequirePackage{apacite}), 146 (\\bibliographystyle{apacite})' },
+          { kind: 'compile', cell: 'GitHub run b29-6a43925, agu.A: every branch holding bib.cite-pkg fails with doc no-bbl (187 rows in 14 documents, 0 passing; e.g. df61a865ebb3c2520c804, \\bibliographystyle{plain} at l.385)' },
+        ],
+      },
       // b2p (batch 2, G4): author-year natbib from the conference style, as for aa below; ascelike's own \bibliographystyle.
       {
         class: 'class.asmeconf',

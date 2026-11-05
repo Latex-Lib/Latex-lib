@@ -47,7 +47,7 @@
     },
     {
       "id": 2,
-      "status": "running",
+      "status": "closed",
       "classes": [
         "revtex4-2-aip",
         "acmart-acmsmall",
@@ -113,7 +113,8 @@
         ],
         "handlers": []
       },
-      "why": "The most used classes not in batch 1 that are on CTAN and MiKTeX (fetched on demand), plus three settings of batch 1 classes in their other common modes. To ship once their licence headers allow it: iopart (27k on arXiv), svjour3 (15.6k), PoS (9.9k), imsart (4.5k). After that: mitthesis, bxjsarticle, elegantbook, iacrj, and the publisher classes that must be shipped. Added on 2026-11-03 at the owner's request ('make the common journal and conference to be in batch 2'): jmlr [pmlr], quantumarticle, asmejour, asmeconf and ascelike, the common venue classes in MiKTeX 9766 (its aiaa-tc, ametsoc and IEEEconf are older than what those venues use now; IEEEtran covers IEEE). Then, at the owner's word ('add the big conference styles to batch 2'): NeurIPS, ICML, ICLR, ACL, CVPR, ECCV, AAAI, IJCAI, USENIX, ICASSP, AISTATS, COLM and TMLR, each a setting on article (ECCV on llncs) with the venue's own style file from its 2026/2027 author kit. Those kits are not in MiKTeX and carry no licence that allows a public copy, so their files are listed in settings/classes/files/private.txt and come in through the private companion, not the public tree. Interspeech's kit is on Overleaf only and is left for later."
+      "why": "The most used classes not in batch 1 that are on CTAN and MiKTeX (fetched on demand), plus three settings of batch 1 classes in their other common modes. To ship once their licence headers allow it: iopart (27k on arXiv), svjour3 (15.6k), PoS (9.9k), imsart (4.5k). After that: mitthesis, bxjsarticle, elegantbook, iacrj, and the publisher classes that must be shipped. Added on 2026-11-03 at the owner's request ('make the common journal and conference to be in batch 2'): jmlr [pmlr], quantumarticle, asmejour, asmeconf and ascelike, the common venue classes in MiKTeX 9766 (its aiaa-tc, ametsoc and IEEEconf are older than what those venues use now; IEEEtran covers IEEE). Then, at the owner's word ('add the big conference styles to batch 2'): NeurIPS, ICML, ICLR, ACL, CVPR, ECCV, AAAI, IJCAI, USENIX, ICASSP, AISTATS, COLM and TMLR, each a setting on article (ECCV on llncs) with the venue's own style file from its 2026/2027 author kit. Those kits are not in MiKTeX and carry no licence that allows a public copy, so their files are listed in settings/classes/files/private.txt and come in through the private companion, not the public tree. Interspeech's kit is on Overleaf only and is left for later.",
+      "closed": "Closed 2026-11-05 at 97.2% after round b29 (four runs: 75.8%, then 91.4% at b27, 96.8% at b28, 97.2% at b29), under the 97% rule."
     },
     {
       "id": 3,

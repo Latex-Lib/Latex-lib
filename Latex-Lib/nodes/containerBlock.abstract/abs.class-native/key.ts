@@ -73,6 +73,36 @@ export default defineKey(
         reason: "mdpi makes \\abstract a one-argument command whose text \\abstractkeywords prints once after the preamble, so \\begin{abstract} hands it its first token, which never prints, and sets the rest as body text",
         evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/Definitions/mdpi.cls', line: '692-693, 1325-1331' }, { kind: 'requirement', file: 'Template/template-requirement/MDPI.md', line: '66' }],
       },
+      // b30 (IEA-1): the classes abs.kernel denies for keeping the environment's abstract in a box (ieeeaccess, ecai, imsart),
+      // denied here too: the environment form is the same environment. The command form is theirs only under aa, mdpi and sn-jnl
+      // (onlyWhen), so no `unless`. The same interim as abs.kernel's: until Flouest prints one \maketitle after all front matter.
+      {
+        class: 'class.ieeeaccess',
+        reason:
+          "ieeeaccess-latexlib.cls keeps the abstract environment in box 99 (\\global\\setbox99=\\hbox{…minipage…}, l.625-634) for \\maketitle only, so a title-less document never prints it and a float or note in it is lost, as under abs.kernel",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/ieeeaccess-latexlib.cls', line: '625-634' },
+          { kind: 'compile', cell: 'GitHub run b29-6a43925, ieeeaccess.A: abs.class-native@environment 2 not-denied branches, 0 passing, both in document d180fcfe999dc8d5bf5a2 (result d713d3e985), which holds only class-native abstracts and shipped no page' },
+        ],
+      },
+      {
+        class: 'class.ecai',
+        reason:
+          "ecai keeps the abstract environment in \\abstract@box (\\global\\setbox\\abstract@box=\\vbox, ecai.cls l.766-772) for \\maketitle (l.849), so a title-less document never prints it and a float or note in it is lost, as under abs.kernel (b29 B3B-9)",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/ecai.cls (2023/12/10 v04)', line: '766-772, 849' },
+          { kind: 'compile', cell: 'GitHub run b29-6a43925, ecai.A: abs.class-native@environment 2 not-denied branches, 0 passing, both in document d180fcfe999dc8d5bf5a2, which shipped no page' },
+        ],
+      },
+      {
+        class: 'class.imsart',
+        reason:
+          "imsart.sty sets every abstract into \\abstract@box, a \\vbox (l.2218-2242), printed only by \\abstract@fmt in the front matter (l.2246-2252), so a title-less document never prints it and a float or note in it is lost, as under abs.kernel (b29 B3A-6)",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/imsart.sty', line: '2218-2252, 2423-2452' },
+          { kind: 'compile', cell: 'GitHub run b29-6a43925, imsart.A: abs.class-native@environment 2 not-denied branches, 0 passing, both in document d180fcfe999dc8d5bf5a2, which shipped no page' },
+        ],
+      },
     ],
     // The command form's body is \abstract's argument, kept for \maketitle (sn-jnl l.632 \long\def\abstract#1, mdpi l.693 \gdef\@abstract,
     // aa l.814-839, which expands it at once and prints it in its two-column title box): read as an argument, no verbatim child (a

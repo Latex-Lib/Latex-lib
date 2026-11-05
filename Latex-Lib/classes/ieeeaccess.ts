@@ -40,6 +40,16 @@ import ieeetran from './ieeetran.ts';
  *   at "already defined". \titlefont is \def'd (l.205), so scrextend, which defines it again, is refused.
  * - Page: two columns (ExecuteOptions l.47: a4paper, 10pt, twocolumn, twoside, lineno, journal; a4paper is 203.2mm x 276.2mm,
  *   l.24-26), \textwidth 177.53mm = 505.12pt (l.266), \columnsep 6.95mm (l.264), 10pt.
+ * - The abstract environment is \global\setbox99=\hbox{…minipage…} under a fixed ABSTRACT heading (l.608, l.625-634), which
+ *   only \maketitle prints: a float or note in it is 'Float(s) lost' and a title-less document never prints it (GitHub run
+ *   b29-6a43925: every not-denied 'Float(s) lost' and 'Not in outer par mode' cell held one). So abs.kernel and the
+ *   class-native abstract are denied under it (their keys, b30 IEA-1), as under ecai and imsart; General's abstract and
+ *   abs.abstract-pkg print in place.
+ * - Margins: 36.31pt left (\oddsidemargin 12.76mm, l.269-272) and 36.73pt right, IEEEtran's 20pt \marginparwidth and 10pt
+ *   \marginparsep (IEEEtran.cls l.1689-1690), so a note column has 16.31pt of room and keeps the class's 20pt, narrower than a
+ *   note's bold title; \ttdefault is pcr in T1 (l.256, l.1099), which never hyphenates ('courierNew' 48pt). The five
+ *   margin-note ways are denied under it (their keys, b30 IEA-2), as under asmeconf and cas-sc; General's margin note stays a
+ *   class failure (MC3).
  */
 export default defineClass({
   ...ieeetran,

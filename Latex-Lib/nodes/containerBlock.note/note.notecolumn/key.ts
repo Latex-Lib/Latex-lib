@@ -45,6 +45,17 @@ export default defineKey(
         ],
       },
       {
+        // b30 (IEA-2): as asmeconf (b28 MARGIN-1), a page whose margins leave no column a note fits in.
+        class: 'class.ieeeaccess',
+        reason:
+          "ieeeaccess leaves no margin a note fits in: its text block is 177.53mm (505.12pt, ieeeaccess-latexlib.cls l.266) on the a4paper option's 203.2mm (578.16pt) page (l.24-26), 36.31pt from the left edge (\\oddsidemargin 12.76mm, l.269-272) and 36.73pt from the right, and it keeps IEEEtran's 20pt \\marginparwidth beside a 10pt \\marginparsep (IEEEtran.cls l.1689-1690), and the room b22 MC1's fit gives a note column (the margin less \\marginparsep on either side, FIT_NOTE_COLUMN) is 16.31pt, so the class's 20pt column stays: narrower than the note's bold title (20.84pt in \\footnotesize), the line cas-sc (16.98pt) and asmeconf (14.14pt) are denied by, where oup-authoring-template's 29.57pt and acmsmall's 24pt stay. The class's T1 Courier (\\ttdefault pcr, l.256; \\encodingdefault T1, l.1099) never hyphenates, so a note's 'courierNew' (48pt at 8pt) overflows that column by 28.00003pt, and so does any unbreakable run wider than 30pt: a note column, as wide as \\marginparwidth, overflows at its first long word (GitHub run b29-6a43925, ieeeaccess.A: 693 not-denied note.notecolumn branches, 0 passing (the oracle charges a box while \\output is active to every scrlayer-notecolumn loader); 508 fail on a note's own overfull box and 175 only on the class's foot boxes, so the deny takes at most 175 passes once the feet are mended (25%)). An inline note way (box.*) prints in the text; General's margin note stays a class failure (owner item MC3).",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/ieeeaccess-latexlib.cls', line: '24-26 (a4paper 203.2mm), 256 (\\ttdefault pcr), 266 (\\textwidth 177.53mm), 269-272 (\\oddsidemargin 12.76mm), 1099 (\\encodingdefault T1)' },
+          { kind: 'source', file: 'IEEEtran.cls (V1.8b, which the class loads)', line: '1689-1690 (\\marginparsep 10pt, \\marginparwidth 20pt)' },
+          { kind: 'compile', cell: "GitHub run b29-6a43925, ieeeaccess.A: COMPAT-GEOMETRY oddLeft 36.3057pt; result 2191ca5157 l.1753, Overfull \\hbox (28.00003pt too wide), \\T1/pcr/m/n/8 courierNew; all five margin-note ways: 3,495 not-denied branches, 730 passing, 1,861 failing on the notes' own overfull boxes (28.00003pt 558, 11.60489pt 379, 40pt 305, 13.62976pt 275), and 864 failing only on the class's 505.12177pt foot boxes, which pass once the CI session's foot mend lands" },
+        ],
+      },
+      {
         class: 'class.asmeconf',
         reason:
           "asmeconf leaves no margin a note column fits in: its text block is 7.5in (542.03pt) on letter paper, 0.5in (36.14pt) from either edge (asmeconf.cls l.508, geometry left=0.5in, right=0.5in), and it keeps article's \\marginparsep (11pt, 10pt in two columns), so the room b22 MC1's fit gives a note column (the margin less \\marginparsep on either side, FIT_NOTE_COLUMN) is 14.14pt (GitHub probe b28-1, asmeconf.A: COMPAT-NOTEROOM \\marginparwidth 14.135pt beside \\marginparsep 11pt), narrower than the note's bold title (20.84pt in \\footnotesize) and than a five-letter word of its 8pt italic text ('short' overflowed it by 2.39pt), as under cas-sc (16.98pt). An inline note way (box.*) or General's note takes its place (b28 MARGIN-1)",

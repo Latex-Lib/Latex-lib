@@ -146,12 +146,12 @@ needs pdfLaTeX or LuaLaTeX only waits. Classes nobody writes papers in
 
 A batch closes when about 97% of its judged branches pass and going further would be hard
 (owner, 2026-11-05): what is left is then mostly real overflow in narrow measures. Batch 1
-closed at 96.9% after seven rounds.
+closed at 96.9% after seven rounds, batch 2 at 97.2% after round b29.
 
 | Batch | Status | Classes | Added |
 |---|---|---|---|
 | 1 | closed | 30 of the first 48 settings: article, report, book, beamer, amsart; revtex4-2 (APS), IEEEtran (journal, conference), aastex, elsarticle (preprint, 5p), cas-sc, cas-dc, acmart (sigconf, manuscript), aa, mnras, llncs, lipics, iopjournal, sn-jnl, siamart, mdpi; scrartcl, scrreprt, scrbook, memoir, exam, extarticle; tufte-handout | the first 46 class profiles and every handler of M1/M3 |
-| 2 | running | revtex4-2 (AIP), acmart (acmsmall), IEEEtran (compsoc); achemso, spie, oup-authoring-template, emulateapj, apa7, jacow, elegantpaper, ut-thesis; jmlr (PMLR), quantumarticle, asmejour, asmeconf, ascelike; conference styles on article: NeurIPS, ICML, ICLR, ACL, CVPR, ECCV (on llncs), AAAI, IJCAI, USENIX, ICASSP, AISTATS, COLM, TMLR | 13 classes from CTAN, 13 conference styles (their files private: settings/classes/files/private.txt) and 3 more settings of batch 1 classes, each under setup A only (their real use is one layout); settings drafted from each class's documentation and source and checked against the source |
+| 2 | closed | revtex4-2 (AIP), acmart (acmsmall), IEEEtran (compsoc); achemso, spie, oup-authoring-template, emulateapj, apa7, jacow, elegantpaper, ut-thesis; jmlr (PMLR), quantumarticle, asmejour, asmeconf, ascelike; conference styles on article: NeurIPS, ICML, ICLR, ACL, CVPR, ECCV (on llncs), AAAI, IJCAI, USENIX, ICASSP, AISTATS, COLM, TMLR | 13 classes from CTAN, 13 conference styles (their files private: settings/classes/files/private.txt) and 3 more settings of batch 1 classes, each under setup A only (their real use is one layout); settings drafted from each class's documentation and source and checked against the source |
 | 3 | running | ACM TOG and SIGPLAN modes of acmart, elsarticle 3p; iopart, imsart (AoS), interact (T&F), AGU, Copernicus, JSS, Frontiers, IEEE Access, PLOS; ICRA/IROS ieeeconf, CoRL, BMVC, AAMAS, ECAI, VLDB | 3 modes of batch 1 classes, 9 publisher classes and 6 conference kits; the files not in MiKTeX are private (settings/classes/files/private.txt); Copernicus and IEEE Access joined in round b29, with their class profiles |
 
 Left out of batch 1, as rarely used or out of scope (their settings stay, in no

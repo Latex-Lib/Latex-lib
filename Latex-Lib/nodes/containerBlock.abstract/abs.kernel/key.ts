@@ -85,6 +85,17 @@ export default defineKey(
           { kind: 'compile', cell: 'GitHub run b28-e9f730a, imsart.A: 1,619 not-denied abs.kernel@unindented branches, 367 passing; of the 1,070 not failing on \\c@author, remark or \\singlespacing, 389 at "Float(s) lost", 120 in no-page documents, 28 sentinel:missing (document d791c6d19dde34f9284e9, result 150a34ddff4d)' },
         ],
       },
+      {
+        // b30 (IEA-1): as ecai and imsart, a class that keeps the abstract in a box for \maketitle; the same interim deny until
+        // Flouest prints one \maketitle after all front matter (revtex O3). abs.class-native is denied with it (its key).
+        class: 'class.ieeeaccess',
+        reason:
+          "ieeeaccess-latexlib.cls renews the abstract environment as \\global\\setbox99=\\hbox{…\\begin{minipage}…} under a fixed ABSTRACT heading (l.608, l.625-634), and only \\maketitle prints box 99: a figure, table or margin note in it is 'Float(s) lost' at \\end{document} ('Not in outer par mode' for a float that needs one), each abstract overwrites the one before, and a title-less document never prints it (no page, or its sentinels missing). General's abstract and abs.abstract-pkg (abstract.sty replaces the environment) print where they stand.",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/ieeeaccess-latexlib.cls', line: '608 (\\abstracttitle), 625-634 (\\renewenvironment{abstract}: \\global\\setbox99)' },
+          { kind: 'compile', cell: 'GitHub run b29-6a43925, ieeeaccess.A: 1,568 not-denied abs.kernel branches, 375 passing (372 of them shipped no sentinel of their own, b29 CI analysis); of the 1,193 failing, 456 Float(s) lost, 331 in no-page documents, 85 sentinel:missing, 14 Not in outer par mode; every one of the 30 not-denied cells whose first error is Float(s) lost and the 8 whose first error is Not in outer par mode holds an abs.kernel abstract (document deb6c524ab892103577ff, result 147c08911b: Float(s) lost at l.1146 \\end{document}, then no pages)' },
+        ],
+      },
     ],
     zerotex: 'untested',
   }),

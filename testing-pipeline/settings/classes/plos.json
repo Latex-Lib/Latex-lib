@@ -1,6 +1,6 @@
 {
   "id": "plos",
-  "description": "PLOS's LaTeX template (plos_latex_template.tex of 2026-04-10, with plos2025.bst) from PLOS_latex_template.zip on journals.plos.org (plosone/s/file?id=1457, linked from journals.plos.org/plosone/s/latex). PLOS has no class: the template is article [10pt,letterpaper] with a preamble, so like the conference styles this setting is article plus the template's layout lines. No licence in the zip (kept private). Kept from the template: geometry (top=0.85in, left=2.75in, footskip=0.75in, the wide left margin), changepage, textcomp, marvosym, nameref, lineno [right] (loaded only; \\linenumbers is the document's), microtype [nopatch=eqnum] (its \\DisableLigatures[f] line is dropped: microtype cannot disable ligatures under XeTeX), xcolor [table], array with the template's + column type and \\thickcline/\\thickhline, \\raggedright with a 0.5cm \\parindent, the 5.25in x 8.75in text block, caption with bold labels and a period, 'Fig' as \\figurename, the numbered \\@biblabel, \\bibliographystyle{plos2025} (plos2025.bst shipped), and fancyhdr's footer (page/last page and \\today, offset 2.25in into the margin). Left out: cite (General loads natbib or biblatex, and biblatex refuses cite), hyperref (General loads it), epstopdf (a pdfTeX helper), and the template's \\lorem/\\ipsum demo macros.",
+  "description": "PLOS's LaTeX template (plos_latex_template.tex of 2026-04-10, with plos2025.bst) from PLOS_latex_template.zip on journals.plos.org (plosone/s/file?id=1457, linked from journals.plos.org/plosone/s/latex). PLOS has no class: the template is article [10pt,letterpaper] with a preamble, so like the conference styles this setting is article plus the template's layout lines. No licence in the zip (kept private). Kept from the template: geometry (top=0.85in, left=2.75in, footskip=0.75in, the wide left margin), changepage, textcomp, marvosym, nameref, lineno [right] (loaded only; \\linenumbers is the document's), microtype [nopatch=eqnum] (its \\DisableLigatures[f] line is dropped: microtype cannot disable ligatures under XeTeX), xcolor [table], array with the template's + column type and \\thickcline/\\thickhline, \\raggedright with a 0.5cm \\parindent, the 5.25in x 8.75in text block, caption with bold labels and a period, 'Fig' as \\figurename, the numbered \\@biblabel, \\bibliographystyle{plos2025} (plos2025.bst shipped), and fancyhdr's footer (page/last page and \\today, offset 2.25in into the margin). Left out: cite (General loads natbib or biblatex, and biblatex refuses cite), hyperref (General loads it), epstopdf (a pdfTeX helper), and the template's \\lorem/\\ipsum demo macros. Port choice (b30 B3F-1): \\reversemarginpar with a 2in \\marginparwidth sets margin notes in the template's 2.75in left margin, the room it keeps beside the text (its footer and adjustwidth tables use it); the 0.5in right margin leaves a 14.14pt note column once General fits it to the paper.",
   "class": "article",
   "options": [
     "10pt",
@@ -35,7 +35,8 @@
     "\\renewcommand{\\footrule}{\\hrule height 2pt \\vspace{2mm}}",
     "\\fancyheadoffset[L]{2.25in}",
     "\\fancyfootoffset[L]{2.25in}",
-    "\\lfoot{\\today}"
+    "\\lfoot{\\today}",
+    "\\reversemarginpar\\setlength{\\marginparwidth}{2in}"
   ],
   "files": [
     {
