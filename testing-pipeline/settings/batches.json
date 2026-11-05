@@ -134,7 +134,9 @@
         "bmvc",
         "aamas",
         "ecai",
-        "vldb"
+        "vldb",
+        "copernicus",
+        "ieeeaccess"
       ],
       "added": {
         "classes": [
@@ -159,11 +161,7 @@
         ],
         "handlers": []
       },
-      "why": "More journal and conference formats, at the owner's word ('start preparing batch 3 that contains more journal and conference', 2026-11-05), picked by use: three more modes of batch 1 classes, nine publisher classes and six conference kits. The kits and publisher classes not in MiKTeX 9766 come from each publisher's or conference's own site or GitHub organization and are listed in settings/classes/files/private.txt. Looked for and left out: svjour3 (Springer now points authors to sn-jnl, in batch 1), PNAS and SAGE (their templates are on Overleaf only), PoS (behind a login), and Wiley (its NJD class is gone; the new USG.cls design can come later).",
-      "held": [
-        "copernicus: its patched XeTeX class probes clean (probe run 41977413848), but Latex-Lib has no class profile for it yet; joins the next round",
-        "ieeeaccess: its patched XeTeX class probes clean (probe run 41977413848), but Latex-Lib has no class profile for it yet; joins the next round"
-      ]
+      "why": "More journal and conference formats, at the owner's word ('start preparing batch 3 that contains more journal and conference', 2026-11-05), picked by use: three more modes of batch 1 classes, nine publisher classes and six conference kits. The kits and publisher classes not in MiKTeX 9766 come from each publisher's or conference's own site or GitHub organization and are listed in settings/classes/files/private.txt. Looked for and left out: svjour3 (Springer now points authors to sn-jnl, in batch 1), PNAS and SAGE (their templates are on Overleaf only), PoS (behind a login), and Wiley (its NJD class is gone; the new USG.cls design can come later)."
     }
   ]
 }

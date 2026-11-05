@@ -41,7 +41,8 @@ export type ClassProfile = {
   readonly forbids: {
     readonly technical: readonly ClassPackageRule[];
     readonly policy: readonly ClassPackageRule[];
-    /** Names it defines but refuses, read from its source (llncs's `\subparagraph` prints a warning that recurses): a heading at a level listed here, a way whose key requires the name, or General's way that prints it (iopjournal's \maketitle, siamart's \tableofcontents), is compiled under no cell of the class unless one of the branch's own ways loads a package in `unlessLoaded` (sectsty). */
+    /** Names it defines but refuses, or lacks though a way or General's own way would print them (frontiers' and agu's
+     * \tableofcontents: `defines` holds a class only to environments, \maketitle and sectioning counters), read from its source (llncs's `\subparagraph` prints a warning that recurses): a heading at a level listed here, a way whose key requires the name, or General's way that prints it (iopjournal's \maketitle, siamart's \tableofcontents), is compiled under no cell of the class unless one of the branch's own ways loads a package in `unlessLoaded` (sectsty). */
     readonly names?: readonly ClassNameRule[];
   };
   readonly layout: { readonly columns: 1 | 2; readonly textwidth: string; readonly fontsize: string } | null;

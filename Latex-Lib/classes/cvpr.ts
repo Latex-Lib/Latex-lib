@@ -15,6 +15,10 @@ import { defineClass } from '../schema/class.ts';
  * Preloads model a class package loaded before the document's, so the clash is written as a refusal (`forbids.technical`).
  * Its numbered \section, \subsection and \subsubsection print \texorpdfstring (l.326-342), which only hyperref defines: the
  * setting must load hyperref or provide \texorpdfstring (notes for the CI session, b2p G5), or every numbered heading stops.
+ * The same \section, \subsection and \subsubsection are \@ifstar wrappers (l.326-342), not \@startsection, so titlesec
+ * extracts no format for them, and a heading at a level the document gives no \titleformat stops at "Package titlesec Error:
+ * No format for this command" (run b28-e9f730a: 488 branches); the setting gives titlesec the style's formats in a
+ * package/titlesec/after hook (b29 B2A, as asmeconf's), so titlesec stays allowed.
  * Text block 6.875in by 8.875in (l.232-234); two columns from the class option.
  * The names after article's are the style's own: eso-pic and everyshi inlined (l.72-180: a later \usepackage{eso-pic} or
  * {everyshi} meets "already defined"), \thetitle (made by its \title, l.476), \maketitlesupplementary and the Latin abbreviations.

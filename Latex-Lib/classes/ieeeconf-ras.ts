@@ -4,7 +4,8 @@ import { defineClass } from '../schema/class.ts';
  * IEEE RAS conferences (ICRA, IROS, PaperPlaza): ieeeconf.cls, "2016/4/23 revision V1.6b by Pradeep Misra", a renamed
  * IEEEtran V1.6b (2002/11/18), from ieeeconf.zip (testing-pipeline/settings/classes/files/ieeeconf.cls), with the setting's
  * options letterpaper, 10pt, conference and its preamble (\IEEEoverridecommandlockouts, \overrideIEEEmargins, and a hook
- * that clears the class's \proof before amsthm loads). Not measured by the class probe (batch 3, b3p).
+ * that clears the class's \proof before amsthm loads, plus the CI session's \labelindent hook, \if@titlepage and
+ * \abstractname lines, see below). Not measured by the class probe (batch 3, b3p).
  * - Loads no package. `base` is class.ieeetran: the same IEEEtran code, so its key rules hold (sectsty: the class is not
  *   article, report, book or KOMA, sectsty.sty l.278-295; the class-native theorem way's `only`, the kernel's \newtheorem).
  * - \appendices is \def'd (l.4103), so appendix.sty's \newenvironment{appendices} stops at "Command \appendices already
@@ -19,7 +20,13 @@ import { defineClass } from '../schema/class.ts';
  *   biography, biographynophoto, \IEEEmembership, \authorblockN, \authorblockA, \today (l.3263), \bstctlcite.
  * - Page: two columns and oneside by default (l.797), \textwidth 7.0in = 505.89pt with \columnsep 0.2in (l.1165-1166),
  *   10pt. \rmdefault ptm, \sfdefault phv, \ttdefault pcr (l.790-792), which General's fontspec lines replace under XeTeX.
- * - b3p-1 probe (verify-V2): abstract.sty (\if@titlepage, which V1.6b lacks) and enumitem (\labelindent, l.1444) stop while they load: both refused.
+ * - abstract.sty and enumitem: the b3p-1 probe (verify-V2) saw abstract.sty stop at \if@titlepage (abstract.sty l.57, 103;
+ *   V1.6b has only the titlepage environment, l.1820-1822) and enumitem at "Command \labelindent already defined" (the class's
+ *   \newdimen\labelindent, l.1444), so b3p refused both. The setting's preamble now declares \if@titlepage when undefined,
+ *   gives \providecommand\abstractname{Abstract} (V1.6b has none; abstract.sty prints it) and clears \labelindent in a
+ *   package/enumitem/before hook, so enumitem allocates it afresh and the class's list code reads that register (CI session;
+ *   its probes b3opt ras-enumitem-1, ras-lists-1 and b3opt2 ras-abstract-2 have 0 errors, against 7 and 1 for the -0 cases):
+ *   both refusals are lifted (b3q).
  */
 export default defineClass({
   id: 'class.ieeeconf-ras',
@@ -33,8 +40,6 @@ export default defineClass({
     technical: [
       { pkg: "appendix", reason: "ieeeconf.cls (IEEEtran V1.6b) defines \\appendices itself (l.4103: \\def\\appendices), so appendix.sty's \\newenvironment{appendices} fails while the package loads: LaTeX Error: Command \\appendices already defined (appendix.sty l.241), as class.ieeetran", evidence: [{ kind: 'source', file: 'ieeeconf.cls (2016/4/23 V1.6b, testing-pipeline/settings/classes/files)', line: '4103' }] },
       { pkg: "sectsty", reason: "ieeeconf is not article, report, book or a KOMA class, and sectsty stops at 'The sectsty package doesn't work with this document class' for any other (sectsty.sty l.278-295; class.ieeetran's deny in head.sectsty holds through `base` too)", evidence: [{ kind: 'source', file: 'sectsty.sty (MiKTeX snapshot 9766)', line: '278-295' }] },
-      { pkg: "abstract", reason: "abstract.sty tests \\if@titlepage while it loads (abstract.sty l.57, 103), which ieeeconf.cls never declares: \"Undefined control sequence. l.57 \\if@titlepage\", then \"Extra \\else\" and \"Extra \\fi\" (as beamer, revtex4-2, aastex and quantumarticle)", evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/ieeeconf.cls', line: 'whole file: no \\newif\\if@titlepage (IEEEtran V1.6b has only the titlepage environment, l.1820-1822)' }, { kind: 'compile', cell: 'b3p-1 probe (C:/dev/template-ai/probes/b3p-1/probe) G3-ieeeconf-ras-headings main.log l.916-950, 1913 (\\abstractnamefont)' }] },
-      { pkg: "enumitem", reason: "ieeeconf.cls allocates \\labelindent itself (\\newdimen\\labelindent, l.1444), and enumitem allocates it again while it loads: \"LaTeX Error: Command \\labelindent already defined\"", evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/ieeeconf.cls', line: '1444 (\\newdimen\\labelindent)' }, { kind: 'compile', cell: 'b3p-1 probe (C:/dev/template-ai/probes/b3p-1/probe) G3-ieeeconf-ras-headings main.log l.988' }] },
     ],
     policy: [],
   },
@@ -48,6 +53,7 @@ export default defineClass({
     { kind: 'source', file: 'ieeeconf.cls', line: '3263 (\\today), 3350 (thebibliography), 3589 (\\maketitle), 3797-3816 (abstract, keywords)' },
     { kind: 'source', file: 'ieeeconf.cls', line: '3922-3948 (\\section, \\proof, \\endproof), 4064-4103 (\\appendix, \\appendices)' },
     { kind: 'source', file: 'ieeeconf.cls', line: '4531-4572 (conference lockouts, \\IEEEoverridecommandlockouts)' },
-    { kind: 'source', file: 'testing-pipeline/settings/classes/ieeeconf-ras.json', line: '1' },
+    { kind: 'source', file: 'testing-pipeline/settings/classes/ieeeconf-ras.json (CI session, 2026-11-05)', line: 'preamble: \\IEEEoverridecommandlockouts, \\overrideIEEEmargins, package/amsthm/before and package/enumitem/before hooks, \\@ifundefined{if@titlepage}{\\newif\\if@titlepage}{}, \\providecommand\\abstractname{Abstract}' },
+    { kind: 'compile', cell: 'CI probes C:/dev/template-ai/probes/b3opt: ras-abstract-0 7 errors, ras-abstract-1 1, ras-enumitem-0 1, ras-enumitem-1 0, ras-lists-1 0; b3opt2 ras-abstract-2 0' },
   ],
 });

@@ -146,9 +146,16 @@ import { CROSS_PASS, damagingWarnings, type Damage } from './warnings.ts';
  * passed a late note on such a note; r4 failed it once the note moved a page up). And in a document that loads sidenotes,
  * a page that overflowed with no owner, made after every page a sentinel shipped on, goes to its loaders on a settled
  * build (PG-15: the notes' material the document's end put out; r4: 314 rows in 13 cells of d37aaf48d89d741f51641; probe
- * b25-1's amsart.A pair: 36.71075pt to none with every `\sidenote` dropped).
+ * b25-1's amsart.A pair: 36.71075pt to none with every `\sidenote` dropped). 10 (b29, after GitHub run b28-e9f730a judged
+ * with 9): an hbox overfull in a paragraph by exactly the text's fixed `\rightskip`, which the sentinel preamble logs as
+ * `COMPAT-GEOMETRY{rightSkip}` (`sentinels.ts`), is not charged (`fixedRightSkip`, O10-RSKIP): its content is exactly the line
+ * wide and ends at the text block's edge; only the skip lies past it. agujournal2025's draft layout sets a fixed 24pt for its
+ * whole text (l.910-913), and b28's agu.A failed 6,932 not-denied rows on 24pt (and 23.99998pt) overfull boxes, 6,101 of them
+ * branches in a tcolorbox or mdframed box the line wide. The b29 probe proved the mechanism: each of the 64 boxes of agu
+ * document d18afd388a094cff9c219 ends `\glue(\rightskip) 24.0` (B3C-agu-diag), and none is left with the skip reset to 0pt
+ * (B3C-agu-rskip0).
  */
-export const ORACLE_VERSION = 9;
+export const ORACLE_VERSION = 10;
 
 /** What one branch of the document is expected to show: the sentinels its host placed, and the features its ways declare. */
 export type Expected = {
@@ -509,6 +516,24 @@ export const judge = (input: {
   const citesOnly = (damage: Damage): boolean =>
     damage.unresolvedCite === true && (damage.amount ?? Infinity) <= CITE_GROWTH_PT + options.horizontalTolerancePt;
   /**
+   * An hbox overfull in a paragraph by the text's fixed `\rightskip` (natural width, logged at `\begin{document}`), to within
+   * 0.01pt (O10-RSKIP). A box exactly the line wide set in such a paragraph leaves the right skip, which cannot shrink, past
+   * the line's end: TeX reports the skip's width, while what prints ends at the text block's edge. Only an exact match, so a
+   * real overflow in a minipage, a p column or a \centering paragraph (each resets \rightskip) is still charged.
+   */
+  const fixedRightSkip = (damage: Damage): boolean => {
+    const skip = geometry?.rightSkip;
+    return (
+      damage.name === 'overfull-hbox' &&
+      damage.output !== true &&
+      damage.line !== undefined &&
+      skip !== undefined &&
+      skip > 0 &&
+      damage.amount !== undefined &&
+      Math.abs(damage.amount * SP_PER_PT - skip) <= 0.01 * SP_PER_PT
+    );
+  };
+  /**
    * An hbox overfull while \output is active that no branch's box matches, whose display is a running head. book's headings page
    * style sets \MakeUppercase'd titles in a head line the text width wide (classes.dtx l.1640-1641, l.1688), so a chapter or
    * section title holding Flouest's paragraph sample overflows on every page that shows it (book.A d8d8de18ba93c2f2ad0c0 result
@@ -536,6 +561,7 @@ export const judge = (input: {
   };
   for (const damage of damagingWarnings(reading, { hboxTolerancePt: options.horizontalTolerancePt, vboxTolerancePt: options.verticalTolerancePt })) {
     if (!settled && (CROSS_PASS.has(damage.name) || citesOnly(damage))) continue;
+    if (fixedRightSkip(damage)) continue;
     const failure = { check: `warning:${damage.name}`, evidence: damage.text };
     if (damage.name === 'labels-changed' && notecolumn().length > 0) {
       fail(notecolumn(), failure);

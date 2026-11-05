@@ -27,6 +27,15 @@ export default defineKey(
     presets: PRESETS,
     deny: [
       {
+        class: 'class.bmvc',
+        reason:
+          "bmvc2k's page has no margin for a note: geometry sets a 410pt x 620pt page with inner=9mm and outer=6mm (bmvc2k.cls l.246), a 25.5pt and a 17.1pt margin, so \\marginnote's text overflows at every word or runs off the paper (round b28 bmvc.A: 1,169 overfull-hbox rows, 223 off the paper; the passes are notes that held no sentinel)",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/bmvc2k.cls', line: '246 (geometry: papersize={410pt,620pt}, inner=9mm, outer=6mm)' },
+          { kind: 'compile', cell: 'GitHub run b28-e9f730a, bmvc.A: the note ways fail 3,233 not-denied rows (overfull hboxes while \\output is active, 31.39998pt and 18.32pt the commonest; sentinel:off-paper 445) and pass 294, all branches whose note held no sentinel' },
+        ],
+      },
+      {
         class: 'class.beamer',
         reason:
           "a slide has no margin for a note: beamer loads geometry with hmargin=1cm, a 28.45pt margin, and leaves \\marginparwidth, the width \\marginnote sets its text in, at 4pt, so every word overflows (\"Overfull \\hbox (13.631pt too wide)\" at the word 'bold'); a width that holds text runs off the paper",

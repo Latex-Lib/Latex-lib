@@ -62,6 +62,14 @@ export default defineKey(
         reason: "agujournal2025 loads apacite (l.1970), whose thebibliography has no list counter (apacite.sty l.1199-1235): a numeric style's \\bibitem{key} stops at 'Undefined control sequence' (\\@listctr), as bib.thebibliography's does (b3p probe G2-agu-thebib), and apacite's \\cite (=\\shortcite, l.1972) reads apacite.bst's author-year labels; the class's bibliography is bib.apacite",
         evidence: [{ kind: 'source', file: 'apacite.sty (MiKTeX package apacite, 2013/07/21 v6.03)', line: '1199-1235' }, { kind: 'source', file: 'testing-pipeline/settings/classes/files/agujournal2025.cls', line: '1939-1957, 1970-1972' }],
       },
+      // b3p G2-D1, b3q: copernicus loads natbib [authoryear,round] itself (copernicus.cls l.2043-2045, the XeTeX-patched copy) and
+      // sets no \bibliographystyle, so a numeric or alpha style's \bibitem stops natbib as under aa (CA2).
+      {
+        class: 'class.copernicus',
+        unless: { bst: 'apalike' },
+        reason: "copernicus.cls loads natbib with authoryear,round (l.2044, \\bibpunct{(}{)}{;}{a}{,}{,~} l.2045) and gives no \\bibliographystyle, so a numeric or alpha style's \\bibitem has no Author(Year) label and natbib stops at 'Bibliography not compatible with author-year citations'",
+        evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/copernicus.cls', line: '2043-2045' }],
+      },
       {
         class: 'class.neurips',
         unless: { bst: 'apalike' },

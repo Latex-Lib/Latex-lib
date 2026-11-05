@@ -27,6 +27,17 @@ export default defineKey(
     presets: PRESETS,
     deny: [
       {
+        class: 'class.bmvc',
+        reason:
+          "each note is drawn in the margin, and bmvc2k's 410pt x 620pt page has inner=9mm and outer=6mm margins (bmvc2k.cls l.246), 25.5pt and 17.1pt: every note overflows (round b28 bmvc.A: 419 overfull-hbox rows, 0 passes)",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/bmvc2k.cls', line: '246 (geometry: papersize={410pt,620pt}, inner=9mm, outer=6mm)' },
+          { kind: 'compile', cell: 'GitHub run b28-e9f730a, bmvc.A: the note ways fail 3,233 not-denied rows and pass 294, all branches whose note held no sentinel' },
+        ],
+        // Inline, a note prints in the text at \linewidth, not in the margin (as for beamer).
+        unless: { inline: true },
+      },
+      {
         class: 'class.beamer',
         reason:
           "each note is drawn \\marginparwidth wide in the margin, which beamer leaves at 4pt in a 28.45pt margin (geometry, hmargin=1cm): todonotes warns \"The length marginparwidth is less than 2cm\", every word overflows (\"Overfull \\hbox (32.5549pt too wide)\" at 'escapes'), and the 2cm it asks for would run 38.4pt off the paper; \\todo is a \\marginpar, so in beamer's theorem blocks, which are boxes, its content is lost too",

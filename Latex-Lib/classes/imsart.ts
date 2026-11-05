@@ -20,6 +20,12 @@ import { defineClass } from '../schema/class.ts';
  *   \maketitle, defined while the preamble loads, is replaced by it there, so titling's formats do not show (no error).
  * - \@sect is imsart's (l.1685, the dot after a section number); the headings stay article's \@startsection commands.
  * - Page: 405bp x 646bp (l.282), \@settopoint'ed: \textwidth 406pt; 11pt; one column.
+ * - The abstract environment is a \vbox kept for the front matter (\abstract@box, l.2218-2252), so abs.kernel is denied
+ *   under it (abs.kernel's key, b29 B3A-6); abs.abstract-pkg replaces the environment and stays.
+ * - The setting's preamble (b29, B3A-2/3/5) mends three class facts General's LaTeX meets: biblatex's \newcounter{author}
+ *   against imsart.sty's (l.1887), General's \theoremstyle{remark}, which the aos layout refuses (l.4764-4778: "change
+ *   \theoremstyle{remark} to \theoremstyle{definition}"), and setspace's \singlespacing and \doublespacing against
+ *   imsart.sty's \def's (l.432-433), which its floats use (\@floatboxreset, l.1394-1397).
  */
 export default defineClass({
   id: 'class.imsart',

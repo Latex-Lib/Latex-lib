@@ -32,6 +32,18 @@ export default defineKey(
         evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/siamart251216.cls', line: '75-76, 178, 201 (\\if@titlepage and notitlepage; no titlepage environment)' }],
       },
       {
+        // b29 (B3B-6): profiles rarely list env:titlepage (aistats, icassp and 25 more pass with it unlisted), so a `requires`
+        // would deny where it passes; these two are measured.
+        class: 'class.frontiers',
+        reason: 'FrontiersinHarvard is a standalone class (it loads no class, l.1-40) with no titlepage environment: "Environment titlepage undefined"',
+        evidence: [{ kind: 'compile', cell: 'GitHub run b28-e9f730a, frontiers.A: all 14 not-denied front.titlepage-env branches fail so (e.g. document d7fa5029e0b9da4328c6d)' }],
+      },
+      {
+        class: 'class.agu',
+        reason: "agujournal2025's manuscript branch is a class of its own with no titlepage environment: \"Environment titlepage undefined\"",
+        evidence: [{ kind: 'compile', cell: 'GitHub run b28-e9f730a, agu.A: 11 front.titlepage-env branches fail so (e.g. document d28ea196a0edf0bff0530)' }],
+      },
+      {
         class: 'class.oup-authoring-template',
         reason: 'oup-authoring-template is a standalone class (not built on article) with no titlepage environment: "Environment titlepage undefined" at \\begin{titlepage}, as under memoir',
         evidence: [{ kind: 'compile', cell: 'GitHub run b12-5bdc624, oup-authoring-template.A: front.titlepage-env 14 of 14 branches fail so' }],

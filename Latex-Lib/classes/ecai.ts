@@ -41,6 +41,8 @@ export default defineClass({
         reason: "ecai.cls loads natbib with numbers at its end (l.1325), whose \\NAT@set@cites at \\begin{document} installs a two-optional \\@citex; cite.sty, which only bib.cite-pkg loads, redefines \\cite to call \\@citex with one optional argument, so every citation scans on to the paragraph's end: 'Paragraph ended before \\@citex was complete' (as cvpr and asmeconf; b2p probe G4-asmeconf-citepkg)",
         evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/ecai.cls (2023/12/10 v04)', line: '1325-1327 (\\usepackage[numbers]{natbib}, \\bibfont, \\bibliographystyle{abbrvnat})' }],
       },
+      // b29 (B3B-10): as frontiers and agu.
+      { pkg: "sectsty", reason: "ecai.cls is a class of its own (\\ProvidesClass{ecai}, l.38, no \\LoadClass), and sectsty stops at 'The sectsty package doesn't work with this document class' for any class other than article, report, book or a KOMA class (sectsty.sty l.278-295)", evidence: [{ kind: 'source', file: 'sectsty.sty (MiKTeX snapshot 9766)', line: '278-295' }, { kind: 'compile', cell: 'GitHub run b28-e9f730a, ecai.A: 98 branches fail with this error (e.g. document d8b6d117ea11127dfff5f)' }] },
     ],
     policy: [],
   },

@@ -7,9 +7,9 @@ import { defineClass } from '../schema/class.ts';
  * - Not built on article (no \LoadClass): it defines its own sizes, counters section to subparagraph, figure, subfigure and
  *   table (l.325-332), abstract (l.517), \section... with \@startsection (l.531-555), figure and table floats (l.596-609),
  *   enumerate, itemize, quotation and quote (l.724-797), thebibliography (l.851) and \appendix (l.870). It has no part counter,
- *   no \tableofcontents or \listoffigures, and no description, verse or titlepage environment: a way that requires
- *   \tableofcontents is unfit here (no name of that kind is listed), and a document's description list stops at
- *   "Environment description undefined" (no library way requires env:description, so that is the document's).
+ *   no \tableofcontents or \listoffigures, and no description, verse or titlepage environment of its own: a way that
+ *   requires \tableofcontents is unfit here (no name of that kind is listed). The setting's preamble (CI session, b3q) defines
+ *   description with \descriptionlabel when the class has none, as article's list, so env:description is listed.
  * - Preloads (l.25-40, l.863): inputenc [utf8], crop [a4,off,center,info] (ExecuteOptions l.27: a4paper, nocrop, centre,
  *   info), graphicx [paper], amsmath, array, color, amssymb, flushend, stfloats, amsthm, chngpage, times, datetime, epstopdf,
  *   parskip (requested as [=v1]), xcolor [usenames,dvipsnames], caption [labelsep=quad,indention=10pt], subcaption
@@ -31,7 +31,11 @@ import { defineClass } from '../schema/class.ts';
  * - Page: \twocolumn at the class's end (l.903), \textwidth 42pc = 504pt (l.152), \normalsize 12pt on 12pt (l.52-53).
  *   \maketitle includes ./logo1.eps (l.486), shipped with the setting, and prints \Authors, \Address, \corrAuthor,
  *   \corrEmail and \firstAuthorLast, which the setting's preamble defines (l.496-504, l.240-245).
- * - b3p-1 probe (verify-V2): abstract.sty (\if@titlepage) and enumitem (\renewenvironment{description}) stop while they load: both refused.
+ * - abstract.sty and enumitem: the b3p-1 probe (verify-V2) saw abstract.sty stop at \if@titlepage (abstract.sty l.57, 103)
+ *   and enumitem at \renewenvironment{description} (enumitem.sty l.1853), so b3p refused both. The setting's preamble now
+ *   declares \if@titlepage when undefined and defines description (CI session; its probes b3opt fr-abstract-1,
+ *   fr-enumitem-1 and fr-description-1 have 0 errors, against 6 and 1 for the -0 cases without those lines), and the class
+ *   has \abstractname (l.349): both refusals are lifted (b3q). enumitem allocates \labelindent itself (the class has none).
  */
 export default defineClass({
   id: 'class.frontiers',
@@ -45,16 +49,17 @@ export default defineClass({
     {"pkg": "caption", "options": ["labelsep=quad", "indention=10pt"]}, {"pkg": "subcaption", "options": ["labelfont=bf", "list=true"]},
     {"pkg": "natbib"},
   ],
-  defines: ["counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "counter:figure", "counter:subfigure", "counter:table", "env:abstract", "env:figure", "env:table", "env:thebibliography", "env:methods", "env:processtable", "env:unlist", "cmd:\\maketitle", "cmd:\\appendix", "cmd:\\frontmatter", "cmd:\\mainmatter", "cmd:\\backmatter", "cmd:\\subfigure", "cmd:\\helvetica", "cmd:\\helveticabold", "cmd:\\medline", "cmd:\\address", "cmd:\\history", "cmd:\\extraAuth", "cmd:\\correspondance", "cmd:\\vol", "cmd:\\issue"],
+  defines: ["counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "counter:figure", "counter:subfigure", "counter:table", "env:abstract", "env:description", "env:figure", "env:table", "env:thebibliography", "env:methods", "env:processtable", "env:unlist", "cmd:\\maketitle", "cmd:\\appendix", "cmd:\\frontmatter", "cmd:\\mainmatter", "cmd:\\backmatter", "cmd:\\subfigure", "cmd:\\helvetica", "cmd:\\helveticabold", "cmd:\\medline", "cmd:\\address", "cmd:\\history", "cmd:\\extraAuth", "cmd:\\correspondance", "cmd:\\vol", "cmd:\\issue"],
   options: {},
   forbids: {
     technical: [
       { pkg: "cite", reason: "FrontiersinHarvard.cls loads natbib (l.863), whose \\NAT@set@cites at \\begin{document} installs a two-optional \\@citex (natbib.sty 8.31b l.375, l.645-674); cite.sty redefines \\cite to call \\@citex with one optional argument (cite.sty v5.5 l.302-307), so citations scan on to the paragraph's end: 'Paragraph ended before \\@citex was complete' (as achemso, apa7 and oup-authoring-template, b2p probe)", evidence: [{ kind: 'source', file: 'FrontiersinHarvard.cls (v2.6 2016/11/10, testing-pipeline/settings/classes/files)', line: '863' }] },
       { pkg: "sectsty", reason: "FrontiersinHarvard is not article, report, book or a KOMA class (it loads no class, l.1-40), and sectsty stops at 'The sectsty package doesn't work with this document class' for any other (sectsty.sty l.278-295)", evidence: [{ kind: 'source', file: 'sectsty.sty (MiKTeX snapshot 9766)', line: '278-295' }, { kind: 'source', file: 'FrontiersinHarvard.cls', line: '1-40' }] },
-      { pkg: "abstract", reason: "abstract.sty tests \\if@titlepage while it loads (abstract.sty l.57, 103), which FrontiersinHarvard.cls never declares: \"Undefined control sequence. l.57 \\if@titlepage\", then \"Extra \\else\" and \"Extra \\fi\" (as beamer, revtex4-2, aastex and quantumarticle)", evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/FrontiersinHarvard.cls', line: 'whole file: no \\newif\\if@titlepage and no \\LoadClass (l.1-40)' }, { kind: 'compile', cell: 'b3p-1 probe (C:/dev/template-ai/probes/b3p-1/probe) G3-frontiers-headings main.log l.1042-1076' }] },
-      { pkg: "enumitem", reason: "enumitem.sty redefines description while it loads (\\renewenvironment{description}, enumitem.sty l.1853), and FrontiersinHarvard.cls defines no description environment (its lists are enumerate, itemize, quotation and quote, l.724-797): \"LaTeX Error: Environment description undefined\"", evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/FrontiersinHarvard.cls', line: '724-797 (lists; no description)' }, { kind: 'compile', cell: 'b3p-1 probe (C:/dev/template-ai/probes/b3p-1/probe) G3-frontiers-thebib-authoryear main.log l.542, G3-frontiers-headings main.log l.1120' }] },
     ],
     policy: [],
+    // b29 (B3B-5): the host holds a class to a missing \tableofcontents only through this list (a profile's `defines` is read for
+    // environments, \maketitle and sectioning counters alone), so without it General's contents and every toc way fitted here.
+    names: [{ name: "cmd:\\tableofcontents", reason: "FrontiersinHarvard.cls defines no \\tableofcontents, \\l@section..\\l@paragraph or \\contentsname (it loads no class, l.1-40): General's contents stops at 'Command \\tableofcontents undefined' at \\begin{document}, tocloft at 'Command \\l@paragraph undefined' while it loads", evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/FrontiersinHarvard.cls', line: '1-40' }, { kind: 'compile', cell: 'GitHub run b28-e9f730a, frontiers.A documents dde31eb1c8f49ec69d2e5 and d71ae77d5108a97c793fc (tocloft.sty l.651 \\renewcommand*{\\l@paragraph}; \\tableofcontents undefined at \\begin{document}): 89 branches as a document error, 74 with \\l@paragraph first' }] }],
   },
   layout: { columns: 2, textwidth: "504.0pt", fontsize: "12pt" },
   files: [
@@ -69,6 +74,8 @@ export default defineClass({
     { kind: 'source', file: 'FrontiersinHarvard.cls', line: '325-332 (counters), 395-414 (\\title, \\author, \\address...), 427-504 (\\maketitle, logo1.eps)' },
     { kind: 'source', file: 'FrontiersinHarvard.cls', line: '517 (abstract), 531-555 (\\section...), 583-587 (\\toprule, \\midrule, \\botrule), 596-640 (figure, table, subfigure float)' },
     { kind: 'source', file: 'FrontiersinHarvard.cls', line: '851 (thebibliography), 863 (natbib), 870 (\\appendix), 911 (methods), 937 (\\href), 939 (proof)' },
+    { kind: 'source', file: 'testing-pipeline/settings/classes/frontiers.json (CI session, 2026-11-05)', line: 'preamble: \\@ifundefined{if@titlepage}{\\newif\\if@titlepage}{}; \\providecommand*\\descriptionlabel and \\newenvironment{description} when undefined' },
+    { kind: 'compile', cell: 'CI probes C:/dev/template-ai/probes/b3opt: fr-abstract-0 6 errors, fr-abstract-1 0, fr-enumitem-0 1, fr-enumitem-1 0, fr-description-1 0' },
     { kind: 'source', file: 'subcaption.sty (2023/07/28 v1.6b, MiKTeX snapshot 9766)', line: '226-237 (sub types declared only for counters that exist when it loads)' },
   ],
 });

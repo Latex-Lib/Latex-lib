@@ -55,6 +55,16 @@ export default defineKey(
         evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/iopjournal.cls', line: '120-124' }],
       },
       {
+        // b29 (B3B-9): as revtex4-2, the same interim deny until Flouest prints one \maketitle after all front matter (revtex O3).
+        class: 'class.ecai',
+        reason:
+          "ecai keeps the abstract in \\abstract@box (\\global\\setbox\\abstract@box=\\vbox, ecai.cls l.766-772) for \\maketitle (l.849): a figure, table or margin note in it is 'Float(s) lost' at \\end{document} ('Not in outer par mode' for a float that needs one), and a title-less document never prints it (no page, or its sentinels missing). General's abstract and abs.abstract-pkg print where they stand and pass.",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/ecai.cls (2023/12/10 v04)', line: '766-772, 849' },
+          { kind: 'compile', cell: 'GitHub run b28-e9f730a, ecai.A: 1,172 not-denied abs.kernel branches, 527 passing; of the 645 failing, 431 Float(s) lost, 148 in no-page documents, 48 sentinel missing, 14 Not in outer par mode (e.g. document d2ee191977cdb836a1e80, tables and figures inside the abstract)' },
+        ],
+      },
+      {
         // b27 (B2SCAT SC-UT1): as mnras and iopjournal, a class with a fixed abstract heading and no \abstractname.
         class: 'class.ut-thesis',
         unless: { name: '' },
@@ -62,6 +72,17 @@ export default defineKey(
         evidence: [
           { kind: 'source', file: 'ut-thesis.cls (ut-thesis 2024/07/26 v3.1.8, MiKTeX snapshot 9766)', line: '138-152' },
           { kind: 'compile', cell: 'GitHub run b12-5bdc624, ut-thesis.A document d1be4c65fa7e8580de05d, result a2b0fee0f6: LaTeX Error: Command \\abstractname undefined at l.192 \\begin{document} (abs.kernel@renamed); all 59 branches of the document fail' },
+        ],
+      },
+      {
+        // b29 (B3A-6): as revtex4-2 and aastex, a class that keeps the abstract in a box for its front matter; an interim deny until
+        // Flouest prints one \maketitle after all front matter (revtex O3), and the box still loses a float or note inside it.
+        class: 'class.imsart',
+        reason:
+          "imsart.sty sets every abstract into \\abstract@box, a \\vbox (l.2218-2242), printed only by \\abstract@fmt in the front matter (l.2246-2252, \\local@maketitle, l.2423-2452): an abstract after it never ships (sentinel:missing, a document of only abstracts ships no page), and a figure, \\marginpar or \\marginnote inside the \\vbox stops the cell at \"Float(s) lost\" at \\end{document}",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/imsart.sty', line: '2218-2252, 2423-2452' },
+          { kind: 'compile', cell: 'GitHub run b28-e9f730a, imsart.A: 1,619 not-denied abs.kernel@unindented branches, 367 passing; of the 1,070 not failing on \\c@author, remark or \\singlespacing, 389 at "Float(s) lost", 120 in no-page documents, 28 sentinel:missing (document d791c6d19dde34f9284e9, result 150a34ddff4d)' },
         ],
       },
     ],

@@ -768,6 +768,29 @@ test('a result with no log fails every branch as the document, and nothing else 
   assert.equal(judgement.noVerdict, undefined);
 });
 
+test("an hbox overfull in a paragraph by exactly the text's fixed \\rightskip is not charged (O10-RSKIP)", () => {
+  // agujournal2025's draft layout: a fixed 24pt \rightskip for the whole text, so a box the line wide reports 24pt.
+  const box = (amount: string, skip?: string) =>
+    judge({
+      cell: 'c',
+      emitted,
+      result: result(
+        ...(skip === undefined ? [] : [`COMPAT-GEOMETRY{rightSkip}{${skip}pt}`]),
+        `Overfull \\hbox (${amount}pt too wide) in paragraph at lines 14--14`,
+        '[][][]  |',
+        '',
+        hit('A.0'),
+        hit('B.0'),
+      ),
+      expected: expected(),
+    });
+  assert.deepEqual(checksOf(box('24.0', '24.0')), { A: [], B: [] });
+  assert.deepEqual(checksOf(box('23.99998', '24.0')), { A: [], B: [] }, "TeX's rounding of the same width");
+  assert.deepEqual(checksOf(box('30.5', '24.0')), { A: ['warning:overfull-hbox'], B: [] }, 'more than the skip is charged');
+  assert.deepEqual(checksOf(box('24.0', '0.0')), { A: ['warning:overfull-hbox'], B: [] }, 'no fixed skip, no exemption');
+  assert.deepEqual(checksOf(box('24.0')), { A: ['warning:overfull-hbox'], B: [] }, 'a log with no rightSkip line');
+});
+
 test('an engine that gave nothing leaves nothing to judge', () => {
   const judgement = judge({ cell: 'c', emitted, result: { log: '', pages: null, ms: 0, threw: 'Chrome went away' }, expected: expected() });
   assert.deepEqual(judgement.verdicts, []);

@@ -19,6 +19,15 @@ export default defineKey(
     presets: PRESETS,
     deny: [
       {
+        class: 'class.bmvc',
+        reason:
+          "a note column is as wide as the margin, and bmvc2k's 410pt x 620pt page has inner=9mm and outer=6mm margins (bmvc2k.cls l.246), 25.5pt and 17.1pt: the notes, typeset while \\output is active, overflow at every word (round b28 bmvc.A: 711 overfull-hbox rows, 102 off the paper, 11 passes)",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/bmvc2k.cls', line: '246 (geometry: papersize={410pt,620pt}, inner=9mm, outer=6mm)' },
+          { kind: 'compile', cell: 'GitHub run b28-e9f730a, bmvc.A: the note ways fail 3,233 not-denied rows and pass 294, all branches whose note held no sentinel' },
+        ],
+      },
+      {
         class: 'class.beamer',
         reason:
           "a note column is as wide as \\marginparwidth, which beamer leaves at 4pt in a 28.45pt margin (geometry, hmargin=1cm): the notes, typeset while \\output is active, overflow at every word (\"Overfull \\hbox (26.483pt too wide) has occurred while \\output is active\"), the marginpar column and a declared one alike, and a width that holds text runs off the paper",

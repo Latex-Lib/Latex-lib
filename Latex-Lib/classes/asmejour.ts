@@ -26,6 +26,19 @@ const CLS = 'asmejour.cls (asmejour 2025/11/30 v1.27, MiKTeX snapshot 9766)';
  * (l.1004-1030). It redefines \section, \subsection and \subsubsection with xparse (l.1161-1197), \appendix (l.1245), \maketitle,
  * \title and the abstract environment, whose body it stores for \maketitle (l.1707-1722), and makes \author an error ('the \author
  * command is not used', l.1709-1714): authors go in \SetAuthorBlock (l.1503).
+ * b29 (B2A): the xparse \section, \subsection, \subsubsection and \paragraph (\let to \subsubsection, l.1198) hold no
+ * \@startsection, so titlesec extracts no format for them ("Non standard sectioning command ... no format"): any heading
+ * at a level the document gives no \titleformat (natbib's \bibsection = \section*, a kernel heading after a General titlesec
+ * way's grouped \titleformat) stops at "Package titlesec Error: No format for this command" (run b28-e9f730a: 2,263
+ * branches). As for asmeconf, the setting gives titlesec the class's own formats in a package/titlesec/after hook (proposed
+ * to the CI session, b29 B2A), so titlesec stays allowed. The abstract body goes into \emph{#1} (not \long: a \par in it
+ * stops at "Paragraph ended before \text@command was complete"), through \gdef\tmp{...#1...} (a # in it stops at "Illegal
+ * parameter number in definition of \tmp") and into a 114mm vcoffin (a float stops at "Float(s) lost", a \marginpar at "Not
+ * in outer par mode", l.1605-1618, 1718-1722). The coffin is set only by \maketitle, so without the abstract package the
+ * body never reaches a page: a setting that only mends the \emph (b29 B2A, probe b29-1) prints nothing and loses every
+ * sentinel. The fix is to set the kernel abstract in place, as General does for amsart and elsarticle (proposal, b30).
+ * unicode-math (loaded on this engine, l.355) names no \blacksquare and the setting omits amssymb, so the setting lets
+ * \blacksquare fall back to unicode-math's \mdlgblksquare (thm.thmtools@beauty's end mark).
  */
 export default defineClass({
   id: 'class.asmejour',

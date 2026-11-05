@@ -21,7 +21,8 @@ test('the preamble defines the sentinel and writes the text block once the docum
   assert.match(preamble, /\\pdfsavepos\\fi\\write-1\{COMPAT-SENTINEL\{#1\}\{\\the\\c@page\}/);
   assert.match(preamble, /\\AddToHook\{begindocument\/end\}/);
   assert.match(preamble, /\\ifdim\\pdfpageheight=0pt \\global\\pdfpageheight=\\paperheight\\fi/, 'positions measured against the paper');
-  assert.equal((preamble.match(/COMPAT-GEOMETRY/g) ?? []).length, 8);
+  assert.equal((preamble.match(/COMPAT-GEOMETRY/g) ?? []).length, 9);
+  assert.match(preamble, /COMPAT-GEOMETRY\{rightSkip\}\{\\the\\dimexpr\\rightskip\\relax\}/, "the text's \\rightskip, natural width (O10-RSKIP)");
   assert.match(preamble, /COMPAT-GEOMETRY\{maxDepth\}\{\\the\\maxdepth\}/, "the class's \\maxdepth beside the text block");
 });
 
@@ -62,6 +63,12 @@ test('the log gives each sentinel its pages and positions, and the text block in
   assert.equal(geometry?.maxDepth, undefined, 'a log with no \\maxdepth gives none');
   assert.equal(readSentinels(`${GEOMETRY_LOG}\nCOMPAT-GEOMETRY{maxDepth}{5.0pt}`).geometry?.maxDepth, 5 * PT);
   assert.equal(readSentinels('COMPAT-GEOMETRY{maxDepth}{5.0pt}').geometry, undefined, '\\maxdepth alone is no text block');
+  // O10-RSKIP (b29): the text's \rightskip, natural width only (agujournal2025's draft layout: a fixed 24pt).
+  assert.equal(geometry?.rightSkip, undefined, 'a log with no \\rightskip gives none');
+  const both = readSentinels(`${GEOMETRY_LOG}\nCOMPAT-GEOMETRY{maxDepth}{4.0pt}\nCOMPAT-GEOMETRY{rightSkip}{24.0pt}`).geometry;
+  assert.equal(both?.rightSkip, 24 * PT);
+  assert.equal(both?.maxDepth, 4 * PT);
+  assert.equal(readSentinels(`${GEOMETRY_LOG}\nCOMPAT-GEOMETRY{rightSkip}{24.0pt}`).geometry?.maxDepth, undefined, 'rightSkip alone gives no \\maxdepth');
 });
 
 test('a hit is in the text block within the tolerances, on either side of a two-sided layout', () => {

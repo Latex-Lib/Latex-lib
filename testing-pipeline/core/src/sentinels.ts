@@ -55,7 +55,15 @@ const DIMENSIONS: readonly (readonly [string, string])[] = [
  * Written beside them, but a log may lack it (one written before b23 added it), so the text block stands without it:
  * `\maxdepth`, the depth TeX lets the last box of a page keep below the block's bottom (`inTextBlock`).
  */
-const OPTIONAL_DIMENSIONS: readonly (readonly [string, string])[] = [['maxDepth', '\\maxdepth']];
+// rightSkip (b29, O10-RSKIP): the natural width of the text's \rightskip at the end of \begin{document}. A class that sets a
+// fixed right skip for its whole text (agujournal2025.cls l.910-913: ragged2e's \RaggedRight with \RaggedRightRightskip
+// advanced by 24pt: the b29 probe's box display closes each such line with `\glue(\rightskip) 24.0`) makes a box exactly
+// \linewidth wide in a paragraph overflow by that skip, though the box ends at the text block's edge: the oracle does not
+// charge it (`oracle.ts`, fixedRightSkip). \dimexpr drops any stretch, so the line keeps GEOMETRY's `<n>pt` form.
+const OPTIONAL_DIMENSIONS: readonly (readonly [string, string])[] = [
+  ['maxDepth', '\\maxdepth'],
+  ['rightSkip', '\\dimexpr\\rightskip\\relax'],
+];
 
 /** What the host puts in every preamble, right after the class (`EmitUnder.preamble`). */
 export const SENTINEL_PREAMBLE: readonly string[] = [
@@ -105,6 +113,8 @@ export type Geometry = {
   readonly textHeight: number;
   /** `\maxdepth`, when the log gives it: how far below the bottom a sentinel in a page's last box may sit (`inTextBlock`). */
   readonly maxDepth?: number;
+  /** The text's `\rightskip` (natural width) at the end of `\begin{document}`, when the log gives it (`oracle.ts`, fixedRightSkip). */
+  readonly rightSkip?: number;
 };
 
 const SP_PER_PT = 65536;
@@ -138,8 +148,12 @@ export const readSentinels = (log: string): { readonly hits: ReadonlyMap<string,
   }
   const all = DIMENSIONS.every(([name]) => dimensions.has(name));
   const maxDepth = dimensions.get('maxDepth');
+  const rightSkip = dimensions.get('rightSkip');
   const block = all ? (Object.fromEntries(DIMENSIONS.map(([name]) => [name, dimensions.get(name) ?? 0])) as Geometry) : undefined;
-  const geometry = block === undefined || maxDepth === undefined ? block : { ...block, maxDepth };
+  const geometry =
+    block === undefined
+      ? block
+      : { ...block, ...(maxDepth === undefined ? {} : { maxDepth }), ...(rightSkip === undefined ? {} : { rightSkip }) };
   return geometry === undefined ? { hits } : { hits, geometry };
 };
 
