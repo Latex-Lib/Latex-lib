@@ -7,7 +7,7 @@ export default defineKey(
     id: 'bib.thebibliography',
     node: 'containerBlock/refContainer',
     description:
-      "A hand-written thebibliography: \\begin{thebibliography}{99} with one \\bibitem{key} per entry, read from the entries' BibTeX source; its size, item spacing and heading; no BibTeX run. 95 templates.",
+      "A hand-written thebibliography: \\begin{thebibliography}{99} with one \\bibitem{key} per entry (\\bibitem[{Author(Year)}]{key} where natbib is loaded, so its author-year mode accepts the list), read from the entries' BibTeX source; its size, item spacing and heading; no BibTeX run. 95 templates.",
     ctan: ['latex-base'],
     features: ['numeric-citations', 'hand-written', 'small-type', 'compact'],
     params: {

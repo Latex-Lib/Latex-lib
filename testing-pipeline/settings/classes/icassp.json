@@ -1,11 +1,12 @@
 {
   "id": "icassp",
-  "description": "The IEEE Signal Processing Society's spconf.sty, the style of ICASSP and ICIP, on plain article (no version line; the ICASSP 2027 paper kit's copy). Not on CTAN or the engine's mirror: from cmsworkshops.com/ICASSP2027/papers/paper_kit.php (PaperFormat/spconf.sty). Two columns, set by the style, which also sets \\rmdefault, \\sfdefault and \\ttdefault to ptm, phv and pcr; under XeTeX these have no TU shape and fall back to Latin Modern with font warnings. Its \\maketitle prints \\name and \\address, never \\author, and shows the placeholder 'Name of author' without them, so the preamble line passes the document's \\author to \\name. It sets section titles in capitals with \\uppercase and replaces \\@sect.",
+  "description": "The IEEE Signal Processing Society's spconf.sty, the style of ICASSP and ICIP, on plain article (no version line; the ICASSP 2027 paper kit's copy). Not on CTAN or the engine's mirror: from cmsworkshops.com/ICASSP2027/papers/paper_kit.php (PaperFormat/spconf.sty). Two columns, set by the style, which also sets \\rmdefault, \\sfdefault and \\ttdefault to ptm, phv and pcr; under XeTeX these have no TU shape and fall back to Latin Modern with font warnings. Its \\maketitle prints \\name and \\address, never \\author, and shows the placeholder 'Name of author' without them, so the preamble line passes the document's \\author to \\name. It sets section titles in capitals with \\uppercase and replaces \\@sect. \\providecommand\\@svsechd gives spconf.sty's heading code the macro it reads before any run-in heading has set it (probe B2SCAT-icassp-svsechd).",
   "class": "article",
   "options": [],
   "preamble": [
     "\\usepackage{spconf}",
-    "\\makeatletter\\def\\author#1{\\name{#1}}\\makeatother"
+    "\\makeatletter\\def\\author#1{\\name{#1}}\\makeatother",
+    "\\makeatletter\\providecommand\\@svsechd{}\\makeatother"
   ],
   "files": [
     {

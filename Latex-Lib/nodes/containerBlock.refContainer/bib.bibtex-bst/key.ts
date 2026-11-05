@@ -41,6 +41,53 @@ export default defineKey(
         reason: "iclr2027_conference.sty loads natbib with no option (l.20) and sets \\setcitestyle{authoryear,round,...} (l.23), so a numeric or alpha style's \\bibitem stops natbib at 'Bibliography not compatible with author-year citations'",
         evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/iclr2027_conference.sty', line: '20, 23' }],
       },
+      // b27 (B2CITE-2 and B2PROF P7, one edit): colm and tmlr, the two author-year conference styles G4 left out (GitHub run
+      // b12-5bdc624: 448 branches, every non-apalike bibtex-bst cell stops at natbib's author-year error); jmlr, which sets its
+      // own \bibliographystyle, as acl and ascelike do (235 branches, none with a .bbl); achemso, which replaces every style
+      // with its own (224 of 224 fail, no .bbl); and elegantpaper, which loads biblatex itself (209 of 214 fail; the 5 that
+      // pass cite nothing).
+      {
+        class: 'class.colm',
+        unless: { bst: 'apalike' },
+        reason: "colm2026_conference.sty loads natbib with no option (l.42) and sets \\setcitestyle{authoryear,round,...} (l.45), so a numeric or alpha style's \\bibitem stops natbib at 'Bibliography not compatible with author-year citations'; apalike's labels are author-year",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/colm2026_conference.sty', line: '42, 45' },
+          { kind: 'compile', cell: 'GitHub run b12-5bdc624: colm.A, 0 of 224 not-denied non-apalike bibtex-bst citation branches pass, all at the natbib author-year error' },
+        ],
+      },
+      {
+        class: 'class.tmlr',
+        unless: { bst: 'apalike' },
+        reason: "tmlr.sty loads natbib with no option (l.15) and sets \\setcitestyle{authoryear,round,...} (l.21), so a numeric or alpha style's \\bibitem stops natbib at 'Bibliography not compatible with author-year citations'; apalike's labels are author-year",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/tmlr.sty', line: '15, 21' },
+          { kind: 'compile', cell: 'GitHub run b12-5bdc624: tmlr.A, 0 of 224 not-denied non-apalike bibtex-bst citation branches pass, all at the natbib author-year error' },
+        ],
+      },
+      {
+        class: 'class.jmlr-pmlr',
+        reason: "jmlr.cls calls \\bibliographystyle{plainnat} while it loads (l.178), so main.aux opens with that \\bibstyle; this way's own \\bibliographystyle writes a second one, which BibTeX rejects ('Illegal, another \\bibstyle command'), so no .bbl is made",
+        evidence: [
+          { kind: 'source', file: 'jmlr.cls (jmlr 2022/02/09 v1.30, MiKTeX snapshot 9766)', line: '150 (natbib), 178 (\\bibliographystyle{plainnat}), 179 (\\bibpunct author-year)' },
+          { kind: 'compile', cell: 'GitHub run b12-5bdc624: jmlr-pmlr.A, none of the 235 not-denied bibtex-bst branches has a .bbl: 163 end at no-bbl (d5044f4e76b0ec7f40f15), and the 72 in cells whose LaTeX errors end the build first leave every citation undefined, 58 of them counted as passes (dabf8452191c896772e36)' },
+        ],
+      },
+      {
+        class: 'class.achemso',
+        reason: "achemso replaces every \\bibliographystyle with its own achemso style (achemso.cls l.1427-1435) and writes its control entry for achemso.bst; with this way's style and \\bibliography BibTeX makes no .bbl ('No file main.bbl', every citation undefined)",
+        evidence: [
+          { kind: 'source', file: 'achemso.cls (achemso 2025-09-22 v3.14, MiKTeX snapshot 9766)', line: '1427-1435' },
+          { kind: 'compile', cell: 'GitHub run b12-5bdc624, achemso.A: 224 of 224 branches fail, no-bbl in every cell holding the way (document d5044f4e76b0ec7f40f15)' },
+        ],
+      },
+      {
+        class: 'class.elegantpaper',
+        reason: "elegantpaper loads biblatex itself (elegantpaper.cls l.195-198), and biblatex makes \\bibliographystyle an error: \"Package biblatex Error: '\\bibliographystyle' invalid for 'biblatex'\"",
+        evidence: [
+          { kind: 'source', file: 'elegantpaper.cls (elegantpaper 2026/2/27 v0.12, MiKTeX snapshot 9766)', line: '195-198' },
+          { kind: 'compile', cell: 'GitHub run b12-5bdc624, elegantpaper.A: 209 of 214 branches fail so' },
+        ],
+      },
       {
         class: 'class.ascelike',
         reason: "ascelike.cls calls \\bibliographystyle{ascelike} in its \\AtEndOfClass block, unconditionally, so main.aux opens with that \\bibstyle; this way's own \\bibliographystyle writes a second one, which BibTeX rejects ('Illegal, another \\bibstyle command'), as under mdpi and sn-jnl",

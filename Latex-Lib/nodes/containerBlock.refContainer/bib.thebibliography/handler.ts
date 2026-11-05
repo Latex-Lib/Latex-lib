@@ -1,20 +1,22 @@
 /**
  * bib.thebibliography: a hand-written \begin{thebibliography}{widest} with
  * one \bibitem{key} per entry, read from the entries' BibTeX source; its
- * size and item spacing, its heading through \refname or \bibname.
+ * size and item spacing, its heading through \refname or \bibname. Under
+ * natbib each entry is \bibitem[{Author(Year)}]{key}, so natbib's
+ * author-year mode accepts the list (`bibitemChooser`, ../node.ts).
  * CTAN: https://ctan.org/pkg/latex-base
  */
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
 import { param } from '../../protocol.ts';
-import { bibitems, headingLines } from '../node.ts';
+import { bibitemChooser, bibitems, headingLines } from '../node.ts';
 import key from './key.ts';
 
 export const realize = (given: { readonly [name: string]: unknown } = {}): Realization => {
   const p = withDefaults(key.params, given as never) as { readonly [name: string]: unknown };
-  const declarations = headingLines(param(p, 'heading'));
+  const declarations = [...headingLines(param(p, 'heading')), bibitemChooser];
   return {
-    preamble: () => (declarations.length === 0 ? {} : { declarations }),
+    preamble: () => ({ declarations }),
     emit: (node, content) => {
       const items = bibitems(content);
       // No entry to print (paragraphs holding no BibTeX entry: plain-text references, a raw-LaTeX island): no list. An empty

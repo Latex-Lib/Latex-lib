@@ -1,11 +1,12 @@
 {
   "id": "icml",
-  "description": "ICML 2026's style file icml2026.sty ('version of 2025-10-29'), on plain article. Not on CTAN or the engine's mirror: from icml2026.zip on media.icml.cc. The zip also holds fancyhdr.sty, algorithm.sty and algorithmic.sty; those are not shipped, as the engine's mirror has fancyhdr and algorithms. Two columns: the style calls \\twocolumn itself. preprint shows the authors and prints a 'Preprint' notice instead of the 'Proceedings of ICML' line, which is for accepted papers only. Its PDF page-size block runs only when \\pdfoutput is defined (l.238-254), so XeTeX skips it and the xetex graphics driver sets the page size. At \\begin{document} it checks thirteen layout lengths and, if any changed, prints a warning paragraph into the page instead of stopping (l.276-300). It loads times, natbib, eso-pic, forloop, caption and xcolor; under XeTeX times' ptm has no TU shape, so the text falls back to Latin Modern with font warnings. \\icmltitlerunning sets the running head, which icml2026.sty defines only through \\icmltitle (l.353-361): without it every page head stops on an undefined \\@icmltitlerunning (batch 2 probe).",
+  "description": "ICML 2026's style file icml2026.sty ('version of 2025-10-29'), on plain article. Not on CTAN or the engine's mirror: from icml2026.zip on media.icml.cc. The zip also holds fancyhdr.sty, algorithm.sty and algorithmic.sty; those are not shipped, as the engine's mirror has fancyhdr and algorithms. Two columns: the style calls \\twocolumn itself. preprint shows the authors and prints a 'Preprint' notice instead of the 'Proceedings of ICML' line, which is for accepted papers only. Its PDF page-size block runs only when \\pdfoutput is defined (l.238-254), so XeTeX skips it and the xetex graphics driver sets the page size. At \\begin{document} it checks thirteen layout lengths and, if any changed, prints a warning paragraph into the page instead of stopping (l.276-300). It loads times, natbib, eso-pic, forloop, caption and xcolor; under XeTeX times' ptm has no TU shape, so the text falls back to Latin Modern with font warnings. \\icmltitlerunning sets the running head, which icml2026.sty defines only through \\icmltitle (l.353-361): without it every page head stops on an undefined \\@icmltitlerunning (batch 2 probe). The last line sets the flag \\printAffiliationsAndNotice sets (l.519), so the style's end-of-document reminder, whose \\string{} stopped every document with \"Unbalanced write command\" (first batch 2 run), is not written.",
   "class": "article",
   "options": [],
   "preamble": [
     "\\usepackage[preprint]{icml2026}",
-    "\\icmltitlerunning{Running title}"
+    "\\icmltitlerunning{Running title}",
+    "\\makeatletter\\global\\icml@noticeprintedtrue\\makeatother"
   ],
   "files": [
     {

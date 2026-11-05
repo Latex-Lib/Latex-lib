@@ -1,6 +1,6 @@
 {
   "id": "cvpr",
-  "description": "The CVPR/ICCV/3DV author kit's cvpr.sty ('2027 LaTeX class for IEEE CVPR', release CVPR2027-v1, 2026-10-28), on plain article. Not on CTAN or the engine's mirror: from github.com/cvpr-org/author-kit. 10pt, twocolumn and letterpaper are the class options its template uses; at \\begin{document} the style warns without each one (cvpr.sty l.248-262) and stops if the class is not article. With no option it is the camera-ready version (review and rebuttal are the other modes). It loads times, natbib [numbers,sort&compress], caption, subcaption, enumitem, silence, etoolbox and xcolor, and defines TFM fonts (phvb, ptmb) that XeTeX loads from helvetic and times. Its \\pdfoutput test (l.199-205) is a copy of eso-pic's driver check and does nothing under XeTeX, where \\pdfoutput is undefined. Under XeTeX times' ptm has no TU shape, so the body text falls back to Latin Modern with font warnings.",
+  "description": "The CVPR/ICCV/3DV author kit's cvpr.sty ('2027 LaTeX class for IEEE CVPR', release CVPR2027-v1, 2026-10-28), on plain article. Not on CTAN or the engine's mirror: from github.com/cvpr-org/author-kit. 10pt, twocolumn and letterpaper are the class options its template uses; at \\begin{document} the style warns without each one (cvpr.sty l.248-262) and stops if the class is not article. With no option it is the camera-ready version (review and rebuttal are the other modes). It loads times, natbib [numbers,sort&compress], caption, subcaption, enumitem, silence, etoolbox and xcolor, and defines TFM fonts (phvb, ptmb) that XeTeX loads from helvetic and times. Its \\pdfoutput test (l.199-205) is a copy of eso-pic's driver check and does nothing under XeTeX, where \\pdfoutput is undefined. Under XeTeX times' ptm has no TU shape, so the body text falls back to Latin Modern with font warnings. \\providecommand\\texorpdfstring gives General's headings the command hyperref would, for documents without hyperref (1,067 branches stopped on it in the first batch 2 run).",
   "class": "article",
   "options": [
     "10pt",
@@ -8,7 +8,8 @@
     "letterpaper"
   ],
   "preamble": [
-    "\\usepackage{cvpr}"
+    "\\usepackage{cvpr}",
+    "\\providecommand\\texorpdfstring[2]{#1}"
   ],
   "files": [
     {

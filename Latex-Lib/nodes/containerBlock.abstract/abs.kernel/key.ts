@@ -54,6 +54,16 @@ export default defineKey(
         reason: 'iopjournal prints its abstract under a fixed {\\bfseries Abstract} (iopjournal.cls l.120-124), so a renamed heading never shows: the branch passed without its heading (GitHub run 41584963423)',
         evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/iopjournal.cls', line: '120-124' }],
       },
+      {
+        // b27 (B2SCAT SC-UT1): as mnras and iopjournal, a class with a fixed abstract heading and no \abstractname.
+        class: 'class.ut-thesis',
+        unless: { name: '' },
+        reason: "ut-thesis prints its abstract under a literal \\section*{Abstract} (ut-thesis.cls l.138-152) on book, which never defines \\abstractname, so a renamed heading never shows, and the preset's \\AtBeginDocument{\\renewcommand{\\abstractname}{…}} stops at \"Command \\abstractname undefined\" in \\begin{document}, which ends every branch of the document.",
+        evidence: [
+          { kind: 'source', file: 'ut-thesis.cls (ut-thesis 2024/07/26 v3.1.8, MiKTeX snapshot 9766)', line: '138-152' },
+          { kind: 'compile', cell: 'GitHub run b12-5bdc624, ut-thesis.A document d1be4c65fa7e8580de05d, result a2b0fee0f6: LaTeX Error: Command \\abstractname undefined at l.192 \\begin{document} (abs.kernel@renamed); all 59 branches of the document fail' },
+        ],
+      },
     ],
     zerotex: 'untested',
   }),

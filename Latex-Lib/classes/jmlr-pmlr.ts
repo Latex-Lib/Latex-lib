@@ -43,6 +43,7 @@ export default defineClass({
   forbids: {
     technical: [
       { pkg: "cite", reason: "jmlr.cls (l.150, natbib with no options) loads natbib, whose \\NAT@set@cites at \\begin{document} installs a two-optional \\@citex (natbib.sty 8.31b l.375, l.645-674); cite.sty redefines \\cite to call \\@citex with one optional argument (cite.sty v5.5 l.302-307), so citations scan on to the paragraph's end: 'Paragraph ended before \\@citex was complete' and 'Argument of \\@citex has an extra }' (as elsarticle; b2p probe: G2-apa7-cite and G2-oup-authoring-template-cite, 48 and 53 \\@citex errors, no PDF)", evidence: [{ kind: 'source', file: "G3/jmlr-pmlr.ts", line: "150" }] },
+      { pkg: "tabularx", reason: "jmlr refuses tabularx outright: with it loaded the class stops at 'Class jmlr Error: Package `tabularx' detected. This will break footnote links.' (GitHub run b12-5bdc624, jmlr-pmlr.A: 5,041 branches, every cell with a tabularx way)", evidence: [{ kind: 'compile', cell: 'GitHub run b12-5bdc624, jmlr-pmlr.A (document d46e5b177a71752e90fee)' }] },
       { pkg: "amsthm", reason: "jmlrutils, which jmlr loads itself (l.158), defines the proof environment with \\newenvironment under its default theorems option (jmlrutils.sty l.440-447); amsthm defines proof with \\newenvironment too (amsthm.sty l.431), so loading it after the class stops at 'Command \\proof already defined'", evidence: [{ kind: 'source', file: UTILS, line: '440-447' }, { kind: 'source', file: AMSTHM, line: '431' }, { kind: 'source', file: CLS, line: '158' }] },
     ],
     policy: [],

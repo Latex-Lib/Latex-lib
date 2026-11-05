@@ -1,11 +1,17 @@
 {
   "id": "emulateapj",
-  "description": "emulateapj (CTAN, 2025/02/19; MiKTeX package emulateapj), the ApJ two-column look built on REVTeX, two columns by default. The revtex4 option makes it load REVTeX 4.0 straight away. That is MiKTeX's revtex4 package, v4.0a 2020/09/30, which is patched for the 2020-10 kernel. MiKTeX has no revtex4-1, so the class's \\IfFileExists{revtex4-1.cls} would fall back to the same file anyway. The preamble is empty: \\journalinfo, \\submitted and the running heads have defaults, and an author with no \\affiliation only gives a warning.",
+  "description": "emulateapj (CTAN, 2025/02/19; MiKTeX package emulateapj), the ApJ two-column look built on REVTeX, two columns by default. The revtex4 option makes it load REVTeX 4.0 straight away. That is MiKTeX's revtex4 package, v4.0a 2020/09/30, which is patched for the 2020-10 kernel. MiKTeX has no revtex4-1, so the class's \\IfFileExists{revtex4-1.cls} would fall back to the same file anyway. The preamble is empty: \\journalinfo, \\submitted and the running heads have defaults, and an author with no \\affiliation only gives a warning. Its preamble takes four of aastex.json's lines, each checked against MiKTeX's revtex4.cls: the float end with ltxgrid's vertical-mode case (REVTeX 4.0's own \\end@@float at l.2493 lacks it), \\@mkpream@relax relaxing \\@endpbox, \\switch@array relaxed (the \"Extra \\or\" in array tables), and the contents names. Not aastex's footnote line: it needs \\set@footnotefont, which REVTeX 4.0 does not have. The last line undoes ltcaption's longtable* right after caption loads it, so REVTeX's longtable patch at \\begin{document} can define it (\"Command \\longtable* already defined\" in every cell that loaded caption, first batch 2 run).",
   "class": "emulateapj",
   "options": [
     "revtex4"
   ],
-  "preamble": [],
+  "preamble": [
+    "\\makeatletter\\def\\end@@float#1{\\minipagefootnote@here\\@endfloatbox#1\\@ifnum{\\@floatpenalty<\\z@}{\\@largefloatcheck\\@cons\\@currlist\\@currbox\\@ifnum{\\@floatpenalty<-\\@Mii}{\\do@output@cclv{\\@add@float}}{\\ifvmode\\do@output@cclv{\\@add@float}\\else\\vadjust{\\do@output@cclv{\\@add@float}}\\@Esphack\\fi}}{}}\\makeatother",
+    "\\makeatletter\\g@addto@macro\\@mkpream@relax{\\let\\@endpbox\\relax\\let\\do@row@strut\\relax\\let\\ar@align@mcell\\relax}\\makeatother",
+    "\\makeatletter\\let\\switch@array\\relax\\makeatother",
+    "\\providecommand\\contentsname{Contents}\\providecommand\\listfigurename{List of Figures}\\providecommand\\listtablename{List of Tables}\\def\\tocname{\\contentsname}\\def\\lofname{\\listfigurename}\\def\\lotname{\\listtablename}",
+    "\\AddToHook{package/ltcaption/after}{\\expandafter\\let\\csname longtable*\\endcsname\\relax\\expandafter\\let\\csname endlongtable*\\endcsname\\relax}"
+  ],
   "files": [],
   "setups": [
     "A"

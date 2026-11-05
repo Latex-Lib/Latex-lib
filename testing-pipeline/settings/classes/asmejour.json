@@ -1,6 +1,6 @@
 {
   "id": "asmejour",
-  "description": "John Lienhard's asmejour class v1.27 (2025/11/30, CTAN and MiKTeX package asmejour, MIT licence), the ASME journal paper layout: extarticle at 9pt, twoside, two columns started by \\maketitle, on ASME's 215.9 x 285.7 mm page. No options: the template's (balance,nocopyright,upint,varvw,hyphenate,barcolor=Goldenrod3,german) demonstrate features, and upint and hyphenate are pdfTeX-only. The class is written for pdfLaTeX and LuaLaTeX; XeTeX takes its non-pdfTeX branch, which loads unicode-math (with fontspec) and sets TeX Gyre Termes X, TeX Gyre Heros, Inconsolatazi4 and STIX Two Math by file name (asmejour.cls l.352-400; all in MiKTeX: newtx, tex-gyre, tex-gyre-math, inconsolata, stix2-otf, xits, lete-sans-math). The preamble uses the class's own title-block commands, as the template does: \\JourName fills the 'Journal of ...' footer, which is otherwise blank, and one \\SetAuthorBlock gives \\maketitle an author. The class's \\author stops with an error ('the \\author command is not used', l.1709-1714); the setting now defines \\author as a \\SetAuthorBlock with an empty address, so General's \\author fills an author block. General's lmodern, fontspec, font lines, amsmath and amssymb are left out (omitPreamble): the class sets its own fonts and maths. The engine has no TeX Gyre Termes X OpenType files, so the class's font check (asmejour.cls l.358-360) still stops every document with a ClassError until it has them (batch 2 probe).",
+  "description": "John Lienhard's asmejour class v1.27 (2025/11/30, CTAN and MiKTeX package asmejour, MIT licence), the ASME journal paper layout: extarticle at 9pt, twoside, two columns started by \\maketitle, on ASME's 215.9 x 285.7 mm page. No options: the template's (balance,nocopyright,upint,varvw,hyphenate,barcolor=Goldenrod3,german) demonstrate features, and upint and hyphenate are pdfTeX-only. The class is written for pdfLaTeX and LuaLaTeX; XeTeX takes its non-pdfTeX branch, which loads unicode-math (with fontspec) and sets TeX Gyre Termes X, TeX Gyre Heros, Inconsolatazi4 and STIX Two Math by file name (asmejour.cls l.352-400; all in MiKTeX: newtx, tex-gyre, tex-gyre-math, inconsolata, stix2-otf, xits, lete-sans-math). The preamble uses the class's own title-block commands, as the template does: \\JourName fills the 'Journal of ...' footer, which is otherwise blank, and one \\SetAuthorBlock gives \\maketitle an author. The class's \\author stops with an error ('the \\author command is not used', l.1709-1714); the setting now defines \\author as a \\SetAuthorBlock with an empty address, so General's \\author fills an author block. General's lmodern, fontspec, font lines, amsmath and amssymb are left out (omitPreamble): the class sets its own fonts and maths. The class's font check (asmejour.cls l.362) asks for TexGyreTermesX-regular.otf, while newtx ships TeXGyreTermesX-Regular.otf, and the engine's file names are case-sensitive: the check failed in every document of the first batch 2 run and called \\ClassErrorNoLine, which the engine's kernel does not define. The setting's one file is newtx's TeXGyreTermesX-Regular.otf (MiKTeX 9766) under the name the check asks for; the class itself loads the font as TeXGyreTermesX with UprightFont=*-Regular, which the engine finds in newtx. Like the conference kits, the copy stays in the private companion (files/private.txt).",
   "class": "asmejour",
   "options": [],
   "preamble": [
@@ -8,7 +8,12 @@
     "\\SetAuthorBlock{A. N. Author}{Department of Mechanical Engineering,\\\\Sample University,\\\\Sample City}",
     "\\makeatletter\\def\\author#1{\\SetAuthorBlock{#1}{}}\\makeatother"
   ],
-  "files": [],
+  "files": [
+    {
+      "path": "TexGyreTermesX-regular.otf",
+      "sha256": "027989ecf7ea89d6e3ef18031b852b1f81d77f75af25c7d1e95d776750ac6617"
+    }
+  ],
   "setups": [
     "A"
   ],

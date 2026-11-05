@@ -17,7 +17,11 @@ const BIBLATEX = 'biblatex.sty (biblatex, MiKTeX snapshot 9766)';
  * \email (l.101), and \version and \institute are token registers (l.276-277) that its \maketitle prints (l.279-334).
  * At \begin{document} it loads footmisc with flushmargin (l.266-270): a way that loaded footmisc in the preamble without flushmargin
  * makes that request clash, so footmisc is refused outright. biblatex refuses natbib, cite, mcite and apacite (biblatex.sty
- * l.166-180).
+ * l.166-180). biblatex itself is refused too: any later load of it with options clashes with the class's ("Option clash for
+ * package biblatex"). General's bibliography (\usepackage[style=…,sorting=…,backend=bibtex]{biblatex}) did so in 6,077 branches
+ * of GitHub run b12-5bdc624, and bib.biblatex-bibtex in 208 of 208, since its handler adds style=… to the backend=bibtex its
+ * facts name, so the preload option rule missed it (probe b27-1 B2PROF-elegant-new: the clash with no General bibliography).
+ * bib.bibtex-bst is denied in its key (\bibliographystyle is an error under biblatex).
  */
 export default defineClass({
   id: 'class.elegantpaper',
@@ -50,6 +54,7 @@ export default defineClass({
       { pkg: "cite", reason: "elegantpaper loads biblatex itself (l.195-198), and biblatex stops at \"Incompatible package 'cite'\" (its \\blx@packageincompatibility list)", evidence: [{ kind: 'source', file: CLS, line: '195-198' }, { kind: 'source', file: BIBLATEX, line: '166-180' }] },
       { pkg: "mcite", reason: "elegantpaper loads biblatex itself (l.195-198), and biblatex stops at \"Incompatible package 'mcite'\" (its \\blx@packageincompatibility list)", evidence: [{ kind: 'source', file: CLS, line: '195-198' }, { kind: 'source', file: BIBLATEX, line: '166-180' }] },
       { pkg: "apacite", reason: "elegantpaper loads biblatex itself (l.195-198), and biblatex stops at \"Incompatible package 'apacite'\" (its \\blx@packageincompatibility list)", evidence: [{ kind: 'source', file: CLS, line: '195-198' }, { kind: 'source', file: BIBLATEX, line: '166-180' }] },
+      { pkg: "biblatex", reason: "elegantpaper loads biblatex itself with backend=bibtex,citestyle=numeric-comp,bibstyle=numeric (l.195-198), so a later \\usepackage[...]{biblatex} with any other option stops at \"Option clash for package biblatex\": General's bibliography (style, sorting) and bib.biblatex-bibtex (style) alike", evidence: [{ kind: 'source', file: CLS, line: '195-198' }, { kind: 'compile', cell: 'GitHub run b12-5bdc624, elegantpaper.A: 6,077 branches fail with the clash, bib.biblatex-bibtex 208 of 208; probe b27-1 B2PROF-elegant-new (document dd9a4e30f03f4bc4f742c, bib.biblatex-bibtex only): the clash' }] },
     ],
     policy: [],
   },

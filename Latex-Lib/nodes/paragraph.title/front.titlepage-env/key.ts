@@ -31,6 +31,11 @@ export default defineKey(
         reason: 'siamart251216 has no titlepage environment (only \\if@titlepage): "Environment titlepage undefined" at \\begin{titlepage}, as under memoir',
         evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/siamart251216.cls', line: '75-76, 178, 201 (\\if@titlepage and notitlepage; no titlepage environment)' }],
       },
+      {
+        class: 'class.oup-authoring-template',
+        reason: 'oup-authoring-template is a standalone class (not built on article) with no titlepage environment: "Environment titlepage undefined" at \\begin{titlepage}, as under memoir',
+        evidence: [{ kind: 'compile', cell: 'GitHub run b12-5bdc624, oup-authoring-template.A: front.titlepage-env 14 of 14 branches fail so' }],
+      },
     ],
     zerotex: 'untested',
   }),

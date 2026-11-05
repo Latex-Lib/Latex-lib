@@ -10,7 +10,17 @@ import { defineClass } from '../schema/class.ts';
  * (l.1977-1978), whose facts refuse colortbl; natbib with no options (l.2424; numbers are forced through
  * \NAT@force@numbers, l.2435, so a way's natbib with any option stops at "Option clash"); wrapfig (l.2558), amsthm
  * (l.2592), subfloat [countmax], multirow, footnote, url, mathrsfs, algorithm, algorithmicx, algpseudocode, listings
- * (l.2705-2715), hyperref [hidelinks] (l.2991), tikz (l.2993), and anyfontsize at \begin{document} (l.2706).
+ * (l.2705-2715), hyperref [hidelinks] (l.2991), tikz (l.2993), and anyfontsize at \begin{document} (l.2706). algorithm.sty loads
+ * float, so float is a preload too (as for icml): floatrow's facts then refuse floatrow ("Do not use float package with
+ * floatrow", 1,462 branches in GitHub run b12-5bdc624).
+ *
+ * Refused from run b12-5bdc624 (b27): tabularx, which hangs after the arydshln that contemporary loads (l.1977-1978): 316 of
+ * 528 documents with a General tabularx way hung (no log after 122 s, so the hang took its whole cell: 13,001 branches),
+ * against 0 of 347 without one, and the 102 that finished stopped at \end{tabularx} in arydshln's code ("Misplaced \noalign",
+ * \adl@rowsL); the same documents finish under apa7 and emulateapj (which also loads arydshln), so the rule is this class's,
+ * not arydshln's facts. The class's chngpage (l.147) defines \cplabel, and changepage defines it again ("Command \cplabel
+ * already defined"); the library has no changepage facts, so no `forbids.technical` entry can name it: note.sidenotes, which
+ * loads changepage itself, is denied in its key (all the cells with the error hold it).
  *
  * \abstract is a one-argument, non-\long storing command (l.1205), with no environment: `defines` lists no env:abstract.
  * proof is \relax'd at load (l.2596-2597) and made with \newenvironment at \begin{document} (l.2621), so a way that
@@ -30,7 +40,7 @@ export default defineClass({
     {"pkg": "rotating", "options": ["figuresright"]}, {"pkg": "chngpage"}, {"pkg": "totcount"}, {"pkg": "fix-cm"},
     {"pkg": "footmisc", "options": ["bottom"]}, {"pkg": "arydshln"}, {"pkg": "natbib"}, {"pkg": "wrapfig"}, {"pkg": "amsthm"},
     {"pkg": "subfloat", "options": ["countmax"]}, {"pkg": "multirow"}, {"pkg": "footnote"}, {"pkg": "url"}, {"pkg": "mathrsfs"},
-    {"pkg": "algorithm"}, {"pkg": "algorithmicx"}, {"pkg": "algpseudocode"}, {"pkg": "listings"},
+    {"pkg": "algorithm"}, {"pkg": "float"}, {"pkg": "algorithmicx"}, {"pkg": "algpseudocode"}, {"pkg": "listings"},
     {"pkg": "hyperref", "options": ["hidelinks"]}, {"pkg": "tikz"}, {"pkg": "anyfontsize"},
   ],
   defines: ["counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "counter:figure", "counter:table", "env:figure", "env:table", "env:thebibliography", "env:proof", "env:tablenotes", "env:processtable", "env:unlist", "env:epigraph", "env:methods", "env:biography", "env:appendices", "env:subappendices", "env:Figure", "env:Table", "env:boxtext", "cmd:\\maketitle", "cmd:\\abstract", "cmd:\\otherabstract", "cmd:\\frontmatter", "cmd:\\mainmatter", "cmd:\\backmatter", "cmd:\\journaltitle", "cmd:\\pubyear", "cmd:\\copyrightyear", "cmd:\\vol", "cmd:\\issue", "cmd:\\address", "cmd:\\corresp", "cmd:\\keywords"],
@@ -41,6 +51,7 @@ export default defineClass({
       { pkg: "sectsty", reason: "oup-authoring-template is a standalone class whose sectioning sectsty does not recognise: 'Package sectsty Error: The sectsty package doesn't work with this document class' (b2p probe G2-oup-authoring-template-cite)", evidence: [{ kind: 'source', file: "oup-authoring-template.cls (v1.5 2026/07/14, MiKTeX snapshot 9766)", line: "1076-1082 (own sectioning)" }] },
       { pkg: "biblatex", reason: "the class loads natbib (l.2424), and biblatex stops at \"Incompatible package 'natbib'\" (biblatex.sty l.168-179)", evidence: [{ kind: 'source', file: 'oup-authoring-template.cls (v1.5 2026/07/14, MiKTeX snapshot 9766)', line: '2424' }, { kind: 'source', file: 'biblatex.sty (MiKTeX snapshot 9766)', line: '168-179' }] },
       { pkg: "appendix", reason: "the class embeds appendix.sty's code (\\newcounter{@pps} at l.2725, \\newenvironment{appendices} and {subappendices} at l.2887 and l.2948), so loading appendix.sty defines them again: 'Command \\c@@pps already defined'", evidence: [{ kind: 'source', file: 'oup-authoring-template.cls (v1.5 2026/07/14, MiKTeX snapshot 9766)', line: '2719-2960' }] },
+      { pkg: "tabularx", reason: "under contemporary the class loads arydshln (l.1977-1978) before the preamble's tabularx, and a tabularx table then hangs the compile or stops at \\end{tabularx} in arydshln's row code ('Misplaced \\noalign', \\adl@rowsL): GitHub run b12-5bdc624, 316 of 528 documents with a General tabularx way hung with no log (13,001 branches), 0 of 347 without one; the same documents finish under apa7 and emulateapj", evidence: [{ kind: 'source', file: 'oup-authoring-template.cls (v1.5 2026/07/14, MiKTeX snapshot 9766)', line: '1977-1978 (\\usepackage{arydshln} under contemporary)' }, { kind: 'compile', cell: 'GitHub run b12-5bdc624, oup-authoring-template.A: document dd386ad946c65b730256c (no log after 122 s), d2e29f2180addd8fec18c l.256 (arydshln errors at \\end{tabularx})' }] },
     ],
     policy: [],
     names: [{ name: "cmd:\\tableofcontents", reason: "the class never defines \\tableofcontents (nor \\listoffigures, \\part or \\appendix): General's contents, which prints \\tableofcontents, stops at 'Undefined control sequence'", evidence: [{ kind: 'source', file: 'oup-authoring-template.cls (v1.5 2026/07/14, MiKTeX snapshot 9766)', line: '1-3234 (no \\tableofcontents anywhere; sectioning at 1076-1080)' }] }],

@@ -18,7 +18,11 @@ import { defineClass } from '../schema/class.ts';
  *   \begin{document} it saves \cite as \@internalcite, re-makes \cite, \citeN, \citeNP, \citeA, \citeyear and \@citex
  *   (kernel style) and empties \@biblabel, with no test for natbib or cite (l.777-781 writes only a log note). natbib
  *   re-sets \@citex in its own \AtBeginDocument hook, which runs later; cite.sty's \@citex is overwritten. Neither is a TeX
- *   error, so neither is refused: the probe cases show what they print.
+ *   error, so neither is refused: the probe cases show what they print. Under BibTeX's biblatex (bib.biblatex-bibtex, denied
+ *   in its key, and General's bibliography, which the host refuses for that denial: latexLib.ts `latexLibClasses`) the class's
+ *   \bibstyle{ascelike} comes first in main.aux and BibTeX makes no .bbl biblatex can read (no-bbl in 236 of 299 such cells in
+ *   GitHub run b12-5bdc624; probe b27-1 B2PROF-ascelike-old); biblatex is not in `forbids.technical`, as bib.biblatex-biber
+ *   (biber writes no \bibstyle) passes (213 of 230 branches).
  * - Page: \textwidth 6.5in (469.75499pt), \textheight 9in, plain lengths (no geometry), 12pt, one column.
  * - Names: \section, \subsection, \subsubsection, abstract, thebibliography, \appendix (with \Appendix and \sAppendix),
  *   enumerate and itemize are redefined; \KeyWords is new; authblk gives \author[..] and \affil. No theorem environments.
