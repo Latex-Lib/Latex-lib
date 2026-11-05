@@ -1,0 +1,30 @@
+{
+  "id": "imsart",
+  "description": "The Institute of Mathematical Statistics' imsart class in its Annals of Statistics layout: imsart.cls ('2025/03/18 driver class for package imsart.sty'), imsart.sty (\\imsfmt@version 2026/09/11) and the two IMS BibTeX styles spr-ims-number.bst and spr-ims-nameyear.bst, by VTeX for IMS (MIT licence, LICENSE in the repository). Not on CTAN or the engine's mirror: from github.com/vtex-soft/texsupport.ims-aos at commit ecee5a6 (2026-09-15), the repository IMS's LaTeX support page (e-publications.org/ims/support) names for AOS. aos is the option of the official aos-template.tex (l.14): imsart.cls passes 11pt, oneside and leqno to article and leqno (and cmex10) to amsmath, and imsart.sty selects the IMS journal layout (405bp x 646bp text block, twoside running heads, equation numbers on the left, history and keywords as footnotes, amsthm with IMS's plain and definition theorem styles; imsart.sty l.278-296 and l.3163-3200). The IMS layout loads [T1]{fontenc}, times, helvet (scaled .9), textcomp and textcase (l.3164-3168); General's fontspec lines come after it and set Latin Modern in TU, so the text is Latin Modern, as in neurips's setting, and the maths stays Computer Modern (imsart does not load newtxmath for aos: \\set@imsart@newtx, l.2652, is defined but not called). imsart redefines \\maketitle at \\begin{document} to print the front matter when the document has no frontmatter environment (l.2423-2452), so General's \\title, \\author and \\maketitle need nothing more; the template's \\begin{frontmatter} form is not required. The template loads natbib with [numbers] and amsthm, amsmath, amsfonts, amssymb itself (l.17-18); General loads the same packages, so the preamble is empty. The .bst files are for a document that names \\bibliographystyle{spr-ims-number} or spr-ims-nameyear, as the template's commented line does (l.190).",
+  "class": "imsart",
+  "options": [
+    "aos"
+  ],
+  "preamble": [],
+  "files": [
+    {
+      "path": "imsart.cls",
+      "sha256": "4f5542b4ab5465ec516786244c7c3e13e46da6655808ca87d2aefd2c8b3e3b00"
+    },
+    {
+      "path": "imsart.sty",
+      "sha256": "4eb3446ba4a3bc34848a61bf2b51c5dd119fddfde42a4a7b683ea68933fb10ad"
+    },
+    {
+      "path": "spr-ims-number.bst",
+      "sha256": "7534dabcdb21d7032ba2a5d00b9b443d0e418581b0348681de7b5af4d6a84507"
+    },
+    {
+      "path": "spr-ims-nameyear.bst",
+      "sha256": "033b7c11681726a2c91154b9414b8ecc0f6f83f8af61ba682d80a7fa320dd8b5"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

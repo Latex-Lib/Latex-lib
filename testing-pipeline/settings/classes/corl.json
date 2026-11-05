@@ -1,0 +1,22 @@
+{
+  "id": "corl",
+  "description": "CoRL 2026's style file corl_2026.sty ('2026/08/15 CORL2026 submission/preprint/camera-ready style file', modified for CoRL 2026 on 2026/01/10), on plain article, with its bibliography style corlabbrvnat.bst. Not on CTAN or the engine's mirror: from the camera-ready template zip (corl_2026_template_cameraready, Google Drive file 19xt72-5YaVqhWRO-ErqRQZ2SPZef8FFe) linked from the CoRL 2026 instructions for authors (sites.google.com/corl.org/corl2026/contributions/instruction-for-authors); the submission zip (Drive file 1R9irIW0ImqeDHh5g8Ukm2XGy91sWxOsQ) holds the same .sty and .bst byte for byte. final is the option the page asks for in camera-ready papers ('\\usepackage[final]{corl_2026}'): the first-page notice reads '10th Conference on Robot Learning (CoRL 2026), Austin TX, USA.', the authors print and there are no line numbers (the submission mode turns on lineno's \\linenumbers and wraps amsmath's environments in linenomath, l.165-191). One column on US letter: the style loads geometry [letterpaper] and sets a 5.5in x 9in text block with \\newgeometry at \\begin{document} (l.84-97), so it overrides a document's own geometry, as neurips_2026.sty does. It loads lineno, color, natbib [square,numbers] with \\bibliographystyle{corlabbrvnat} unless given nonatbib (l.76-80), so corlabbrvnat.bst is shipped, and hyperref unconditionally (its nohyperref option is marked as not working in the file's own TODO) with \\hypersetup colours. It sets \\rmdefault ptm and \\sfdefault phv (l.126-127); under XeTeX General's fontspec lines give Latin Modern, as for neurips. Licence: none stated (kept private).",
+  "class": "article",
+  "options": [],
+  "preamble": [
+    "\\usepackage[final]{corl_2026}"
+  ],
+  "files": [
+    {
+      "path": "corl_2026.sty",
+      "sha256": "62f38cd8df7ad718796617595c8230da136fc83ea1d7e1ba80084113409ec957"
+    },
+    {
+      "path": "corlabbrvnat.bst",
+      "sha256": "eb5c200b6c5a81cd774155c79c28d3a32ac8a5e25bb246a40dda74deb94dfa71"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

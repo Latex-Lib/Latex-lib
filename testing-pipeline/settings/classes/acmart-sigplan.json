@@ -1,0 +1,26 @@
+{
+  "id": "acmart-sigplan",
+  "description": "ACM's acmart (CTAN, v2.20 of 2026/08/16, from MiKTeX 9766) in its sigplan format with the screen option, as the SIGPLAN author kit loads it (\\documentclass[sigplan,screen]{acmart}) for PLDI, POPL, OOPSLA and the other SIGPLAN conferences, and as EuroSys and other SIGOPS venues ask for. sigplan is a proceedings format (acmart.cls l.238-239): 10pt type (l.277-278), a US-letter page with 1in top and bottom and 0.75in side margins and the heads and feet outside the text block (includeheadfoot=false, l.664-669), sans-serif URLs (l.547-548), period-separated upright captions (l.895-897) and 'n.' enumerate labels (l.990-994), and the page turns two-column at \\maketitle (l.2442). screen (l.74-79) colours links (ACMPurple and ACMDarkBlue) through acmart's own \\hypersetup at the end of the preamble (l.556-567) instead of hiding them. A conference format needs no \\acmConference: acmart supplies 'Conference'17, July 2017, Washington, DC, USA' for the heads (l.1555-1558), as acmart-sigconf relies on. The rest is as acmart-sigconf: General's font and AMS lines are left out (omitPreamble), since under XeTeX acmart sets its maths with unicode-math (l.788-799) and General's lmodern after it emptied every maths glyph; an empty \\title gives the odd-page head the \\shorttitle it prints; and \\settopmatter{printacmref=false} leaves out the ACM Reference Format block, whose inline full-width title overfilled the first page (ACM-REFLINE).",
+  "class": "acmart",
+  "options": [
+    "sigplan",
+    "screen"
+  ],
+  "preamble": [
+    "\\title{}",
+    "\\settopmatter{printacmref=false}"
+  ],
+  "omitPreamble": [
+    "\\usepackage{lmodern}",
+    "\\usepackage{fontspec}",
+    "\\setmainfont{Latin Modern Roman}[SmallCapsFont={Latin Modern Roman Caps}]",
+    "\\setsansfont{Latin Modern Sans}",
+    "\\setmonofont{Inconsolatazi4-Regular.otf}[BoldFont=Inconsolatazi4-Bold.otf]",
+    "\\usepackage{amsmath}",
+    "\\usepackage{amssymb}"
+  ],
+  "files": [],
+  "setups": [
+    "A"
+  ]
+}

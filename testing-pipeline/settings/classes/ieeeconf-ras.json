@@ -1,0 +1,24 @@
+{
+  "id": "ieeeconf-ras",
+  "description": "The IEEE conference class used by ICRA, IROS and the other IEEE RAS conferences that take papers through PaperPlaza: ieeeconf.cls ('2016/4/23 revision V1.6b by Pradeep Misra', a renamed IEEEtran V1.6b of 2002/11/18), from ieeeconf.zip on ras.papercept.net/conferences/support/tex.php (PaperPlaza's LaTeX support page), with root.tex, the template. Not on CTAN: the mirror's IEEEconf package is a different class (Scott Pakin's IEEEconf.cls v1.4, IEEE Computer Society proceedings) whose file name differs only in case, so the shipped lower-case ieeeconf.cls is the one the engine finds on its case-sensitive file system. Options as root.tex's: letterpaper, 10pt, conference; two columns and oneside are the class defaults (l.797). The first two preamble lines are root.tex's own: in conference mode the class swallows \\thanks, \\keywords, \\PARstart, \\pubid, \\IEEEmembership and \\IEEEaftertitletext (l.4531-4566), and \\IEEEoverridecommandlockouts restores them (l.4572), so a document's \\thanks prints as root.tex's author notes do; \\overrideIEEEmargins widens the binding-side margin as PaperPlaza's printer asks (l.1191). The third line: the class defines \\proof and \\endproof with \\def (l.3947-3948), and amsthm, which General loads, declares proof with \\newenvironment (amsthm.sty l.431), which stops at 'Command \\proof already defined'; the hook clears both just before amsthm loads, so amsthm's proof is used (not yet compiled). The class sets \\rmdefault ptm, \\sfdefault phv and \\ttdefault pcr (l.790-792), which General's fontspec lines replace with Latin Modern under XeTeX; its paper-size code sets \\pdfpagewidth and \\pdfpageheight, which XeTeX has (l.831-838). The kit's IEEEtran.bst (IEEEtranBST.zip) is the mirror's ieeetran package. Licence: Perl Artistic License (the IEEEtran V1.6b header).",
+  "class": "ieeeconf",
+  "options": [
+    "letterpaper",
+    "10pt",
+    "conference"
+  ],
+  "preamble": [
+    "\\IEEEoverridecommandlockouts",
+    "\\overrideIEEEmargins",
+    "\\AddToHook{package/amsthm/before}{\\let\\proof\\relax\\let\\endproof\\relax}"
+  ],
+  "files": [
+    {
+      "path": "ieeeconf.cls",
+      "sha256": "4befef671c2a996889d325f5170d3387bf42aac9a37dcaa93724ad49816e4ec2"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

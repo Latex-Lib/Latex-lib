@@ -2,7 +2,7 @@
   "batches": [
     {
       "id": 1,
-      "status": "running",
+      "status": "closed",
       "classes": [
         "article", "report", "book", "beamer", "amsart",
         "revtex4-2-aps", "ieeetran-journal", "ieeetran-conference", "aastex",
@@ -64,6 +64,54 @@
         "handlers": []
       },
       "why": "The most used classes not in batch 1 that are on CTAN and MiKTeX (fetched on demand), plus three settings of batch 1 classes in their other common modes. To ship once their licence headers allow it: iopart (27k on arXiv), svjour3 (15.6k), PoS (9.9k), imsart (4.5k). After that: mitthesis, bxjsarticle, elegantbook, iacrj, and the publisher classes that must be shipped. Added on 2026-11-03 at the owner's request ('make the common journal and conference to be in batch 2'): jmlr [pmlr], quantumarticle, asmejour, asmeconf and ascelike, the common venue classes in MiKTeX 9766 (its aiaa-tc, ametsoc and IEEEconf are older than what those venues use now; IEEEtran covers IEEE). Then, at the owner's word ('add the big conference styles to batch 2'): NeurIPS, ICML, ICLR, ACL, CVPR, ECCV, AAAI, IJCAI, USENIX, ICASSP, AISTATS, COLM and TMLR, each a setting on article (ECCV on llncs) with the venue's own style file from its 2026/2027 author kit. Those kits are not in MiKTeX and carry no licence that allows a public copy, so their files are listed in settings/classes/files/private.txt and come in through the private companion, not the public tree. Interspeech's kit is on Overleaf only and is left for later."
+    },
+    {
+      "id": 3,
+      "status": "planned",
+      "classes": [
+        "acmart-acmtog",
+        "acmart-sigplan",
+        "elsarticle-3p",
+        "iopart",
+        "imsart",
+        "interact",
+        "agu",
+        "copernicus",
+        "jss",
+        "frontiers",
+        "ieeeaccess",
+        "plos",
+        "ieeeconf-ras",
+        "corl",
+        "bmvc",
+        "aamas",
+        "ecai",
+        "vldb"
+      ],
+      "added": {
+        "classes": [
+          "acmart-acmtog: acmart [acmtog] (ACM Transactions on Graphics, SIGGRAPH journal papers)",
+          "acmart-sigplan: acmart [sigplan,screen] (PLDI, POPL, OOPSLA, ICFP, EuroSys)",
+          "elsarticle-3p: elsarticle [3p] (Elsevier journals, one-column final layout)",
+          "iopart: IOP Publishing iopart.cls (legacy IOP journals)",
+          "imsart: imsart.cls [aos] (Institute of Mathematical Statistics: Annals of Statistics)",
+          "interact: Taylor & Francis interact.cls",
+          "agu: agujournal2025.cls [draft] (AGU journals)",
+          "copernicus: copernicus.cls [acp,manuscript] (Copernicus / EGU journals)",
+          "jss: jss.cls [article] (Journal of Statistical Software)",
+          "frontiers: FrontiersinHarvard.cls (Frontiers journals)",
+          "ieeeaccess: ieeeaccess.cls (IEEE Access)",
+          "plos: article with the PLOS template preamble and plos2025.bst (PLOS journals)",
+          "ieeeconf-ras: IEEE ieeeconf.cls [letterpaper,10pt,conference] (ICRA, IROS and other IEEE RAS conferences)",
+          "corl: article with corl_2026.sty (CoRL)",
+          "bmvc: bmvc2k.cls (BMVC)",
+          "aamas: aamas.cls [sigconf] (AAMAS)",
+          "ecai: ecai.cls (ECAI)",
+          "vldb: acmart [sigconf,nonacm] with pvldb.sty (PVLDB / VLDB)"
+        ],
+        "handlers": []
+      },
+      "why": "More journal and conference formats, at the owner's word ('start preparing batch 3 that contains more journal and conference', 2026-11-05), picked by use: three more modes of batch 1 classes, nine publisher classes and six conference kits. The kits and publisher classes not in MiKTeX 9766 come from each publisher's or conference's own site or GitHub organization and are listed in settings/classes/files/private.txt. Looked for and left out: svjour3 (Springer now points authors to sn-jnl, in batch 1), PNAS and SAGE (their templates are on Overleaf only), PoS (behind a login), and Wiley (its NJD class is gone; the new USG.cls design can come later)."
     }
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "id": "interact",
+  "description": "Taylor & Francis' Interact layout class interact.cls ('2016/10/17 v1.03 Interact LaTeX document class'), with tfcad.bst, the Chicago author-date BibTeX style of the same bundle (makebst output, LPPL). Not on CTAN or the engine's mirror: from interactcadlatex.zip on files.taylorandfrancis.com (the 'Interact layout + Chicago author-date reference style' template that T&F journals' instructions for authors link to; the APA bundle interactapalatex.zip on the same host carries the class too). interact.cls states no licence. The class is article at 11pt on A4, one column, with a 34pc x 650pt text block set by geometry (interact.cls l.23-31); the template passes no options (interactcadsample.tex l.4), and largeformat (1in margins) and suppldata are not used. It loads amsmath, amssymb, amsfonts, amsbsy, amsthm, booktabs, epsfig, graphicx and rotating itself (l.25), all in MiKTeX, so General's loads of the same packages are no-ops. Its \\title, \\author, \\thanks and \\maketitle store and print as article's do (l.233-279), and the template prints the title block with \\maketitle in the body (l.30-39), so the preamble is empty. The class sets \\rmdefault to cmr and the OT1 encoding (l.124-131); General's fontspec lines come after it and set Latin Modern in TU. The template's own copies of natbib.sty, epsfig.sty, rotating.sty and subfigure.sty are not shipped: the engine's mirror has current versions.",
+  "class": "interact",
+  "options": [],
+  "preamble": [],
+  "files": [
+    {
+      "path": "interact.cls",
+      "sha256": "f84355389329ecef75c6d0c826cd128fb0884012c33721b098d039a1910953bd"
+    },
+    {
+      "path": "tfcad.bst",
+      "sha256": "30ebc3a77316090922ff3f391b6292c48e24ba1a45e665df660edd5b9f047d73"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

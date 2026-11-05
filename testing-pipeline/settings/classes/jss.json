@@ -1,0 +1,26 @@
+{
+  "id": "jss",
+  "description": "The Journal of Statistical Software's class jss.cls v3.6 (2026/04/28) by Achim Zeileis, with jss.bst and jsslogo.jpg, from jss-style.zip on www.jstatsoft.org (public/journals/1/jss-style.zip, the journal's style files). Not on CTAN or the engine's mirror; no licence in the zip (kept private). article is the default article type (the other types are codesnippet, bookreview and softwarereview, l.37-44). The class loads article [11pt,a4paper,twoside], graphicx, xcolor, fancyvrb, [T1]{fontenc}, upquote, lmodern and hyperref (l.52-57, l.254), and prints the title block itself at begindocument/end (l.471), after which \\maketitle does nothing (l.325), so \\title and \\author must be set in the preamble. \\Plainauthor, \\Address and the other title-block fields have placeholder defaults (l.121-141). The zip's README calls it pdfLaTeX infrastructure; under XeTeX its [T1]{fontenc}, loaded before General's fontspec, is overridden by fontspec's TU Latin Modern.",
+  "class": "jss",
+  "options": [
+    "article"
+  ],
+  "preamble": [],
+  "files": [
+    {
+      "path": "jss.cls",
+      "sha256": "2be72971ed31651bd67fa1faef9f492b81aec1786bb039689176ed279a66cca7"
+    },
+    {
+      "path": "jss.bst",
+      "sha256": "71cf69fa29ff2f9ad583edc6fca44f51fd75cbae4201fffbdcb7c13b4a728f43"
+    },
+    {
+      "path": "jsslogo.jpg",
+      "sha256": "b9f97c51e25b2fe013c89751788aa71ea6958050b3993993cc2e4fcb0cbcf90c"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

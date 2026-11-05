@@ -1,0 +1,33 @@
+{
+  "id": "frontiers",
+  "description": "Frontiers' journal class FrontiersinHarvard.cls v2.6 (2016/11/10, based on bioinfo.cls) with Frontiers-Harvard.bst, from Frontiers_LaTeX_Templates.zip (www.frontiersin.org/design/zip/, linked from frontiersin.org/guidelines/author-guidelines; files dated 2023-09-20). The current template (frontiers.tex l.14) uses FrontiersinHarvard for author-date journals; FrontiersinVancouver.cls (numbered) differs only in its date and spacing, and frontiersSCNS.cls is no longer in the kit. Not on CTAN or the engine's mirror; no licence (kept private). utf8 is the template's option, passed to inputenc (under XeTeX inputenc only warns). The class loads inputenc, crop, graphicx, amsmath, array, color, amssymb, flushend, stfloats, amsthm, chngpage, times, datetime and epstopdf (l.32) and natbib (l.863), and sets headings in phv. The preamble repeats the template's title-block macros, which the class's \\maketitle prints without defining them (l.496-504): \\keyFont, \\firstAuthorLast, \\Authors, \\Address, \\corrAuthor and \\corrEmail (frontiers.tex l.28-38). The class's \\maketitle includes ./logo1.eps (l.486), shipped from the same zip.",
+  "class": "FrontiersinHarvard",
+  "options": [
+    "utf8"
+  ],
+  "preamble": [
+    "\\def\\keyFont{\\fontsize{8}{11}\\helveticabold }",
+    "\\def\\firstAuthorLast{Author {et~al.}}",
+    "\\def\\Authors{A. N. Author\\,$^{1,*}$}",
+    "\\def\\Address{$^{1}$Department of Sample Studies, Sample University, Sample City, Country}",
+    "\\def\\corrAuthor{A. N. Author}",
+    "\\def\\corrEmail{author@example.org}"
+  ],
+  "files": [
+    {
+      "path": "FrontiersinHarvard.cls",
+      "sha256": "5d0653546d3adb8fbc21e57948e762636f2193c9bb11e22d25c3d7c334843fa6"
+    },
+    {
+      "path": "Frontiers-Harvard.bst",
+      "sha256": "f08f8fb7b5d5a7613416e5c1ba7979dd88356f785b0f292ee9dde95bc2c53cda"
+    },
+    {
+      "path": "logo1.eps",
+      "sha256": "317053e5132185d4ec4149bab9a437c1af29ef46240d1bab6ddaebc310a402b8"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

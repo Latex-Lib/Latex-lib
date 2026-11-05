@@ -1,0 +1,16 @@
+{
+  "id": "elsarticle-3p",
+  "description": "Elsevier's elsarticle (CTAN, v3.5 of 2026/01/09, from MiKTeX 9766) in its single-column 3p format, the wide-measure final layout of Elsevier's single-column journals: A4 with a 468pt by 622pt text block, 18pt footskip and 10pt type (elsarticle.cls l.85, l.1266-1280); unlike 5p it neither turns two-column nor loads fleqn.clo (that happens only for 3p,twocolumn, l.1280). Its preamble is elsarticle-5p's and elsarticle-preprint's (batch 1, round 2): \\title takes a paragraph (elsarticle.cls l.123-125 with \\long; General's title ends its \\parbox with \\par, and elsarticle's \\def\\title stopped at 'Paragraph ended before \\title was complete'), and where a way loads titlesec \\paragraph gets elsarticle's own run-in format, since elsarticle defines it through \\secdef (l.1069-1076) and titlesec gives such a command no format ('No format for this command').",
+  "class": "elsarticle",
+  "options": [
+    "3p"
+  ],
+  "preamble": [
+    "\\makeatletter\\long\\def\\title#1{\\g@addto@macro\\@title{#1\\global\\let\\tnoteref\\@gobble}\\g@addto@macro\\useelstitle{#1}}\\makeatother",
+    "\\makeatletter\\AddToHook{package/titlesec/after}{\\titleformat{\\paragraph}[runin]{\\normalfont\\itshape}{\\@seccntformat{paragraph}}{\\z@}{\\ttl@passexplicit}[.]\\titlespacing{\\paragraph}{0pt}{10pt plus 6pt minus 3pt}{6pt}}\\makeatother"
+  ],
+  "files": [],
+  "setups": [
+    "A"
+  ]
+}

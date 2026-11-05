@@ -1,0 +1,30 @@
+{
+  "id": "copernicus",
+  "description": "Copernicus Publications' journal class copernicus.cls v10.1.34 (27 July 2026) with its journal configuration copernicus.cfg (3 September 2026) and copernicus.bst v1.6, from the Copernicus LaTeX Macro Package v7.16 (publications.copernicus.org/Copernicus_LaTeX_Package.zip, linked from the journals' manuscript-preparation pages), used by all EGU journals. Not on CTAN or the engine's mirror; the package says each file has its own copyright, Copernicus GmbH (no open licence; kept private). Options as the template (template.tex l.12: [journal abbreviation, manuscript]): acp (Atmospheric Chemistry and Physics) and manuscript, the one-column preprint layout; without manuscript the class sets the final two-column layout. The class refuses every standard size, paper and column option (a4paper ... fleqn, l.89-105) with \\@latexerr, so setup B (twocolumn) cannot be used. The class loads article [fleqn], ulem [normalem], [T5,T3,T1]{fontenc}, fontawesome5 with fontawesomesymbols-pdftex.tex, inputenc [utf8] (all but LuaTeX), babel (english), amssymb, amsmath [intlimits,fleqn,tbtags], amsthm, natbib [authoryear,round] (l.2038-2039) and, unless nohyperref, hyperref [bookmarks=true,colorlinks] (l.2306-2313). \\runningtitle and \\runningauthor are required: the class stops with 'You must define \\runningtitle' if either is empty (l.552-553), so the preamble gives both, as the template does.",
+  "class": "copernicus",
+  "options": [
+    "acp",
+    "manuscript"
+  ],
+  "preamble": [
+    "\\runningtitle{Sample running title}",
+    "\\runningauthor{A. N. Author}"
+  ],
+  "files": [
+    {
+      "path": "copernicus.cls",
+      "sha256": "22c84e571c86b0eb780d5d8b01b9b020d8a00143ee20b99146f0e1832a6aaa0c"
+    },
+    {
+      "path": "copernicus.cfg",
+      "sha256": "216fb552f82f62579a69ab7aad32dc295ba8d41d68e81f154272e7fbea41acdb"
+    },
+    {
+      "path": "copernicus.bst",
+      "sha256": "70c032940279b4c5e678dec7f4724e43a7c6dc827efe28c38c0dbc7502b8aead"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

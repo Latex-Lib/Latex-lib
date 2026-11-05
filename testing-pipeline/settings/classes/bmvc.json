@@ -1,0 +1,23 @@
+{
+  "id": "bmvc",
+  "description": "BMVC's class bmvc2k.cls v0.22 (2026/04/02, 'Updates for 2026': page limit 14) with its natbib copy bmvc2k_natbib.sty, from github.com/BritishMachineVisionAssociation/BMVCTemplate (commit fff8f99), the BMVA's own repository. The BMVC 2026 author guidelines (bmvc2026.bmva.org/authors/author-guidelines/) link the programme chairs' copy github.com/lwpyh/BMVCTemplate2026 (commit 6c6db49, v0.22 of 2026/02/18), whose class differs only in the date and one history comment and whose bmvc2k_natbib.sty and bmvc2k.bst are the same files. Not on CTAN or the engine's mirror. No options: the default is the final proceedings version (\\bmvcreviewcopy{N} makes the anonymous review copy, extendedabs the one-page A5 abstract). The class is article at 10pt, twoside, one column, on a 410pt x 620pt page set with geometry (l.246); it loads xcolor, graphicx, subfigure, xspace, eso-pic, hyperref [colorlinks,urlcolor=blue,citecolor=red,bookmarks=false], amsmath, [T1]{fontenc}, mathptmx, helvet and courier, then bmvc2k_natbib.sty with [sort,numbers], and sets \\bibliographystyle{plainnat} (l.775, the mirror's natbib), so the kit's bmvc2k.bst is not used and not shipped. Its pdfTeX code (\\pdfcatalog, citation annotations with \\pdfxform and \\pdfannot) runs only when \\pdfoutput is defined and positive (\\ifbmv@pdf, l.89-100), so not under XeTeX; its \\Hy@StartlinkName (with \\pdfstartlink, l.719-750) is called only by hyperref's pdfTeX and LuaTeX drivers, not by hxetex.def. Preamble: (1) \\runninghead, as the template sets it: the page heads from page 2 print \\BMVA@author and \\BMVA@title (l.577-597), which only \\runninghead defines (l.554-555), so without it the second page would stop at an undefined control sequence. (2) bmvc2k_natbib.sty is a renamed natbib (\\ProvidesPackage{bmvc2k_natbib}) that allocates \\bibhang and \\bibsep (l.553-555) and defines natbib's commands; General's own natbib line would load natbib a second time and stop at 'Command \\bibhang already defined' (as mnras did); the line records natbib as loaded with the class's options, so that line does nothing and the class's copy is the natbib used (not yet compiled). The fonts under XeTeX: General's fontspec lines give Latin Modern text; mathptmx keeps Times maths. Licence: none stated (kept private).",
+  "class": "bmvc2k",
+  "options": [],
+  "preamble": [
+    "\\runninghead{A. N. Author}{Sample Title}",
+    "\\makeatletter\\@namedef{ver@natbib.sty}{2010/09/13 8.31b (bmvc2k_natbib)}\\@namedef{opt@natbib.sty}{sort,numbers}\\makeatother"
+  ],
+  "files": [
+    {
+      "path": "bmvc2k.cls",
+      "sha256": "a4a9eb5c575ef99f3299ba29253e11f46db4be8bd23dd0ffddd11d4e63c5ff58"
+    },
+    {
+      "path": "bmvc2k_natbib.sty",
+      "sha256": "7351a465b798370f97530664b1eacf1a73656636a9e656bc856452f68079be8a"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

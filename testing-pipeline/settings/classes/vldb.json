@@ -1,0 +1,32 @@
+{
+  "id": "vldb",
+  "description": "PVLDB Vol. 20 / VLDB 2027's template, from github.com/vldbproceedings/VLDB-Template (commit 39c95f5 of 2026-07-13), linked from vldb.org/pvldb/volumes/20/formatting: ACM's acmart in sigconf with nonacm, and pvldb.sty ('2026/07/06 v1.0 VLDB 2027 / PVLDB Vol. 20 formatting overrides') loaded right after the class, as its main.tex does. The repository also bundles acmart.cls v2.19 (2026/06/27) and ACM-Reference-Format.bst; neither is shipped, since the mirror's acmart (v2.20 of 2026/08/16) has files of the same names, which the engine takes first: only pvldb.sty is shipped. nonacm leaves out ACM's copyright and permission block and turns off the ACM Reference Format block (acmart.cls l.115-122), so the setting needs no \\acmConference or printacmref line. pvldb.sty loads textcase and makes acmart's section headings upper case (\\@secfont with \\MakeTextUppercase), defines the PVLDB metadata macros with the template's placeholder defaults (doi XX.XX/XXX.XX, pages XXX-XXX, volume 20, issue 1, year 2027) and \\vldbtopmatter, which main.tex calls right after \\maketitle: the PVLDB Reference Format paragraph, the CC BY-NC-ND licence footnote and the Artifact Availability paragraph (left out while \\vldbavailabilityurl is empty, its default). The last preamble line makes that call after \\maketitle with the kernel's command hook, since every PVLDB paper prints it there. As acmart-sigconf: General's font and AMS lines are left out (omitPreamble), since acmart sets its own fonts and maths under XeTeX, and an empty \\title gives the page heads the \\shorttitle they print, and \\vldbtopmatter's reference line the \\shorttitle it prints. Licence: none stated for pvldb.sty (kept private).",
+  "class": "acmart",
+  "options": [
+    "sigconf",
+    "nonacm"
+  ],
+  "preamble": [
+    "\\usepackage{pvldb}",
+    "\\title{}",
+    "\\AddToHook{cmd/maketitle/after}{\\vldbtopmatter}"
+  ],
+  "omitPreamble": [
+    "\\usepackage{lmodern}",
+    "\\usepackage{fontspec}",
+    "\\setmainfont{Latin Modern Roman}[SmallCapsFont={Latin Modern Roman Caps}]",
+    "\\setsansfont{Latin Modern Sans}",
+    "\\setmonofont{Inconsolatazi4-Regular.otf}[BoldFont=Inconsolatazi4-Bold.otf]",
+    "\\usepackage{amsmath}",
+    "\\usepackage{amssymb}"
+  ],
+  "files": [
+    {
+      "path": "pvldb.sty",
+      "sha256": "37e9341f03757c138ae3b10bfc9fd9e97f2c40b08e0edf6d87c3eb1e1ffc1dff"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

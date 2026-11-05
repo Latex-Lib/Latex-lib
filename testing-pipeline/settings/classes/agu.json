@@ -1,0 +1,20 @@
+{
+  "id": "agu",
+  "description": "AGU's journal class agujournal2025.cls ([11/12/2024] in its \\ProvidesClass), the one class for all AGU journals. Not on CTAN or the engine's mirror (MiKTeX's aguplus is the old AGU++ bundle): from github.com/AGU-Publications/agujournal2025-latex-template at commit 3550522 (2026-03-27), the repository that agu.org/publications/authors/journals links as AGU's GitHub template. agu.org's own zip of the older agujournal2019.cls (an .ashx under agu.org/publications/authors/-/media) refuses scripted downloads (HTTP 403), so the 2019 class is not used; the repository has no licence file (kept private). draft is the option the template sets (agujournaltemplate.tex l.1-4): without published the class takes its 'old code' branch (agujournal2025.cls l.812 on), the agujournal2019 manuscript layout: one column, letter paper, a self-contained article-like class (no \\LoadClass), apacite citations with \\let\\cite\\shortcite (l.1970-1972), lineno, and a 'manuscript submitted to <journal>' running head. published (the Wiley typeset look, which needs unicode-math, STIX Two Math, TeX Gyre Adventor, draftwatermark and the repository's tweaklist-git-moderncv-fixed.sty) is not used. \\journalname fills the running head, which otherwise reads 'Please set Journal Name by using \\journalname' (l.1371-1372); the template calls it after \\begin{document}, but it is a plain \\def, so the preamble works.",
+  "class": "agujournal2025",
+  "options": [
+    "draft"
+  ],
+  "preamble": [
+    "\\journalname{Journal of Geophysical Research: Atmospheres}"
+  ],
+  "files": [
+    {
+      "path": "agujournal2025.cls",
+      "sha256": "a6645a79392906eb31fd63a4d3f28a2322464c0552f93c4a35da9f4a85067fab"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}

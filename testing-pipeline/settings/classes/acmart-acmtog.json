@@ -1,0 +1,29 @@
+{
+  "id": "acmart-acmtog",
+  "description": "ACM's acmart (CTAN, v2.20 of 2026/08/16, from MiKTeX 9766) in its acmtog format, the two-column journal layout of ACM Transactions on Graphics, which also prints the SIGGRAPH and SIGGRAPH Asia journal-track papers (conference-track papers use sigconf). acmtog is a journal format (acmart.cls l.231-233): 9pt type (l.271-272), a US-letter page with 52pt margins and a 24pt column gap (l.643-649), and the page turns two-column at \\maketitle (l.2436), as sigconf's does. Its footers print '\\@journalNameShort, Vol. \\@acmVolume, No. \\@acmNumber, Article \\@acmArticle' (l.3063-3078), so, as for acmart-acmsmall, the preamble names the journal (TOG, a valid \\acmJournal key: 'ACM Trans. Graph.', l.1414-1418) and sample volume, number and article, instead of an empty journal name and 'Article .'; CCS concepts, keywords and affiliations are optional and left out. As for the other acmart settings: General's font and AMS lines are left out (omitPreamble), since under XeTeX acmart sets its maths with unicode-math (l.788-799) and General's lmodern after it took the maths fonts back to 8-bit Latin Modern; an empty \\title gives the odd-page head the \\shorttitle it prints (l.3070); and \\settopmatter{printacmref=false} leaves out the ACM Reference Format block, whose inline full-width title overfilled the first page (ACM-REFLINE, fix-notes batch 1 round 3).",
+  "class": "acmart",
+  "options": [
+    "acmtog"
+  ],
+  "preamble": [
+    "\\title{}",
+    "\\acmJournal{TOG}",
+    "\\acmVolume{1}",
+    "\\acmNumber{1}",
+    "\\acmArticle{1}",
+    "\\settopmatter{printacmref=false}"
+  ],
+  "omitPreamble": [
+    "\\usepackage{lmodern}",
+    "\\usepackage{fontspec}",
+    "\\setmainfont{Latin Modern Roman}[SmallCapsFont={Latin Modern Roman Caps}]",
+    "\\setsansfont{Latin Modern Sans}",
+    "\\setmonofont{Inconsolatazi4-Regular.otf}[BoldFont=Inconsolatazi4-Bold.otf]",
+    "\\usepackage{amsmath}",
+    "\\usepackage{amssymb}"
+  ],
+  "files": [],
+  "setups": [
+    "A"
+  ]
+}

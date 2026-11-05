@@ -1,0 +1,41 @@
+{
+  "id": "aamas",
+  "description": "AAMAS 2027's class aamas.cls ('2026/06/27 v2.19 Typesetting articles for the Association for Computing Machinery'): ACM's acmart v2.19 under another name, changed for AAMAS (the ifaamas copyright mode, a fifth \\acmConference argument for the editors, \\acmSubmissionID and \\submissionType), from aamas_2027_template.zip on warwick.ac.uk/fac/sci/dcs/aamas2027/, linked from the AAMAS 2027 submission instructions (warwick.ac.uk/fac/sci/dcs/aamas2027/calls/instructions/). Not on CTAN or the engine's mirror. Like acmart it is built on amsart (l.288), not on acmart.cls, so it takes nothing from the mirror's acmart (v2.20). sigconf is the format of the template (AAMAS_2027_sample.tex); its anonymous option, for the review version, is left out, so the authors print as in the camera-ready version. The first seven preamble lines are the template's, in its order: the CC BY permission block (\\@copyrightpermission with by.pdf, the CC BY 4.0 badge, shipped from the kit), \\setcopyright{ifaamas}, \\acmConference with AAMAS 2027's name, dates, venue and editors, \\copyrightyear, \\acmYear, and empty \\acmDOI and \\acmISBN; \\acmSubmissionID and \\submissionType are template placeholders and left out. The last two lines are acmart-sigconf's, for the same reasons: an empty \\title gives the page heads the \\shorttitle they print, and \\settopmatter{printacmref=false} leaves out the ACM reference block, which overfilled the line with General's title box (ACM-REFLINE). As for acmart, General's font and AMS lines are left out (omitPreamble): under XeTeX the class loads amssymb and unicode-math, sets Libertinus Math and loads libertine (l.784-790). The kit's aamas27-logo-small.jpg is only a figure in the sample and is not shipped; its ACM-Reference-Format.bst (v2.1 of 2023) is not shipped either, since the mirror's acmart has a file of that name (v2.2), which the engine takes first. Licence: aamas.dtx's terms (not in the zip); the generated file may be distributed with its source (header), so it is kept private.",
+  "class": "aamas",
+  "options": [
+    "sigconf"
+  ],
+  "preamble": [
+    "\\makeatletter\\gdef\\@copyrightpermission{\\begin{minipage}{0.2\\columnwidth}\\href{https://creativecommons.org/licenses/by/4.0/}{\\includegraphics[width=0.90\\textwidth]{by}}\\end{minipage}\\hfill\\begin{minipage}{0.8\\columnwidth}\\href{https://creativecommons.org/licenses/by/4.0/}{This work is licensed under a Creative Commons Attribution International 4.0 License.}\\end{minipage}\\vspace{5pt}}\\makeatother",
+    "\\setcopyright{ifaamas}",
+    "\\acmConference[AAMAS 2027]{Proc.\\@ of the 26th International Conference on Autonomous Agents and Multiagent Systems (AAMAS 2027)}{3--7 May 2027}{Hanoi, Vietnam}{M.~Baldoni, F.~Fang, W.~Yeoh, N.~Yorke-Smith (eds.)}",
+    "\\copyrightyear{2027}",
+    "\\acmYear{2027}",
+    "\\acmDOI{}",
+    "\\acmISBN{}",
+    "\\title{}",
+    "\\settopmatter{printacmref=false}"
+  ],
+  "omitPreamble": [
+    "\\usepackage{lmodern}",
+    "\\usepackage{fontspec}",
+    "\\setmainfont{Latin Modern Roman}[SmallCapsFont={Latin Modern Roman Caps}]",
+    "\\setsansfont{Latin Modern Sans}",
+    "\\setmonofont{Inconsolatazi4-Regular.otf}[BoldFont=Inconsolatazi4-Bold.otf]",
+    "\\usepackage{amsmath}",
+    "\\usepackage{amssymb}"
+  ],
+  "files": [
+    {
+      "path": "aamas.cls",
+      "sha256": "e88c8e3e5fd1e39f93a2a4fa5b664e125b67487996b4236668206acf5c70ca7e"
+    },
+    {
+      "path": "by.pdf",
+      "sha256": "19b7b19350bb937afead8e45e4ad006187e14803bef783902dbd88e370fc9917"
+    }
+  ],
+  "setups": [
+    "A"
+  ]
+}
