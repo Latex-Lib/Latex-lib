@@ -118,7 +118,7 @@
     },
     {
       "id": 3,
-      "status": "running",
+      "status": "closed",
       "classes": [
         "acmart-acmtog",
         "acmart-sigplan",
@@ -162,7 +162,8 @@
         ],
         "handlers": []
       },
-      "why": "More journal and conference formats, at the owner's word ('start preparing batch 3 that contains more journal and conference', 2026-11-05), picked by use: three more modes of batch 1 classes, nine publisher classes and six conference kits. The kits and publisher classes not in MiKTeX 9766 come from each publisher's or conference's own site or GitHub organization and are listed in settings/classes/files/private.txt. Looked for and left out: svjour3 (Springer now points authors to sn-jnl, in batch 1), PNAS and SAGE (their templates are on Overleaf only), PoS (behind a login), and Wiley (its NJD class is gone; the new USG.cls design can come later)."
+      "why": "More journal and conference formats, at the owner's word ('start preparing batch 3 that contains more journal and conference', 2026-11-05), picked by use: three more modes of batch 1 classes, nine publisher classes and six conference kits. The kits and publisher classes not in MiKTeX 9766 come from each publisher's or conference's own site or GitHub organization and are listed in settings/classes/files/private.txt. Looked for and left out: svjour3 (Springer now points authors to sn-jnl, in batch 1), PNAS and SAGE (their templates are on Overleaf only), PoS (behind a login), and Wiley (its NJD class is gone; the new USG.cls design can come later).",
+      "closed": "Closed 2026-11-05 at 97.82% after round b30 (three runs: 80.9% at b28 with 16 settings, 92.45% at b29, 97.82% at b30; ieeeaccess 38.3% to 98.5% at b30), under the 97% rule."
     }
   ]
 }

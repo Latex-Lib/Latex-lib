@@ -33,8 +33,9 @@ message=${4:?a commit message}
 here=$(cd "$(dirname "$0")" && pwd)
 trailer=${COMMIT_TRAILER:-}
 private_repo=yguo499/Latex-lib-private
-# The split between the runner repositories, made shortest for the current batch from the last runs' minutes.
-node "$here/balance.mjs" --write
+# The split between the runner repositories, made shortest for the current batch from the last runs' minutes, or
+# for RELEASE_PAIRS (run-pairs.sh's names, e.g. batch:1,batch:2) when a dispatched run will ask for other pairs.
+node "$here/balance.mjs" --write ${RELEASE_PAIRS:+"$RELEASE_PAIRS"}
 runners=$(node -e '
   const r = JSON.parse(require("fs").readFileSync(process.argv[1], "utf8"));
   for (const x of [r.default, ...r.runners.filter((x) => x.active).map((x) => x.repository)]) console.log(x);
