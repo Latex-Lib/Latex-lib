@@ -1,0 +1,59 @@
+# Re-seals the final regression run's artifacts (commit 5d51a8f, 2026-11-05) under a second key, so they can be
+# read without the original FLOUEST_KEY's local copy, which is lost. The old key never leaves the secret store:
+# each sealed file is decrypted and re-encrypted in one pipe, so no plain file is written and nothing is printed.
+# Everything goes up again as one artifact, a folder per original artifact (the layout ci/fetch-run.sh unzips),
+# kept 90 days. Runs on a push to the branch reseal only; main is untouched.
+name: reseal
+
+on:
+  push:
+    branches: [reseal]
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  reseal:
+    runs-on: ubuntu-latest
+    env:
+      RUN_ID: ${{ github.repository == 'Latex-Lib/Latex-lib' && '42035051960' || '42035056048' }}
+    steps:
+      - name: Download the run's artifacts
+        uses: actions/download-artifact@v4
+        with:
+          run-id: ${{ env.RUN_ID }}
+          github-token: ${{ github.token }}
+          path: artifacts
+
+      - name: Re-seal under the new key
+        env:
+          OLD_KEY: ${{ secrets.FLOUEST_KEY }}
+          NEW_KEY: ${{ secrets.FLOUEST_KEY_NEW }}
+        run: |
+          set -euo pipefail
+          [ -n "$OLD_KEY" ] || { echo "reseal: the secret FLOUEST_KEY is not set here" >&2; exit 1; }
+          [ -n "$NEW_KEY" ] || { echo "reseal: the secret FLOUEST_KEY_NEW is not set here" >&2; exit 1; }
+          echo "artifacts downloaded: $(find artifacts -mindepth 1 -maxdepth 1 -type d | wc -l)"
+          n=0
+          while IFS= read -r -d '' f; do
+            openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:OLD_KEY < "$f" \
+              | openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt -pass env:NEW_KEY > "$f.new"
+            mv "$f.new" "$f"
+            n=$((n + 1))
+          done < <(find artifacts -type f -name '*.tar.gz.enc' -print0)
+          echo "re-sealed files: $n"
+          echo "plain files left as they were: $(find artifacts -type f ! -name '*.tar.gz.enc' | wc -l)"
+          # One file opened with the new key, its listing discarded: the new key works.
+          first=$(find artifacts -type f -name '*.tar.gz.enc' | head -1)
+          openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:NEW_KEY < "$first" | tar -tzf - > /dev/null
+          echo "check: the new key opens $(basename "$first")"
+
+      - name: Upload the re-sealed run
+        uses: actions/upload-artifact@v4
+        with:
+          name: resealed-${{ env.RUN_ID }}
+          path: artifacts
+          retention-days: 90
+          compression-level: 0
+          if-no-files-found: error
