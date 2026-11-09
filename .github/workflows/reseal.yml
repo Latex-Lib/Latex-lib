@@ -19,12 +19,23 @@ jobs:
     env:
       RUN_ID: ${{ github.repository == 'Latex-Lib/Latex-lib' && '42035051960' || '42035056048' }}
     steps:
+      # Not actions/download-artifact: given a run id it fetched only 100 of 157 artifacts (and 200 of 209), so each
+      # is listed (every page) and downloaded by the API, as ci/fetch-run.sh does.
       - name: Download the run's artifacts
-        uses: actions/download-artifact@v4
-        with:
-          run-id: ${{ env.RUN_ID }}
-          github-token: ${{ github.token }}
-          path: artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh api --paginate "repos/$GITHUB_REPOSITORY/actions/runs/$RUN_ID/artifacts?per_page=100" \
+            --jq '.artifacts[] | select(.expired | not) | "\(.id) \(.name)"' > "$RUNNER_TEMP/list.txt"
+          echo "artifacts listed: $(wc -l < "$RUNNER_TEMP/list.txt")"
+          mkdir -p artifacts
+          while read -r id name; do
+            gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$id/zip" > "$RUNNER_TEMP/a.zip"
+            mkdir -p "artifacts/$name"
+            unzip -q -o "$RUNNER_TEMP/a.zip" -d "artifacts/$name"
+            rm "$RUNNER_TEMP/a.zip"
+          done < "$RUNNER_TEMP/list.txt"
 
       - name: Re-seal under the new key
         env:
@@ -34,7 +45,10 @@ jobs:
           set -euo pipefail
           [ -n "$OLD_KEY" ] || { echo "reseal: the secret FLOUEST_KEY is not set here" >&2; exit 1; }
           [ -n "$NEW_KEY" ] || { echo "reseal: the secret FLOUEST_KEY_NEW is not set here" >&2; exit 1; }
-          echo "artifacts downloaded: $(find artifacts -mindepth 1 -maxdepth 1 -type d | wc -l)"
+          listed=$(wc -l < "$RUNNER_TEMP/list.txt")
+          downloaded=$(find artifacts -mindepth 1 -maxdepth 1 -type d | wc -l)
+          echo "artifacts downloaded: $downloaded of $listed"
+          [ "$downloaded" -eq "$listed" ] || { echo "reseal: not every artifact came down" >&2; exit 1; }
           n=0
           while IFS= read -r -d '' f; do
             openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:OLD_KEY < "$f" \
@@ -45,7 +59,8 @@ jobs:
           echo "re-sealed files: $n"
           echo "plain files left as they were: $(find artifacts -type f ! -name '*.tar.gz.enc' | wc -l)"
           # One file opened with the new key, its listing discarded: the new key works.
-          first=$(find artifacts -type f -name '*.tar.gz.enc' | head -1)
+          # -print -quit, not | head -1: under pipefail, find's broken pipe failed the step.
+          first=$(find artifacts -type f -name '*.tar.gz.enc' -print -quit)
           openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:NEW_KEY < "$first" | tar -tzf - > /dev/null
           echo "check: the new key opens $(basename "$first")"
 
