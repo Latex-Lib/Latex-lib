@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'no',
+  targetEngine: 'no',
   evidence: [ctan("minted"), { kind: 'manual', of: "minted", section: "Options (\\setminted); Styles (\\usemintedstyle); shell escape and Pygments required", url: 'https://ctan.org/pkg/minted' }],
 });

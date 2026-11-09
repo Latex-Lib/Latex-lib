@@ -8,6 +8,7 @@ export default defineKey(
     node: 'table',
     description:
       "The kernel's tabbing: columns at tab stops set by a first line ended with \\kill, cells separated by \\>, each field a ragged-right \\parbox[t] that wraps at its stop (a spanning cell one across its stops), no rules, no float, no caption. 3 templates.",
+    writes: '\\begin{tabbing} \\hspace{…}\\=\\hspace{…}\\=\\kill \\parbox[t]{…}{\\raggedright …} \\> \\parbox[t]{…}{\\raggedright …} \\\\ \\end{tabbing}',
     ctan: ['latex-base'],
     features: ['tab-stops'],
     params: {
@@ -21,6 +22,6 @@ export default defineKey(
     // Each field is a \parbox argument: no float, a footnote in it loses its text, and a verbatim child (a library code way)
     // cannot sit below it.
     gives: { floats: false, argument: true, footnotes: false },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

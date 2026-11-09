@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [{ after: 'hyperref', reason: 'cleveref must come after hyperref' }],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("cleveref"), { kind: 'manual', of: "cleveref", section: "7 Options that modify the cross-reference format (7.1 capitalise, 7.2 nameinlink, 7.3 noabbrev)", url: 'https://ctan.org/pkg/cleveref' }],
 });

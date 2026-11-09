@@ -25,6 +25,7 @@ export const PRESETS = {
   },
   'ieee-newest': {
     description: 'IEEE style (biblatex-ieee), newest first (style=ieee, sorting=ydnt), the list under its own heading.',
+    writes: '\\nocite{*} \\printbibliography[title={…}]; \\addbibresource{\\jobname.bib}',
     features: ['numeric-citations', 'external-tool'],
     params: { style: 'ieee', sorting: 'ydnt', heading: 'Publications' },
     evidence: [solution('0153-komacv', '57')],

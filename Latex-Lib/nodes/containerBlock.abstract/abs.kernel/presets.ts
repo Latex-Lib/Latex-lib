@@ -13,12 +13,14 @@ export const PRESETS = {
   },
   renamed: {
     description: 'The abstract under a heading of its own (\\renewcommand{\\abstractname}{Executive Summary}).',
+    writes: '\\begin{abstract} … \\end{abstract}; \\AtBeginDocument{\\renewcommand{\\abstractname}{…}}',
     features: ['small-type', 'indented', 'centered'],
     params: { name: 'Executive Summary' },
     evidence: [solution('0042-jankapunkt-master-thesis', '56')],
   },
   unindented: {
     description: 'The abstract without a first-line indent (\\noindent at its start, \\parindent 0pt).',
+    writes: '\\begin{abstract} \\setlength{\\parindent}{0pt}\\noindent … \\end{abstract}',
     features: ['small-type', 'centered'],
     params: { noindent: true },
     evidence: [solution('0041-fancyhandout', '44')],

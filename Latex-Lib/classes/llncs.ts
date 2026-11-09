@@ -13,9 +13,9 @@ import { defineClass } from '../schema/class.ts';
 export default defineClass({
   id: 'class.llncs',
   name: "llncs",
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "multicol"}],
-  defines: ["counter:part", "counter:chapter", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:theorem", "env:lemma", "env:corollary", "env:definition", "env:proposition", "env:remark", "env:example", "env:property", "env:note", "env:conjecture", "env:claim", "env:proof", "env:case", "env:exercise", "env:problem", "env:question", "env:solution", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:part", "counter:chapter", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:theorem", "env:lemma", "env:corollary", "env:definition", "env:proposition", "env:remark", "env:example", "env:property", "env:note", "env:conjecture", "env:claim", "env:proof", "env:case", "env:exercise", "env:problem", "env:question", "env:solution", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\institute", "cmd:\\inst", "cmd:\\orcidID", "cmd:\\keywords", "cmd:\\subtitle", "env:credits", "cmd:\\ackname", "cmd:\\discintname", "cmd:\\spnewtheorem"],
   options: {},
   forbids: {
     technical: [{ pkg: "titlesec", reason: "its load test stops: Argument of \\subparagraph has an extra }.", evidence: [{ kind: 'compile', cell: 'testing-pipeline/out/profiles/llncs.A.json' }] }, { pkg: "amsthm", reason: "its load test stops: LaTeX Error: Command \\proof already defined. Or name \\end... illegal, see p.192 of the manual.", evidence: [{ kind: 'compile', cell: 'testing-pipeline/out/profiles/llncs.A.json' }] }],

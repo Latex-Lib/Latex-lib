@@ -13,24 +13,28 @@ export const PRESETS = {
   },
   unnumbered: {
     description: 'Nothing numbered: \\setcounter{secnumdepth}{0} (or below), every heading printed without its number but still in the contents.',
+    writes: '\\section[…]{…} \\label{…}; \\setcounter{secnumdepth}{…}',
     features: ['unnumbered', 'bold-head', 'hang-head'],
     params: { numberDepth: 'none' },
     evidence: [solution('0046-classic-homework-template', '37'), solution('0278-bilingual-homework-template', '74')],
   },
   'to-subsection': {
     description: 'Numbered down to the subsection only (secnumdepth 2); deeper levels print without numbers.',
+    writes: '\\section[…]{…} \\label{…}; \\setcounter{secnumdepth}{…}',
     features: ['numbered', 'bold-head', 'hang-head'],
     params: { numberDepth: 'subsection' },
     evidence: [solution('0070-ntgclass', '35')],
   },
   'roman-sections': {
     description: 'Sections numbered in capital Roman numerals, \\renewcommand{\\thesection}{\\Roman{section}} (I, II, III).',
+    writes: '\\section[…]{…} \\label{…}; \\renewcommand{\\thesection}{\\Roman{section}}',
     features: ['numbered', 'bold-head', 'hang-head'],
     params: { numberStyle: 'Roman' },
     evidence: [solution('0172-br-lex', '52'), solution('0169-open-source-uc-latex-templates', '64')],
   },
   'lettered-sections': {
     description: 'Sections lettered, \\renewcommand{\\thesection}{\\Alph{section}} (A, B, C).',
+    writes: '\\section[…]{…} \\label{…}; \\renewcommand{\\thesection}{\\Alph{section}}',
     features: ['numbered', 'lettered', 'bold-head', 'hang-head'],
     params: { numberStyle: 'Alph' },
     evidence: [solution('0470-anton-petrunin-birkhoff', '55'), solution('0723-amnestyreport', '57'), solution('0572-nihbiosketch', '39')],

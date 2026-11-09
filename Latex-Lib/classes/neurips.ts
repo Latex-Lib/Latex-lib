@@ -22,9 +22,9 @@ export default defineClass({
   id: 'class.neurips',
   name: "article",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [{"pkg": "environ"}, {"pkg": "natbib"}, {"pkg": "geometry", "options": ["verbose=true", "letterpaper"]}],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "env:ack", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\acksection", "cmd:\\answerYes", "cmd:\\answerNo", "cmd:\\answerNA", "cmd:\\answerTODO", "cmd:\\justificationTODO", "cmd:\\workshoptitle", "cmd:\\subsubsubsection"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "env:ack", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\acksection", "cmd:\\answerYes", "cmd:\\answerNo", "cmd:\\answerNA", "cmd:\\answerTODO", "cmd:\\justificationTODO", "cmd:\\workshoptitle", "cmd:\\subsubsubsection", "cmd:\\And", "cmd:\\AND"],
   options: {},
   forbids: {
     technical: [],

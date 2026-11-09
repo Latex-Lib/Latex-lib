@@ -1,0 +1,28 @@
+{
+  "handler": "tbl.cell-plain",
+  "node": "table_cell",
+  "generatedFrom": {
+    "key": "sha256:a3bdf97a828deaadbaf56fd02b5da607ad1a1cf241146dccc8b52455184d5c4a",
+    "contexts": "sha256:42ed3b10f6b6c33a344cd7e5641165afaef458ffff1ab9cd9d7926b174c055b1",
+    "matrix": null
+  },
+  "parents": {
+    "body": {
+      "(document body)": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "table_row": {
+      "tbl.row": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    }
+  },
+  "packageCombos": {
+    "deny": []
+  }
+}

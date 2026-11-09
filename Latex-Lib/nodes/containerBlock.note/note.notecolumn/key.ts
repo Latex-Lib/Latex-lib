@@ -8,6 +8,7 @@ export default defineKey(
     node: 'containerBlock/note',
     description:
       "KOMA's scrlayer-notecolumn: \\makenote*[column]{…} (the starred form, its text kept detokenized for the column) into a note column beside the text, synchronised with it across pages; the marginpar column, or one of its own declared with \\DeclareNewNoteColumn[font=…,width=…]{name}. Without a width a column is \\marginparwidth wide: the class's, or the room its margin has where the class's is under 2cm or runs off the paper. Under a two-sided class whose notes keep one side (tufte-handout), an even page's column goes right of the text, where \\marginpar sets the note, not in the package's left margin; odd pages, and a reversed document's sides, stay the package's. 1 template.",
+    writes: '\\makenote*{{\\bfseries …\\par} …}',
     ctan: ['koma-script'],
     features: ['margin-note', 'note-column', 'colored', 'small-type'],
     params: {
@@ -98,6 +99,6 @@ export default defineKey(
     // happens. A breakable tcolorbox's last-part \clearpage in a footnote's text or thm.mdframed's body ran main memory out so
     // in 163 cells of GitHub run 41584963423, and \@doclearpage's own \clearpage in \output, by the source, in 36 two-column
     // cells (b21 M1-NC; e.g. aa.A db76c3d7b09a0788ce503 result 4188056999 l.684).
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

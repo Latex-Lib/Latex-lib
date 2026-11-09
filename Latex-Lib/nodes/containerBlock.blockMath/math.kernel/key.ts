@@ -8,6 +8,7 @@ export default defineKey(
     node: 'containerBlock/blockMath',
     description:
       'Display maths without amsmath: \\[ … \\] for one unnumbered row, equation for a numbered one, eqnarray for several; \\counterwithin{equation}{section} for numbers within a section. 194 templates.',
+    writes: '\\begin{equation} … \\label{…} \\end{equation}, \\[ … \\], \\begin{eqnarray} … \\\\ … \\label{…} \\end{eqnarray}',
     ctan: ['latex-base'],
     features: ['numbered', 'unnumbered', 'numbered-within', 'aligned', 'multiline'],
     params: {
@@ -15,6 +16,6 @@ export default defineKey(
     },
     presets: PRESETS,
     gives: { math: true },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

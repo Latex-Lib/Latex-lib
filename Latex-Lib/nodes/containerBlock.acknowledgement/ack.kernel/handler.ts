@@ -1,7 +1,8 @@
 /**
- * ack.kernel: the acknowledgements as an unnumbered heading, \section* or
- * \chapter* with its title, entered in the contents by \addcontentsline
- * when asked, then the text.
+ * ack.kernel: the acknowledgements as a heading, \section*, \chapter*,
+ * \subsection*, \subsubsection* or \paragraph(*) with its title, entered in
+ * the contents by \addcontentsline when asked (a starred heading only: an
+ * unstarred one enters it itself, by secnumdepth and tocdepth), then the text.
  * CTAN: https://ctan.org/pkg/latex-base
  */
 import { withDefaults } from '../../../schema/params.ts';
@@ -17,8 +18,9 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
     emit: (node, content) => {
       // The node's own title is plain text (escaped, as General's is); the preset's is LaTeX.
       const title = field(node, 'title') === '' ? param(p, 'title', 'Acknowledgements') : escapeText(field(node, 'title'));
-      const toc = p['inContents'] === true ? `\n\\addcontentsline{toc}{${level}}{${title}}` : '';
-      return `\\${level}*{${title}}${toc}${labelLine(field(node, 'label'))}\n${content.trim()}\n\n`;
+      const starred = p['starred'] !== false;
+      const toc = p['inContents'] === true && starred ? `\n\\addcontentsline{toc}{${level}}{${title}}` : '';
+      return `\\${level}${starred ? '*' : ''}{${title}}${toc}${labelLine(field(node, 'label'))}\n${content.trim()}\n\n`;
     },
   };
 };

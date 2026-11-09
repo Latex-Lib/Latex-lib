@@ -8,6 +8,6 @@ export default definePackage({
   libraries: ["skins", "breakable", "theorems", "most", "many", "all", "hooks", "xparse", "fitting", "listings", "listingsutf8", "minted", "raster", "vignette", "poster", "magazine", "documentation", "external"],
   loadOrder: [],
   defines: [],
-  zerotex: 'yes',
+  targetEngine: 'yes',
   evidence: [],
 });

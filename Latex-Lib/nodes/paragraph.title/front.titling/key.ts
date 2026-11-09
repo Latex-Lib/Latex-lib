@@ -8,6 +8,7 @@ export default defineKey(
     node: 'paragraph/title',
     description:
       'titling: \\maketitle restyled by its hooks, \\pretitle and \\posttitle around the title, \\preauthor and \\postauthor around the authors, \\predate and \\postdate around the date; \\droptitle to move the block; alone on its page in titlingpage, centred by \\maketitlehooka and \\maketitlehookd. 29 templates.',
+    writes: '\\maketitle; \\pretitle{\\begin{center}…} \\posttitle{\\par\\end{center}…} \\preauthor{…} \\postauthor{…} \\predate{…} \\postdate{…} \\title{…}',
     ctan: ['titling'],
     features: ['centered', 'flush-right', 'sans-serif', 'bold-head', 'title-page'],
     params: {
@@ -61,6 +62,6 @@ export default defineKey(
         ],
       },
     ],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

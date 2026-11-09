@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [["leqno", "reqno"], ["tbtags", "centertags"], ["sumlimits", "nosumlimits"], ["intlimits", "nointlimits"], ["namelimits", "nonamelimits"]],
   loadOrder: [],
   defines: [],
-  zerotex: 'yes',
+  targetEngine: 'yes',
   evidence: [ctan("amsmath"), { kind: 'manual', of: "amsmath", section: "amsldoc: options of the amsmath package", url: 'https://ctan.org/pkg/amsmath' }],
 });

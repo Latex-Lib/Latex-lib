@@ -117,25 +117,35 @@ export type HandlerKey = {
   // What it achieves.
   /** Free text, for people and for an AI choosing between handlers. */
   readonly description: string;
+  /** The LaTeX it writes, in one line: its commands and environments as a skeleton, content as … (`\\begin{split} … \\end{split} \\label{…}`). What a template's own LaTeX is held to (Ai's `latex` key field). */
+  readonly writes?: string;
   readonly features: readonly Feature[];
   /** Typed from the Flouest `Packages/` printer the handler calls. */
   readonly params: ParamSchema;
+  /**
+   * The title's fields it prints besides the title and the authors' names: `author.email`, `author.orcid`,
+   * `affiliation.name`, `affiliation.department`, `affiliation.address`, `templateSpecific.<field>` (keywords, a
+   * short title, the corresponding author). A Flouest template made with it declares them, so a paper can fill them in.
+   */
+  readonly fields?: readonly string[];
   /** Many styling descriptions to this one handler. */
   readonly presets: { readonly [name: string]: Preset };
 
   // The engine.
   /**
-   * Whether it runs in ZeroTeX-NG, the only engine the library is for: XeTeX in
+   * Whether it runs in the target engine, the only engine the library is for: XeTeX in
    * the browser, with no shell escape, no Ghostscript, no minted or pythontex.
    * Other engines are not a question the library asks.
    */
-  readonly zerotex: Support;
+  readonly targetEngine: Support;
 
   // What it puts in the document.
   readonly loads: readonly PackageLoad[];
   readonly defines: readonly Definition[];
   readonly claims: readonly Exclusive[];
   readonly requires: readonly Requirement[];
+  /** What it requires besides, only when its parameters match (the class's abstract environment, or its \abstract command). */
+  readonly requiresWhen?: readonly { readonly when: ParamPredicate; readonly requires: readonly Requirement[] }[];
 
   // Document class.
   readonly classes: {

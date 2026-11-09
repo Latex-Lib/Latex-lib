@@ -13,12 +13,14 @@ export const PRESETS = {
   },
   local: {
     description: "Only the current section's or chapter's own entries, where the contents block stands (\\localtableofcontents).",
+    writes: '\\localtableofcontents',
     features: ['local-contents'],
     params: { scope: 'local' },
     evidence: [manual('etoc', '\\localtableofcontents')],
   },
   'sections-only': {
     description: 'The next contents listed down to sections only (\\etocsetnexttocdepth{section}).',
+    writes: '\\etocsetnexttocdepth{…} \\tableofcontents',
     features: ['flat-contents'],
     params: { nextDepth: 'section' },
     evidence: [manual('etoc', '\\etocsetnexttocdepth')],

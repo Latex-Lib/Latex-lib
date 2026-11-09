@@ -31,9 +31,9 @@ export default defineClass({
   id: 'class.imsart',
   name: "imsart",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [{"pkg": "etoolbox"}, {"pkg": "keyval"}, {"pkg": "ifpdf"}, {"pkg": "fontenc", "options": ["T1"]}, {"pkg": "times"}, {"pkg": "helvet", "options": ["scaled=.9"]}, {"pkg": "textcomp"}, {"pkg": "textcase"}, {"pkg": "amsthm"}],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:acks", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:acks", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "env:frontmatter", "env:aug", "env:keyword", "cmd:\\runtitle", "cmd:\\address", "env:funding", "cmd:\\startlocaldefs", "cmd:\\endlocaldefs", "env:longlist"],
   options: {},
   forbids: {
     technical: [

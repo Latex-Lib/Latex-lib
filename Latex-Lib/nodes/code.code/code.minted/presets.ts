@@ -7,12 +7,14 @@ import { solution } from '../../evidence.ts';
 export const PRESETS = {
   'framed-small': {
     description: 'Pygments highlighting in a single frame, small type, long lines broken (\\setminted{frame=single, breaklines, fontsize=\\small}).',
+    writes: '\\begin{minted}{…} … \\end{minted} \\begin{center}…\\end{center}; \\usemintedstyle{…} \\setminted{…}',
     features: ['syntax-highlighting', 'framed', 'external-tool'],
     params: { frame: 'single', fontsize: '\\small', style: 'lovelace' },
     evidence: [solution('0016-rho-class-research-article', '90')],
   },
   colorful: {
     description: "Pygments' colorful style, footnote size, lines broken (\\usemintedstyle{colorful}).",
+    writes: '\\begin{minted}{…} … \\end{minted} \\begin{center}…\\end{center}; \\usemintedstyle{…} \\setminted{…}',
     features: ['syntax-highlighting', 'colored', 'external-tool'],
     params: { style: 'colorful', fontsize: '\\footnotesize' },
     evidence: [solution('0191-cloze', '56')],
@@ -25,6 +27,7 @@ export const PRESETS = {
   },
   numbered: {
     description: 'Line numbers, lines broken, tabs of four, the autumn style.',
+    writes: '\\begin{minted}{…} … \\end{minted} \\begin{center}…\\end{center}; \\usemintedstyle{…} \\setminted{…}',
     features: ['syntax-highlighting', 'line-numbers', 'external-tool'],
     params: { linenos: true, tabsize: 4, style: 'autumn' },
     evidence: [solution('0231-tecosaur-bmc', '83'), solution('0674-greenpark-buaa-beamer', '72')],

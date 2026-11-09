@@ -8,12 +8,13 @@ export default defineKey(
     node: 'atomicBlock/pageBreak',
     description:
       "The kernel's page breaks: \\clearpage (floats placed first), \\newpage, \\cleardoublepage (a right-hand page), \\pagebreak. 325 templates.",
+    writes: '\\clearpage',
     ctan: ['latex-base'],
     features: ['float-flush', 'odd-page'],
     params: {
       command: { type: 'enum', values: ['clearpage', 'newpage', 'cleardoublepage', 'pagebreak'], default: 'clearpage', description: 'the break' },
     },
     presets: PRESETS,
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

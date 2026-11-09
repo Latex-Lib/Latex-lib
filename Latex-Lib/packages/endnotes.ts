@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("endnotes"), { kind: 'manual', of: "endnotes", section: "usage: \\endnote, \\theendnotes, \\enotesize, \\notesname", url: 'https://ctan.org/pkg/endnotes' }],
 });

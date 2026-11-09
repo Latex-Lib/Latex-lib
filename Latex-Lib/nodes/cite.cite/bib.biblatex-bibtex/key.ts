@@ -8,6 +8,8 @@ export default defineKey(
     node: 'cite/cite',
     description:
       "biblatex's citation commands: \\autocite{key} as the style formats it, \\parencite, \\textcite, \\footcite, \\supercite.",
+    // The same LaTeX as bib.biblatex-biber's: the backend is a package option (loads), not a command.
+    writes: '\\autocite{…}',
     ctan: ['biblatex'],
     features: ['numeric-citations', 'author-year'],
     params: {
@@ -17,6 +19,6 @@ export default defineKey(
     requires: [
       'pkg:biblatex',
     ],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

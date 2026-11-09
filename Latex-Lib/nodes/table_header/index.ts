@@ -3,9 +3,11 @@
  */
 import type { Realization } from '../../schema/realization.ts';
 import way0 from './tbl.header/handler.ts';
+import w_tbl_header_plain from './tbl.header-plain/handler.ts';
 
 export type Handler = (params?: { readonly [name: string]: unknown }) => Realization;
 
 export const HANDLERS: { readonly [way: string]: Handler } = {
   'tbl.header': way0,
+  'tbl.header-plain': w_tbl_header_plain,
 };

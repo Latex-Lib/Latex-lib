@@ -2,7 +2,7 @@
  * thm.thmtools: one `\declaretheoremstyle` (and an upright twin), then
  * `\declaretheorem` per kind, numbered within a counter.
  *
- * In ZeroTeX-NG's TeX tree, thmtools breaks every theorem that shares
+ * In the target engine's TeX tree, thmtools breaks every theorem that shares
  * another's counter, its own `sibling=` and any `\newtheorem{kind}[theorem]`
  * after it alike ("Command \c@corollary already defined"; minimal documents
  * compiled 2026-10-31, with and without hyperref). So amsthm's `\newtheorem`

@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("paracol")],
 });

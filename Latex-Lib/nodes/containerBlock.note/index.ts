@@ -11,6 +11,11 @@ import way5 from './box.tcolorbox/handler.ts';
 import way6 from './box.mdframed/handler.ts';
 import way7 from './box.fancybox/handler.ts';
 import way8 from './box.awesomebox/handler.ts';
+import w_box_class_native from './box.class-native/handler.ts';
+import w_box_exam_solution from './box.exam-solution/handler.ts';
+import w_box_tikzposter from './box.tikzposter/handler.ts';
+import w_note_class_margin from './note.class-margin/handler.ts';
+import w_note_epigraph from './note.epigraph/handler.ts';
 
 export type Handler = (params?: { readonly [name: string]: unknown }) => Realization;
 
@@ -24,4 +29,9 @@ export const HANDLERS: { readonly [way: string]: Handler } = {
   'box.mdframed': way6,
   'box.fancybox': way7,
   'box.awesomebox': way8,
+  'box.class-native': w_box_class_native,
+  'box.exam-solution': w_box_exam_solution,
+  'box.tikzposter': w_box_tikzposter,
+  'note.class-margin': w_note_class_margin,
+  'note.epigraph': w_note_epigraph,
 };

@@ -1,6 +1,6 @@
 /**
  * fig.svg: \includesvg[width=…]{file} in a figure float; Inkscape converts
- * the file during the compile (shell escape, which ZeroTeX-NG does not
+ * the file during the compile (shell escape, which the target engine does not
  * have). inkscapelatex=false keeps the drawing's own text, \svgpath a folder.
  * CTAN: https://ctan.org/pkg/svg
  */

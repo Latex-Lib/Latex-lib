@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [["leqno", "reqno"]],
   loadOrder: [],
   defines: [],
-  zerotex: 'yes',
+  targetEngine: 'yes',
   evidence: [ctan("mathtools"), { kind: 'manual', of: "mathtools", section: "mathtools: package loading and options; \\mathtoolsset", url: 'https://ctan.org/pkg/mathtools' }],
 });

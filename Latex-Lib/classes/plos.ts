@@ -29,7 +29,7 @@ export default defineClass({
   id: 'class.plos',
   name: "article",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [{"pkg": "geometry", "options": ["top=0.85in", "left=2.75in", "footskip=0.75in"]}, {"pkg": "changepage"}, {"pkg": "textcomp"}, {"pkg": "marvosym"}, {"pkg": "nameref"}, {"pkg": "lineno", "options": ["right"]}, {"pkg": "microtype", "options": ["nopatch=eqnum"]}, {"pkg": "xcolor", "options": ["table"]}, {"pkg": "array"}, {"pkg": "caption", "options": ["aboveskip=1pt", "labelfont=bf", "labelsep=period", "justification=raggedright", "singlelinecheck=off"]}, {"pkg": "lastpage"}, {"pkg": "fancyhdr"}, {"pkg": "graphicx"}],
   defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\thickcline", "cmd:\\thickhline", "cmd:\\savedwidth"],
   options: {},

@@ -8,10 +8,19 @@ import { ctan } from '../schema/minimal.ts';
 export default defineClass({
   id: 'class.siamart',
   name: "siamart251216",
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "amsmath", "options": ["leqno"]}, {"pkg": "ntheorem", "options": ["amsmath", "thmmarks", "hyperref"]}, {"pkg": "xr-hyper"}, {"pkg": "ifpdf"}, {"pkg": "hyperref"}, {"pkg": "graphics"}, {"pkg": "graphicx"}, {"pkg": "breakurl"}, {"pkg": "xcolor"}, {"pkg": "hypcap", "options": ["all"]}, {"pkg": "algorithm"}, {"pkg": "float"}, {"pkg": "cleveref", "options": ["capitalize", "nameinlink"]}],
-  defines: ["counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:theorem", "env:lemma", "env:corollary", "env:proposition", "env:definition", "env:proof", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:theorem", "env:lemma", "env:corollary", "env:proposition", "env:definition", "env:proof", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\headers", "cmd:\\funding", "cmd:\\email", "cmd:\\orcid", "env:keywords", "env:MSCcodes", "env:AMS", "cmd:\\newsiamthm", "cmd:\\newsiamremark"],
   options: {},
+  setup: {
+    options: ['nohypdvips'],
+    before: ['\\expandafter\\def\\csname ver@breakurl.sty\\endcsname{2013/04/10}'],
+    reason: "under XeTeX \\ifpdf is false, so siamart251216.cls (l.1326-1336) loads hypdvips unless given nohypdvips ('Wrong hyperref driver hxetex.def selected!') and breakurl always, whose \\AtBeginShipoutFirst calls \\headerps@out and whose \\url needs \\pdf@box, both hdvips.def's: every document stops at its first page. nohypdvips keeps hypdvips out; marking breakurl loaded before the class keeps it out too, and hyperref's \\url stays. The line before the class line cannot be carried into a Flouest template, whose class line must start with \\documentclass",
+    evidence: [
+      { kind: 'compile', reproducer: "\\documentclass{siamart251216} with \\maketitle, a \\section and a \\url: 'Package hypdvips Error: Wrong hyperref driver'; with \\expandafter\\def\\csname ver@breakurl.sty\\endcsname{2013/04/10} before \\documentclass[nohypdvips]{siamart251216} it compiles (class-examples' probe (Latex Related Research/Latex-Template-Examples, 2026-11-06), through Flouest's headless ZeroTeX-NG runner)" },
+      { kind: 'compile', cell: 'class-examples: _results/class.siamart.log (2026-11-06), hypdvips and \\pdf@box errors' },
+    ],
+  },
   forbids: {
     technical: [{ pkg: "amsthm", reason: "its load test stops: LaTeX Error: Command \\theoremstyle already defined. Or name \\end... illegal, see p.192 of the manual.", evidence: [{ kind: 'compile', cell: 'testing-pipeline/out/profiles/siamart.A.json' }] }, { pkg: "tocloft", reason: "its load test stops: LaTeX Error: Command \\l@section undefined.", evidence: [{ kind: 'compile', cell: 'testing-pipeline/out/profiles/siamart.A.json' }] }],
     policy: [],

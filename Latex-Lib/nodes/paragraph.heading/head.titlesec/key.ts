@@ -9,6 +9,7 @@ export default defineKey(
     node: 'paragraph/heading',
     description:
       "titlesec: the heading level's format with \\titleformat{\\section}[shape]{format}{label}{sep}{before-code}[after-code] and its spacing with \\titlespacing*{\\section}{left}{before}{after}, then the kernel command. Shapes hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame; \\filcenter or \\filleft to align; \\titlerule for rules; \\MakeUppercase as the last before-code command for upper-cased titles; *n spacing. Not with memoir or KOMA (the manual says so). 155 templates.",
+    writes: '\\section[…]{…} \\label{…}; \\titleformat{\\section}[…]{…}{\\thesection}{…}{…}',
     ctan: ['titlesec'],
     features: ['hang-head', 'block-head', 'display-head', 'run-in-head', 'sans-serif', 'bold-head', 'italic-head', 'smallcaps-head', 'colored', 'uppercase', 'centered', 'ruled', 'compact-spacing', 'page-break-before', 'numbered', 'unnumbered'],
     params: {
@@ -58,6 +59,6 @@ export default defineKey(
     // head.sectsty@smallcaps's \subparagraph (55 of 59), run-in titles that never print (their footnote sibling's sentinel is missing).
     // Copy batch-3b, 5 pairs; e.g. d165d94f2adcdc3093699 result 82adbd1a35 l.150, an unmarked \section* 172.7pt over.
     needs: { paragraph: true },
-    zerotex: 'yes',
+    targetEngine: 'yes',
   }),
 );

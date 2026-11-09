@@ -13,12 +13,14 @@ export const PRESETS = {
   },
   symbols: {
     description: 'Footnotes marked by symbols, * † ‡ (\\renewcommand{\\thefootnote}{\\fnsymbol{footnote}}).',
+    writes: '\\footnote{…}; \\renewcommand{\\thefootnote}{…\\fnsymbol{footnote}…}',
     features: ['symbols'],
     params: { marks: 'symbols' },
     evidence: [solution('0231-tecosaur-bmc', '64'), solution('0238-wiley-njd', '82')],
   },
   'per-chapter': {
     description: 'Footnote numbers restarting with each chapter (\\counterwithin{footnote}{chapter}).',
+    writes: '\\footnote{…}; \\counterwithin{footnote}{…}',
     features: ['numbered', 'numbered-within'],
     params: { numberWithin: 'chapter' },
     evidence: [solution('0088-tinoryj-uestc-thesis-latex-template', '70')],

@@ -7,7 +7,9 @@ export default defineKey(
     id: 'bib.natbib',
     node: 'containerBlock/refContainer',
     description:
-      'natbib: \\usepackage[numbers]{natbib} (authoryear, super; round or square; sort, sort&compress; comma or semicolon) with an natbib style, \\bibliographystyle{plainnat} (unsrtnat, abbrvnat), \\bibliography{\\jobname}; \\bibsep and \\bibfont for the list. 107 templates.',
+      'natbib: \\usepackage[numbers]{natbib} (authoryear, super; round or square; sort, sort&compress; comma or semicolon) with an natbib style, \\bibliographystyle{plainnat} (unsrtnat, abbrvnat, apalike, IEEEtranN), \\bibliography{\\jobname}; \\bibsep and \\bibfont for the list, and \\renewcommand{\\bibsection}{…} for its heading level (AISTATS: \\subsubsection*{\\bibname}). 107 templates.',
+    // The \LatexLib… once-guards around it (../node.ts) are the library's own, left out.
+    writes: '\\nocite{*} \\bibliographystyle{plainnat} \\bibliography{\\jobname}',
     ctan: ['natbib'],
     features: ['numeric-citations', 'author-year', 'sorted-compressed', 'superscript', 'external-tool'],
     params: {
@@ -15,10 +17,16 @@ export default defineKey(
       brackets: { type: 'enum', values: ['style', 'round', 'square'], default: 'style', description: 'round or square brackets' },
       sort: { type: 'enum', values: ['none', 'sort', 'sort&compress'], default: 'none', description: 'several citations sorted, and compressed to ranges' },
       separator: { type: 'enum', values: ['style', 'comma', 'semicolon'], default: 'style', description: 'between several citations' },
-      bst: { type: 'enum', values: ['plainnat', 'unsrtnat', 'abbrvnat'], default: 'plainnat', description: 'the natbib BibTeX style' },
+      // apalike (AISTATS's sample, Source/0794-aistats/sample_paper.tex l.32-33) and IEEEtranN (IEEEtran's natbib-compatible style,
+      // Source/0823-latextemplates-ieee-enhanced/paper.tex l.1166-1167, which prints its DOI-extended copy) are on CTAN.
+      bst: { type: 'enum', values: ['plainnat', 'unsrtnat', 'abbrvnat', 'apalike', 'IEEEtranN'], default: 'plainnat', description: 'the natbib-compatible BibTeX style' },
       bibsep: { type: 'dimen', default: '', description: "space between entries (\\bibsep); ''" },
       bibFont: { type: 'tex', default: '', description: "the list's font (\\bibfont); ''" },
       heading: { type: 'string', default: '', description: "the list's heading (\\refname, \\bibname); ''" },
+      // natbib's thebibliography opens with \bibsection (\section*{\refname}, or \chapter*{\bibname}), which replaces the class's own
+      // heading: AISTATS's style heads its list \subsubsection*{\refname} (aistats2026.sty l.482-483) and so its sample renews
+      // \bibsection to keep that level (sample_paper.tex l.27-30).
+      bibsection: { type: 'tex', default: '', description: "the list's heading command (\\renewcommand{\\bibsection}{…}), e.g. \\subsubsection*{\\bibname}; ''" },
     },
     presets: PRESETS,
     loads: [
@@ -33,6 +41,16 @@ export default defineKey(
       { pkg: 'natbib', options: ['semicolon'], when: { separator: 'semicolon' } },
     ],
     claims: ['bibliography-engine'],
+    // natbib redefines thebibliography as it loads (\renewenvironment{thebibliography}[1], natbib.sty 2010/09/13 8.31b l.1063: Latex
+    // Related Research/Latex-lib-main/Source/0207-tandf-interact/natbib.sty), and the .bbl plainnat (unsrtnat, abbrvnat) writes opens
+    // \begin{thebibliography}, so a class without the environment stops at the package line, as bib.thebibliography, bib.bibtex-bst,
+    // bib.apacite and bib.cite-pkg do: { kind: 'compile', cell: 'class-examples: Latex Related Research/Latex-Template-Examples/_results/
+    // class.minimal.log (2026-11-06), "! LaTeX Error: Environment thebibliography undefined." at natbib.sty l.1063' }, and the same at
+    // natbib.sty under class.letter (class.letter.log, 2026-11-06). The final logs show the templates' biblatex lists, which took its place.
+    requires: [
+      'env:thebibliography',
+    ],
+    requiresWhen: [{ when: { bibsection: '\\subsubsection*{\\bibname}' }, requires: ['counter:subsubsection'] }],
     // The classes that set their own \bibliographystyle (CA11).
     deny: [
       // b3p (batch 3, G4): corl, bmvc and ecai load natbib with numbers (corl also square, bmvc also sort), so the presets that give
@@ -119,6 +137,7 @@ export default defineKey(
     // branches pass, 0 of 750 over the seven reference-list ways and General's; e.g. amsart.A de3331b8b9913b25e0c46 result
     // c6ba90ad47, branch bcfb2d538cb8c4971e281, '.0 never shipped'). Flouest's own fix is O4. [OV3]
     gives: { footnotes: false },
-    zerotex: 'untested',
+    // Every preset typeset ok on ZeroTeX-NG (unit 46, 2026-11-07, class-examples/typeset-dir.ts, scratchpad build/work/bib-ext/natbib-aistats, natbib-ieee and natbib-article-<preset> for the other five).
+    targetEngine: 'yes',
   }),
 );

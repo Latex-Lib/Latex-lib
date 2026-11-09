@@ -8,6 +8,7 @@ export default defineKey(
     node: 'table',
     description:
       "threeparttable: caption, tabular and notes held to the table's own width (the line's, with its equal p-columns sharing the line), \\begin{threeparttable}\\caption{…} … \\end{threeparttable} in a table float; flushleft or para for the notes, \\hline or booktabs rules. 13 templates.",
+    writes: '\\begin{table}[tbp] \\begin{threeparttable} \\caption{…}\\label{…} \\begin{tabular}{…} \\hline … \\\\ \\hline … \\\\ \\hline \\end{tabular} \\end{threeparttable} \\end{table}',
     ctan: ['threeparttable'],
     features: ['floating', 'captioned', 'horizontal-rules', 'booktabs-rules', 'table-notes'],
     params: {
@@ -50,6 +51,6 @@ export default defineKey(
     ],
     // The table is itself a float (GENERAL_GIVES table): no float below it.
     gives: { floats: false },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

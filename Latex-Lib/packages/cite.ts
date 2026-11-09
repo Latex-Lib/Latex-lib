@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [["nosort", "sort"], ["nocompress", "compress"], ["space", "nospace"]],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("cite"), { kind: 'manual', of: "cite", section: "package options (sort, compress, super, space, nobreak)", url: 'https://ctan.org/pkg/cite' }],
 });

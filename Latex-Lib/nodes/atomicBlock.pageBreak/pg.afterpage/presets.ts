@@ -13,6 +13,7 @@ export const PRESETS = {
   },
   'odd-after': {
     description: 'After the current page is full, a new right-hand page (\\afterpage{\\cleardoublepage}).',
+    writes: '\\afterpage{\\cleardoublepage}',
     features: ['deferred', 'float-flush', 'odd-page'],
     params: { command: 'cleardoublepage' },
     evidence: [solution('0020-koma-script', '76')],

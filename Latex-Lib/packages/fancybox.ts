@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("fancybox"), { kind: 'manual', of: "fancybox", section: "2 Boxes", url: 'https://ctan.org/pkg/fancybox' }],
 });

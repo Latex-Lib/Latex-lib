@@ -10,10 +10,11 @@ export default defineKey({
   node: 'containerBlock/mathElement',
   description:
     "LaTeX's own \\newtheorem, with no package: bold head, italic body, an optional note in parentheses (set after the label as text of the paragraph, so a long note wraps: b26 MB-LO5), no styles and no proof environment. A list-based environment, so it sits wherever a list can.",
+  writes: '\\begin{theorem}[{…}] … \\end{theorem}; \\newtheorem{theorem}{Theorem}[section] \\AddToHook{env/theorem/begin}{\\LatexLibNoteHead}',
   features: ['numbered', 'numbered-within', 'shared-counter', 'bold-head', 'italic-body'],
   params: { ...NUMBERING },
   presets: PRESETS,
-  zerotex: 'yes',
+  targetEngine: 'yes',
   loads: [],
   defines: [...STATEMENT_DEFINES],
   claims: [],

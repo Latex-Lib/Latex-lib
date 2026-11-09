@@ -9,10 +9,20 @@ import { defineClass } from '../schema/class.ts';
 export default defineClass({
   id: 'class.revtex4-2',
   name: "revtex4-2",
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "natbib", "options": ["sort&compress"]}, {"pkg": "url"}, {"pkg": "textcase"}],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\affiliation", "cmd:\\email", "cmd:\\keywords", "env:acknowledgments", "env:acknowledgements", "cmd:\\acknowledgmentsname", "env:widetext", "cmd:\\onecolumngrid", "cmd:\\twocolumngrid", "cmd:\\onlinecite", "env:turnpage", "env:ruledtabular"],
+  heldByMaketitle: [{ resource: 'env:abstract', reason: "revtex4-2's abstract environment stores its text for \\maketitle: written with no \\maketitle after it, the abstract is on no page, and it must come before \\maketitle: after \\maketitle the environment is gone: \"Environment abstract undefined\"", before: true, evidence: [{ kind: 'compile', reproducer: "\\documentclass{revtex4-2} \\begin{document} \\begin{abstract}Abstract text.\\label{absmark}\\end{abstract} \\section{One}Body. \\end{document}: absmark is not in main.aux; with \\title, \\author and \\maketitle after the abstract it is (ZeroTeX-NG, the studio's measurement, 2026-10-31; found as Lab Report 2's missing abstract under revtex4-2)" }, { kind: 'compile', reproducer: "the same with \\\\title, \\\\author and \\\\maketitle in the body before the abstract: after \\maketitle the environment is gone: 'Environment abstract undefined' (ZeroTeX-NG, 2026-10-31)" }] }],
   options: {},
+  setup: {
+    after: ['\\makeatletter\\g@addto@macro\\@mkpream@relax{\\let\\@endpbox\\relax\\let\\do@row@strut\\relax\\let\\ar@align@mcell\\relax}\\makeatother'],
+    reason: "at \\begin{document} revtex4-2 swaps in its own copy of array's preamble builder (\\switch@array, \\@mkpream@array@new, revtex4-2.cls l.1038-1110), whose \\@mkpream@relax (l.1558-1565) relaxes \\@startpbox but not \\@endpbox, \\do@row@strut or \\ar@align@mcell: array's \\xdef expands them and leaves a conditional open in every p-column table begun in vertical mode ('Extra \\or', then a hang). Every table way's columns are p-columns (nodes/table/node.ts columnSpec), so every document with a table needs the line; the testing pipeline's revtex4-2 settings carry it too",
+    evidence: [
+      { kind: 'source', file: 'revtex4-2.cls (revtex 4.2)', line: '1558-1565, 1038-1110' },
+      { kind: 'compile', reproducer: "\\documentclass[reprint,aps]{revtex4-2} \\usepackage{array} and a table float holding \\begin{tabular}{>{\\centering\\arraybackslash}p{…}>{\\centering\\arraybackslash}p{…}}: hangs until the engine's watchdog (121.6 s, no log); with the line after the class line it compiles in 1.6 s (class-examples' probe (Latex Related Research/Latex-Template-Examples, 2026-11-06), through Flouest's headless ZeroTeX-NG runner)" },
+      { kind: 'compile', cell: 'class-examples: _results/class.revtex4-2.log (2026-11-06), Extra \\or at a tbl.tabular table' },
+    ],
+  },
   forbids: {
     technical: [
       // Round 2 of batch 1 (GitHub run 41584963423), stated for the record (aastex701, which copies ltxgrid, showed it): no fit changes

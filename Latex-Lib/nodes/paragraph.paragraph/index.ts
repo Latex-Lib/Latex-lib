@@ -3,9 +3,11 @@
  */
 import type { Realization } from '../../schema/realization.ts';
 import way0 from './para.kernel/handler.ts';
+import w_para_ieee_parstart from './para.ieee-parstart/handler.ts';
 
 export type Handler = (params?: { readonly [name: string]: unknown }) => Realization;
 
 export const HANDLERS: { readonly [way: string]: Handler } = {
   'para.kernel': way0,
+  'para.ieee-parstart': w_para_ieee_parstart,
 };

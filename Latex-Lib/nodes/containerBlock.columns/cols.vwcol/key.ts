@@ -8,6 +8,7 @@ export default defineKey(
     node: 'containerBlock/columns',
     description:
       'vwcol: columns of chosen widths that paragraph text flows through, \\begin{vwcol}[widths={0.5,0.5}, sep=1.5em, rule=0pt] … \\end{vwcol} (a 0.4pt rule when the node asks for one); equal, wide-first or wide-last widths; paragraphs only, no lists, statements, verbatim, footnotes or headings in it. 2 templates.',
+    writes: '\\begin{vwcol}[widths={…}, sep=…, rule=…, maxrecursion=50] … \\end{vwcol}',
     ctan: ['vwcol'],
     features: ['balanced-columns', 'unequal-widths'],
     params: {
@@ -33,6 +34,6 @@ export default defineKey(
     // Headings need paragraph too (0 of 827 heading branch-cells below vwcol pass over 5 pairs; the 55 head.sectsty@smallcaps \subparagraph passes are run-in titles that never print).
     // So do the five list ways since batch 6 (list.kernel, list.enumitem, list.enumerate-pkg, list.paralist, list.scrextend: 26 of 222 item-bearing branches below vwcol passed).
     gives: { columns: true, floats: false, paragraph: false, verbatim: false, footnotes: false },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

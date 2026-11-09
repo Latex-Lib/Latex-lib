@@ -7,7 +7,8 @@ export default defineKey(
     id: 'code.minted',
     node: 'code/code',
     description:
-      'minted: \\begin{minted}{python} … \\end{minted}, highlighted by Pygments; \\usemintedstyle{…} and \\setminted{frame, fontsize, linenos, breaklines, bgcolor, autogobble, tabsize}. Needs shell escape and Python, which ZeroTeX-NG does not have. 37 templates.',
+      'minted: \\begin{minted}{python} … \\end{minted}, highlighted by Pygments; \\usemintedstyle{…} and \\setminted{frame, fontsize, linenos, breaklines, bgcolor, autogobble, tabsize}. Needs shell escape and Python, which the target engine does not have. 37 templates.',
+    writes: '\\begin{minted}{…} … \\end{minted} \\begin{center}…\\end{center}; \\setminted{…}',
     ctan: ['minted'],
     features: ['syntax-highlighting', 'line-numbers', 'framed', 'background', 'colored', 'external-tool'],
     params: {
@@ -30,6 +31,6 @@ export default defineKey(
     ],
     // Read verbatim: not where its body is read as an argument (code.listings' key says where).
     needs: { verbatim: true, argument: false },
-    zerotex: 'no',
+    targetEngine: 'no',
   }),
 );

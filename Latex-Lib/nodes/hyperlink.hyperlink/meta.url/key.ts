@@ -8,6 +8,7 @@ export default defineKey(
     node: 'hyperlink/hyperlink',
     description:
       "url (or xurl): \\url{…}, the address typeset with breaks at its punctuation (xurl breaks it anywhere), \\urlstyle for its font; the link's text, when it differs, before it in words. 247 templates.",
+    writes: '\\url{…} | … (\\url{…})',
     ctan: ['url'],
     features: ['url-breaks', 'sans-serif'],
     params: {
@@ -19,6 +20,6 @@ export default defineKey(
       { pkg: 'url' },
       { pkg: 'xurl', when: { anywhere: true } },
     ],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

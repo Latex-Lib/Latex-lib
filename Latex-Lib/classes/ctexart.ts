@@ -10,9 +10,9 @@ export default defineClass({
   id: 'class.ctexart',
   name: "ctexart",
   base: 'class.article',
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "fontspec"}],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\zihao", "cmd:\\ctexset"],
   options: {},
   forbids: {
     technical: [],

@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("titling"), { kind: 'manual', of: "titling", section: "2.1.1 Restyling the titling", url: 'https://ctan.org/pkg/titling' }],
 });

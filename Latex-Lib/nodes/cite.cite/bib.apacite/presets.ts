@@ -13,6 +13,7 @@ export const PRESETS = {
   },
   textual: {
     description: "apacite's \\citeA{key}: Knuth (1984).",
+    writes: '\\protect\\citeA{…}; \\AddToNoCaseChangeList{\\citeA}',
     features: ['author-year'],
     params: { command: 'citeA' },
     evidence: [manual('apacite', 'citation commands: \\citeA')],

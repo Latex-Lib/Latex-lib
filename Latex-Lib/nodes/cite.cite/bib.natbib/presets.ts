@@ -13,6 +13,7 @@ export const PRESETS = {
   },
   textual: {
     description: "natbib's \\citet{key}: Knuth (1984), the author part of the sentence.",
+    writes: '\\citet{…}',
     features: ['author-year'],
     params: { command: 'citet' },
     evidence: [solution('0094-nostarch', '46'), solution('0141-msu-thesis', '40')],

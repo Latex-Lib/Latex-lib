@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [["figuresright", "figuresleft"], ["clockwise", "counterclockwise"]],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("rotating"), { kind: 'manual', of: "rotating", section: "package options; sidewaysfigure, sidewaystable", url: 'https://ctan.org/pkg/rotating' }],
 });

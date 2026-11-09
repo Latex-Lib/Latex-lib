@@ -29,6 +29,8 @@ export type ParamPredicate = { readonly [name: string]: Json };
 /** A named parameter set, with its own styling description: many presets map to one handler. */
 export type Preset = {
   readonly description: string;
+  /** The LaTeX it writes, where it differs from its way's `writes`. */
+  readonly writes?: string;
   readonly features: readonly Feature[];
   readonly params: { readonly [name: string]: Json };
   readonly evidence: readonly Evidence[];

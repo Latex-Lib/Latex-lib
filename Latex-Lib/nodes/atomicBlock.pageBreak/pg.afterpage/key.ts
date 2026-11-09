@@ -8,6 +8,7 @@ export default defineKey(
     node: 'atomicBlock/pageBreak',
     description:
       'afterpage: the break waits until the current page is full, \\afterpage{\\clearpage}, so the page is not left short. 22 templates.',
+    writes: '\\afterpage{\\clearpage}',
     ctan: ['afterpage'],
     features: ['deferred', 'float-flush', 'odd-page'],
     params: {
@@ -17,6 +18,6 @@ export default defineKey(
     loads: [
       { pkg: 'afterpage' },
     ],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

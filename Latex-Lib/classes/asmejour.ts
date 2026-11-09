@@ -44,7 +44,7 @@ export default defineClass({
   id: 'class.asmejour',
   name: "asmejour-latexlib",
   base: 'class.extarticle',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [
     {"pkg": "etoolbox"}, {"pkg": "xparse"}, {"pkg": "kvoptions"},
     {"pkg": "geometry", "options": ["paperheight=285.7mm", "paperwidth=215.900mm", "left=21.100mm", "right=21.100mm", "top=15.9mm", "bottom=24mm", "footskip=8mm"]},
@@ -60,7 +60,7 @@ export default defineClass({
     "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix",
     "cmd:\\keywords", "cmd:\\SetAuthorBlock", "cmd:\\JourName", "cmd:\\PaperNumber", "cmd:\\subcaption", "cmd:\\CondSans",
     "cmd:\\CondSansBold", "cmd:\\Condhuge", "cmd:\\CondHuge", "cmd:\\nomname", "cmd:\\keywordname", "cmd:\\CAwords", "cmd:\\hrefurl",
-  ],
+  "cmd:\\CorrespondingAuthor", "cmd:\\entry", "cmd:\\EntryHeading"],
   options: {},
   forbids: {
     technical: [

@@ -8,7 +8,7 @@ import { defineClass } from '../schema/class.ts';
 export default defineClass({
   id: 'class.memoir',
   name: "memoir",
-  zerotex: "yes",
+  targetEngine: "yes",
   // abstract and changepage are emulated by memoir (marked loaded with no options), which its @filelist does not show:
   // a load with options clashes ("Option clash for package abstract/changepage", the copy's memoir.A run, cell cd9964b957df7c2c47ef9).
   // parskip too (cell c43317ef2450034f457a0). Its log names 25 emulated packages; the rest are left out because a preload
@@ -16,7 +16,7 @@ export default defineClass({
   // array is no emulation: memoir.cls v3.8.4b loads it plainly (l.5453), as it does tabularx and booktabs (l.5469, l.5473),
   // and its \EmulatedPackage{array} is commented out (l.12213), so it is preloaded (batch 6).
   preloads: [{"pkg": "setspace"}, {"pkg": "tocloft"}, {"pkg": "array"}, {"pkg": "tabularx"}, {"pkg": "booktabs"}, {"pkg": "abstract"}, {"pkg": "changepage"}, {"pkg": "parskip"}],
-  defines: ["counter:chapter", "counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:chapter", "counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "env:titlingpage", "env:framed", "env:shaded", "env:leftbar", "env:snugshade", "cmd:\\epigraph", "cmd:\\frontmatter", "cmd:\\mainmatter", "cmd:\\backmatter", "cmd:\\makepagestyle", "cmd:\\checkandfixthelayout"],
   options: {},
   forbids: {
     // Packages that break under memoir whatever way loads them (the copy's memoir.A run, r20261031102055131); none of them errs under book.A or report.A.

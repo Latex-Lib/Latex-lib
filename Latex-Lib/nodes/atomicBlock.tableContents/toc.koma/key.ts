@@ -9,6 +9,7 @@ export default defineKey(
     node: 'atomicBlock/tableContents',
     description:
       "KOMA-Script's contents options, \\KOMAoptions{toc=flat} (or graduated), entries for the bibliography, the lists and the index (toc=bibliography, listof, index), then \\tableofcontents; KOMA classes only. 22 templates.",
+    writes: '\\tableofcontents; \\KOMAoptions{toc=…}',
     ctan: ['koma-script'],
     features: ['flat-contents', 'in-contents', 'lists-of-floats'],
     params: {
@@ -21,6 +22,6 @@ export default defineKey(
       'cmd:\\tableofcontents',
     ],
     only: ['class.scrartcl', 'class.scrbook', 'class.scrreprt'],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

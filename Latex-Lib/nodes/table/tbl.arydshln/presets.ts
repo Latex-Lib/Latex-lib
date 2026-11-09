@@ -13,6 +13,7 @@ export const PRESETS = {
   },
   'fine-dashes': {
     description: 'Solid rules above and below, fine dashed rules inside (\\dashlinedash 0.2pt, \\dashlinegap 1.5pt), no vertical rules.',
+    writes: '\\begin{tabular}{p{…}p{…}} \\hline … \\\\ \\hdashline … \\\\ \\hline \\end{tabular}; \\setlength{\\dashlinedash}{…} \\setlength{\\dashlinegap}{…}',
     features: ['floating', 'captioned', 'dashed-rules', 'horizontal-rules'],
     params: { vertical: false, outer: 'solid', dash: '0.2pt', gap: '1.5pt' },
     evidence: [solution('0861-tu-delft-light-assignment', '64'), solution('0914-oup-authoring-template', '65')],

@@ -9,9 +9,9 @@ import { ctan } from '../schema/minimal.ts';
 export default defineClass({
   id: 'class.moderncv',
   name: "moderncv",
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "fontspec"}, {"pkg": "hyperref"}, {"pkg": "xcolor"}, {"pkg": "graphicx"}, {"pkg": "colortbl"}],
-  defines: ["counter:section", "counter:subsection", "env:thebibliography"],
+  defines: ["counter:section", "counter:subsection", "env:thebibliography", "cmd:\\makecvtitle", "cmd:\\name", "cmd:\\makelettertitle", "env:cvcolumns", "cmd:\\cvitem", "cmd:\\cvlistitem", "cmd:\\cvlistdoubleitem", "cmd:\\cventry", "cmd:\\cvitemwithcomment", "cmd:\\cvdoubleitem", "cmd:\\cvtripleitem", "cmd:\\cvskillentry", "cmd:\\cvskillhead", "cmd:\\cvskilllegend", "cmd:\\moderncvstyle", "cmd:\\moderncvcolor"],
   options: {},
   forbids: {
     technical: [{ pkg: "footnotehyper", reason: "its load test stops: Undefined control sequence.\\FNH@check@ ...andafter \\FNH@check@a \\@makefntext  {1.2!3?4,}\\FNH@@@ 1.2!3?4,...", evidence: [{ kind: 'compile', cell: 'testing-pipeline/out/profiles/moderncv.A.json' }] }, { pkg: "tocloft", reason: "its load test stops: LaTeX Error: Command \\l@section undefined.", evidence: [{ kind: 'compile', cell: 'testing-pipeline/out/profiles/moderncv.A.json' }] }],

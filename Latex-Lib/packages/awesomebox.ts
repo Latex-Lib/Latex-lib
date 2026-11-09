@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("awesomebox"), { kind: 'manual', of: "awesomebox", section: "3 Usage; 5 How to create your own box", url: 'https://ctan.org/pkg/awesomebox' }],
 });

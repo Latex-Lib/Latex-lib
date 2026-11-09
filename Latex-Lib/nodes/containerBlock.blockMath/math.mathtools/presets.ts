@@ -13,12 +13,14 @@ export const PRESETS = {
   },
   'only-referenced': {
     description: 'Only the equations a \\eqref points to get a number (\\mathtoolsset{showonlyrefs}).',
+    writes: '\\begin{align} … \\\\ … \\label{…} \\end{align}; \\mathtoolsset{showonlyrefs}',
     features: ['numbered', 'aligned', 'multiline'],
     params: { showOnlyRefs: true },
     evidence: [manual('mathtools', 'showonlyrefs: numbering only referenced equations')],
   },
   'by-section': {
     description: 'Equations numbered within the section (\\numberwithin{equation}{section}).',
+    writes: '\\begin{align} … \\\\ … \\label{…} \\end{align}; \\numberwithin{equation}{section}',
     features: ['numbered', 'numbered-within', 'aligned', 'multiline'],
     params: { numberWithin: 'section' },
     evidence: [solution('0164-coursework-term-paper', '65')],

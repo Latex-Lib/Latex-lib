@@ -10,6 +10,7 @@ export default defineKey({
   node: 'containerBlock/mathElement',
   description:
     "mdframed's \\newmdtheoremenv: a kernel-style statement in a frame drawn with TeX rules (the default frame method), a line colour, background and width of its own; the frame splits across pages. Its note follows the label as text of the paragraph, so a long note wraps (b26 MB-LO5).",
+  writes: '\\begin{theorem}[{…}] … \\end{theorem}; \\newmdtheoremenv[linecolor=…,backgroundcolor=…,linewidth=…]{theorem}{Theorem}[section]',
   features: ['framed', 'background', 'colored', 'left-rule', 'breakable', 'numbered', 'numbered-within', 'shared-counter'],
   params: {
     linecolor: { type: 'color', default: 'black', description: 'frame colour' },
@@ -20,7 +21,7 @@ export default defineKey({
     ...NUMBERING,
   },
   presets: PRESETS,
-  zerotex: 'untested',
+  targetEngine: 'untested',
   loads: [{ pkg: 'xcolor' }, { pkg: 'mdframed' }],
   defines: [...STATEMENT_DEFINES],
   claims: [],

@@ -33,7 +33,7 @@ import { defineClass } from '../schema/class.ts';
 export default defineClass({
   id: 'class.oup-authoring-template',
   name: "oup-authoring-template",
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [
     {"pkg": "crop"}, {"pkg": "graphicx"}, {"pkg": "caption"}, {"pkg": "amsmath"}, {"pkg": "array"}, {"pkg": "color"},
     {"pkg": "xcolor"}, {"pkg": "amssymb"}, {"pkg": "flushend"}, {"pkg": "stfloats"},
@@ -43,7 +43,7 @@ export default defineClass({
     {"pkg": "algorithm"}, {"pkg": "float"}, {"pkg": "algorithmicx"}, {"pkg": "algpseudocode"}, {"pkg": "listings"},
     {"pkg": "hyperref", "options": ["hidelinks"]}, {"pkg": "tikz"}, {"pkg": "anyfontsize"},
   ],
-  defines: ["counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "counter:figure", "counter:table", "env:figure", "env:table", "env:thebibliography", "env:proof", "env:tablenotes", "env:processtable", "env:unlist", "env:epigraph", "env:methods", "env:biography", "env:appendices", "env:subappendices", "env:Figure", "env:Table", "env:boxtext", "cmd:\\maketitle", "cmd:\\abstract", "cmd:\\otherabstract", "cmd:\\frontmatter", "cmd:\\mainmatter", "cmd:\\backmatter", "cmd:\\journaltitle", "cmd:\\pubyear", "cmd:\\copyrightyear", "cmd:\\vol", "cmd:\\issue", "cmd:\\address", "cmd:\\corresp", "cmd:\\keywords"],
+  defines: ["counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "counter:figure", "counter:table", "env:figure", "env:table", "env:thebibliography", "env:proof", "env:tablenotes", "env:processtable", "env:unlist", "env:epigraph", "env:methods", "env:biography", "env:appendices", "env:subappendices", "env:Figure", "env:Table", "env:boxtext", "cmd:\\maketitle", "cmd:\\abstract", "cmd:\\otherabstract", "cmd:\\frontmatter", "cmd:\\mainmatter", "cmd:\\backmatter", "cmd:\\journaltitle", "cmd:\\pubyear", "cmd:\\copyrightyear", "cmd:\\vol", "cmd:\\issue", "cmd:\\address", "cmd:\\corresp", "cmd:\\keywords", "cmd:\\botrule", "cmd:\\DOI", "cmd:\\access", "cmd:\\appnotes", "style:thmstyleone", "style:thmstyletwo", "style:thmstylethree"],
   options: {},
   forbids: {
     technical: [

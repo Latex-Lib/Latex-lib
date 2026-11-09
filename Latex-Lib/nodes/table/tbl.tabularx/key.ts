@@ -8,6 +8,7 @@ export default defineKey(
     node: 'table',
     description:
       "tabularx: a table of a set width, \\begin{tabularx}{\\linewidth}{|X|X|}, its X columns sharing the room; X ragged or centred (>{\\centering\\arraybackslash}X), a natural-width first column, | and \\hline where asked; a spanning cell a paragraph of its columns' share of the width; in a table float. 126 templates.",
+    writes: '\\begin{table}[tbp] \\centering \\caption{…} \\label{…} \\begin{tabularx}{\\linewidth}{|X|X|} \\hline … & … \\\\ \\hline … \\\\ \\hline \\end{tabularx} \\end{table}',
     ctan: ['tabularx'],
     features: ['floating', 'captioned', 'full-width', 'vertical-rules', 'horizontal-rules'],
     params: {
@@ -34,6 +35,6 @@ export default defineKey(
     // A float, and tabularx reads its whole body as an argument (to measure it), so a verbatim child (a library code way) cannot
     // sit below it ("Paragraph ended before \lst@next was complete", the vwcol failure).
     gives: { floats: false, argument: true },
-    zerotex: 'yes',
+    targetEngine: 'yes',
   }),
 );

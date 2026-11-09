@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("sidenotes"), { kind: 'manual', of: "sidenotes", section: "1 Usage; 4 Implementation (oneside)", url: 'https://ctan.org/pkg/sidenotes' }],
 });

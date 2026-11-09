@@ -12,6 +12,6 @@ export default definePackage({
   ],
   loadOrder: [],
   defines: [],
-  zerotex: 'yes',
+  targetEngine: 'yes',
   evidence: [ctan("enumitem")],
 });

@@ -13,6 +13,7 @@ export const PRESETS = {
   },
   tied: {
     description: 'The citation tied to the word before it so a line never breaks between them (~\\cite{key}).',
+    writes: '\\leavevmode~\\cite{…}',
     features: ['numeric-citations'],
     params: { tie: true },
     evidence: [solution('0023-korigamik-assignment', '36')],

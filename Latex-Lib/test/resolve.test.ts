@@ -1,7 +1,8 @@
 /**
  * The resolver on the real library: class rules, names the class defines,
  * forbidden packages, two theorem engines, counters a class lacks; and the
- * pilot's pick of one handler under a class. On a small library: a preset
+ * pilot's pick of one handler under a class; a conflict with General's ways of
+ * a node, when the caller says General prints it. On a small library: a preset
  * bound to the classes that give its form (`onlyWhen`).
  */
 import assert from 'node:assert/strict';
@@ -20,6 +21,8 @@ before(async () => {
 });
 const kinds = { 'containerBlock/mathElement': ELEMENTS };
 const under = (classId: string, ...choices: { way: string; params?: Record<string, string | boolean> }[]) => resolve(library, { classId, choices, kinds });
+/** Whether the class keeps its abstract environment for \maketitle (`heldByMaketitle`): an abstract way there goes with a title that runs it. */
+const keepsAbstract = (classId: string) => library.classes.find((c) => c.id === classId)?.heldByMaketitle?.some((h) => h.resource === 'env:abstract') ?? false;
 
 test('amsthm goes under article and amsart, and not under llncs, acmart or revtex4-2', () => {
   assert.deepEqual(under('class.article', { way: 'thm.amsthm' }), []);
@@ -159,8 +162,40 @@ test("a class whose \\abstract is the environment refuses the class-native comma
   for (const cls of ['class.article', 'class.report', 'class.ieeetran', 'class.amsart', 'class.elsarticle', 'class.acmart', 'class.cas-sc']) {
     const command = at(cls, 'containerBlock/abstract', 'abs.class-native', [], { form: 'command' });
     assert.ok(command.some((v) => v.includes('only for class.aa, class.mdpi, class.sn-jnl')), `${cls}: ${command.join('\n')}`);
-    assert.deepEqual(at(cls, 'containerBlock/abstract', 'abs.class-native'), [], cls);
+    // Where the class keeps the abstract for \maketitle, with a title that runs it.
+    assert.deepEqual(keepsAbstract(cls) ? under(cls, { way: 'abs.class-native' }, { way: 'front.class-native' }) : at(cls, 'containerBlock/abstract', 'abs.class-native'), [], cls);
   }
+});
+
+test('a class that keeps its abstract for \\maketitle needs a title that runs it; one that prints it in place does not', () => {
+  for (const cls of ['class.amsart', 'class.acmart', 'class.elsarticle']) {
+    const lost = under(cls, { way: 'abs.class-native' }, { way: 'front.titlepage-env' });
+    assert.ok(lost.some((v) => v.includes('keeps env:abstract for \\maketitle')), `${cls}: ${lost.join('\n')}`);
+    assert.equal(under(cls, { way: 'abs.class-native' }, { way: 'front.class-native' }).some((v) => v.includes('keeps env:abstract')), false, cls);
+    assert.equal(under(cls, { way: 'abs.class-native' }, { way: 'front.maketitle' }).some((v) => v.includes('keeps env:abstract')), false, cls);
+  }
+  // abs.kernel prints the same environment, and is lost the same way.
+  assert.ok(under('class.amsart', { way: 'abs.kernel' }, { way: 'front.titlepage-env' }).some((v) => v.includes('keeps env:abstract')));
+  // article and IEEEtran print the abstract where it is written.
+  for (const cls of ['class.article', 'class.ieeetran']) assert.deepEqual(under(cls, { way: 'abs.class-native' }, { way: 'front.titlepage-env' }), [], cls);
+});
+
+test("revtex4-2 takes one \\author per author: the class's title block in that form, and no \\and", () => {
+  assert.ok(under('class.revtex4-2', { way: 'front.class-native' }).some((v) => v.includes('\\and is not supported')));
+  assert.deepEqual(under('class.revtex4-2', { way: 'front.class-native', params: { authors: 'separate' } }), []);
+  assert.ok(under('class.revtex4-2', { way: 'front.maketitle' }).some((v) => v.includes('\\and is not supported')));
+  // Elsewhere the kernel's \\author{A \\and B} goes.
+  assert.deepEqual(under('class.article', { way: 'front.class-native' }), []);
+});
+
+test('a package the class loads itself takes no option the class did not give it', () => {
+  // revtex4-2 loads natbib with sort&compress: natbib's numbers or square after it stop at an option clash.
+  const list = { way: 'bib.natbib', node: 'containerBlock/refContainer', params: { brackets: 'square', sort: 'sort&compress', separator: 'comma' } };
+  const natbib = resolve(library, { classId: 'class.revtex4-2', choices: [list] });
+  assert.ok(natbib.some((v) => v.includes('class.revtex4-2 loads natbib itself with sort&compress') && v.includes('Option clash for package natbib')), natbib.join('\n'));
+  assert.equal(natbib.some((v) => v.includes('sort&compress stops')), false, 'the option the class gave is not one');
+  // Under article nothing loads natbib first.
+  assert.deepEqual(resolve(library, { classId: 'class.article', choices: [list] }), []);
 });
 
 test("revtex4-2 and aastex701 undefine the abstract at \\maketitle, so neither abstract way that prints the class's environment goes there (b22, R3)", () => {
@@ -175,7 +210,8 @@ test("a renamed abstract heading goes only where the class prints \\abstractname
     assert.ok(at(cls, 'containerBlock/abstract', 'abs.kernel', [], { name: 'Executive Summary' }).some((v) => v.includes('renamed heading never shows')), cls);
     assert.deepEqual(at(cls, 'containerBlock/abstract', 'abs.kernel'), [], `${cls}: its fixed heading is no bar to an unrenamed preset`);
   }
-  assert.deepEqual(at('class.elsarticle', 'containerBlock/abstract', 'abs.kernel', [], { name: 'Executive Summary' }), [], 'elsarticle takes the name through \\abstracttitle');
+  // elsarticle keeps the abstract for \\maketitle: with a title that runs it.
+  assert.deepEqual(under('class.elsarticle', { way: 'abs.kernel', params: { name: 'Executive Summary' } }, { way: 'front.class-native' }), [], 'elsarticle takes the name through \\abstracttitle');
 });
 
 test("theorems: aa's \\newtheorem takes two more arguments, siamart loads ntheorem, both predefine their environments", () => {
@@ -225,7 +261,7 @@ test("a poster's blocks are macro arguments, a CV has no title or abstract of th
   assert.deepEqual(at('class.moderncv', 'paragraph/heading', 'head.class-native', ['section']), []);
   assert.ok(at('class.exam', 'paragraph/heading', 'head.kernel', ['part']).some((v) => v.includes('forbids cmd:\\part')));
   assert.deepEqual(at('class.exam', 'paragraph/heading', 'head.kernel', ['section']), []);
-  assert.deepEqual(resolve(library, { classId: 'class.jlreq', classOptions: ['book'], choices: [{ way: 'head.kernel', node: 'paragraph/heading' }], kinds: { 'paragraph/heading': ['chapter'] } }), ['class.jlreq does not run in ZeroTeX-NG'], 'its book option brings chapters; the engine still refuses it');
+  assert.deepEqual(resolve(library, { classId: 'class.jlreq', classOptions: ['book'], choices: [{ way: 'head.kernel', node: 'paragraph/heading' }], kinds: { 'paragraph/heading': ['chapter'] } }), ['class.jlreq does not run in the target engine'], 'its book option brings chapters; the engine still refuses it');
 });
 
 test('class audit (batch 6): what the journal classes load, define and refuse, read from their sources', () => {
@@ -295,10 +331,10 @@ test("aastex701 copies revtex4-2's tables and page grid, and loads array itself:
   }
 });
 
-test('ZeroTeX-NG is the only engine: a handler or a class that does not run there goes nowhere', () => {
-  assert.ok(at('class.article', 'code/code', 'code.minted').some((v) => v.includes('does not run in ZeroTeX-NG')));
-  assert.ok(at('class.article', 'atomicBlock/image', 'fig.svg').some((v) => v.includes('does not run in ZeroTeX-NG')));
-  assert.ok(at('class.jlreq', 'paragraph/paragraph', 'para.kernel').some((v) => v.includes('class.jlreq does not run in ZeroTeX-NG')));
+test('the target engine is the only engine: a handler or a class that does not run there goes nowhere', () => {
+  assert.ok(at('class.article', 'code/code', 'code.minted').some((v) => v.includes('does not run in the target engine')));
+  assert.ok(at('class.article', 'atomicBlock/image', 'fig.svg').some((v) => v.includes('does not run in the target engine')));
+  assert.ok(at('class.jlreq', 'paragraph/paragraph', 'para.kernel').some((v) => v.includes('class.jlreq does not run in the target engine')));
   assert.ok(library.keys.every((k) => !('engines' in k)), 'no key names another engine');
 });
 
@@ -326,4 +362,115 @@ test('a preset bound to some classes goes only under them and the classes built 
   const picked = (classId: string) => pick(small, { node: 'containerBlock/abstract', way: 'abs.native', preset: 'command', classId, kinds: [] });
   assert.deepEqual(picked('class.sn-jnl'), { way: 'abs.native', params: { form: 'command' }, how: 'as-is' });
   assert.deepEqual(picked('class.article'), { way: 'abs.native', params: { form: 'environment' }, how: 'as-is' }, 'the pick falls to the preset that fits');
+});
+
+test("arydshln conflicts with General's tables only where the caller says General prints them", () => {
+  assert.deepEqual(under('class.article', { way: 'tbl.arydshln' }), [], 'the matrix names no General nodes: its filing keeps them apart');
+  const printed = resolve(library, { classId: 'class.article', choices: [{ way: 'tbl.arydshln' }], general: ['table'] });
+  assert.equal(printed.length, 1);
+  assert.match(printed[0] ?? '', /^tbl\.arydshln: conflicts with General's table, which the document prints: /u);
+  assert.deepEqual(resolve(library, { classId: 'class.article', choices: [{ way: 'tbl.arydshln' }], general: ['code/code'] }), []);
+});
+
+test('natbib needs thebibliography, and biblatex\'s default heading needs \\section: letter, minimal and scrlttr2 refuse them', () => {
+  const bib = 'containerBlock/refContainer';
+  for (const c of ['class.letter', 'class.minimal', 'class.scrlttr2']) {
+    assert.ok(at(c, bib, 'bib.natbib').some((v) => v.includes('needs env:thebibliography')), c);
+    assert.ok(at(c, bib, 'bib.biblatex-bibtex').some((v) => v.includes('defines neither \\chapter nor \\section')), c);
+    assert.ok(at(c, bib, 'bib.biblatex-biber').some((v) => v.includes('defines neither \\chapter nor \\section')), c);
+  }
+  // A class with the environment and \section keeps all three.
+  assert.deepEqual(at('class.article', bib, 'bib.natbib'), []);
+  assert.deepEqual(at('class.article', bib, 'bib.biblatex-bibtex'), []);
+  assert.deepEqual(at('class.article', bib, 'bib.biblatex-biber'), []);
+  // tikzposter builds on extarticle (has \section) though its profile lists no counter:section: biblatex is not refused there.
+  assert.deepEqual(at('class.tikzposter', bib, 'bib.biblatex-biber'), []);
+  assert.deepEqual(at('class.tikzposter', bib, 'bib.biblatex-bibtex'), []);
+  // heading sets only title=, so it does not lift the refusal.
+  assert.ok(at('class.letter', bib, 'bib.biblatex-bibtex', [], { heading: 'References' }).some((v) => v.includes('defines neither')));
+});
+
+test('emulateapj refuses sidenotes (caption/ltcaption against revtex4\'s longtable*) and endnotes (its heading under revtex4\'s uppercasing \\@sect)', () => {
+  assert.ok(at('class.emulateapj', 'containerBlock/note', 'note.sidenotes').some((v) => v.includes('forbids sidenotes')));
+  assert.ok(at('class.emulateapj', 'footnoteAnchor/footnoteAnchor', 'fn.endnotes').some((v) => v.includes('forbids endnotes')));
+  for (const cls of ['class.article', 'class.amsart', 'class.revtex4-2', 'class.aastex']) {
+    assert.deepEqual(at(cls, 'containerBlock/note', 'note.sidenotes'), [], cls);
+    assert.deepEqual(at(cls, 'footnoteAnchor/footnoteAnchor', 'fn.endnotes'), [], cls);
+  }
+});
+
+test('tikzposter refuses hyperref\'s colorlinks (color loaded in a group at \\begin{document}), not its boxed or hidden links', () => {
+  assert.ok(under('class.tikzposter', { way: 'meta.hyperref', params: { look: 'colored', linkColor: 'blue', citeColor: 'blue', urlColor: 'blue' } }).some((v) => v.includes('Loading a class or package in a group')));
+  assert.ok(at('class.tikzposter', 'hyperlink/hyperlink', 'meta.hyperref', [], { look: 'colored' }).some((v) => v.includes('Loading a class or package in a group')));
+  assert.deepEqual(at('class.tikzposter', 'hyperlink/hyperlink', 'meta.hyperref'), []);
+  assert.deepEqual(at('class.tikzposter', 'hyperlink/hyperlink', 'meta.hyperref', [], { look: 'boxed' }), []);
+  assert.deepEqual(at('class.tikzposter', 'hyperlink/hyperlink', 'meta.hyperref', [], { look: 'hidden' }), []);
+  for (const cls of ['class.article', 'class.a0poster', 'class.beamer']) assert.deepEqual(at(cls, 'hyperlink/hyperlink', 'meta.hyperref', [], { look: 'colored' }), [], cls);
+});
+
+test('enumerate.sty cannot pair with a class-supplied \\endenumerate: ascelike refuses list.enumerate-pkg, keeps enumitem', () => {
+  const kinds = ['itemize', 'enumerate', 'description'];
+  assert.ok(at('class.ascelike', 'containerBlock/listing', 'list.enumerate-pkg', kinds).some((v) => v.includes('ended by \\end{list}')));
+  assert.ok(at('class.ascelike', 'containerBlock/listing', 'list.enumerate-pkg', kinds, { label: '1.' }).some((v) => v.includes('ascelike redefines the enumerate environment')), 'any label template');
+  assert.deepEqual(at('class.ascelike', 'containerBlock/listing', 'list.enumitem', kinds), [], 'enumitem replaces both halves');
+  assert.deepEqual(at('class.article', 'containerBlock/listing', 'list.enumerate-pkg', kinds), []);
+});
+
+test("paralist's description lists need \\descriptionlabel, which beamer lacks: refused under beamer and ctexbeamer whatever the params", () => {
+  const kinds = ['itemize', 'enumerate', 'description'];
+  for (const classId of ['class.beamer', 'class.ctexbeamer']) {
+    for (const form of ['compact', 'inline', 'aspara']) {
+      assert.ok(at(classId, 'containerBlock/listing', 'list.paralist', kinds, { form }).some((v) => v.includes('\\descriptionlabel')), `${classId} ${form}`);
+    }
+  }
+  assert.ok(under('class.ctexbeamer', { way: 'list.paralist' }).some((v) => v.includes("paralist's description lists")), 'reached through its base class.beamer');
+  assert.deepEqual(at('class.article', 'containerBlock/listing', 'list.paralist', kinds), [], 'article defines \\descriptionlabel');
+  assert.deepEqual(at('class.report', 'containerBlock/listing', 'list.paralist', kinds, { form: 'aspara' }), []);
+  assert.deepEqual(at('class.ctexbeamer', 'containerBlock/listing', 'list.kernel', kinds), [], 'the kernel lists stay open under ctexbeamer');
+});
+
+test("the AMS classes' \\@starttoc and \\@tocwriteb refuse titletoc, etoc and tocloft; the kernel's contents and article/book keep them", () => {
+  for (const cls of ['class.amsart', 'class.amsbook', 'class.amsproc']) {
+    // titletoc's \titlecontents{section} meets \@tocwriteb's \endgroup at every \section (class.amsart.log, 2026-11-06).
+    assert.ok(at(cls, 'atomicBlock/tableContents', 'toc.titletoc').some((v) => v.includes('\\@tocwriteb')), cls);
+    // etoc's \tableofcontents fails after \openout of main.toc (amsbook: input stack size exceeded, class.amsbook.log, 2026-11-06).
+    assert.ok(at(cls, 'atomicBlock/tableContents', 'toc.etoc').some((v) => v.includes('\\@starttoc')), cls);
+    // tocloft: amsart through its profile, amsbook and amsproc through the key (class.amsproc.sample.log, 2026-11-06).
+    assert.ok(at(cls, 'atomicBlock/tableContents', 'toc.tocloft').some((v) => v.includes('\\@starttoc')), cls);
+    assert.deepEqual(at(cls, 'atomicBlock/tableContents', 'toc.kernel'), [], cls);
+  }
+  assert.ok(at('class.amsbook', 'atomicBlock/tableContents', 'toc.etoc').some((v) => v.includes('input stack size')));
+  // every titletoc preset writes \titlecontents{section}...\contentspage: no params let it through.
+  assert.ok(at('class.amsart', 'atomicBlock/tableContents', 'toc.titletoc', [], { leaders: 'false' } as never).length > 0);
+  assert.ok(under('class.amsproc', { way: 'toc.titletoc', params: { push: true } }).length > 0);
+  for (const cls of ['class.article', 'class.book', 'class.report'])
+    for (const way of ['toc.titletoc', 'toc.etoc', 'toc.tocloft']) assert.deepEqual(at(cls, 'atomicBlock/tableContents', way), [], `${cls} ${way}`);
+});
+
+test('aastex701 reruns \\maketitle at its first \\section, so a title way that writes \\maketitle is refused there', () => {
+  for (const way of ['front.class-native', 'front.maketitle']) {
+    assert.ok(at('class.aastex', 'paragraph/title', way).some((v) => v.includes('requires all authors to have an affiliation')), way);
+  }
+  assert.ok(at('class.aastex', 'paragraph/title', 'front.class-native', [], { authors: 'separate' }).some((v) => v.includes('\\if@firstsection')));
+  // revtex4-2, whose \maketitle runs once, still takes the separate form.
+  assert.deepEqual(at('class.revtex4-2', 'paragraph/title', 'front.class-native', [], { authors: 'separate' }), []);
+  assert.deepEqual(at('class.article', 'paragraph/title', 'front.maketitle'), []);
+});
+
+test('front.titlepage-env is refused where the class has no titlepage environment: letter, scrlttr2, moderncv, minimal', () => {
+  for (const cls of ['class.letter', 'class.scrlttr2', 'class.moderncv', 'class.minimal']) {
+    const v = at(cls, 'paragraph/title', 'front.titlepage-env');
+    assert.ok(v.some((s) => s.includes('no titlepage environment')), `${cls}: ${v.join('\n')}`);
+  }
+  for (const cls of ['class.article', 'class.report', 'class.amsart', 'class.ieeetran', 'class.revtex4-2', 'class.aastex', 'class.mnras', 'class.beamer', 'class.tikzposter']) {
+    assert.deepEqual(at(cls, 'paragraph/title', 'front.titlepage-env'), [], cls);
+  }
+});
+
+test("a class's setup counts for every document: its options and its loads, whatever the template gives", () => {
+  // quantumarticle loads hyperref in every document's preamble: a way that needs it is met.
+  assert.ok(!resolve(library, { classId: 'class.quantumarticle', choices: [{ way: 'xref.cleveref', node: 'ref/ref' }] }).some((v) => v.includes('needs package hyperref')));
+  // tufte-book's nols is given though the template's options lack it; revtex4-2-aip inherits revtex4-2's setup.
+  assert.deepEqual(library.classes.find((c) => c.id === 'class.tufte-book')?.setup?.options, ['nols']);
+  assert.equal(library.classes.find((c) => c.id === 'class.revtex4-2-aip')?.setup?.after?.length, 1);
 });

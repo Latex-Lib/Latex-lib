@@ -13,24 +13,28 @@ export const PRESETS = {
   },
   'fancy-framed': {
     description: "fancyvrb's Verbatim in a single frame, small type.",
+    writes: '\\begin{Verbatim}[…] … \\end{Verbatim} \\begin{center}…\\end{center}',
     features: ['framed', 'captioned'],
     params: { package: 'fancyvrb', frame: 'single', fontsize: '\\small' },
     evidence: [solution('0154-hepthesis', '74'), solution('0188-elegantpaper', '65')],
   },
   'fancy-numbered': {
     description: "fancyvrb's Verbatim with line numbers at the left and rules above and below (numbers=left, frame=lines).",
+    writes: '\\begin{Verbatim}[…] … \\end{Verbatim} \\begin{center}…\\end{center}',
     features: ['line-numbers', 'ruled', 'captioned'],
     params: { package: 'fancyvrb', numbers: 'left', frame: 'lines' },
     evidence: [solution('0166-retosmatematicos', '66')],
   },
   'fancy-indented': {
     description: "fancyvrb's Verbatim indented from the left margin (xleftmargin=0.5cm).",
+    writes: '\\begin{Verbatim}[…] … \\end{Verbatim} \\begin{center}…\\end{center}',
     features: ['indented', 'captioned'],
     params: { package: 'fancyvrb', indent: '0.5cm' },
     evidence: [solution('0077-gi-ev-lni', '92')],
   },
   alltt: {
     description: 'alltt: typewriter text kept as typed but with LaTeX commands still working, so escaped LaTeX prints as LaTeX.',
+    writes: '\\begin{alltt} … \\end{alltt} \\begin{center}…\\end{center}',
     features: ['escape-latex', 'captioned'],
     params: { package: 'alltt' },
     evidence: [solution('0185-memhfixc', '69')],

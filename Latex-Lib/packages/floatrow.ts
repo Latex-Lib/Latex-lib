@@ -15,6 +15,6 @@ export default definePackage({
   ],
   loadOrder: [],
   defines: ['cmd:\\floatsetup', 'cmd:\\fcapside', 'cmd:\\ffigbox', 'cmd:\\ttabbox'],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan('floatrow')],
 });

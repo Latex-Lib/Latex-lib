@@ -8,6 +8,7 @@ export default defineKey(
     node: 'containerBlock/note',
     description:
       'marginnote: \\marginnote{…}[voffset] beside the line it is written on, a margin note that is not a float, so it also works where \\marginpar does not (floats, footnotes). The adjust options, \\marginfont, \\raggedleftmarginnote and \\raggedrightmarginnote, \\marginnotevadjust, \\reversemarginpar. 21 templates.',
+    writes: '\\marginnote{{\\bfseries …\\par} …}',
     ctan: ['marginnote'],
     features: ['margin-note', 'sans-serif', 'small-type', 'colored', 'italic-body'],
     params: {
@@ -97,6 +98,6 @@ export default defineKey(
     // General note does (`\savenotes\marginnote{…}\spewnotes`), so the text is set after the note at the page's foot
     // (`keepingFootnotes`), and the footnote is no longer denied below it. [OV2-alt]
     gives: { floats: false, breakable: false, boxDepth: 1 },
-    zerotex: 'yes',
+    targetEngine: 'yes',
   }),
 );

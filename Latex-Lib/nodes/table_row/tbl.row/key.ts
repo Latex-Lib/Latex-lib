@@ -8,9 +8,11 @@ export default defineKey(
     node: 'table_row',
     description:
       "A table row: its cells then Flouest's row separator; the table way turns the rows into its own syntax.",
+    // The row prints no LaTeX of its own: its cells and Flouest's separators, which the table way prints as `… & … \\`.
+    writes: '… & … \\\\',
     ctan: ['latex-base'],
     features: [],
     presets: PRESETS,
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

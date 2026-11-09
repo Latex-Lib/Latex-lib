@@ -8,12 +8,13 @@ export default defineKey(
     node: 'inlineMath/inlineMath',
     description:
       'Inline maths: $…$ or \\( … \\), with a \\label after it when the node has one.',
+    writes: '$…$\\label{…}',
     ctan: ['latex-base'],
     features: [],
     params: {
       delimiters: { type: 'enum', values: ['dollar', 'paren'], default: 'dollar', description: "dollar signs, or the kernel's \\( \\)" },
     },
     presets: PRESETS,
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

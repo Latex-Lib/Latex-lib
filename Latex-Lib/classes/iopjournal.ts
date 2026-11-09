@@ -9,9 +9,9 @@ export default defineClass({
   id: 'class.iopjournal',
   name: "iopjournal",
   base: 'class.article',
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "fancyhdr"}, {"pkg": "xcolor"}, {"pkg": "graphicx"}, {"pkg": "hyperref", "options": ["colorlinks=true", "allcolors=blue"]}],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\articletype", "cmd:\\affil", "cmd:\\email", "cmd:\\keywords", "cmd:\\orcid", "cmd:\\ack", "cmd:\\funding", "cmd:\\data", "cmd:\\roles", "cmd:\\suppdata"],
   options: {},
   forbids: {
     technical: [],

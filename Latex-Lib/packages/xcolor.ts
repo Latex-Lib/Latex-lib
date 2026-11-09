@@ -7,6 +7,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'yes',
+  targetEngine: 'yes',
   evidence: [],
 });

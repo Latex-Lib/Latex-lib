@@ -9,9 +9,9 @@ export default defineClass({
   id: 'class.easychair',
   name: "easychair",
   base: 'class.article',
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "amsmath"}, {"pkg": "mathtools"}, {"pkg": "amsthm"}, {"pkg": "hyperref"}, {"pkg": "xcolor"}, {"pkg": "graphicx"}, {"pkg": "listings"}, {"pkg": "empheq"}],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:proof", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:proof", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\institute", "cmd:\\inst", "cmd:\\volumeinfo"],
   options: {"thesis": {"adds": ["counter:chapter"], "description": "the class loads report instead of article, so chapters exist"}},
   forbids: {
     technical: [],

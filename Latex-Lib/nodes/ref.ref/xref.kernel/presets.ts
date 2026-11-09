@@ -13,6 +13,7 @@ export const PRESETS = {
   },
   'number-only': {
     description: 'The number alone, \\ref{label}, whatever name the node gives.',
+    writes: '\\ref{…}',
     features: [],
     params: { name: false },
     evidence: [solution('0099-prosper', '55')],

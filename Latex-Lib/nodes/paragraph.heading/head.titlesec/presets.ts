@@ -7,6 +7,7 @@ import { solution } from '../../evidence.ts';
 export const PRESETS = {
   'sans-colored': {
     description: 'Journal headings: sans-serif bold in an accent colour, one size down (sections in \\large), the section title upper-cased, half an em after the number, tighter space below.',
+    writes: '\\section[…]{…} \\label{…}; \\titleformat{\\section}[…]{…}{\\thesection}{…}{\\MakeUppercase} \\titlespacing*{\\section}{…}{…}{…}',
     features: ['hang-head', 'sans-serif', 'bold-head', 'colored', 'uppercase', 'numbered'],
     // One size down (`scale: 'smaller'`): the two templates that upper-case the section title set it in \large, not the kernel's
     // \Large (0012 olplainarticle.cls:67-79, `\color{color1}\large\sffamily\bfseries`, `\MakeUppercase{#1}`; 0016 rho.cls:376-413,
@@ -19,6 +20,7 @@ export const PRESETS = {
   },
   'cv-ruled': {
     description: 'CV and résumé sections: small capitals flush left, no number, a rule under the title (\\titlerule), close spacing.',
+    writes: '\\section[…]{…} \\label{…}; \\titleformat{\\section}[…]{…}{}{…}{}[{\\titlerule[…]}] \\titlespacing*{\\section}{…}{…}{…}',
     features: ['hang-head', 'smallcaps-head', 'ruled', 'unnumbered'],
     // \raggedright as the templates set it (0028-prometheuscv prometheus_cv.cls:10, 0220-jitinnair1-autocv cv.tex:81, 0177-danielteles
     // en/main.tex:47): titlesec justifies a title otherwise, and the display \part title in \Huge small capitals ran past the line (copy
@@ -48,6 +50,7 @@ export const PRESETS = {
   },
   compact: {
     description: 'Cheat sheets and dense notes: one size down and little space above and below each heading.',
+    writes: '\\section[…]{…} \\label{…}; \\titleformat{\\section}[…]{…}{\\thesection}{…}{} \\titlespacing*{\\section}{…}{…}{…}',
     features: ['hang-head', 'bold-head', 'compact-spacing', 'numbered'],
     params: { scale: 'smaller', spacing: 'compact' },
     evidence: [solution('0101-datemultical', '47'), solution('0156-evan715823-cheatsheet-generator-skill', '44'), solution('0297-marcelomijas-econometrics-cheatsheet', '41'), solution('0193-shenzhouhong-latex-essay', '40')],

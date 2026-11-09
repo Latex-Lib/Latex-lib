@@ -13,12 +13,14 @@ export const PRESETS = {
   },
   parenthetical: {
     description: "biblatex's \\parencite{key}: the citation in brackets.",
+    writes: '\\parencite{…}',
     features: ['author-year'],
     params: { command: 'parencite' },
     evidence: [solution('0164-coursework-term-paper', '47')],
   },
   textual: {
     description: "biblatex's \\textcite{key}, the author part of the sentence.",
+    writes: '\\textcite{…}',
     features: ['author-year'],
     params: { command: 'textcite' },
     evidence: [solution('0700-lectures', '73')],

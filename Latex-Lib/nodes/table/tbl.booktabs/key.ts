@@ -8,6 +8,7 @@ export default defineKey(
     node: 'table',
     description:
       "booktabs: \\toprule, \\midrule under a header row, \\bottomrule, no vertical rules, in a tabular in a table float, its columns p-columns sharing the line (set left, centred or right with array); \\heavyrulewidth and \\lightrulewidth for the rules' weights, \\addlinespace between body rows. 283 templates.",
+    writes: '\\begin{table}[tbp] \\centering \\caption{…} \\label{…} \\begin{tabular}{p{…}p{…}} \\toprule … & … \\\\ \\midrule … \\\\ \\bottomrule \\end{tabular} \\end{table}',
     ctan: ['booktabs'],
     features: ['floating', 'captioned', 'booktabs-rules'],
     params: {
@@ -35,6 +36,6 @@ export default defineKey(
     needs: { floats: true },
     // The table is itself a float (GENERAL_GIVES table): no float below it.
     gives: { floats: false },
-    zerotex: 'yes',
+    targetEngine: 'yes',
   }),
 );

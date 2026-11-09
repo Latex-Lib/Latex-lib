@@ -10,9 +10,9 @@ export default defineClass({
   id: 'class.sn-jnl',
   name: "sn-jnl",
   base: 'class.article',
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "geometry"}, {"pkg": "cuted"}, {"pkg": "rotating", "options": ["figuresright"]}, {"pkg": "graphicx"}, {"pkg": "threeparttable"}, {"pkg": "appendix", "options": ["title"]}, {"pkg": "hyperref"}, {"pkg": "wrapfig"}, {"pkg": "amsthm"}, {"pkg": "fix-cm"}, {"pkg": "natbib", "options": ["numbers", "sort&compress"]}],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "cmd:\\abstract", "env:proof", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "cmd:\\abstract", "env:proof", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\affil", "cmd:\\fnm", "cmd:\\sur", "cmd:\\keywords", "cmd:\\backmatter", "cmd:\\bmhead", "cmd:\\unnumbered", "style:thmstyleone", "style:thmstyletwo", "style:thmstylethree"],
   options: {},
   forbids: {
     technical: [],

@@ -8,6 +8,7 @@ export default defineKey(
     node: 'containerBlock/blockMath',
     description:
       "amsmath's displays: \\[ … \\] (equation* when it holds a split) or equation for one row, align (on &), gather, multline or split for several, starred when unnumbered; \\numberwithin{equation}{…}, \\allowdisplaybreaks, the fleqn and leqno options. 347 templates.",
+    writes: '\\begin{equation} … \\label{…} \\end{equation}, \\[ … \\], \\begin{align} … \\\\ … \\label{…} \\end{align}, \\begin{gather} … \\end{gather}',
     ctan: ['amsmath'],
     features: ['numbered', 'unnumbered', 'numbered-within', 'aligned', 'multiline', 'breakable'],
     params: {
@@ -24,6 +25,6 @@ export default defineKey(
       { pkg: 'amsmath', options: ['leqno'], when: { leftNumbers: true } },
     ],
     gives: { math: true },
-    zerotex: 'yes',
+    targetEngine: 'yes',
   }),
 );

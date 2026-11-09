@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [["obeyDraft", "obeyFinal"]],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("todonotes"), { kind: 'manual', of: "todonotes", section: "1.2 Package options; 1.3 \\todo options", url: 'https://ctan.org/pkg/todonotes' }],
 });

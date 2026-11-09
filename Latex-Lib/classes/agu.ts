@@ -26,9 +26,9 @@ import { defineClass } from '../schema/class.ts';
 export default defineClass({
   id: 'class.agu',
   name: "agujournal2025",
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [{"pkg": "graphicx"}, {"pkg": "xcolor"}, {"pkg": "url"}, {"pkg": "lineno"}, {"pkg": "indentfirst"}, {"pkg": "ragged2e"}, {"pkg": "rotating"}, {"pkg": "apacite"}],
-  defines: ["counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\appendix"],
+  defines: ["counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\appendix", "cmd:\\authors", "cmd:\\affil", "cmd:\\affiliation", "cmd:\\correspondingauthor", "env:keypoints", "cmd:\\acknowledgments", "env:glossary", "env:acronyms", "env:notation", "cmd:\\journalname"],
   options: {},
   forbids: {
     technical: [

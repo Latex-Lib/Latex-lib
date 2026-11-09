@@ -32,8 +32,10 @@ export default defineClass({
   id: 'class.vldb',
   name: "acmart",
   base: 'class.acmart',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [...acmart.preloads, { pkg: "balance" }, { pkg: "textcase" }],
+  // Its own front-matter values (front.acmart's pvldb preset), set before \\maketitle (pvldb.sty l.46-86).
+  defines: [...acmart.defines, "cmd:\\vldbdoi", "cmd:\\vldbpages", "cmd:\\vldbavailabilityurl", "cmd:\\vldbvolume", "cmd:\\vldbissue", "cmd:\\vldbyear", "cmd:\\vldbauthors", "cmd:\\vldbtitle", "cmd:\\vldbpagestyle"],
   // sigconf: letter paper (614.295pt) with 54pt inner and outer margins and a 2pc column gap (l.650-656), so
   // \textwidth = 506.295pt and each column 241.1475pt; 9pt type (l.273-274). pvldb.sty sets no page.
   layout: { columns: 2, textwidth: "506.295pt", fontsize: "9pt" },

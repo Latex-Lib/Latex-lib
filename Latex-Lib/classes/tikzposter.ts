@@ -8,9 +8,9 @@ import { ctan } from '../schema/minimal.ts';
 export default defineClass({
   id: 'class.tikzposter',
   name: "tikzposter",
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "xcolor"}, {"pkg": "graphicx"}, {"pkg": "tikz"}],
-  defines: ["cmd:\\maketitle", "env:thebibliography"],
+  defines: ["cmd:\\maketitle", "env:thebibliography", "cmd:\\institute", "cmd:\\block", "env:columns", "cmd:\\column", "cmd:\\innerblock", "cmd:\\coloredbox", "cmd:\\note", "env:tikzfigure", "cmd:\\usetheme"],
   options: {},
   forbids: {
     technical: [{ pkg: "mathtools", reason: "its load test stops: LaTeX Error: Loading a class or package in a group.", evidence: [{ kind: 'compile', cell: 'testing-pipeline/out/profiles/tikzposter.A.json' }] }],

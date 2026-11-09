@@ -9,6 +9,7 @@ export default defineKey(
     node: 'paragraph/heading',
     description:
       'sectsty: heading fonts without touching their layout, \\allsectionsfont{font} for every level or \\sectionfont, \\subsectionfont … per level when the sizes are set; \\raggedright, \\nohang\\centering or \\raggedleft for alignment (never on the run-in paragraph levels), \\underline last for underlined titles. 13 templates.',
+    writes: '\\section[…]{…} \\label{…}; \\allsectionsfont{…}',
     ctan: ['sectsty'],
     features: ['sans-serif', 'bold-head', 'smallcaps-head', 'upright-body', 'colored', 'centered'],
     params: {
@@ -54,6 +55,6 @@ export default defineKey(
     // head.sectsty@smallcaps's \subparagraph (55 of 59), run-in titles that never print (their footnote sibling's sentinel is missing).
     // Copy batch-3b, 5 pairs; e.g. d165d94f2adcdc3093699 result 82adbd1a35 l.150, an unmarked \section* 172.7pt over.
     needs: { paragraph: true },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

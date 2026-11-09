@@ -25,7 +25,7 @@ const NICEMATRIX = 'nicematrix.sty (MiKTeX snapshot 9766)';
 export default defineClass({
   id: 'class.quantumarticle',
   name: "quantumarticle",
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [
     {"pkg": "xkeyval"}, {"pkg": "etoolbox"}, {"pkg": "geometry", "options": ["margin=2cm", "bottom=3cm"]}, {"pkg": "ltxcmds"},
     {"pkg": "ltxgrid"}, {"pkg": "ltxutil"}, {"pkg": "fancyhdr"},
@@ -38,6 +38,15 @@ export default defineClass({
   ],
   options: {
     onecolumn: { columns: 1, unloads: ["ltxgrid", "ltxutil"], description: "one column: the class loads ltxgrid only when \\if@twocolumn holds (l.346-348), and geometry gets margin=3cm (l.284)" },
+  },
+  setup: {
+    options: ['nopdfoutputerror'],
+    loads: [{ pkg: 'hyperref' }],
+    reason: "quantumarticle.cls stops at \\pdfoutput unless given nopdfoutputerror (XeTeX has no \\pdfoutput: 'Undefined control sequence', then 'Missing \\begin{document}'), and it loads hyperref itself at \\begin{document} (l.1392-1394), where the engine's nameref (2026-01-29 v2.58, l.372) stops at 'Sorting rule for begindocument hook applied too late' unless hyperref is already in the preamble",
+    evidence: [
+      { kind: 'compile', reproducer: "\\documentclass[a4paper,twocolumn,11pt]{quantumarticle} with url and a \\url: 'Undefined control sequence' at \\pdfoutput; with nopdfoutputerror: 'LaTeX hooks Error: Sorting rule for begindocument hook applied too late'; with \\usepackage{hyperref} in the preamble as well it compiles (class-examples' probe (Latex Related Research/Latex-Template-Examples, 2026-11-06), through Flouest's headless ZeroTeX-NG runner)" },
+      { kind: 'compile', cell: 'class-examples: _results/class.quantumarticle.log (2026-11-06)' },
+    ],
   },
   forbids: {
     technical: [

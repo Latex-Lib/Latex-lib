@@ -8,7 +8,7 @@ import { ctan } from '../schema/minimal.ts';
 export default defineClass({
   id: 'class.minimal',
   name: "minimal",
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [],
   defines: [],
   options: {},

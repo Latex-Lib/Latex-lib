@@ -20,9 +20,9 @@ export default defineClass({
   id: 'class.ut-thesis',
   name: "ut-thesis",
   base: 'class.book',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [{"pkg": "geometry"}, {"pkg": "setspace"}],
-  defines: ["counter:chapter", "counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:figure", "env:table", "env:thebibliography", "env:abstract", "env:dedication", "env:acknowledgements", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\degree", "cmd:\\gradyear", "cmd:\\department", "cmd:\\copyrighttext", "cmd:\\headerstyle"],
+  defines: ["counter:chapter", "counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:figure", "env:table", "env:thebibliography", "env:abstract", "env:dedication", "env:acknowledgements", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\degree", "cmd:\\gradyear", "cmd:\\department", "cmd:\\copyrighttext", "cmd:\\headerstyle", "cmd:\\frontmatter", "cmd:\\mainmatter", "cmd:\\backmatter"],
   options: {},
   forbids: {
     technical: [

@@ -31,9 +31,9 @@ export default defineClass({
   id: 'class.ascelike',
   name: "ascelike",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [{"pkg": "ifthen"}, {"pkg": "babel", "options": ["american"]}, {"pkg": "newtxtext"}, {"pkg": "fontspec"}, {"pkg": "newtxmath"}, {"pkg": "amsmath"}, {"pkg": "microtype", "options": ["final", "nopatch=footnote"]}, {"pkg": "authblk"}, {"pkg": "caption"}, {"pkg": "setspace"}, {"pkg": "lineno"}],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\Appendix", "cmd:\\sAppendix", "cmd:\\KeyWords", "cmd:\\affil", "cmd:\\citeN", "cmd:\\citeNP", "cmd:\\citeA", "cmd:\\citedata"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\Appendix", "cmd:\\sAppendix", "cmd:\\KeyWords", "cmd:\\affil", "cmd:\\citeN", "cmd:\\citeNP", "cmd:\\citeA", "cmd:\\citedata", "cmd:\\NameTag", "cmd:\\citeyear"],
   options: {
     Proceedings: { unloads: ["setspace", "lineno"], description: "single spaced, no line numbers: DoubleSpace and LineNumbers stay off, so the \\AtBeginDocument block loads neither setspace nor lineno (the bundle's example uses it; the setting gives Journal)" },
   },

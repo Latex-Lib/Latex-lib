@@ -8,6 +8,7 @@ export default defineKey(
     node: 'containerBlock/columns',
     description:
       'multicol: balanced columns in the text, \\begin{multicols}{2} … \\end{multicols} (multicols* unbalanced), the gap from the node in \\columnsep; \\columnseprule and \\columnseprulecolor for a rule, \\raggedcolumns for ragged bottoms. 131 templates.',
+    writes: '{\\setlength{\\columnsep}{…} \\begin{multicols}{…} … \\end{multicols}}',
     ctan: ['multicol'],
     features: ['balanced-columns', 'column-rule'],
     params: {
@@ -24,6 +25,6 @@ export default defineKey(
     // multicol drops floats in its columns: "Package multicol Warning: Floats and marginpars not allowed inside `multicols' environment!"
     // (297c68343f, article.A run); library tables directly below it lose their content in 207 of 240 branches (250 of 2,430 elsewhere).
     gives: { floats: false, columns: true },
-    zerotex: 'yes',
+    targetEngine: 'yes',
   }),
 );

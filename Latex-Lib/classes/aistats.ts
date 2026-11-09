@@ -19,9 +19,9 @@ export default defineClass({
   id: 'class.aistats',
   name: "article",
   base: 'class.article',
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "amsmath"}, {"pkg": "fancyhdr"}],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\acknowledgments", "cmd:\\ackaccepted", "cmd:\\aistatstitle", "cmd:\\aistatsauthor", "cmd:\\aistatsaddress", "cmd:\\runningtitle", "cmd:\\runningauthor", "cmd:\\subsubsubsection", "cmd:\\toptitlebar", "cmd:\\bottomtitlebar", "length:\\titlebox"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\acknowledgments", "cmd:\\ackaccepted", "cmd:\\aistatstitle", "cmd:\\aistatsauthor", "cmd:\\aistatsaddress", "cmd:\\runningtitle", "cmd:\\runningauthor", "cmd:\\subsubsubsection", "cmd:\\toptitlebar", "cmd:\\bottomtitlebar", "length:\\titlebox", "cmd:\\onecolumn"],
   options: {},
   forbids: {
     technical: [],

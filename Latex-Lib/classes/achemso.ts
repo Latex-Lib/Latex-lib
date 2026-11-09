@@ -21,7 +21,7 @@ export default defineClass({
   id: 'class.achemso',
   name: "achemso",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [
     {"pkg": "xkeyval"}, {"pkg": "geometry", "options": ["margin=2.54cm"]}, {"pkg": "caption"}, {"pkg": "float"},
     {"pkg": "graphicx"}, {"pkg": "setspace"}, {"pkg": "url"},

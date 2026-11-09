@@ -9,6 +9,12 @@ import way3 from './head.koma-fonts/handler.ts';
 import way4 from './head.memoir-style/handler.ts';
 import way5 from './head.fncychap/handler.ts';
 import way6 from './head.class-native/handler.ts';
+import w_head_book_matter from './head.book-matter/handler.ts';
+import w_head_class_styled from './head.class-styled/handler.ts';
+import w_head_copernicus from './head.copernicus/handler.ts';
+import w_head_ieee_raise from './head.ieee-raise/handler.ts';
+import w_head_plain from './head.plain/handler.ts';
+import w_head_tufte from './head.tufte/handler.ts';
 
 export type Handler = (params?: { readonly [name: string]: unknown }) => Realization;
 
@@ -20,4 +26,10 @@ export const HANDLERS: { readonly [way: string]: Handler } = {
   'head.memoir-style': way4,
   'head.fncychap': way5,
   'head.class-native': way6,
+  'head.book-matter': w_head_book_matter,
+  'head.class-styled': w_head_class_styled,
+  'head.copernicus': w_head_copernicus,
+  'head.ieee-raise': w_head_ieee_raise,
+  'head.plain': w_head_plain,
+  'head.tufte': w_head_tufte,
 };

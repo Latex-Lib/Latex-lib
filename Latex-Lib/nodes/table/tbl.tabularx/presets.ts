@@ -13,12 +13,14 @@ export const PRESETS = {
   },
   centered: {
     description: 'Full-width X columns with centred text (>{\\centering\\arraybackslash}X), rules only above, under the header and below.',
+    writes: '\\begin{tabularx}{\\linewidth}{>{\\centering\\arraybackslash}X>{\\centering\\arraybackslash}X} \\hline … \\\\ \\hline … \\\\ … \\\\ \\hline \\end{tabularx}',
     features: ['floating', 'captioned', 'full-width', 'horizontal-rules'],
     params: { align: 'center', vrules: false, rules: 'header' },
     evidence: [solution('0037-hilbert', '65')],
   },
   'label-column': {
     description: 'A natural-width first column (l) and X columns for the rest, no rules: label and description tables.',
+    writes: '\\begin{tabularx}{\\linewidth}{lX} … & … \\\\ … \\\\ \\end{tabularx}',
     features: ['floating', 'captioned', 'full-width'],
     params: { firstColumn: 'l', vrules: false, rules: 'none' },
     evidence: [solution('0205-amcos-conference-booklet', '53')],

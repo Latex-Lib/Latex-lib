@@ -8,6 +8,7 @@ export default defineKey(
     node: 'paragraph/paragraph',
     description:
       "A paragraph: its text and a blank line, indented by \\hspace* for each indent step; an empty one keeps its line with \\strut. Paragraphs set apart the class's way, by the parskip package (skip=, indent=), or by \\parskip and \\parindent.",
+    writes: '\\hspace*{…}…',
     ctan: ['latex-base'],
     features: ['indented'],
     params: {
@@ -31,6 +32,6 @@ export default defineKey(
         unless: { separation: ['class', 'lengths'] },
       },
     ],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

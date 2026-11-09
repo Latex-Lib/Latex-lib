@@ -2,12 +2,17 @@
   "handler": "bib.natbib",
   "node": "cite/cite",
   "generatedFrom": {
-    "key": "sha256:9bf0d57b22c097ee47fcac9cb2cc7acedf4de83b0a06745e65cb55b32092c204",
-    "contexts": "sha256:5090f453d2685307b7fa59052c1e84dda5d59c40937d6394c4054462d8668328",
+    "key": "sha256:212a45057172697f20f24de7ef65835f77fbe24428249cbc7567ee26084c987a",
+    "contexts": "sha256:f71c32d51d3016c64059e7d491725c08b522482004cfef01186a16c6d9e5d6cb",
     "matrix": null
   },
   "parents": {
     "paragraph/paragraph": {
+      "para.ieee-parstart": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "para.kernel": {
         "verdict": "ok",
         "source": "derived",
@@ -15,12 +20,32 @@
       }
     },
     "paragraph/heading": {
+      "head.book-matter": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "head.class-native": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
       },
+      "head.class-styled": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "head.copernicus": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "head.fncychap": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "head.ieee-raise": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
@@ -40,12 +65,22 @@
         "source": "derived",
         "status": "derived"
       },
+      "head.plain": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "head.sectsty": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
       },
       "head.titlesec": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "head.tufte": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
@@ -59,7 +94,192 @@
       }
     },
     "paragraph/title": {
+      "front.aaai": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.aastex": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.achemso": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.acmart": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.agu": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.aistats": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.ams-topmatter": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.apa7": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.asmeconf": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.asmejour": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.authblk": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.author-blocks": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.beamer-title": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.bmvc": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.cas": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.center-block": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "front.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.copernicus": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.corl": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.ecai-frontmatter": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.elegantpaper": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.elsarticle-frontmatter": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.emulateapj": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.exam-cover": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.frontiers": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.icml": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.ieeeaccess": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.ieeetran-blocks": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.ieeetran-journal": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.ijcai": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.imsart-frontmatter": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.inst-institute": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.interact": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.iopart": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.iopjournal": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.jmlr": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.jss": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.koma-letter": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
@@ -69,7 +289,67 @@
         "source": "derived",
         "status": "derived"
       },
+      "front.letter": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.lipics": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "front.maketitle": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.mdpi": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.mnras": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.moderncv": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.oup": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.revtex": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.siam": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.sn-jnl": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.spconf": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.spie": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.tikzposter": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
@@ -80,6 +360,16 @@
         "status": "derived"
       },
       "front.titling": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.tufte": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "front.ut-thesis": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"

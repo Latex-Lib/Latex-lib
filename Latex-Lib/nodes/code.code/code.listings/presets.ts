@@ -29,4 +29,16 @@ export const PRESETS = {
     params: { font: '\\ttfamily', commentStyle: '\\color{gray}\\upshape', background: 'gray!10', columns: 'fullflexible' },
     evidence: [solution('0042-jankapunkt-master-thesis', '71'), solution('0059-ftc-notebook', '77')],
   },
+  // style none: the class's own \lstset kept, under the class that preloads listings and protects its look.
+  lipics: {
+    description:
+      "LIPIcs's listing look kept as the class sets it (small monospaced type on its light-grey background): \\begin{lstlisting}[language=…, caption={…}, label=…] with no style of the way's own, no \\lstdefinestyle and no \\usepackage{listings}, which the class preloads.",
+    writes: '\\begin{lstlisting}[language=…, escapeinside={(*@}{@*)}, caption={…}, label=…] … (*@…@*) … \\end{lstlisting}',
+    features: ['syntax-highlighting', 'escape-latex', 'captioned', 'class-styled'],
+    params: { style: 'none' },
+    evidence: [
+      { kind: 'requirement', file: 'Template/template-requirement/LIPIcs.md', line: '73-75' },
+      { kind: 'requirement', file: 'Template/template-requirement/LIPIcs.md', line: '105' },
+    ],
+  },
 } as const satisfies { readonly [name: string]: Preset };

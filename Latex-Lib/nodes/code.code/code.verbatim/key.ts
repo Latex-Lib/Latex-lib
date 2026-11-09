@@ -8,6 +8,7 @@ export default defineKey(
     node: 'code/code',
     description:
       "Verbatim code: the kernel's verbatim environment; fancyvrb's \\begin{Verbatim}[frame=…, numbers=…, fontsize=…, xleftmargin=…]; or alltt, where LaTeX commands still work so escapes print as LaTeX. 276 templates.",
+    writes: '\\begin{verbatim} … \\end{verbatim} \\begin{center}…\\end{center}',
     ctan: ['latex-base', 'fancyvrb', 'alltt'],
     features: ['framed', 'line-numbers', 'ruled', 'indented', 'escape-latex', 'captioned'],
     params: {
@@ -27,6 +28,6 @@ export default defineKey(
     ],
     // Read verbatim: not where its body is read as an argument (code.listings' key says where).
     needs: { verbatim: true, argument: false },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

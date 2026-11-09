@@ -23,7 +23,7 @@ export default defineClass({
   id: 'class.aamas',
   name: "aamas",
   base: 'class.acmart',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [...acmart.preloads, { pkg: "balance" }],
   // sigconf: letter paper (614.295pt) with 54pt inner and outer margins and a 2pc column gap (l.648-654), so
   // \textwidth = 506.295pt and each column 241.1475pt; 9pt type (l.271-272).

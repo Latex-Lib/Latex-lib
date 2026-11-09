@@ -8,6 +8,8 @@ export default defineKey(
     node: 'containerBlock/blockMath',
     description:
       "mathtools over amsmath: the same displays (equation, align, gather, multline, split) with mathtools' fixes and extensions loaded; \\mathtoolsset{showonlyrefs} numbers only referenced equations. 66 templates.",
+    // The LaTeX is math.amsmath's: mathtools prints amsmath's displays, only loaded over amsmath (its showonlyrefs preset differs).
+    writes: '\\begin{equation} … \\label{…} \\end{equation}, \\[ … \\], \\begin{align} … \\\\ … \\label{…} \\end{align}, \\begin{gather} … \\end{gather}',
     ctan: ['mathtools'],
     features: ['numbered', 'unnumbered', 'numbered-within', 'aligned', 'multiline', 'breakable'],
     params: {
@@ -25,6 +27,6 @@ export default defineKey(
       { pkg: 'mathtools', options: ['leqno'], when: { leftNumbers: true } },
     ],
     gives: { math: true },
-    zerotex: 'yes',
+    targetEngine: 'yes',
   }),
 );

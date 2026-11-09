@@ -16,9 +16,9 @@ export default defineClass({
   id: 'class.lipics',
   name: "lipics-v2021",
   base: 'class.article',
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "lmodern"}, {"pkg": "amsmath", "options": ["tbtags", "fleqn"]}, {"pkg": "amssymb"}, {"pkg": "amsthm"}, {"pkg": "hyperref", "options": ["unicode"]}, {"pkg": "graphicx"}, {"pkg": "caption"}, {"pkg": "listings"}, {"pkg": "tabularx"}, {"pkg": "threeparttable", "options": ["online"]}, {"pkg":"rotating","options":["figuresright"]}, {"pkg":"subcaption"}, {"pkg":"multirow"}, {"pkg":"array"}, {"pkg":"babel"}, {"pkg":"microtype"}, {"pkg":"soul"}, {"pkg":"lineno","options":["left","mathlines"]}],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:theorem", "env:lemma", "env:corollary", "env:proposition", "env:definition", "env:example", "env:remark", "env:exercise", "env:conjecture", "env:observation", "env:note", "env:claim", "env:claimproof", "env:proof", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:theorem", "env:lemma", "env:corollary", "env:proposition", "env:definition", "env:example", "env:remark", "env:exercise", "env:conjecture", "env:observation", "env:note", "env:claim", "env:claimproof", "env:proof", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\titlerunning", "cmd:\\authorrunning", "cmd:\\Copyright", "cmd:\\ccsdesc", "cmd:\\keywords", "cmd:\\category", "cmd:\\relatedversion", "cmd:\\supplement", "cmd:\\funding", "cmd:\\ArticleNo", "cmd:\\acknowledgements"],
   options: {},
   forbids: {
     technical: [],

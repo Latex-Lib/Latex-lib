@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("tabularray"), { kind: 'manual', of: "tabularray", section: "inner specifications (colspec, hlines, vlines, hline{…}, row{…}); \\SetCell", url: 'https://ctan.org/pkg/tabularray' }],
 });

@@ -28,7 +28,7 @@ import { defineClass } from '../schema/class.ts';
 export default defineClass({
   id: 'class.ecai',
   name: "ecai",
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [{"pkg": "comment"}, {"pkg": "lineno", "options": ["switch"]}, {"pkg": "times"}, {"pkg": "fontenc", "options": ["T1"]}, {"pkg": "etoolbox"}, {"pkg": "forloop"}, {"pkg": "url"}, {"pkg": "environ"}, {"pkg": "natbib", "options": ["numbers"]}],
   defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "env:ack", "env:frontmatter", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\orcid", "cmd:\\address"],
   options: {

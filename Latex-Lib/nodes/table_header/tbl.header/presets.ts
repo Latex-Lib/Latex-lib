@@ -13,12 +13,14 @@ export const PRESETS = {
   },
   shaded: {
     description: 'A bold header cell on a light grey ground (\\cellcolor{gray!20}).',
+    writes: '\\cellcolor{…} {\\bfseries …}',
     features: ['bold-head', 'background'],
     params: { shade: 'gray!20' },
     evidence: [solution('0030-seu-ml-assign', '69'), solution('0044-long-invoice', '48')],
   },
   smallcaps: {
     description: 'A header cell in small capitals instead of bold.',
+    writes: '{\\scshape …}',
     features: ['smallcaps-head'],
     params: { font: '\\scshape' },
     evidence: [solution('0098-minimal-cv', '43')],

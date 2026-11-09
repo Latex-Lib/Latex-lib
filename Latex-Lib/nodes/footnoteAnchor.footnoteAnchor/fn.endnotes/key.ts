@@ -8,6 +8,7 @@ export default defineKey(
     node: 'footnoteAnchor/footnoteAnchor',
     description:
       'endnotes: every footnote becomes an endnote (\\let\\footnote=\\endnote), printed at the end with \\theendnotes; \\enotesize for their size, \\notesname for their heading. 5 templates.',
+    writes: '\\footnote{…}; \\let\\footnote=\\endnote \\AtEndDocument{\\theendnotes}',
     ctan: ['endnotes'],
     features: ['endnotes', 'numbered', 'small-type'],
     params: {
@@ -18,6 +19,6 @@ export default defineKey(
     loads: [
       { pkg: 'endnotes' },
     ],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

@@ -7,6 +7,6 @@ export default definePackage({
   exclusive: [['framemethod=default', 'framemethod=tikz', 'framemethod=pstricks']],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [{ kind: 'manual', of: "mdframed", section: "3 Options; 6.5 Shadows", url: 'https://ctan.org/pkg/mdframed' }],
 });

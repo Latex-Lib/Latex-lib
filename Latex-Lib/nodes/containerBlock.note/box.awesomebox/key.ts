@@ -8,6 +8,7 @@ export default defineKey(
     node: 'containerBlock/note',
     description:
       "awesomebox: an admonition block with a FontAwesome icon and a rule at its side; noteblock, tipblock or warningblock by the note's tone, cautionblock, importantblock, or an awesomeblock of its own (icon, colours, rule width, a title over a short or long line). Needs fontawesome5. 2 templates.",
+    writes: '\\begin{noteblock|tipblock|warningblock} {\\bfseries …\\par} … \\end{…block}',
     ctan: ['awesomebox'],
     features: ['icon', 'left-rule', 'colored', 'title-bar'],
     params: {
@@ -37,6 +38,6 @@ export default defineKey(
     // or 345.4pt over (copy batch-3b, oracle 4: 0 of 30 fit article.A branches with it below vwcol pass, report.A 0 of 31,
     // amsart.A 0 of 30; e.g. d6284954b0b417341a525 result 3c462b887c l.404, 172.7pt).
     needs: { paragraph: true },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

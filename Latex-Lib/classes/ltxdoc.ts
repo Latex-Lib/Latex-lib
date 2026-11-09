@@ -9,9 +9,9 @@ export default defineClass({
   id: 'class.ltxdoc',
   name: "ltxdoc",
   base: 'class.article',
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "hyperref"}, {"pkg": "multicol"}, {"pkg": "doc"}],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:macrocode", "env:macro", "env:environment", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:macrocode", "env:macro", "env:environment", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\MaintainedBy", "cmd:\\PrintIndex"],
   options: {},
   forbids: {
     technical: [],

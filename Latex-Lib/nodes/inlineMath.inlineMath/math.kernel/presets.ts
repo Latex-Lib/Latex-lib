@@ -13,6 +13,7 @@ export const PRESETS = {
   },
   paren: {
     description: "Inline maths in the kernel's \\( … \\) delimiters.",
+    writes: '\\(…\\)\\label{…}',
     features: [],
     params: { delimiters: 'paren' },
     evidence: [solution('0096-c-d-p-bundle', '55')],

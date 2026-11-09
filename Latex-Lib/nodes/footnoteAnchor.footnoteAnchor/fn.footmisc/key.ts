@@ -8,6 +8,7 @@ export default defineKey(
     node: 'footnoteAnchor/footnoteAnchor',
     description:
       "footmisc: the footnotes' layout by options, \\usepackage[hang,flushmargin]{footmisc} (para, side, bottom, perpage, symbol, symbol*, stable, norule), \\footnotemargin for the marks' room; the footnotes themselves stay \\footnote. 51 templates.",
+    writes: '\\footnote{…}; \\usepackage[…]{footmisc}',
     ctan: ['footmisc'],
     features: ['hanging', 'per-page', 'symbols', 'paragraph-notes', 'numbered'],
     params: {
@@ -33,6 +34,6 @@ export default defineKey(
       { pkg: 'footmisc', options: ['stable'], when: { stable: true } },
       { pkg: 'footmisc', options: ['norule'], when: { rule: false } },
     ],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

@@ -9,6 +9,8 @@ export default defineKey(
     node: 'atomicBlock/tableContents',
     description:
       "The kernel's \\tableofcontents, with \\listoffigures and \\listoftables after it when asked; \\tocdepth, \\contentsname and a break after each. 389 templates.",
+    // The same LaTeX as toc.etoc's full contents: etoc only redefines the kernel's \tableofcontents.
+    writes: '\\tableofcontents',
     ctan: ['latex-base'],
     features: ['lists-of-floats', 'flat-contents', 'odd-page'],
     params: {
@@ -18,6 +20,6 @@ export default defineKey(
     requires: [
       'cmd:\\tableofcontents',
     ],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

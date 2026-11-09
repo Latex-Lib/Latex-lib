@@ -40,7 +40,7 @@ import { defineClass } from '../schema/class.ts';
 export default defineClass({
   id: 'class.frontiers',
   name: "FrontiersinHarvard",
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [
     {"pkg": "inputenc", "options": ["utf8"]}, {"pkg": "crop", "options": ["a4", "off", "center", "info"]},
     {"pkg": "graphicx", "options": ["paper"]}, {"pkg": "amsmath"}, {"pkg": "array"}, {"pkg": "color"}, {"pkg": "amssymb"},
@@ -49,7 +49,7 @@ export default defineClass({
     {"pkg": "caption", "options": ["labelsep=quad", "indention=10pt"]}, {"pkg": "subcaption", "options": ["labelfont=bf", "list=true"]},
     {"pkg": "natbib"},
   ],
-  defines: ["counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "counter:figure", "counter:subfigure", "counter:table", "env:abstract", "env:description", "env:figure", "env:table", "env:thebibliography", "env:methods", "env:processtable", "env:unlist", "cmd:\\maketitle", "cmd:\\appendix", "cmd:\\frontmatter", "cmd:\\mainmatter", "cmd:\\backmatter", "cmd:\\subfigure", "cmd:\\helvetica", "cmd:\\helveticabold", "cmd:\\medline", "cmd:\\address", "cmd:\\history", "cmd:\\extraAuth", "cmd:\\correspondance", "cmd:\\vol", "cmd:\\issue"],
+  defines: ["counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "counter:figure", "counter:subfigure", "counter:table", "env:abstract", "env:description", "env:figure", "env:table", "env:thebibliography", "env:methods", "env:processtable", "env:unlist", "cmd:\\maketitle", "cmd:\\appendix", "cmd:\\frontmatter", "cmd:\\mainmatter", "cmd:\\backmatter", "cmd:\\subfigure", "cmd:\\helvetica", "cmd:\\helveticabold", "cmd:\\medline", "cmd:\\address", "cmd:\\history", "cmd:\\extraAuth", "cmd:\\correspondance", "cmd:\\vol", "cmd:\\issue", "cmd:\\firstpage"],
   options: {},
   forbids: {
     technical: [

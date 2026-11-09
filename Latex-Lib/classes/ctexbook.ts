@@ -10,9 +10,9 @@ export default defineClass({
   id: 'class.ctexbook',
   name: "ctexbook",
   base: 'class.book',
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "fontspec"}],
-  defines: ["counter:chapter", "counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:chapter", "counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\zihao", "cmd:\\frontmatter", "cmd:\\mainmatter", "cmd:\\backmatter", "cmd:\\ctexset"],
   options: {},
   forbids: {
     technical: [],

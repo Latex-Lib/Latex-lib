@@ -13,6 +13,7 @@ export const PRESETS = {
   },
   booktabs: {
     description: 'The same width-bound caption over booktabs rules, notes set flush left and in footnote size (flushleft option).',
+    writes: '\\begin{threeparttable} \\caption{…}\\label{…} \\begin{tabular}{…} \\toprule … \\\\ \\midrule … \\\\ \\bottomrule \\end{tabular} \\end{threeparttable}',
     features: ['floating', 'captioned', 'booktabs-rules', 'table-notes'],
     params: { rules: 'booktabs', notes: 'flushleft' },
     evidence: [solution('0104-sjtutex', '94')],

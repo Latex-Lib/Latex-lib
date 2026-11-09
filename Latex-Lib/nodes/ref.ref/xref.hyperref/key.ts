@@ -8,6 +8,7 @@ export default defineKey(
     node: 'ref/ref',
     description:
       'hyperref: \\autoref{label} names and links the target (Figure 2); \\nameref{label} for its title; \\hyperref[label]{text} when the node gives its own name. 137 templates.',
+    writes: '\\autoref{…} | \\hyperref[…]{…}',
     ctan: ['hyperref'],
     features: ['named-refs', 'linked'],
     params: {
@@ -17,6 +18,6 @@ export default defineKey(
     loads: [
       { pkg: 'hyperref' },
     ],
-    zerotex: 'yes',
+    targetEngine: 'yes',
   }),
 );

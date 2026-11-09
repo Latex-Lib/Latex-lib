@@ -7,6 +7,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'yes',
+  targetEngine: 'yes',
   evidence: [{ kind: 'compile', cell: 'testing-pipeline/out/profiles/revtex4-2-aps.A.json' }],
 });

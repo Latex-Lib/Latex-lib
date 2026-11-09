@@ -27,7 +27,7 @@ export default defineClass({
   id: 'class.elegantpaper',
   name: "elegantpaper",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [
     {"pkg": "kvoptions"}, {"pkg": "etoolbox"}, {"pkg": "calc"}, {"pkg": "hyperref"},
     {"pkg": "geometry", "options": ["left=1in", "right=1in", "top=1in", "bottom=1in", "headheight=0pt", "headsep=0pt"]},

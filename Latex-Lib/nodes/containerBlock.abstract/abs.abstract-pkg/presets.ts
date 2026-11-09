@@ -23,6 +23,7 @@ export const PRESETS = {
   },
   'in-contents': {
     description: 'The abstract listed in the table of contents (addtotoc), set at the full width (\\absleftindent and \\absrightindent 0pt).',
+    writes: '\\begin{abstract} … \\end{abstract}; \\setlength{\\absleftindent}{…}\\setlength{\\absrightindent}{…}',
     features: ['small-type', 'in-contents', 'centered'],
     params: { inContents: true, indent: '0pt' },
     evidence: [manual('abstract', 'package options: addtotoc; \\absleftindent, \\absrightindent')],

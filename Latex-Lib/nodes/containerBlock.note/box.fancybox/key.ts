@@ -8,6 +8,7 @@ export default defineKey(
     node: 'containerBlock/note',
     description:
       "The note in a framed paragraph box: fancybox's \\shadowbox, \\doublebox, \\ovalbox or \\Ovalbox (\\shadowsize, \\cornersize), or the kernel's \\fbox and xcolor's \\colorbox and \\fcolorbox, which the research counts with them; \\fboxsep and \\fboxrule. None breaks across pages. 165 templates.",
+    writes: '\\begin{center} \\shadowbox{\\parbox{…}{{\\bfseries …\\par} …}} \\end{center}',
     ctan: ['fancybox'],
     features: ['framed', 'background', 'shadow', 'rounded-corners', 'colored', 'centered'],
     params: {
@@ -33,6 +34,6 @@ export default defineKey(
     // or tabular, so the text is set after the box at the page's foot (`keepingFootnotes`), and the footnote is no longer
     // denied below it. [OV2-alt]
     gives: { floats: false, breakable: false, boxDepth: 1 },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

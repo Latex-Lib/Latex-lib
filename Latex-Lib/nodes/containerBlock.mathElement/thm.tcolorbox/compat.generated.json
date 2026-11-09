@@ -2,8 +2,8 @@
   "handler": "thm.tcolorbox",
   "node": "containerBlock/mathElement",
   "generatedFrom": {
-    "key": "sha256:6dcfdb09b1a8e8eea8eb8086a90815660848acc7a13a0510c9138c3b71975ec6",
-    "contexts": "sha256:6473710baf815dcb7640d4ff65dd6f43384b488e7508f2e8c9b6309e7a7e11b9",
+    "key": "sha256:e5da32be670def9d5aba89a94914b0bfe4618b8c00a7a5803d76f06fe74880ab",
+    "contexts": "sha256:19ca377618c806eb733d2b157e0258ce2e79a5cd584f9c6a2c2ae6bd83663bc5",
     "matrix": null
   },
   "parents": {
@@ -15,14 +15,94 @@
       }
     },
     "containerBlock/appendix": {
+      "num.appendices-env": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "num.appendix": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "num.appendix-onecolumn": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "num.cvpr-supplementary": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "num.handset": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "num.ieee-appendices": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "num.mdpi-appendix": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "num.unnumbered": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
       }
     },
     "containerBlock/acknowledgement": {
+      "ack.block": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.block[form=frame]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.block[form=poster-block]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.bmhead": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.class-command": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.class-command[form=argument]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.class-command[form=preamble]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "ack.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.class-native[env=ack]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.copernicus": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
@@ -31,15 +111,50 @@
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
+      },
+      "ack.llncs-credits": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
       }
     },
     "containerBlock/columns": {
+      "cols.beamer-columns": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.cvcolumns": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.fullwidth": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.fullwidth[split=multicol]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "cols.multicol": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
       },
       "cols.paracol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.revtex-grid": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.tikzposter": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
@@ -72,6 +187,33 @@
       }
     },
     "containerBlock/listing": {
+      "list.agu-glossary": {
+        "verdict": "adapt",
+        "source": "authored",
+        "status": "untested",
+        "set": {
+          "breakable": false
+        },
+        "reason": "a confined parent: a box there cannot use the page-breaking machinery"
+      },
+      "list.class-native": {
+        "verdict": "adapt",
+        "source": "authored",
+        "status": "untested",
+        "set": {
+          "breakable": false
+        },
+        "reason": "a confined parent: a box there cannot use the page-breaking machinery"
+      },
+      "list.cvlist": {
+        "verdict": "adapt",
+        "source": "authored",
+        "status": "untested",
+        "set": {
+          "breakable": false
+        },
+        "reason": "a confined parent: a box there cannot use the page-breaking machinery"
+      },
       "list.enumerate-pkg": {
         "verdict": "adapt",
         "source": "authored",
@@ -90,7 +232,25 @@
         },
         "reason": "a confined parent: a box there cannot use the page-breaking machinery"
       },
+      "list.exam-questions": {
+        "verdict": "adapt",
+        "source": "authored",
+        "status": "untested",
+        "set": {
+          "breakable": false
+        },
+        "reason": "a confined parent: a box there cannot use the page-breaking machinery"
+      },
       "list.kernel": {
+        "verdict": "adapt",
+        "source": "authored",
+        "status": "untested",
+        "set": {
+          "breakable": false
+        },
+        "reason": "a confined parent: a box there cannot use the page-breaking machinery"
+      },
+      "list.nomenclature": {
         "verdict": "adapt",
         "source": "authored",
         "status": "untested",
@@ -119,6 +279,11 @@
       }
     },
     "containerBlock/abstract": {
+      "abs.aa-structured": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "abs.abstract-pkg": {
         "verdict": "ok",
         "source": "derived",
@@ -134,7 +299,42 @@
         "source": "derived",
         "status": "derived"
       },
+      "abs.front-held": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.front-held[place=begin-document]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.heading": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.ieee-indextext": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.ieeeaccess": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "abs.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.keywords": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.tikzposter-block": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
@@ -183,6 +383,15 @@
       }
     },
     "table_cell": {
+      "tbl.cell-plain": {
+        "verdict": "adapt",
+        "source": "authored",
+        "status": "untested",
+        "set": {
+          "breakable": false
+        },
+        "reason": "a confined parent: a box there cannot use the page-breaking machinery"
+      },
       "tbl.multirow": {
         "verdict": "adapt",
         "source": "authored",
@@ -195,6 +404,15 @@
     },
     "table_header": {
       "tbl.header": {
+        "verdict": "adapt",
+        "source": "authored",
+        "status": "untested",
+        "set": {
+          "breakable": false
+        },
+        "reason": "a confined parent: a box there cannot use the page-breaking machinery"
+      },
+      "tbl.header-plain": {
         "verdict": "adapt",
         "source": "authored",
         "status": "untested",

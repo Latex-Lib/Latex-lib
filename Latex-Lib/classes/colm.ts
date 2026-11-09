@@ -21,7 +21,7 @@ export default defineClass({
   id: 'class.colm',
   name: "article",
   base: 'class.article',
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "tgpagella"}, {"pkg": "mathpazo"}, {"pkg": "inconsolata"}, {"pkg": "eso-pic"}, {"pkg": "fancyhdr"}, {"pkg": "natbib"}],
   defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\And", "cmd:\\AND", "cmd:\\subsubsubsection", "cmd:\\toptitlebar", "cmd:\\bottomtitlebar"],
   options: {},

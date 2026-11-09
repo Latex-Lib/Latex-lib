@@ -8,6 +8,7 @@ export default defineKey(
     node: 'cite/cite',
     description:
       "natbib's citation commands: \\citep{key} in brackets, \\citet{key} in the sentence, \\citealp without brackets.",
+    writes: '\\citep{…}',
     ctan: ['natbib'],
     features: ['author-year', 'numeric-citations'],
     params: {
@@ -28,6 +29,6 @@ export default defineKey(
         ],
       },
     ],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

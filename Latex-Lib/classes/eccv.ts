@@ -32,7 +32,7 @@ export default defineClass({
   id: 'class.eccv',
   name: "llncs",
   base: 'class.llncs',
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [
     ...llncs.preloads,
     {"pkg": "silence"}, {"pkg": "etoolbox"}, {"pkg": "fontenc", "options": ["T1"]}, {"pkg": "lineno", "options": ["left", "mathlines"]},
@@ -45,7 +45,7 @@ export default defineClass({
     ...llncs.defines,
     "cmd:\\eccvsetup", "cmd:\\ECCVyear", "cmd:\\fillzeros", "cmd:\\linenomathpatch", "cmd:\\linenomathpatchAMS", "color:eccvblue",
     "cmd:\\onedot", "cmd:\\eg", "cmd:\\Eg", "cmd:\\ie", "cmd:\\Ie", "cmd:\\cf", "cmd:\\Cf", "cmd:\\etc", "cmd:\\vs", "cmd:\\wrt", "cmd:\\dof", "cmd:\\iid", "cmd:\\wolog", "cmd:\\etal",
-  ],
+  "cmd:\\cref", "cmd:\\Cref"],
   options: {},
   forbids: {
     technical: [

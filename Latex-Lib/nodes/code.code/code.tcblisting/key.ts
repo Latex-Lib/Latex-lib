@@ -8,6 +8,7 @@ export default defineKey(
     node: 'code/code',
     description:
       "tcolorbox's listings library: the code in a box, \\begin{tcblisting}{listing only, title={…}, colback, colframe, left, width, listing options={language=…, basicstyle=…, numbers=…}} … \\end{tcblisting}; breakable through the breakable library. 20 templates.",
+    writes: '\\begin{tcblisting}{listing only, code={\\LatexLibHeadOwnLine}, title={…}, …, listing options={basicstyle=…, language=…}} … \\end{tcblisting}',
     ctan: ['tcolorbox'],
     features: ['syntax-highlighting', 'framed', 'background', 'title-bar', 'line-numbers', 'breakable', 'colored', 'captioned'],
     params: {
@@ -33,6 +34,6 @@ export default defineKey(
     ],
     // Read verbatim: not where its body is read as an argument (code.listings' key says where).
     needs: { verbatim: true, argument: false },
-    zerotex: 'yes',
+    targetEngine: 'yes',
   }),
 );

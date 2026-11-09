@@ -25,6 +25,7 @@ export const PRESETS = {
   },
   'on-white': {
     description: 'An image on a white ground outside any float (a photo, a signature): \\adjustimage{width=…,bgcolor=white}.',
+    writes: '\\noindent\\adjustimage{width=…,bgcolor=white}{…} \\refstepcounter{figure} \\label{…}',
     features: ['scaled', 'background'],
     params: { float: false, background: 'white', center: false },
     evidence: [solution('0112-sizuhe-latex-templates-library', '41'), solution('0112-sizuhe-latex-templates-library', '75')],

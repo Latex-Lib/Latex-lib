@@ -13,12 +13,14 @@ export const PRESETS = {
   },
   'cv-ratio': {
     description: 'A wide main column and a narrow side column, 0.65 of the width to the first (\\columnratio{0.65}).',
+    writes: '\\begin{paracol}{…} … \\switchcolumn … \\end{paracol}; \\columnratio{…}',
     features: ['parallel-columns', 'unequal-widths'],
     params: { ratio: '0.65' },
     evidence: [solution('0022-lucid-cv', '31')],
   },
   ruled: {
     description: 'Equal parallel columns with a thin grey rule between them (\\columnseprule, \\colseprulecolor).',
+    writes: '\\begin{paracol}{…} … \\switchcolumn … \\end{paracol}; \\setlength{\\columnseprule}{…} \\colseprulecolor{…}',
     features: ['parallel-columns', 'column-rule'],
     params: { rule: '0.4pt', ruleColor: 'gray' },
     evidence: [manual('paracol', 'column-separating rules: \\colseprulecolor')],

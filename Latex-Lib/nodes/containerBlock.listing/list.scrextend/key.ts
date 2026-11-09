@@ -8,6 +8,7 @@ export default defineKey(
     node: 'containerBlock/listing',
     description:
       "KOMA's scrextend: a description list as a labeling list, \\begin{labeling}[separator]{widest label}, labels aligned in a column, their font through the labelinglabel element; other lists stay the kernel's. 8 templates.",
+    writes: '\\begin{labeling}[…]{…} \\item[…] … \\end{labeling}',
     ctan: ['koma-script'],
     features: ['aligned-labels', 'bold-head'],
     params: {
@@ -24,6 +25,6 @@ export default defineKey(
     ],
     // A paragraph place, not below cols.vwcol (list.kernel's key says why).
     needs: { paragraph: true },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

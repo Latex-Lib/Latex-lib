@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [["symbol", "symbol*"]],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("footmisc"), { kind: 'manual', of: "footmisc", section: "package options (para, perpage, stable, multiple, symbol, bottom, hang, flushmargin, norule)", url: 'https://ctan.org/pkg/footmisc' }],
 });

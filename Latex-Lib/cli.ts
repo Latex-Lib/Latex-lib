@@ -1,7 +1,7 @@
 /**
  * The library's checks and generated files, from the library's folder:
  *
- *   npm run verify                       every key, class and package valid and resolving; every compat table current; the Flouest pin holding
+ *   npm run verify                       every key, class and package valid and resolving; every compat table and the embeddings current; the Flouest pin holding
  *   npm run generate                     writes every handler's compat.generated.json
  *   node cli.ts pin [<flouest checkout>] pins the Flouest files the library reads (flouest.lock.json)
  *   node cli.ts solutions                for every Solution file using a theorem way, what the resolver picks under its class (M1's exit check)
@@ -11,6 +11,7 @@ import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { checkCompat, writeCompat } from './compat.ts';
+import { checkEmbeddings } from './embeddings.ts';
 import { checkPin, flouestRoot, pinFlouest, readLock } from './flouest.ts';
 import { pick } from './engine/resolve.ts';
 import { loadLibrary } from './library.ts';
@@ -32,7 +33,7 @@ if (command === 'pin') {
     const written = writeCompat(lib, library.keys, nesting);
     console.log(`wrote ${written.length} compat tables`);
   } else {
-    const problems = [...misplaced, ...checkPin(lib), ...validateLibrary(library, nesting), ...checkCompat(lib, library.keys, nesting)];
+    const problems = [...misplaced, ...checkPin(lib), ...validateLibrary(library, nesting), ...checkCompat(lib, library.keys, nesting), ...checkEmbeddings(lib, library)];
     console.log(`library: ${library.keys.length} handlers, ${library.classes.length} class profiles, ${library.packages.length} package facts`);
     for (const p of problems) console.log(`  ${p}`);
     console.log(problems.length === 0 ? 'verify: ok' : `verify: ${problems.length} problem(s)`);
@@ -59,8 +60,8 @@ if (command === 'pin') {
         count('class not profiled');
         continue;
       }
-      if (library.classes.find((c) => c.id === cls.id)?.zerotex === 'no') {
-        count('class does not run in ZeroTeX-NG');
+      if (library.classes.find((c) => c.id === cls.id)?.targetEngine === 'no') {
+        count('class does not run in the target engine');
         continue;
       }
       const key = library.keys.find((k) => k.id === way);

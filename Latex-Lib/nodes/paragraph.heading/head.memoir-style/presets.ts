@@ -31,12 +31,14 @@ export const PRESETS = {
   },
   tight: {
     description: 'No space before or after section heads (\\setbeforesecskip{0pc}, \\setaftersecskip{0pc}), numbered to the subsection.',
+    writes: '\\section[…]{…} \\label{…}; \\setsecnumdepth{…} \\setbeforesecskip{…} \\setaftersecskip{…}',
     features: ['compact-spacing', 'bold-head', 'numbered'],
     params: { beforeSkip: '0pc', afterSkip: '0pc', numberDepth: 'subsection' },
     evidence: [solution('0510-uspatent', '48'), solution('0003-ucsmonograph', '66')],
   },
   pedersen: {
     description: "memoir's pedersen chapter style: the title in italics with the number in a large coloured block at the right; sections hang their numbers in the margin (\\hangsecnum).",
+    writes: '\\section[…]{…} \\label{…}; \\chapterstyle{pedersen} \\hangsecnum',
     features: ['chapter-opening', 'italic-head', 'hang-head', 'numbered'],
     params: { chapterStyle: 'pedersen', hangNumbers: true },
     evidence: [solution('0185-memhfixc', '55')],

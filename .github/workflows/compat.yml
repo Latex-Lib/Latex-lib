@@ -9,7 +9,7 @@
 # The first run starts from the release `store-seed` (encrypted). Between the
 # jobs the rest moves as artifacts (`index`, `pair-<class>.<setup>@<shard>`,
 # `log-<class>.<setup>@<shard>`, `summary`, `diff`, `triage`), each sealed with
-# FLOUEST_KEY by ci/seal.sh; `ci/fetch-run.sh` brings a run back.
+# FLOUEST_KEY_NEW by ci/seal.sh (since 2026-11-09: the old key's local copy was lost; FLOUEST_KEY still opens the engine archive and the store seed); `ci/fetch-run.sh` brings a run back.
 #
 # The engine and the host the pipeline tests against are not public. Each job
 # that needs them checks out the private companion repository (secret
@@ -69,9 +69,10 @@ jobs:
       - name: The secrets are set
         env:
           FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+          FLOUEST_KEY_NEW: ${{ secrets.FLOUEST_KEY_NEW }}
           PRIVATE_DEPLOY_KEY: ${{ secrets.PRIVATE_DEPLOY_KEY }}
         run: |
-          for name in FLOUEST_KEY PRIVATE_DEPLOY_KEY; do
+          for name in FLOUEST_KEY FLOUEST_KEY_NEW PRIVATE_DEPLOY_KEY; do
             if [ -z "${!name}" ]; then
               echo "::error::The repository secret $name is not set: add it (Settings > Secrets and variables > Actions), then re-run this workflow."
               exit 1
@@ -165,7 +166,7 @@ jobs:
       - name: Seal log-oracle
         if: always()
         env:
-          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY_NEW }}
         run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/log-oracle.tar.gz.enc" testing-pipeline/out logs/oracle.log
       - uses: actions/upload-artifact@v4
         if: always()
@@ -187,7 +188,7 @@ jobs:
           echo "at=$(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)" >> "$GITHUB_OUTPUT"
       - name: Seal index
         env:
-          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY_NEW }}
         run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/index.tar.gz.enc" testing-pipeline/out manifest.jsonl documents runs
       - uses: actions/upload-artifact@v4
         with:
@@ -227,7 +228,7 @@ jobs:
       - name: Seal log-plan
         if: always()
         env:
-          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY_NEW }}
         run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/log-plan.tar.gz.enc" testing-pipeline/out 'logs/lint*' logs/smoke.log
       - uses: actions/upload-artifact@v4
         if: always()
@@ -305,7 +306,7 @@ jobs:
           path: ${{ runner.temp }}/opened-index
       - name: Open index
         env:
-          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY_NEW }}
         run: bash testing-pipeline/ci/seal.sh open testing-pipeline/out "$RUNNER_TEMP"/opened-index/*.tar.gz.enc
       - uses: actions/cache/restore@v4
         with:
@@ -365,7 +366,7 @@ jobs:
       - name: Seal pair
         if: always()
         env:
-          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY_NEW }}
         run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/pair-${{ env.UNIT }}.tar.gz.enc" testing-pipeline/out/upload results ledger.d
       - uses: actions/upload-artifact@v4
         if: always()
@@ -377,7 +378,7 @@ jobs:
       - name: Seal log
         if: always()
         env:
-          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY_NEW }}
         run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/log-${{ env.UNIT }}.tar.gz.enc" testing-pipeline/out logs
       - uses: actions/upload-artifact@v4
         if: always()
@@ -415,7 +416,7 @@ jobs:
           path: ${{ runner.temp }}/opened-pairs
       - name: Open pairs
         env:
-          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY_NEW }}
         run: bash testing-pipeline/ci/seal.sh open testing-pipeline/out "$RUNNER_TEMP"/opened-pairs/*.tar.gz.enc
       - name: Store size
         run: |
@@ -432,14 +433,14 @@ jobs:
           path: ${{ runner.temp }}/opened-logs
       - name: Open logs
         env:
-          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY_NEW }}
         run: bash testing-pipeline/ci/seal.sh open . "$RUNNER_TEMP"/opened-logs/*.tar.gz.enc
       # The table of pairs (ci/summary.sh): the same script rebuilds it over two joined runs (ci/fetch-run.sh).
       - name: Sum up
         run: bash testing-pipeline/ci/summary.sh . | tee summary.md >> "$GITHUB_STEP_SUMMARY"
       - name: Seal summary
         env:
-          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY_NEW }}
         run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/summary.tar.gz.enc" . summary.md
       - uses: actions/upload-artifact@v4
         with:
@@ -455,7 +456,7 @@ jobs:
           path: ${{ runner.temp }}/opened-index
       - name: Open index
         env:
-          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY_NEW }}
         run: bash testing-pipeline/ci/seal.sh open testing-pipeline/out "$RUNNER_TEMP"/opened-index/*.tar.gz.enc
       - id: verdicts
         uses: actions/cache/restore@v4
@@ -483,7 +484,7 @@ jobs:
       - name: Seal diff
         if: always()
         env:
-          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY_NEW }}
         run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/diff.tar.gz.enc" testing-pipeline/out diff.md verdicts.json.gz verdicts.previous.json.gz
       - uses: actions/upload-artifact@v4
         if: always()
@@ -507,7 +508,7 @@ jobs:
       - name: Seal triage
         if: always()
         env:
-          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY }}
+          FLOUEST_KEY: ${{ secrets.FLOUEST_KEY_NEW }}
         run: bash testing-pipeline/ci/seal.sh pack "$RUNNER_TEMP/sealed/triage.tar.gz.enc" testing-pipeline/out triage.md
       - uses: actions/upload-artifact@v4
         if: always()

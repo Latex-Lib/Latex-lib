@@ -33,7 +33,9 @@ set -euo pipefail
 runs=${1:?a run id, a comma-separated list of runs, or sha:<commit>}
 dest=${2:?the folder the store goes in}
 here=$(cd "$(dirname "$0")" && pwd)
-token=${GITHUB_TOKEN:-$( { printf 'protocol=https\nhost=github.com\n\n' | git credential fill 2>/dev/null || true; } | sed -n 's/^password=//p')}
+# Local change (2026-11-09): written as an if, since macOS's bash 3.2 cannot parse $( ) inside ${:-}.
+token=${GITHUB_TOKEN:-}
+if [ -z "$token" ]; then token=$( { printf 'protocol=https\nhost=github.com\n\n' | git credential fill 2>/dev/null || true; } | sed -n 's/^password=//p'); fi
 [ -n "$token" ] || { echo "fetch-run: no token (set GITHUB_TOKEN)" >&2; exit 1; }
 api() { curl -fsSL -H "Authorization: Bearer $token" -H "Accept: application/vnd.github+json" "$@"; }
 json() { node -e "const v = JSON.parse(require('fs').readFileSync(0, 'utf8')); console.log($1)"; }
@@ -107,9 +109,17 @@ while IFS= read -r spec; do
   # A sealed artifact holds one <name>.tar.gz.enc whose paths already say where they go (results/, ledger.d/,
   # logs/, ...). Older runs' artifacts are plain.
   while read -r id name; do
-    api -o "$tmp/a.zip" "https://api.github.com/repos/$repo/actions/artifacts/$id/zip"
     rm -rf "$tmp/a" && mkdir -p "$tmp/a"
-    unzip -qo "$tmp/a.zip" -d "$tmp/a"
+    # Local change (2026-11-09): RESEALED names a folder holding <owner>--<name>/<artifact>/, the re-sealed copy of
+    # each artifact (the reseal workflow), read in place of the original, which opens only with the lost key.
+    if [ -n "${RESEALED:-}" ]; then
+      local_dir="$RESEALED/${repo//\//--}/$name"
+      [ -d "$local_dir" ] || { echo "fetch-run: $local_dir is missing from the re-sealed run" >&2; exit 1; }
+      cp -R "$local_dir/." "$tmp/a/"
+    else
+      api -o "$tmp/a.zip" "https://api.github.com/repos/$repo/actions/artifacts/$id/zip"
+      unzip -qo "$tmp/a.zip" -d "$tmp/a"
+    fi
     sealed=$(find "$tmp/a" -name '*.tar.gz.enc')
     if [ -n "$sealed" ]; then
       bash "$here/seal.sh" open "$into" $sealed
@@ -184,7 +194,7 @@ else
   previous=${PREVIOUS:-}
   if [ -z "$previous" ] && [ -s "$tmp/previous" ]; then
     previous=$dest/verdicts.previous.json.gz
-    xargs -d '\n' node "$here/merge-verdicts.mjs" "$previous" < "$tmp/previous"
+    tr '\n' '\0' < "$tmp/previous" | xargs -0 node "$here/merge-verdicts.mjs" "$previous"
   fi
   node "$here/diff.mjs" "$dest" ${previous:+--previous "$previous"} > /dev/null
 fi

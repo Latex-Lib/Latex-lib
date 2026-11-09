@@ -7,16 +7,31 @@ export default defineKey(
     id: 'bib.thebibliography',
     node: 'containerBlock/refContainer',
     description:
-      "A hand-written thebibliography: \\begin{thebibliography}{99} with one \\bibitem{key} per entry (\\bibitem[{Author(Year)}]{key} where natbib is loaded, so its author-year mode accepts the list), read from the entries' BibTeX source; its size, item spacing and heading; no BibTeX run. 95 templates.",
-    ctan: ['latex-base'],
+      "A hand-written thebibliography: \\begin{thebibliography}{99} with one \\bibitem{key} per entry (\\bibitem[{Author(Year)}]{key} where natbib is loaded, so its author-year mode accepts the list), read from the entries' BibTeX source; its size, item spacing and heading; no BibTeX run. It can drop the labels and hang the entries (\\renewcommand{\\@biblabel}[1]{}, \\setlength{\\itemindent}{-\\leftmargin}: AISTATS), or load natbib itself for author-year labels (\\usepackage[longnamesfirst,sort]{natbib}, \\bibpunct, \\bibfont: Taylor & Francis Interact). 95 templates.",
+    // Printed as \LatexLibBibitem{…}{…}, which is \bibitem{…} (\bibitem[{…}]{…} under natbib: bibitemChooser, ../node.ts).
+    writes: '\\begin{thebibliography}{99} \\bibitem{…} … \\end{thebibliography}',
+    ctan: ['latex-base', 'natbib'],
     features: ['numeric-citations', 'hand-written', 'small-type', 'compact'],
     params: {
       widest: { type: 'string', default: '99', description: 'the widest label, which sets the label column' },
       font: { type: 'tex', default: '', description: "the list's size (\\small); ''" },
       itemsep: { type: 'dimen', default: '', description: "space between entries (\\itemsep); ''" },
       heading: { type: 'string', default: '', description: "the list's heading (\\refname, \\bibname); ''" },
+      // The extension (unit 46): AISTATS's unlabelled hanging list (Source/0794-aistats/sample_paper.tex l.292-294) and the Interact
+      // APA list, natbib loaded for its author-year labels (Source/0207-tandf-interact/interactapasample.tex l.12-14, 438-444).
+      labels: { type: 'enum', values: ['number', 'none', 'natbib'], default: 'number', description: "number: the class's labels (natbib's author-year ones where natbib is loaded); none: no label (\\@biblabel emptied); natbib: load natbib, whose author-year labels each \\bibitem[{Author(Year)}] carries" },
+      hang: { type: 'boolean', default: false, description: 'entries hang from the margin (\\setlength{\\itemindent}{-\\leftmargin})' },
+      longnamesfirst: { type: 'boolean', default: false, description: "with labels natbib: natbib's longnamesfirst option" },
+      natbibSort: { type: 'boolean', default: false, description: "with labels natbib: natbib's sort option" },
+      bibpunct: { type: 'tex', default: '', description: "with labels natbib: \\bibpunct's arguments, e.g. [, ]{(}{)}{;}{a}{,}{,}; ''" },
+      bibFont: { type: 'tex', default: '', description: "with labels natbib: the list's font (\\renewcommand\\bibfont{…}); ''" },
     },
     presets: PRESETS,
+    loads: [
+      { pkg: 'natbib', when: { labels: 'natbib' } },
+      { pkg: 'natbib', options: ['longnamesfirst'], when: { labels: 'natbib', longnamesfirst: true } },
+      { pkg: 'natbib', options: ['sort'], when: { labels: 'natbib', natbibSort: true } },
+    ],
     claims: ['bibliography-engine'],
     requires: [
       'env:thebibliography',
@@ -51,6 +66,7 @@ export default defineKey(
     // branches pass, 0 of 750 over the seven reference-list ways and General's; e.g. acmart-manuscript.A dc3bae0fe3b23445785d1
     // result b284ab99f3, branch bf03b59ccd34d54147534, '.0 never shipped'). Flouest's own fix is O4. [OV3]
     gives: { footnotes: false },
-    zerotex: 'untested',
+    // Every preset typeset ok on ZeroTeX-NG (unit 46, 2026-11-07, class-examples/typeset-dir.ts, scratchpad build/work/bib-ext/thebib-aistats, thebib-interact and thebib-article-<preset> for the other three).
+    targetEngine: 'yes',
   }),
 );

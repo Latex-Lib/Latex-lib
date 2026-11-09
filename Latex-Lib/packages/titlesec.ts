@@ -30,7 +30,7 @@ export default definePackage({
   ],
   loadOrder: [],
   defines: [],
-  zerotex: 'yes',
+  targetEngine: 'yes',
   evidence: [
     { kind: 'compile', cell: 'testing-pipeline/out/profiles/acmart-manuscript.A.json' },
     { kind: 'manual', of: 'titlesec', section: '2. Quick Reference; 3. Advanced Interface', url: 'https://ctan.org/pkg/titlesec' },

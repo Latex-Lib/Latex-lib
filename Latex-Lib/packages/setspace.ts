@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [["singlespacing", "onehalfspacing", "doublespacing"]],
   loadOrder: [],
   defines: ["env:singlespace", "env:onehalfspace", "env:doublespace", "env:spacing", "cmd:\\setstretch", "cmd:\\singlespacing", "cmd:\\onehalfspacing", "cmd:\\doublespacing"],
-  zerotex: 'yes',
+  targetEngine: 'yes',
   evidence: [ctan("setspace"), { kind: 'manual', of: "setspace", section: "the package's documentation (setspace.sty header)", url: 'https://ctan.org/pkg/setspace' }, { kind: 'compile', cell: 'testing-pipeline/out/profiles/article.A.json' }, { kind: 'compile', cell: 'testing-pipeline/out/profiles/aastex.A.json' }],
 });

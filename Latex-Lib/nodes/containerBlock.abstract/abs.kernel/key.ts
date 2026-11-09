@@ -8,6 +8,8 @@ export default defineKey(
     node: 'containerBlock/abstract',
     description:
       "The class's abstract environment: \\begin{abstract} … \\end{abstract} (article, report and most journal classes; not book); \\abstractname renamed, the first-line indent dropped. Where the class keeps the abstract for \\maketitle (amsart, elsarticle, acmart, cas), the class's own code prints it where it stands. 155 templates.",
+    // The same LaTeX as abs.class-native's environment form, on purpose: the class's own \begin{abstract} … \end{abstract}, with the same stored-abstract release in the preamble.
+    writes: '\\begin{abstract} … \\end{abstract}',
     ctan: ['latex-base'],
     features: ['small-type', 'indented', 'centered'],
     params: {
@@ -97,6 +99,6 @@ export default defineKey(
         ],
       },
     ],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

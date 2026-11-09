@@ -65,7 +65,7 @@ test("a kind on the theorem's counter declares the theorem first, and each decla
   assert.deepEqual(ams.declarations, ['\\theoremstyle{plain}\n\\newtheorem{theorem}{Theorem}[section]', '\\theoremstyle{plain}\n\\newtheorem{lemma}[theorem]{Lemma}']);
   const global = printed(handler('thm.amsthm')(amsthmKey.presets.global.params), statement('definition'));
   assert.deepEqual(global.declarations, ['\\theoremstyle{plain}\n\\newtheorem{definition}{Definition}']);
-  // thmtools breaks a shared counter in ZeroTeX-NG's tree, so a kind on the theorem's counter is declared alone and given that counter.
+  // thmtools breaks a shared counter in the target engine's tree, so a kind on the theorem's counter is declared alone and given that counter.
   assert.deepEqual(printed(handler('thm.thmtools')({}), statement('lemma')).declarations.slice(-1), [
     '\\declaretheorem[style=libthm, name=Lemma]{lemma}\n\\makeatletter\\let\\c@lemma\\c@theorem\\let\\thelemma\\thetheorem\\makeatother',
   ]);

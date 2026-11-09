@@ -8,6 +8,7 @@ export default defineKey(
     node: 'containerBlock/note',
     description:
       "The kernel's \\marginpar{…}: a note in the margin, itself a float, so not inside another float, a box or a footnote. \\reversemarginpar for the other margin, \\marginparwidth and \\marginparsep for the column. 56 templates.",
+    writes: '\\marginpar{…\\raggedright {\\bfseries …\\par} …}',
     ctan: ['latex-base'],
     features: ['margin-note', 'small-type'],
     params: {
@@ -82,6 +83,6 @@ export default defineKey(
     // A \marginpar box never breaks across pages (b23: tbl.longtable, which may sit in one box that breaks, stays out of it).
     gives: { floats: false, breakable: false, boxDepth: 1 },
     needs: { floats: true, argument: false },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

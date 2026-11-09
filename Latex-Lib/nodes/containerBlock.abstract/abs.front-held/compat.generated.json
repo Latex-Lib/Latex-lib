@@ -1,0 +1,32 @@
+{
+  "handler": "abs.front-held",
+  "node": "containerBlock/abstract",
+  "generatedFrom": {
+    "key": "sha256:4a5a408a9cd716fa912398e8b3730f32802914c22b87bee10b2b80da1e5a4d73",
+    "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
+    "matrix": null
+  },
+  "parents": {
+    "body": {
+      "(document body)": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    }
+  },
+  "packageCombos": {
+    "deny": [
+      {
+        "with": "front.class-native",
+        "reason": "it writes \\maketitle at the title's place, before the abstract the class holds for it: under revtex4-2 the abstract after it stops at \"Environment abstract undefined\" (revtex4-2.cls l.2685)",
+        "status": "untested"
+      },
+      {
+        "with": "front.maketitle",
+        "reason": "it writes \\maketitle at the title's place, before the abstract the class holds for it: under revtex4-2 the abstract after it stops at \"Environment abstract undefined\" (revtex4-2.cls l.2685)",
+        "status": "untested"
+      }
+    ]
+  }
+}

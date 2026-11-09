@@ -9,6 +9,7 @@ export default defineKey(
     node: 'paragraph/heading',
     description:
       'KOMA-Script\'s own heading interface: \\setkomafont{disposition}{font} (or \\addtokomafont to add to KOMA\'s sans-serif bold) for every heading, the sizes and closing dots through \\KOMAoptions{headings=small|normal|big, numbers=enddot|noenddot}, chapterprefix for a "Chapter N" line; then the kernel command. KOMA classes only. 38 templates.',
+    writes: '\\section[…]{…} \\label{…}; \\setkomafont{disposition}{…}',
     ctan: ['koma-script'],
     features: ['sans-serif', 'bold-head', 'smallcaps-head', 'colored', 'compact-spacing'],
     params: {
@@ -32,6 +33,6 @@ export default defineKey(
     // head.sectsty@smallcaps's \subparagraph (55 of 59), run-in titles that never print (their footnote sibling's sentinel is missing).
     // Copy batch-3b, 5 pairs; e.g. d165d94f2adcdc3093699 result 82adbd1a35 l.150, an unmarked \section* 172.7pt over.
     needs: { paragraph: true },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

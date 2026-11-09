@@ -13,6 +13,7 @@ export const PRESETS = {
   },
   fixed: {
     description: 'A numbered side note fixed beside its line, \\sidenote[][0pt]{…} (an offset of 0 pins it instead of letting it float).',
+    writes: '\\sidenote[][…]{{\\bfseries …\\par} …}',
     features: ['margin-note', 'numbered', 'superscript'],
     params: { offset: '0pt' },
     evidence: [solution('0793-xtufte', '65')],

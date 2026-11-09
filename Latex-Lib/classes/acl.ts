@@ -20,9 +20,9 @@ export default defineClass({
   id: 'class.acl',
   name: "article",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [{"pkg": "xcolor"}, {"pkg": "geometry", "options": ["a4paper", "margin=2.5cm", "heightrounded=true"]}, {"pkg": "caption"}, {"pkg": "natbib"}, {"pkg": "hyperref", "options": ["breaklinks"]}],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\Thanks", "cmd:\\outauthor", "cmd:\\shortcite", "cmd:\\newcite", "cmd:\\citeposs"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\Thanks", "cmd:\\outauthor", "cmd:\\shortcite", "cmd:\\newcite", "cmd:\\citeposs", "cmd:\\And", "cmd:\\AND"],
   options: {},
   forbids: {
     technical: [],

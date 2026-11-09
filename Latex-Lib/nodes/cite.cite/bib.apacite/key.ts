@@ -8,6 +8,7 @@ export default defineKey(
     node: 'cite/cite',
     description:
       "apacite's citation commands: \\cite{key} (Knuth, 1984), \\citeA{key} Knuth (1984), \\citeNP without parentheses.",
+    writes: '\\protect\\cite{…}; \\AddToNoCaseChangeList{\\cite}',
     ctan: ['apacite'],
     features: ['author-year'],
     params: {
@@ -17,6 +18,6 @@ export default defineKey(
     requires: [
       'pkg:apacite',
     ],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

@@ -37,6 +37,7 @@ export const PRESETS = {
   },
   'hang-margin': {
     description: 'Hanging marks with a 1em margin for them (hang, \\footnotemargin 1em).',
+    writes: '\\footnote{…}; \\usepackage[…]{footmisc}\\setlength{\\footnotemargin}{…}',
     features: ['hanging', 'numbered'],
     params: { layout: 'hang', margin: '1em' },
     evidence: [solution('0279-musuos', '77'), solution('0077-gi-ev-lni', '63'), solution('0049-jstrieb-homework-template', '51')],

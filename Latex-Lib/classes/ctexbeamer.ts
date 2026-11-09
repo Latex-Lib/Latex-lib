@@ -9,9 +9,9 @@ export default defineClass({
   id: 'class.ctexbeamer',
   name: "ctexbeamer",
   base: 'class.beamer',
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "fontspec"}, {"pkg": "amsmath"}, {"pkg": "amssymb"}, {"pkg": "amsthm"}, {"pkg": "hyperref"}, {"pkg": "xcolor"}, {"pkg": "graphicx"}, {"pkg": "enumerate"}],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "env:theorem", "env:corollary", "env:fact", "env:lemma", "env:problem", "env:solution", "env:definition", "env:example", "env:abstract", "cmd:\\note", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "env:theorem", "env:corollary", "env:fact", "env:lemma", "env:problem", "env:solution", "env:definition", "env:example", "env:abstract", "cmd:\\note", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\institute", "cmd:\\titlepage", "env:block", "env:frame", "cmd:\\frametitle", "env:columns", "env:column", "cmd:\\zihao", "env:alertblock", "env:exampleblock", "cmd:\\ctexset", "cmd:\\usetheme"],
   options: {},
   forbids: {
     technical: [{ pkg: "tocloft", reason: "its load test stops: LaTeX Error: Command \\l@section undefined.", evidence: [{ kind: 'compile', cell: 'testing-pipeline/out/profiles/ctexbeamer.A.json' }] }],

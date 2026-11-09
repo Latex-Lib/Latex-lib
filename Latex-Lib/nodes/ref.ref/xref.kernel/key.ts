@@ -8,12 +8,13 @@ export default defineKey(
     node: 'ref/ref',
     description:
       "The kernel's \\ref{label}, the number only, after its name when the node gives one (Figure~\\ref{…}). 392 templates.",
+    writes: '…~\\ref{…}',
     ctan: ['latex-base'],
     features: ['named-refs'],
     params: {
       name: { type: 'boolean', default: true, description: "the node's name before the number, tied to it" },
     },
     presets: PRESETS,
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

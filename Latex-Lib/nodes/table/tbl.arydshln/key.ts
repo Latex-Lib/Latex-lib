@@ -8,6 +8,7 @@ export default defineKey(
     node: 'table',
     description:
       'arydshln: dashed rules, \\hdashline between rows and ;{2pt/3pt} between columns, \\dashlinedash and \\dashlinegap for the dashes, solid \\hline at the edges when asked; equal p-columns sharing the line, a spanning cell a paragraph of its columns\' share; array loaded before arydshln; in a tabular in a table float; array and longtable loaded before arydshln. 5 templates.',
+    writes: '\\begin{table}[tbp] \\centering \\caption{…} \\label{…} \\begin{tabular}{;{2pt/3pt}p{…};{2pt/3pt}} \\hdashline … & … \\\\ \\hdashline \\end{tabular} \\end{table}',
     ctan: ['arydshln'],
     features: ['floating', 'captioned', 'dashed-rules', 'horizontal-rules'],
     params: {
@@ -49,7 +50,7 @@ export default defineKey(
         // document that holds it: this conflict now matters wherever General's tables could sit beside it.
         general: 'table',
         reason:
-          "arydshln's \\multicolumn is not \\long, and every one of General's table ways ends an aligned paragraph in a spanning cell with \\par (\\multicolumn{1}{|>{\\raggedright\\arraybackslash}X|}{{\\bfseries {\\centering Run...\\par}}}); the library's own tables keep \\par out of spanning cells (node.ts noPar). With arydshln's patches in force (no array or colortbl loaded after it) such a document never finishes: ZeroTeX's 120 s tool watchdog stops XeTeX and leaves no log. In the copy's article, report, amsart and scrartcl A runs, every document holding tbl.arydshln and such a cell either hung (67, one of them, report.A d478b2bae1389876cf39d, also holding tbl.nicematrix) or compiled with arydshln undone by a colortbl, xcolor[table] or tabularx load after it ('Illegal pream-token (;)', e.g. 47bbc3df1fa8); with arydshln in force and no such cell, 826 compiled and 1 hung (another cause).",
+          "arydshln's \\multicolumn is not \\long, and every one of General's table ways ends an aligned paragraph in a spanning cell with \\par (\\multicolumn{1}{|>{\\raggedright\\arraybackslash}X|}{{\\bfseries {\\centering Run...\\par}}}); the library's own tables keep \\par out of spanning cells (node.ts noPar). With arydshln's patches in force (no array or colortbl loaded after it) such a document never finishes: the engine's 120 s tool watchdog stops XeTeX and leaves no log. In the copy's article, report, amsart and scrartcl A runs, every document holding tbl.arydshln and such a cell either hung (67, one of them, report.A d478b2bae1389876cf39d, also holding tbl.nicematrix) or compiled with arydshln undone by a colortbl, xcolor[table] or tabularx load after it ('Illegal pream-token (;)', e.g. 47bbc3df1fa8); with arydshln in force and no such cell, 826 compiled and 1 hung (another cause).",
         evidence: [
           { kind: 'compile', cell: "cffbb6133d22cd0de787a (the copy's article.A run: document dfd42fd23728b836abaf9, result 2e61df00a61b, 121.5 s, empty log; General's caption+float+tabularx table, branch bfd5ca1b6de459d89df67, writes the \\par spanning cell beside tbl.arydshln@fine-dashes)" },
           { kind: 'compile', cell: "cb656b31f6f310ae69ef4, c04f7ff02a2b2b11cfac0, cfe67300aff07ad2cb822, c7d445e7d423358b65ac1 (the copy's article.A, amsart.A, report.A and scrartcl.A runs: tbl.arydshln beside General's tables, 121.5 to 121.6 s, empty logs)" },
@@ -63,6 +64,6 @@ export default defineKey(
     needs: { floats: true },
     // The table is itself a float (GENERAL_GIVES table): no float below it.
     gives: { floats: false },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

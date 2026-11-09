@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'yes',
+  targetEngine: 'yes',
   evidence: [ctan("float"), { kind: 'manual', of: "float", section: "Floating environments; [H]", url: 'https://ctan.org/pkg/float' }],
 });

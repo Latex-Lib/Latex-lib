@@ -8,6 +8,7 @@ export default defineKey(
     node: 'ref/ref',
     description:
       'varioref: \\vref{label}, the number with its page when it is elsewhere (2 on the next page), or \\vpageref{label} for the page alone. 12 templates.',
+    writes: '\\vref{…}',
     ctan: ['varioref'],
     features: ['page-refs'],
     params: {
@@ -17,6 +18,6 @@ export default defineKey(
     loads: [
       { pkg: 'varioref' },
     ],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

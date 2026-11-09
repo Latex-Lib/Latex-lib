@@ -20,12 +20,14 @@ export const PRESETS = {
   },
   conny: {
     description: 'fncychap Conny: centred, the name and number in a framed band between rules, name and title upper-cased.',
+    writes: '\\section[…]{…} \\label{…}; \\ChNameVar{…} \\ChTitleVar{…} \\ChNameUpperCase \\ChTitleUpperCase',
     features: ['chapter-opening', 'ruled', 'centered', 'uppercase', 'numbered'],
     params: { style: 'Conny', nameCase: 'upper', titleCase: 'upper' },
     evidence: [solution('0367-rkkautsar-ui-thesis-template', '50'), manual('fncychap', '3.4 The chapter Conny')],
   },
   bjornstrup: {
     description: 'fncychap Bjornstrup: the number large and grey at the right in a shaded band, the title below in small capitals.',
+    writes: '\\section[…]{…} \\label{…}; \\renewcommand{\\DOTIS}[1]{…}',
     features: ['chapter-opening', 'background', 'smallcaps-head', 'numbered'],
     params: { style: 'Bjornstrup' },
     evidence: [manual('fncychap', '3.7 The chapter Bjornstrup')],

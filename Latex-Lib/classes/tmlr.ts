@@ -20,7 +20,7 @@ export default defineClass({
   id: 'class.tmlr',
   name: "article",
   base: 'class.article',
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "eso-pic"}, {"pkg": "fancyhdr"}, {"pkg": "natbib"}, {"pkg": "fontenc", "options": ["T1"]}, {"pkg": "lmodern"}],
   defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\addr", "cmd:\\email", "cmd:\\name", "cmd:\\AND", "cmd:\\subsubsubsection", "cmd:\\toptitlebar", "cmd:\\bottomtitlebar", "length:\\aftertitskip", "length:\\beforetitskip", "length:\\interauthorskip", "length:\\aftermaketitskip"],
   options: {},

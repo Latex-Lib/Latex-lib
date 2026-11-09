@@ -13,12 +13,14 @@ export const PRESETS = {
   },
   important: {
     description: 'Every note as an importantblock, the exclamation icon and a red rule.',
+    writes: '\\begin{importantblock} {\\bfseries …\\par} … \\end{importantblock}',
     features: ['icon', 'left-rule', 'colored'],
     params: { block: 'important' },
     evidence: [solution('0474-quizztex', '40')],
   },
   custom: {
     description: 'A block of its own (awesomeblock): a chosen icon and colour, a 2pt rule in the tone\'s colour, the title as the block\'s title with a short line under it.',
+    writes: '\\begin{awesomeblock}[…][\\abShortLine][\\textbf{…}]{…}{…}{…} … \\end{awesomeblock}; \\definecolor{note…}{HTML}{…}',
     features: ['icon', 'left-rule', 'colored', 'title-bar'],
     params: { block: 'custom', icon: '\\faLightbulb', ruleColor: 'tone', ruleWidth: '2pt', iconColor: 'tone', hrule: 'short' },
     evidence: [solution('0512-formation-latex-ul', '85'), manual('awesomebox', '5.2 Environments (awesomeblock)')],

@@ -142,6 +142,8 @@ export const EXCLUSIVES = [
   'bibliography-engine',
   'output-routine',
   'page-geometry',
+  /** Runs the class's own \maketitle, which prints what the class holds for it (`ClassProfile.heldByMaketitle`). */
+  'maketitle',
 ] as const;
 
 export type Exclusive = (typeof EXCLUSIVES)[number];

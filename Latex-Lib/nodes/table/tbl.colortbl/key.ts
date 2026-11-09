@@ -8,6 +8,7 @@ export default defineKey(
     node: 'table',
     description:
       "xcolor with its table option (colortbl): alternate rows shaded, \\rowcolors{2}{gray!12}{white}; a header band (\\rowcolor, white text), \\arrayrulecolor, \\hline where asked; in a tabular in a table float, its columns p-columns sharing the line, a spanning cell a paragraph of its columns' share. 81 templates.",
+    writes: '\\begin{table}[tbp] \\centering \\caption{…} \\label{…} \\rowcolors{2}{…}{…} \\begin{tabular}{p{…}p{…}} … & … \\\\ \\end{tabular} \\end{table}',
     ctan: ['colortbl', 'xcolor'],
     features: ['floating', 'captioned', 'zebra-rows', 'background', 'colored', 'horizontal-rules'],
     params: {
@@ -42,6 +43,6 @@ export default defineKey(
     needs: { floats: true },
     // The table is itself a float (GENERAL_GIVES table): no float below it.
     gives: { floats: false },
-    zerotex: 'yes',
+    targetEngine: 'yes',
   }),
 );

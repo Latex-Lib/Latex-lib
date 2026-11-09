@@ -7,6 +7,7 @@ import way1 from './toc.tocloft/handler.ts';
 import way2 from './toc.titletoc/handler.ts';
 import way3 from './toc.etoc/handler.ts';
 import way4 from './toc.koma/handler.ts';
+import w_toc_class_native from './toc.class-native/handler.ts';
 
 export type Handler = (params?: { readonly [name: string]: unknown }) => Realization;
 
@@ -16,4 +17,5 @@ export const HANDLERS: { readonly [way: string]: Handler } = {
   'toc.titletoc': way2,
   'toc.etoc': way3,
   'toc.koma': way4,
+  'toc.class-native': w_toc_class_native,
 };

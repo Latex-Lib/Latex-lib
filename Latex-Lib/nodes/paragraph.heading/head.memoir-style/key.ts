@@ -9,6 +9,7 @@ export default defineKey(
     node: 'paragraph/heading',
     description:
       "memoir's own heading interface: \\chapterstyle{…} for chapter openings (default, section, hangnum, ell, veelo, madsen, pedersen, demo3, bianchi …), \\setsecheadstyle and its siblings with \\setbeforesecskip and \\setaftersecskip for the lower levels, \\chaptitlefont and \\parttitlefont for the top ones, \\hangsecnum, \\setsecnumdepth. memoir only. 15 templates.",
+    writes: '\\section[…]{…} \\label{…}; \\chapterstyle{…} \\setsecheadstyle{…}',
     ctan: ['memoir'],
     features: ['chapter-opening', 'ruled', 'flush-right', 'colored', 'sans-serif', 'bold-head', 'italic-head', 'hang-head', 'compact-spacing', 'numbered'],
     params: {
@@ -35,6 +36,6 @@ export default defineKey(
     // head.sectsty@smallcaps's \subparagraph (55 of 59), run-in titles that never print (their footnote sibling's sentinel is missing).
     // Copy batch-3b, 5 pairs; e.g. d165d94f2adcdc3093699 result 82adbd1a35 l.150, an unmarked \section* 172.7pt over.
     needs: { paragraph: true },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

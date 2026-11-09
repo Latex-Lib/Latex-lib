@@ -8,6 +8,7 @@ export default defineKey(
     node: 'table_cell',
     description:
       "A table cell: its text (blank lines as \\par), \\cellcolor for a background (colortbl), \\multirow{n}{=}{…} for a row span (multirow; * for natural width), then Flouest's cell separator.",
+    writes: '\\multirow{…}{=}{\\cellcolor[HTML]{…} …}',
     ctan: ['multirow', 'colortbl'],
     features: ['cell-spans', 'background'],
     params: {
@@ -23,6 +24,6 @@ export default defineKey(
     // par mode'), a footnote in a tabular is lost, and its text is read as an argument or set in a box (\multirow{n}{=}{…}, a span's
     // \multicolumn, tabularx's body), so a library code way (verbatim) cannot sit below it.
     gives: { breakable: false, floats: false, footnotes: false, argument: true },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

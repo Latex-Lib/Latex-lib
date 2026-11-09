@@ -9,6 +9,6 @@ export default definePackage({
   exclusive: [["Sonny", "Lenny", "Glenn", "Conny", "Rejne", "Bjarne", "Bjornstrup", "PetersLenny"]],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("fncychap")],
 });

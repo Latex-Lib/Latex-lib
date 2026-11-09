@@ -28,9 +28,9 @@ export default defineClass({
   id: 'class.icml',
   name: "article",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [{"pkg": "times"}, {"pkg": "fancyhdr"}, {"pkg": "xcolor"}, {"pkg": "algorithm"}, {"pkg": "float"}, {"pkg": "ifthen"}, {"pkg": "algorithmic"}, {"pkg": "calc"}, {"pkg": "natbib"}, {"pkg": "eso-pic"}, {"pkg": "forloop"}, {"pkg": "url"}, {"pkg": "caption"}],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "env:algorithm", "env:algorithmic", "env:icmlauthorlist", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\icmltitle", "cmd:\\icmltitlerunning", "cmd:\\icmlauthor", "cmd:\\icmlaffiliation", "cmd:\\icmlcorrespondingauthor", "cmd:\\icmlkeywords", "cmd:\\printAffiliationsAndNotice", "cmd:\\icmlEqualContribution", "cmd:\\listofalgorithms"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "env:algorithm", "env:algorithmic", "env:icmlauthorlist", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\icmltitle", "cmd:\\icmltitlerunning", "cmd:\\icmlauthor", "cmd:\\icmlaffiliation", "cmd:\\icmlcorrespondingauthor", "cmd:\\icmlkeywords", "cmd:\\printAffiliationsAndNotice", "cmd:\\icmlEqualContribution", "cmd:\\listofalgorithms", "cmd:\\icmlsetsymbol", "cmd:\\onecolumn"],
   options: {},
   forbids: {
     technical: [

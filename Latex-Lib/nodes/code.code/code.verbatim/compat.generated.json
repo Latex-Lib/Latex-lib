@@ -2,8 +2,8 @@
   "handler": "code.verbatim",
   "node": "code/code",
   "generatedFrom": {
-    "key": "sha256:d7d8a28e39770898fdef3cbffc16b18214f89a1fc18451131a624db04d8f5459",
-    "contexts": "sha256:b84d5bace47f085f6d549c19a87e2f6956e4194f127832425493080981f05b92",
+    "key": "sha256:ee49074c4cef0496e5a4e594ca6db1ce083e345507e9dc15c6f95d45d07b8690",
+    "contexts": "sha256:9a34444e43ac79586ac5a93aa416a3e6b45fdee3bf9cad3cd215ed2d48d1e81b",
     "matrix": null
   },
   "parents": {
@@ -15,25 +15,164 @@
       }
     },
     "containerBlock/appendix": {
+      "num.appendices-env": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "num.appendix": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "num.appendix-onecolumn": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "num.cvpr-supplementary": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "num.handset": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "num.ieee-appendices": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "num.mdpi-appendix": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "num.unnumbered": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
       }
     },
     "containerBlock/acknowledgement": {
+      "ack.block": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.block[form=frame]": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs verbatim",
+        "lacks": [
+          "needs verbatim"
+        ]
+      },
+      "ack.block[form=poster-block]": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs verbatim; cannot have argument",
+        "lacks": [
+          "needs verbatim",
+          "cannot have argument"
+        ]
+      },
+      "ack.bmhead": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.class-command": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.class-command[form=argument]": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs verbatim; cannot have argument",
+        "lacks": [
+          "needs verbatim",
+          "cannot have argument"
+        ]
+      },
+      "ack.class-command[form=preamble]": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs verbatim; cannot have argument",
+        "lacks": [
+          "needs verbatim",
+          "cannot have argument"
+        ]
+      },
       "ack.class-native": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
       },
+      "ack.class-native[env=ack]": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs verbatim; cannot have argument",
+        "lacks": [
+          "needs verbatim",
+          "cannot have argument"
+        ]
+      },
+      "ack.copernicus": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs verbatim; cannot have argument",
+        "lacks": [
+          "needs verbatim",
+          "cannot have argument"
+        ]
+      },
       "ack.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.llncs-credits": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
       }
     },
     "containerBlock/columns": {
+      "cols.beamer-columns": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.cvcolumns": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs verbatim; cannot have argument",
+        "lacks": [
+          "needs verbatim",
+          "cannot have argument"
+        ]
+      },
+      "cols.fullwidth": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.fullwidth[split=multicol]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "cols.multicol": {
         "verdict": "ok",
         "source": "derived",
@@ -43,6 +182,21 @@
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
+      },
+      "cols.revtex-grid": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.tikzposter": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs verbatim; cannot have argument",
+        "lacks": [
+          "needs verbatim",
+          "cannot have argument"
+        ]
       },
       "cols.twocolumn-cmd": {
         "verdict": "ok",
@@ -60,6 +214,21 @@
       }
     },
     "containerBlock/listing": {
+      "list.agu-glossary": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.cvlist": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "list.enumerate-pkg": {
         "verdict": "ok",
         "source": "derived",
@@ -70,7 +239,17 @@
         "source": "derived",
         "status": "derived"
       },
+      "list.exam-questions": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "list.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.nomenclature": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
@@ -87,6 +266,16 @@
       }
     },
     "containerBlock/abstract": {
+      "abs.aa-structured": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs verbatim; cannot have argument",
+        "lacks": [
+          "needs verbatim",
+          "cannot have argument"
+        ]
+      },
       "abs.abstract-pkg": {
         "verdict": "ok",
         "source": "derived",
@@ -107,10 +296,60 @@
           "cannot have argument"
         ]
       },
+      "abs.front-held": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.front-held[place=begin-document]": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs verbatim; cannot have argument",
+        "lacks": [
+          "needs verbatim",
+          "cannot have argument"
+        ]
+      },
+      "abs.heading": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.ieee-indextext": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs verbatim; cannot have argument",
+        "lacks": [
+          "needs verbatim",
+          "cannot have argument"
+        ]
+      },
+      "abs.ieeeaccess": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "abs.kernel": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
+      },
+      "abs.keywords": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.tikzposter-block": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs verbatim; cannot have argument",
+        "lacks": [
+          "needs verbatim",
+          "cannot have argument"
+        ]
       }
     },
     "containerBlock/mathElement": {
@@ -156,6 +395,15 @@
       }
     },
     "table_cell": {
+      "tbl.cell-plain": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "cannot have argument",
+        "lacks": [
+          "cannot have argument"
+        ]
+      },
       "tbl.multirow": {
         "verdict": "deny",
         "source": "derived",
@@ -168,6 +416,15 @@
     },
     "table_header": {
       "tbl.header": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "cannot have argument",
+        "lacks": [
+          "cannot have argument"
+        ]
+      },
+      "tbl.header-plain": {
         "verdict": "deny",
         "source": "derived",
         "status": "derived",

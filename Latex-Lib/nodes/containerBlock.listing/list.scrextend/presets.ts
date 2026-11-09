@@ -13,6 +13,7 @@ export const PRESETS = {
   },
   'colon-bold': {
     description: 'Bold labels with a colon after each (\\begin{labeling}[:]{…}, the labelinglabel font element), as the KOMA guide sets its examples.',
+    writes: '\\begin{labeling}[:]{…} \\item[…] … \\end{labeling}; \\setkomafont{labelinglabel}{…}',
     features: ['aligned-labels', 'bold-head'],
     params: { separator: ':', labelFont: '\\bfseries' },
     evidence: [solution('0020-koma-script', '69')],

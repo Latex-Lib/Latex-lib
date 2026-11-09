@@ -13,9 +13,9 @@ import { ctan } from '../schema/minimal.ts';
 export default defineClass({
   id: 'class.aa',
   name: "aa",
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "amsmath", "options": ["tbtags", "fleqn"]}, {"pkg": "amssymb"}, {"pkg": "setspace"}, {"pkg": "graphicx"}, {"pkg": "calc"}, {"pkg": "etex"}, {"pkg": "fontenc", "options": ["T1"]}, {"pkg": "inputenc", "options": ["utf8"]}, {"pkg": "geometry"}, {"pkg": "fancyhdr"}, {"pkg": "cuted"}, {"pkg": "url"}, {"pkg": "longtable"}, {"pkg": "natbib", "options": ["nonamebreak"]}, {"pkg": "xspace"}, {"pkg": "babel", "options": ["english"]}, {"pkg": "rotating", "options": ["figuresright"]}, {"pkg": "linenoaa", "options": ["modulo", "mathlines", "switch", "running", "columnwise", "pagewise"]}, {"pkg": "lineno"}, {"pkg": "grffile"}],
-  defines: ["counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "cmd:\\abstract", "env:proof", "env:theorem", "env:corollary", "env:definition", "env:example", "env:exercise", "env:lemma", "env:note", "env:problem", "env:proposition", "env:question", "env:remark", "env:solution", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\sidecaption"],
+  defines: ["counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "cmd:\\abstract", "env:proof", "env:theorem", "env:corollary", "env:definition", "env:example", "env:exercise", "env:lemma", "env:note", "env:problem", "env:proposition", "env:question", "env:remark", "env:solution", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\sidecaption", "cmd:\\institute", "cmd:\\inst", "cmd:\\keywords", "cmd:\\subtitle", "cmd:\\corrauth", "cmd:\\offprints", "cmd:\\headnote", "cmd:\\dedication", "env:acknowledgements", "env:acknowledgement", "cmd:\\longtab"],
   // \sidecaption: aa's side captions (aa.cls l.1656), read from the source in batch 1 round 2; sidenotes declares it again (its key).
   options: {},
   forbids: {

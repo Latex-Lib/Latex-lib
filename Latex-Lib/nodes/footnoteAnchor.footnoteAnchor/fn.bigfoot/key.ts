@@ -8,6 +8,7 @@ export default defineKey(
     node: 'footnoteAnchor/footnoteAnchor',
     description:
       'footnotehyper (bigfoot, manyfoot and footnote in the same family): footnotes in tables, long tables and boxes saved and printed at the foot of the page (\\makesavenoteenv{tabular}), linking with hyperref. 6 templates.',
+    writes: '\\footnote{…}; \\makesavenoteenv{…}',
     ctan: ['footnotehyper', 'bigfoot', 'manyfoot'],
     features: ['box-safe', 'numbered'],
     params: {
@@ -17,6 +18,6 @@ export default defineKey(
     loads: [
       { pkg: 'footnotehyper' },
     ],
-    zerotex: 'yes',
+    targetEngine: 'yes',
   }),
 );

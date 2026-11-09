@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [["online", "normal"]],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("threeparttable"), { kind: 'manual', of: "threeparttable", section: "package options; threeparttable and tablenotes", url: 'https://ctan.org/pkg/threeparttable' }],
 });

@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'no',
+  targetEngine: 'no',
   evidence: [ctan("svg"), { kind: 'manual', of: "svg", section: "options and \\includesvg", url: 'https://ctan.org/pkg/svg' }],
 });

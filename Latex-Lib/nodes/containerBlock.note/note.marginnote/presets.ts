@@ -13,6 +13,7 @@ export const PRESETS = {
   },
   'reversed-dates': {
     description: 'Notes in the left margin, \\reversemarginpar, as CVs set their dates beside each entry; no title.',
+    writes: '\\marginnote{…}; \\reversemarginpar',
     features: ['margin-note'],
     params: { side: 'reverse', title: false },
     evidence: [solution('0222-sara-venkatraman-latex-templates', '80'), solution('0894-mdpi', '35')],
@@ -25,6 +26,7 @@ export const PRESETS = {
   },
   'italic-unadjusted': {
     description: 'Italic footnote-size notes not adjusted to the line\'s height or depth (noadjust).',
+    writes: '\\marginnote{…}',
     features: ['margin-note', 'italic-body', 'small-type'],
     params: { font: '\\footnotesize\\itshape', adjust: 'noadjust', title: false },
     evidence: [solution('0164-coursework-term-paper', '50'), solution('0149-parsa', '54')],

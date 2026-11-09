@@ -14,18 +14,21 @@ export const PRESETS = {
   },
   'left-sans': {
     description: 'The title block flush left in bold sans-serif, \\pretitle{\\begin{flushleft}\\LARGE\\bfseries\\sffamily}, pulled up the page (\\droptitle).',
+    writes: '\\maketitle; \\pretitle{\\begin{flushleft}…} \\posttitle{\\par\\end{flushleft}…} \\preauthor{\\begin{flushleft}…} \\setlength{\\droptitle}{…}',
     features: ['sans-serif', 'bold-head'],
     params: { align: 'left', titleFont: '\\LARGE\\bfseries\\sffamily', drop: '-3em' },
     evidence: [solution('0164-coursework-term-paper', '35'), solution('0012-basic-academic-journal-article', '44')],
   },
   'right-sans': {
     description: "The title flush right in sans-serif, the date flush left in small capitals (the manual's own example).",
+    writes: '\\maketitle; \\pretitle{\\begin{flushright}…} \\posttitle{\\par\\end{flushright}…} \\predate{\\begin{flushleft}…} \\postdate{\\par\\end{flushleft}}',
     features: ['sans-serif', 'flush-right'],
     params: { align: 'right', titleFont: '\\LARGE\\sffamily', dateAlign: 'left', dateFont: '\\large\\scshape' },
     evidence: [manual('titling', '2.1.1 Restyling the titling (example: flushright title, flushleft small-caps date)')],
   },
   'page-centred': {
     description: 'The title block alone on its page, centred vertically (\\maketitlehooka and \\maketitlehookd as \\vfill, titlingpage).',
+    writes: '\\begin{titlingpage} \\maketitle \\end{titlingpage}; \\renewcommand{\\maketitlehooka}{…} \\renewcommand{\\maketitlehookd}{…}',
     features: ['title-page', 'centered'],
     params: { page: true },
     evidence: [solution('0084-guitartabs', '36')],

@@ -2,12 +2,22 @@
   "handler": "code.escape",
   "node": "codeEscape/codeEscape",
   "generatedFrom": {
-    "key": "sha256:6d721db5a367c359f79bf65ab8b282ec17aab4a975cf49e79349dca2fd7395a8",
-    "contexts": "sha256:a1a299ce102c88c79f49733b5ea8d84dca202e0a91c8fc447b7479177eca40d3",
+    "key": "sha256:40301fb8b7df00f95572ce1e3d481984d016ceb6a7136483beddcea00db95415",
+    "contexts": "sha256:9ae2a29e5610a256d7a338abfcd5074497da6f370142809f92560a946500e839",
     "matrix": null
   },
   "parents": {
     "code/code": {
+      "code.algorithmic": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "code.class-env": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "code.listings": {
         "verdict": "ok",
         "source": "derived",

@@ -13,18 +13,21 @@ export const PRESETS = {
   },
   inline: {
     description: "Items run into the paragraph, (a) … (b) …: paralist's inparaenum and inparaitem (descriptions stay compact).",
+    writes: '\\begin{inparaitem|inparaenum}[(a)] \\item … \\end{inparaitem|inparaenum}',
     features: ['inline-list', 'custom-labels'],
     params: { form: 'inline', label: '(a)' },
     evidence: [manual('paralist', 'the environments: inparaenum, inparaitem')],
   },
   'bold-labels': {
     description: 'Bold numbered labels (1), (a), (i) by level and margins fitted per level (\\setdefaultenum, \\setdefaultleftmargin).',
+    writes: '\\begin{compactitem|compactenum|compactdesc} \\item … \\end{…}; \\setdefaultenum{…}{…}{…}{…} \\setdefaultleftmargin{…}{…}{…}{…}{…}{…}',
     features: ['compact', 'custom-labels', 'numbered'],
     params: { defaultEnum: '{\\bfseries (1)}{\\bfseries (a)}{\\bfseries (i)}{}', defaultMargins: '{1.87em}{1.7em}{1.5em}{1em}{1em}{1em}' },
     evidence: [solution('0738-jdujava-textured', '59')],
   },
   paragraphs: {
     description: 'Each item a paragraph of its own with a run-in label (asparaitem, asparaenum, asparadesc).',
+    writes: '\\begin{asparaitem|asparaenum|asparadesc} \\item … \\end{asparaitem|asparaenum|asparadesc}',
     features: ['custom-labels'],
     params: { form: 'aspara' },
     evidence: [manual('paralist', 'the environments: asparaenum, asparaitem, asparadesc')],

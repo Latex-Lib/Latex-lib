@@ -13,6 +13,7 @@ export const PRESETS = {
   },
   'by-section': {
     description: 'Equations numbered within the section by the kernel\'s \\counterwithin{equation}{section}.',
+    writes: '\\begin{eqnarray} … \\\\ … \\label{…} \\end{eqnarray}; \\counterwithin{equation}{section}',
     features: ['numbered', 'numbered-within', 'aligned', 'multiline'],
     params: { numberWithin: 'section' },
     evidence: [solution('0338-spie-optical-engineering-article', '39')],

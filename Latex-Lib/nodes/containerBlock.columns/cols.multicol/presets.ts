@@ -13,18 +13,21 @@ export const PRESETS = {
   },
   ragged: {
     description: 'Balanced columns whose bottoms may be ragged instead of stretched (\\raggedcolumns), as lists in columns want.',
+    writes: '{\\setlength{\\columnsep}{…} \\raggedcolumns \\begin{multicols}{…} … \\end{multicols}}',
     features: ['balanced-columns'],
     params: { ragged: true },
     evidence: [solution('0676-aidisclose', '44'), solution('0552-worcestersociety-homeworktemplate', '44')],
   },
   ruled: {
     description: 'A thin rule between the columns (\\columnseprule 0.4pt).',
+    writes: '{\\setlength{\\columnsep}{…} \\setlength{\\columnseprule}{…} \\begin{multicols}{…} … \\end{multicols}}',
     features: ['balanced-columns', 'column-rule'],
     params: { rule: '0.4pt' },
     evidence: [manual('multicol', 'the parameters \\columnsep and \\columnseprule')],
   },
   unbalanced: {
     description: 'Columns filled one after the other and not balanced at the end (multicols*).',
+    writes: '{\\setlength{\\columnsep}{…} \\begin{multicols*}{…} … \\end{multicols*}}',
     features: [],
     params: { balance: false },
     evidence: [manual('multicol', 'the multicols* environment')],

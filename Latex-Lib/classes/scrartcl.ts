@@ -8,9 +8,9 @@ import { defineClass } from '../schema/class.ts';
 export default defineClass({
   id: 'class.scrartcl',
   name: "scrartcl",
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\marginline", "cmd:\\deffootnote", "cmd:\\RedeclareSectionCommand", "cmd:\\addsec", "cmd:\\minisec", "cmd:\\KOMAoptions", "cmd:\\setkomafont", "cmd:\\addtokomafont"],
   options: {},
   forbids: {
     // As under scrreprt: this keeps out General's titlesec ways (head.titlesec denies KOMA in its key), whose grouped heading leaves every other one with no format.

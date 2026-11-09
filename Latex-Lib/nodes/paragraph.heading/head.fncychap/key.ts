@@ -9,6 +9,7 @@ export default defineKey(
     node: 'paragraph/heading',
     description:
       'fncychap: a ready-made chapter opening, \\usepackage[Sonny]{fncychap} (Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup, PetersLenny), adjusted with \\ChNameVar, \\ChNumVar, \\ChTitleVar, \\ChRuleWidth and the case commands; only chapters change, every heading prints with the kernel command. A style\'s own fonts are written in NFSS, since KOMA-Script refuses fncychap\'s \\rm and \\sf. Under two columns Bjornstrup\'s \\chapter* head goes across the page (\\@topnewpage), as the kernel\'s does, since its boxes are \\textwidth wide; they are also as wide as the line the head is set in (\\linewidth), for the starred head KOMA-Script still sets in the column. 3 templates.',
+    writes: '\\section[…]{…} \\label{…}; \\ChNameVar{…} \\ChTitleVar{…}',
     ctan: ['fncychap'],
     features: ['chapter-opening', 'ruled', 'sans-serif', 'bold-head', 'smallcaps-head', 'uppercase', 'centered', 'flush-right', 'background', 'numbered'],
     params: {
@@ -50,6 +51,6 @@ export default defineKey(
     // head.sectsty@smallcaps's \subparagraph (55 of 59), run-in titles that never print (their footnote sibling's sentinel is missing).
     // Copy batch-3b, 5 pairs; e.g. d165d94f2adcdc3093699 result 82adbd1a35 l.150, an unmarked \section* 172.7pt over.
     needs: { paragraph: true },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

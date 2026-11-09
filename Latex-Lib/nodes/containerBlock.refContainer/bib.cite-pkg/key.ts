@@ -7,19 +7,30 @@ export default defineKey(
     id: 'bib.cite-pkg',
     node: 'containerBlock/refContainer',
     description:
-      'The cite package: numbered citations sorted and compressed ([1-3]), nosort to keep their order, super for superscript numbers, with a numbered BibTeX style. 27 templates.',
+      "The cite package: numbered citations sorted and compressed ([1-3]), nosort to keep their order, nocompress to write every number ([1], [2], [3]: IEEE Computer Society), super for superscript numbers, with a numbered BibTeX style (plain, unsrt, abbrv, ieeetr, IEEEtran, spiebib); under a class that loads cite itself (spie) no load. 27 templates.",
+    // The same LaTeX as bib.bibtex-bst's: the cite package is in loads. The \LatexLib… once-guards (../node.ts) are the library's own, left out.
+    writes: '\\nocite{*} \\bibliographystyle{plain} \\bibliography{\\jobname}',
     ctan: ['cite'],
     features: ['numeric-citations', 'sorted-compressed', 'superscript', 'external-tool'],
     params: {
       sort: { type: 'boolean', default: true, description: 'several citations sorted (nosort when false)' },
       superscript: { type: 'boolean', default: false, description: 'superscript numbers (super)' },
-      bst: { type: 'enum', values: ['plain', 'unsrt', 'abbrv', 'ieeetr'], default: 'plain', description: 'the BibTeX style' },
+      // b45: IEEEtran (IEEE's style, under the IEEE classes and IEEE Access) and spiebib (SPIE's, beside spie.cls on CTAN).
+      bst: { type: 'enum', values: ['plain', 'unsrt', 'abbrv', 'ieeetr', 'IEEEtran', 'spiebib'], default: 'plain', description: 'the BibTeX style' },
+      compress: { type: 'boolean', default: true, description: 'number runs compressed to ranges ([1-3]); false loads cite with nocompress ([1], [2], [3])' },
+      load: {
+        type: 'boolean',
+        default: true,
+        compat: true,
+        description: "load the cite package; false under a class that loads it itself (spie.cls: cite[superscript], whose options a second load with others would clash)",
+      },
     },
     presets: PRESETS,
     loads: [
-      { pkg: 'cite' },
-      { pkg: 'cite', options: ['nosort'], when: { sort: false } },
-      { pkg: 'cite', options: ['super'], when: { superscript: true } },
+      { pkg: 'cite', when: { load: true } },
+      { pkg: 'cite', options: ['nosort'], when: { sort: false, load: true } },
+      { pkg: 'cite', options: ['super'], when: { superscript: true, load: true } },
+      { pkg: 'cite', options: ['nocompress'], when: { compress: false, load: true } },
     ],
     claims: ['bibliography-engine'],
     requires: [
@@ -113,6 +124,6 @@ export default defineKey(
     // branches pass, 0 of 750 over the seven reference-list ways and General's; e.g. amsart.A dc21e6d1977acabed46d2 result
     // 69f6f3a0be, branch b4f3c93be9c03c2ebddbc, '.0 never shipped'). Flouest's own fix is O4. [OV3]
     gives: { footnotes: false },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

@@ -32,6 +32,7 @@ export const PRESETS = {
   },
   'colored-head': {
     description: 'A style of its own (\\newtheoremstyle): bold head in an accent colour, a colon after it, italic body, 0.75em above and below.',
+    writes: '\\begin{theorem}[{…}] … \\end{theorem}; \\newtheoremstyle{libcustom}{…}{…}{…}{}{…}{…}{…}{} \\theoremstyle{libcustom}\\newtheorem{theorem}{Theorem}[section]',
     features: ['numbered', 'numbered-within', 'shared-counter', 'bold-head', 'italic-body', 'colored', 'custom-head'],
     params: {
       style: 'custom',

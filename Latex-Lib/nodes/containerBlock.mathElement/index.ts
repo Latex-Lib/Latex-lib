@@ -10,6 +10,13 @@ import mdframed from './thm.mdframed/handler.ts';
 import ntheorem from './thm.ntheorem/handler.ts';
 import tcolorbox from './thm.tcolorbox/handler.ts';
 import thmtools from './thm.thmtools/handler.ts';
+import way0 from './thm.amsthm/handler.ts';
+import way1 from './thm.class-native/handler.ts';
+import way2 from './thm.kernel/handler.ts';
+import way3 from './thm.mdframed/handler.ts';
+import way4 from './thm.ntheorem/handler.ts';
+import way5 from './thm.tcolorbox/handler.ts';
+import way6 from './thm.thmtools/handler.ts';
 
 export type Handler = (params?: { readonly [name: string]: unknown }) => Realization;
 

@@ -25,7 +25,7 @@ export default defineClass({
   id: 'class.apa7',
   name: "apa7",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [
     {"pkg": "natbib", "options": ["longnamesfirst", "sort"]}, {"pkg": "lmodern"},
     {"pkg": "geometry", "options": ["top=1in", "bottom=1in", "left=1in", "right=1in"]},

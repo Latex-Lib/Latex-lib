@@ -25,7 +25,7 @@ export default defineClass({
   id: 'class.jmlr-pmlr',
   name: "jmlr",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [
     {"pkg": "xkeyval"}, {"pkg": "calc"}, {"pkg": "etoolbox"}, {"pkg": "placeins"}, {"pkg": "amsmath"}, {"pkg": "amssymb"},
     {"pkg": "natbib"}, {"pkg": "graphicx"}, {"pkg": "url"}, {"pkg": "xcolor", "options": ["x11names"]},
@@ -38,7 +38,7 @@ export default defineClass({
     "env:theorem", "env:example", "env:lemma", "env:proposition", "env:remark", "env:corollary", "env:definition", "env:conjecture", "env:axiom",
     "cmd:\\keywords", "cmd:\\Name", "cmd:\\Email", "cmd:\\editor", "cmd:\\editors", "cmd:\\firstpageno", "cmd:\\jmlrproceedings",
     "cmd:\\set", "cmd:\\mailto", "cmd:\\BlackBox", "cmd:\\jmlrBlackBox", "cmd:\\jmlrQED", "cmd:\\subfigref",
-  ],
+  "cmd:\\addr", "cmd:\\AND", "cmd:\\titletag", "cmd:\\jmlrissue", "cmd:\\jmlrpages", "cmd:\\jmlrsubmitted", "cmd:\\jmlrpublished", "cmd:\\acks", "cmd:\\theorembodyfont", "cmd:\\theoremheaderfont", "cmd:\\theorempostheader", "cmd:\\theoremsep", "cmd:\\floatconts", "cmd:\\jmlrvolume", "cmd:\\jmlryear", "cmd:\\jmlrworkshop", "cmd:\\sectionref", "cmd:\\equationref", "cmd:\\tableref", "cmd:\\figureref", "cmd:\\algorithmref", "cmd:\\theoremref", "cmd:\\lemmaref", "cmd:\\remarkref", "cmd:\\corollaryref", "cmd:\\definitionref", "cmd:\\conjectureref", "cmd:\\axiomref", "cmd:\\exampleref", "cmd:\\appendixref", "cmd:\\partref", "cmd:\\objectref"],
   options: {},
   forbids: {
     technical: [

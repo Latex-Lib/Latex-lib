@@ -21,7 +21,7 @@ export default defineClass({
   id: 'class.aaai',
   name: "article",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [{"pkg": "iftex"}, {"pkg": "fontenc", "options": ["T1"]}, {"pkg": "newtxtext"}, {"pkg": "helvet"}, {"pkg": "courier"}, {"pkg": "placeins"}, {"pkg": "xcolor"}],
   defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "env:links", "cmd:\\affiliations", "cmd:\\copyrighttext", "cmd:\\copyrightyear"],
   options: {},

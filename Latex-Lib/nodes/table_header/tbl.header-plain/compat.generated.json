@@ -1,0 +1,28 @@
+{
+  "handler": "tbl.header-plain",
+  "node": "table_header",
+  "generatedFrom": {
+    "key": "sha256:0594ce8f6809867c68393db46bc2a4d22bb9ddc392e0e39228f4b95b66db3a95",
+    "contexts": "sha256:42ed3b10f6b6c33a344cd7e5641165afaef458ffff1ab9cd9d7926b174c055b1",
+    "matrix": null
+  },
+  "parents": {
+    "body": {
+      "(document body)": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    },
+    "table_row": {
+      "tbl.row": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      }
+    }
+  },
+  "packageCombos": {
+    "deny": []
+  }
+}

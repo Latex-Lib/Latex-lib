@@ -8,6 +8,7 @@ export default defineKey(
     node: 'containerBlock/note',
     description:
       'mdframed: the note in a frame that splits across pages, \\begin{mdframed}[frametitle={Note}, linecolor=…, backgroundcolor=…] … \\end{mdframed}; frametitlerule, frametitlebackgroundcolor, a left line only (hidealllines, leftline), fontcolor, nobreak; roundcorner and shadow with framemethod=TikZ. 56 templates.',
+    writes: '\\begin{mdframed}[frametitle={…}, …] … \\end{mdframed}',
     ctan: ['mdframed'],
     features: ['framed', 'background', 'title-bar', 'rounded-corners', 'left-rule', 'breakable', 'shadow', 'colored'],
     params: {
@@ -38,6 +39,6 @@ export default defineKey(
     // or 345.4pt over (copy batch-3b, oracle 4: 1 of 90 fit article.A branches with it below vwcol pass, report.A 1 of 93,
     // amsart.A 0 of 90; e.g. df73e4eb6224476778361 result 42098f42f8 l.62, 172.7pt).
     needs: { paragraph: true },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

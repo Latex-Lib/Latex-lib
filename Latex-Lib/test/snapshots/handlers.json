@@ -204,6 +204,175 @@
       "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
     }
   ],
+  "thm.class-native cas": [
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{theorem}{\\ifdefined\\aa@newtheorem\\newtheorem{theorem}{Theorem}{\\bfseries}{\\itshape}\\else\\newtheorem{theorem}{Theorem}\\fi}{}\n\\makeatother",
+        "\\makeatletter\n\\@ifundefined{proof}{\\ifdefined\\newproof\\newproof{proof}{Proof}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{lemma}{\\ifdefined\\aa@newtheorem\\newtheorem{lemma}{Lemma}{\\bfseries}{\\itshape}\\else\\newtheorem{lemma}{Lemma}\\fi}{}\n\\makeatother",
+        "\\makeatletter\n\\@ifundefined{proof}{\\ifdefined\\newproof\\newproof{proof}{Proof}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{definition}{\\ifdefined\\newdefinition\\newdefinition{definition}{Definition}\\else\\ifdefined\\aa@newtheorem\\newtheorem{definition}{Definition}{\\bfseries}{\\rmfamily}\\else\\newtheorem{definition}{Definition}\\fi\\fi}{}\n\\makeatother",
+        "\\makeatletter\n\\@ifundefined{proof}{\\ifdefined\\newproof\\newproof{proof}{Proof}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.class-native siam": [
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{theorem}{\\ifdefined\\newsiamthm\\newsiamthm{theorem}{Theorem}\\else\\ifdefined\\aa@newtheorem\\newtheorem{theorem}{Theorem}{\\bfseries}{\\itshape}\\else\\newtheorem{theorem}{Theorem}\\fi\\fi\\ifdefined\\crefname\\crefname{theorem}{Theorem}{Theorems}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{lemma}{\\ifdefined\\newsiamthm\\newsiamthm{lemma}{Lemma}\\else\\ifdefined\\aa@newtheorem\\newtheorem{lemma}{Lemma}{\\bfseries}{\\itshape}\\else\\newtheorem{lemma}{Lemma}\\fi\\fi\\ifdefined\\crefname\\crefname{lemma}{Lemma}{Lemmas}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{definition}{\\ifdefined\\newsiamremark\\newsiamremark{definition}{Definition}\\else\\ifdefined\\aa@newtheorem\\newtheorem{definition}{Definition}{\\bfseries}{\\rmfamily}\\else\\newtheorem{definition}{Definition}\\fi\\fi\\ifdefined\\crefname\\crefname{definition}{Definition}{Definitions}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.class-native llncs": [
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{theorem}{\\ifdefined\\spnewtheorem\\spnewtheorem{theorem}{Theorem}{\\bfseries}{\\itshape}\\else\\ifdefined\\aa@newtheorem\\newtheorem{theorem}{Theorem}{\\bfseries}{\\itshape}\\else\\newtheorem{theorem}{Theorem}\\fi\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{lemma}{\\ifdefined\\spnewtheorem\\spnewtheorem{lemma}{Lemma}{\\bfseries}{\\itshape}\\else\\ifdefined\\aa@newtheorem\\newtheorem{lemma}{Lemma}{\\bfseries}{\\itshape}\\else\\newtheorem{lemma}{Lemma}\\fi\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{definition}{\\ifdefined\\spnewtheorem\\spnewtheorem{definition}{Definition}{\\itshape}{\\rmfamily}\\else\\ifdefined\\aa@newtheorem\\newtheorem{definition}{Definition}{\\bfseries}{\\rmfamily}\\else\\newtheorem{definition}{Definition}\\fi\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.class-native thmstyle": [
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{theorem}{\\theoremstyle{thmstyleone}\\ifdefined\\aa@newtheorem\\newtheorem{theorem}{Theorem}{\\bfseries}{\\itshape}\\else\\newtheorem{theorem}{Theorem}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{theorem}{\\theoremstyle{thmstyleone}\\ifdefined\\aa@newtheorem\\newtheorem{theorem}{Theorem}{\\bfseries}{\\itshape}\\else\\newtheorem{theorem}{Theorem}\\fi}{}\n\\makeatother",
+        "\\makeatletter\n\\@ifundefined{lemma}{\\theoremstyle{thmstyleone}\\ifdefined\\aa@newtheorem\\newtheorem{lemma}{Lemma}{\\bfseries}{\\itshape}\\else\\newtheorem{lemma}[theorem]{Lemma}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{definition}{\\theoremstyle{thmstylethree}\\ifdefined\\aa@newtheorem\\newtheorem{definition}{Definition}{\\bfseries}{\\rmfamily}\\else\\newtheorem{definition}{Definition}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.class-native shared": [
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{theorem}{\\ifdefined\\aa@newtheorem\\newtheorem{theorem}{Theorem}{\\bfseries}{\\itshape}\\else\\newtheorem{theorem}{Theorem}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{theorem}{\\ifdefined\\aa@newtheorem\\newtheorem{theorem}{Theorem}{\\bfseries}{\\itshape}\\else\\newtheorem{theorem}{Theorem}\\fi}{}\n\\makeatother",
+        "\\makeatletter\n\\@ifundefined{lemma}{\\ifdefined\\aa@newtheorem\\newtheorem{lemma}{Lemma}{\\bfseries}{\\itshape}\\else\\newtheorem{lemma}[theorem]{Lemma}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{theorem}{\\ifdefined\\aa@newtheorem\\newtheorem{theorem}{Theorem}{\\bfseries}{\\itshape}\\else\\newtheorem{theorem}{Theorem}\\fi}{}\n\\makeatother",
+        "\\makeatletter\n\\@ifundefined{definition}{\\ifdefined\\aa@newtheorem\\newtheorem{definition}{Definition}{\\bfseries}{\\rmfamily}\\else\\newtheorem{definition}[theorem]{Definition}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.class-native jmlr": [
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{theorem}{\\let\\LatexLib@jsa\\@theorembodyfont\\theorembodyfont{\\upshape}\\let\\LatexLib@jsb\\@theoremheaderfont\\theoremheaderfont{\\scshape}\\let\\LatexLib@jsc\\@theorempostheader\\theorempostheader{:}\\let\\LatexLib@jsd\\@theoremsep\\theoremsep{\\newline}\\ifdefined\\aa@newtheorem\\newtheorem{theorem}{Theorem}{\\bfseries}{\\itshape}\\else\\newtheorem{theorem}{Theorem}\\fi\\let\\@theorembodyfont\\LatexLib@jsa\\let\\@theoremheaderfont\\LatexLib@jsb\\let\\@theorempostheader\\LatexLib@jsc\\let\\@theoremsep\\LatexLib@jsd}{}\n\\makeatother"
+      ],
+      "body": "\\begin{theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{theorem}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{theorem}{\\let\\LatexLib@jsa\\@theorembodyfont\\theorembodyfont{\\upshape}\\let\\LatexLib@jsb\\@theoremheaderfont\\theoremheaderfont{\\scshape}\\let\\LatexLib@jsc\\@theorempostheader\\theorempostheader{:}\\let\\LatexLib@jsd\\@theoremsep\\theoremsep{\\newline}\\ifdefined\\aa@newtheorem\\newtheorem{theorem}{Theorem}{\\bfseries}{\\itshape}\\else\\newtheorem{theorem}{Theorem}\\fi\\let\\@theorembodyfont\\LatexLib@jsa\\let\\@theoremheaderfont\\LatexLib@jsb\\let\\@theorempostheader\\LatexLib@jsc\\let\\@theoremsep\\LatexLib@jsd}{}\n\\makeatother",
+        "\\makeatletter\n\\@ifundefined{lemma}{\\let\\LatexLib@jsa\\@theorembodyfont\\theorembodyfont{\\upshape}\\let\\LatexLib@jsb\\@theoremheaderfont\\theoremheaderfont{\\scshape}\\let\\LatexLib@jsc\\@theorempostheader\\theorempostheader{:}\\let\\LatexLib@jsd\\@theoremsep\\theoremsep{\\newline}\\ifdefined\\aa@newtheorem\\newtheorem{lemma}{Lemma}{\\bfseries}{\\itshape}\\else\\newtheorem{lemma}[theorem]{Lemma}\\fi\\let\\@theorembodyfont\\LatexLib@jsa\\let\\@theoremheaderfont\\LatexLib@jsb\\let\\@theorempostheader\\LatexLib@jsc\\let\\@theoremsep\\LatexLib@jsd}{}\n\\makeatother"
+      ],
+      "body": "\\begin{lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{lemma}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{theorem}{\\let\\LatexLib@jsa\\@theorembodyfont\\theorembodyfont{\\upshape}\\let\\LatexLib@jsb\\@theoremheaderfont\\theoremheaderfont{\\scshape}\\let\\LatexLib@jsc\\@theorempostheader\\theorempostheader{:}\\let\\LatexLib@jsd\\@theoremsep\\theoremsep{\\newline}\\ifdefined\\aa@newtheorem\\newtheorem{theorem}{Theorem}{\\bfseries}{\\itshape}\\else\\newtheorem{theorem}{Theorem}\\fi\\let\\@theorembodyfont\\LatexLib@jsa\\let\\@theoremheaderfont\\LatexLib@jsb\\let\\@theorempostheader\\LatexLib@jsc\\let\\@theoremsep\\LatexLib@jsd}{}\n\\makeatother",
+        "\\makeatletter\n\\@ifundefined{definition}{\\let\\LatexLib@jsa\\@theorembodyfont\\theorembodyfont{\\upshape}\\let\\LatexLib@jsb\\@theoremheaderfont\\theoremheaderfont{\\scshape}\\let\\LatexLib@jsc\\@theorempostheader\\theorempostheader{:}\\let\\LatexLib@jsd\\@theoremsep\\theoremsep{\\newline}\\ifdefined\\aa@newtheorem\\newtheorem{definition}{Definition}{\\bfseries}{\\rmfamily}\\else\\newtheorem{definition}[theorem]{Definition}\\fi\\let\\@theorembodyfont\\LatexLib@jsa\\let\\@theoremheaderfont\\LatexLib@jsb\\let\\@theorempostheader\\LatexLib@jsc\\let\\@theoremsep\\LatexLib@jsd}{}\n\\makeatother"
+      ],
+      "body": "\\begin{definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{definition}\n\n"
+    }
+  ],
+  "thm.class-native mdpi": [
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{Theorem}{\\ifdefined\\aa@newtheorem\\newtheorem{Theorem}{Theorem}{\\bfseries}{\\itshape}\\else\\newtheorem{Theorem}{Theorem}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{Theorem}[{Note}]\n\\label{theorem:one}\nA body.\n\\end{Theorem}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{Lemma}{\\ifdefined\\aa@newtheorem\\newtheorem{Lemma}{Lemma}{\\bfseries}{\\itshape}\\else\\newtheorem{Lemma}{Lemma}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{Lemma}[{Note}]\n\\label{lemma:one}\nA body.\n\\end{Lemma}\n\n"
+    },
+    {
+      "packages": [],
+      "declarations": [
+        "\\makeatletter\n\\@ifundefined{Definition}{\\ifdefined\\aa@newtheorem\\newtheorem{Definition}{Definition}{\\bfseries}{\\rmfamily}\\else\\newtheorem{Definition}{Definition}\\fi}{}\n\\makeatother"
+      ],
+      "body": "\\begin{Definition}[{Note}]\n\\label{definition:one}\nA body.\n\\end{Definition}\n\n"
+    }
+  ],
   "thm.kernel global": [
     {
       "packages": [],

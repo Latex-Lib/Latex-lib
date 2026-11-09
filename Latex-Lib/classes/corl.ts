@@ -29,7 +29,7 @@ export default defineClass({
   id: 'class.corl',
   name: "article",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [{"pkg": "lineno"}, {"pkg": "color"}, {"pkg": "natbib", "options": ["square", "numbers"]}, {"pkg": "hyperref"}, {"pkg": "geometry", "options": ["verbose=true", "letterpaper"]}],
   defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\keywords", "cmd:\\acknowledgments", "cmd:\\doi", "cmd:\\subsubsubsection"],
   options: {},

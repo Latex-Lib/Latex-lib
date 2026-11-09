@@ -1,7 +1,7 @@
 /**
  * Class profiles and package facts (ARCHITECTURE.md sections 1 and 5).
  *
- * In a class profile, `zerotex`, `preloads`, `defines`, `layout` and
+ * In a class profile, `targetEngine`, `preloads`, `defines`, `layout` and
  * `forbids.technical` are measured by the class probe (the testing pipeline's
  * `compat probe`); `forbids.policy` and `vocabulary` are read from documents,
  * `forbids.names` from the class's source.
@@ -33,11 +33,37 @@ export type ClassProfile = {
   readonly name: string;
   /** The class it loads and builds on (ctexbeamer on beamer, ltxdoc on article): a key's rule for that class holds here too. */
   readonly base?: ClassId;
-  /** Whether it runs in ZeroTeX-NG, the only engine. */
-  readonly zerotex: Support;
+  /** Whether it runs in the target engine, the only engine. */
+  readonly targetEngine: Support;
   readonly preloads: readonly PackageLoad[];
   readonly defines: readonly Resource[];
+  /**
+   * What the class keeps for \maketitle: text written in these is stored and
+   * printed by the class's \maketitle, and nowhere else (revtex4-2's abstract
+   * environment, sn-jnl's \abstract command). A handler that requires one needs
+   * a handler that runs \maketitle (`claim:maketitle`), or the text is lost.
+   */
+  readonly heldByMaketitle?: readonly {
+    readonly resource: Resource;
+    readonly reason: string;
+    /** It must be written before \maketitle: after it the class refuses it or loses it (revtex4-2, acmart, elsarticle). */
+    readonly before?: true;
+    readonly evidence: readonly Evidence[];
+  }[];
   readonly options: { readonly [option: string]: OptionEffect };
+  /**
+   * What the class needs, in the target engine, that every document of it must give: options on its class line, packages
+   * loaded in the preamble, and lines before the class line or right after it. Measured: without it the class does not
+   * run (siamart's dvips-only drivers, revtex4-2's array swap, tufte's soul spacing, quantumarticle's late hyperref).
+   */
+  readonly setup?: {
+    readonly options?: readonly string[];
+    readonly loads?: readonly PackageLoad[];
+    readonly before?: readonly string[];
+    readonly after?: readonly string[];
+    readonly reason: string;
+    readonly evidence: readonly Evidence[];
+  };
   readonly forbids: {
     readonly technical: readonly ClassPackageRule[];
     readonly policy: readonly ClassPackageRule[];
@@ -53,7 +79,7 @@ export type ClassProfile = {
   readonly evidence: readonly Evidence[];
 };
 
-/** A package's options, which exclude each other, load order and whether it runs in ZeroTeX-NG. */
+/** A package's options, which exclude each other, load order and whether it runs in the target engine. */
 export type PackageFacts = {
   readonly id: PackageId;
   readonly description: string;
@@ -68,7 +94,7 @@ export type PackageFacts = {
   readonly loadOrder: readonly OrderRule[];
   /** Names it defines on loading. */
   readonly defines: readonly Resource[];
-  readonly zerotex: Support;
+  readonly targetEngine: Support;
   readonly evidence: readonly Evidence[];
 };
 

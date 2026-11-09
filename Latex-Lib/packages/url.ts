@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("url"), { kind: 'manual', of: "url", section: "\\url, \\urlstyle (tt, rm, sf, same)", url: 'https://ctan.org/pkg/url' }],
 });

@@ -13,6 +13,7 @@ export const PRESETS = {
   },
   'page-only': {
     description: 'Only where the target is, \\vpageref{label} (on the next page, on page 4).',
+    writes: '\\vpageref{…}',
     features: ['page-refs'],
     params: { command: 'vpageref' },
     evidence: [solution('0068-kaobook', '112')],

@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("appendix"), { kind: 'manual', of: "appendix", section: "2 The appendix package", url: 'https://ctan.org/pkg/appendix' }],
 });

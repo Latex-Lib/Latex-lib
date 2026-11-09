@@ -13,6 +13,7 @@ export const PRESETS = {
   },
   'small-named': {
     description: 'The endnotes in a smaller size (\\enotesize) under a heading of their own (\\notesname).',
+    writes: '\\footnote{…}; \\let\\footnote=\\endnote \\renewcommand{\\enotesize}{…}\\renewcommand{\\notesname}{…}\\AtEndDocument{\\theendnotes}',
     features: ['endnotes', 'numbered', 'small-type'],
     params: { size: '\\small', heading: 'Endnotes' },
     evidence: [manual('endnotes', 'usage: \\enotesize, \\notesname')],

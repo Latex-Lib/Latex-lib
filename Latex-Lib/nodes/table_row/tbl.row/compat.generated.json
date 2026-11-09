@@ -2,8 +2,8 @@
   "handler": "tbl.row",
   "node": "table_row",
   "generatedFrom": {
-    "key": "sha256:e49a258694d0b09bc9ceb8782c1b9b2e8275b2943099cdf475f4cae38c802def",
-    "contexts": "sha256:7d6443207c97245e9c07ce0f10470a1be9e7450a009513e55a0397354e8f14d8",
+    "key": "sha256:4aea1142852bb66020e51bb69281e55adbfb9b7c0d68f5de063701f5202db48a",
+    "contexts": "sha256:51ee8e56d54c5d08908afdefd81c7a7220e63e5c2c5ce0c3fb9b1664270df09d",
     "matrix": null
   },
   "parents": {
@@ -25,12 +25,37 @@
         "source": "derived",
         "status": "derived"
       },
+      "tbl.class-env": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "tbl.class-env[form=longtab|tbl|deluxetable]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "tbl.colortbl": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
       },
+      "tbl.cventry": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "tbl.inline": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "tbl.longtable": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "tbl.margintable": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"

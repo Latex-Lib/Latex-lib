@@ -8,6 +8,7 @@ export default defineKey(
     node: 'atomicBlock/image',
     description:
       "A caption beside the image: sidecap's \\begin{SCfigure}[factor] … \\end{SCfigure} (leftcaption, rightcaption, outercaption, innercaption; the caption's width as a factor of the image's; \\sidecaptionvpos), or floatrow's \\fcapside under \\floatsetup[figure]{capposition=beside,capbesideposition=…}. sidecap's image is at most half the line wide, so the caption keeps the other half less the separation. floatrow sets \\textwidth to \\columnwidth inside every figure and table, and LaTeX can ship a page from there, so with floatrow \\@outputdblcol builds a two-column page with the widths around the float. 11 templates.",
+    writes: '\\begin{SCfigure}[…][…] \\centering \\includegraphics[width=…]{…} \\caption{…} \\label{…} \\end{SCfigure}',
     ctan: ['sidecap', 'floatrow'],
     features: ['side-caption', 'floating', 'captioned', 'scaled'],
     params: {
@@ -35,6 +36,6 @@ export default defineKey(
     // in a box (c609cddf12, article.A run: General's tcolorbox statement > fig.floatrow@sidecap-left, l.422; 04b32896a8: note.marginpar >
     // list > fig.floatrow@floatrow-top-left, l.288). A member with no file prints nothing (the host skips it).
     needs: { floats: true },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

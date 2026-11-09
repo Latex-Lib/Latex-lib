@@ -32,9 +32,9 @@ export default defineClass({
   id: 'class.ieeeconf-ras',
   name: "ieeeconf",
   base: 'class.ieeetran',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [],
-  defines: ["counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:figure", "counter:table", "env:abstract", "env:figure", "env:table", "env:thebibliography", "env:keywords", "env:biography", "env:biographynophoto", "env:IEEEeqnarray", "env:IEEEeqnarraybox", "env:IEEEitemize", "env:IEEEenumerate", "env:IEEEdescription", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\listoffigures", "cmd:\\appendix", "cmd:\\appendices", "cmd:\\keywords", "cmd:\\QED", "cmd:\\QEDclosed", "cmd:\\QEDopen", "cmd:\\IEEEmembership", "cmd:\\IEEEoverridecommandlockouts", "cmd:\\overrideIEEEmargins", "cmd:\\authorblockN", "cmd:\\authorblockA", "cmd:\\PARstart", "cmd:\\pubid", "cmd:\\bstctlcite", "cmd:\\specialpapernotice"],
+  defines: ["counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:figure", "counter:table", "env:abstract", "env:figure", "env:table", "env:thebibliography", "env:keywords", "env:biography", "env:biographynophoto", "env:IEEEeqnarray", "env:IEEEeqnarraybox", "env:IEEEitemize", "env:IEEEenumerate", "env:IEEEdescription", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\listoffigures", "cmd:\\appendix", "cmd:\\appendices", "cmd:\\keywords", "cmd:\\QED", "cmd:\\QEDclosed", "cmd:\\QEDopen", "cmd:\\IEEEmembership", "cmd:\\IEEEoverridecommandlockouts", "cmd:\\overrideIEEEmargins", "cmd:\\authorblockN", "cmd:\\authorblockA", "cmd:\\PARstart", "cmd:\\pubid", "cmd:\\bstctlcite", "cmd:\\specialpapernotice", "cmd:\\authorrefmark", "cmd:\\IEEEpeerreviewmaketitle"],
   options: {},
   forbids: {
     technical: [

@@ -80,7 +80,12 @@ export const validateLibrary = (library: Library, nesting: Nesting): string[] =>
     if (key.node !== DOC_NODE && nesting.nodes[key.node] === undefined) problems.push(`${at}: node ${key.node} is not in Flouest's nesting list`);
     if (key.description.trim() === '') problems.push(`${at}: no description`);
     for (const f of key.features) if (!(FEATURES as readonly string[]).includes(f)) problems.push(`${at}: feature ${f} is not in the vocabulary`);
-    if (!SUPPORT.has(key.zerotex)) problems.push(`${at}: ZeroTeX support ${key.zerotex} is not yes, no or untested`);
+    if (key.writes === undefined || key.writes.trim() === '') problems.push(`${at}: no writes (the LaTeX it writes, as a one-line skeleton)`);
+    for (const f of key.fields ?? []) {
+      if (!/^(author\.(email|orcid)|affiliation\.(name|department|address)|templateSpecific\.[a-z][A-Za-z0-9]*)$/u.test(f)) problems.push(`${at}: field ${f} is not a title field (author.email, author.orcid, affiliation.name|department|address, templateSpecific.<field>)`);
+      else if (key.node !== 'paragraph/title') problems.push(`${at}: field ${f} is a title field, and the way is not the title's`);
+    }
+    if (!SUPPORT.has(key.targetEngine)) problems.push(`${at}: target-engine support ${key.targetEngine} is not yes, no or untested`);
 
     // Parameters and presets.
     for (const [name, spec] of Object.entries(key.params)) {
@@ -110,13 +115,15 @@ export const validateLibrary = (library: Library, nesting: Nesting): string[] =>
     key.loads.forEach((load, i) => loadProblems(`${at} load ${i + 1}`, load, key.params));
     const defined = key.defines.map((d) => (typeof d === 'string' ? d : d.name));
     for (const d of key.defines) if (typeof d !== 'string') predicateProblems(`${at} defines ${d.name}`, d.when, key.params);
-    const resources: readonly (Resource | Requirement)[] = [...defined, ...key.requires];
+    const required = [...key.requires, ...(key.requiresWhen ?? []).flatMap((r) => r.requires)];
+    for (const r of key.requiresWhen ?? []) predicateProblems(`${at} requires when`, r.when, key.params);
+    const resources: readonly (Resource | Requirement)[] = [...defined, ...required];
     for (const r of defined) if (!RESOURCE.test(r)) problems.push(`${at}: defines ${r}, which is not kind:name`);
     for (const r of resources) {
       for (const p of placeholders(r)) if (!(p in key.params)) problems.push(`${at}: ${r} names parameter ${p}, which is not in the schema`);
     }
     for (const c of key.claims) if (!(EXCLUSIVES as readonly string[]).includes(c)) problems.push(`${at}: claim ${c} is not in the vocabulary`);
-    for (const r of key.requires) {
+    for (const r of required) {
       if (r.startsWith('claim:') && !(EXCLUSIVES as readonly string[]).includes(r.slice(6))) problems.push(`${at}: requires ${r}, a claim not in the vocabulary`);
       else if (r.startsWith('pkg:')) pkgResolves(`${at} requires`, r.slice(4));
       else if (!r.startsWith('claim:') && !RESOURCE.test(r)) problems.push(`${at}: requires ${r}, which is not kind:name, claim: or pkg:`);
@@ -207,6 +214,10 @@ export const validateLibrary = (library: Library, nesting: Nesting): string[] =>
     if (!CLASS_ID.test(profile.id)) problems.push(`${at}: the id is not class.<name>`);
     if (profile.base !== undefined && !classes.has(profile.base)) problems.push(`${at}: builds on ${profile.base}, which has no profile`);
     for (const r of profile.defines) if (!RESOURCE.test(r)) problems.push(`${at}: defines ${r}, which is not kind:name`);
+    for (const held of profile.heldByMaketitle ?? []) {
+      if (!profile.defines.includes(held.resource)) problems.push(`${at}: holds ${held.resource} for \\maketitle, which it does not define`);
+      evidenceProblems(`${at} holds ${held.resource}`, held.evidence);
+    }
     for (const rule of [...profile.forbids.technical, ...profile.forbids.policy]) {
       pkgResolves(`${at} forbids`, rule.pkg);
       evidenceProblems(`${at} forbids ${rule.pkg}`, rule.evidence);
@@ -215,6 +226,11 @@ export const validateLibrary = (library: Library, nesting: Nesting): string[] =>
       if (!RESOURCE.test(rule.name)) problems.push(`${at}: forbids ${rule.name}, which is not kind:name`);
       for (const pkg of rule.unlessLoaded ?? []) pkgResolves(`${at} forbids ${rule.name} unless`, pkg);
       evidenceProblems(`${at} forbids ${rule.name}`, rule.evidence);
+    }
+    if (profile.setup !== undefined) {
+      for (const load of profile.setup.loads ?? []) pkgResolves(`${at} setup loads`, load.pkg);
+      if ((profile.setup.options ?? []).length + (profile.setup.loads ?? []).length + (profile.setup.before ?? []).length + (profile.setup.after ?? []).length === 0) problems.push(`${at}: a setup that gives nothing`);
+      if (profile.setup.evidence.length === 0) problems.push(`${at}: its setup has no evidence`);
     }
     for (const [option, effect] of Object.entries(profile.options)) {
       for (const r of [...(effect.removes ?? []), ...(effect.adds ?? [])]) if (!RESOURCE.test(r)) problems.push(`${at} option ${option}: ${r} is not kind:name`);

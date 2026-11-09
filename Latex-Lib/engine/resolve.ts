@@ -10,14 +10,19 @@
  *   class forbids (technically or by policy), a heading at a level whose
  *   command the class forbids though it defines it, unless a chosen way
  *   loads a package that replaces it (`forbids.names`), or a way that
- *   requires such a name, an option clash with what the class preloads
- *   (less what the class options given unload: tufte-handout's nobib);
+ *   requires such a name, a package the class (or a class it builds on)
+ *   preloads loaded again with an option the class did not give it (LaTeX's
+ *   option clash; less what the class options given unload: tufte-handout's
+ *   nobib), and text the class keeps for \maketitle (`heldByMaketitle`) where
+ *   no chosen handler runs \maketitle (`claim:maketitle`), which loses it;
  * - the document: two handlers owning one claim, a package or way a handler
  *   conflicts with, two packages whose facts refuse each other, options a
  *   package's facts mark exclusive, a requirement nobody supplies (a counter
- *   the class lacks). A conflict with General's ways of a node is the testing
- *   pipeline's: the choices here are library ways only;
- * - the engine: ZeroTeX-NG is the only one; a handler or class that does not
+ *   the class lacks), and a conflict with General's ways of a node when the
+ *   caller names the nodes General prints (`general`: the AI layer does, since
+ *   a node it chose no handler for is printed by General; the testing
+ *   pipeline files those conflicts itself and names none);
+ * - the engine: the target engine is the only one; a handler or class that does not
  *   run there goes nowhere.
  *
  * `pick` is the theorem pilot's choice for one node: the target way as its
@@ -57,10 +62,14 @@ export const resolve = (
     readonly choices: readonly Choice[];
     /** Each node's kinds the document uses (a statement's elementName), for `{kind}`. */
     readonly kinds?: { readonly [node: NodeId]: readonly string[] };
+    /** The nodes General's own ways print in this document. A key's conflict with General's ways of a node holds only for a node named here. */
+    readonly general?: readonly NodeId[];
   },
 ): string[] => {
   const packages = new Map(library.packages.map((p) => [p.id, p]));
   const profile = library.classes.find((c) => c.id === input.classId);
+  // The options the document gives, with those the class needs in the target engine (`setup`), which every document of it gives.
+  const classOptions = [...new Set([...(input.classOptions ?? []), ...(profile?.setup?.options ?? [])])];
   // The class and every class it builds on: a rule for beamer holds under ctexbeamer.
   const chain: ClassId[] = [];
   for (let c: ClassProfile | undefined = profile, id: ClassId | undefined = input.classId; id !== undefined && !chain.includes(id); c = library.classes.find((x) => x.id === c?.base), id = c?.id) chain.push(id);
@@ -76,8 +85,16 @@ export const resolve = (
   });
   const loaded = new Map<string, Set<string>>();
   // What the class loads itself, less what an option given leaves out (tufte-handout's nobib: natbib and bibentry, so biblatex goes there).
-  const unloaded = new Set((input.classOptions ?? []).flatMap((o) => profile?.options[o]?.unloads ?? []));
+  const unloaded = new Set(classOptions.flatMap((o) => profile?.options[o]?.unloads ?? []));
   for (const pre of profile?.preloads ?? []) if (!unloaded.has(pre.pkg)) loaded.set(pre.pkg, new Set(pre.options ?? []));
+  // What its setup loads in every document's preamble (quantumarticle's hyperref).
+  for (const load of profile?.setup?.loads ?? []) loaded.set(load.pkg, new Set([...(loaded.get(load.pkg) ?? []), ...(load.options ?? [])]));
+  // What the class and the classes it builds on load themselves (less what an option given unloads), and keep for \maketitle.
+  const profiles = chain.flatMap((id) => library.classes.filter((c) => c.id === id));
+  const preloaded = new Map<string, Set<string>>();
+  for (const pre of profiles.flatMap((c) => c.preloads)) if (!unloaded.has(pre.pkg)) preloaded.set(pre.pkg, new Set([...(preloaded.get(pre.pkg) ?? []), ...(pre.options ?? [])]));
+  const held = new Map(profiles.flatMap((c) => c.heldByMaketitle ?? []).map((h) => [h.resource as string, h]));
+  const runsMaketitle = chosen.some(({ key }) => key.claims.includes('maketitle'));
   for (const { key, params } of chosen) {
     for (const load of key.loads) {
       if (!matches(load.when, params)) continue;
@@ -86,13 +103,15 @@ export const resolve = (
       loaded.set(load.pkg, options);
     }
   }
-  const defined = new Set<string>([...(profile === undefined ? [] : classDefines(profile, input.classOptions ?? []))]);
+  const defined = new Set<string>([...(profile === undefined ? [] : classDefines(profile, classOptions))]);
   for (const pkg of loaded.keys()) for (const r of packages.get(pkg)?.defines ?? []) defined.add(r);
   const ownDefinitions = chosen.map(({ key, params, kinds }) => ({ key, names: definitions(key.defines, params, kinds) }));
   for (const { names } of ownDefinitions) for (const n of names) defined.add(n);
 
   for (const { key, params, kinds } of chosen) {
     const at = key.id;
+    // What it requires, with what it requires only when its parameters match.
+    const requirements = [...key.requires, ...(key.requiresWhen ?? []).filter((r) => matches(r.when, params)).flatMap((r) => r.requires)] as readonly Requirement[];
     // The class.
     if (key.classes.only !== undefined && !key.classes.only.some((c) => chain.includes(c))) violations.push(`${at}: only for ${key.classes.only.join(', ')}, not ${input.classId}`);
     // A form only some classes give: `only` for the parameters that match (abs.class-native's \abstract{} command).
@@ -101,16 +120,20 @@ export const resolve = (
     }
     // A class rule holds unless its `unless` is given and the parameters match it.
     for (const rule of key.classes.deny) if (chain.includes(rule.class) && (rule.unless === undefined || !matches(rule.unless, params))) violations.push(`${at}: ${rule.reason}`);
-    const twoColumns = (profile?.layout?.columns === 2 && !(input.classOptions ?? []).includes('onecolumn')) || (input.classOptions ?? []).includes('twocolumn') || (input.classOptions ?? []).some((o) => profile?.options[o]?.columns === 2);
+    const twoColumns = (profile?.layout?.columns === 2 && !classOptions.includes('onecolumn')) || classOptions.includes('twocolumn') || classOptions.some((o) => profile?.options[o]?.columns === 2);
     if (key.classes.oneColumn !== undefined && twoColumns) violations.push(`${at}: one column only: ${key.classes.oneColumn.reason}`);
     if (profile !== undefined) {
       // A class-native way (one with `only`) uses the class's own names and defines a name only where the class lacks it.
       const own = key.classes.only !== undefined ? [] : (ownDefinitions.find((d) => d.key === key)?.names ?? []);
-      const clashes = own.filter((n) => classDefines(profile, input.classOptions ?? []).has(n));
+      const clashes = own.filter((n) => classDefines(profile, classOptions).has(n));
       if (clashes.length > 0) violations.push(`${at}: defines ${clashes.join(', ')}, which ${input.classId} already defines`);
       for (const load of key.loads) {
         if (!matches(load.when, params)) continue;
         for (const rule of [...profile.forbids.technical, ...profile.forbids.policy]) if (rule.pkg === load.pkg) violations.push(`${at}: ${input.classId} forbids ${load.pkg}: ${rule.reason}`);
+        // The class loaded it already: an option it did not give stops at LaTeX's option clash.
+        const given = preloaded.get(load.pkg);
+        const extra = given === undefined ? [] : (load.options ?? []).filter((o) => !given.has(o));
+        if (extra.length > 0) violations.push(`${at}: ${input.classId} loads ${load.pkg} itself${given?.size ? ` with ${[...given].join(',')}` : ''}, so ${extra.join(',')} stops at "Option clash for package ${load.pkg}"`);
       }
       // A heading at a level whose command the class forbids though it defines it (llncs's \subparagraph), unless a chosen way loads a package that replaces it (sectsty).
       if (key.node === 'paragraph/heading') {
@@ -120,18 +143,22 @@ export const resolve = (
       }
       // A name the class forbids though it defines it, required by the way (iopjournal's \maketitle, siamart's \tableofcontents), unless a chosen way loads a package that replaces it (none now: titling was one until batch 1 round 2 showed it only copies the title).
       for (const rule of profile.forbids.names ?? []) {
-        if (key.requires.some((r) => expand(r, params, kinds).includes(rule.name)) && !(rule.unlessLoaded ?? []).some((p) => loaded.has(p))) violations.push(`${at}: ${input.classId} forbids ${rule.name}: ${rule.reason}`);
+        if (requirements.some((r) => expand(r, params, kinds).includes(rule.name)) && !(rule.unlessLoaded ?? []).some((p) => loaded.has(p))) violations.push(`${at}: ${input.classId} forbids ${rule.name}: ${rule.reason}`);
       }
     }
     // The document.
     for (const rule of key.packages.conflicts) {
       if (rule.way !== undefined && chosen.some((c) => c.key.id === rule.way)) violations.push(`${at}: conflicts with ${rule.way}: ${rule.reason}`);
+      if (rule.general !== undefined && (input.general ?? []).includes(rule.general)) violations.push(`${at}: conflicts with General's ${rule.general}, which the document prints: ${rule.reason}`);
       if (rule.pkg !== undefined && loaded.has(rule.pkg) && !key.loads.some((l) => l.pkg === rule.pkg)) {
         if (rule.unless === undefined || !loaded.get(rule.pkg)?.has(rule.unless.option)) violations.push(`${at}: conflicts with ${rule.pkg}, which the document loads: ${rule.reason}`);
       }
     }
-    for (const r of key.requires as readonly Requirement[]) {
+    for (const r of requirements) {
       for (const name of expand(r, params, kinds)) {
+        const keeps = held.get(name);
+        // A claim's need, in the claim's own sentence: another choice can meet it, and a set is refused only when no chosen handler runs \maketitle.
+        if (keeps !== undefined && !runsMaketitle) violations.push(`${at}: ${input.classId} keeps ${name} for \\maketitle, and its text is lost without it (${keeps.reason}): needs something to own maketitle`);
         if (name.startsWith('claim:')) {
           if (!chosen.some((c) => c.key.claims.includes(name.slice(6) as never))) violations.push(`${at}: needs something to own ${name.slice(6)}`);
         } else if (name.startsWith('pkg:')) {
@@ -139,10 +166,10 @@ export const resolve = (
         } else if (!defined.has(name)) violations.push(`${at}: needs ${name}, which nothing defines${profile === undefined ? '' : ` (${input.classId} lacks it)`}`);
       }
     }
-    // The engine: ZeroTeX-NG, the only one.
-    if (key.zerotex === 'no') violations.push(`${at}: does not run in ZeroTeX-NG`);
+    // The engine: the target engine, the only one.
+    if (key.targetEngine === 'no') violations.push(`${at}: does not run in the target engine`);
   }
-  if (profile?.zerotex === 'no') violations.push(`${input.classId} does not run in ZeroTeX-NG`);
+  if (profile?.targetEngine === 'no') violations.push(`${input.classId} does not run in the target engine`);
   const owners = new Map<string, string[]>();
   for (const { key } of chosen) for (const c of key.claims) owners.set(c, [...(owners.get(c) ?? []), key.id]);
   for (const [claim, ways] of owners) if (ways.length > 1) violations.push(`${ways.join(' and ')} both own ${claim}`);

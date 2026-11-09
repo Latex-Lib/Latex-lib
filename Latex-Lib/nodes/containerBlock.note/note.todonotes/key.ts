@@ -8,6 +8,7 @@ export default defineKey(
     node: 'containerBlock/note',
     description:
       'todonotes: \\todo[keys]{…}, a coloured note in the margin joined to its place by a line; color, linecolor, bordercolor, textcolor, size, line, noline, fancyline, inline, shadow per note; colorinlistoftodos and disable as package options. Uses TikZ. A margin note is \\marginparwidth wide: the class column, or the room its margin has where that column is under 2cm or runs off the paper. 17 templates.',
+    writes: '\\todo[…,caption={…}]{{\\bfseries …\\par} …}',
     ctan: ['todonotes'],
     features: ['margin-note', 'connector-line', 'background', 'colored', 'shadow', 'small-type'],
     params: {
@@ -101,6 +102,6 @@ export default defineKey(
     // note.todonotes@fancy-shadow, the document's only float, l.78). article.A run: 199 of 217 lose their content under a float-less
     // parent (59 of 62 under thm.tcolorbox, 63 of 77 under General's tcolorbox statement), 8 of 153 with none above.
     needsWhen: [{ when: { inline: false, disable: false }, needs: { floats: true } }],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

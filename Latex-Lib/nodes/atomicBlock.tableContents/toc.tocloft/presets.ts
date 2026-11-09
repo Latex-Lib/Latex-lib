@@ -13,12 +13,14 @@ export const PRESETS = {
   },
   'centered-title': {
     description: 'The contents title centred, large and bold (\\cfttoctitlefont{\\hfill\\Large\\bfseries}, \\cftaftertoctitle{\\hfill}), dot leaders for sections.',
+    writes: '\\tableofcontents; \\renewcommand{\\cftsecleader}{\\cftdotfill{\\cftdotsep}} \\renewcommand{\\cfttoctitlefont}{…} \\renewcommand{\\cftaftertoctitle}{…}',
     features: ['dot-leaders', 'centered'],
     params: { titleFont: '\\hfill\\Large\\bfseries', titleAfter: '\\hfill' },
     evidence: [solution('0086-shakthi-kannan-tamil-english-xelatex-boo', '59')],
   },
   'number-gap': {
     description: 'Half an em after each entry number (\\cftsecaftersnumb), section entries bold, no leaders.',
+    writes: '\\tableofcontents; \\renewcommand{\\cftsecfont}{…} \\renewcommand{\\cftsecaftersnumb}{…}',
     features: ['bold-head'],
     params: { leaders: 'none', sectionFont: '\\bfseries', afterNumber: '\\hspace{0.5em}' },
     evidence: [solution('0086-shakthi-kannan-tamil-english-xelatex-boo', '59'), solution('0003-ucsmonograph', '63')],

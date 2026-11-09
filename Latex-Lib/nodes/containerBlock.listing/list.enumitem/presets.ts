@@ -7,6 +7,7 @@ import { solution } from '../../evidence.ts';
 export const PRESETS = {
   'no-item-space': {
     description: 'Every list without space between items, set once for the document (\\setlist{noitemsep}).',
+    writes: '\\begin{itemize|enumerate|description} \\item … \\end{itemize|enumerate|description}; \\setlist[itemize|enumerate|description,1]{noitemsep}',
     features: ['compact'],
     params: { spacing: 'noitemsep', scope: 'document' },
     evidence: [solution('0053-zhanghai-zju-csse-undergraduate-design-l', '62')],
@@ -19,6 +20,7 @@ export const PRESETS = {
   },
   letters: {
     description: 'Numbered lists lettered a) b), indented by the paragraph indent, no extra space (\\setlist[enumerate,1]{label=\\alph*), labelindent=\\parindent, nosep}).',
+    writes: '\\begin{enumerate} \\item … \\end{enumerate}; \\setlist[enumerate,1]{nosep, labelindent=…, label=…}',
     features: ['compact', 'custom-labels', 'lettered', 'numbered'],
     params: { enumLabel: '\\alph*)', labelindent: '\\parindent', spacing: 'nosep', scope: 'document' },
     evidence: [solution('0003-ucsmonograph', '69')],
@@ -37,6 +39,7 @@ export const PRESETS = {
   },
   bullets: {
     description: 'First-level bullets set as $\\bullet$ for the document, deeper levels at a 6mm margin (\\setlist[itemize,1]{label=$\\bullet$}).',
+    writes: '\\begin{itemize} \\item … \\end{itemize}; \\setlist[itemize,1]{leftmargin=…, label=…}',
     features: ['custom-labels'],
     params: { label: '$\\bullet$', leftmargin: '6mm', scope: 'document' },
     evidence: [solution('0037-hilbert', '63')],

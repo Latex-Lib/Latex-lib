@@ -56,9 +56,9 @@ export default defineClass({
   id: 'class.ieeeaccess',
   name: "ieeeaccess-latexlib",
   base: 'class.ieeetran',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [{"pkg": "ifpdf"}, {"pkg": "xkeyval"}, {"pkg": "color"}, {"pkg": "graphicx"}, {"pkg": "etoolbox"}],
-  defines: [...ieeetran.defines, "env:keywords", "env:IEEEkeywords", "env:biography", "env:IEEEbiography", "env:biographynophoto", "env:IEEEbiographynophoto", "cmd:\\appendices", "cmd:\\year", "cmd:\\doi", "cmd:\\address", "cmd:\\corresp", "cmd:\\tfootnote", "cmd:\\history", "cmd:\\artnum", "cmd:\\authorrefmark", "cmd:\\vol", "cmd:\\pubid", "cmd:\\headname", "cmd:\\EOD"],
+  defines: [...ieeetran.defines, "env:keywords", "env:IEEEkeywords", "env:biography", "env:IEEEbiography", "env:biographynophoto", "env:IEEEbiographynophoto", "cmd:\\appendices", "cmd:\\year", "cmd:\\doi", "cmd:\\address", "cmd:\\corresp", "cmd:\\tfootnote", "cmd:\\history", "cmd:\\artnum", "cmd:\\authorrefmark", "cmd:\\vol", "cmd:\\pubid", "cmd:\\headname", "cmd:\\EOD", "cmd:\\IEEEmembership", "cmd:\\Figure", "cmd:\\PARstart"],
   forbids: {
     ...ieeetran.forbids,
     technical: [

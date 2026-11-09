@@ -4,7 +4,8 @@
  */
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
-import { titleLines } from '../node.ts';
+import { param } from '../../protocol.ts';
+import { peopleOf, titleLines } from '../node.ts';
 import key from './key.ts';
 
 export const realize = (given: { readonly [name: string]: unknown } = {}): Realization => {
@@ -16,7 +17,12 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
     // No title." (e.g. result b60d1c3a274a: then "No pages of output."). The kernel's \title, \author and \date only store their text until
     // \maketitle, so the body serves every class as well.
     preamble: () => ({}),
-    emit: (node, content) => `${titleLines(node, content).join('\n')}\n\\maketitle\n\n`,
+    emit: (node, content) => {
+      const [title, ...rest] = titleLines(node, content);
+      // One \author per author, where the class takes them so (revtex4-2); else the kernel's \author{A \and B}.
+      const people = param(p, 'authors', 'joined') === 'separate' ? peopleOf(node).authors.map((a) => `\\author{${a}}`) : rest.filter((l) => l.startsWith('\\author{'));
+      return `${[title, ...people, ...rest.filter((l) => l.startsWith('\\date{'))].join('\n')}\n\\maketitle\n\n`;
+    },
   };
 };
 

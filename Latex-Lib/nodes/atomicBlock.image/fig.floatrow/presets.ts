@@ -13,18 +13,21 @@ export const PRESETS = {
   },
   'sidecap-left': {
     description: 'The caption always at the left of the image (sidecap\'s leftcaption option), vertically centred.',
+    writes: '\\begin{SCfigure}[…][…] \\centering \\includegraphics[width=…]{…} \\caption{…} \\label{…} \\end{SCfigure}; \\sidecaptionvpos{figure}{c}',
     features: ['side-caption', 'floating', 'captioned', 'scaled'],
     params: { engine: 'sidecap', position: 'left', vpos: 'c' },
     evidence: [solution('0372-letgut', '74')],
   },
   'floatrow-right': {
     description: "floatrow's caption beside the image on the right, a quad between (\\floatsetup[figure]{capposition=beside,capbesideposition=right,capbesidesep=quad}, \\fcapside).",
+    writes: '\\begin{figure}[…] \\fcapside[\\FBwidth]{\\caption{…}\\label{…}}{\\includegraphics[width=…]{…}} \\end{figure}; \\floatsetup[figure]{capposition=beside,…}',
     features: ['side-caption', 'floating', 'captioned', 'scaled'],
     params: { engine: 'floatrow', position: 'right' },
     evidence: [solution('0475-alexpovel-latex-cookbook', '92'), solution('0068-kaobook', '96')],
   },
   'floatrow-top-left': {
     description: 'floatrow with the caption beside the image at its top left (capbesideposition={top,left}).',
+    writes: '\\begin{figure}[…] \\fcapside[\\FBwidth]{\\caption{…}\\label{…}}{\\includegraphics[width=…]{…}} \\end{figure}; \\floatsetup[figure]{capposition=beside,…}',
     features: ['side-caption', 'floating', 'captioned', 'scaled'],
     params: { engine: 'floatrow', position: 'left', vpos: 't' },
     evidence: [solution('0372-letgut', '74')],

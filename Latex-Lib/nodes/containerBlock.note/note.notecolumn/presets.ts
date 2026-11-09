@@ -18,6 +18,7 @@ export const PRESETS = {
   // scrlayer-notecolumn-en.tex l.463-470).
   'colored-column': {
     description: 'A note column of its own, ragged footnote-size text (\\DeclareNewNoteColumn[font=\\raggedright\\footnotesize]{notes}; the template\'s \\color{blue} is left out: the note column cannot switch colour under XeTeX).',
+    writes: '\\makenote*[…]{{\\bfseries …\\par} …}; \\DeclareNewNoteColumn[font=…]{…}',
     features: ['margin-note', 'note-column', 'small-type'],
     params: { column: 'notes', font: '\\raggedright\\footnotesize' },
     evidence: [solution('0020-koma-script', '84')],

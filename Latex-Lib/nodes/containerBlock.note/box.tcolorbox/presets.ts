@@ -19,24 +19,28 @@ export const PRESETS = {
   },
   'left-bar': {
     description: 'Only a coloured bar at the left, a faint tinted back, square corners, no title bar (borderline west, leftrule).',
+    writes: '\\begin{tcolorbox}[colback=…, colframe=…, boxrule=0pt, leftrule=…, sharp corners, breakable] … \\end{tcolorbox}; \\tcbuselibrary{breakable}',
     features: ['left-rule', 'background', 'colored', 'breakable'],
     params: { style: 'left-bar', colback: 'tone!4', colframe: 'tone', title: false, breakable: true },
     evidence: [solution('0257-polaris-aeterna-loom-notes', '64'), solution('0347-rpgtex-dnd-5e-latex-template', '79')],
   },
   'sharp-breakable': {
     description: 'A white box with a coloured frame and title bar, square corners, bold white title, breaking across pages (enhanced, breakable, sharp corners).',
+    writes: '\\begin{tcolorbox}[title={…}, …, sharp corners, breakable] … \\end{tcolorbox}; \\tcbuselibrary{breakable}',
     features: ['framed', 'title-bar', 'breakable', 'colored'],
     params: { colback: 'white', colframe: 'blue!60!black', titleFont: '\\bfseries', corners: 'sharp', breakable: true },
     evidence: [solution('0318-stem-assignment-template', '74'), solution('0164-coursework-term-paper', '55'), solution('0174-jambro', '65')],
   },
   shadowed: {
     description: 'A rounded framed box with a drop shadow (enhanced skin, drop shadow).',
+    writes: '\\begin{tcolorbox}[title={…}, arc=…, enhanced, drop shadow] … \\end{tcolorbox}; \\tcbuselibrary{skins}',
     features: ['framed', 'background', 'title-bar', 'rounded-corners', 'shadow'],
     params: { shadow: true, arc: '3pt' },
     evidence: [solution('0236-hu-berlin-bundle', '68')],
   },
   filled: {
     description: 'A filled grey panel with no visible frame and square corners (colback=colframe=gray!20, arc=0pt).',
+    writes: '\\begin{tcolorbox}[colback=…, colframe=…, sharp corners] … \\end{tcolorbox}',
     features: ['background'],
     params: { style: 'filled', colback: 'gray!20', title: false, corners: 'sharp' },
     evidence: [solution('0324-sabirdvd-latex-template-for-upc-thesis', '67'), solution('0016-rho-class-research-article', '63')],

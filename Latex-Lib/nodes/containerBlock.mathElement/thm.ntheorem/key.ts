@@ -10,6 +10,7 @@ export default defineKey({
   node: 'containerBlock/mathElement',
   description:
     'ntheorem: \\theoremstyle (plain, break, change, margin), \\theoremheaderfont, \\theorembodyfont, \\theoremseparator and an end mark (\\theoremsymbol, with thmmarks) set before each \\newtheorem. Unboxed statements; loaded with amsmath and thmmarks, as every template using it does.',
+  writes: '\\begin{theorem}[{…}] … \\end{theorem}; \\theoremstyle{LatexLibPlain}\\theoremheaderfont{…}…\\theoremsymbol{…} \\newtheorem{theorem}{Theorem}[section]',
   features: ['numbered', 'numbered-within', 'shared-counter', 'bold-head', 'italic-body', 'upright-body', 'break-after-head', 'qed-mark'],
   params: {
     style: {
@@ -25,7 +26,7 @@ export default defineKey({
     ...NUMBERING,
   },
   presets: PRESETS,
-  zerotex: 'untested',
+  targetEngine: 'untested',
   loads: [{ pkg: 'ntheorem', options: ['amsmath', 'thmmarks'] }],
   defines: [...STATEMENT_DEFINES],
   claims: ['theorem-engine'],

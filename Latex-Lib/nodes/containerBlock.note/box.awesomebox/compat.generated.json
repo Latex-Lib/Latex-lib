@@ -2,8 +2,8 @@
   "handler": "box.awesomebox",
   "node": "containerBlock/note",
   "generatedFrom": {
-    "key": "sha256:7e654c97679c64259c39e24b20fdd42f5a948d2d932d9a6c26af434ceb655a3e",
-    "contexts": "sha256:e73be1339b4a4bbda6e1232f22e35cee0fb0c3ecedee54605a32de789342b896",
+    "key": "sha256:2ea5657ca09593d3b51e4f1e76f48018ef734634790c1a42280797049fda7fad",
+    "contexts": "sha256:f593ada8348e3bc89e6616015502a97a24a8913da366aaa0e721d6679e8365b9",
     "matrix": null
   },
   "parents": {
@@ -15,12 +15,42 @@
       }
     },
     "containerBlock/columns": {
+      "cols.beamer-columns": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.cvcolumns": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.fullwidth": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.fullwidth[split=multicol]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "cols.multicol": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
       },
       "cols.paracol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.revtex-grid": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.tikzposter": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
@@ -41,6 +71,21 @@
       }
     },
     "containerBlock/listing": {
+      "list.agu-glossary": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.cvlist": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "list.enumerate-pkg": {
         "verdict": "ok",
         "source": "derived",
@@ -51,7 +96,17 @@
         "source": "derived",
         "status": "derived"
       },
+      "list.exam-questions": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "list.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.nomenclature": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
@@ -68,6 +123,11 @@
       }
     },
     "containerBlock/abstract": {
+      "abs.aa-structured": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "abs.abstract-pkg": {
         "verdict": "ok",
         "source": "derived",
@@ -83,7 +143,42 @@
         "source": "derived",
         "status": "derived"
       },
+      "abs.front-held": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.front-held[place=begin-document]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.heading": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.ieee-indextext": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.ieeeaccess": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "abs.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.keywords": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.tikzposter-block": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"

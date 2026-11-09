@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [["fulladjust", "heightadjust", "depthadjust", "noadjust"], ["parboxrestore", "noparboxrestore"]],
   loadOrder: [],
   defines: [],
-  zerotex: 'yes',
+  targetEngine: 'yes',
   evidence: [ctan("marginnote"), { kind: 'manual', of: "marginnote", section: "1 How to Use marginnote Package", url: 'https://ctan.org/pkg/marginnote' }],
 });

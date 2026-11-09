@@ -7,7 +7,8 @@ export default defineKey(
     id: 'fig.svg',
     node: 'atomicBlock/image',
     description:
-      "svg: an SVG file through \\includesvg[width=…]{file} in a figure float, converted by Inkscape at compile time (shell escape, which ZeroTeX-NG does not have); inkscapelatex=false keeps the drawing's own text, \\svgpath a folder. 6 templates.",
+      "svg: an SVG file through \\includesvg[width=…]{file} in a figure float, converted by Inkscape at compile time (shell escape, which the target engine does not have); inkscapelatex=false keeps the drawing's own text, \\svgpath a folder. 6 templates.",
+    writes: '\\begin{figure}[…] \\centering \\includesvg[width=…]{…} \\caption{…} \\label{…} \\end{figure}',
     ctan: ['svg'],
     features: ['vector-graphics', 'floating', 'centered', 'captioned', 'scaled'],
     params: {
@@ -24,6 +25,6 @@ export default defineKey(
     // A figure float, so it needs a place that takes floats: "Not in outer par mode" in a footnote's body (7cf70bf9a6, article.A run:
     // footnote > General's amsthm statement > fig.svg@inkscape-text, l.1179); 248 of 497 directly under General's tcolorbox statement.
     needs: { floats: true },
-    zerotex: 'no',
+    targetEngine: 'no',
   }),
 );

@@ -2,8 +2,8 @@
   "handler": "fig.float",
   "node": "atomicBlock/image",
   "generatedFrom": {
-    "key": "sha256:60052e585d0ff62d420ab6e3cf642d6356e9603c6ee5a459b1086f3a7022898d",
-    "contexts": "sha256:b84d5bace47f085f6d549c19a87e2f6956e4194f127832425493080981f05b92",
+    "key": "sha256:f87016553132d4b63b517d475553b894cce6b857fb7c83d863f6757c8dbbd3d9",
+    "contexts": "sha256:9a34444e43ac79586ac5a93aa416a3e6b45fdee3bf9cad3cd215ed2d48d1e81b",
     "matrix": null
   },
   "parents": {
@@ -15,14 +15,94 @@
       }
     },
     "containerBlock/appendix": {
+      "num.appendices-env": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "num.appendix": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "num.appendix-onecolumn": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "num.cvpr-supplementary": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "num.handset": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "num.ieee-appendices": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "num.mdpi-appendix": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "num.unnumbered": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
       }
     },
     "containerBlock/acknowledgement": {
+      "ack.block": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.block[form=frame]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.block[form=poster-block]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.bmhead": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.class-command": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.class-command[form=argument]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.class-command[form=preamble]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "ack.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.class-native[env=ack]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "ack.copernicus": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
@@ -31,15 +111,50 @@
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
+      },
+      "ack.llncs-credits": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
       }
     },
     "containerBlock/columns": {
+      "cols.beamer-columns": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.cvcolumns": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.fullwidth": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.fullwidth[split=multicol]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "cols.multicol": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
       },
       "cols.paracol": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.revtex-grid": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.tikzposter": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
@@ -56,6 +171,21 @@
       }
     },
     "containerBlock/listing": {
+      "list.agu-glossary": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.cvlist": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "list.enumerate-pkg": {
         "verdict": "ok",
         "source": "derived",
@@ -66,7 +196,17 @@
         "source": "derived",
         "status": "derived"
       },
+      "list.exam-questions": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "list.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.nomenclature": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
@@ -125,6 +265,11 @@
       }
     },
     "containerBlock/abstract": {
+      "abs.aa-structured": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "abs.abstract-pkg": {
         "verdict": "ok",
         "source": "derived",
@@ -140,13 +285,53 @@
         "source": "derived",
         "status": "derived"
       },
+      "abs.front-held": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.front-held[place=begin-document]": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.heading": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.ieee-indextext": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.ieeeaccess": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "abs.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.keywords": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.tikzposter-block": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
       }
     },
     "table_cell": {
+      "tbl.cell-plain": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "tbl.multirow": {
         "verdict": "ok",
         "source": "derived",
@@ -155,6 +340,11 @@
     },
     "table_header": {
       "tbl.header": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "tbl.header-plain": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"

@@ -10,6 +10,7 @@ export default defineKey({
   node: 'containerBlock/mathElement',
   description:
     'thmtools over amsthm: a key-value style (\\declaretheoremstyle: spaces, fonts, punctuation, the QED mark) and key-value environments (\\declaretheorem: name, numberwithin, sibling). Unboxed statements, as amsthm prints them.',
+  writes: '\\begin{theorem}[{…}] … \\end{theorem}; \\declaretheoremstyle[…]{libthm} \\declaretheorem[style=libthm, name=Theorem, numberwithin=section]{theorem}',
   features: ['numbered', 'numbered-within', 'shared-counter', 'bold-head', 'italic-body', 'upright-body', 'qed-mark', 'custom-head'],
   params: {
     spaceAbove: { type: 'dimen', default: '\\topsep', description: 'space above' },
@@ -23,7 +24,7 @@ export default defineKey({
     ...NUMBERING,
   },
   presets: PRESETS,
-  zerotex: 'untested',
+  targetEngine: 'untested',
   // The beauty preset's qed is coloured, so the handler prints xcolor for it: a document where no other way loads xcolor stops at
   // \color (copy batch-3b revtex4-2-aps.A, log f7144c401546: no xcolor.sty, 'Undefined control sequence' at \color in
   // \thmt@*@postheadhook and \thmt@*@prefoothook, all in document d80e0356e8ac5b1c6bd38). `when` matches exact values, so it names the beauty value.

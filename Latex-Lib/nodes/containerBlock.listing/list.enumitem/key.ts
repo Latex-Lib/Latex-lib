@@ -8,6 +8,7 @@ export default defineKey(
     node: 'containerBlock/listing',
     description:
       "enumitem: the kernel lists with key-value options, per list (\\begin{itemize}[nosep]) or once for the document's first level (\\setlist[itemize,1]{…}): nosep, noitemsep, itemsep, leftmargin (* fits the widest label), labelindent, label (\\alph*) for numbers), style=nextline for descriptions. 258 templates.",
+    writes: '\\begin{itemize|enumerate|description}[nosep, itemsep=…, leftmargin=…, label=…] \\item … \\end{itemize|enumerate|description}',
     ctan: ['enumitem'],
     features: ['compact', 'custom-labels', 'lettered', 'numbered', 'aligned-labels'],
     params: {
@@ -30,6 +31,6 @@ export default defineKey(
     ],
     // A paragraph place, not below cols.vwcol (list.kernel's key says why).
     needs: { paragraph: true },
-    zerotex: 'yes',
+    targetEngine: 'yes',
   }),
 );

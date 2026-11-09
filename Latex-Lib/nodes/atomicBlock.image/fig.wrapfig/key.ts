@@ -8,6 +8,7 @@ export default defineKey(
     node: 'atomicBlock/image',
     description:
       'wrapfig: the text wraps round the image, \\begin{wrapfigure}[lines]{placement}[overhang]{width} … \\end{wrapfigure}; placement r, l, i or o (upper case lets it float). Not in lists or boxes; in columns (multicol, paracol, \\twocolumn) it wraps inside the column it stands in. 43 templates.',
+    writes: '\\begin{wrapfigure}{…}{…} \\centering \\includegraphics[width=\\linewidth]{…} \\caption{…} \\label{…} \\end{wrapfigure}',
     ctan: ['wrapfig'],
     features: ['wrapped', 'captioned', 'scaled'],
     params: {
@@ -43,6 +44,6 @@ export default defineKey(
     // merged preamble had already defined for tcolorbox (its TeX errors are that clash's); the other failures were overfull lines
     // and one page overflow. cols.vwcol still turns paragraph off: 0 of 62.
     needs: { paragraph: true },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

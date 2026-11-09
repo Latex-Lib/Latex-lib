@@ -8,6 +8,7 @@ export default defineKey(
     node: 'containerBlock/abstract',
     description:
       "The abstract package over the class's abstract: \\abstractnamefont and \\abstracttextfont for its fonts, \\absleftindent and \\absrightindent for its width, the runin and addtotoc options. 4 templates.",
+    writes: '\\begin{abstract} … \\end{abstract}; \\renewcommand{\\abstractnamefont}{…}\\renewcommand{\\abstracttextfont}{…}',
     ctan: ['abstract'],
     features: ['small-type', 'sans-serif', 'run-in-head', 'in-contents', 'indented', 'centered'],
     params: {
@@ -42,6 +43,6 @@ export default defineKey(
         evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/aastex701.cls', line: '5575-5577 (\\titlepage@sw; no \\newif\\if@titlepage and no \\LoadClass in the class)' }, { kind: 'compile', cell: "c8c52bb2795234c3906f5, c5ef96699c4f7a5e08ec7 (the revtex4-2 analogue: the copy's revtex4-2-aps.A run, 79 documents stopping at \\if@titlepage hold abs.abstract-pkg)" }],
       },
     ],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

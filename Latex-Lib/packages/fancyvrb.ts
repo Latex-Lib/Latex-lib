@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("fancyvrb"), { kind: 'manual', of: "fancyvrb", section: "Verbatim's keys (frame, numbers, fontsize, xleftmargin, commandchars)", url: 'https://ctan.org/pkg/fancyvrb' }],
 });

@@ -2,6 +2,12 @@
  * bib.biblatex-bibtex: \usepackage[backend=bibtex, style=…, sorting=…, maxnames=…,
  * giveninits, backref]{biblatex}, the entries in \jobname.bib (filecontents*)
  * added by \addbibresource, printed by \printbibliography[title=…]; BibTeX sorts them.
+ * headingForm plain redefines biblatex's 'bibliography' heading as a bold line
+ * (\defbibheading, after biblatex loads), for a class with no \section (letter,
+ * minimal, scrlttr2); none and bibintoc are \printbibliography's own headings.
+ * load false prints no \usepackage: the class loads biblatex (elegantpaper,
+ * whose backend and styles are its own), and only \addbibresource and the list
+ * are written.
  * CTAN: https://ctan.org/pkg/biblatex
  */
 import { withDefaults } from '../../../schema/params.ts';
@@ -24,10 +30,16 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
     preamble: (_params, _parentType, node, content) => {
       if (node === undefined) return {};
       const style = param(p, 'style', 'node') === 'node' ? styleOf(node) : param(p, 'style');
-      return { packages: [`\\usepackage[${optionsFor(style).join(',')}]{biblatex}`], beforeDocument: bibFile(content), declarations: content === undefined ? [nociteOnce] : ['\\addbibresource{\\jobname.bib}', nociteOnce] };
+      const plain = param(p, 'headingForm', 'default') === 'plain' ? ['\\defbibheading{bibliography}[\\refname]{\\par\\noindent\\textbf{#1}\\par\\medskip}'] : [];
+      const declarations = content === undefined ? [...plain, nociteOnce] : ['\\addbibresource{\\jobname.bib}', ...plain, nociteOnce];
+      return { ...(p['load'] === false ? {} : { packages: [`\\usepackage[${optionsFor(style).join(',')}]{biblatex}`] }), beforeDocument: bibFile(content), declarations };
     },
     // BibTeX takes one \citation{*} (citedOnce, ../node.ts); biblatex prints the list at every block, as General's lists do.
-    emit: () => `${citedOnce}\\printbibliography${param(p, 'heading') === '' ? '' : `[title={${param(p, 'heading')}}]`}\n\n`,
+    emit: () => {
+      const form = param(p, 'headingForm', 'default');
+      const options = [...(form === 'none' || form === 'bibintoc' ? [`heading=${form}`] : []), ...(param(p, 'heading') === '' ? [] : [`title={${param(p, 'heading')}}`])];
+      return `${citedOnce}\\printbibliography${options.length === 0 ? '' : `[${options.join(',')}]`}\n\n`;
+    },
   };
 };
 

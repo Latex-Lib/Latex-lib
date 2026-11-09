@@ -13,6 +13,7 @@ export const PRESETS = {
   },
   'label-value': {
     description: 'A fixed first stop for labels (\\hspace*{5cm}\\=, at most 0.4\\linewidth) and the values after it, each field wrapping at its stop, as a title page\'s author block.',
+    writes: '\\begin{tabbing} \\hspace*{…}\\=\\hspace{…}\\=\\kill \\parbox[t]{…}{\\raggedright …} \\> \\parbox[t]{…}{\\raggedright …} \\\\ \\end{tabbing}',
     features: ['tab-stops'],
     params: { firstStop: '5cm' },
     evidence: [solution('0669-worksheet', '48')],

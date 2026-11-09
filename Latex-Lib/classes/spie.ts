@@ -20,9 +20,9 @@ export default defineClass({
   id: 'class.spie',
   name: "spie",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [{"pkg": "ifthen"}, {"pkg": "cite", "options": ["superscript"]}],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "counter:theorem", "env:abstract", "env:acknowledgments", "env:acknowledgements", "env:theorem", "env:lemma", "env:definition", "env:proof", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\keywords", "cmd:\\authorinfo"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "counter:theorem", "env:abstract", "env:acknowledgments", "env:acknowledgements", "env:theorem", "env:lemma", "env:definition", "env:proof", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\keywords", "cmd:\\authorinfo", "cmd:\\supit", "cmd:\\skiplinehalf"],
   options: {},
   forbids: {
     technical: [

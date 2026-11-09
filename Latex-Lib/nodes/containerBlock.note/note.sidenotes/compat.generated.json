@@ -2,8 +2,8 @@
   "handler": "note.sidenotes",
   "node": "containerBlock/note",
   "generatedFrom": {
-    "key": "sha256:204a9d00ede8fb146da8526533faae25628aa1d6f480d19db5767f4fa49a27f9",
-    "contexts": "sha256:e73be1339b4a4bbda6e1232f22e35cee0fb0c3ecedee54605a32de789342b896",
+    "key": "sha256:d550e99205761c20b14d0900223f43f6f7239bd42981865e10dbaeaed327305b",
+    "contexts": "sha256:f593ada8348e3bc89e6616015502a97a24a8913da366aaa0e721d6679e8365b9",
     "matrix": null
   },
   "parents": {
@@ -15,6 +15,38 @@
       }
     },
     "containerBlock/columns": {
+      "cols.beamer-columns": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      },
+      "cols.cvcolumns": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      },
+      "cols.fullwidth": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.fullwidth[split=multicol]": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      },
       "cols.multicol": {
         "verdict": "deny",
         "source": "derived",
@@ -28,6 +60,20 @@
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
+      },
+      "cols.revtex-grid": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "cols.tikzposter": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
       },
       "cols.twocolumn-cmd": {
         "verdict": "ok",
@@ -45,6 +91,21 @@
       }
     },
     "containerBlock/listing": {
+      "list.agu-glossary": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.class-native": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.cvlist": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "list.enumerate-pkg": {
         "verdict": "ok",
         "source": "derived",
@@ -55,7 +116,17 @@
         "source": "derived",
         "status": "derived"
       },
+      "list.exam-questions": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
       "list.kernel": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "list.nomenclature": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
@@ -72,6 +143,15 @@
       }
     },
     "containerBlock/abstract": {
+      "abs.aa-structured": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      },
       "abs.abstract-pkg": {
         "verdict": "ok",
         "source": "derived",
@@ -91,10 +171,65 @@
           "needs floats"
         ]
       },
+      "abs.front-held": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      },
+      "abs.front-held[place=begin-document]": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      },
+      "abs.heading": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.ieee-indextext": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      },
+      "abs.ieeeaccess": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
+      },
       "abs.kernel": {
         "verdict": "ok",
         "source": "derived",
         "status": "derived"
+      },
+      "abs.keywords": {
+        "verdict": "ok",
+        "source": "derived",
+        "status": "derived"
+      },
+      "abs.tikzposter-block": {
+        "verdict": "deny",
+        "source": "derived",
+        "status": "derived",
+        "reason": "needs floats",
+        "lacks": [
+          "needs floats"
+        ]
       }
     },
     "containerBlock/mathElement": {

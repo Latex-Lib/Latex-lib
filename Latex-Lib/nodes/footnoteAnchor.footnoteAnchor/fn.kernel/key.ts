@@ -8,6 +8,7 @@ export default defineKey(
     node: 'footnoteAnchor/footnoteAnchor',
     description:
       "The kernel's \\footnote{…}, as Flouest's emitter writes it; the marks (\\thefootnote as \\fnsymbol, \\alph, \\roman) and \\counterwithin for per-chapter numbers. 233 templates.",
+    writes: '\\footnote{…}',
     ctan: ['latex-base'],
     features: ['numbered', 'symbols', 'numbered-within'],
     params: {
@@ -17,6 +18,6 @@ export default defineKey(
     presets: PRESETS,
     // \counterwithin needs the counter: per-chapter numbering fits only a class with chapters ('counter:none' names nothing).
     requires: ['counter:{numberWithin}'],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

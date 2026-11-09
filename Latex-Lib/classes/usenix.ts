@@ -16,7 +16,7 @@ export default defineClass({
   id: 'class.usenix',
   name: "article",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [{"pkg": "mathptmx"}, {"pkg": "fontenc", "options": ["T1"]}, {"pkg": "inputenc", "options": ["utf8"]}, {"pkg": "pslatex"}, {"pkg": "microtype", "options": ["kerning", "spacing"]}, {"pkg": "flushend"}, {"pkg": "cite"}, {"pkg": "url"}, {"pkg": "xcolor"}, {"pkg": "hyperref"}],
   defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
   options: {},

@@ -2,7 +2,9 @@
  * bib.natbib: \usepackage[options]{natbib} with an natbib style,
  * \bibliographystyle{plainnat} (unsrtnat, abbrvnat) and \bibliography{\jobname};
  * the options numbers, authoryear or super, round or square, sort or
- * sort&compress, comma or semicolon; \bibsep and \bibfont for the list.
+ * sort&compress, comma or semicolon; \bibsep and \bibfont for the list;
+ * \renewcommand{\bibsection}{…} for the list's heading command (AISTATS keeps
+ * its \subsubsection* level so), with apalike or IEEEtranN as the style too.
  * CTAN: https://ctan.org/pkg/natbib
  */
 import { withDefaults } from '../../../schema/params.ts';
@@ -23,6 +25,7 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
     ...headingLines(param(p, 'heading')),
     ...(param(p, 'bibsep') === '' ? [] : [`\\setlength{\\bibsep}{${param(p, 'bibsep')}}`]),
     ...(param(p, 'bibFont') === '' ? [] : [`\\renewcommand{\\bibfont}{${param(p, 'bibFont')}}`]),
+    ...(param(p, 'bibsection') === '' ? [] : [`\\renewcommand{\\bibsection}{${param(p, 'bibsection')}}`]),
     nociteOnce,
   ];
   return {

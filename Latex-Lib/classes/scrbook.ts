@@ -9,9 +9,9 @@ import { ctan } from '../schema/minimal.ts';
 export default defineClass({
   id: 'class.scrbook',
   name: "scrbook",
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [],
-  defines: ["counter:chapter", "counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:chapter", "counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\addchap", "cmd:\\addsec", "cmd:\\marginline", "cmd:\\backmatter", "cmd:\\frontmatter", "cmd:\\mainmatter", "cmd:\\deffootnote", "cmd:\\RedeclareSectionCommand", "cmd:\\minisec", "cmd:\\KOMAoptions", "cmd:\\setkomafont", "cmd:\\addtokomafont"],
   options: {},
   forbids: {
     // As under scrreprt: this keeps out General's titlesec ways (head.titlesec denies KOMA in its key). The copy has no scrbook run; the live store's

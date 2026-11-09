@@ -3,7 +3,7 @@ import { defineClass } from '../schema/class.ts';
 /**
  * jacow (JACoW accelerator conference proceedings, jacow.cls 2022/02/02 v2.7), read from the class source (MiKTeX snapshot
  * 9766, package jacow) for batch 2 (b2p), not yet measured by a class probe. It loads article as
- * \LoadClass[10pt,twocolumn]{article} (l.218), so it is always two columns, and its preloads are listed as ZeroTeX-NG
+ * \LoadClass[10pt,twocolumn]{article} (l.218), so it is always two columns, and its preloads are listed as the target engine
  * (XeTeX) runs it:
  * - fix-cm, flushend, etoolbox, iftex, textcase (l.217-223);
  * - siunitx [mode=match, reset-text-series=false, text-series-to-math=true] (l.250), graphicx, booktabs (l.251-252),
@@ -23,7 +23,7 @@ export default defineClass({
   id: 'class.jacow',
   name: "jacow",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [
     {"pkg": "fix-cm"}, {"pkg": "flushend"}, {"pkg": "etoolbox"}, {"pkg": "iftex"}, {"pkg": "textcase"},
     {"pkg": "siunitx", "options": ["mode=match", "reset-text-series=false", "text-series-to-math=true"]},

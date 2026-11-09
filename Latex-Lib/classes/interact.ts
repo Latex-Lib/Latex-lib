@@ -28,9 +28,9 @@ export default defineClass({
   id: 'class.interact',
   name: "interact",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [{"pkg": "amsmath"}, {"pkg": "amssymb"}, {"pkg": "amsfonts"}, {"pkg": "amsbsy"}, {"pkg": "amsthm"}, {"pkg": "booktabs"}, {"pkg": "epsfig"}, {"pkg": "graphicx"}, {"pkg": "rotating"}, {"pkg": "geometry", "options": ["textwidth=34pc", "textheight=650pt"]}],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:keywords", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:keywords", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\articletype", "cmd:\\name", "cmd:\\affil", "cmd:\\received", "env:abbreviations", "env:amscode", "env:jelcode", "env:pacscode", "cmd:\\tbl"],
   options: {},
   forbids: {
     technical: [

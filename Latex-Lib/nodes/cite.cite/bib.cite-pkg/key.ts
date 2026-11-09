@@ -8,6 +8,8 @@ export default defineKey(
     node: 'cite/cite',
     description:
       '\\cite{key}, several keys sorted and compressed by the cite package; \\citen for the bare number.',
+    // The kernel's \cite as bib.bibtex-bst, bib.cite-pkg and bib.thebibliography print it: the same LaTeX; the list's way (and loads) tells them apart.
+    writes: '\\cite{…}',
     ctan: ['cite'],
     features: ['numeric-citations', 'sorted-compressed'],
     params: {
@@ -17,6 +19,6 @@ export default defineKey(
     requires: [
       'pkg:cite',
     ],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

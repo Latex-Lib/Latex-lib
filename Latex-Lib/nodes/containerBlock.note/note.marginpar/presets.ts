@@ -13,12 +13,14 @@ export const PRESETS = {
   },
   reversed: {
     description: 'Notes in the opposite margin, \\reversemarginpar (the left margin on one-sided pages), ragged against the text.',
+    writes: '\\marginpar{…\\raggedleft {\\bfseries …\\par} …}; \\reversemarginpar',
     features: ['margin-note'],
     params: { side: 'reverse' },
     evidence: [solution('0222-sara-venkatraman-latex-templates', '80'), solution('0594-nwejm', '63')],
   },
   wide: {
     description: "A wide margin column for notes, \\marginparwidth 50mm where the margin holds it (else the wider of the class's column and the room its margin has), scriptsize text with no title.",
+    writes: '\\marginpar{…\\raggedright …}; \\setlength{\\marginparwidth}{…}',
     features: ['margin-note', 'small-type'],
     params: { width: '50mm', font: '\\scriptsize', title: false },
     evidence: [solution('0411-aanda', '80')],

@@ -8,6 +8,8 @@ export default defineKey(
     node: 'containerBlock/refContainer',
     description:
       "apacite: APA author-year citations and reference list, \\usepackage{apacite} ([natbibapa] for natbib's commands), \\bibliographystyle{apacite}, \\bibliography{\\jobname}. 18 templates.",
+    // The \LatexLib… once-guards around it (../node.ts) are the library's own, left out.
+    writes: '\\nocite{*} \\bibliographystyle{apacite} \\bibliography{\\jobname}',
     ctan: ['apacite'],
     features: ['author-year', 'external-tool'],
     params: {
@@ -63,6 +65,6 @@ export default defineKey(
     // branches pass, 0 of 750 over the seven reference-list ways and General's; e.g. amsart.A d327eaeae611b43e18160 result
     // 1e852e632d, branch b85bf847cdc291b269aa7, '.0 never shipped'). Flouest's own fix is O4. [OV3]
     gives: { footnotes: false },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

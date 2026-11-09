@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'yes',
+  targetEngine: 'yes',
   evidence: [ctan("booktabs"), { kind: 'manual', of: "booktabs", section: "Rule widths; Use of the commands (\\toprule, \\midrule, \\bottomrule, \\addlinespace)", url: 'https://ctan.org/pkg/booktabs' }],
 });

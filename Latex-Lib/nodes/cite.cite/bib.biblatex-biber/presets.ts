@@ -13,12 +13,14 @@ export const PRESETS = {
   },
   textual: {
     description: "biblatex's \\textcite{key}: Knuth [1] or Knuth (1984) as part of the sentence.",
+    writes: '\\textcite{…}',
     features: ['author-year'],
     params: { command: 'textcite' },
     evidence: [solution('0153-komacv', '57')],
   },
   footnote: {
     description: "biblatex's \\footcite{key}: the citation in a footnote.",
+    writes: '\\footcite{…}',
     features: [],
     params: { command: 'footcite' },
     evidence: [solution('0064-korogodin-nslreport', '77')],

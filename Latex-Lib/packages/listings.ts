@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'yes',
+  targetEngine: 'yes',
   evidence: [ctan("listings"), { kind: 'manual', of: "listings", section: "Package options and \\lstset keys (basicstyle, keywordstyle, numbers, frame, backgroundcolor, breaklines, columns, escapeinside)", url: 'https://ctan.org/pkg/listings' }],
 });

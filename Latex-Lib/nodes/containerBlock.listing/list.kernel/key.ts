@@ -8,6 +8,7 @@ export default defineKey(
     node: 'containerBlock/listing',
     description:
       "The kernel's lists: itemize, enumerate, description (data.latexStyle), nested by the items' indent, \\item[label] per item; the bullets (\\labelitemi, \\labelitemii) and numbers (\\labelenumi, \\labelenumii) redefined when asked. 520 templates.",
+    writes: '\\begin{itemize|enumerate|description} \\item … \\item[…] … \\end{itemize|enumerate|description}',
     ctan: ['latex-base'],
     features: ['numbered', 'custom-labels', 'lettered'],
     params: {
@@ -29,6 +30,6 @@ export default defineKey(
     // out a column too wide (vwcol > list > item: 26 of 222 branches passed, 180 overfull, 172.7pt in article), as D1 found for the
     // library's statements.
     needs: { paragraph: true },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

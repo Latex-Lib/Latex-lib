@@ -14,18 +14,21 @@ export const PRESETS = {
   },
   'space-between': {
     description: 'Paragraphs separated by space instead of indented, by the parskip package (\\usepackage{parskip}).',
+    writes: '\\hspace*{…}…; \\usepackage{parskip}',
     features: [],
     params: { separation: 'parskip' },
     evidence: [solution('0012-basic-academic-journal-article', '38'), solution('0014-daniel-wambua-cv', '36')],
   },
   'space-and-indent': {
     description: 'Space between paragraphs and an indent too (\\usepackage[skip=10pt plus1pt, indent=40pt]{parskip}).',
+    writes: '\\hspace*{…}…; \\usepackage[skip=…, indent=…]{parskip}',
     features: ['indented'],
     params: { separation: 'parskip', skip: '10pt plus1pt', indent: '40pt' },
     evidence: [solution('0026-exam-lite', '33')],
   },
   'no-indent': {
     description: 'No first-line indent and no space between paragraphs (\\setlength{\\parindent}{0pt}).',
+    writes: '\\hspace*{…}…; \\setlength{\\parindent}{…}\\setlength{\\parskip}{…}',
     features: [],
     params: { separation: 'lengths', indent: '0pt', skip: '0pt' },
     evidence: [solution('0018-fhj-script', '63'), solution('0006-gsemthesis', '53')],

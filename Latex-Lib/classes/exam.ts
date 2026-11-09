@@ -9,9 +9,9 @@ export default defineClass({
   id: 'class.exam',
   name: "exam",
   base: 'class.article',
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:questions", "env:parts", "env:choices", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:questions", "env:parts", "env:choices", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\firstpageheader", "cmd:\\gradetable", "cmd:\\pointtable", "cmd:\\addpoints", "env:solution", "env:solutionorbox", "env:solutionorlines", "env:solutionordottedlines", "cmd:\\runningheader", "cmd:\\printanswers"],
   options: {},
   forbids: {
     technical: [],

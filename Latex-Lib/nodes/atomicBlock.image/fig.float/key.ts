@@ -8,6 +8,7 @@ export default defineKey(
     node: 'atomicBlock/image',
     description:
       "float's [H]: the figure exactly where it is written, \\begin{figure}[H] … \\end{figure}; \\floatstyle{plain|plaintop|boxed|ruled} with \\restylefloat{figure} for the float's look. 88 templates.",
+    writes: '\\begin{figure}[H] \\centering \\includegraphics[width=…]{…} \\caption{…} \\label{…} \\end{figure}',
     ctan: ['float'],
     features: ['here', 'centered', 'captioned', 'scaled', 'ruled', 'framed'],
     params: {
@@ -48,6 +49,6 @@ export default defineKey(
         evidence: [{ kind: 'compile', cell: "run 41584963423 (GitHub, batch 1): book.A document d7a86ad42781a7f8f0544, result a3a4ce9a3b, l.151 \\end{SCfigure}, after fig.float@ruled's \\floatstyle{ruled}\\restylefloat{figure}; fig.floatrow@sidecap-outer in 14 pairs, 14 branches" }],
       },
     ],
-    zerotex: 'yes',
+    targetEngine: 'yes',
   }),
 );

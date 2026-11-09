@@ -13,6 +13,7 @@ export const PRESETS = {
   },
   'title-ref': {
     description: "The target's title, linked (\\nameref{label}), as tables of terms and cross-references to headings use it.",
+    writes: '\\nameref{…}',
     features: ['named-refs', 'linked'],
     params: { command: 'nameref' },
     evidence: [solution('0068-kaobook', '114')],

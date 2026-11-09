@@ -8,9 +8,10 @@ export default defineKey(
     node: 'paragraph/mathPara',
     description:
       'One line of display maths as written, with its \\label.',
+    writes: '… \\label{…}',
     ctan: ['latex-base'],
     features: [],
     presets: PRESETS,
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

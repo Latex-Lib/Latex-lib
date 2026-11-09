@@ -8,9 +8,10 @@ export default defineKey(
     node: 'paragraph/customLatexPara',
     description:
       'One line of raw LaTeX inside a raw block.',
+    writes: '… (one line of the author\'s LaTeX, unchanged)',
     ctan: ['latex-base'],
     features: [],
     presets: PRESETS,
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

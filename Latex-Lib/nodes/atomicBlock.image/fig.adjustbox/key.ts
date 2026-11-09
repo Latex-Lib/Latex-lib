@@ -8,6 +8,7 @@ export default defineKey(
     node: 'atomicBlock/image',
     description:
       'adjustbox: the image sized and placed by keys, \\adjustimage{width=…,center}{file}: width, max width or scale, fbox for a frame, bgcolor for a ground; in a figure float or alone. 35 templates.',
+    writes: '\\begin{figure}[…] \\adjustimage{width=…,center}{…} \\caption{…} \\label{…} \\end{figure}',
     ctan: ['adjustbox'],
     features: ['floating', 'here', 'centered', 'captioned', 'scaled', 'framed', 'background'],
     params: {
@@ -31,6 +32,6 @@ export default defineKey(
     // box (b9890eec60, article.A run: cols.vwcol@equal > General's amsthm statement > fig.adjustbox@max-width, l.312); @on-white fails
     // 0 of 497 directly under General's tcolorbox statement.
     needsWhen: [{ when: { float: true }, needs: { floats: true } }],
-    zerotex: 'yes',
+    targetEngine: 'yes',
   }),
 );

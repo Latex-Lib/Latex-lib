@@ -8,6 +8,7 @@ export default defineKey(
     node: 'atomicBlock/image',
     description:
       'rotating: the figure on its side on a page of its own, \\begin{sidewaysfigure} … \\end{sidewaysfigure} (figuresright or figuresleft fix which way), or only the image turned with \\rotatebox{angle}{…} in an ordinary figure. 59 templates.',
+    writes: '\\begin{sidewaysfigure} \\centering \\includegraphics[width=…]{…} \\caption{…} \\label{…} \\end{sidewaysfigure}',
     ctan: ['rotating'],
     features: ['rotated', 'floating', 'centered', 'captioned', 'scaled'],
     params: {
@@ -32,6 +33,6 @@ export default defineKey(
     // (2db0ada17e, article.A run: General's tcolorbox statement > fig.rotating@rotated-image, l.224; 230 of 497 directly under that
     // statement, 8 core pairs, the rest mostly images with no file).
     needs: { floats: true },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

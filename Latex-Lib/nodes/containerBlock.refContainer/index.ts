@@ -9,6 +9,12 @@ import way3 from './bib.natbib/handler.ts';
 import way4 from './bib.cite-pkg/handler.ts';
 import way5 from './bib.apacite/handler.ts';
 import way6 from './bib.thebibliography/handler.ts';
+import w_bib_class_bst from './bib.class-bst/handler.ts';
+import w_bib_gbt7714 from './bib.gbt7714/handler.ts';
+import w_bib_mdpi from './bib.mdpi/handler.ts';
+import w_bib_named from './bib.named/handler.ts';
+import w_bib_tfapastyle from './bib.tfapastyle/handler.ts';
+import w_bib_tikzposter_block from './bib.tikzposter-block/handler.ts';
 
 export type Handler = (params?: { readonly [name: string]: unknown }) => Realization;
 
@@ -20,4 +26,10 @@ export const HANDLERS: { readonly [way: string]: Handler } = {
   'bib.cite-pkg': way4,
   'bib.apacite': way5,
   'bib.thebibliography': way6,
+  'bib.class-bst': w_bib_class_bst,
+  'bib.gbt7714': w_bib_gbt7714,
+  'bib.mdpi': w_bib_mdpi,
+  'bib.named': w_bib_named,
+  'bib.tfapastyle': w_bib_tfapastyle,
+  'bib.tikzposter-block': w_bib_tikzposter_block,
 };

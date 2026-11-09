@@ -19,6 +19,7 @@ export const PRESETS = {
   },
   'rotated-image': {
     description: 'Only the image turned, \\rotatebox{90}{\\includegraphics…}, in an ordinary figure float with an upright caption.',
+    writes: '\\begin{figure}[…] \\centering \\rotatebox{90}{\\includegraphics[width=…]{…}} \\caption{…} \\label{…} \\end{figure}',
     features: ['rotated', 'floating', 'centered', 'captioned', 'scaled'],
     params: { turn: 'image', angle: 90 },
     evidence: [solution('0072-beamertheme-gotham', '49'), solution('0063-slidenotes', '43')],

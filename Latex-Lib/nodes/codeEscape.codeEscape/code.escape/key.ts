@@ -8,9 +8,10 @@ export default defineKey(
     node: 'codeEscape/codeEscape',
     description:
       "LaTeX escaped from code, between Flouest's escape markers; the code way prints it its own way (listings: between (*@ and @*)).",
+    writes: '⟨U+E000⟩…⟨U+E001⟩',
     ctan: ['listings'],
     features: [],
     presets: PRESETS,
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

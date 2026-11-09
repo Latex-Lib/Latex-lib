@@ -9,9 +9,9 @@ export default defineClass({
   id: 'class.a0poster',
   name: "a0poster",
   base: 'class.article',
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\veryHuge", "cmd:\\VeryHuge", "cmd:\\VERYHuge"],
   options: {},
   forbids: {
     technical: [],

@@ -13,6 +13,6 @@ export default definePackage({
   ],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("sectsty")],
 });

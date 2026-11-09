@@ -7,6 +7,7 @@ import { manual, solution } from '../../evidence.ts';
 export const PRESETS = {
   apa: {
     description: 'APA author-year citations and reference list, \\bibliographystyle{apacite}, the list under its own heading.',
+    writes: '\\nocite{*} \\bibliographystyle{apacite} \\bibliography{\\jobname}; \\AtBeginDocument{\\providecommand{\\refname}{}\\renewcommand{\\refname}{…}}',
     features: ['author-year', 'external-tool'],
     params: { heading: 'References' },
     evidence: [solution('0469-latex-brochure', '67')],

@@ -13,6 +13,7 @@ export const PRESETS = {
   },
   'inkscape-text': {
     description: "The SVG's text kept as Inkscape draws it, not set by LaTeX (inkscapelatex=false), files from their own folder (\\svgpath).",
+    writes: '\\begin{figure}[…] \\centering \\includesvg[width=…,inkscapelatex=false]{…} \\caption{…} \\label{…} \\end{figure}; \\svgpath{{…/}}',
     features: ['vector-graphics', 'floating', 'centered', 'captioned', 'scaled'],
     params: { latexText: false, svgPath: 'images/vectors' },
     evidence: [solution('0475-alexpovel-latex-cookbook', '90')],

@@ -13,12 +13,14 @@ export const PRESETS = {
   },
   ruled: {
     description: 'Two-column pages with a rule between the columns (\\columnseprule 0.4pt).',
+    writes: '\\LibColsSave \\setlength{\\columnsep}{…} \\setlength{\\columnseprule}{…} \\twocolumn … \\LibColsBack',
     features: ['page-columns', 'page-break-before', 'column-rule'],
     params: { rule: '0.4pt' },
     evidence: [solution('0031-nhatkhangcs-overleaf-comments', '80')],
   },
   'stay-two': {
     description: 'Two columns from the block on, without returning to one (no \\onecolumn after it).',
+    writes: '\\setlength{\\columnsep}{…} \\twocolumn …',
     features: ['page-columns', 'page-break-before'],
     params: { returnToOne: false },
     evidence: [solution('0031-nhatkhangcs-overleaf-comments', '43')],

@@ -2,7 +2,7 @@
  * code.minted: \begin{minted}{language} … \end{minted}, highlighted by
  * Pygments; \usemintedstyle{…} and \setminted{frame, fontsize, linenos,
  * breaklines, bgcolor, autogobble, tabsize}. Needs shell escape and Python,
- * which ZeroTeX-NG does not have.
+ * which the target engine does not have.
  * CTAN: https://ctan.org/pkg/minted
  */
 import { withDefaults } from '../../../schema/params.ts';

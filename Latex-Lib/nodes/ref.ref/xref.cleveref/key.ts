@@ -8,6 +8,7 @@ export default defineKey(
     node: 'ref/ref',
     description:
       "cleveref: \\cref{label} (\\Cref at a sentence start), the target's kind and number in words (fig. 2); the options capitalise, noabbrev and nameinlink; loaded after hyperref. 48 templates.",
+    writes: '\\cref{…}',
     ctan: ['cleveref'],
     features: ['named-refs', 'linked', 'capitalised'],
     params: {
@@ -27,6 +28,6 @@ export default defineKey(
     loadOrder: [
       { after: 'hyperref', reason: 'cleveref must come after hyperref' },
     ],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

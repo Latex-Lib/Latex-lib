@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [["outercaption", "innercaption", "leftcaption", "rightcaption"]],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("sidecap"), { kind: 'manual', of: "sidecap", section: "SCfigure and SCtable; package options", url: 'https://ctan.org/pkg/sidecap' }],
 });

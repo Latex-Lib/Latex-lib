@@ -35,4 +35,23 @@ export const PRESETS = {
     params: { citeStyle: 'super', brackets: 'square' },
     evidence: [solution('0005-cococo2000-ict-beamer', '41')],
   },
+  // The AISTATS sample's natbib lines (commented out there, as the style asks of an author who uses natbib), the list kept at the
+  // style's own \subsubsection* level: Source/0794-aistats/sample_paper.tex l.27-33; supplement.tex l.18-24 the same.
+  aistats: {
+    description: 'AISTATS: author-year citations in round brackets with apalike ([round]{natbib}, \\bibliographystyle{apalike}), the list headed References at the third level (\\renewcommand{\\bibsection}{\\subsubsection*{\\bibname}}).',
+    writes: '\\renewcommand{\\bibsection}{\\subsubsection*{\\bibname}} \\nocite{*} \\bibliographystyle{apalike} \\bibliography{\\jobname}',
+    features: ['author-year', 'external-tool'],
+    params: { citeStyle: 'authoryear', brackets: 'round', bst: 'apalike', heading: 'References', bibsection: '\\subsubsection*{\\bibname}' },
+    evidence: [{ kind: 'source', file: 'Latex Related Research/Latex-lib-main/Source/0794-aistats/sample_paper.tex', line: '27-33' }, { kind: 'source', file: 'Latex Related Research/Latex-lib-main/Source/0794-aistats/aistats2026.sty', line: '482-483 (thebibliography heads its list \\subsubsection*{\\refname})' }, { kind: 'compile', reproducer: 'unit 46 (2026-11-07), ZeroTeX-NG through class-examples/typeset-dir.ts: scratchpad build/work/bib-ext/natbib-aistats/main.tex under article with aistats2026.sty [preprint] (copied from Source/0794-aistats; the pinned aistats2027.sty is not in this checkout), ok, the .bbl read, References at \\subsubsection*' }],
+  },
+  // An IEEE paper that cites with natbib: numbers in square brackets, comma separated and sorted, not compressed (the IEEE Reference
+  // Guide writes ranges out), with IEEEtran's natbib-compatible IEEEtranN: Source/0823-latextemplates-ieee-enhanced/paper.tex l.228-235,
+  // 1166-1167 (its DOI-extended copy IEEEtranN-doi, not on CTAN; IEEEtranN is, in the IEEEtran bundle).
+  'ieee-natbib': {
+    description: 'IEEE numbers with natbib: [square, comma, numbers, sort]{natbib} and \\bibliographystyle{IEEEtranN}.',
+    writes: '\\nocite{*} \\bibliographystyle{IEEEtranN} \\bibliography{\\jobname}',
+    features: ['numeric-citations', 'external-tool'],
+    params: { brackets: 'square', sort: 'sort', separator: 'comma', bst: 'IEEEtranN' },
+    evidence: [{ kind: 'source', file: 'Latex Related Research/Latex-lib-main/Source/0823-latextemplates-ieee-enhanced/paper.tex', line: '228-235, 1166-1167' }, { kind: 'compile', reproducer: 'unit 46 (2026-11-07), ZeroTeX-NG through class-examples/typeset-dir.ts: scratchpad build/work/bib-ext/natbib-ieee/main.tex under article, ok, the .bbl read' }],
+  },
 } as const satisfies { readonly [name: string]: Preset };

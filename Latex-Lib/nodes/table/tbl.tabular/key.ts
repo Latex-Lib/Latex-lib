@@ -8,6 +8,7 @@ export default defineKey(
     node: 'table',
     description:
       "The kernel's tabular in a table float: \\begin{tabular}{|p{…}|p{…}|} with \\hline between rows, \\caption and \\label above (General's grid); or the same wrapping columns set left, centred or right (>{\\centering\\arraybackslash}p{…}, array), rules only where asked, \\arraystretch, \\tabcolsep and a size inside the float; a spanning cell a paragraph of its columns' share. 549 templates.",
+    writes: '\\begin{table}[tbp] \\centering \\caption{…} \\label{…} \\begin{tabular}{|p{…}|p{…}|} \\hline … & … \\\\ \\hline … \\\\ \\hline \\end{tabular} \\end{table}',
     ctan: ['latex-base'],
     features: ['floating', 'captioned', 'vertical-rules', 'horizontal-rules'],
     params: {
@@ -32,6 +33,6 @@ export default defineKey(
     needs: { floats: true },
     // The table is itself a float (GENERAL_GIVES table): no float below it.
     gives: { floats: false },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

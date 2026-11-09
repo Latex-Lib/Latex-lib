@@ -9,9 +9,9 @@ import { ctan } from '../schema/minimal.ts';
 export default defineClass({
   id: 'class.scrlttr2',
   name: "scrlttr2",
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [],
-  defines: [],
+  defines: ["env:letter", "cmd:\\opening", "cmd:\\closing", "cmd:\\setkomavar", "cmd:\\KOMAoptions", "cmd:\\setkomafont"],
   options: {},
   forbids: {
     technical: [],

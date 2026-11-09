@@ -8,6 +8,8 @@ export default defineKey(
     node: 'cite/cite',
     description:
       "The kernel's \\cite{key}, its label from the .bst style, tied to the word before it when asked.",
+    // The kernel's \cite as bib.bibtex-bst, bib.cite-pkg and bib.thebibliography print it: the same LaTeX; the list's way (and loads) tells them apart.
+    writes: '\\cite{…}',
     ctan: ['latex-base'],
     features: ['numeric-citations'],
     params: {
@@ -15,6 +17,6 @@ export default defineKey(
       tie: { type: 'boolean', default: false, description: 'a tie before the citation (~\\cite)' },
     },
     presets: PRESETS,
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

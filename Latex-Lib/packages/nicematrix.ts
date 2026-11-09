@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("nicematrix"), { kind: 'manual', of: "nicematrix", section: "4 NiceTabular; 5.3 hvlines; 6.2 \\CodeBefore; 8.3 X columns; \\Block", url: 'https://ctan.org/pkg/nicematrix' }],
 });

@@ -36,7 +36,7 @@ export default defineClass({
   id: 'class.copernicus',
   name: "copernicus",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [
     {"pkg": "etoolbox"}, {"pkg": "iftex"}, {"pkg": "ulem", "options": ["normalem"]}, {"pkg": "fontenc", "options": ["T5", "T3", "T1"]}, {"pkg": "textcomp", "options": ["warn"]}, {"pkg": "fontawesome5"},
     {"pkg": "upquote"}, {"pkg": "regexpatch"}, {"pkg": "babel"}, {"pkg": "array"}, {"pkg": "tabularx"}, {"pkg": "graphicx"}, {"pkg": "color"}, {"pkg": "amssymb"},
@@ -44,7 +44,7 @@ export default defineClass({
     {"pkg": "float"}, {"pkg": "algorithm"}, {"pkg": "caption"}, {"pkg": "listings"}, {"pkg": "subfloat"}, {"pkg": "natbib", "options": ["authoryear", "round"]}, {"pkg": "rotating"},
     {"pkg": "lineno", "options": ["mathlines", "modulo"]}, {"pkg": "tikz"}, {"pkg": "times"}, {"pkg": "pifont"},
   ],
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\Author", "cmd:\\affil", "cmd:\\runningtitle", "cmd:\\runningauthor", "env:acknowledgements", "cmd:\\authorcontribution", "cmd:\\competinginterests", "cmd:\\specialsection", "cmd:\\noappendix", "cmd:\\theolds", "cmd:\\introduction", "cmd:\\conclusions", "cmd:\\tophline", "cmd:\\middlehline", "cmd:\\bottomhline", "cmd:\\firstpage"],
   options: {},
   forbids: {
     technical: [

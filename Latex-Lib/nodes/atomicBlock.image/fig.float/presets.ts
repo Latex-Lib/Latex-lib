@@ -13,12 +13,14 @@ export const PRESETS = {
   },
   ruled: {
     description: "float's ruled style: a rule above the caption, which goes on top, and a rule under the figure (\\floatstyle{ruled}\\restylefloat{figure}), placed exactly here.",
+    writes: '\\begin{figure}[H] \\centering \\includegraphics[width=…]{…} \\caption{…} \\label{…} \\end{figure}; \\floatstyle{ruled}\\restylefloat{figure}',
     features: ['here', 'captioned', 'ruled', 'scaled'],
     params: { style: 'ruled' },
     evidence: [manual('float', 'float styles: \\floatstyle, \\restylefloat'), solution('0003-ucsmonograph', '73')],
   },
   boxed: {
     description: "float's boxed style: the figure framed, the caption below the frame (\\floatstyle{boxed}).",
+    writes: '\\begin{figure}[H] \\centering \\includegraphics[width=…]{…} \\caption{…} \\label{…} \\end{figure}; \\floatstyle{boxed}\\restylefloat{figure}',
     features: ['here', 'captioned', 'framed', 'scaled'],
     params: { style: 'boxed' },
     evidence: [manual('float', 'float styles: \\floatstyle, \\restylefloat')],

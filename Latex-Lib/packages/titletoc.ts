@@ -8,6 +8,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("titletoc"), { kind: 'manual', of: "titletoc", section: "titlesec manual, 6 Contents: the titletoc package", url: 'https://ctan.org/pkg/titletoc' }],
 });

@@ -24,6 +24,7 @@ export const PRESETS = {
   },
   'outer-raised': {
     description: 'The image at the outer edge of two-sided pages (o), pulled up 4.5mm against the paragraph above.',
+    writes: '\\begin{wrapfigure}{o}{…} \\centering \\vspace{-…} \\includegraphics[width=\\linewidth]{…} \\caption{…} \\label{…} \\end{wrapfigure}',
     features: ['wrapped', 'captioned', 'scaled'],
     params: { side: 'o', width: '40mm', raise: '4.5mm' },
     evidence: [solution('0166-retosmatematicos', '63')],

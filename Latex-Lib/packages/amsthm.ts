@@ -7,6 +7,6 @@ export default definePackage({
   exclusive: [],
   loadOrder: [{ before: 'thmtools', reason: 'thmtools builds on amsthm' }],
   defines: ["env:proof", "cmd:\\qedsymbol"],
-  zerotex: 'yes',
+  targetEngine: 'yes',
   evidence: [{ kind: 'compile', cell: 'testing-pipeline/out/profiles/llncs.A.json' }],
 });

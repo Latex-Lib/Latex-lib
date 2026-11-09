@@ -13,12 +13,14 @@ export const PRESETS = {
   },
   'by-section': {
     description: 'Equations numbered within the section, (2.1) (\\numberwithin{equation}{section}).',
+    writes: '\\begin{align} … \\\\ … \\label{…} \\end{align}; \\numberwithin{equation}{section}',
     features: ['numbered', 'numbered-within', 'aligned', 'multiline'],
     params: { numberWithin: 'section' },
     evidence: [solution('0030-seu-ml-assign', '35'), solution('0267-ou-tma', '45')],
   },
   breakable: {
     description: 'Multi-row displays allowed to break across pages (\\allowdisplaybreaks).',
+    writes: '\\begin{align} … \\\\ … \\label{…} \\end{align}; \\allowdisplaybreaks',
     features: ['numbered', 'aligned', 'multiline', 'breakable'],
     params: { allowBreaks: 4 },
     evidence: [solution('0003-ucsmonograph', '71'), solution('0020-koma-script', '74'), solution('0088-tinoryj-uestc-thesis-latex-template', '71')],

@@ -6,6 +6,8 @@ import way0 from './xref.kernel/handler.ts';
 import way1 from './xref.hyperref/handler.ts';
 import way2 from './xref.cleveref/handler.ts';
 import way3 from './xref.varioref/handler.ts';
+import w_xref_class_native from './xref.class-native/handler.ts';
+import w_xref_upref from './xref.upref/handler.ts';
 
 export type Handler = (params?: { readonly [name: string]: unknown }) => Realization;
 
@@ -14,4 +16,6 @@ export const HANDLERS: { readonly [way: string]: Handler } = {
   'xref.hyperref': way1,
   'xref.cleveref': way2,
   'xref.varioref': way3,
+  'xref.class-native': w_xref_class_native,
+  'xref.upref': w_xref_upref,
 };

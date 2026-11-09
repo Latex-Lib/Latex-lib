@@ -9,9 +9,10 @@ import { ctan } from '../schema/minimal.ts';
 export default defineClass({
   id: 'class.amsbook',
   name: "amsbook",
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "amsmath"}, {"pkg": "amsthm"}],
-  defines: ["counter:chapter", "counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:proof", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:chapter", "counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:proof", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\address", "cmd:\\email", "cmd:\\subjclass", "cmd:\\keywords", "cmd:\\frontmatter", "cmd:\\backmatter", "cmd:\\mainmatter"],
+  heldByMaketitle: [{ resource: 'env:abstract', reason: "amsbook's abstract environment stores its text for \\maketitle: written with no \\maketitle after it, the abstract is on no page", evidence: [{ kind: 'compile', reproducer: "\\documentclass{amsbook} \\begin{document} \\begin{abstract}Abstract text.\\label{absmark}\\end{abstract} \\section{One}Body. \\end{document}: absmark is not in main.aux; with \\title, \\author and \\maketitle after the abstract it is (ZeroTeX-NG, the studio's measurement, 2026-10-31; found as Lab Report 2's missing abstract under revtex4-2)" }] }],
   options: {},
   forbids: {
     technical: [],

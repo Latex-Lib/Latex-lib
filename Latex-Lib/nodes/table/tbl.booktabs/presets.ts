@@ -13,18 +13,21 @@ export const PRESETS = {
   },
   'left-columns': {
     description: 'The booktabs rules with left-aligned columns (ll), as KOMA\'s guide sets its tables, here ragged-right p-columns sharing the line so a cell wraps.',
+    writes: '\\begin{tabular}{>{\\raggedright\\arraybackslash}p{…}>{\\raggedright\\arraybackslash}p{…}} \\toprule … \\\\ \\midrule … \\\\ \\bottomrule \\end{tabular}',
     features: ['floating', 'captioned', 'booktabs-rules'],
     params: { colspec: 'l' },
     evidence: [solution('0020-koma-script', '66'), solution('0240-ksp-thesis', '52')],
   },
   spaced: {
     description: 'Space between every body row (\\addlinespace), the booktabs rules, a smaller size.',
+    writes: '\\small \\begin{tabular}{p{…}p{…}} \\toprule … \\\\ \\midrule … \\\\ \\addlinespace … \\\\ \\bottomrule \\end{tabular}',
     features: ['floating', 'captioned', 'booktabs-rules'],
     params: { rowSpace: true, fontSize: '\\small' },
     evidence: [manual('booktabs', 'the commands: \\addlinespace')],
   },
   heavy: {
     description: 'Heavier top and bottom rules (\\heavyrulewidth 1pt) over a light 0.5pt mid rule.',
+    writes: '\\begin{tabular}{p{…}p{…}} \\toprule … \\\\ \\midrule … \\\\ \\bottomrule \\end{tabular}; \\setlength{\\heavyrulewidth}{…} \\setlength{\\lightrulewidth}{…}',
     features: ['floating', 'captioned', 'booktabs-rules'],
     params: { heavyRule: '1pt', lightRule: '0.5pt' },
     evidence: [manual('booktabs', 'rule widths: \\heavyrulewidth, \\lightrulewidth')],

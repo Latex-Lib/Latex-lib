@@ -30,7 +30,7 @@ export default defineClass({
   id: 'class.emulateapj',
   name: "emulateapj",
   base: 'class.aastex',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [
     // revtex4.cls l.4254 (url), l.5480 (natbib with sort&compress; emulateapj then resets \NAT@sort and \NAT@cmprs, l.184-187, and
     // switches to author-year, l.194-195), l.6050 (revsymb); emulateapj.cls l.189-192 and l.206 (latexsym, graphicx, amssymb,
@@ -40,7 +40,7 @@ export default defineClass({
   ],
   // revtex4.cls l.5154-5159 (part to subparagraph; no chapter), l.4621 (abstract, kept for \maketitle), l.4704 (\maketitle),
   // l.5335/5366 (figure, table); emulateapj.cls l.749 (appendix, renewed), revtex4's \appendix and \tableofcontents.
-  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "env:appendix", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "env:appendix", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\affil", "cmd:\\altaffilmark", "cmd:\\altaffiltext", "cmd:\\shorttitle", "cmd:\\shortauthors", "cmd:\\keywords", "cmd:\\slugcomment"],
   options: {},
   forbids: {
     technical: [
@@ -62,11 +62,16 @@ export default defineClass({
       { pkg: "arydshln", reason: "arydshln wraps \\@array, \\@mkpream, \\endarray and \\endtabular when it loads, and at \\begin{document} revtex4 lets them to its own copies (\\switch@array or \\switch@tabular, revtex4.cls l.738, 747, 861-937), so its wrappers never run and \\hline stops in \\adl@hline, as under revtex4-2 and aastex701 (0 of 137 branches)", evidence: [{ kind: 'source', file: RTX4, line: '738, 747, 861-937' }] },
       { pkg: "nicematrix", reason: "nicematrix loads array (see array) and refuses REVTeX ('nicematrix is incompatible with REVTeX', class.revtex4-2)", evidence: [{ kind: 'source', file: RTX4, line: '738, 861-937' }] },
       { pkg: "awesomebox", reason: "awesomebox loads array, which makes revtex4 install its array copies at \\begin{document} (see array): under revtex4-2 the same made p-column tables in its documents stop at 'Extra \\or' or hang (19 of the 20 revtex no-log documents, README's revtex4-2-aps note)", evidence: [{ kind: 'source', file: RTX4, line: '738, 861-937' }] },
+      // caption itself belongs here too (any way that loads caption or ltcaption), but packages/ has no facts for it yet and no
+      // way loads it directly: sidenotes is the one way that brings it in.
+      { pkg: "sidenotes", reason: "sidenotes loads caption, and with the class's longtable loaded caption loads ltcaption (v1.4c), which defines the environment longtable*; at \\begin{document} revtex4 patches longtable ('Patching unrecognized longtable package') with its own \\newenvironment{longtable*}, which stops at \"LaTeX Error: Command \\longtable* already defined\" (l.101 \\begin{document}): the whole document fails", evidence: [{ kind: 'compile', cell: "class-examples: Latex Related Research/Latex-Template-Examples/_results/class.emulateapj.log (2026-11-06), note.sidenotes: ltcaption v1.4c loaded at log l.279-280, then \"! LaTeX Error: Command \\longtable* already defined.\" at l.101 \\begin{document}" }, { kind: 'source', file: EAPJ, line: '189-192, 206 (latexsym, graphicx, amssymb, longtable, epsf)' }] },
+      { pkg: "endnotes", reason: "\\theendnotes sets its heading with \\enoteheading, \\section*{\\notesname\\@mkboth{\\MakeUppercase{\\notesname}}{...}}, and revtex4's \\@sect, as emulateapj sets it ({\\centering\\scshape\\apjsecfont}), uppercases the title through textcase: the \\@mkboth inside it stops at \"Use of \\@citex doesn't match its definition\" (in \\@uclcnotmath), then \"Argument of \\@sect has an extra }\" and \"Paragraph ended before \\@sect was complete\", at \\end{document}, where fn.endnotes prints them (\\AtEndDocument{\\theendnotes})", evidence: [{ kind: 'compile', cell: "class-examples: Latex Related Research/Latex-Template-Examples/_results/class.emulateapj.log (2026-11-06), fn.endnotes: \"! Use of \\@citex doesn't match its definition.\" in \\@uclcnotmath, then \"! Argument of \\@sect has an extra }.\" and \"! Paragraph ended before \\@sect was complete.\", all at l.288 \\end{document}" }, { kind: 'source', file: 'Latex-Lib/nodes/footnoteAnchor.footnoteAnchor/fn.endnotes/handler.ts', line: '18' }] },
     ],
     policy: [],
-    names: [
-      { name: "env:abstract", reason: "revtex4's abstract is kept in \\absbox for \\maketitle and checks \\aftermaketitle@chk (revtex4.cls l.4621-4622, 5065), \\maketitle lets itself to \\relax after its first use (l.4704-4717), and emulateapj's first \\section calls \\maketitle itself (emulateapj.cls l.655-662): an abstract after a title or a section stops or never prints, as class.revtex4-2's abs.kernel deny records for the same front matter", evidence: [{ kind: 'source', file: RTX4, line: '4621-4622, 4704-4717, 5065' }, { kind: 'source', file: EAPJ, line: '655-662' }] },
-    ],
+    // Not env:abstract (2026-11-07): revtex4 keeps the abstract in \\absbox for \\maketitle, which the first \\section runs
+    // (l.655-662), so an abstract written before it, as abs.front-held writes it, typesets (ZeroTeX-NG, with \\affil and
+    // \\altaffiltext); the abstract ways that write it after \\maketitle stay refused by their own denies of class.aastex.
+    names: [],
   },
   // emulateapj.cls l.334-335: \textwidth 7.1in (513.11743pt, as aastex701), \columnsep 0.3125in; two columns, 10pt (l.165).
   layout: { columns: 2, textwidth: "513.11743pt", fontsize: "10pt" },

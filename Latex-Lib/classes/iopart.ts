@@ -21,9 +21,9 @@ import { defineClass } from '../schema/class.ts';
 export default defineClass({
   id: 'class.iopart',
   name: "iopart",
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [],
-  defines: ["counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\address", "cmd:\\ead", "cmd:\\submitto", "cmd:\\eads", "cmd:\\mailto", "cmd:\\ioptwocol", "env:indented", "cmd:\\br", "cmd:\\mr"],
   options: {},
   forbids: {
     technical: [

@@ -32,7 +32,7 @@ export default defineClass({
   id: 'class.jss',
   name: "jss",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [
     {"pkg": "graphicx"}, {"pkg": "xcolor"}, {"pkg": "fancyvrb"}, {"pkg": "fontenc", "options": ["T1"]}, {"pkg": "upquote"},
     {"pkg": "lmodern"}, {"pkg": "natbib", "options": ["authoryear", "round", "longnamesfirst"]}, {"pkg": "hyperref"},

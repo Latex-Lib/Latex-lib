@@ -8,6 +8,7 @@ export default defineKey(
     node: 'containerBlock/columns',
     description:
       'paracol: parallel columns side by side, \\begin{paracol}{2} … \\switchcolumn … \\end{paracol}, the blocks (split at blank lines outside every environment and group) shared out across the columns in order; \\columnratio for unequal widths, \\columnseprule and \\colseprulecolor for a rule, all set in the preamble. 14 templates.',
+    writes: '\\begin{paracol}{…} … \\switchcolumn … \\end{paracol}',
     ctan: ['paracol'],
     features: ['parallel-columns', 'unequal-widths', 'column-rule'],
     params: {
@@ -26,6 +27,6 @@ export default defineKey(
       // Its solo branch under setup B (twocolumn): article.B, acmart-manuscript.B, amsart.B, llncs.B, memoir.B and scrartcl.B all stop there.
       evidence: [{ kind: 'compile', cell: 'testing-pipeline/out/results/c8aa1715076e (solo, article.B)' }, { kind: 'compile', cell: 'testing-pipeline/out/results/c2c1a0b87b62 (solo, acmart-manuscript.B)' }],
     },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

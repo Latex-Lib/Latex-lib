@@ -8,6 +8,7 @@ export default defineKey(
     node: 'table',
     description:
       'longtable: a table that breaks across pages, \\begin{longtable}{…} with its \\caption as the first row, the header row repeated (\\endfirsthead, \\endhead), a "continued" line at each break (\\endfoot); p-columns sharing the line (set left, centred or right with array), a spanning cell a paragraph of its columns\' share; \\hline or booktabs rules; not a float, so not in columns, and in a box only where the box itself breaks across pages (a breakable tcolorbox or mdframed that is not inside another box). 107 templates.',
+    writes: '\\begin{longtable}{|p{…}|p{…}|} \\caption{…}\\label{…} \\\\ \\hline … \\\\ \\hline \\endfirsthead \\hline … \\\\ \\hline \\endhead \\hline \\endlastfoot … \\\\ \\end{longtable}',
     ctan: ['longtable'],
     features: ['page-breaking', 'captioned', 'vertical-rules', 'horizontal-rules', 'booktabs-rules'],
     params: {
@@ -66,6 +67,6 @@ export default defineKey(
     needs: { breakable: true, columns: false, maxBoxDepth: 1 },
     // Its cells are boxes (a float in one is 'Not in outer par mode'), as GENERAL_GIVES says of General's tables.
     gives: { floats: false },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

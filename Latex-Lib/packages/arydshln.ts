@@ -34,6 +34,6 @@ export default definePackage({
     },
   ],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("arydshln"), { kind: 'manual', of: "arydshln", section: "2 Usage: \\hdashline, \\cdashline, : and ;{dash/gap}, \\dashlinedash, \\dashlinegap", url: 'https://ctan.org/pkg/arydshln' }],
 });

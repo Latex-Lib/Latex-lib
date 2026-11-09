@@ -8,6 +8,7 @@ export default defineKey(
     node: 'paragraph/lstParagraph',
     description:
       "A list item: the line Flouest's list ways read, \\<level>[label] text, the level from the item's indent; the list prints it as \\item[label] text.",
+    writes: '\\<level>[{…}] …',
     ctan: ['latex-base'],
     features: [],
     presets: PRESETS,
@@ -19,6 +20,6 @@ export default defineKey(
     // d4a6ab8630456acbcdcf5 result 147722ffaa l.199).
     // General's item has the same need (`GENERAL_NEEDS`). [b22 O7]
     needs: { paragraph: true },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

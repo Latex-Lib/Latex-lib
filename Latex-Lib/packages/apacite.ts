@@ -42,6 +42,6 @@ export default definePackage({
   ],
   loadOrder: [],
   defines: [],
-  zerotex: 'untested',
+  targetEngine: 'untested',
   evidence: [ctan("apacite"), { kind: 'manual', of: "apacite", section: "options natbibapa, nocitation; citation commands \\cite, \\citeA, \\citeNP", url: 'https://ctan.org/pkg/apacite' }],
 });

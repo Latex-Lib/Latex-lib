@@ -13,6 +13,7 @@ export const PRESETS = {
   },
   colored: {
     description: 'Headings in an accent colour, each level its own size (\\sectionfont{\\color{…}\\Large}, \\subsectionfont{\\color{…}\\large}).',
+    writes: '\\section[…]{…} \\label{…}; \\sectionfont{…}',
     features: ['colored', 'bold-head'],
     params: { font: '', color: 'blue!60!black', scale: 'kernel' },
     evidence: [solution('0722-bitkeks-theolog-ss2017', '47'), solution('0368-sjijon-tex-templates', '59'), solution('0027-schooldocs', '65')],

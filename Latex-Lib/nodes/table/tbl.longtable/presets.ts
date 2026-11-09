@@ -13,12 +13,14 @@ export const PRESETS = {
   },
   booktabs: {
     description: 'The long table with booktabs rules and left-aligned columns (ragged-right p-columns sharing the line, so a cell wraps), the header repeated, "continued" at the foot of each broken page.',
+    writes: '\\begin{longtable}{…} \\caption{…}\\label{…} \\\\ \\toprule … \\\\ \\midrule \\endfirsthead … \\endhead \\midrule … \\endfoot \\bottomrule \\endlastfoot … \\end{longtable}',
     features: ['page-breaking', 'captioned', 'booktabs-rules'],
     params: { rules: 'booktabs', colspec: 'l', vrules: false, continued: true },
     evidence: [solution('0020-koma-script', '66'), manual('longtable', 'heads and feet: \\endfirsthead, \\endhead, \\endfoot, \\endlastfoot')],
   },
   plain: {
     description: 'Rows only, no repeated header and no rules: a list that may run over pages.',
+    writes: '\\begin{longtable}{p{…}p{…}} \\caption{…}\\label{…} \\\\ \\endfirsthead \\endlastfoot … & … \\\\ \\end{longtable}',
     features: ['page-breaking', 'captioned'],
     params: { rules: 'none', vrules: false, repeatHeader: false },
     evidence: [solution('0104-sjtutex', '94')],

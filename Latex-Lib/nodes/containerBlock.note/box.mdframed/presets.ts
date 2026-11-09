@@ -19,12 +19,14 @@ export const PRESETS = {
   },
   'left-bar': {
     description: 'Only a coloured line at the left, a tinted back and coloured text (hidealllines, leftline).',
+    writes: '\\begin{mdframed}[linecolor=…, backgroundcolor=…, fontcolor=…, linewidth=…, hidealllines=true, leftline=true] … \\end{mdframed}',
     features: ['left-rule', 'background', 'colored', 'breakable'],
     params: { lines: 'left', backgroundColor: 'tone!10', lineColor: 'tone', lineWidth: '3pt', fontColor: 'tone', title: false },
     evidence: [solution('0021-elife', '57')],
   },
   shadowed: {
     description: 'A tinted box with 10pt round corners, a 1pt coloured line and a drop shadow (TikZ).',
+    writes: '\\begin{mdframed}[frametitle={…}, …, roundcorner=…, shadow=true] … \\end{mdframed}; \\usetikzlibrary{shadows}',
     features: ['framed', 'background', 'rounded-corners', 'shadow', 'colored', 'breakable'],
     params: { method: 'tikz', backgroundColor: 'tone!10', lineColor: 'tone', lineWidth: '1pt', roundCorner: '10pt', shadow: true },
     evidence: [solution('0315-valentjn-uni-stuttgart-phdthesis-templat', '102')],

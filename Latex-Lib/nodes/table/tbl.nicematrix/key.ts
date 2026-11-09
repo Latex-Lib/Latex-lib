@@ -8,6 +8,7 @@ export default defineKey(
     node: 'table',
     description:
       "A key-value table: tabularray's \\begin{tblr}{colspec={XX}, hspan=minimal, hlines, vlines} (hline{1,Z}={1pt}, row{1}={font=\\bfseries}, row{even}={bg=…}; spans by \\SetCell[c=2]{c}, wrapped in their columns), or nicematrix's \\begin{NiceTabular}{>{\\raggedright\\arraybackslash}p{…}…}[hvlines] (\\rowcolors in the \\CodeBefore; spans as \\multicolumn paragraphs of their columns' share); in a table float. 33 templates.",
+    writes: '\\begin{table}[tbp] \\centering \\caption{…} \\label{…} \\begin{tblr}{colspec={XX}, hspan=minimal, hlines, vlines} \\SetCell[c=2]{c} … & \\\\ \\end{tblr} \\end{table}',
     ctan: ['tabularray', 'nicematrix'],
     features: ['floating', 'captioned', 'full-width', 'vertical-rules', 'horizontal-rules', 'booktabs-rules', 'zebra-rows', 'background', 'cell-spans'],
     params: {
@@ -36,6 +37,6 @@ export default defineKey(
     // A float; tabularray reads the tblr body as an argument (a verbatim child cannot sit below it) and loses a footnote in a cell.
     gives: { floats: false },
     givesWhen: [{ when: { package: 'tabularray' }, gives: { argument: true, footnotes: false } }],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

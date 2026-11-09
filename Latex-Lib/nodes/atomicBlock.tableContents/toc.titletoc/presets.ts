@@ -13,12 +13,14 @@ export const PRESETS = {
   },
   'no-leaders': {
     description: 'Entries in small bold sans-serif, the page number pushed right with no leaders (\\hfill\\contentspage), no right margin (\\contentsmargin{0cm}).',
+    writes: '\\tableofcontents; \\contentsmargin{…} \\titlecontents{section}[…]{\\addvspace{1ex}…}{\\contentslabel{…}}{}{\\hfill\\contentspage}',
     features: ['bold-head', 'sans-serif'],
     params: { leaders: false, sectionFont: '\\sffamily\\small\\bfseries', margin: '0cm' },
     evidence: [solution('0012-basic-academic-journal-article', '56')],
   },
   'sans-entries': {
     description: 'Section entries in sans-serif with dot leaders, the number followed by a quad (\\contentspush).',
+    writes: '\\tableofcontents; \\titlecontents{section}[…]{\\addvspace{1ex}…}{\\contentspush{\\thecontentslabel\\quad}}{}{\\titlerule*[…]{.}\\contentspage}',
     features: ['dot-leaders', 'sans-serif'],
     params: { sectionFont: '\\sffamily', push: true },
     evidence: [solution('0250-ustc-thesis', '65'), solution('0384-dgut-paper', '46')],

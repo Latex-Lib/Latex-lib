@@ -35,7 +35,7 @@ export default defineClass({
   id: 'class.bmvc',
   name: "bmvc2k",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [{"pkg": "xcolor"}, {"pkg": "graphicx"}, {"pkg": "subfigure"}, {"pkg": "xspace"}, {"pkg": "eso-pic"}, {"pkg": "url"}, {"pkg": "hyperref", "options": ["colorlinks", "urlcolor=blue", "citecolor=red", "bookmarks=false"]}, {"pkg": "amsmath"}, {"pkg": "geometry", "options": ["twoside", "headsep=3mm", "papersize={410pt,620pt}", "inner=9mm", "outer=6mm", "top=3mm", "includehead", "bottom=5mm", "heightrounded"]}, {"pkg": "fontenc", "options": ["T1"]}, {"pkg": "mathptmx"}, {"pkg": "helvet"}, {"pkg": "courier"}, {"pkg": "natbib", "options": ["sort", "numbers"]}],
   defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "counter:subfigure", "counter:subtable", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\addauthor", "cmd:\\addinstitution", "cmd:\\runninghead", "cmd:\\bmvaOneDot", "cmd:\\bmvaUrl", "cmd:\\bmvcreviewcopy", "cmd:\\subfigure", "cmd:\\subtable"],
   options: {},

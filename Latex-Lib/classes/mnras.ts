@@ -10,7 +10,7 @@ import { ctan } from '../schema/minimal.ts';
 export default defineClass({
   id: 'class.mnras',
   name: "mnras",
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [{"pkg": "hyperref"}, {"pkg": "geometry"}],
   defines: ["counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "env:proof", "env:keywords", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
   options: {},

@@ -26,7 +26,7 @@ export default defineClass({
   id: 'class.asmeconf',
   name: "asmeconf",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [
     {"pkg": "etoolbox"},
     {"pkg": "geometry", "options": ["letterpaper", "left=0.5in", "right=0.5in", "top=0.5in", "bottom=1.in", "footskip=0.5in", "columnsep=0.38in"]},
@@ -44,6 +44,7 @@ export default defineClass({
   ],
   defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:abstract*", "env:nomenclature", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\keywords", "cmd:\\ConfName", "cmd:\\ConfAcronym", "cmd:\\ConfDate", "cmd:\\ConfCity", "cmd:\\PaperNo", "cmd:\\SetAuthors", "cmd:\\SetAffiliation", "cmd:\\affil", "cmd:\\CorrespondingAuthor", "cmd:\\JointFirstAuthor", "cmd:\\versionfootnote", "cmd:\\entry", "cmd:\\EntryHeading"],
   options: {
+    grid: { description: "turns the inline author line into a grid of author blocks, three to a row, each name over its own address (asmeconf.cls l.245-246, 286, 1808-2038); \\SetAffiliation{n} then fills the n-th block, at most 15 blocks (front.asmeconf's grid preset)" },
     lineno: { description: "loads lineno [switch,mathlines] and numbers lines from \\begin{document} (l.1542-1566); not given by the setting, so lineno is not a preload" },
     balance: { description: "loads flushend for the last page's columns unless lineno is given (l.1567-1573); not given by the setting" },
     nofontspec: { unloads: ["fontspec", "unicode-math"], description: "outside pdfTeX, turns \\ifac@fontspec off (l.256-257, 369-371), so the block from l.657 loads neither unicode-math nor fontspec and sets no TeX Gyre fonts (whose \\setmathfont{texgyretermes-math} name lookup fails on the runner: b2p probes G4-asmeconf-*); not given by the setting unless the CI session adds it" },

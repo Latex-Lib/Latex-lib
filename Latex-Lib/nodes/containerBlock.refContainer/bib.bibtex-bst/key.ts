@@ -7,17 +7,38 @@ export default defineKey(
     id: 'bib.bibtex-bst',
     node: 'containerBlock/refContainer',
     description:
-      'BibTeX with a .bst style: \\bibliographystyle{plain} (unsrt, alpha, abbrv, ieeetr, acm, siam, apalike) and \\bibliography{\\jobname}, the entries in \\jobname.bib; the heading through \\refname or \\bibname. 190 templates.',
+      'BibTeX with a .bst style: \\bibliographystyle{plain} (unsrt, alpha, abbrv, ieeetr, acm, siam, apalike; the published amsplain, amsalpha, IEEEtran, IEEEtranS, plainurl, splncs04) and \\bibliography{\\jobname}, the entries in \\jobname.bib; the heading through \\refname or \\bibname; \\backmatter before the list in a book, IEEEtran\'s \\bstctlcite control entry. 190 templates.',
+    // The same LaTeX as bib.cite-pkg's: the cite package is in its loads. The \LatexLib… once-guards (../node.ts) are the library's own, left out.
+    writes: '\\nocite{*} \\bibliographystyle{plain} \\bibliography{\\jobname}',
     ctan: ['bibtex'],
     features: ['numeric-citations', 'author-year', 'external-tool'],
     params: {
-      bst: { type: 'enum', values: ['plain', 'unsrt', 'alpha', 'abbrv', 'ieeetr', 'acm', 'siam', 'apalike'], default: 'plain', description: 'the BibTeX style' },
+      bst: {
+        type: 'enum',
+        // b45: the published styles a class's guide asks for: amsplain and amsalpha (AMS, amscls), IEEEtran and IEEEtranS (IEEE),
+        // plainurl (LIPIcs), splncs04 (Springer LNCS, ECCV). Each is on CTAN, so none is tied to its class.
+        values: ['plain', 'unsrt', 'alpha', 'abbrv', 'ieeetr', 'acm', 'siam', 'apalike', 'amsplain', 'amsalpha', 'IEEEtran', 'IEEEtranS', 'plainurl', 'splncs04'],
+        default: 'plain',
+        description: 'the BibTeX style',
+      },
       heading: { type: 'string', default: '', description: "the list's heading (\\refname, \\bibname); ''" },
+      backmatter: { type: 'boolean', default: false, description: "\\backmatter before the list (book, scrbook, amsbook: chapters unnumbered from there)" },
+      bstControl: {
+        type: 'boolean',
+        default: false,
+        description: "IEEEtran.bst's control entry: an @IEEEtranBSTCTL entry in \\jobname.bib (et al. after six names) cited by \\bstctlcite at \\begin{document}, before any \\cite",
+      },
     },
     presets: PRESETS,
     claims: ['bibliography-engine'],
     requires: [
       'env:thebibliography',
+    ],
+    requiresWhen: [
+      // \backmatter is the book classes' (book.cls, scrbook, amsbook); article has none.
+      { when: { backmatter: true }, requires: ['cmd:\\backmatter'] },
+      // \bstctlcite is IEEEtran.cls's (l.4438) and ieeeconf.cls's; IEEEtran.bst only documents it.
+      { when: { bstControl: true }, requires: ['cmd:\\bstctlcite'] },
     ],
     // The classes that load natbib in author-year mode (CA2), and those that set their own \bibliographystyle (CA11).
     deny: [
@@ -207,6 +228,6 @@ export default defineKey(
     // branches pass, 0 of 750 over the seven reference-list ways and General's; e.g. aa.A dd15148ea15e0fab70516 result
     // d2f7f7f1c5, branch bdccf5c475b3bf300411a, '.0 never shipped'). Flouest's own fix is O4. [OV3]
     gives: { footnotes: false },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

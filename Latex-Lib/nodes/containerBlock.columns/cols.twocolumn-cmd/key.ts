@@ -8,6 +8,7 @@ export default defineKey(
     node: 'containerBlock/columns',
     description:
       "The kernel's \\twocolumn and \\onecolumn: the block starts a page in two columns and the next page returns to the column mode, gap and rule it found (one column only where the page was one); \\columnsep from the node and \\columnseprule for a rule. 44 templates. revtex4-2 and aastex have neither (their own \\onecolumngrid/\\twocolumngrid switch in place).",
+    writes: '\\LibColsSave \\setlength{\\columnsep}{…} \\twocolumn … \\LibColsBack',
     ctan: ['latex-base'],
     features: ['page-columns', 'page-break-before', 'column-rule'],
     params: {
@@ -35,6 +36,6 @@ export default defineKey(
       },
     ],
     gives: { columns: true },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

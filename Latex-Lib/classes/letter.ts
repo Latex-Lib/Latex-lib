@@ -9,9 +9,9 @@ import { ctan } from '../schema/minimal.ts';
 export default defineClass({
   id: 'class.letter',
   name: "letter",
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [],
-  defines: [],
+  defines: ["env:letter", "cmd:\\opening", "cmd:\\closing", "cmd:\\signature", "cmd:\\makelabels", "length:\\longindentation"],
   options: {},
   forbids: {
     technical: [],

@@ -8,6 +8,8 @@ export default defineKey(
     node: 'cite/cite',
     description:
       "The kernel's \\cite{key} against the hand-written list.",
+    // The kernel's \cite as bib.bibtex-bst, bib.cite-pkg and bib.thebibliography print it: the same LaTeX; the list's way (and loads) tells them apart.
+    writes: '\\cite{…}',
     ctan: ['latex-base'],
     features: ['numeric-citations', 'hand-written'],
     params: {
@@ -25,6 +27,6 @@ export default defineKey(
         ],
       },
     ],
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

@@ -8,9 +8,9 @@ import { ctan } from '../schema/minimal.ts';
 export default defineClass({
   id: 'class.extbook',
   name: "extbook",
-  zerotex: "yes",
+  targetEngine: "yes",
   preloads: [],
-  defines: ["counter:chapter", "counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix"],
+  defines: ["counter:chapter", "counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\frontmatter", "cmd:\\mainmatter", "cmd:\\backmatter"],
   options: {},
   forbids: {
     technical: [],

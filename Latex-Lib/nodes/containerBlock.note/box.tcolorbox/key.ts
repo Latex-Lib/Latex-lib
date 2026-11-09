@@ -8,6 +8,7 @@ export default defineKey(
     node: 'containerBlock/note',
     description:
       'tcolorbox: the note as a box in the text, \\begin{tcolorbox}[title={Note}, colback=…, colframe=…] … \\end{tcolorbox}; fonttitle, arc, boxrule, sharp corners, a left bar (leftrule), a filled panel, the breakable library to split across pages and skins for drop shadow; as wide as the line it starts on (\\linewidth or its width, less a paragraph \\leftskip). 101 templates.',
+    writes: '\\begin{tcolorbox}[title={…}, …] … \\end{tcolorbox}',
     ctan: ['tcolorbox'],
     features: ['framed', 'background', 'title-bar', 'rounded-corners', 'left-rule', 'breakable', 'shadow', 'colored'],
     params: {
@@ -40,6 +41,6 @@ export default defineKey(
     // it comes out 172.7 or 345.4pt over (copy batch-3b, oracle 4: 0 of 60 fit article.A branches with it below vwcol
     // pass, report.A 0 of 62, amsart.A 0 of 60; e.g. d9df9f18b47c9149aacd3 result 857359f33c l.287, 172.7pt).
     needs: { paragraph: true },
-    zerotex: 'yes',
+    targetEngine: 'yes',
   }),
 );

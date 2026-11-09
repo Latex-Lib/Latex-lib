@@ -8,6 +8,7 @@ export default defineKey(
     node: 'table_header',
     description:
       "A header cell: as a table cell, its text in the header font (bold, General's), on a shade when one is set.",
+    writes: '{\\bfseries …}',
     ctan: ['multirow', 'colortbl'],
     features: ['bold-head', 'smallcaps-head', 'background'],
     params: {
@@ -22,6 +23,6 @@ export default defineKey(
     ],
     // As a table cell gives (tbl.multirow; General's GENERAL_GIVES table_header).
     gives: { breakable: false, floats: false, footnotes: false, argument: true },
-    zerotex: 'untested',
+    targetEngine: 'untested',
   }),
 );

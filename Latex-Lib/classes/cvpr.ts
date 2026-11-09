@@ -27,7 +27,7 @@ export default defineClass({
   id: 'class.cvpr',
   name: "article",
   base: 'class.article',
-  zerotex: "untested",
+  targetEngine: "untested",
   preloads: [{"pkg": "times"}, {"pkg": "xspace"}, {"pkg": "xcolor", "options": ["dvipsnames"]}, {"pkg": "graphicx"}, {"pkg": "amsmath"}, {"pkg": "amssymb"}, {"pkg": "booktabs"}, {"pkg": "natbib", "options": ["numbers", "sort&compress"]}, {"pkg": "silence"}, {"pkg": "etoolbox"}, {"pkg": "caption", "options": ["format=plain", "labelformat=simple", "labelsep=period", "font=small", "compatibility=false"]}, {"pkg": "subcaption", "options": ["font=footnotesize", "skip=3pt", "subrefformat=parens"]}, {"pkg": "url", "options": ["hyphens"]}, {"pkg": "keyval"}, {"pkg": "enumitem", "options": ["shortlabels", "inline"]}, {"pkg": "cleveref", "options": ["capitalize"]}, {"pkg": "color"}],
   defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\EveryShipout", "cmd:\\AtNextShipout", "cmd:\\LenToUnit", "cmd:\\AtPageUpperLeft", "cmd:\\AtPageLowerLeft", "cmd:\\AtPageCenter", "cmd:\\AtTextUpperLeft", "cmd:\\onedot", "cmd:\\eg", "cmd:\\ie", "cmd:\\cf", "cmd:\\etc", "cmd:\\vs", "cmd:\\wrt", "cmd:\\etal", "cmd:\\maketitlesupplementary"],
   options: {},
