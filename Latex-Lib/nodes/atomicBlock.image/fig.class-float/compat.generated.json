@@ -4,14 +4,19 @@
   "generatedFrom": {
     "key": "sha256:89b804aab0956764fb72c72c1a63c563f1c3b4f9ab80c81db60de858fc0ebb1a",
     "contexts": "sha256:9a34444e43ac79586ac5a93aa416a3e6b45fdee3bf9cad3cd215ed2d48d1e81b",
-    "matrix": null
+    "matrix": "sha256:dbc7642e79aea822bbb1db29eeeb2b8130da1d40c0bdb082c71b38bf86df2583"
   },
   "parents": {
     "body": {
       "(document body)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       }
     },
     "containerBlock/appendix": {
@@ -162,16 +167,26 @@
       "cols.multicol": {
         "verdict": "deny",
         "source": "derived",
-        "status": "derived",
+        "status": "verified-ok",
         "reason": "needs floats",
         "lacks": [
           "needs floats"
-        ]
+        ],
+        "matrix": {
+          "branches": 2,
+          "pass": 2,
+          "failing": []
+        }
       },
       "cols.paracol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 2,
+          "pass": 2,
+          "failing": []
+        }
       },
       "cols.revtex-grid": {
         "verdict": "ok",
@@ -211,7 +226,14 @@
       "list.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 4,
+          "pass": 3,
+          "failing": [
+            "apa7.A"
+          ]
+        }
       },
       "list.cvlist": {
         "verdict": "ok",
@@ -221,12 +243,31 @@
       "list.enumerate-pkg": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 21,
+          "pass": 17,
+          "failing": [
+            "achemso.A",
+            "apa7.A"
+          ]
+        }
       },
       "list.enumitem": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 34,
+          "pass": 28,
+          "failing": [
+            "aa.A",
+            "achemso.A",
+            "apa7.A",
+            "jmlr-pmlr.A",
+            "mdpi.A"
+          ]
+        }
       },
       "list.exam-questions": {
         "verdict": "ok",
@@ -236,7 +277,18 @@
       "list.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 25,
+          "pass": 17,
+          "failing": [
+            "achemso.A",
+            "apa7.A",
+            "ieeeaccess.A",
+            "jmlr-pmlr.A",
+            "mdpi.A"
+          ]
+        }
       },
       "list.nomenclature": {
         "verdict": "ok",
@@ -246,52 +298,134 @@
       "list.paralist": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 21,
+          "pass": 11,
+          "failing": [
+            "aastex.A",
+            "aastex.B",
+            "achemso.A",
+            "apa7.A",
+            "ieeeaccess.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A"
+          ]
+        }
       },
       "list.scrextend": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 24,
+          "pass": 19,
+          "failing": [
+            "apa7.A",
+            "jmlr-pmlr.A",
+            "mdpi.A"
+          ]
+        }
       }
     },
     "containerBlock/mathElement": {
       "thm.amsthm": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 12,
+          "pass": 9,
+          "failing": [
+            "achemso.A",
+            "apa7.A"
+          ]
+        }
       },
       "thm.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 12,
+          "pass": 12,
+          "failing": []
+        }
       },
       "thm.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 11,
+          "pass": 5,
+          "failing": [
+            "aastex.A",
+            "aastex.B",
+            "emulateapj.A",
+            "ieeeaccess.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A"
+          ]
+        }
       },
       "thm.mdframed": {
         "verdict": "deny",
         "source": "derived",
-        "status": "derived",
+        "status": "failing",
         "reason": "needs floats",
         "lacks": [
           "needs floats"
-        ]
+        ],
+        "matrix": {
+          "branches": 27,
+          "pass": 20,
+          "failing": [
+            "achemso.A",
+            "apa7.A",
+            "ieeeaccess.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A"
+          ]
+        }
       },
       "thm.ntheorem": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 9,
+          "pass": 4,
+          "failing": [
+            "aastex.A",
+            "aastex.B",
+            "emulateapj.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A"
+          ]
+        }
       },
       "thm.tcolorbox": {
         "verdict": "deny",
         "source": "derived",
-        "status": "derived",
+        "status": "failing",
         "reason": "needs floats",
         "lacks": [
           "needs floats"
-        ]
+        ],
+        "matrix": {
+          "branches": 51,
+          "pass": 26,
+          "failing": [
+            "achemso.A",
+            "apa7.A",
+            "emulateapj.A",
+            "ieeeaccess.A",
+            "mdpi.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A"
+          ]
+        }
       },
       "thm.tcolorbox[breakable=false]": {
         "verdict": "deny",
@@ -305,7 +439,19 @@
       "thm.thmtools": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 19,
+          "pass": 13,
+          "failing": [
+            "aastex.A",
+            "aastex.B",
+            "achemso.A",
+            "emulateapj.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A"
+          ]
+        }
       }
     },
     "containerBlock/abstract": {

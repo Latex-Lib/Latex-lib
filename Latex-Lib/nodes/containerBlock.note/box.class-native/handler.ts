@@ -11,7 +11,7 @@
  */
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization, Subject } from '../../../schema/realization.ts';
-import { param } from '../../protocol.ts';
+import { HEAD_OWN_LINE, headOwnLine, param } from '../../protocol.ts';
 import { titled, titleOf, toneName } from '../node.ts';
 import key from './key.ts';
 
@@ -28,6 +28,12 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
   return {
     preamble: () => {
       if (!MEMOIR.has(env)) return {};
+      // A framed box set where a statement's head waits starts after it, on a line of its own (HEAD_OWN_LINE, as box.fancybox and
+      // box.awesomebox do). In memoir's abstract (its @bstr@ctlist) a statement's head still waiting at \begin{framed}, \begin{shaded}
+      // or \begin{leftbar} stopped at "Something's wrong--perhaps a missing \item" at the box's end: every abstract > statement >
+      // memoir box branch failed (batch 4 round 2, memoir.A and memoir.B, 108 branches, e.g. memoir.A d59b1cdee247cb19cf79f result
+      // 2aa2c619f9 l.199 \end{leftbar}; reproduced on ZeroTeX-NG, and gone with the line). ntheorem's break style, whose head is
+      // \rlap'd (0pt wide), is left as it was: HEAD_OWN_LINE does not act on it (12 of the 108).
       // memoir's \FrameSep (framed's \fboxsep, and shaded's) and \FrameRule (framed's \fboxrule), memoir.dtx l.30442-30443.
       const declarations = [
         ...(param(p, 'frameSep') === '' ? [] : [`\\setlength{\\FrameSep}{${param(p, 'frameSep')}}`]),
@@ -35,7 +41,7 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
         // shaded draws \colorbox{shadecolor} (l.30899): memoir loads no colour package and defines no shadecolor.
         ...(env === 'shaded' ? [`\\colorlet{shadecolor}{${param(p, 'shade', 'black!10')}}`] : []),
       ];
-      return { ...(env === 'shaded' ? { packages: ['\\usepackage{xcolor}'] } : {}), ...(declarations.length === 0 ? {} : { declarations }) };
+      return { ...(env === 'shaded' ? { packages: ['\\usepackage{xcolor}'] } : {}), declarations: [...declarations, HEAD_OWN_LINE] };
     },
     emit: (node, content) => {
       const body = content.trim() || '\\mbox{}';
@@ -46,7 +52,7 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
       // (cls l.3122-3125), so every box ends on "Overfull \hbox (16.0pt too wide)" (probe, ZeroTeX-NG, 2026-11-07); the skips are
       // put back to 0pt after the text's last paragraph, which leaves the rule where the class draws it, flush with the measure.
       if (env === 'boxtext') return `\\begin{boxtext}[${title}]\n${body}\n\\par\\leftskip0pt\\rightskip0pt\n\\end{boxtext}\n\n`;
-      return `\\begin{${env}}\n${withTitle ? titled(node, content) : body}\n\\end{${env}}\n\n`;
+      return headOwnLine(`\\begin{${env}}\n${withTitle ? titled(node, content) : body}\n\\end{${env}}\n\n`);
     },
   };
 };

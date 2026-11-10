@@ -32,13 +32,34 @@ const SAVE = [
   '\\makeatother',
 ].join('');
 
+/**
+ * Every grid switch is a message to the output routine (\do@output@MVL): the output routine runs and ships no page, which TeX
+ * counts as a dead cycle and resets only at a \shipout. A block costs about 9 of them on a two-column (reprint) page, where the
+ * switches change nothing, and about 17 on a one-column page, widetext and a float more, so a page of short blocks stopped at
+ * "Output loop---100 consecutive dead cycles" (revtex4-2's \maxdeadcycles; 200 in an aastex701 document), TeX shipped \box255
+ * itself and the grid's state broke ("Argument of \adj@page has an extra }"). Batch 4 round 2: 49 cells, 20 documents, 801
+ * failing branches in aastex.A/B and revtex4-2-aip/aps.A, the first error at a block's \twocolumngrid or text (revtex4-2-aip.A
+ * dc85487eb1d726330e93f result cc6c561ba1, l.190, 46 of 46 branches; revtex4-2-aps.A ddc6537e375052fd77a12 result ccd837f1ec,
+ * nine blocks and \end{document}). Reproduced with the class's own commands and no other package (ZeroTeX-NG, compat cases,
+ * 2026-11-10): \deadcycles after each one-line \LibGridSave \twocolumngrid … \LibGridBack block climbs 6, 15, 24 … under
+ * [aps,reprint] and 10, 27, 44 … under aastex701, so 20 blocks stop under either, as do 20 plain \twocolumngrid … \onecolumngrid
+ * pairs; with the limit raised, 60 blocks with a widetext every third ship 3 pages with no error under [aps,reprint] and
+ * [aip,jcp,reprint], and 40 blocks each holding a table float in a list ship under aastex701 and [aps,reprint]. TeX's own advice:
+ * raise \maxdeadcycles; only raised, never lowered, as note.marginpar raises it. 10000, mdpi.cls's own value, since a page of
+ * blocks passes 1000 under aastex701 (60 blocks: "Output loop---1000"). A real loop still stops: on a one-column page (aastex701,
+ * revtex4-2 preprint) about 44 consecutive one-line two-column segments that reach the page's foot loop with \maxdeadcycles 10000
+ * too, with plain \twocolumngrid … \onecolumngrid as with this way's blocks (an ltxgrid limit, not this way's; not fixed).
+ */
+const DEAD_CYCLES = '\\ifnum\\maxdeadcycles<10000 \\maxdeadcycles=10000 \\fi';
+
 export const realize = (given: { readonly [name: string]: unknown } = {}): Realization => {
   const p = withDefaults(key.params, given as never) as { readonly [name: string]: unknown };
   const mode = param(p, 'mode', 'auto');
   const wide = mode !== 'twocolumngrid';
   const grid = mode !== 'widetext';
   return {
-    preamble: () => (grid ? { declarations: [SAVE] } : {}),
+    // widetext switches the grid through the output routine too (revtex4-2.cls l.7399-7470), so both modes raise the limit.
+    preamble: () => ({ declarations: grid ? [DEAD_CYCLES, SAVE] : [DEAD_CYCLES] }),
     emit: (node, content) => {
       const body = content.trim();
       if (countOf(node) === 1) return wide ? `\n\\begin{widetext}\n${body}\n\\end{widetext}\n\n` : `${body}\n\n`;

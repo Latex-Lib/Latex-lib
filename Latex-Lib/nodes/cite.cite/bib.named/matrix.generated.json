@@ -1,0 +1,243 @@
+{
+  "way": "bib.named@cite",
+  "from": {
+    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
+    "runs": "r20261110022619593,r20261110022630505",
+    "oracle": "11",
+    "source": "compat tables: a fetched run, not recompiled"
+  },
+  "entries": [
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "ijcai.A",
+      "branches": 20,
+      "pass": 7,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "ijcai.A",
+      "branches": 16,
+      "pass": 3,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.authblk"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "ijcai.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "ijcai.A",
+      "branches": 40,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "ijcai.A",
+      "branches": 40,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "ijcai.A",
+      "branches": 22,
+      "pass": 6,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "ijcai.A",
+      "branches": 22,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "ijcai.A",
+      "branches": 19,
+      "pass": 5,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "ijcai.A",
+      "branches": 11,
+      "pass": 4,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "ijcai.A",
+      "branches": 7,
+      "pass": 5,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "ijcai.A",
+      "branches": 7,
+      "pass": 5,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.ijcai"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "ijcai.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "ijcai.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    }
+  ]
+}

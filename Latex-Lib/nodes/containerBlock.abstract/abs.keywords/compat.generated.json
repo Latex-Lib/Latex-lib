@@ -4,14 +4,23 @@
   "generatedFrom": {
     "key": "sha256:9399948d41a8cb3a7334161d3cf4d7730d959b3dbe548d24beb167e992d67d28",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": null
+    "matrix": "sha256:2e22b1798ab723a52f5f13f5ff8369e53f36fa0e8c7d1d0a14814a158c51c11c"
   },
   "parents": {
     "body": {
       "(document body)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 4910,
+          "pass": 4719,
+          "failing": [
+            "elegantpaper.A",
+            "report.A",
+            "report.B"
+          ]
+        }
       }
     }
   },

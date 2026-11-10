@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:e714881fb96ac4e83e87c05cef131eefe6fd1473a45e12444404153984d4372d",
     "contexts": "sha256:14e595b5a917207b0202cd81103654b34671bd431b2e4e8a05c64647be89ab4f",
-    "matrix": null
+    "matrix": "sha256:3f65e658534318bd255756e012c48b9c5860e6ab27dacbc52a182053313840c6"
   },
   "parents": {
     "containerBlock/columns": {
@@ -31,12 +31,27 @@
       "cols.multicol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 68,
+          "pass": 62,
+          "failing": [
+            "memoir.A",
+            "memoir.B"
+          ]
+        }
       },
       "cols.paracol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 34,
+          "pass": 32,
+          "failing": [
+            "memoir.A"
+          ]
+        }
       },
       "cols.revtex-grid": {
         "verdict": "ok",
@@ -51,16 +66,29 @@
       "cols.twocolumn-cmd": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 68,
+          "pass": 68,
+          "failing": []
+        }
       },
       "cols.vwcol": {
         "verdict": "deny",
         "source": "derived",
-        "status": "derived",
+        "status": "failing",
         "reason": "needs paragraph",
         "lacks": [
           "needs paragraph"
-        ]
+        ],
+        "matrix": {
+          "branches": 68,
+          "pass": 1,
+          "failing": [
+            "memoir.A",
+            "memoir.B"
+          ]
+        }
       }
     },
     "containerBlock/appendix": {
@@ -72,7 +100,12 @@
       "num.appendix": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 68,
+          "pass": 68,
+          "failing": []
+        }
       },
       "num.appendix-onecolumn": {
         "verdict": "ok",
@@ -102,7 +135,15 @@
       "num.unnumbered": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 68,
+          "pass": 66,
+          "failing": [
+            "memoir.A",
+            "memoir.B"
+          ]
+        }
       }
     },
     "containerBlock/acknowledgement": {
@@ -159,7 +200,15 @@
       "ack.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 68,
+          "pass": 64,
+          "failing": [
+            "memoir.A",
+            "memoir.B"
+          ]
+        }
       },
       "ack.llncs-credits": {
         "verdict": "ok",

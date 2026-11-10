@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:22af214ca9444aaf07115406d34cf63e85b6cbf50a15cae9256d076dcf31f3ed",
     "contexts": "sha256:14e595b5a917207b0202cd81103654b34671bd431b2e4e8a05c64647be89ab4f",
-    "matrix": null
+    "matrix": "sha256:7173b094c0f0420d15c544ffed069496c11bc6a15a1e1b9af43816e58a21f1b7"
   },
   "parents": {
     "containerBlock/columns": {
@@ -31,12 +31,32 @@
       "cols.multicol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 204,
+          "pass": 194,
+          "failing": [
+            "scrartcl.A",
+            "scrartcl.B",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B"
+          ]
+        }
       },
       "cols.paracol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 85,
+          "pass": 83,
+          "failing": [
+            "scrbook.A",
+            "scrreprt.A"
+          ]
+        }
       },
       "cols.revtex-grid": {
         "verdict": "ok",
@@ -51,16 +71,40 @@
       "cols.twocolumn-cmd": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 170,
+          "pass": 156,
+          "failing": [
+            "scrartcl.A",
+            "scrartcl.B",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B"
+          ]
+        }
       },
       "cols.vwcol": {
         "verdict": "deny",
         "source": "derived",
-        "status": "derived",
+        "status": "failing",
         "reason": "needs paragraph",
         "lacks": [
           "needs paragraph"
-        ]
+        ],
+        "matrix": {
+          "branches": 204,
+          "pass": 152,
+          "failing": [
+            "scrartcl.A",
+            "scrartcl.B",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B"
+          ]
+        }
       }
     },
     "containerBlock/appendix": {
@@ -72,7 +116,12 @@
       "num.appendix": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 136,
+          "pass": 136,
+          "failing": []
+        }
       },
       "num.appendix-onecolumn": {
         "verdict": "ok",
@@ -102,7 +151,17 @@
       "num.unnumbered": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 136,
+          "pass": 132,
+          "failing": [
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B"
+          ]
+        }
       }
     },
     "containerBlock/acknowledgement": {
@@ -159,7 +218,17 @@
       "ack.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 136,
+          "pass": 130,
+          "failing": [
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B"
+          ]
+        }
       },
       "ack.llncs-credits": {
         "verdict": "ok",

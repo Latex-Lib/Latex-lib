@@ -4,14 +4,19 @@
   "generatedFrom": {
     "key": "sha256:6a1492c5de73dcb1f9d9c6f8a41782dce8ad7ec111ee4b51cbfdb9f3c6bc15e9",
     "contexts": "sha256:b429906652b3b8d65b742d417c56c2273e7dfd30e390c34f7b6dd3cebdc7d83f",
-    "matrix": null
+    "matrix": "sha256:9d820ae80e0d345e2e8cd30c20a6ccf5f6bcf95cfc05ce4077d12f06ea30c493"
   },
   "parents": {
     "body": {
       "(document body)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 2,
+          "pass": 2,
+          "failing": []
+        }
       }
     },
     "containerBlock/columns": {
@@ -38,12 +43,22 @@
       "cols.multicol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 2,
+          "pass": 2,
+          "failing": []
+        }
       },
       "cols.paracol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 2,
+          "pass": 2,
+          "failing": []
+        }
       },
       "cols.revtex-grid": {
         "verdict": "ok",
@@ -58,26 +73,48 @@
       "cols.twocolumn-cmd": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 2,
+          "pass": 2,
+          "failing": []
+        }
       },
       "cols.vwcol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 2,
+          "pass": 2,
+          "failing": []
+        }
       }
     },
     "containerBlock/footnote": {
       "(General)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 27,
+          "pass": 26,
+          "failing": [
+            "imsart.A"
+          ]
+        }
       }
     },
     "containerBlock/mathElement": {
       "thm.amsthm": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 21,
+          "pass": 21,
+          "failing": []
+        }
       },
       "thm.class-native": {
         "verdict": "ok",
@@ -87,12 +124,26 @@
       "thm.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 19,
+          "pass": 18,
+          "failing": [
+            "imsart.A"
+          ]
+        }
       },
       "thm.mdframed": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 25,
+          "pass": 24,
+          "failing": [
+            "imsart.A"
+          ]
+        }
       },
       "thm.ntheorem": {
         "verdict": "ok",
@@ -102,7 +153,14 @@
       "thm.tcolorbox": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 50,
+          "pass": 48,
+          "failing": [
+            "imsart.A"
+          ]
+        }
       },
       "thm.tcolorbox[breakable=false]": {
         "verdict": "ok",
@@ -112,7 +170,14 @@
       "thm.thmtools": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 16,
+          "pass": 15,
+          "failing": [
+            "imsart.A"
+          ]
+        }
       }
     },
     "table_cell": {
@@ -148,7 +213,12 @@
       "abs.abstract-pkg": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 4,
+          "pass": 4,
+          "failing": []
+        }
       },
       "abs.class-native": {
         "verdict": "ok",
@@ -210,7 +280,12 @@
       "list.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 21,
+          "pass": 21,
+          "failing": []
+        }
       },
       "list.cvlist": {
         "verdict": "ok",
@@ -220,12 +295,22 @@
       "list.enumerate-pkg": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 21,
+          "pass": 21,
+          "failing": []
+        }
       },
       "list.enumitem": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 21,
+          "pass": 21,
+          "failing": []
+        }
       },
       "list.exam-questions": {
         "verdict": "ok",
@@ -235,7 +320,12 @@
       "list.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 21,
+          "pass": 21,
+          "failing": []
+        }
       },
       "list.nomenclature": {
         "verdict": "ok",
@@ -245,12 +335,22 @@
       "list.paralist": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 21,
+          "pass": 21,
+          "failing": []
+        }
       },
       "list.scrextend": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 21,
+          "pass": 21,
+          "failing": []
+        }
       }
     }
   },

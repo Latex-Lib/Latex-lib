@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:a67fbb2eecb52dd249ade7b90a71e124a6b93ee3a6fff966e916d5bbc9a2ee62",
     "contexts": "sha256:14e595b5a917207b0202cd81103654b34671bd431b2e4e8a05c64647be89ab4f",
-    "matrix": null
+    "matrix": "sha256:0d1e7bbe485b55872eff36bc0b9c352e2dd7210f70348b251c50be27e433a0b0"
   },
   "parents": {
     "containerBlock/columns": {
@@ -31,12 +31,22 @@
       "cols.multicol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 16,
+          "pass": 16,
+          "failing": []
+        }
       },
       "cols.paracol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 16,
+          "pass": 16,
+          "failing": []
+        }
       },
       "cols.revtex-grid": {
         "verdict": "ok",
@@ -51,23 +61,42 @@
       "cols.twocolumn-cmd": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 16,
+          "pass": 16,
+          "failing": []
+        }
       },
       "cols.vwcol": {
         "verdict": "deny",
         "source": "derived",
-        "status": "derived",
+        "status": "failing",
         "reason": "needs paragraph",
         "lacks": [
           "needs paragraph"
-        ]
+        ],
+        "matrix": {
+          "branches": 16,
+          "pass": 9,
+          "failing": [
+            "copernicus.A"
+          ]
+        }
       }
     },
     "containerBlock/appendix": {
       "num.appendices-env": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 16,
+          "pass": 14,
+          "failing": [
+            "copernicus.A"
+          ]
+        }
       },
       "num.appendix": {
         "verdict": "ok",
@@ -159,7 +188,14 @@
       "ack.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 16,
+          "pass": 14,
+          "failing": [
+            "copernicus.A"
+          ]
+        }
       },
       "ack.llncs-credits": {
         "verdict": "ok",

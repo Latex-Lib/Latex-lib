@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:a3bdf97a828deaadbaf56fd02b5da607ad1a1cf241146dccc8b52455184d5c4a",
     "contexts": "sha256:42ed3b10f6b6c33a344cd7e5641165afaef458ffff1ab9cd9d7926b174c055b1",
-    "matrix": null
+    "matrix": "sha256:b8739ebe53056f5e8e330fa5cd410b20e76087629e9dbfc06d44dd559718c4ca"
   },
   "parents": {
     "body": {
@@ -18,7 +18,19 @@
       "tbl.row": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 1617,
+          "pass": 1606,
+          "failing": [
+            "amsart.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "mnras.A",
+            "spie.A",
+            "tufte-handout.A"
+          ]
+        }
       }
     }
   },

@@ -24,7 +24,7 @@
  */
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
-import { NARROW_LISTS, nested, styleOf, type ListStyle } from '../node.ts';
+import { NARROW_LISTS, nested, styleOf, VERBATIM, type ListStyle } from '../node.ts';
 import key from './key.ts';
 
 type Form = 'apa7' | 'jacow' | 'jmlr' | 'cas' | 'imsart';
@@ -40,20 +40,49 @@ const widestOf = (content: string): string =>
     .map((m) => (m === null ? '' : (m[2] ?? m[3] ?? '').trim()))
     .reduce((a, b) => (b.length > a.length ? b : a), '');
 
-/** apa7's seriation: every item, at any level, one \item of seriate, its own label before its text. */
+/**
+ * apa7's seriation: every item, at any level, one \item of seriate, its own label before its text. seriate is no list: it
+ * redefines \item for its group (apa7.cls, `\def\item{\addtocounter{APAenum}{1}(\alph{APAenum})\space}`), so a block in it
+ * whose environment is list-based (center, a statement, a framed or tcolorbox note, a table in center, a quote) took seriate's
+ * \item for its own and stopped at "Something's wrong--perhaps a missing \item" at its end (batch 4 round 2, apa7.A: 139
+ * branches, e.g. d0cdd25f8976cf54e0bea result a446da1ec5 l.377 \end{center}; reproduced, ZeroTeX-NG). A line that is not an
+ * item (a block the list holds) is printed between seriate runs: the run before it closes, and the next item opens another
+ * that goes on counting where the last stopped (seriate sets APAenum to 0 when it opens). A verbatim block's lines stay code, as
+ * in `nested`.
+ */
 const seriate = (content: string): string => {
-  const lines = content
-    .trim()
-    .split('\n')
-    .map((line) => {
-      const m = ITEM.exec(line);
-      if (m === null || Number(m[1]) < 1) return line;
-      const label = (m[2] ?? m[3] ?? '').trim();
-      const text = (m[4] ?? '').trim();
-      return `\\item ${[label, text].filter((t) => t !== '').join(' ') || '\\strut'}`;
-    })
-    .filter((line) => line.trim() !== '');
-  return `\\leavevmode\\begin{seriate}\n${lines.join('\n')}\n\\end{seriate}\n\n`;
+  const out: string[] = [];
+  let open = false;
+  let items = 0;
+  let verbatim: string | undefined;
+  for (const line of content.trim().split('\n')) {
+    if (verbatim !== undefined) {
+      out.push(line);
+      if (line.includes(`\\end{${verbatim}}`)) verbatim = undefined;
+      continue;
+    }
+    if (line.trim() === '') {
+      if (!open) out.push(line);
+      continue;
+    }
+    const opened = VERBATIM.exec(line);
+    if (opened?.[1] !== undefined && !line.includes(`\\end{${opened[1]}}`)) verbatim = opened[1];
+    const m = verbatim === undefined ? ITEM.exec(line) : null;
+    if (m === null || Number(m[1]) < 1) {
+      if (open) out.push('\\end{seriate}\n');
+      open = false;
+      out.push(line);
+      continue;
+    }
+    if (!open) out.push(`\\leavevmode\\begin{seriate}${items === 0 ? '' : `\\setcounter{APAenum}{${items}}`}`);
+    open = true;
+    items += 1;
+    const label = (m[2] ?? m[3] ?? '').trim();
+    const text = (m[4] ?? '').trim();
+    out.push(`\\item ${[label, text].filter((t) => t !== '').join(' ') || '\\strut'}`);
+  }
+  if (open) out.push('\\end{seriate}');
+  return `${out.join('\n')}\n\n`;
 };
 
 /** The environment a level opens: its name, and what follows \begin{name} (an argument or an optional argument). */

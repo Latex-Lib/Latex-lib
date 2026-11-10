@@ -84,6 +84,15 @@ export default defineKey(
           { kind: 'compile', reproducer: "\\documentclass{article} \\usepackage{spconf} \\makeatletter\\def\\author#1{\\name{#1}}\\makeatother \\usepackage{authblk} \\title{A Title} \\author{Ann Author} \\affil{Dept, Univ} \\begin{document} \\maketitle: \"There's no line here to end\"; with \\name and \\address instead, none (ZeroTeX-NG through compat cases, 2026-11-09)" },
         ],
       },
+      {
+        class: 'class.cvpr',
+        reason:
+          "under cvpr.sty (its default review mode, the cvpr setting's) a title set with authblk never ends: \\maketitle runs until the engine gives up, with no log. Without authblk the same title compiles, and the other title ways pass under cvpr in all but a few branches",
+        evidence: [
+          { kind: 'compile', cell: 'batch 4 round 2, cvpr.A: front.authblk passes 0 of 18 branches, every cell holding it ending in no-log ("the engine gave up after 122 s with no log"), e.g. document de5ba5cfd0d69b0397b95, cell c5a4255e4bdcbdcb16358, result 1542f345d0f2e01bb4930d0fdf047b451e4ecad83c50e665ec5579b1eb0d5e4a (one branch: front.authblk@article > a citation); the other title ways pass 17 of 18 (front.class-native, front.maketitle, front.titling), 14 of 14 (front.center-block), 17 of 17 (front.titlepage-env) and 50 of 53 (front.author-blocks)' },
+          { kind: 'compile', reproducer: '\\documentclass[10pt,twocolumn,letterpaper]{article} \\usepackage{cvpr} \\usepackage[max6]{authblk} \\title{A Title} \\author{Ann Author} \\affil{Dept, Univ} \\begin{document} \\maketitle Text.: no log after 100 s (killed); without the authblk line and \\affil, compiled in 4.3 s (ZeroTeX-NG through compat cases, the cvpr setting\'s cvpr.sty, 2026-11-10)' },
+        ],
+      },
     ],
     targetEngine: 'yes',
   }),

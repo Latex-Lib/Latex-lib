@@ -4,14 +4,26 @@
   "generatedFrom": {
     "key": "sha256:0772169eccbb37b64a04b7d977872140e1a4bb0dab3fd02f3efc3fd3fe65b6f5",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": null
+    "matrix": "sha256:616ffa8045d02565567451a3ae8327baa4f9159635c6a445ed593a5d5d43adb7"
   },
   "parents": {
     "body": {
       "(document body)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 4936,
+          "pass": 4192,
+          "failing": [
+            "aa.A",
+            "apa7.A",
+            "asmejour.A",
+            "mdpi.A",
+            "oup-authoring-template.A",
+            "sn-jnl.A"
+          ]
+        }
       }
     }
   },

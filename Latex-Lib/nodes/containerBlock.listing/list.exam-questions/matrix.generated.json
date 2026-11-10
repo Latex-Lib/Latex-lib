@@ -1,0 +1,809 @@
+{
+  "way": "list.exam-questions",
+  "from": {
+    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
+    "runs": "r20261110022619593,r20261110022630505",
+    "oracle": "11",
+    "source": "compat tables: a fetched run, not recompiled"
+  },
+  "entries": [
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "exam.A",
+      "branches": 62,
+      "pass": 61,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "general:containerBlock/abstract:setspace"
+      },
+      "pair": "exam.A",
+      "branches": 77,
+      "pass": 77,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+lib:breakable+lib:skins+tcolorbox"
+      },
+      "pair": "exam.A",
+      "branches": 104,
+      "pass": 89,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "general:containerBlock/note:marginnote+xcolor"
+      },
+      "pair": "exam.A",
+      "branches": 42,
+      "pass": 38,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.awesomebox"
+      },
+      "pair": "exam.A",
+      "branches": 42,
+      "pass": 36,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.exam-solution"
+      },
+      "pair": "exam.A",
+      "branches": 42,
+      "pass": 38,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.fancybox"
+      },
+      "pair": "exam.A",
+      "branches": 42,
+      "pass": 40,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.mdframed"
+      },
+      "pair": "exam.A",
+      "branches": 125,
+      "pass": 115,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.tcolorbox"
+      },
+      "pair": "exam.A",
+      "branches": 84,
+      "pass": 79,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.marginnote"
+      },
+      "pair": "exam.A",
+      "branches": 83,
+      "pass": 79,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.marginpar"
+      },
+      "pair": "exam.A",
+      "branches": 41,
+      "pass": 36,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.notecolumn"
+      },
+      "pair": "exam.A",
+      "branches": 42,
+      "pass": 30,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.sidenotes"
+      },
+      "pair": "exam.A",
+      "branches": 42,
+      "pass": 38,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.todonotes"
+      },
+      "pair": "exam.A",
+      "branches": 42,
+      "pass": 39,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/footnote",
+        "way": "general:containerBlock/footnote:footnotehyper"
+      },
+      "pair": "exam.A",
+      "branches": 84,
+      "pass": 73,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.thmtools"
+      },
+      "pair": "exam.A",
+      "branches": 15,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "exam.A",
+      "branches": 897,
+      "pass": 815,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "exam.A",
+      "branches": 122,
+      "pass": 111,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.tcolorbox"
+      },
+      "pair": "exam.A",
+      "branches": 190,
+      "pass": 164,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.mdframed"
+      },
+      "pair": "exam.A",
+      "branches": 95,
+      "pass": 80,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm"
+      },
+      "pair": "exam.A",
+      "branches": 93,
+      "pass": 87,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+hyperref+lib:breakable+lib:skins+tcolorbox"
+      },
+      "pair": "exam.A",
+      "branches": 103,
+      "pass": 87,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm"
+      },
+      "pair": "exam.A",
+      "branches": 104,
+      "pass": 103,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "exam.A",
+      "branches": 59,
+      "pass": 58,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "exam.A",
+      "branches": 80,
+      "pass": 79,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+hyperref"
+      },
+      "pair": "exam.A",
+      "branches": 104,
+      "pass": 103,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "exam.A",
+      "branches": 77,
+      "pass": 65,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "exam.A",
+      "branches": 61,
+      "pass": 61,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "exam.A",
+      "branches": 79,
+      "pass": 67,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.kernel"
+      },
+      "pair": "exam.A",
+      "branches": 87,
+      "pass": 86,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "exam.A",
+      "branches": 78,
+      "pass": 77,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.ntheorem"
+      },
+      "pair": "exam.A",
+      "branches": 8,
+      "pass": 8,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "footnoteBody/footnote",
+        "way": "general:footnoteBody/footnote:kernel"
+      },
+      "pair": "exam.A",
+      "branches": 76,
+      "pass": 65,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "exam.A",
+      "branches": 79,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "exam.A",
+      "branches": 61,
+      "pass": 61,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "abs.abstract-pkg"
+      },
+      "pair": "exam.A",
+      "branches": 155,
+      "pass": 155,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "abs.kernel"
+      },
+      "pair": "exam.A",
+      "branches": 77,
+      "pass": 77,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "exam.B",
+      "branches": 61,
+      "pass": 60,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "general:containerBlock/abstract:setspace"
+      },
+      "pair": "exam.B",
+      "branches": 76,
+      "pass": 76,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+lib:breakable+lib:skins+tcolorbox"
+      },
+      "pair": "exam.B",
+      "branches": 102,
+      "pass": 86,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "general:containerBlock/note:marginnote+xcolor"
+      },
+      "pair": "exam.B",
+      "branches": 41,
+      "pass": 37,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.awesomebox"
+      },
+      "pair": "exam.B",
+      "branches": 41,
+      "pass": 35,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.exam-solution"
+      },
+      "pair": "exam.B",
+      "branches": 41,
+      "pass": 37,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.fancybox"
+      },
+      "pair": "exam.B",
+      "branches": 41,
+      "pass": 39,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.mdframed"
+      },
+      "pair": "exam.B",
+      "branches": 122,
+      "pass": 114,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.tcolorbox"
+      },
+      "pair": "exam.B",
+      "branches": 82,
+      "pass": 77,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.marginnote"
+      },
+      "pair": "exam.B",
+      "branches": 81,
+      "pass": 77,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.marginpar"
+      },
+      "pair": "exam.B",
+      "branches": 40,
+      "pass": 35,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.notecolumn"
+      },
+      "pair": "exam.B",
+      "branches": 41,
+      "pass": 29,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.sidenotes"
+      },
+      "pair": "exam.B",
+      "branches": 41,
+      "pass": 37,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.todonotes"
+      },
+      "pair": "exam.B",
+      "branches": 41,
+      "pass": 38,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/footnote",
+        "way": "general:containerBlock/footnote:footnotehyper"
+      },
+      "pair": "exam.B",
+      "branches": 82,
+      "pass": 70,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.thmtools"
+      },
+      "pair": "exam.B",
+      "branches": 14,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "exam.B",
+      "branches": 886,
+      "pass": 809,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "exam.B",
+      "branches": 120,
+      "pass": 119,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.tcolorbox"
+      },
+      "pair": "exam.B",
+      "branches": 186,
+      "pass": 160,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.mdframed"
+      },
+      "pair": "exam.B",
+      "branches": 93,
+      "pass": 79,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm"
+      },
+      "pair": "exam.B",
+      "branches": 91,
+      "pass": 91,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+hyperref+lib:breakable+lib:skins+tcolorbox"
+      },
+      "pair": "exam.B",
+      "branches": 101,
+      "pass": 86,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm"
+      },
+      "pair": "exam.B",
+      "branches": 102,
+      "pass": 101,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "exam.B",
+      "branches": 58,
+      "pass": 58,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+hyperref"
+      },
+      "pair": "exam.B",
+      "branches": 102,
+      "pass": 101,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "exam.B",
+      "branches": 76,
+      "pass": 64,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "exam.B",
+      "branches": 60,
+      "pass": 58,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "exam.B",
+      "branches": 78,
+      "pass": 67,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.kernel"
+      },
+      "pair": "exam.B",
+      "branches": 85,
+      "pass": 84,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "exam.B",
+      "branches": 77,
+      "pass": 77,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.ntheorem"
+      },
+      "pair": "exam.B",
+      "branches": 8,
+      "pass": 8,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "footnoteBody/footnote",
+        "way": "general:footnoteBody/footnote:kernel"
+      },
+      "pair": "exam.B",
+      "branches": 75,
+      "pass": 64,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "exam.B",
+      "branches": 78,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "exam.B",
+      "branches": 60,
+      "pass": 60,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "abs.abstract-pkg"
+      },
+      "pair": "exam.B",
+      "branches": 153,
+      "pass": 152,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "abs.kernel"
+      },
+      "pair": "exam.B",
+      "branches": 76,
+      "pass": 76,
+      "status": "verified-ok"
+    }
+  ]
+}

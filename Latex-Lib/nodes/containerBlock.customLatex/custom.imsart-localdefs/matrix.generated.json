@@ -1,0 +1,306 @@
+{
+  "way": "custom.imsart-localdefs",
+  "from": {
+    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
+    "runs": "r20261110022619593,r20261110022630505",
+    "oracle": "11",
+    "source": "compat tables: a fetched run, not recompiled"
+  },
+  "entries": [
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "imsart.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "general:containerBlock/listing:kernel"
+      },
+      "pair": "imsart.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "general:containerBlock/listing:enumitem"
+      },
+      "pair": "imsart.A",
+      "branches": 21,
+      "pass": 21,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.enumitem"
+      },
+      "pair": "imsart.A",
+      "branches": 21,
+      "pass": 21,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.kernel"
+      },
+      "pair": "imsart.A",
+      "branches": 21,
+      "pass": 21,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.scrextend"
+      },
+      "pair": "imsart.A",
+      "branches": 21,
+      "pass": 21,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+lib:breakable+lib:skins+tcolorbox"
+      },
+      "pair": "imsart.A",
+      "branches": 28,
+      "pass": 27,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "general:containerBlock/abstract:setspace"
+      },
+      "pair": "imsart.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/footnote",
+        "way": "general:containerBlock/footnote:footnotehyper"
+      },
+      "pair": "imsart.A",
+      "branches": 27,
+      "pass": 26,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.enumerate-pkg"
+      },
+      "pair": "imsart.A",
+      "branches": 21,
+      "pass": 21,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.paralist"
+      },
+      "pair": "imsart.A",
+      "branches": 21,
+      "pass": 21,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.thmtools"
+      },
+      "pair": "imsart.A",
+      "branches": 16,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.tcolorbox"
+      },
+      "pair": "imsart.A",
+      "branches": 50,
+      "pass": 48,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.mdframed"
+      },
+      "pair": "imsart.A",
+      "branches": 25,
+      "pass": 24,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "imsart.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.class-native"
+      },
+      "pair": "imsart.A",
+      "branches": 21,
+      "pass": 21,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "imsart.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.kernel"
+      },
+      "pair": "imsart.A",
+      "branches": 19,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "imsart.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "imsart.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "footnoteBody/footnote",
+        "way": "general:footnoteBody/footnote:kernel"
+      },
+      "pair": "imsart.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm"
+      },
+      "pair": "imsart.A",
+      "branches": 21,
+      "pass": 21,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+hyperref+lib:breakable+lib:skins+tcolorbox"
+      },
+      "pair": "imsart.A",
+      "branches": 29,
+      "pass": 28,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm"
+      },
+      "pair": "imsart.A",
+      "branches": 29,
+      "pass": 28,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "abs.abstract-pkg"
+      },
+      "pair": "imsart.A",
+      "branches": 4,
+      "pass": 4,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+hyperref"
+      },
+      "pair": "imsart.A",
+      "branches": 29,
+      "pass": 28,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "imsart.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    }
+  ]
+}

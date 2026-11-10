@@ -1,0 +1,7833 @@
+{
+  "way": "bib.apacite@cite",
+  "from": {
+    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
+    "runs": "r20261110022619593,r20261110022630505",
+    "oracle": "11",
+    "source": "compat tables: a fetched run, not recompiled"
+  },
+  "entries": [
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "aaai.A",
+      "branches": 36,
+      "pass": 36,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "aaai.A",
+      "branches": 36,
+      "pass": 36,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "aaai.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "aaai.A",
+      "branches": 10,
+      "pass": 10,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "aaai.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "aaai.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "aaai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "aaai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "aaai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "aaai.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "aaai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "aaai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "aaai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "aaai.A",
+      "branches": 16,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "aaai.A",
+      "branches": 18,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.aaai"
+      },
+      "pair": "aaai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.authblk"
+      },
+      "pair": "aaai.A",
+      "branches": 1,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "aaai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "aaai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "agu.A",
+      "branches": 39,
+      "pass": 39,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "agu.A",
+      "branches": 39,
+      "pass": 38,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "agu.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "agu.A",
+      "branches": 24,
+      "pass": 23,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "agu.A",
+      "branches": 12,
+      "pass": 12,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "agu.A",
+      "branches": 14,
+      "pass": 14,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "agu.A",
+      "branches": 10,
+      "pass": 10,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "agu.A",
+      "branches": 10,
+      "pass": 10,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "agu.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "agu.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "agu.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "agu.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.agu"
+      },
+      "pair": "agu.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "aistats.A",
+      "branches": 40,
+      "pass": 39,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "aistats.A",
+      "branches": 40,
+      "pass": 39,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "aistats.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "aistats.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "aistats.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "aistats.A",
+      "branches": 21,
+      "pass": 21,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "aistats.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "aistats.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "aistats.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "aistats.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "aistats.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "aistats.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "aistats.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "aistats.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "aistats.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "aistats.A",
+      "branches": 20,
+      "pass": 19,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "aistats.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.authblk"
+      },
+      "pair": "aistats.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "aistats.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "aistats.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.aistats"
+      },
+      "pair": "aistats.A",
+      "branches": 1,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "amsart.A",
+      "branches": 39,
+      "pass": 39,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "amsart.A",
+      "branches": 39,
+      "pass": 39,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "amsart.A",
+      "branches": 22,
+      "pass": 19,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "amsart.A",
+      "branches": 22,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "amsart.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "amsart.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "amsart.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "amsart.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "amsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "amsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "amsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "amsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "amsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "amsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "amsart.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "amsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "amsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.ams-topmatter"
+      },
+      "pair": "amsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "amsart.B",
+      "branches": 38,
+      "pass": 38,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "amsart.B",
+      "branches": 38,
+      "pass": 38,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "amsart.B",
+      "branches": 20,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "amsart.B",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "amsart.B",
+      "branches": 11,
+      "pass": 11,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "amsart.B",
+      "branches": 17,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "amsart.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "amsart.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "amsart.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "amsart.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "amsart.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "amsart.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "amsart.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "amsart.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "amsart.B",
+      "branches": 18,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "amsart.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "amsart.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.ams-topmatter"
+      },
+      "pair": "amsart.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "article.A",
+      "branches": 39,
+      "pass": 39,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "article.A",
+      "branches": 39,
+      "pass": 39,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "article.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "article.A",
+      "branches": 24,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "article.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "article.A",
+      "branches": 21,
+      "pass": 21,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "article.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "article.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "article.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "article.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "article.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "article.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "article.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "article.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "article.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "article.A",
+      "branches": 18,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "article.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.authblk"
+      },
+      "pair": "article.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "article.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "article.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "article.B",
+      "branches": 38,
+      "pass": 34,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "article.B",
+      "branches": 38,
+      "pass": 34,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "article.B",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "article.B",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "article.B",
+      "branches": 11,
+      "pass": 11,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "article.B",
+      "branches": 19,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "article.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "article.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "article.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "article.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "article.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "article.B",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "article.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "article.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "article.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "article.B",
+      "branches": 16,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "article.B",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.authblk"
+      },
+      "pair": "article.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "article.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "article.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "eccv.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "eccv.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "eccv.A",
+      "branches": 16,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "eccv.A",
+      "branches": 12,
+      "pass": 12,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "eccv.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "eccv.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "eccv.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "eccv.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "eccv.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "eccv.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "eccv.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "eccv.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "eccv.A",
+      "branches": 26,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.fncychap"
+      },
+      "pair": "eccv.A",
+      "branches": 21,
+      "pass": 19,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "eccv.A",
+      "branches": 21,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "eccv.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "eccv.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.inst-institute"
+      },
+      "pair": "eccv.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "exam.A",
+      "branches": 40,
+      "pass": 40,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "exam.A",
+      "branches": 40,
+      "pass": 40,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "exam.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "exam.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "exam.A",
+      "branches": 12,
+      "pass": 12,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "exam.A",
+      "branches": 14,
+      "pass": 14,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "exam.A",
+      "branches": 8,
+      "pass": 8,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "exam.A",
+      "branches": 8,
+      "pass": 8,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "exam.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "exam.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "exam.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "exam.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "exam.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "exam.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "exam.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "exam.A",
+      "branches": 16,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "exam.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.authblk"
+      },
+      "pair": "exam.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "exam.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "exam.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.exam-cover"
+      },
+      "pair": "exam.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "exam.B",
+      "branches": 39,
+      "pass": 39,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "exam.B",
+      "branches": 39,
+      "pass": 39,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "exam.B",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "exam.B",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "exam.B",
+      "branches": 10,
+      "pass": 10,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "exam.B",
+      "branches": 12,
+      "pass": 12,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "exam.B",
+      "branches": 8,
+      "pass": 8,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "exam.B",
+      "branches": 8,
+      "pass": 8,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "exam.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "exam.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "exam.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "exam.B",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "exam.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "exam.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "exam.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "exam.B",
+      "branches": 14,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "exam.B",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.authblk"
+      },
+      "pair": "exam.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "exam.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "exam.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.exam-cover"
+      },
+      "pair": "exam.B",
+      "branches": 1,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "extarticle.A",
+      "branches": 38,
+      "pass": 38,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "extarticle.A",
+      "branches": 38,
+      "pass": 38,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "extarticle.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "extarticle.A",
+      "branches": 22,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "extarticle.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "extarticle.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "extarticle.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "extarticle.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "extarticle.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "extarticle.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "extarticle.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "extarticle.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "extarticle.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "extarticle.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "extarticle.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "extarticle.A",
+      "branches": 16,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "extarticle.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "extarticle.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "extarticle.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "extarticle.B",
+      "branches": 37,
+      "pass": 34,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "extarticle.B",
+      "branches": 37,
+      "pass": 34,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "extarticle.B",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "extarticle.B",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "extarticle.B",
+      "branches": 11,
+      "pass": 11,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "extarticle.B",
+      "branches": 17,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "extarticle.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "extarticle.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "extarticle.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "extarticle.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "extarticle.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "extarticle.B",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "extarticle.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "extarticle.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "extarticle.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "extarticle.B",
+      "branches": 14,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "extarticle.B",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "extarticle.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "extarticle.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "icassp.A",
+      "branches": 38,
+      "pass": 34,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "icassp.A",
+      "branches": 38,
+      "pass": 35,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "icassp.A",
+      "branches": 22,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "icassp.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "icassp.A",
+      "branches": 11,
+      "pass": 11,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "icassp.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "icassp.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "icassp.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "icassp.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "icassp.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "icassp.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "icassp.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "icassp.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "icassp.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "icassp.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "icassp.A",
+      "branches": 16,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "icassp.A",
+      "branches": 20,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "icassp.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "icassp.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.spconf"
+      },
+      "pair": "icassp.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 32,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.ieee-parstart"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 32,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 22,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 12,
+      "pass": 12,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 6,
+      "pass": 6,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 6,
+      "pass": 6,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 12,
+      "pass": 11,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 9,
+      "pass": 9,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.ieeetran-blocks"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.ieeeaccess"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 39,
+      "pass": 38,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 39,
+      "pass": 38,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 24,
+      "pass": 23,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.ieee-parstart"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 22,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 12,
+      "pass": 11,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 9,
+      "pass": 9,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.ieeetran-blocks"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 40,
+      "pass": 38,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 40,
+      "pass": 38,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 24,
+      "pass": 23,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.ieee-parstart"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 22,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.ieee-raise"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 15,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 12,
+      "pass": 11,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 9,
+      "pass": 9,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.ieeetran-blocks"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.ieeetran-journal"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 40,
+      "pass": 37,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 40,
+      "pass": 38,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 24,
+      "pass": 23,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.ieee-parstart"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 12,
+      "pass": 11,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 9,
+      "pass": 9,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.ieeetran-blocks"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.ieeetran-journal"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 40,
+      "pass": 37,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 40,
+      "pass": 38,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 24,
+      "pass": 23,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.ieee-parstart"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 12,
+      "pass": 11,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 9,
+      "pass": 9,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.ieeetran-blocks"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.ieeetran-journal"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "ijcai.A",
+      "branches": 38,
+      "pass": 38,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "ijcai.A",
+      "branches": 38,
+      "pass": 38,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "ijcai.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "ijcai.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "ijcai.A",
+      "branches": 11,
+      "pass": 11,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "ijcai.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "ijcai.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "ijcai.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "ijcai.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "ijcai.A",
+      "branches": 16,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "ijcai.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.authblk"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.ijcai"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "imsart.A",
+      "branches": 38,
+      "pass": 38,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "imsart.A",
+      "branches": 38,
+      "pass": 38,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "imsart.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "imsart.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "imsart.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "imsart.A",
+      "branches": 21,
+      "pass": 21,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "imsart.A",
+      "branches": 8,
+      "pass": 8,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "imsart.A",
+      "branches": 8,
+      "pass": 8,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "imsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "imsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "imsart.A",
+      "branches": 1,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "imsart.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "imsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "imsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "imsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "imsart.A",
+      "branches": 18,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "imsart.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.authblk"
+      },
+      "pair": "imsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "imsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "imsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.imsart-frontmatter"
+      },
+      "pair": "imsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "interact.A",
+      "branches": 39,
+      "pass": 39,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "interact.A",
+      "branches": 39,
+      "pass": 39,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "interact.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "interact.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "interact.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "interact.A",
+      "branches": 21,
+      "pass": 21,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "interact.A",
+      "branches": 6,
+      "pass": 6,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "interact.A",
+      "branches": 6,
+      "pass": 6,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "interact.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "interact.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "interact.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "interact.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "interact.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "interact.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "interact.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "interact.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "interact.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "interact.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.interact"
+      },
+      "pair": "interact.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "iopart.A",
+      "branches": 38,
+      "pass": 38,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "iopart.A",
+      "branches": 38,
+      "pass": 38,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "iopart.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "iopart.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "iopart.A",
+      "branches": 12,
+      "pass": 12,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "iopart.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "iopart.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "iopart.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "iopart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "iopart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "iopart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "iopart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "iopart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "iopart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "iopart.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "iopart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.iopart"
+      },
+      "pair": "iopart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "jacow.A",
+      "branches": 38,
+      "pass": 38,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "jacow.A",
+      "branches": 38,
+      "pass": 38,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "jacow.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "jacow.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "jacow.A",
+      "branches": 11,
+      "pass": 11,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "jacow.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "jacow.A",
+      "branches": 6,
+      "pass": 6,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "jacow.A",
+      "branches": 6,
+      "pass": 6,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "jacow.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "jacow.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "jacow.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "jacow.A",
+      "branches": 3,
+      "pass": 3,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "jacow.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "jacow.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "jacow.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "jacow.A",
+      "branches": 16,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "jacow.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.authblk"
+      },
+      "pair": "jacow.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "jacow.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "jacow.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "llncs.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "llncs.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "llncs.A",
+      "branches": 16,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "llncs.A",
+      "branches": 12,
+      "pass": 12,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "llncs.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "llncs.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "llncs.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "llncs.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "llncs.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "llncs.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "llncs.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "llncs.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "llncs.A",
+      "branches": 26,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.fncychap"
+      },
+      "pair": "llncs.A",
+      "branches": 21,
+      "pass": 19,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "llncs.A",
+      "branches": 21,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "llncs.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "llncs.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.inst-institute"
+      },
+      "pair": "llncs.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "llncs.B",
+      "branches": 33,
+      "pass": 33,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "llncs.B",
+      "branches": 33,
+      "pass": 33,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "llncs.B",
+      "branches": 15,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "llncs.B",
+      "branches": 11,
+      "pass": 11,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "llncs.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "llncs.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "llncs.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "llncs.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "llncs.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "llncs.B",
+      "branches": 1,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "llncs.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "llncs.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "llncs.B",
+      "branches": 24,
+      "pass": 23,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.fncychap"
+      },
+      "pair": "llncs.B",
+      "branches": 20,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "llncs.B",
+      "branches": 19,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "llncs.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "llncs.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.inst-institute"
+      },
+      "pair": "llncs.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "memoir.A",
+      "branches": 43,
+      "pass": 43,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "memoir.A",
+      "branches": 20,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "memoir.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "memoir.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.fncychap"
+      },
+      "pair": "memoir.A",
+      "branches": 26,
+      "pass": 24,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "memoir.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "memoir.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "memoir.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "memoir.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "memoir.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "memoir.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "memoir.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "memoir.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "memoir.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "memoir.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.memoir-style"
+      },
+      "pair": "memoir.A",
+      "branches": 26,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "memoir.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "memoir.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "memoir.B",
+      "branches": 42,
+      "pass": 42,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "memoir.B",
+      "branches": 19,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "memoir.B",
+      "branches": 20,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "memoir.B",
+      "branches": 15,
+      "pass": 15,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.fncychap"
+      },
+      "pair": "memoir.B",
+      "branches": 24,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "memoir.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "memoir.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "memoir.B",
+      "branches": 23,
+      "pass": 23,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "memoir.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "memoir.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "memoir.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "memoir.B",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "memoir.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "memoir.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "memoir.B",
+      "branches": 24,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.memoir-style"
+      },
+      "pair": "memoir.B",
+      "branches": 24,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "memoir.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "memoir.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "quantumarticle.A",
+      "branches": 32,
+      "pass": 3,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "quantumarticle.A",
+      "branches": 32,
+      "pass": 3,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "quantumarticle.A",
+      "branches": 14,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "quantumarticle.A",
+      "branches": 7,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "quantumarticle.A",
+      "branches": 7,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "quantumarticle.A",
+      "branches": 7,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "quantumarticle.A",
+      "branches": 1,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "quantumarticle.A",
+      "branches": 1,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "quantumarticle.A",
+      "branches": 1,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "quantumarticle.A",
+      "branches": 1,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "quantumarticle.A",
+      "branches": 1,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "quantumarticle.A",
+      "branches": 1,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "quantumarticle.A",
+      "branches": 12,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "quantumarticle.A",
+      "branches": 1,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.revtex"
+      },
+      "pair": "quantumarticle.A",
+      "branches": 1,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "report.A",
+      "branches": 48,
+      "pass": 48,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "report.A",
+      "branches": 48,
+      "pass": 48,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "report.A",
+      "branches": 24,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "report.A",
+      "branches": 24,
+      "pass": 23,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "report.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.fncychap"
+      },
+      "pair": "report.A",
+      "branches": 30,
+      "pass": 28,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "report.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "report.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "report.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "report.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "report.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "report.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "report.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "report.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "report.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "report.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "report.A",
+      "branches": 28,
+      "pass": 27,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "report.A",
+      "branches": 30,
+      "pass": 29,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "report.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "report.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "report.B",
+      "branches": 47,
+      "pass": 47,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "report.B",
+      "branches": 47,
+      "pass": 47,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "report.B",
+      "branches": 23,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "report.B",
+      "branches": 22,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "report.B",
+      "branches": 16,
+      "pass": 16,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.fncychap"
+      },
+      "pair": "report.B",
+      "branches": 28,
+      "pass": 26,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "report.B",
+      "branches": 28,
+      "pass": 26,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "report.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "report.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "report.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "report.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "report.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "report.B",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "report.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "report.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "report.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "report.B",
+      "branches": 26,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "report.B",
+      "branches": 28,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "report.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "report.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "scrartcl.A",
+      "branches": 38,
+      "pass": 38,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "scrartcl.A",
+      "branches": 38,
+      "pass": 38,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "scrartcl.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "scrartcl.A",
+      "branches": 12,
+      "pass": 12,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-styled"
+      },
+      "pair": "scrartcl.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "scrartcl.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "scrartcl.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "scrartcl.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "scrartcl.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "scrartcl.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "scrartcl.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "scrartcl.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "scrartcl.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "scrartcl.A",
+      "branches": 16,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "scrartcl.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.koma-fonts"
+      },
+      "pair": "scrartcl.A",
+      "branches": 15,
+      "pass": 15,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "scrartcl.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "scrartcl.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.koma-title"
+      },
+      "pair": "scrartcl.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "scrartcl.B",
+      "branches": 37,
+      "pass": 37,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "scrartcl.B",
+      "branches": 37,
+      "pass": 37,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "scrartcl.B",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "scrartcl.B",
+      "branches": 10,
+      "pass": 10,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-styled"
+      },
+      "pair": "scrartcl.B",
+      "branches": 16,
+      "pass": 16,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "scrartcl.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "scrartcl.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "scrartcl.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "scrartcl.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "scrartcl.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "scrartcl.B",
+      "branches": 1,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "scrartcl.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "scrartcl.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "scrartcl.B",
+      "branches": 14,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "scrartcl.B",
+      "branches": 16,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.koma-fonts"
+      },
+      "pair": "scrartcl.B",
+      "branches": 14,
+      "pass": 14,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "scrartcl.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "scrartcl.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.koma-title"
+      },
+      "pair": "scrartcl.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "scrbook.A",
+      "branches": 43,
+      "pass": 38,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "scrbook.A",
+      "branches": 43,
+      "pass": 38,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "scrbook.A",
+      "branches": 18,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "scrbook.A",
+      "branches": 16,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-styled"
+      },
+      "pair": "scrbook.A",
+      "branches": 24,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.fncychap"
+      },
+      "pair": "scrbook.A",
+      "branches": 24,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "scrbook.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "scrbook.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "scrbook.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "scrbook.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "scrbook.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "scrbook.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "scrbook.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "scrbook.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "scrbook.A",
+      "branches": 24,
+      "pass": 23,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "scrbook.A",
+      "branches": 24,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.koma-fonts"
+      },
+      "pair": "scrbook.A",
+      "branches": 24,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "scrbook.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "scrbook.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.koma-title"
+      },
+      "pair": "scrbook.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "scrbook.B",
+      "branches": 42,
+      "pass": 39,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "scrbook.B",
+      "branches": 42,
+      "pass": 39,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "scrbook.B",
+      "branches": 17,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "scrbook.B",
+      "branches": 14,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-styled"
+      },
+      "pair": "scrbook.B",
+      "branches": 22,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.fncychap"
+      },
+      "pair": "scrbook.B",
+      "branches": 22,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "scrbook.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "scrbook.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "scrbook.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "scrbook.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "scrbook.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "scrbook.B",
+      "branches": 1,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "scrbook.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "scrbook.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "scrbook.B",
+      "branches": 22,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "scrbook.B",
+      "branches": 22,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.koma-fonts"
+      },
+      "pair": "scrbook.B",
+      "branches": 22,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "scrbook.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "scrbook.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.koma-title"
+      },
+      "pair": "scrbook.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "scrreprt.A",
+      "branches": 46,
+      "pass": 46,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "scrreprt.A",
+      "branches": 46,
+      "pass": 46,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "scrreprt.A",
+      "branches": 18,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "scrreprt.A",
+      "branches": 16,
+      "pass": 16,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-styled"
+      },
+      "pair": "scrreprt.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.fncychap"
+      },
+      "pair": "scrreprt.A",
+      "branches": 24,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "scrreprt.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "scrreprt.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "scrreprt.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "scrreprt.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "scrreprt.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "scrreprt.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "scrreprt.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "scrreprt.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "scrreprt.A",
+      "branches": 24,
+      "pass": 23,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "scrreprt.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.koma-fonts"
+      },
+      "pair": "scrreprt.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "scrreprt.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "scrreprt.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.koma-title"
+      },
+      "pair": "scrreprt.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "scrreprt.B",
+      "branches": 45,
+      "pass": 45,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "scrreprt.B",
+      "branches": 45,
+      "pass": 45,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "scrreprt.B",
+      "branches": 17,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "scrreprt.B",
+      "branches": 14,
+      "pass": 14,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-styled"
+      },
+      "pair": "scrreprt.B",
+      "branches": 22,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.fncychap"
+      },
+      "pair": "scrreprt.B",
+      "branches": 22,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "scrreprt.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "scrreprt.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "scrreprt.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "scrreprt.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "scrreprt.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "scrreprt.B",
+      "branches": 1,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "scrreprt.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "scrreprt.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "scrreprt.B",
+      "branches": 22,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "scrreprt.B",
+      "branches": 22,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.koma-fonts"
+      },
+      "pair": "scrreprt.B",
+      "branches": 22,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "scrreprt.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "scrreprt.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.koma-title"
+      },
+      "pair": "scrreprt.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel"
+      },
+      "pair": "spie.A",
+      "branches": 34,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel"
+      },
+      "pair": "spie.A",
+      "branches": 34,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel"
+      },
+      "pair": "spie.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec"
+      },
+      "pair": "spie.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native"
+      },
+      "pair": "spie.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec"
+      },
+      "pair": "spie.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel"
+      },
+      "pair": "spie.A",
+      "branches": 6,
+      "pass": 6,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item"
+      },
+      "pair": "spie.A",
+      "branches": 6,
+      "pass": 6,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor"
+      },
+      "pair": "spie.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape"
+      },
+      "pair": "spie.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel"
+      },
+      "pair": "spie.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.author-blocks"
+      },
+      "pair": "spie.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block"
+      },
+      "pair": "spie.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle"
+      },
+      "pair": "spie.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env"
+      },
+      "pair": "spie.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty"
+      },
+      "pair": "spie.A",
+      "branches": 19,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel"
+      },
+      "pair": "spie.A",
+      "branches": 24,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.authblk"
+      },
+      "pair": "spie.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native"
+      },
+      "pair": "spie.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling"
+      },
+      "pair": "spie.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.spie"
+      },
+      "pair": "spie.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    }
+  ]
+}

@@ -3,7 +3,8 @@
  * before \maketitle, in template.tex's order (l.85-126): \title, one \Author[affiliation numbers][email]{given}{surname}
  * per author (the email only on the corresponding authors), one \affil[n]{…} per affiliation, then \deceased[date]{author
  * numbers} and \equalcontrib{author numbers} at the end of the affiliations, \correspondence when the line is given,
- * \runningtitle and \runningauthor (always), \keywords, then \maketitle. The abstract follows \maketitle, as in the template.
+ * \runningtitle and \runningauthor (with no author, the class's author-less mode instead), \keywords, then \maketitle. The
+ * abstract follows \maketitle, as in the template.
  * CTAN: https://ctan.org/pkg/copernicus
  */
 import type { Realization, Subject } from '../../../schema/realization.ts';
@@ -47,7 +48,16 @@ const front = (node: Subject, content: string): string => {
   // 603). The short author list falls back to the class's convention: one surname, two joined by "and", else "et al.".
   const surnames = authors.map((a) => nameParts(a.name).surname);
   const runningAuthor = templateField(node, 'runningAuthor') || (surnames.length > 2 ? `${surnames[0]} et al.` : surnames.join(' and '));
-  lines.push(`\\runningtitle{${templateField(node, 'shortTitle') || title}}`, `\\runningauthor{${runningAuthor}}`);
+  lines.push(`\\runningtitle{${templateField(node, 'shortTitle') || title}}`);
+  // With no author and no running author there is nothing to write: an empty \runningauthor stops \maketitle at "You must define
+  // \runningauthor" (\@runtest, copernicus.cls l.556-557 in the setting's copy), and it replaced the one the setting's preamble
+  // gives (batch 4 round 2, copernicus.A: 0 of 15 front.copernicus branches pass, document dc017585f8da84ccdb8f5, result
+  // 32dfe4237c30). The class's own author-less mode, its noauthor option's \@noauthortrue (l.116), is set instead: \@runtest skips
+  // the test, and the author list, the correspondence line and the running author are left out (l.698-991, 2514, 2709). Not a
+  // class option, since a title way cannot write the class line; set before \maketitle it holds for the title and every running
+  // head (compiled with no \Author: no error, ZeroTeX-NG through compat cases, 2026-11-10).
+  if (runningAuthor === '') lines.push('\\csname @noauthortrue\\endcsname');
+  else lines.push(`\\runningauthor{${runningAuthor}}`);
   // \keywords{…} in the final stage only stores them (l.2671-2676): the manuscript layout prints "Keywords." under the
   // abstract (l.1210-1214; typeset, see the key), the other layouts as a title-page item (l.855). In a discussion-stage paper
   // the class would print them where they stand (l.2677-2682); the copernicus setting is final (acp).

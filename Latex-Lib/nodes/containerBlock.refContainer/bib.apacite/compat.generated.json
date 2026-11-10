@@ -4,14 +4,57 @@
   "generatedFrom": {
     "key": "sha256:e961d6a6cb0deea2719072a2754c07e7e948df35369c6742adcc85ddf5b4e5a1",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": null
+    "matrix": "sha256:cd47c75c7516571f86e475656acb6f9784ddf16fe8300c2c26d0e8d5a16e9972"
   },
   "parents": {
     "body": {
       "(document body)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 659,
+          "pass": 497,
+          "failing": [
+            "aaai.A",
+            "agu.A",
+            "aistats.A",
+            "amsart.A",
+            "amsart.B",
+            "article.A",
+            "article.B",
+            "eccv.A",
+            "exam.A",
+            "exam.B",
+            "extarticle.A",
+            "extarticle.B",
+            "icassp.A",
+            "ieeeaccess.A",
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A",
+            "ijcai.A",
+            "imsart.A",
+            "interact.A",
+            "iopart.A",
+            "jacow.A",
+            "llncs.A",
+            "llncs.B",
+            "memoir.A",
+            "memoir.B",
+            "quantumarticle.A",
+            "report.A",
+            "report.B",
+            "scrartcl.A",
+            "scrartcl.B",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B",
+            "spie.A"
+          ]
+        }
       }
     }
   },

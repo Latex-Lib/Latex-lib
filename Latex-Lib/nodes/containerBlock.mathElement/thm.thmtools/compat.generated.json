@@ -4,26 +4,53 @@
   "generatedFrom": {
     "key": "sha256:3307a5cc3c4e946b765f7167e7fcf370108a322c9e3b32a69ef1252997875e2f",
     "contexts": "sha256:19ca377618c806eb733d2b157e0258ce2e79a5cd584f9c6a2c2ae6bd83663bc5",
-    "matrix": null
+    "matrix": "sha256:e9dbe88276fc27d02a70a2443c693db36f6bf2038ff026fe3d17a4e074f37962"
   },
   "parents": {
     "body": {
       "(document body)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 11589,
+          "pass": 11280,
+          "failing": [
+            "book.A",
+            "book.B",
+            "memoir.A",
+            "memoir.B",
+            "report.A",
+            "report.B",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B",
+            "ut-thesis.A"
+          ]
+        }
       }
     },
     "containerBlock/appendix": {
       "num.appendices-env": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 631,
+          "pass": 631,
+          "failing": []
+        }
       },
       "num.appendix": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 754,
+          "pass": 754,
+          "failing": []
+        }
       },
       "num.appendix-onecolumn": {
         "verdict": "ok",
@@ -33,7 +60,12 @@
       "num.cvpr-supplementary": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 34,
+          "pass": 34,
+          "failing": []
+        }
       },
       "num.handset": {
         "verdict": "ok",
@@ -43,7 +75,12 @@
       "num.ieee-appendices": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 252,
+          "pass": 252,
+          "failing": []
+        }
       },
       "num.mdpi-appendix": {
         "verdict": "ok",
@@ -53,7 +90,12 @@
       "num.unnumbered": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 697,
+          "pass": 697,
+          "failing": []
+        }
       }
     },
     "containerBlock/acknowledgement": {
@@ -75,12 +117,24 @@
       "ack.bmhead": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 38,
+          "pass": 38,
+          "failing": []
+        }
       },
       "ack.class-command": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 39,
+          "pass": 38,
+          "failing": [
+            "agu.A"
+          ]
+        }
       },
       "ack.class-command[form=argument]": {
         "verdict": "ok",
@@ -105,12 +159,24 @@
       "ack.copernicus": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 35,
+          "pass": 34,
+          "failing": [
+            "copernicus.A"
+          ]
+        }
       },
       "ack.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 673,
+          "pass": 673,
+          "failing": []
+        }
       },
       "ack.llncs-credits": {
         "verdict": "ok",
@@ -142,17 +208,123 @@
       "cols.multicol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 4318,
+          "pass": 3586,
+          "failing": [
+            "aaai.A",
+            "achemso.A",
+            "acl.A",
+            "agu.A",
+            "aistats.A",
+            "amsart.A",
+            "amsart.B",
+            "apa7.A",
+            "article.A",
+            "article.B",
+            "ascelike.A",
+            "asmeconf.A",
+            "asmejour.A",
+            "bmvc.A",
+            "book.A",
+            "book.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "colm.A",
+            "copernicus.A",
+            "corl.A",
+            "cvpr.A",
+            "ecai.A",
+            "elsarticle-3p.A",
+            "elsarticle-5p.A",
+            "elsarticle-preprint.A",
+            "elsarticle-preprint.B",
+            "exam.A",
+            "exam.B",
+            "extarticle.A",
+            "extarticle.B",
+            "frontiers.A",
+            "icassp.A",
+            "iclr.A",
+            "icml.A",
+            "ieeeaccess.A",
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A",
+            "ijcai.A",
+            "imsart.A",
+            "interact.A",
+            "iopart.A",
+            "iopjournal.A",
+            "jacow.A",
+            "jss.A",
+            "memoir.A",
+            "memoir.B",
+            "neurips.A",
+            "oup-authoring-template.A",
+            "plos.A",
+            "report.A",
+            "report.B",
+            "scrartcl.A",
+            "scrartcl.B",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B",
+            "sn-jnl.A",
+            "tmlr.A",
+            "tufte-handout.A",
+            "usenix.A",
+            "ut-thesis.A"
+          ]
+        }
       },
       "cols.paracol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 2295,
+          "pass": 2253,
+          "failing": [
+            "agu.A",
+            "amsart.A",
+            "article.A",
+            "book.A",
+            "cas-dc.A",
+            "cas-sc.A",
+            "exam.A",
+            "extarticle.A",
+            "imsart.A",
+            "interact.A",
+            "iopart.A",
+            "iopjournal.A",
+            "memoir.A",
+            "plos.A",
+            "report.A",
+            "scrartcl.A",
+            "scrbook.A",
+            "scrreprt.A",
+            "sn-jnl.A",
+            "tufte-handout.A",
+            "ut-thesis.A"
+          ]
+        }
       },
       "cols.revtex-grid": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 198,
+          "pass": 170,
+          "failing": [
+            "aastex.A",
+            "aastex.B"
+          ]
+        }
       },
       "cols.tikzposter": {
         "verdict": "ok",
@@ -162,36 +334,243 @@
       "cols.twocolumn-cmd": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 4552,
+          "pass": 4499,
+          "failing": [
+            "agu.A",
+            "amsart.A",
+            "article.A",
+            "ascelike.A",
+            "book.A",
+            "cas-dc.A",
+            "cas-sc.A",
+            "copernicus.A",
+            "ecai.A",
+            "elsarticle-5p.A",
+            "exam.A",
+            "extarticle.A",
+            "frontiers.A",
+            "icassp.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A",
+            "imsart.A",
+            "interact.A",
+            "iopart.A",
+            "iopjournal.A",
+            "jss.A",
+            "memoir.A",
+            "oup-authoring-template.A",
+            "plos.A",
+            "report.A",
+            "scrartcl.A",
+            "scrbook.A",
+            "scrreprt.A",
+            "tufte-handout.A",
+            "ut-thesis.A"
+          ]
+        }
       },
       "cols.vwcol": {
         "verdict": "fallback",
         "source": "derived",
-        "status": "derived",
+        "status": "failing",
         "to": "thm.kernel",
         "reason": "needs paragraph",
         "lacks": [
           "needs paragraph"
-        ]
+        ],
+        "matrix": {
+          "branches": 4642,
+          "pass": 204,
+          "failing": [
+            "aaai.A",
+            "aastex.A",
+            "aastex.B",
+            "achemso.A",
+            "acl.A",
+            "agu.A",
+            "aistats.A",
+            "amsart.A",
+            "amsart.B",
+            "apa7.A",
+            "article.A",
+            "article.B",
+            "ascelike.A",
+            "asmeconf.A",
+            "asmejour.A",
+            "bmvc.A",
+            "book.A",
+            "book.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "colm.A",
+            "copernicus.A",
+            "corl.A",
+            "cvpr.A",
+            "ecai.A",
+            "elsarticle-3p.A",
+            "elsarticle-5p.A",
+            "elsarticle-preprint.A",
+            "elsarticle-preprint.B",
+            "emulateapj.A",
+            "exam.A",
+            "exam.B",
+            "extarticle.A",
+            "extarticle.B",
+            "frontiers.A",
+            "icassp.A",
+            "iclr.A",
+            "icml.A",
+            "ieeeaccess.A",
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A",
+            "ijcai.A",
+            "imsart.A",
+            "interact.A",
+            "iopart.A",
+            "iopjournal.A",
+            "jacow.A",
+            "jss.A",
+            "memoir.A",
+            "memoir.B",
+            "neurips.A",
+            "oup-authoring-template.A",
+            "plos.A",
+            "quantumarticle.A",
+            "report.A",
+            "report.B",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A",
+            "scrartcl.A",
+            "scrartcl.B",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B",
+            "sn-jnl.A",
+            "tmlr.A",
+            "tufte-handout.A",
+            "usenix.A",
+            "ut-thesis.A"
+          ]
+        }
       }
     },
     "containerBlock/footnote": {
       "(General)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 4334,
+          "pass": 3815,
+          "failing": [
+            "aaai.A",
+            "aastex.A",
+            "aastex.B",
+            "achemso.A",
+            "acl.A",
+            "agu.A",
+            "aistats.A",
+            "amsart.A",
+            "amsart.B",
+            "apa7.A",
+            "article.A",
+            "article.B",
+            "ascelike.A",
+            "asmeconf.A",
+            "asmejour.A",
+            "bmvc.A",
+            "book.A",
+            "book.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "colm.A",
+            "copernicus.A",
+            "corl.A",
+            "cvpr.A",
+            "ecai.A",
+            "elsarticle-3p.A",
+            "elsarticle-5p.A",
+            "elsarticle-preprint.A",
+            "elsarticle-preprint.B",
+            "emulateapj.A",
+            "exam.A",
+            "exam.B",
+            "extarticle.A",
+            "extarticle.B",
+            "frontiers.A",
+            "icassp.A",
+            "iclr.A",
+            "icml.A",
+            "ieeeaccess.A",
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A",
+            "ijcai.A",
+            "imsart.A",
+            "interact.A",
+            "iopart.A",
+            "iopjournal.A",
+            "jacow.A",
+            "jss.A",
+            "memoir.A",
+            "memoir.B",
+            "neurips.A",
+            "oup-authoring-template.A",
+            "plos.A",
+            "quantumarticle.A",
+            "report.A",
+            "report.B",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A",
+            "scrartcl.A",
+            "scrartcl.B",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B",
+            "sn-jnl.A",
+            "tmlr.A",
+            "usenix.A",
+            "ut-thesis.A"
+          ]
+        }
       }
     },
     "containerBlock/listing": {
       "list.agu-glossary": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 157,
+          "pass": 152,
+          "failing": [
+            "agu.A"
+          ]
+        }
       },
       "list.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 174,
+          "pass": 169,
+          "failing": [
+            "apa7.A",
+            "cas-dc.A",
+            "imsart.A",
+            "jacow.A"
+          ]
+        }
       },
       "list.cvlist": {
         "verdict": "ok",
@@ -201,37 +580,290 @@
       "list.enumerate-pkg": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 4701,
+          "pass": 4584,
+          "failing": [
+            "aastex.A",
+            "aastex.B",
+            "amsart.B",
+            "asmeconf.A",
+            "asmejour.A",
+            "book.A",
+            "book.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "ecai.A",
+            "elsarticle-5p.A",
+            "emulateapj.A",
+            "frontiers.A",
+            "icassp.A",
+            "ieeeaccess.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A",
+            "memoir.A",
+            "memoir.B",
+            "oup-authoring-template.A",
+            "plos.A",
+            "report.A",
+            "report.B",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B",
+            "ut-thesis.A"
+          ]
+        }
       },
       "list.enumitem": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 4731,
+          "pass": 4604,
+          "failing": [
+            "aaai.A",
+            "aastex.A",
+            "aastex.B",
+            "achemso.A",
+            "acl.A",
+            "agu.A",
+            "aistats.A",
+            "amsart.A",
+            "amsart.B",
+            "apa7.A",
+            "article.A",
+            "article.B",
+            "ascelike.A",
+            "asmeconf.A",
+            "asmejour.A",
+            "bmvc.A",
+            "book.A",
+            "book.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "colm.A",
+            "copernicus.A",
+            "corl.A",
+            "cvpr.A",
+            "ecai.A",
+            "elsarticle-3p.A",
+            "elsarticle-5p.A",
+            "elsarticle-preprint.A",
+            "elsarticle-preprint.B",
+            "emulateapj.A",
+            "exam.A",
+            "exam.B",
+            "extarticle.A",
+            "extarticle.B",
+            "frontiers.A",
+            "icassp.A",
+            "iclr.A",
+            "icml.A",
+            "ieeeaccess.A",
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A",
+            "ijcai.A",
+            "imsart.A",
+            "interact.A",
+            "iopart.A",
+            "iopjournal.A",
+            "jacow.A",
+            "jss.A",
+            "memoir.A",
+            "memoir.B",
+            "neurips.A",
+            "oup-authoring-template.A",
+            "plos.A",
+            "quantumarticle.A",
+            "report.A",
+            "report.B",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A",
+            "scrartcl.A",
+            "scrartcl.B",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B",
+            "sn-jnl.A",
+            "tmlr.A",
+            "tufte-handout.A",
+            "usenix.A",
+            "ut-thesis.A"
+          ]
+        }
       },
       "list.exam-questions": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 23,
+          "pass": 21,
+          "failing": [
+            "exam.A",
+            "exam.B"
+          ]
+        }
       },
       "list.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 1591,
+          "pass": 1570,
+          "failing": [
+            "asmejour.A",
+            "book.A",
+            "book.B",
+            "frontiers.A",
+            "memoir.A",
+            "memoir.B",
+            "oup-authoring-template.A",
+            "quantumarticle.A",
+            "report.A",
+            "report.B",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B",
+            "ut-thesis.A"
+          ]
+        }
       },
       "list.nomenclature": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 92,
+          "pass": 91,
+          "failing": [
+            "asmeconf.A"
+          ]
+        }
       },
       "list.paralist": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 1708,
+          "pass": 1624,
+          "failing": [
+            "aaai.A",
+            "aastex.A",
+            "aastex.B",
+            "achemso.A",
+            "acl.A",
+            "agu.A",
+            "aistats.A",
+            "amsart.A",
+            "amsart.B",
+            "apa7.A",
+            "article.A",
+            "article.B",
+            "ascelike.A",
+            "asmeconf.A",
+            "asmejour.A",
+            "bmvc.A",
+            "book.A",
+            "book.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "colm.A",
+            "copernicus.A",
+            "corl.A",
+            "ecai.A",
+            "elsarticle-3p.A",
+            "elsarticle-5p.A",
+            "elsarticle-preprint.A",
+            "elsarticle-preprint.B",
+            "emulateapj.A",
+            "exam.A",
+            "exam.B",
+            "extarticle.A",
+            "extarticle.B",
+            "frontiers.A",
+            "icassp.A",
+            "iclr.A",
+            "icml.A",
+            "ieeeaccess.A",
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A",
+            "ijcai.A",
+            "imsart.A",
+            "interact.A",
+            "iopart.A",
+            "iopjournal.A",
+            "jss.A",
+            "memoir.A",
+            "memoir.B",
+            "neurips.A",
+            "oup-authoring-template.A",
+            "plos.A",
+            "quantumarticle.A",
+            "report.A",
+            "report.B",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A",
+            "scrartcl.A",
+            "scrartcl.B",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B",
+            "sn-jnl.A",
+            "tmlr.A",
+            "tufte-handout.A",
+            "usenix.A",
+            "ut-thesis.A"
+          ]
+        }
       },
       "list.scrextend": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 4933,
+          "pass": 4883,
+          "failing": [
+            "aastex.A",
+            "aastex.B",
+            "agu.A",
+            "asmejour.A",
+            "book.A",
+            "book.B",
+            "cvpr.A",
+            "frontiers.A",
+            "memoir.A",
+            "memoir.B",
+            "oup-authoring-template.A",
+            "plos.A",
+            "quantumarticle.A",
+            "report.A",
+            "report.B",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B",
+            "sn-jnl.A",
+            "tufte-handout.A",
+            "ut-thesis.A"
+          ]
+        }
       }
     },
     "containerBlock/abstract": {
@@ -243,12 +875,43 @@
       "abs.abstract-pkg": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 4024,
+          "pass": 3979,
+          "failing": [
+            "amsart.B",
+            "asmeconf.A",
+            "cas-dc.A",
+            "cas-sc.A",
+            "elsarticle-5p.A",
+            "frontiers.A",
+            "icassp.A",
+            "ieeeaccess.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A",
+            "memoir.A",
+            "memoir.B",
+            "report.B",
+            "scrartcl.B",
+            "tufte-handout.A"
+          ]
+        }
       },
       "abs.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 150,
+          "pass": 134,
+          "failing": [
+            "apa7.A",
+            "oup-authoring-template.A",
+            "sn-jnl.A"
+          ]
+        }
       },
       "abs.class-native[form=command]": {
         "verdict": "ok",
@@ -268,7 +931,22 @@
       "abs.heading": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 2463,
+          "pass": 2446,
+          "failing": [
+            "book.A",
+            "book.B",
+            "report.A",
+            "report.B",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B",
+            "ut-thesis.A"
+          ]
+        }
       },
       "abs.ieee-indextext": {
         "verdict": "ok",
@@ -278,17 +956,49 @@
       "abs.ieeeaccess": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 69,
+          "pass": 57,
+          "failing": [
+            "ieeeaccess.A"
+          ]
+        }
       },
       "abs.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 3732,
+          "pass": 3658,
+          "failing": [
+            "amsart.B",
+            "asmeconf.A",
+            "asmejour.A",
+            "cas-dc.A",
+            "cas-sc.A",
+            "elsarticle-5p.A",
+            "frontiers.A",
+            "icassp.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A",
+            "memoir.A",
+            "memoir.B",
+            "tufte-handout.A"
+          ]
+        }
       },
       "abs.keywords": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 157,
+          "pass": 157,
+          "failing": []
+        }
       },
       "abs.tikzposter-block": {
         "verdict": "ok",
@@ -305,12 +1015,33 @@
       "thm.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 118,
+          "pass": 110,
+          "failing": [
+            "amsart.A",
+            "cas-dc.A",
+            "cas-sc.A",
+            "ieeeaccess.A",
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A"
+          ]
+        }
       },
       "thm.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 154,
+          "pass": 153,
+          "failing": [
+            "asmejour.A"
+          ]
+        }
       },
       "thm.mdframed": {
         "verdict": "ok",
@@ -335,7 +1066,15 @@
       "thm.thmtools": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 228,
+          "pass": 226,
+          "failing": [
+            "frontiers.A",
+            "oup-authoring-template.A"
+          ]
+        }
       }
     },
     "table_cell": {

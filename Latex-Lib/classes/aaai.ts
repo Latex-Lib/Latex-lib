@@ -7,10 +7,11 @@ import { defineClass } from '../schema/class.ts';
  * Preloads (l.58-75, 411): iftex, fontenc with T1, newtxtext (under XeTeX it loads fontspec and TeX Gyre Termes X), helvet,
  * courier, placeins and xcolor (no option: tbl.colortbl's xcolor[table] meets "Option clash").
  * At \begin{document} it raises a PackageError for each of 17 packages it forbids (l.434-501). Those with package facts are
- * refused here: hyperref (so are General's references and links, which load it: `refuses`), geometry, setspace, titlesec and
- * wrapfig. The other twelve (bbm, authblk, balance, CJK, flushend, fullpage, navigator, savetrees, stfloats, tabu, tocbibind,
- * ulem) have no facts and no library way loads them; but Flouest's General loads ulem for underline and strike marks, which the
- * profile cannot refuse (notes for the CI session, b2p G5).
+ * refused here: hyperref (so are General's references and links, which load it: `refuses`), geometry, setspace, titlesec,
+ * wrapfig and authblk (its facts came with front.authblk, 2026-11-07; refused after batch 4 round 2). The other eleven (bbm,
+ * balance, CJK, flushend, fullpage, navigator, savetrees, stfloats, tabu, tocbibind, ulem) have no facts and no library way
+ * loads them; but Flouest's General loads ulem for underline and strike marks, which the profile cannot refuse (notes for the
+ * CI session, b2p G5).
  * With natbib loaded it calls \bibliographystyle{aaai2027} at \begin{document} (l.425-433): a way that loads natbib and writes
  * its own \bibliographystyle (bib.natbib) gives main.aux a second \bibstyle, which BibTeX rejects, so bib.natbib's key denies
  * class.aaai (CA11). Without natbib (bib.bibtex-bst, bib.cite-pkg) the style writes none.
@@ -32,6 +33,7 @@ export default defineClass({
       { pkg: "setspace", reason: "aaai2027.sty raises 'Package setspace is forbidden' (a PackageError) at \\begin{document} when setspace is loaded", evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/aaai2027.sty (2027/10/21)', line: '474-477' }] },
       { pkg: "titlesec", reason: "aaai2027.sty raises 'Package titlesec is forbidden' (a PackageError) at \\begin{document} when titlesec is loaded", evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/aaai2027.sty (2027/10/21)', line: '486-489' }] },
       { pkg: "wrapfig", reason: "aaai2027.sty raises 'Package wrapfig is forbidden' (a PackageError) at \\begin{document} when wrapfig is loaded", evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/aaai2027.sty (2027/10/21)', line: '498-501' }] },
+      { pkg: "authblk", reason: "aaai2027.sty raises 'Package authblk is forbidden' (a PackageError) at \\begin{document} when authblk is loaded (front.authblk, the only way that loads it, takes `only` article and so fitted aaai)", evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/aaai2027.sty (2027/10/21)', line: '442-445' }, { kind: 'compile', cell: 'batch 4 round 2, aaai.A: front.authblk 0 of 17 branches pass, each at "Package aaai Error: Package authblk is forbidden." (document da9844b051d0c34de6c5a, result 67ffe595e9, l.40 \\begin{document})' }] },
     ],
     policy: [],
   },

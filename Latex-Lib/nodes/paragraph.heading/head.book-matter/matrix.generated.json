@@ -1,0 +1,421 @@
+{
+  "way": "head.book-matter",
+  "from": {
+    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
+    "runs": "r20261110022619593,r20261110022630505",
+    "oracle": "11",
+    "source": "compat tables: a fetched run, not recompiled"
+  },
+  "entries": [
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "book.A",
+      "branches": 36,
+      "pass": 36,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "book.A",
+      "branches": 64,
+      "pass": 62,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "book.A",
+      "branches": 64,
+      "pass": 62,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 28,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 28,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendix"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.unnumbered"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "book.B",
+      "branches": 36,
+      "pass": 36,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "book.B",
+      "branches": 64,
+      "pass": 62,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "book.B",
+      "branches": 32,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "book.B",
+      "branches": 64,
+      "pass": 63,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "book.B",
+      "branches": 32,
+      "pass": 30,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "book.B",
+      "branches": 32,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "book.B",
+      "branches": 32,
+      "pass": 30,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "book.B",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "book.B",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "book.B",
+      "branches": 32,
+      "pass": 7,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendix"
+      },
+      "pair": "book.B",
+      "branches": 32,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.unnumbered"
+      },
+      "pair": "book.B",
+      "branches": 32,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "ut-thesis.A",
+      "branches": 36,
+      "pass": 34,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 64,
+      "pass": 60,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 64,
+      "pass": 59,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 30,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 28,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 28,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendix"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.unnumbered"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    }
+  ]
+}

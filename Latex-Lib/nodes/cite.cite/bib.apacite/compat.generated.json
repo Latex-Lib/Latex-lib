@@ -4,19 +4,47 @@
   "generatedFrom": {
     "key": "sha256:bced83bd9a73a34869f964b76acd8269ca95385e4c51ee673f45ec089b15be03",
     "contexts": "sha256:f71c32d51d3016c64059e7d491725c08b522482004cfef01186a16c6d9e5d6cb",
-    "matrix": null
+    "matrix": "sha256:d91e1c5943cb3ede586d3935bcde410e83005aa89595bc96d3fd2b9f2d9945a5"
   },
   "parents": {
     "paragraph/paragraph": {
       "para.ieee-parstart": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 120,
+          "pass": 117,
+          "failing": [
+            "ieeeaccess.A",
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A"
+          ]
+        }
       },
       "para.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 1403,
+          "pass": 1344,
+          "failing": [
+            "agu.A",
+            "aistats.A",
+            "article.B",
+            "extarticle.B",
+            "icassp.A",
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A",
+            "quantumarticle.A",
+            "scrbook.A",
+            "scrbook.B",
+            "spie.A"
+          ]
+        }
       }
     },
     "paragraph/heading": {
@@ -28,12 +56,30 @@
       "head.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 448,
+          "pass": 437,
+          "failing": [
+            "quantumarticle.A",
+            "scrbook.A",
+            "scrbook.B"
+          ]
+        }
       },
       "head.class-styled": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 126,
+          "pass": 116,
+          "failing": [
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.B"
+          ]
+        }
       },
       "head.copernicus": {
         "verdict": "ok",
@@ -43,27 +89,94 @@
       "head.fncychap": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 262,
+          "pass": 239,
+          "failing": [
+            "eccv.A",
+            "llncs.A",
+            "llncs.B",
+            "memoir.A",
+            "memoir.B",
+            "report.A",
+            "report.B",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B"
+          ]
+        }
       },
       "head.ieee-raise": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 15,
+          "pass": 14,
+          "failing": [
+            "ieeetran-compsoc.A"
+          ]
+        }
       },
       "head.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 729,
+          "pass": 685,
+          "failing": [
+            "aaai.A",
+            "amsart.B",
+            "eccv.A",
+            "icassp.A",
+            "ieeeaccess.A",
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A",
+            "llncs.A",
+            "llncs.B",
+            "memoir.B",
+            "quantumarticle.A",
+            "report.A",
+            "report.B",
+            "scrartcl.B",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.B",
+            "spie.A"
+          ]
+        }
       },
       "head.koma-fonts": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 121,
+          "pass": 115,
+          "failing": [
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.B"
+          ]
+        }
       },
       "head.memoir-style": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 50,
+          "pass": 47,
+          "failing": [
+            "memoir.A",
+            "memoir.B"
+          ]
+        }
       },
       "head.plain": {
         "verdict": "ok",
@@ -73,12 +186,52 @@
       "head.sectsty": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 467,
+          "pass": 439,
+          "failing": [
+            "aaai.A",
+            "aistats.A",
+            "article.A",
+            "article.B",
+            "eccv.A",
+            "exam.A",
+            "exam.B",
+            "extarticle.A",
+            "extarticle.B",
+            "icassp.A",
+            "ijcai.A",
+            "imsart.A",
+            "jacow.A",
+            "llncs.A",
+            "llncs.B",
+            "report.A",
+            "report.B",
+            "scrartcl.A",
+            "scrartcl.B",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B",
+            "spie.A"
+          ]
+        }
       },
       "head.titlesec": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 429,
+          "pass": 423,
+          "failing": [
+            "amsart.B",
+            "article.B",
+            "extarticle.B",
+            "report.B"
+          ]
+        }
       },
       "head.tufte": {
         "verdict": "ok",
@@ -90,14 +243,26 @@
       "list.item": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 261,
+          "pass": 254,
+          "failing": [
+            "quantumarticle.A"
+          ]
+        }
       }
     },
     "paragraph/title": {
       "front.aaai": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.aastex": {
         "verdict": "ok",
@@ -117,17 +282,34 @@
       "front.agu": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.aistats": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 1,
+          "pass": 0,
+          "failing": [
+            "aistats.A"
+          ]
+        }
       },
       "front.ams-topmatter": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 2,
+          "pass": 2,
+          "failing": []
+        }
       },
       "front.apa7": {
         "verdict": "ok",
@@ -147,12 +329,24 @@
       "front.authblk": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 10,
+          "pass": 9,
+          "failing": [
+            "aaai.A"
+          ]
+        }
       },
       "front.author-blocks": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 37,
+          "pass": 37,
+          "failing": []
+        }
       },
       "front.beamer-title": {
         "verdict": "ok",
@@ -172,12 +366,30 @@
       "front.center-block": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 37,
+          "pass": 32,
+          "failing": [
+            "llncs.B",
+            "quantumarticle.A",
+            "scrartcl.B",
+            "scrbook.B",
+            "scrreprt.B"
+          ]
+        }
       },
       "front.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 36,
+          "pass": 35,
+          "failing": [
+            "quantumarticle.A"
+          ]
+        }
       },
       "front.copernicus": {
         "verdict": "ok",
@@ -212,7 +424,14 @@
       "front.exam-cover": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 2,
+          "pass": 1,
+          "failing": [
+            "exam.B"
+          ]
+        }
       },
       "front.frontiers": {
         "verdict": "ok",
@@ -227,42 +446,82 @@
       "front.ieeeaccess": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.ieeetran-blocks": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 5,
+          "pass": 5,
+          "failing": []
+        }
       },
       "front.ieeetran-journal": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 3,
+          "pass": 3,
+          "failing": []
+        }
       },
       "front.ijcai": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.imsart-frontmatter": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.inst-institute": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 3,
+          "pass": 3,
+          "failing": []
+        }
       },
       "front.interact": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.iopart": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.iopjournal": {
         "verdict": "ok",
@@ -287,7 +546,12 @@
       "front.koma-title": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 6,
+          "pass": 6,
+          "failing": []
+        }
       },
       "front.letter": {
         "verdict": "ok",
@@ -302,7 +566,14 @@
       "front.maketitle": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 36,
+          "pass": 35,
+          "failing": [
+            "quantumarticle.A"
+          ]
+        }
       },
       "front.mdpi": {
         "verdict": "ok",
@@ -327,7 +598,14 @@
       "front.revtex": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 1,
+          "pass": 0,
+          "failing": [
+            "quantumarticle.A"
+          ]
+        }
       },
       "front.siam": {
         "verdict": "ok",
@@ -342,12 +620,22 @@
       "front.spconf": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.spie": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.tikzposter": {
         "verdict": "ok",
@@ -357,12 +645,24 @@
       "front.titlepage-env": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 34,
+          "pass": 33,
+          "failing": [
+            "quantumarticle.A"
+          ]
+        }
       },
       "front.titling": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 34,
+          "pass": 34,
+          "failing": []
+        }
       },
       "front.tufte": {
         "verdict": "ok",

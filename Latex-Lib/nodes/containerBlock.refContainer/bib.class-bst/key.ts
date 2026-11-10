@@ -220,6 +220,18 @@ export default defineKey(
           B4R1("each of the aa, emulateapj, icml, iclr, colm, tmlr, cvpr, copernicus and frontiers presets fails no-bbl in 41 to 45 pairs (aa preset under acmart-sigconf.A, copernicus preset document da258c564cefd0983b37b, result c2128a9a00b6537839c4aecb84d657c5f5ec44db2f92f70ff3e8ed4553e18087); copernicus and frontiers pass under their own class, whose setting holds the .bst (copernicus.A result c4639dc7be7ac7d56fbcf43480db693c87f403c76b653bc519208bf92be71c11)"),
         ],
       })),
+      // Batch 4 round 2: mnras.bst's labels need \citeauthoryear, which natbib defines; the matrix files by `onlyWhen`, not by
+      // `requiresWhen`. The classes named load natbib themselves (emulateapj through aastex; acmart's variants, aamas and vldb
+      // through acmart; elsarticle-3p and -5p through elsarticle; revtex4-2-aip through revtex4-2).
+      {
+        when: { bst: 'mnras', natbib: 'none' },
+        classes: ['class.aa', 'class.aastex', 'class.acmart', 'class.apa7', 'class.asmeconf', 'class.asmejour', 'class.colm', 'class.copernicus', 'class.cvpr', 'class.elsarticle', 'class.frontiers', 'class.iclr', 'class.icml', 'class.mnras', 'class.neurips', 'class.oup-authoring-template', 'class.revtex4-2', 'class.tmlr'],
+        reason:
+          "mnras.bst labels each entry \\protect\\citeauthoryear{…}{…}{…}, which natbib defines (natbib.sty 8.31b l.1003-1004); with no natbib of the list's own (natbib 'none') only a class that loads natbib reads it. Under aaai, cas-dc, cas-sc, imsart and tufte-handout (its setting's nobib unloads natbib) the list stops at 'Undefined control sequence' (\\citeauthoryear in \\bibitem's label). onlyWhen cannot see class options, so a default tufte-handout, which loads natbib, is refused too (not measured)",
+        evidence: [
+          { kind: 'compile', cell: "batch 4 round 2 (testing-pipeline/out/fetched/batch4-round2): the mnras preset's solo branch, document d5e2788f1ff65792ac621, fails under aaai.A (cell c1de2926d4226e07b87a3, result e1a085b88fa6ecc2f154583ef75d9908aa4b1610d2902084169f8c9e603579a8), cas-dc.A, cas-sc.A, imsart.A and tufte-handout.A, and passes in the 31 pairs of the classes named" },
+        ],
+      },
       {
         when: { bst: 'apacite' },
         classes: ['class.apa7', 'class.agu'],

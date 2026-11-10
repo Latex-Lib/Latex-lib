@@ -4,14 +4,21 @@
   "generatedFrom": {
     "key": "sha256:f6bfd4f8ae7802db62c80c0a188ae1b272e9dba857e721867282d11bc0b76f1f",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": null
+    "matrix": "sha256:991414cf252000e60cff1429fda84216bc1ccca03aadba2410aef9ecfd835a22"
   },
   "parents": {
     "body": {
       "(document body)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 731,
+          "pass": 703,
+          "failing": [
+            "agu.A"
+          ]
+        }
       }
     }
   },

@@ -34,6 +34,20 @@ export default defineClass({
   targetEngine: "untested",
   preloads: [{"pkg": "ifthen"}, {"pkg": "babel", "options": ["american"]}, {"pkg": "newtxtext"}, {"pkg": "fontspec"}, {"pkg": "newtxmath"}, {"pkg": "amsmath"}, {"pkg": "microtype", "options": ["final", "nopatch=footnote"]}, {"pkg": "authblk"}, {"pkg": "caption"}, {"pkg": "setspace"}, {"pkg": "lineno"}],
   defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\Appendix", "cmd:\\sAppendix", "cmd:\\KeyWords", "cmd:\\affil", "cmd:\\citeN", "cmd:\\citeNP", "cmd:\\citeA", "cmd:\\citedata", "cmd:\\NameTag", "cmd:\\citeyear"],
+  // A title with no \author (Flouest's title before an author is typed; every title of batch 4's matrix has none) stops at
+  // ascelike's \maketitle: authblk's \maketitle runs the class's \@maketitle, which writes {\AB@authlist \\[3mm]} in a centre
+  // environment (read from the engine's log: \meaning\@maketitle), and with no author \AB@authlist is empty, so the \\ ends no
+  // line. The hook gives authblk an empty author only then; a document with authors is unchanged (same PDF after its header,
+  // compat cases 2026-11-10).
+  setup: {
+    after: ['\\makeatletter\\AddToHook{cmd/maketitle/before}{\\ifx\\AB@authlist\\@empty\\author{}\\fi}\\makeatother'],
+    reason:
+      "with no \\author, ascelike's \\maketitle (authblk's, around the class's \\@maketitle: {\\AB@authlist \\\\[3mm]}) stops at \"There's no line here to end\", whichever title way prints it (front.maketitle, front.class-native, front.author-blocks, front.authblk, General's title), and front.titling's \\maketitle at \"Argument of \\renew@command has an extra }\" or, in titlingpage, an Emergency stop at \"Unbalanced write command\"; the line gives authblk an empty author before \\maketitle only when none was given. The testing pipeline's ascelike setting carries it too",
+    evidence: [
+      { kind: 'compile', cell: "batch 4 round 2, ascelike.A: 103 cells stop at \"There's no line here to end\" at \\maketitle (document d2454d55735fa3ec257ed, result f5f65ad2b9ce, l.26), 0 of 17 to 35 branches pass for each of front.maketitle, front.class-native, front.author-blocks, front.authblk and front.titling (\\renew@command: document d2533ad3d86cbba7a8003, result 650c9ad16563, l.27; Emergency stop: document d8bf6cc8547aa5edcebf2, result 517c7a24f66b, l.34 \\end{titlingpage}); no title branch of the run has an author" },
+      { kind: 'compile', reproducer: "\\documentclass[Journal]{ascelike} \\begin{document} \\title{A title} \\maketitle Text. \\end{document}: \"There's no line here to end\"; with \\author{} or \\author{Ann Author}, or with this line, none. titling's \\maketitle (front.titling's hooks, with and without titlingpage) with no author: \\renew@command, Emergency stop; with the line, none. \\author[1]{…}\\author[2]{…}\\affil[1]{…}\\affil[2]{…}: the same PDF with and without the line (ZeroTeX-NG through compat cases, 2026-11-10)" },
+    ],
+  },
   options: {
     Proceedings: { unloads: ["setspace", "lineno"], description: "single spaced, no line numbers: DoubleSpace and LineNumbers stay off, so the \\AtBeginDocument block loads neither setspace nor lineno (the bundle's example uses it; the setting gives Journal)" },
   },

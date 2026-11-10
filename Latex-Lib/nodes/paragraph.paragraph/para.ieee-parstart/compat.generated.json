@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:43a48d1ab48d86acfa6e83ba5f4005a61093b5b7c8a628bde90b7fae74bb43c1",
     "contexts": "sha256:654370e882a0403fd5eb1f7b05f782058e437782a631b32898e58a82690f4e28",
-    "matrix": null
+    "matrix": "sha256:b1703b9f53323e4c0d6dd94d3848826f7bb9eefa7125476bff41f82f2fc3bd66"
   },
   "parents": {
     "containerBlock/abstract": {
@@ -16,7 +16,12 @@
       "abs.abstract-pkg": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 114,
+          "pass": 114,
+          "failing": []
+        }
       },
       "abs.class-native": {
         "verdict": "ok",
@@ -51,7 +56,12 @@
       "abs.ieeeaccess": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 19,
+          "pass": 19,
+          "failing": []
+        }
       },
       "abs.kernel": {
         "verdict": "ok",
@@ -73,32 +83,80 @@
       "thm.amsthm": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 98,
+          "pass": 98,
+          "failing": []
+        }
       },
       "thm.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 178,
+          "pass": 173,
+          "failing": [
+            "ieeeaccess.A",
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A"
+          ]
+        }
       },
       "thm.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 149,
+          "pass": 144,
+          "failing": [
+            "ieeeaccess.A",
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A"
+          ]
+        }
       },
       "thm.mdframed": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 99,
+          "pass": 99,
+          "failing": []
+        }
       },
       "thm.ntheorem": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 41,
+          "pass": 41,
+          "failing": []
+        }
       },
       "thm.tcolorbox": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 265,
+          "pass": 259,
+          "failing": [
+            "ieeeaccess.A",
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A"
+          ]
+        }
       },
       "thm.tcolorbox[breakable=false]": {
         "verdict": "ok",
@@ -108,7 +166,18 @@
       "thm.thmtools": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 50,
+          "pass": 45,
+          "failing": [
+            "ieeeaccess.A",
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A"
+          ]
+        }
       }
     },
     "containerBlock/columns": {
@@ -135,7 +204,12 @@
       "cols.multicol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 95,
+          "pass": 95,
+          "failing": []
+        }
       },
       "cols.paracol": {
         "verdict": "ok",
@@ -155,19 +229,38 @@
       "cols.twocolumn-cmd": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 19,
+          "pass": 19,
+          "failing": []
+        }
       },
       "cols.vwcol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 19,
+          "pass": 18,
+          "failing": [
+            "ieeeaccess.A"
+          ]
+        }
       }
     },
     "containerBlock/note": {
       "box.awesomebox": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 80,
+          "pass": 79,
+          "failing": [
+            "ieeeaccess.A"
+          ]
+        }
       },
       "box.class-native": {
         "verdict": "ok",
@@ -192,12 +285,32 @@
       "box.fancybox": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 92,
+          "pass": 89,
+          "failing": [
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A"
+          ]
+        }
       },
       "box.mdframed": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 341,
+          "pass": 332,
+          "failing": [
+            "ieeeaccess.A",
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A"
+          ]
+        }
       },
       "box.mdframed[breakable=false]": {
         "verdict": "ok",
@@ -207,7 +320,14 @@
       "box.tcolorbox": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 149,
+          "pass": 147,
+          "failing": [
+            "ieeeaccess.A"
+          ]
+        }
       },
       "box.tcolorbox[breakable=false]": {
         "verdict": "ok",
@@ -237,34 +357,95 @@
       "note.marginnote": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 260,
+          "pass": 244,
+          "failing": [
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A"
+          ]
+        }
       },
       "note.marginpar": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 132,
+          "pass": 112,
+          "failing": [
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A"
+          ]
+        }
       },
       "note.notecolumn": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 128,
+          "pass": 35,
+          "failing": [
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A"
+          ]
+        }
       },
       "note.sidenotes": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 127,
+          "pass": 95,
+          "failing": [
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A"
+          ]
+        }
       },
       "note.todonotes": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 103,
+          "pass": 58,
+          "failing": [
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A"
+          ]
+        }
       }
     },
     "containerBlock/footnote": {
       "(General)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 134,
+          "pass": 93,
+          "failing": [
+            "ieeeaccess.A",
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A"
+          ]
+        }
       }
     },
     "containerBlock/appendix": {
@@ -296,7 +477,12 @@
       "num.ieee-appendices": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 95,
+          "pass": 95,
+          "failing": []
+        }
       },
       "num.mdpi-appendix": {
         "verdict": "ok",
@@ -363,7 +549,17 @@
       "ack.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 95,
+          "pass": 81,
+          "failing": [
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A"
+          ]
+        }
       },
       "ack.llncs-credits": {
         "verdict": "ok",

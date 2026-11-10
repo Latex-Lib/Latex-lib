@@ -4,14 +4,21 @@
   "generatedFrom": {
     "key": "sha256:624d508142d5c031ce0159cf9bba12a3e33b409635bfca5d4eb6dc3e71221877",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": null
+    "matrix": "sha256:5d61fc68013a1e19ee0f81b24cc7212c3274ba289cd8f9424962a64e16f0b5c1"
   },
   "parents": {
     "body": {
       "(document body)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 961,
+          "pass": 859,
+          "failing": [
+            "beamer.A"
+          ]
+        }
       }
     }
   },

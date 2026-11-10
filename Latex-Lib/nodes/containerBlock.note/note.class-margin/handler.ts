@@ -24,6 +24,12 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
   return {
     preamble: () => ({
       declarations: [
+        // Every form is a \marginpar, which runs the output routine without shipping a page, so a page of notes stopped at
+        // "Output loop---100 consecutive dead cycles" as note.marginpar's did before it raised the limit, and the notes still held
+        // were "Float(s) lost" (batch 4 round 2, tufte-handout.A: 4 cells, 53 branches, e.g. dae1be65fa33f6a5ba9b5 result
+        // 2778362b1e, 25 tufte-marginnote notes holding images, at \end{document}; reproduced: 25 \marginnote calls of a 3cm rule
+        // stop at 100 and ship with the limit raised, ZeroTeX-NG, compat cases, 2026-11-10). Only raised, never lowered.
+        '\\ifnum\\maxdeadcycles<1000 \\maxdeadcycles=1000 \\fi',
         // jlreq's keyword form (sidenote_type=symbol, jlreq.cls l.3893, l.3943-3946).
         ...(symbol ? ['\\jlreqsetup{sidenote_type=symbol}'] : []),
         // The class's column fitted to the margin where it is under 2cm or runs off the paper (b22 MC1, `FIT_NOTE_COLUMN`).

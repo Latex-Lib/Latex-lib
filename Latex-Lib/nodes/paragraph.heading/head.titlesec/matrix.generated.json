@@ -1,0 +1,6942 @@
+{
+  "way": "head.titlesec",
+  "from": {
+    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
+    "runs": "r20261110022619593,r20261110022630505",
+    "oracle": "11",
+    "source": "compat tables: a fetched run, not recompiled"
+  },
+  "entries": [
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "aa.A",
+      "branches": 10,
+      "pass": 10,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "aa.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "aa.A",
+      "branches": 16,
+      "pass": 16,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "aa.A",
+      "branches": 8,
+      "pass": 8,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "aa.A",
+      "branches": 8,
+      "pass": 8,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "aa.A",
+      "branches": 8,
+      "pass": 3,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "aa.A",
+      "branches": 16,
+      "pass": 7,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "aastex.A",
+      "branches": 9,
+      "pass": 9,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "aastex.A",
+      "branches": 21,
+      "pass": 21,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "aastex.A",
+      "branches": 14,
+      "pass": 14,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "aastex.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "aastex.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "aastex.A",
+      "branches": 14,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "aastex.B",
+      "branches": 9,
+      "pass": 9,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "aastex.B",
+      "branches": 21,
+      "pass": 21,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "aastex.B",
+      "branches": 14,
+      "pass": 14,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "aastex.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "aastex.B",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "aastex.B",
+      "branches": 14,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "achemso.A",
+      "branches": 20,
+      "pass": 19,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "achemso.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "achemso.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "achemso.A",
+      "branches": 18,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "achemso.A",
+      "branches": 9,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "achemso.A",
+      "branches": 9,
+      "pass": 9,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "achemso.A",
+      "branches": 18,
+      "pass": 10,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "achemso.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "achemso.A",
+      "branches": 18,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "achemso.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "achemso.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "acl.A",
+      "branches": 20,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "acl.A",
+      "branches": 27,
+      "pass": 26,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "acl.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "acl.A",
+      "branches": 18,
+      "pass": 11,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "acl.A",
+      "branches": 8,
+      "pass": 7,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "acl.A",
+      "branches": 9,
+      "pass": 4,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "acl.A",
+      "branches": 18,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "acl.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "acl.A",
+      "branches": 16,
+      "pass": 9,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "acl.A",
+      "branches": 17,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "agu.A",
+      "branches": 5,
+      "pass": 5,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "agu.A",
+      "branches": 10,
+      "pass": 9,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "agu.A",
+      "branches": 6,
+      "pass": 6,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "agu.A",
+      "branches": 3,
+      "pass": 3,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "agu.A",
+      "branches": 3,
+      "pass": 3,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "agu.A",
+      "branches": 3,
+      "pass": 3,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "agu.A",
+      "branches": 6,
+      "pass": 3,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.class-command"
+      },
+      "pair": "agu.A",
+      "branches": 4,
+      "pass": 4,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "agu.A",
+      "branches": 6,
+      "pass": 6,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "aistats.A",
+      "branches": 36,
+      "pass": 35,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "aistats.A",
+      "branches": 51,
+      "pass": 51,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "aistats.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "aistats.A",
+      "branches": 34,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "aistats.A",
+      "branches": 17,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "aistats.A",
+      "branches": 17,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "aistats.A",
+      "branches": 34,
+      "pass": 26,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "aistats.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "aistats.A",
+      "branches": 34,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "aistats.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendix-onecolumn"
+      },
+      "pair": "aistats.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "amsart.A",
+      "branches": 36,
+      "pass": 35,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "amsart.A",
+      "branches": 51,
+      "pass": 51,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "amsart.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "amsart.A",
+      "branches": 34,
+      "pass": 33,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "amsart.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "amsart.A",
+      "branches": 17,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "amsart.A",
+      "branches": 34,
+      "pass": 27,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "amsart.A",
+      "branches": 34,
+      "pass": 29,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "amsart.A",
+      "branches": 34,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "amsart.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "amsart.B",
+      "branches": 36,
+      "pass": 26,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "amsart.B",
+      "branches": 51,
+      "pass": 51,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "amsart.B",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "amsart.B",
+      "branches": 34,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "amsart.B",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "amsart.B",
+      "branches": 17,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "amsart.B",
+      "branches": 34,
+      "pass": 24,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "amsart.B",
+      "branches": 34,
+      "pass": 29,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "amsart.B",
+      "branches": 34,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "article.A",
+      "branches": 36,
+      "pass": 35,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "article.A",
+      "branches": 51,
+      "pass": 46,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "article.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "article.A",
+      "branches": 34,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "article.A",
+      "branches": 17,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "article.A",
+      "branches": 17,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "article.A",
+      "branches": 34,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "article.A",
+      "branches": 34,
+      "pass": 29,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "article.A",
+      "branches": 34,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "article.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "article.A",
+      "branches": 34,
+      "pass": 30,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "article.B",
+      "branches": 36,
+      "pass": 35,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "article.B",
+      "branches": 51,
+      "pass": 51,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "article.B",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "article.B",
+      "branches": 34,
+      "pass": 29,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "article.B",
+      "branches": 17,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "article.B",
+      "branches": 17,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "article.B",
+      "branches": 34,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "article.B",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "article.B",
+      "branches": 34,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "article.B",
+      "branches": 34,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "ascelike.A",
+      "branches": 22,
+      "pass": 19,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "ascelike.A",
+      "branches": 31,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "ascelike.A",
+      "branches": 20,
+      "pass": 11,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "ascelike.A",
+      "branches": 20,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "ascelike.A",
+      "branches": 11,
+      "pass": 9,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "ascelike.A",
+      "branches": 10,
+      "pass": 9,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "ascelike.A",
+      "branches": 20,
+      "pass": 10,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "ascelike.A",
+      "branches": 21,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "ascelike.A",
+      "branches": 20,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "ascelike.A",
+      "branches": 21,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "ascelike.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "asmeconf.A",
+      "branches": 22,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "asmeconf.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "asmeconf.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "asmeconf.A",
+      "branches": 20,
+      "pass": 19,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "asmeconf.A",
+      "branches": 10,
+      "pass": 10,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "asmeconf.A",
+      "branches": 10,
+      "pass": 10,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "asmeconf.A",
+      "branches": 20,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "asmeconf.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "asmeconf.A",
+      "branches": 20,
+      "pass": 9,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "asmejour.A",
+      "branches": 22,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "asmejour.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "asmejour.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "asmejour.A",
+      "branches": 20,
+      "pass": 19,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "asmejour.A",
+      "branches": 10,
+      "pass": 10,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "asmejour.A",
+      "branches": 10,
+      "pass": 10,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "asmejour.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "asmejour.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "asmejour.A",
+      "branches": 20,
+      "pass": 9,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "book.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "book.A",
+      "branches": 64,
+      "pass": 59,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 29,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 24,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.unnumbered"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 23,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "book.A",
+      "branches": 64,
+      "pass": 64,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 28,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendix"
+      },
+      "pair": "book.A",
+      "branches": 32,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "book.B",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "book.B",
+      "branches": 64,
+      "pass": 63,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "book.B",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "book.B",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "book.B",
+      "branches": 32,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "book.B",
+      "branches": 32,
+      "pass": 30,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "book.B",
+      "branches": 32,
+      "pass": 27,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "book.B",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "book.B",
+      "branches": 32,
+      "pass": 10,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.unnumbered"
+      },
+      "pair": "book.B",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "book.B",
+      "branches": 64,
+      "pass": 63,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendix"
+      },
+      "pair": "book.B",
+      "branches": 32,
+      "pass": 24,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "cas-dc.A",
+      "branches": 32,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "cas-dc.A",
+      "branches": 45,
+      "pass": 45,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "cas-dc.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "cas-dc.A",
+      "branches": 30,
+      "pass": 29,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "cas-dc.A",
+      "branches": 15,
+      "pass": 15,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "cas-dc.A",
+      "branches": 15,
+      "pass": 15,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "cas-dc.A",
+      "branches": 30,
+      "pass": 28,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "cas-dc.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "cas-dc.A",
+      "branches": 30,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "cas-dc.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "cas-dc.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "cas-sc.A",
+      "branches": 32,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "cas-sc.A",
+      "branches": 45,
+      "pass": 45,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "cas-sc.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "cas-sc.A",
+      "branches": 30,
+      "pass": 29,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "cas-sc.A",
+      "branches": 15,
+      "pass": 15,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "cas-sc.A",
+      "branches": 15,
+      "pass": 15,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "cas-sc.A",
+      "branches": 30,
+      "pass": 24,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "cas-sc.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "cas-sc.A",
+      "branches": 30,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "cas-sc.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "cas-sc.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "colm.A",
+      "branches": 20,
+      "pass": 19,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "colm.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "colm.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "colm.A",
+      "branches": 18,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "colm.A",
+      "branches": 9,
+      "pass": 9,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "colm.A",
+      "branches": 9,
+      "pass": 6,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "colm.A",
+      "branches": 18,
+      "pass": 10,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "colm.A",
+      "branches": 18,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "colm.A",
+      "branches": 18,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "colm.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "colm.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "copernicus.A",
+      "branches": 18,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "copernicus.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "copernicus.A",
+      "branches": 16,
+      "pass": 16,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "copernicus.A",
+      "branches": 16,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "copernicus.A",
+      "branches": 8,
+      "pass": 7,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "copernicus.A",
+      "branches": 8,
+      "pass": 8,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "copernicus.A",
+      "branches": 16,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "copernicus.A",
+      "branches": 16,
+      "pass": 16,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "copernicus.A",
+      "branches": 16,
+      "pass": 7,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "copernicus.A",
+      "branches": 16,
+      "pass": 16,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "copernicus.A",
+      "branches": 16,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.copernicus"
+      },
+      "pair": "copernicus.A",
+      "branches": 16,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "corl.A",
+      "branches": 20,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "corl.A",
+      "branches": 27,
+      "pass": 26,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "corl.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "corl.A",
+      "branches": 18,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "corl.A",
+      "branches": 8,
+      "pass": 8,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "corl.A",
+      "branches": 9,
+      "pass": 5,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "corl.A",
+      "branches": 18,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "corl.A",
+      "branches": 17,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "corl.A",
+      "branches": 16,
+      "pass": 7,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "corl.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "corl.A",
+      "branches": 18,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "cvpr.A",
+      "branches": 24,
+      "pass": 23,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "cvpr.A",
+      "branches": 33,
+      "pass": 33,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "cvpr.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "cvpr.A",
+      "branches": 22,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "cvpr.A",
+      "branches": 11,
+      "pass": 10,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "cvpr.A",
+      "branches": 11,
+      "pass": 4,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "cvpr.A",
+      "branches": 22,
+      "pass": 6,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "cvpr.A",
+      "branches": 22,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "cvpr.A",
+      "branches": 22,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "cvpr.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.cvpr-supplementary"
+      },
+      "pair": "cvpr.A",
+      "branches": 44,
+      "pass": 33,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "ecai.A",
+      "branches": 22,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "ecai.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "ecai.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "ecai.A",
+      "branches": 20,
+      "pass": 19,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "ecai.A",
+      "branches": 9,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "ecai.A",
+      "branches": 10,
+      "pass": 6,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "ecai.A",
+      "branches": 20,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "ecai.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "ecai.A",
+      "branches": 18,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "elegantpaper.A",
+      "branches": 16,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "elegantpaper.A",
+      "branches": 21,
+      "pass": 19,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "elegantpaper.A",
+      "branches": 14,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "elegantpaper.A",
+      "branches": 14,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "elegantpaper.A",
+      "branches": 7,
+      "pass": 6,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "elegantpaper.A",
+      "branches": 7,
+      "pass": 7,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "elegantpaper.A",
+      "branches": 14,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "elegantpaper.A",
+      "branches": 14,
+      "pass": 14,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "elegantpaper.A",
+      "branches": 14,
+      "pass": 6,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "elegantpaper.A",
+      "branches": 14,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "elegantpaper.A",
+      "branches": 14,
+      "pass": 11,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "elsarticle-3p.A",
+      "branches": 24,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "elsarticle-3p.A",
+      "branches": 33,
+      "pass": 33,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "elsarticle-3p.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "elsarticle-3p.A",
+      "branches": 22,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "elsarticle-3p.A",
+      "branches": 11,
+      "pass": 11,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "elsarticle-3p.A",
+      "branches": 11,
+      "pass": 11,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "elsarticle-3p.A",
+      "branches": 22,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "elsarticle-3p.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "elsarticle-3p.A",
+      "branches": 22,
+      "pass": 10,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "elsarticle-3p.A",
+      "branches": 22,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "elsarticle-5p.A",
+      "branches": 24,
+      "pass": 23,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "elsarticle-5p.A",
+      "branches": 33,
+      "pass": 33,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "elsarticle-5p.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "elsarticle-5p.A",
+      "branches": 22,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "elsarticle-5p.A",
+      "branches": 11,
+      "pass": 11,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "elsarticle-5p.A",
+      "branches": 11,
+      "pass": 7,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "elsarticle-5p.A",
+      "branches": 22,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "elsarticle-5p.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "elsarticle-5p.A",
+      "branches": 22,
+      "pass": 10,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "elsarticle-preprint.A",
+      "branches": 24,
+      "pass": 23,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "elsarticle-preprint.A",
+      "branches": 33,
+      "pass": 33,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "elsarticle-preprint.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "elsarticle-preprint.A",
+      "branches": 22,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "elsarticle-preprint.A",
+      "branches": 11,
+      "pass": 10,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "elsarticle-preprint.A",
+      "branches": 11,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "elsarticle-preprint.A",
+      "branches": 22,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "elsarticle-preprint.A",
+      "branches": 22,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "elsarticle-preprint.A",
+      "branches": 22,
+      "pass": 10,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "elsarticle-preprint.A",
+      "branches": 22,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "elsarticle-preprint.B",
+      "branches": 24,
+      "pass": 23,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "elsarticle-preprint.B",
+      "branches": 33,
+      "pass": 33,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "elsarticle-preprint.B",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "elsarticle-preprint.B",
+      "branches": 22,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "elsarticle-preprint.B",
+      "branches": 11,
+      "pass": 10,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "elsarticle-preprint.B",
+      "branches": 11,
+      "pass": 7,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "elsarticle-preprint.B",
+      "branches": 22,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "elsarticle-preprint.B",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "elsarticle-preprint.B",
+      "branches": 22,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "emulateapj.A",
+      "branches": 20,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "emulateapj.A",
+      "branches": 27,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "emulateapj.A",
+      "branches": 18,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "emulateapj.A",
+      "branches": 18,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "emulateapj.A",
+      "branches": 8,
+      "pass": 7,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "emulateapj.A",
+      "branches": 18,
+      "pass": 1,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "exam.A",
+      "branches": 19,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "exam.A",
+      "branches": 51,
+      "pass": 49,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "exam.A",
+      "branches": 34,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "exam.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "exam.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "exam.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "exam.A",
+      "branches": 34,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "exam.A",
+      "branches": 17,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "exam.A",
+      "branches": 34,
+      "pass": 30,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "exam.B",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "exam.B",
+      "branches": 51,
+      "pass": 51,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "exam.B",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "exam.B",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "exam.B",
+      "branches": 17,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "exam.B",
+      "branches": 17,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "exam.B",
+      "branches": 34,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "exam.B",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "extarticle.A",
+      "branches": 36,
+      "pass": 35,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "extarticle.A",
+      "branches": 51,
+      "pass": 46,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "extarticle.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "extarticle.A",
+      "branches": 34,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "extarticle.A",
+      "branches": 17,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "extarticle.A",
+      "branches": 17,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "extarticle.A",
+      "branches": 34,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "extarticle.A",
+      "branches": 34,
+      "pass": 29,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "extarticle.A",
+      "branches": 34,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "extarticle.A",
+      "branches": 34,
+      "pass": 30,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "extarticle.B",
+      "branches": 36,
+      "pass": 35,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "extarticle.B",
+      "branches": 51,
+      "pass": 51,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "extarticle.B",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "extarticle.B",
+      "branches": 34,
+      "pass": 29,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "extarticle.B",
+      "branches": 17,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "extarticle.B",
+      "branches": 17,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "extarticle.B",
+      "branches": 34,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "extarticle.B",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "extarticle.B",
+      "branches": 34,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "frontiers.A",
+      "branches": 11,
+      "pass": 11,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "frontiers.A",
+      "branches": 27,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "frontiers.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "frontiers.A",
+      "branches": 9,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "frontiers.A",
+      "branches": 9,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "frontiers.A",
+      "branches": 9,
+      "pass": 3,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "frontiers.A",
+      "branches": 18,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "icassp.A",
+      "branches": 36,
+      "pass": 30,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "icassp.A",
+      "branches": 51,
+      "pass": 40,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "icassp.A",
+      "branches": 34,
+      "pass": 26,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "icassp.A",
+      "branches": 34,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "icassp.A",
+      "branches": 17,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "icassp.A",
+      "branches": 17,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "icassp.A",
+      "branches": 34,
+      "pass": 26,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "icassp.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "icassp.A",
+      "branches": 34,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "icassp.A",
+      "branches": 34,
+      "pass": 32,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "iclr.A",
+      "branches": 20,
+      "pass": 19,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "iclr.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "iclr.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "iclr.A",
+      "branches": 18,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "iclr.A",
+      "branches": 9,
+      "pass": 9,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "iclr.A",
+      "branches": 9,
+      "pass": 6,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "iclr.A",
+      "branches": 18,
+      "pass": 11,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "iclr.A",
+      "branches": 18,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "iclr.A",
+      "branches": 18,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "iclr.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "iclr.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "icml.A",
+      "branches": 20,
+      "pass": 19,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "icml.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "icml.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "icml.A",
+      "branches": 18,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "icml.A",
+      "branches": 9,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "icml.A",
+      "branches": 9,
+      "pass": 5,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "icml.A",
+      "branches": 18,
+      "pass": 10,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "icml.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "icml.A",
+      "branches": 18,
+      "pass": 11,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "icml.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendix-onecolumn"
+      },
+      "pair": "icml.A",
+      "branches": 9,
+      "pass": 9,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "ieeeaccess.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 51,
+      "pass": 51,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 17,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 34,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.ieee-appendices"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "ieeeconf-ras.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 51,
+      "pass": 51,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 17,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 34,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.ieee-appendices"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 34,
+      "pass": 33,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "ieeetran-compsoc.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 51,
+      "pass": 51,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 17,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 34,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.ieee-appendices"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 34,
+      "pass": 33,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "ieeetran-conference.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 51,
+      "pass": 51,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 17,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 34,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.ieee-appendices"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 34,
+      "pass": 33,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "ieeetran-journal.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 51,
+      "pass": 51,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 17,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 34,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.ieee-appendices"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 34,
+      "pass": 33,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "ijcai.A",
+      "branches": 38,
+      "pass": 35,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "ijcai.A",
+      "branches": 54,
+      "pass": 52,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "ijcai.A",
+      "branches": 36,
+      "pass": 36,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "ijcai.A",
+      "branches": 36,
+      "pass": 34,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "ijcai.A",
+      "branches": 18,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "ijcai.A",
+      "branches": 18,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "ijcai.A",
+      "branches": 36,
+      "pass": 26,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "ijcai.A",
+      "branches": 36,
+      "pass": 34,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "ijcai.A",
+      "branches": 36,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "ijcai.A",
+      "branches": 36,
+      "pass": 34,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "imsart.A",
+      "branches": 36,
+      "pass": 35,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "imsart.A",
+      "branches": 51,
+      "pass": 51,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "imsart.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "imsart.A",
+      "branches": 34,
+      "pass": 32,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "imsart.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "imsart.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "imsart.A",
+      "branches": 34,
+      "pass": 27,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "imsart.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "imsart.A",
+      "branches": 34,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "imsart.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "imsart.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "interact.A",
+      "branches": 36,
+      "pass": 35,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "interact.A",
+      "branches": 51,
+      "pass": 51,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "interact.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "interact.A",
+      "branches": 34,
+      "pass": 32,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "interact.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "interact.A",
+      "branches": 17,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "interact.A",
+      "branches": 34,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "interact.A",
+      "branches": 34,
+      "pass": 29,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "interact.A",
+      "branches": 34,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "interact.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "interact.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "iopart.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "iopart.A",
+      "branches": 51,
+      "pass": 51,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "iopart.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "iopart.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "iopart.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "iopart.A",
+      "branches": 17,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "iopart.A",
+      "branches": 34,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "iopart.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "iopjournal.A",
+      "branches": 32,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "iopjournal.A",
+      "branches": 45,
+      "pass": 42,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "iopjournal.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "iopjournal.A",
+      "branches": 30,
+      "pass": 29,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "iopjournal.A",
+      "branches": 15,
+      "pass": 15,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "iopjournal.A",
+      "branches": 15,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "iopjournal.A",
+      "branches": 30,
+      "pass": 28,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "iopjournal.A",
+      "branches": 30,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "iopjournal.A",
+      "branches": 30,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "iopjournal.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "iopjournal.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "jacow.A",
+      "branches": 28,
+      "pass": 27,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "jacow.A",
+      "branches": 39,
+      "pass": 39,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "jacow.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "jacow.A",
+      "branches": 26,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "jacow.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "jacow.A",
+      "branches": 13,
+      "pass": 9,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "jacow.A",
+      "branches": 26,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "jacow.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "jacow.A",
+      "branches": 26,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "jacow.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "jmlr-pmlr.A",
+      "branches": 20,
+      "pass": 19,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "jmlr-pmlr.A",
+      "branches": 27,
+      "pass": 23,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "jmlr-pmlr.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "jmlr-pmlr.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "jmlr-pmlr.A",
+      "branches": 8,
+      "pass": 8,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "jmlr-pmlr.A",
+      "branches": 9,
+      "pass": 5,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "jmlr-pmlr.A",
+      "branches": 18,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "jmlr-pmlr.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "jmlr-pmlr.A",
+      "branches": 16,
+      "pass": 7,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "jmlr-pmlr.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "jmlr-pmlr.A",
+      "branches": 18,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "lipics.A",
+      "branches": 32,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "lipics.A",
+      "branches": 45,
+      "pass": 45,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "lipics.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "lipics.A",
+      "branches": 30,
+      "pass": 28,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "lipics.A",
+      "branches": 15,
+      "pass": 15,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "lipics.A",
+      "branches": 15,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "lipics.A",
+      "branches": 30,
+      "pass": 24,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "lipics.A",
+      "branches": 30,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "lipics.A",
+      "branches": 30,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "lipics.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "lipics.A",
+      "branches": 30,
+      "pass": 27,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "mdpi.A",
+      "branches": 8,
+      "pass": 8,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "mdpi.A",
+      "branches": 9,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "mdpi.A",
+      "branches": 6,
+      "pass": 6,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "mdpi.A",
+      "branches": 6,
+      "pass": 5,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "mdpi.A",
+      "branches": 3,
+      "pass": 3,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "mdpi.A",
+      "branches": 3,
+      "pass": 3,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "mdpi.A",
+      "branches": 6,
+      "pass": 6,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "mdpi.A",
+      "branches": 6,
+      "pass": 6,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "mdpi.A",
+      "branches": 6,
+      "pass": 2,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "mdpi.A",
+      "branches": 6,
+      "pass": 6,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.mdpi-appendix"
+      },
+      "pair": "mdpi.A",
+      "branches": 12,
+      "pass": 12,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "mnras.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "mnras.A",
+      "branches": 45,
+      "pass": 45,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "mnras.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "mnras.A",
+      "branches": 15,
+      "pass": 15,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "mnras.A",
+      "branches": 15,
+      "pass": 15,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "mnras.A",
+      "branches": 15,
+      "pass": 11,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "mnras.A",
+      "branches": 30,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "neurips.A",
+      "branches": 20,
+      "pass": 19,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "neurips.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "neurips.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "neurips.A",
+      "branches": 18,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "neurips.A",
+      "branches": 9,
+      "pass": 9,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "neurips.A",
+      "branches": 9,
+      "pass": 6,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "neurips.A",
+      "branches": 18,
+      "pass": 11,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "neurips.A",
+      "branches": 18,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "neurips.A",
+      "branches": 18,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "neurips.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "neurips.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "oup-authoring-template.A",
+      "branches": 11,
+      "pass": 11,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "oup-authoring-template.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "oup-authoring-template.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "oup-authoring-template.A",
+      "branches": 9,
+      "pass": 9,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "oup-authoring-template.A",
+      "branches": 9,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "oup-authoring-template.A",
+      "branches": 9,
+      "pass": 5,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "oup-authoring-template.A",
+      "branches": 18,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "oup-authoring-template.A",
+      "branches": 9,
+      "pass": 9,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "plos.A",
+      "branches": 22,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "plos.A",
+      "branches": 31,
+      "pass": 31,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "plos.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "plos.A",
+      "branches": 20,
+      "pass": 19,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "plos.A",
+      "branches": 10,
+      "pass": 10,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "plos.A",
+      "branches": 10,
+      "pass": 7,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "plos.A",
+      "branches": 20,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "plos.A",
+      "branches": 20,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "plos.A",
+      "branches": 20,
+      "pass": 9,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "plos.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "plos.A",
+      "branches": 20,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "report.A",
+      "branches": 36,
+      "pass": 36,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "report.A",
+      "branches": 68,
+      "pass": 63,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "report.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "report.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "report.A",
+      "branches": 34,
+      "pass": 33,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "report.A",
+      "branches": 34,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "report.A",
+      "branches": 34,
+      "pass": 26,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "report.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "report.A",
+      "branches": 34,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "report.A",
+      "branches": 68,
+      "pass": 68,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.unnumbered"
+      },
+      "pair": "report.A",
+      "branches": 34,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "report.A",
+      "branches": 34,
+      "pass": 30,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendix"
+      },
+      "pair": "report.A",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "report.B",
+      "branches": 36,
+      "pass": 36,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "report.B",
+      "branches": 68,
+      "pass": 67,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "report.B",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "report.B",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "report.B",
+      "branches": 34,
+      "pass": 32,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "report.B",
+      "branches": 34,
+      "pass": 32,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "report.B",
+      "branches": 34,
+      "pass": 29,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "report.B",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "report.B",
+      "branches": 34,
+      "pass": 10,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "report.B",
+      "branches": 68,
+      "pass": 67,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.unnumbered"
+      },
+      "pair": "report.B",
+      "branches": 34,
+      "pass": 34,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendix"
+      },
+      "pair": "report.B",
+      "branches": 34,
+      "pass": 33,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "revtex4-2-aip.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "revtex4-2-aip.A",
+      "branches": 33,
+      "pass": 33,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "revtex4-2-aip.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "revtex4-2-aip.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "revtex4-2-aip.A",
+      "branches": 10,
+      "pass": 10,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "revtex4-2-aip.A",
+      "branches": 22,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.class-native"
+      },
+      "pair": "revtex4-2-aip.A",
+      "branches": 10,
+      "pass": 10,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendix"
+      },
+      "pair": "revtex4-2-aip.A",
+      "branches": 21,
+      "pass": 21,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "revtex4-2-aps.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "revtex4-2-aps.A",
+      "branches": 33,
+      "pass": 33,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "revtex4-2-aps.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "revtex4-2-aps.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "revtex4-2-aps.A",
+      "branches": 10,
+      "pass": 10,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "revtex4-2-aps.A",
+      "branches": 22,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.class-native"
+      },
+      "pair": "revtex4-2-aps.A",
+      "branches": 10,
+      "pass": 10,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendix"
+      },
+      "pair": "revtex4-2-aps.A",
+      "branches": 21,
+      "pass": 21,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "siamart.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "siamart.A",
+      "branches": 45,
+      "pass": 45,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "siamart.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "siamart.A",
+      "branches": 15,
+      "pass": 15,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "siamart.A",
+      "branches": 15,
+      "pass": 15,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "siamart.A",
+      "branches": 15,
+      "pass": 11,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "siamart.A",
+      "branches": 30,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "siamart.A",
+      "branches": 30,
+      "pass": 27,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "sn-jnl.A",
+      "branches": 20,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "sn-jnl.A",
+      "branches": 27,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "sn-jnl.A",
+      "branches": 18,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "sn-jnl.A",
+      "branches": 18,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "sn-jnl.A",
+      "branches": 8,
+      "pass": 7,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "sn-jnl.A",
+      "branches": 9,
+      "pass": 5,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "sn-jnl.A",
+      "branches": 18,
+      "pass": 10,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "sn-jnl.A",
+      "branches": 17,
+      "pass": 11,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "sn-jnl.A",
+      "branches": 16,
+      "pass": 7,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.bmhead"
+      },
+      "pair": "sn-jnl.A",
+      "branches": 17,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "sn-jnl.A",
+      "branches": 17,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "sn-jnl.A",
+      "branches": 18,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "spie.A",
+      "branches": 28,
+      "pass": 27,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "spie.A",
+      "branches": 39,
+      "pass": 37,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "spie.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "spie.A",
+      "branches": 26,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "spie.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "spie.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "spie.A",
+      "branches": 26,
+      "pass": 22,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "spie.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "spie.A",
+      "branches": 26,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.class-native"
+      },
+      "pair": "spie.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "spie.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "spie.A",
+      "branches": 26,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "tmlr.A",
+      "branches": 20,
+      "pass": 19,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "tmlr.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "tmlr.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "tmlr.A",
+      "branches": 18,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "tmlr.A",
+      "branches": 9,
+      "pass": 9,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "tmlr.A",
+      "branches": 9,
+      "pass": 9,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "tmlr.A",
+      "branches": 18,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "tmlr.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "tmlr.A",
+      "branches": 18,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "tmlr.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "tmlr.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "tufte-handout.A",
+      "branches": 16,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "tufte-handout.A",
+      "branches": 28,
+      "pass": 27,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "tufte-handout.A",
+      "branches": 14,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "tufte-handout.A",
+      "branches": 14,
+      "pass": 11,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "tufte-handout.A",
+      "branches": 28,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "tufte-handout.A",
+      "branches": 28,
+      "pass": 23,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "tufte-handout.A",
+      "branches": 14,
+      "pass": 0,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.fullwidth"
+      },
+      "pair": "tufte-handout.A",
+      "branches": 28,
+      "pass": 28,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "tufte-handout.A",
+      "branches": 14,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "tufte-handout.A",
+      "branches": 28,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "usenix.A",
+      "branches": 24,
+      "pass": 23,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "usenix.A",
+      "branches": 33,
+      "pass": 33,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "usenix.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "usenix.A",
+      "branches": 22,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "usenix.A",
+      "branches": 11,
+      "pass": 10,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "usenix.A",
+      "branches": 11,
+      "pass": 7,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "usenix.A",
+      "branches": 22,
+      "pass": 16,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "usenix.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "usenix.A",
+      "branches": 22,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "usenix.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "ut-thesis.A",
+      "branches": 34,
+      "pass": 33,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 64,
+      "pass": 53,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 29,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 30,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 29,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 25,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.unnumbered"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 64,
+      "pass": 63,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendix"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    }
+  ]
+}

@@ -1,0 +1,383 @@
+{
+  "way": "list.agu-glossary",
+  "from": {
+    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
+    "runs": "r20261110022619593,r20261110022630505",
+    "oracle": "11",
+    "source": "compat tables: a fetched run, not recompiled"
+  },
+  "entries": [
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "general:containerBlock/abstract:setspace"
+      },
+      "pair": "agu.A",
+      "branches": 151,
+      "pass": 150,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+lib:breakable+lib:skins+tcolorbox"
+      },
+      "pair": "agu.A",
+      "branches": 200,
+      "pass": 177,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "general:containerBlock/note:marginnote+xcolor"
+      },
+      "pair": "agu.A",
+      "branches": 94,
+      "pass": 88,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.awesomebox"
+      },
+      "pair": "agu.A",
+      "branches": 89,
+      "pass": 77,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.fancybox"
+      },
+      "pair": "agu.A",
+      "branches": 91,
+      "pass": 85,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.mdframed"
+      },
+      "pair": "agu.A",
+      "branches": 278,
+      "pass": 255,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.tcolorbox"
+      },
+      "pair": "agu.A",
+      "branches": 187,
+      "pass": 174,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.marginnote"
+      },
+      "pair": "agu.A",
+      "branches": 176,
+      "pass": 167,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.marginpar"
+      },
+      "pair": "agu.A",
+      "branches": 85,
+      "pass": 71,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.notecolumn"
+      },
+      "pair": "agu.A",
+      "branches": 92,
+      "pass": 86,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.sidenotes"
+      },
+      "pair": "agu.A",
+      "branches": 99,
+      "pass": 88,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.todonotes"
+      },
+      "pair": "agu.A",
+      "branches": 96,
+      "pass": 87,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/footnote",
+        "way": "general:containerBlock/footnote:footnotehyper"
+      },
+      "pair": "agu.A",
+      "branches": 172,
+      "pass": 151,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "abs.abstract-pkg"
+      },
+      "pair": "agu.A",
+      "branches": 289,
+      "pass": 289,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.thmtools"
+      },
+      "pair": "agu.A",
+      "branches": 42,
+      "pass": 39,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "agu.A",
+      "branches": 1721,
+      "pass": 1602,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm"
+      },
+      "pair": "agu.A",
+      "branches": 199,
+      "pass": 194,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "agu.A",
+      "branches": 99,
+      "pass": 98,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "agu.A",
+      "branches": 201,
+      "pass": 199,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "agu.A",
+      "branches": 97,
+      "pass": 91,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.tcolorbox"
+      },
+      "pair": "agu.A",
+      "branches": 400,
+      "pass": 353,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.mdframed"
+      },
+      "pair": "agu.A",
+      "branches": 194,
+      "pass": 168,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm"
+      },
+      "pair": "agu.A",
+      "branches": 195,
+      "pass": 193,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "agu.A",
+      "branches": 144,
+      "pass": 122,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.class-command"
+      },
+      "pair": "agu.A",
+      "branches": 97,
+      "pass": 97,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "agu.A",
+      "branches": 99,
+      "pass": 98,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "footnoteBody/footnote",
+        "way": "general:footnoteBody/footnote:kernel"
+      },
+      "pair": "agu.A",
+      "branches": 144,
+      "pass": 119,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "agu.A",
+      "branches": 143,
+      "pass": 123,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "agu.A",
+      "branches": 146,
+      "pass": 144,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.kernel"
+      },
+      "pair": "agu.A",
+      "branches": 174,
+      "pass": 165,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.ntheorem"
+      },
+      "pair": "agu.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "agu.A",
+      "branches": 144,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "abs.kernel"
+      },
+      "pair": "agu.A",
+      "branches": 152,
+      "pass": 152,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.paracol"
+      },
+      "pair": "agu.A",
+      "branches": 151,
+      "pass": 148,
+      "status": "failing"
+    }
+  ]
+}

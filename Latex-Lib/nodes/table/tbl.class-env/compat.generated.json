@@ -2,23 +2,38 @@
   "handler": "tbl.class-env",
   "node": "table",
   "generatedFrom": {
-    "key": "sha256:129eeb143a03912b7378460e47e0b1d6b8e772984bbc33d0c63aa8d10c1e5c4c",
+    "key": "sha256:b1715c11fecb47a7530de278a1f7f7cd3ee771b0878cfb4ee0da027c03830d46",
     "contexts": "sha256:19ca377618c806eb733d2b157e0258ce2e79a5cd584f9c6a2c2ae6bd83663bc5",
-    "matrix": null
+    "matrix": "sha256:871b2b75fc0b65c75a369448d3caf81334bbbe614b96dbc9fc83507d58c49b53"
   },
   "parents": {
     "body": {
       "(document body)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 138,
+          "pass": 106,
+          "failing": [
+            "aastex.A",
+            "aastex.B",
+            "cas-dc.A",
+            "cas-sc.A"
+          ]
+        }
       }
     },
     "containerBlock/appendix": {
       "num.appendices-env": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 11,
+          "pass": 11,
+          "failing": []
+        }
       },
       "num.appendix": {
         "verdict": "ok",
@@ -48,7 +63,12 @@
       "num.mdpi-appendix": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 2,
+          "pass": 2,
+          "failing": []
+        }
       },
       "num.unnumbered": {
         "verdict": "ok",
@@ -118,7 +138,16 @@
       "ack.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 29,
+          "pass": 26,
+          "failing": [
+            "cas-dc.A",
+            "cas-sc.A",
+            "emulateapj.A"
+          ]
+        }
       },
       "ack.llncs-credits": {
         "verdict": "ok",
@@ -162,21 +191,50 @@
       "cols.multicol": {
         "verdict": "deny",
         "source": "derived",
-        "status": "derived",
+        "status": "failing",
         "reason": "needs floats",
         "lacks": [
           "needs floats"
-        ]
+        ],
+        "matrix": {
+          "branches": 11,
+          "pass": 2,
+          "failing": [
+            "cas-dc.A",
+            "cas-sc.A",
+            "interact.A",
+            "iopart.A",
+            "oup-authoring-template.A"
+          ]
+        }
       },
       "cols.paracol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 12,
+          "pass": 9,
+          "failing": [
+            "cas-dc.A",
+            "cas-sc.A"
+          ]
+        }
       },
       "cols.revtex-grid": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 12,
+          "pass": 2,
+          "failing": [
+            "aastex.A",
+            "aastex.B",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A"
+          ]
+        }
       },
       "cols.tikzposter": {
         "verdict": "deny",
@@ -190,27 +248,71 @@
       "cols.twocolumn-cmd": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 15,
+          "pass": 13,
+          "failing": [
+            "cas-dc.A",
+            "cas-sc.A"
+          ]
+        }
       },
       "cols.vwcol": {
         "verdict": "deny",
         "source": "derived",
-        "status": "derived",
+        "status": "verified-fail",
         "reason": "needs floats",
         "lacks": [
           "needs floats"
-        ]
+        ],
+        "matrix": {
+          "branches": 18,
+          "pass": 0,
+          "failing": [
+            "aa.A",
+            "aastex.A",
+            "aastex.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "emulateapj.A",
+            "interact.A",
+            "iopart.A",
+            "mdpi.A",
+            "oup-authoring-template.A"
+          ]
+        }
       }
     },
     "containerBlock/footnote": {
       "(General)": {
         "verdict": "deny",
         "source": "derived",
-        "status": "derived",
+        "status": "failing",
         "reason": "needs floats",
         "lacks": [
           "needs floats"
-        ]
+        ],
+        "matrix": {
+          "branches": 307,
+          "pass": 25,
+          "failing": [
+            "aa.A",
+            "aastex.A",
+            "aastex.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "copernicus.A",
+            "emulateapj.A",
+            "interact.A",
+            "iopart.A",
+            "mdpi.A",
+            "oup-authoring-template.A",
+            "plos.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A"
+          ]
+        }
       }
     },
     "containerBlock/listing": {
@@ -222,7 +324,15 @@
       "list.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 58,
+          "pass": 27,
+          "failing": [
+            "cas-dc.A",
+            "cas-sc.A"
+          ]
+        }
       },
       "list.cvlist": {
         "verdict": "ok",
@@ -232,12 +342,51 @@
       "list.enumerate-pkg": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 235,
+          "pass": 129,
+          "failing": [
+            "aa.A",
+            "aastex.A",
+            "aastex.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "copernicus.A",
+            "emulateapj.A",
+            "interact.A",
+            "iopart.A",
+            "oup-authoring-template.A",
+            "plos.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A"
+          ]
+        }
       },
       "list.enumitem": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 278,
+          "pass": 151,
+          "failing": [
+            "aa.A",
+            "aastex.A",
+            "aastex.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "copernicus.A",
+            "emulateapj.A",
+            "interact.A",
+            "iopart.A",
+            "mdpi.A",
+            "oup-authoring-template.A",
+            "plos.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A"
+          ]
+        }
       },
       "list.exam-questions": {
         "verdict": "ok",
@@ -247,7 +396,27 @@
       "list.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 222,
+          "pass": 114,
+          "failing": [
+            "aa.A",
+            "aastex.A",
+            "aastex.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "copernicus.A",
+            "emulateapj.A",
+            "interact.A",
+            "iopart.A",
+            "mdpi.A",
+            "oup-authoring-template.A",
+            "plos.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A"
+          ]
+        }
       },
       "list.nomenclature": {
         "verdict": "ok",
@@ -257,33 +426,89 @@
       "list.paralist": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 228,
+          "pass": 116,
+          "failing": [
+            "aa.A",
+            "aastex.A",
+            "aastex.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "copernicus.A",
+            "emulateapj.A",
+            "interact.A",
+            "iopart.A",
+            "oup-authoring-template.A",
+            "plos.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A"
+          ]
+        }
       },
       "list.scrextend": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 228,
+          "pass": 134,
+          "failing": [
+            "aa.A",
+            "aastex.A",
+            "aastex.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "copernicus.A",
+            "emulateapj.A",
+            "iopart.A",
+            "mdpi.A",
+            "oup-authoring-template.A",
+            "plos.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A"
+          ]
+        }
       }
     },
     "containerBlock/abstract": {
       "abs.aa-structured": {
         "verdict": "deny",
         "source": "derived",
-        "status": "derived",
+        "status": "verified-ok",
         "reason": "needs floats",
         "lacks": [
           "needs floats"
-        ]
+        ],
+        "matrix": {
+          "branches": 2,
+          "pass": 2,
+          "failing": []
+        }
       },
       "abs.abstract-pkg": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 20,
+          "pass": 18,
+          "failing": [
+            "cas-dc.A",
+            "cas-sc.A"
+          ]
+        }
       },
       "abs.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 2,
+          "pass": 2,
+          "failing": []
+        }
       },
       "abs.class-native[form=command]": {
         "verdict": "deny",
@@ -338,7 +563,14 @@
       "abs.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 10,
+          "pass": 9,
+          "failing": [
+            "iopart.A"
+          ]
+        }
       },
       "abs.keywords": {
         "verdict": "ok",
@@ -359,40 +591,136 @@
       "thm.amsthm": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 209,
+          "pass": 134,
+          "failing": [
+            "aastex.A",
+            "aastex.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "copernicus.A",
+            "emulateapj.A",
+            "interact.A",
+            "iopart.A",
+            "oup-authoring-template.A",
+            "plos.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A"
+          ]
+        }
       },
       "thm.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 110,
+          "pass": 60,
+          "failing": [
+            "aa.A",
+            "cas-dc.A",
+            "cas-sc.A",
+            "mdpi.A",
+            "oup-authoring-template.A"
+          ]
+        }
       },
       "thm.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 209,
+          "pass": 130,
+          "failing": [
+            "aastex.A",
+            "aastex.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "copernicus.A",
+            "emulateapj.A",
+            "interact.A",
+            "iopart.A",
+            "oup-authoring-template.A",
+            "plos.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A"
+          ]
+        }
       },
       "thm.mdframed": {
         "verdict": "deny",
         "source": "derived",
-        "status": "derived",
+        "status": "failing",
         "reason": "needs floats",
         "lacks": [
           "needs floats"
-        ]
+        ],
+        "matrix": {
+          "branches": 253,
+          "pass": 2,
+          "failing": [
+            "aastex.A",
+            "aastex.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "copernicus.A",
+            "emulateapj.A",
+            "interact.A",
+            "iopart.A",
+            "oup-authoring-template.A",
+            "plos.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A"
+          ]
+        }
       },
       "thm.ntheorem": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 50,
+          "pass": 32,
+          "failing": [
+            "aastex.A",
+            "aastex.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "iopart.A",
+            "plos.A"
+          ]
+        }
       },
       "thm.tcolorbox": {
         "verdict": "deny",
         "source": "derived",
-        "status": "derived",
+        "status": "failing",
         "reason": "needs floats",
         "lacks": [
           "needs floats"
-        ]
+        ],
+        "matrix": {
+          "branches": 528,
+          "pass": 32,
+          "failing": [
+            "aastex.A",
+            "aastex.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "copernicus.A",
+            "emulateapj.A",
+            "interact.A",
+            "iopart.A",
+            "mdpi.A",
+            "oup-authoring-template.A",
+            "plos.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A"
+          ]
+        }
       },
       "thm.tcolorbox[breakable=false]": {
         "verdict": "deny",
@@ -406,7 +734,25 @@
       "thm.thmtools": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 148,
+          "pass": 74,
+          "failing": [
+            "aastex.A",
+            "aastex.B",
+            "cas-dc.A",
+            "cas-sc.A",
+            "copernicus.A",
+            "emulateapj.A",
+            "interact.A",
+            "iopart.A",
+            "oup-authoring-template.A",
+            "plos.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A"
+          ]
+        }
       }
     },
     "table_cell": {
@@ -451,6 +797,13 @@
     }
   },
   "packageCombos": {
-    "deny": []
+    "deny": [
+      {
+        "with": "floatrow",
+        "when": "form=cas",
+        "reason": "floatrow restyles the table environment as it loads, replacing cas-common.sty's key-value table: \\begin{table}[width=\\linewidth,cols=3,pos=tbp] stops at \"Unknown float option `w'\"",
+        "status": "untested"
+      }
+    ]
   }
 }

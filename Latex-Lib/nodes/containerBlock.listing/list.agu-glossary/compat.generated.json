@@ -4,14 +4,21 @@
   "generatedFrom": {
     "key": "sha256:f90f0b2a6c2f6950630234f93c80116845bac7e3551efdbc0119b0083437e32b",
     "contexts": "sha256:8db64482326e84b00a291c338c13df9b25b81bdb6205276160e24ebb00178228",
-    "matrix": null
+    "matrix": "sha256:50e5b348dcb02440af58abcdf94a0836f5c80c99f91b95d09d92f189034e1d93"
   },
   "parents": {
     "body": {
       "(document body)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 1721,
+          "pass": 1602,
+          "failing": [
+            "agu.A"
+          ]
+        }
       }
     },
     "containerBlock/appendix": {
@@ -80,7 +87,12 @@
       "ack.class-command": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 97,
+          "pass": 97,
+          "failing": []
+        }
       },
       "ack.class-command[form=argument]": {
         "verdict": "ok",
@@ -110,7 +122,14 @@
       "ack.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 99,
+          "pass": 98,
+          "failing": [
+            "agu.A"
+          ]
+        }
       },
       "ack.llncs-credits": {
         "verdict": "ok",
@@ -142,12 +161,26 @@
       "cols.multicol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 144,
+          "pass": 122,
+          "failing": [
+            "agu.A"
+          ]
+        }
       },
       "cols.paracol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 151,
+          "pass": 148,
+          "failing": [
+            "agu.A"
+          ]
+        }
       },
       "cols.revtex-grid": {
         "verdict": "ok",
@@ -162,30 +195,58 @@
       "cols.twocolumn-cmd": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 146,
+          "pass": 144,
+          "failing": [
+            "agu.A"
+          ]
+        }
       },
       "cols.vwcol": {
         "verdict": "deny",
         "source": "derived",
-        "status": "derived",
+        "status": "failing",
         "reason": "needs paragraph",
         "lacks": [
           "needs paragraph"
-        ]
+        ],
+        "matrix": {
+          "branches": 144,
+          "pass": 12,
+          "failing": [
+            "agu.A"
+          ]
+        }
       }
     },
     "containerBlock/footnote": {
       "(General)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 172,
+          "pass": 151,
+          "failing": [
+            "agu.A"
+          ]
+        }
       }
     },
     "containerBlock/note": {
       "box.awesomebox": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 89,
+          "pass": 77,
+          "failing": [
+            "agu.A"
+          ]
+        }
       },
       "box.class-native": {
         "verdict": "ok",
@@ -210,12 +271,26 @@
       "box.fancybox": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 91,
+          "pass": 85,
+          "failing": [
+            "agu.A"
+          ]
+        }
       },
       "box.mdframed": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 278,
+          "pass": 255,
+          "failing": [
+            "agu.A"
+          ]
+        }
       },
       "box.mdframed[breakable=false]": {
         "verdict": "ok",
@@ -225,7 +300,14 @@
       "box.tcolorbox": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 187,
+          "pass": 174,
+          "failing": [
+            "agu.A"
+          ]
+        }
       },
       "box.tcolorbox[breakable=false]": {
         "verdict": "ok",
@@ -255,27 +337,62 @@
       "note.marginnote": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 176,
+          "pass": 167,
+          "failing": [
+            "agu.A"
+          ]
+        }
       },
       "note.marginpar": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 85,
+          "pass": 71,
+          "failing": [
+            "agu.A"
+          ]
+        }
       },
       "note.notecolumn": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 92,
+          "pass": 86,
+          "failing": [
+            "agu.A"
+          ]
+        }
       },
       "note.sidenotes": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 99,
+          "pass": 88,
+          "failing": [
+            "agu.A"
+          ]
+        }
       },
       "note.todonotes": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 96,
+          "pass": 87,
+          "failing": [
+            "agu.A"
+          ]
+        }
       }
     },
     "containerBlock/abstract": {
@@ -287,7 +404,12 @@
       "abs.abstract-pkg": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 289,
+          "pass": 289,
+          "failing": []
+        }
       },
       "abs.class-native": {
         "verdict": "ok",
@@ -327,7 +449,12 @@
       "abs.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 152,
+          "pass": 152,
+          "failing": []
+        }
       },
       "abs.keywords": {
         "verdict": "ok",
@@ -344,7 +471,14 @@
       "thm.amsthm": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 195,
+          "pass": 193,
+          "failing": [
+            "agu.A"
+          ]
+        }
       },
       "thm.class-native": {
         "verdict": "ok",
@@ -354,22 +488,48 @@
       "thm.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 174,
+          "pass": 165,
+          "failing": [
+            "agu.A"
+          ]
+        }
       },
       "thm.mdframed": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 194,
+          "pass": 168,
+          "failing": [
+            "agu.A"
+          ]
+        }
       },
       "thm.ntheorem": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 24,
+          "pass": 24,
+          "failing": []
+        }
       },
       "thm.tcolorbox": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 400,
+          "pass": 353,
+          "failing": [
+            "agu.A"
+          ]
+        }
       },
       "thm.tcolorbox[breakable=false]": {
         "verdict": "ok",
@@ -379,7 +539,14 @@
       "thm.thmtools": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 42,
+          "pass": 39,
+          "failing": [
+            "agu.A"
+          ]
+        }
       }
     },
     "table_cell": {

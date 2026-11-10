@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:53599cf9ccae770e696a4fe7b339b86192d93a6b82126996b1b5991c3e8c4f19",
     "contexts": "sha256:14e595b5a917207b0202cd81103654b34671bd431b2e4e8a05c64647be89ab4f",
-    "matrix": null
+    "matrix": "sha256:98d07739e18701f227d8dc127ad07f898081aa9dff656d24bd1c64d4799d0a37"
   },
   "parents": {
     "containerBlock/columns": {
@@ -31,12 +31,25 @@
       "cols.multicol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 96,
+          "pass": 88,
+          "failing": [
+            "book.A",
+            "ut-thesis.A"
+          ]
+        }
       },
       "cols.paracol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 64,
+          "pass": 64,
+          "failing": []
+        }
       },
       "cols.revtex-grid": {
         "verdict": "ok",
@@ -51,28 +64,61 @@
       "cols.twocolumn-cmd": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 96,
+          "pass": 88,
+          "failing": [
+            "book.A",
+            "ut-thesis.A"
+          ]
+        }
       },
       "cols.vwcol": {
         "verdict": "deny",
         "source": "derived",
-        "status": "derived",
+        "status": "failing",
         "reason": "needs paragraph",
         "lacks": [
           "needs paragraph"
-        ]
+        ],
+        "matrix": {
+          "branches": 96,
+          "pass": 35,
+          "failing": [
+            "book.A",
+            "book.B",
+            "ut-thesis.A"
+          ]
+        }
       }
     },
     "containerBlock/appendix": {
       "num.appendices-env": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 192,
+          "pass": 184,
+          "failing": [
+            "book.A",
+            "book.B",
+            "ut-thesis.A"
+          ]
+        }
       },
       "num.appendix": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 96,
+          "pass": 95,
+          "failing": [
+            "book.B"
+          ]
+        }
       },
       "num.appendix-onecolumn": {
         "verdict": "ok",
@@ -102,7 +148,15 @@
       "num.unnumbered": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 96,
+          "pass": 76,
+          "failing": [
+            "book.A",
+            "book.B"
+          ]
+        }
       }
     },
     "containerBlock/acknowledgement": {
@@ -159,7 +213,15 @@
       "ack.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 96,
+          "pass": 93,
+          "failing": [
+            "book.B",
+            "ut-thesis.A"
+          ]
+        }
       },
       "ack.llncs-credits": {
         "verdict": "ok",

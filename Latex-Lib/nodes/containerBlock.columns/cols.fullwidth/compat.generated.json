@@ -4,14 +4,21 @@
   "generatedFrom": {
     "key": "sha256:a7c1882b795f334feaec42ac9efc5d6bdf4d14d5c719fb2ae69b739fe72f7ef0",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": null
+    "matrix": "sha256:d84ade6475d55fe0069562a4e80eb4cc79c03a3213b448afe8cfdf5fbf44687c"
   },
   "parents": {
     "body": {
       "(document body)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 1672,
+          "pass": 1202,
+          "failing": [
+            "tufte-handout.A"
+          ]
+        }
       }
     }
   },

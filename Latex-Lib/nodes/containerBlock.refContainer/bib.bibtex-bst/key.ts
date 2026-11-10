@@ -52,6 +52,17 @@ export default defineKey(
           { kind: 'compile', cell: 'batch 4 round 1 (testing-pipeline/out/fetched/batch4-round1): 112 cells in 56 pairs whose first error is \\backmatter, the book-backmatter and amsbook-backmatter presets\' solo branches (acmart-acmsmall.A document db983f84a425c15d4991a, result efbca41127)' },
         ],
       },
+      // The same for IEEEtran.bst's control entry: the matrix files by `onlyWhen`, not by `requiresWhen`. ieeetran-compsoc and
+      // ieeeaccess are built on class.ieeetran.
+      {
+        when: { bstControl: true },
+        classes: ['class.ieeetran', 'class.ieeeconf-ras'],
+        reason: "\\bstctlcite is IEEEtran.cls's (l.4438) and ieeeconf.cls's (and so ieeetran-compsoc's and ieeeaccess's, built on IEEEtran); under any other class the \\AtBeginDocument{\\bstctlcite{IEEEexample:BSTcontrol}} line stops at 'Undefined control sequence' at \\begin{document}",
+        evidence: [
+          { kind: 'source', file: 'Latex-Lib/classes (ieeetran, ieeeconf-ras)', line: 'defines: cmd:\\bstctlcite' },
+          { kind: 'compile', cell: "batch 4 round 2 (testing-pipeline/out/fetched/batch4-round2): the ieeetran preset's solo branch, document da0746f959e282fb4d926, fails at \\bstctlcite in 62 pairs (aaai.A cell cd840cae3047ce29e7ee2, result 02c7825f5c51358cc12c1ac1971d11cbfea3bed31021373c651ca72ac84d8110) and passes in the 5 IEEE pairs (ieeetran-journal.A, ieeetran-conference.A, ieeetran-compsoc.A, ieeeaccess.A, ieeeconf-ras.A)" },
+        ],
+      },
     ],
     // The classes that load natbib in author-year mode (CA2), and those that set their own \bibliographystyle (CA11).
     deny: [

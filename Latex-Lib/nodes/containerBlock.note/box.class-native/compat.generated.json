@@ -4,21 +4,36 @@
   "generatedFrom": {
     "key": "sha256:56e7c79c82c4eb25c8fad42f67d448d1ae13ebb9a705e675597e46ea21bb2ec9",
     "contexts": "sha256:f593ada8348e3bc89e6616015502a97a24a8913da366aaa0e721d6679e8365b9",
-    "matrix": null
+    "matrix": "sha256:2f69dfa463440a527453029c2267fe65531cbd3126f02ce8f26a77fc6c956ff9"
   },
   "parents": {
     "body": {
       "(document body)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 1692,
+          "pass": 1599,
+          "failing": [
+            "beamer.A",
+            "memoir.A",
+            "memoir.B",
+            "oup-authoring-template.A"
+          ]
+        }
       }
     },
     "containerBlock/columns": {
       "cols.beamer-columns": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 31,
+          "pass": 31,
+          "failing": []
+        }
       },
       "cols.cvcolumns": {
         "verdict": "ok",
@@ -38,12 +53,22 @@
       "cols.multicol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 130,
+          "pass": 130,
+          "failing": []
+        }
       },
       "cols.paracol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 74,
+          "pass": 74,
+          "failing": []
+        }
       },
       "cols.revtex-grid": {
         "verdict": "ok",
@@ -58,16 +83,31 @@
       "cols.twocolumn-cmd": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 134,
+          "pass": 134,
+          "failing": []
+        }
       },
       "cols.vwcol": {
         "verdict": "deny",
         "source": "derived",
-        "status": "derived",
+        "status": "failing",
         "reason": "needs paragraph",
         "lacks": [
           "needs paragraph"
-        ]
+        ],
+        "matrix": {
+          "branches": 131,
+          "pass": 4,
+          "failing": [
+            "beamer.A",
+            "memoir.A",
+            "memoir.B",
+            "oup-authoring-template.A"
+          ]
+        }
       }
     },
     "containerBlock/listing": {
@@ -89,12 +129,31 @@
       "list.enumerate-pkg": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 232,
+          "pass": 214,
+          "failing": [
+            "beamer.A",
+            "memoir.A",
+            "memoir.B",
+            "oup-authoring-template.A"
+          ]
+        }
       },
       "list.enumitem": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 179,
+          "pass": 164,
+          "failing": [
+            "memoir.A",
+            "memoir.B",
+            "oup-authoring-template.A"
+          ]
+        }
       },
       "list.exam-questions": {
         "verdict": "ok",
@@ -104,7 +163,16 @@
       "list.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 183,
+          "pass": 168,
+          "failing": [
+            "memoir.A",
+            "memoir.B",
+            "oup-authoring-template.A"
+          ]
+        }
       },
       "list.nomenclature": {
         "verdict": "ok",
@@ -114,12 +182,31 @@
       "list.paralist": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 179,
+          "pass": 163,
+          "failing": [
+            "memoir.A",
+            "memoir.B",
+            "oup-authoring-template.A"
+          ]
+        }
       },
       "list.scrextend": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 232,
+          "pass": 213,
+          "failing": [
+            "beamer.A",
+            "memoir.A",
+            "memoir.B",
+            "oup-authoring-template.A"
+          ]
+        }
       }
     },
     "containerBlock/abstract": {
@@ -131,12 +218,22 @@
       "abs.abstract-pkg": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 84,
+          "pass": 84,
+          "failing": []
+        }
       },
       "abs.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 14,
+          "pass": 14,
+          "failing": []
+        }
       },
       "abs.class-native[form=command]": {
         "verdict": "ok",
@@ -171,7 +268,12 @@
       "abs.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 118,
+          "pass": 118,
+          "failing": []
+        }
       },
       "abs.keywords": {
         "verdict": "ok",
@@ -188,32 +290,84 @@
       "thm.amsthm": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 248,
+          "pass": 201,
+          "failing": [
+            "memoir.A",
+            "memoir.B",
+            "oup-authoring-template.A"
+          ]
+        }
       },
       "thm.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 103,
+          "pass": 67,
+          "failing": [
+            "beamer.A",
+            "oup-authoring-template.A"
+          ]
+        }
       },
       "thm.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 238,
+          "pass": 193,
+          "failing": [
+            "memoir.A",
+            "memoir.B",
+            "oup-authoring-template.A"
+          ]
+        }
       },
       "thm.mdframed": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 234,
+          "pass": 186,
+          "failing": [
+            "memoir.A",
+            "memoir.B",
+            "oup-authoring-template.A"
+          ]
+        }
       },
       "thm.ntheorem": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 185,
+          "pass": 167,
+          "failing": [
+            "memoir.A",
+            "memoir.B"
+          ]
+        }
       },
       "thm.tcolorbox": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 478,
+          "pass": 455,
+          "failing": [
+            "memoir.A",
+            "memoir.B",
+            "oup-authoring-template.A"
+          ]
+        }
       },
       "thm.tcolorbox[breakable=false]": {
         "verdict": "ok",
@@ -223,7 +377,16 @@
       "thm.thmtools": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 212,
+          "pass": 181,
+          "failing": [
+            "memoir.A",
+            "memoir.B",
+            "oup-authoring-template.A"
+          ]
+        }
       }
     }
   },

@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:c78a731f3e0eca7f4b5f2fa6cd9c6352812e4034983c5b57784521648f8b1b8b",
     "contexts": "sha256:f71c32d51d3016c64059e7d491725c08b522482004cfef01186a16c6d9e5d6cb",
-    "matrix": null
+    "matrix": "sha256:d3f70d9bb137e0a0054bdc95e1139cadce033f0a2aac9e31c7b614594d8a19a4"
   },
   "parents": {
     "paragraph/paragraph": {
@@ -16,7 +16,21 @@
       "para.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 308,
+          "pass": 272,
+          "failing": [
+            "acl.A",
+            "ascelike.A",
+            "corl.A",
+            "emulateapj.A",
+            "jmlr-pmlr.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A",
+            "sn-jnl.A"
+          ]
+        }
       }
     },
     "paragraph/heading": {
@@ -28,7 +42,19 @@
       "head.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 79,
+          "pass": 59,
+          "failing": [
+            "ascelike.A",
+            "corl.A",
+            "emulateapj.A",
+            "jmlr-pmlr.A",
+            "revtex4-2-aps.A",
+            "sn-jnl.A"
+          ]
+        }
       },
       "head.class-styled": {
         "verdict": "ok",
@@ -43,7 +69,14 @@
       "head.fncychap": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 13,
+          "pass": 11,
+          "failing": [
+            "jmlr-pmlr.A"
+          ]
+        }
       },
       "head.ieee-raise": {
         "verdict": "ok",
@@ -53,7 +86,25 @@
       "head.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 159,
+          "pass": 117,
+          "failing": [
+            "acl.A",
+            "apa7.A",
+            "ascelike.A",
+            "bmvc.A",
+            "corl.A",
+            "ecai.A",
+            "emulateapj.A",
+            "jmlr-pmlr.A",
+            "jss.A",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A",
+            "sn-jnl.A"
+          ]
+        }
       },
       "head.koma-fonts": {
         "verdict": "ok",
@@ -73,12 +124,29 @@
       "head.sectsty": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 72,
+          "pass": 72,
+          "failing": []
+        }
       },
       "head.titlesec": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 118,
+          "pass": 86,
+          "failing": [
+            "acl.A",
+            "ascelike.A",
+            "corl.A",
+            "emulateapj.A",
+            "jmlr-pmlr.A",
+            "sn-jnl.A"
+          ]
+        }
       },
       "head.tufte": {
         "verdict": "ok",
@@ -90,7 +158,14 @@
       "list.item": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 50,
+          "pass": 48,
+          "failing": [
+            "sn-jnl.A"
+          ]
+        }
       }
     },
     "paragraph/title": {
@@ -147,12 +222,26 @@
       "front.authblk": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 6,
+          "pass": 5,
+          "failing": [
+            "ascelike.A"
+          ]
+        }
       },
       "front.author-blocks": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 2,
+          "pass": 0,
+          "failing": [
+            "ascelike.A"
+          ]
+        }
       },
       "front.beamer-title": {
         "verdict": "ok",
@@ -162,7 +251,12 @@
       "front.bmvc": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.cas": {
         "verdict": "ok",
@@ -172,12 +266,27 @@
       "front.center-block": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 14,
+          "pass": 13,
+          "failing": [
+            "sn-jnl.A"
+          ]
+        }
       },
       "front.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 10,
+          "pass": 8,
+          "failing": [
+            "ascelike.A",
+            "sn-jnl.A"
+          ]
+        }
       },
       "front.copernicus": {
         "verdict": "ok",
@@ -187,12 +296,22 @@
       "front.corl": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.ecai-frontmatter": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.elegantpaper": {
         "verdict": "ok",
@@ -207,7 +326,12 @@
       "front.emulateapj": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.exam-cover": {
         "verdict": "ok",
@@ -272,7 +396,12 @@
       "front.jmlr": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.jss": {
         "verdict": "ok",
@@ -302,7 +431,14 @@
       "front.maketitle": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 8,
+          "pass": 7,
+          "failing": [
+            "sn-jnl.A"
+          ]
+        }
       },
       "front.mdpi": {
         "verdict": "ok",
@@ -327,7 +463,12 @@
       "front.revtex": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 2,
+          "pass": 2,
+          "failing": []
+        }
       },
       "front.siam": {
         "verdict": "ok",
@@ -357,12 +498,26 @@
       "front.titlepage-env": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 13,
+          "pass": 12,
+          "failing": [
+            "sn-jnl.A"
+          ]
+        }
       },
       "front.titling": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 7,
+          "pass": 6,
+          "failing": [
+            "sn-jnl.A"
+          ]
+        }
       },
       "front.tufte": {
         "verdict": "ok",

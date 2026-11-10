@@ -1,0 +1,699 @@
+{
+  "way": "list.nomenclature",
+  "from": {
+    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
+    "runs": "r20261110022619593,r20261110022630505",
+    "oracle": "11",
+    "source": "compat tables: a fetched run, not recompiled"
+  },
+  "entries": [
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "general:containerBlock/abstract:setspace"
+      },
+      "pair": "asmeconf.A",
+      "branches": 38,
+      "pass": 36,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+lib:breakable+lib:skins+tcolorbox"
+      },
+      "pair": "asmeconf.A",
+      "branches": 66,
+      "pass": 61,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "general:containerBlock/note:marginnote+xcolor"
+      },
+      "pair": "asmeconf.A",
+      "branches": 31,
+      "pass": 12,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.awesomebox"
+      },
+      "pair": "asmeconf.A",
+      "branches": 33,
+      "pass": 31,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.fancybox"
+      },
+      "pair": "asmeconf.A",
+      "branches": 33,
+      "pass": 30,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.mdframed"
+      },
+      "pair": "asmeconf.A",
+      "branches": 92,
+      "pass": 85,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.tcolorbox"
+      },
+      "pair": "asmeconf.A",
+      "branches": 60,
+      "pass": 55,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/footnote",
+        "way": "general:containerBlock/footnote:footnotehyper"
+      },
+      "pair": "asmeconf.A",
+      "branches": 55,
+      "pass": 50,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.thmtools"
+      },
+      "pair": "asmeconf.A",
+      "branches": 14,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "asmeconf.A",
+      "branches": 507,
+      "pass": 471,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm"
+      },
+      "pair": "asmeconf.A",
+      "branches": 65,
+      "pass": 63,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "abs.abstract-pkg"
+      },
+      "pair": "asmeconf.A",
+      "branches": 82,
+      "pass": 81,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "asmeconf.A",
+      "branches": 31,
+      "pass": 31,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "asmeconf.A",
+      "branches": 35,
+      "pass": 34,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.tcolorbox"
+      },
+      "pair": "asmeconf.A",
+      "branches": 123,
+      "pass": 110,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.mdframed"
+      },
+      "pair": "asmeconf.A",
+      "branches": 58,
+      "pass": 53,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm"
+      },
+      "pair": "asmeconf.A",
+      "branches": 55,
+      "pass": 54,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "asmeconf.A",
+      "branches": 61,
+      "pass": 61,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+hyperref+lib:breakable+lib:skins+tcolorbox"
+      },
+      "pair": "asmeconf.A",
+      "branches": 61,
+      "pass": 55,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "asmeconf.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "asmeconf.A",
+      "branches": 41,
+      "pass": 37,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "asmeconf.A",
+      "branches": 40,
+      "pass": 35,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.kernel"
+      },
+      "pair": "asmeconf.A",
+      "branches": 51,
+      "pass": 49,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "asmeconf.A",
+      "branches": 38,
+      "pass": 37,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.ntheorem"
+      },
+      "pair": "asmeconf.A",
+      "branches": 8,
+      "pass": 8,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "footnoteBody/footnote",
+        "way": "general:footnoteBody/footnote:kernel"
+      },
+      "pair": "asmeconf.A",
+      "branches": 38,
+      "pass": 35,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "asmeconf.A",
+      "branches": 45,
+      "pass": 8,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+hyperref"
+      },
+      "pair": "asmeconf.A",
+      "branches": 66,
+      "pass": 64,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "abs.kernel"
+      },
+      "pair": "asmeconf.A",
+      "branches": 46,
+      "pass": 28,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "general:containerBlock/abstract:setspace"
+      },
+      "pair": "asmejour.A",
+      "branches": 44,
+      "pass": 43,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+lib:breakable+lib:skins+tcolorbox"
+      },
+      "pair": "asmejour.A",
+      "branches": 72,
+      "pass": 65,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "general:containerBlock/note:marginnote+xcolor"
+      },
+      "pair": "asmejour.A",
+      "branches": 31,
+      "pass": 21,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.awesomebox"
+      },
+      "pair": "asmejour.A",
+      "branches": 33,
+      "pass": 30,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.fancybox"
+      },
+      "pair": "asmejour.A",
+      "branches": 33,
+      "pass": 29,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.mdframed"
+      },
+      "pair": "asmejour.A",
+      "branches": 92,
+      "pass": 84,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.tcolorbox"
+      },
+      "pair": "asmejour.A",
+      "branches": 60,
+      "pass": 55,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.marginnote"
+      },
+      "pair": "asmejour.A",
+      "branches": 64,
+      "pass": 43,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.marginpar"
+      },
+      "pair": "asmejour.A",
+      "branches": 30,
+      "pass": 14,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.notecolumn"
+      },
+      "pair": "asmejour.A",
+      "branches": 30,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.sidenotes"
+      },
+      "pair": "asmejour.A",
+      "branches": 30,
+      "pass": 18,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.todonotes"
+      },
+      "pair": "asmejour.A",
+      "branches": 29,
+      "pass": 20,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/footnote",
+        "way": "general:containerBlock/footnote:footnotehyper"
+      },
+      "pair": "asmejour.A",
+      "branches": 55,
+      "pass": 49,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.thmtools"
+      },
+      "pair": "asmejour.A",
+      "branches": 14,
+      "pass": 13,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": null,
+      "pair": "asmejour.A",
+      "branches": 603,
+      "pass": 560,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm"
+      },
+      "pair": "asmejour.A",
+      "branches": 71,
+      "pass": 70,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "abs.abstract-pkg"
+      },
+      "pair": "asmejour.A",
+      "branches": 94,
+      "pass": 94,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "general:containerBlock/acknowledgement:kernel"
+      },
+      "pair": "asmejour.A",
+      "branches": 31,
+      "pass": 31,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "asmejour.A",
+      "branches": 35,
+      "pass": 34,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.tcolorbox"
+      },
+      "pair": "asmejour.A",
+      "branches": 135,
+      "pass": 119,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.mdframed"
+      },
+      "pair": "asmejour.A",
+      "branches": 64,
+      "pass": 56,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm"
+      },
+      "pair": "asmejour.A",
+      "branches": 61,
+      "pass": 61,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "asmejour.A",
+      "branches": 61,
+      "pass": 61,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+hyperref+lib:breakable+lib:skins+tcolorbox"
+      },
+      "pair": "asmejour.A",
+      "branches": 67,
+      "pass": 60,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.kernel"
+      },
+      "pair": "asmejour.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "general:containerBlock/columns:multicol"
+      },
+      "pair": "asmejour.A",
+      "branches": 46,
+      "pass": 39,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.twocolumn-cmd"
+      },
+      "pair": "asmejour.A",
+      "branches": 44,
+      "pass": 44,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "footnoteBody/footnote",
+        "way": "general:footnoteBody/footnote:kernel"
+      },
+      "pair": "asmejour.A",
+      "branches": 44,
+      "pass": 39,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.multicol"
+      },
+      "pair": "asmejour.A",
+      "branches": 47,
+      "pass": 42,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.kernel"
+      },
+      "pair": "asmejour.A",
+      "branches": 57,
+      "pass": 56,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.ntheorem"
+      },
+      "pair": "asmejour.A",
+      "branches": 8,
+      "pass": 8,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "asmejour.A",
+      "branches": 51,
+      "pass": 10,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+hyperref"
+      },
+      "pair": "asmejour.A",
+      "branches": 72,
+      "pass": 71,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "abs.kernel"
+      },
+      "pair": "asmejour.A",
+      "branches": 52,
+      "pass": 12,
+      "status": "failing"
+    }
+  ]
+}

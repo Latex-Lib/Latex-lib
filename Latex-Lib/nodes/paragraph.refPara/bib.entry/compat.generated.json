@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:ff0f9e49ddc0c93d253f9453bcf05473e69ae0ca1ad25be1d202b2e5aa4f3570",
     "contexts": "sha256:32b10d00c015632499a532e7c96142c53020f3af195d122f4682af05a97d649d",
-    "matrix": null
+    "matrix": "sha256:f209a1dd5f1555e4a3f88f5e15e674db7e805bc23a955115b655419fd833d98b"
   },
   "parents": {
     "containerBlock/refContainer": {
@@ -46,7 +46,14 @@
       "bib.mdpi": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 3,
+          "pass": 0,
+          "failing": [
+            "mdpi.A"
+          ]
+        }
       },
       "bib.named": {
         "verdict": "ok",
@@ -61,7 +68,14 @@
       "bib.tfapastyle": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 3,
+          "pass": 0,
+          "failing": [
+            "interact.A"
+          ]
+        }
       },
       "bib.thebibliography": {
         "verdict": "ok",

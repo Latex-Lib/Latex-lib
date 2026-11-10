@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:6bc4281844f4eefef2bc4293e77fe82ff5ce445a0f1013a8ffbe8976979c9a18",
     "contexts": "sha256:f71c32d51d3016c64059e7d491725c08b522482004cfef01186a16c6d9e5d6cb",
-    "matrix": null
+    "matrix": "sha256:260f4aa95fb3240e40e04d4cfa622dcca3df653d908a6f665ec786150336ff72"
   },
   "parents": {
     "paragraph/paragraph": {
@@ -16,7 +16,14 @@
       "para.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 40,
+          "pass": 17,
+          "failing": [
+            "ijcai.A"
+          ]
+        }
       }
     },
     "paragraph/heading": {
@@ -28,7 +35,14 @@
       "head.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 11,
+          "pass": 4,
+          "failing": [
+            "ijcai.A"
+          ]
+        }
       },
       "head.class-styled": {
         "verdict": "ok",
@@ -53,7 +67,14 @@
       "head.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 20,
+          "pass": 7,
+          "failing": [
+            "ijcai.A"
+          ]
+        }
       },
       "head.koma-fonts": {
         "verdict": "ok",
@@ -73,12 +94,26 @@
       "head.sectsty": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 16,
+          "pass": 3,
+          "failing": [
+            "ijcai.A"
+          ]
+        }
       },
       "head.titlesec": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 19,
+          "pass": 5,
+          "failing": [
+            "ijcai.A"
+          ]
+        }
       },
       "head.tufte": {
         "verdict": "ok",
@@ -90,7 +125,14 @@
       "list.item": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 7,
+          "pass": 5,
+          "failing": [
+            "ijcai.A"
+          ]
+        }
       }
     },
     "paragraph/title": {
@@ -147,12 +189,22 @@
       "front.authblk": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.author-blocks": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 2,
+          "pass": 2,
+          "failing": []
+        }
       },
       "front.beamer-title": {
         "verdict": "ok",
@@ -172,12 +224,22 @@
       "front.center-block": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.copernicus": {
         "verdict": "ok",
@@ -242,7 +304,12 @@
       "front.ijcai": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.imsart-frontmatter": {
         "verdict": "ok",
@@ -302,7 +369,12 @@
       "front.maketitle": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.mdpi": {
         "verdict": "ok",
@@ -357,12 +429,24 @@
       "front.titlepage-env": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 1,
+          "pass": 1,
+          "failing": []
+        }
       },
       "front.titling": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 1,
+          "pass": 0,
+          "failing": [
+            "ijcai.A"
+          ]
+        }
       },
       "front.tufte": {
         "verdict": "ok",

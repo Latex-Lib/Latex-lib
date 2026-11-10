@@ -4,14 +4,23 @@
   "generatedFrom": {
     "key": "sha256:9766d2183511c168aa2c13ec9bb608c775b309c86604aaa1918df12c1abaa225",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": null
+    "matrix": "sha256:95caa89d88fb53266c5316bd2a1c0fb8c5a55324056c0d7954765d97c94ec4fa"
   },
   "parents": {
     "body": {
       "(document body)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 5040,
+          "pass": 4463,
+          "failing": [
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A"
+          ]
+        }
       }
     }
   },

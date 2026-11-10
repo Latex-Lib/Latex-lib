@@ -35,6 +35,28 @@ export default defineKey(
         ],
         unless: { lineNumbers: false },
       },
+      // Batch 4 round 2: round 1 left "math.linenomath@agu \linenumbers: also sends sentinels off the page under frontiers and
+      // oup" unpatched for want of a mechanism; the reproducers below show the page itself is wrong, not the measurement.
+      {
+        class: 'class.frontiers',
+        reason:
+          "with \\linenumbers on, every breakable tcolorbox (General's statement, thm.tcolorbox@boxed and @sharp, box.tcolorbox's breakable presets) and what follows it in its column is shipped above the paper: FrontiersinHarvard.cls (two columns, \\twocolumn at l.903) puts a box's split parts some 1,400pt over the page top, and the rest of the column prints blank. Without \\linenumbers (lineno loaded, the wrap-only preset), or with an unbreakable box, the same document is right; \\linenumbers switched on at begindocument/end is as wrong. Not the packages the class loads: each of flushend, stfloats, crop, amsthm, chngpage, caption, natbib and array under article [twocolumn] with \\linenumbers and the same boxes places them right, so it is the class's own page code. The way's own branches pass (the boxes they break are other branches'), so the deny is on the cause: about 600 passing agu branches here, against about 950 failing branches in other ways",
+        evidence: [
+          { kind: 'compile', cell: "batch 4 round 2, frontiers.A: every one of the 730 branches whose sentinel shipped above the paper (y over 1,000pt on a 795pt page; no other pair but oup-authoring-template.A shows one) sits in a document holding math.linenomath@agu (154 documents); document dcf7a4cdcf9bbcf9df32b, cell c82cf14b86d7aa30ec061, result d30286d121, branch b6016031f605fa1930613 (thm.tcolorbox@boxed > thm.tcolorbox@boxed > General's paragraph) at x 250.0pt, y 2067.4pt on page 1; dd26c71042b415c42f97b, cell c689809153764bade9018, result 36b062120e, branch bd056c44737aed3be4e29 at y 1915.0pt on page 2. Documents with @agu fail 2,277 of 13,595 judged branches (924 sentinel:outside), those without 1,071 of 10,947 (169)" },
+          { kind: 'compile', reproducer: "ZeroTeX-NG (local Flouest, 2026-11-10), frontiers.A setting: \\usepackage{lineno}\\linenumbers, then six paragraphs each followed by a [breakable] tcbtheorem holding a nested one, a sentinel in each: page 1's second column ships its sentinels at y 2223pt, 2120pt, 1907pt (paper 795pt) and prints blank; without \\linenumbers they ship at y 711pt down to 143pt; with \\AddToHook{begindocument/end}{\\linenumbers} as wrong as before; article [twocolumn] with \\linenumbers: right" },
+        ],
+        unless: { lineNumbers: false },
+      },
+      {
+        class: 'class.oup-authoring-template',
+        reason:
+          "with \\linenumbers on, every breakable tcolorbox (General's statement, thm.tcolorbox@boxed and @sharp, box.tcolorbox's breakable presets) and what follows it in its column is shipped above the paper, as under frontiers: the class (two columns, its own \\twocolumn) puts the box's split parts some 1,500pt over the page top and the rest of the column prints blank. Lineno loaded without \\linenumbers (the wrap-only preset), or an unbreakable box, is right; \\linenumbers at begindocument/end is as wrong. Not the packages it shares with frontiers (flushend, stfloats, crop and the rest: each is right under article [twocolumn]). The way's own branches pass, so the deny is on the cause: about 610 passing agu branches here, against about 900 failing branches in other ways",
+        evidence: [
+          { kind: 'compile', cell: "batch 4 round 2, oup-authoring-template.A: every one of the 668 branches whose sentinel shipped above the paper (y over 1,000pt on a 785pt page) sits in a document holding math.linenomath@agu (155 documents); document dc3e6ae4dd7a0613d6f61, cell c99784e78fb2fd6a61afe, result b248eb095d, branch bf5ace207f38683da2c1e (thm.tcolorbox@titled in General's breakable statement) at x 48.8pt, y 2063.8pt on page 7. Documents with @agu fail 1,972 of 12,505 judged branches (765 sentinel:outside), those without 808 of 9,493 (21)" },
+          { kind: 'compile', reproducer: "ZeroTeX-NG (local Flouest, 2026-11-10), oup-authoring-template.A setting: \\usepackage{lineno}\\linenumbers and the same [breakable] tcbtheorems: page 1's second column ships at y 2189.9pt to 1630.6pt (paper 785pt) and the rendered page shows only the first column's opening paragraph; without \\linenumbers, or with the boxes unbreakable, every sentinel ships inside the text block" },
+        ],
+        unless: { lineNumbers: false },
+      },
     ],
     gives: { math: true },
     // Typeset on ZeroTeX-NG under article (both presets) and AGU's agujournal2019.cls [draft] (the agu preset): equation, \[ … \],

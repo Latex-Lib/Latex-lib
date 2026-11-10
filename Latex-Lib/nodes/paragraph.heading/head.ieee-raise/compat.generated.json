@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:4c99645d962e08f4cbdce723f3b0b58408d3fb9551a5c51196473b43db29ad25",
     "contexts": "sha256:14e595b5a917207b0202cd81103654b34671bd431b2e4e8a05c64647be89ab4f",
-    "matrix": null
+    "matrix": "sha256:ce1bbcbcd5a6bd70eab9c769c288053d00be6da382f8cae720932a7a981b706e"
   },
   "parents": {
     "containerBlock/columns": {
@@ -31,7 +31,12 @@
       "cols.multicol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 17,
+          "pass": 17,
+          "failing": []
+        }
       },
       "cols.paracol": {
         "verdict": "ok",
@@ -51,16 +56,28 @@
       "cols.twocolumn-cmd": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 17,
+          "pass": 17,
+          "failing": []
+        }
       },
       "cols.vwcol": {
         "verdict": "deny",
         "source": "derived",
-        "status": "derived",
+        "status": "failing",
         "reason": "needs paragraph",
         "lacks": [
           "needs paragraph"
-        ]
+        ],
+        "matrix": {
+          "branches": 34,
+          "pass": 12,
+          "failing": [
+            "ieeetran-compsoc.A"
+          ]
+        }
       }
     },
     "containerBlock/appendix": {
@@ -92,7 +109,14 @@
       "num.ieee-appendices": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 34,
+          "pass": 32,
+          "failing": [
+            "ieeetran-compsoc.A"
+          ]
+        }
       },
       "num.mdpi-appendix": {
         "verdict": "ok",
@@ -159,7 +183,12 @@
       "ack.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "verified-ok",
+        "matrix": {
+          "branches": 17,
+          "pass": 17,
+          "failing": []
+        }
       },
       "ack.llncs-credits": {
         "verdict": "ok",

@@ -1,0 +1,2025 @@
+{
+  "way": "custom.raw@paragraph/customLatexPara",
+  "from": {
+    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
+    "runs": "r20261110022619593,r20261110022630505",
+    "oracle": "11",
+    "source": "compat tables: a fetched run, not recompiled"
+  },
+  "entries": [
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "aa.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "aa.A",
+      "branches": 17,
+      "pass": 17,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "aaai.A",
+      "branches": 23,
+      "pass": 23,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "aaai.A",
+      "branches": 23,
+      "pass": 23,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "aamas.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "aamas.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "aastex.A",
+      "branches": 18,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "aastex.A",
+      "branches": 18,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "aastex.B",
+      "branches": 18,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "aastex.B",
+      "branches": 18,
+      "pass": 17,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "achemso.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "achemso.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "acl.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "acl.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "acmart-acmsmall.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "acmart-acmsmall.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "acmart-acmtog.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "acmart-acmtog.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "acmart-manuscript.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "acmart-manuscript.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "acmart-manuscript.B",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "acmart-manuscript.B",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "acmart-sigconf.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "acmart-sigconf.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "acmart-sigplan.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "acmart-sigplan.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "agu.A",
+      "branches": 28,
+      "pass": 28,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "agu.A",
+      "branches": 28,
+      "pass": 28,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "aistats.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "aistats.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "amsart.A",
+      "branches": 28,
+      "pass": 28,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "amsart.A",
+      "branches": 28,
+      "pass": 28,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "amsart.B",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "amsart.B",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "apa7.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "apa7.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "article.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "article.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "article.B",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "article.B",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "ascelike.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "ascelike.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "asmeconf.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "asmeconf.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "asmejour.A",
+      "branches": 28,
+      "pass": 28,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "asmejour.A",
+      "branches": 28,
+      "pass": 28,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "beamer.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "beamer.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "bmvc.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "bmvc.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "book.A",
+      "branches": 29,
+      "pass": 29,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "book.A",
+      "branches": 29,
+      "pass": 29,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "book.B",
+      "branches": 28,
+      "pass": 28,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "book.B",
+      "branches": 28,
+      "pass": 28,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "cas-dc.A",
+      "branches": 29,
+      "pass": 29,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "cas-dc.A",
+      "branches": 29,
+      "pass": 29,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "cas-sc.A",
+      "branches": 29,
+      "pass": 29,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "cas-sc.A",
+      "branches": 29,
+      "pass": 29,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "colm.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "colm.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "copernicus.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "copernicus.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "corl.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "corl.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "cvpr.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "cvpr.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "ecai.A",
+      "branches": 25,
+      "pass": 25,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "ecai.A",
+      "branches": 25,
+      "pass": 25,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "eccv.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "eccv.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "elegantpaper.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "elegantpaper.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "elsarticle-3p.A",
+      "branches": 28,
+      "pass": 28,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "elsarticle-3p.A",
+      "branches": 28,
+      "pass": 28,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "elsarticle-5p.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "elsarticle-5p.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "elsarticle-preprint.A",
+      "branches": 28,
+      "pass": 28,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "elsarticle-preprint.A",
+      "branches": 28,
+      "pass": 28,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "elsarticle-preprint.B",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "elsarticle-preprint.B",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "emulateapj.A",
+      "branches": 20,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "emulateapj.A",
+      "branches": 20,
+      "pass": 15,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "exam.A",
+      "branches": 28,
+      "pass": 28,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "exam.A",
+      "branches": 28,
+      "pass": 28,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "exam.B",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "exam.B",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "extarticle.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "extarticle.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "extarticle.B",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "extarticle.B",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "frontiers.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "frontiers.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "icassp.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "icassp.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "iclr.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "iclr.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "icml.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "icml.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 24,
+      "pass": 24,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 25,
+      "pass": 25,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 25,
+      "pass": 25,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "ijcai.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "ijcai.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "imsart.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.imsart-localdefs"
+      },
+      "pair": "imsart.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "imsart.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "interact.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "interact.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "iopart.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "iopart.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "iopjournal.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "iopjournal.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "jacow.A",
+      "branches": 25,
+      "pass": 25,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "jacow.A",
+      "branches": 25,
+      "pass": 25,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "jmlr-pmlr.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "jmlr-pmlr.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "jss.A",
+      "branches": 28,
+      "pass": 28,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "jss.A",
+      "branches": 28,
+      "pass": 28,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "lipics.A",
+      "branches": 23,
+      "pass": 23,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "lipics.A",
+      "branches": 23,
+      "pass": 23,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "llncs.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "llncs.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "llncs.B",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "llncs.B",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "mdpi.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "mdpi.A",
+      "branches": 20,
+      "pass": 20,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "memoir.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "memoir.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "memoir.B",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "memoir.B",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "mnras.A",
+      "branches": 21,
+      "pass": 21,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "mnras.A",
+      "branches": 21,
+      "pass": 21,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "neurips.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "neurips.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "oup-authoring-template.A",
+      "branches": 25,
+      "pass": 24,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "oup-authoring-template.A",
+      "branches": 25,
+      "pass": 24,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "plos.A",
+      "branches": 29,
+      "pass": 29,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "plos.A",
+      "branches": 29,
+      "pass": 29,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "quantumarticle.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "quantumarticle.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "report.A",
+      "branches": 33,
+      "pass": 33,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "report.A",
+      "branches": 33,
+      "pass": 33,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "report.B",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "report.B",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "revtex4-2-aip.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "revtex4-2-aip.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "revtex4-2-aps.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "revtex4-2-aps.A",
+      "branches": 22,
+      "pass": 22,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "scrartcl.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "scrartcl.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "scrartcl.B",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "scrartcl.B",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "scrbook.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "scrbook.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "scrbook.B",
+      "branches": 29,
+      "pass": 29,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "scrbook.B",
+      "branches": 29,
+      "pass": 29,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "scrreprt.A",
+      "branches": 33,
+      "pass": 33,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "scrreprt.A",
+      "branches": 33,
+      "pass": 33,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "scrreprt.B",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "scrreprt.B",
+      "branches": 32,
+      "pass": 32,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "siamart.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "siamart.A",
+      "branches": 19,
+      "pass": 19,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "sn-jnl.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "sn-jnl.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "spie.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "spie.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "tmlr.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "tmlr.A",
+      "branches": 27,
+      "pass": 27,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "tufte-handout.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "tufte-handout.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "usenix.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "usenix.A",
+      "branches": 26,
+      "pass": 26,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 30,
+      "pass": 30,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "general:containerBlock/customLatex:kernel"
+      },
+      "pair": "vldb.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/customLatex",
+        "way": "custom.raw@containerBlock/customLatex"
+      },
+      "pair": "vldb.A",
+      "branches": 18,
+      "pass": 18,
+      "status": "verified-ok"
+    }
+  ]
+}

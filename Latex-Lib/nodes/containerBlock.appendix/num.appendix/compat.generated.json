@@ -4,14 +4,36 @@
   "generatedFrom": {
     "key": "sha256:dc0a74472d5497192e4520d3679c80073f06480ede10f9eac38b4e68776a8bd8",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": null
+    "matrix": "sha256:55ee097daae43e29ba46b57bce6d1aa58f6cd2083fefb39f264004082590ab30"
   },
   "parents": {
     "body": {
       "(document body)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "derived"
+        "status": "failing",
+        "matrix": {
+          "branches": 20754,
+          "pass": 19882,
+          "failing": [
+            "book.A",
+            "book.B",
+            "eccv.A",
+            "llncs.A",
+            "llncs.B",
+            "memoir.A",
+            "memoir.B",
+            "report.A",
+            "report.B",
+            "revtex4-2-aip.A",
+            "revtex4-2-aps.A",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B",
+            "ut-thesis.A"
+          ]
+        }
       }
     }
   },

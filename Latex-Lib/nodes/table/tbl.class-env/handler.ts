@@ -3,7 +3,7 @@
  * header row every table way builds (`../node.ts`), the class's own rules and caption form, and nothing loaded:
  * - deluxetable (aastex701): \begin{deluxetable}{lc} \tablecaption{…} \tablehead{\colhead{…} & …} \startdata … \enddata,
  *   deluxetable* when `span`, \startlongtable before it when `long` (aastex701.cls l.8411-8420, 8527-8540, 11264-11385);
- * - longtab (aa): \longtab{\begin{longtable}…\end{longtable}}, which the class sets in one column at the end of the
+ * - longtab (aa): \longtab[n]{\begin{longtable}…\end{longtable}} (n the table's number, which aa's appendix reads), which the class sets in one column at the end of the
  *   document (aa.cls l.1385-1422), \hline\hline over the header, the header repeated, as aa_example.tex l.329-345;
  * - ruledtabular (revtex4-2, its aip setting, aastex701): \begin{ruledtabular} around the tabular in a table float, the
  *   environment drawing the double rules and stretching the table to \hsize (revtex4-2.cls l.6901-6926; aastex701.cls l.6298);
@@ -102,7 +102,13 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
           // aa_example.tex l.329-345: the caption row, \hline\hline, the header, \hline, \endfirsthead; "continued." and the header
           // again, \endhead; \hline, \endfoot. longtable steps the table counter at its start, so the label needs no caption.
           const head = top === '' ? [first, '\\hline\\hline', '\\endfirsthead', ...(caption === '' ? [] : ['\\caption{continued.}\\\\']), '\\hline\\hline', '\\endhead'] : [first, '\\hline\\hline', top, '\\hline', '\\endfirsthead', ...(caption === '' ? [] : ['\\caption{continued.}\\\\']), '\\hline\\hline', top, '\\hline', '\\endhead'];
-          return ['\\longtab{%', ...(size === '' ? [] : [size]), `\\begin{longtable}{${spec}}`, ...head, '\\hline', '\\endfoot', ...body, '\\end{longtable}}'].filter((l) => l !== '').join('\n') + '\n\n';
+          // Inside aa's appendix environment \longtab reads its optional argument as the table's number (\@aatolm is 1 there,
+          // aa.cls l.240, 1386-1390, 1406-1421: \setcounter{table}{#1} now and again at the end of the document); with none it
+          // stops at "Missing number, treated as zero" (batch 4 round 2, aa.A: every \longtab under General's appendix, 15 of 15;
+          // document d8b4cb3d0e2fad111370b, result 6f26f118186690702ca3774d25e5f7dfaaa8eb0f3b3a0b3bece7b174395223b6; reproduced, and
+          // gone with the argument: main.aux numbers the labels 1, A.1, A.2, ZeroTeX-NG, compat cases, 2026-11-10). The number is the
+          // next table's, expanded once here so the end of the document reads the same figure; outside the appendix the class ignores it.
+          return ['\\expandafter\\longtab\\expandafter[\\the\\numexpr\\value{table}+1\\relax]{%', ...(size === '' ? [] : [size]), `\\begin{longtable}{${spec}}`, ...head, '\\hline', '\\endfoot', ...body, '\\end{longtable}}'].filter((l) => l !== '').join('\n') + '\n\n';
         }
         case 'mdpi': {
           const g = gridOf(node, content, spanning('', '\\textwidth'));

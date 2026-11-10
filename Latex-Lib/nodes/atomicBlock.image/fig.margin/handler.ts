@@ -20,7 +20,10 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
   const p = withDefaults(key.params, given as never) as { readonly [name: string]: unknown };
   const offset = param(p, 'offset');
   return {
-    preamble: () => ({ packages: ['\\usepackage{graphicx}'] }),
+    // marginfigure is a \marginpar (above), which runs the output routine without shipping a page: the limit is raised as
+    // note.marginpar and note.class-margin raise it (batch 4 round 2: tufte-handout.A's margin notes stopped at "Output
+    // loop---100 consecutive dead cycles"; the same mechanism, no failing cell of this way's own). Only raised, never lowered.
+    preamble: () => ({ packages: ['\\usepackage{graphicx}'], declarations: ['\\ifnum\\maxdeadcycles<1000 \\maxdeadcycles=1000 \\fi'] }),
     emit: (node, _content, context) => {
       if (pathOf(node) === '') return '';
       return `\\begin{marginfigure}${offset === '' ? '' : `[${offset}]%`}\n\\includegraphics[width=\\linewidth]{${pathOf(node)}}${captionLines(node, context)}\n\\end{marginfigure}\n\n`;

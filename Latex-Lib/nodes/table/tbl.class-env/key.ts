@@ -126,6 +126,21 @@ export default defineKey(
         evidence: [{ kind: 'source', file: `${SRC}/0862-plos/plos_latex_template.tex`, line: '107-122' }],
       },
     ],
+    // The cas form's [width=…,cols=…,pos=…] is cas-common.sty's table; floatrow, loaded by another way in the document
+    // (fig.floatrow's floatrow presets), restyles figure and table as it loads (floatrow.sty l.1459, as fig.floatrow's handler
+    // records), and the restyled table takes the bracket as a placement. sidecap (fig.floatrow's other engine) leaves it alone.
+    conflicts: [
+      {
+        pkg: 'floatrow',
+        when: { form: 'cas' },
+        reason:
+          "floatrow restyles the table environment as it loads, replacing cas-common.sty's key-value table: \\begin{table}[width=\\linewidth,cols=3,pos=tbp] stops at \"Unknown float option `w'\"",
+        evidence: [
+          { kind: 'compile', cell: "batch 4 round 2, cas-dc.A and cas-sc.A: 14 cells (24 failing branches) stop at \"Unknown float option `w'\" at a tbl.class-env cas table (document d02d223a6dc26d4e3e744, result 72e52ae3d10b, l.247); each of the 7 documents holds fig.floatrow with a floatrow preset" },
+          { kind: 'compile', reproducer: "\\documentclass{cas-dc} \\usepackage{graphicx}\\usepackage{floatrow} and \\begin{table}[width=\\linewidth,cols=3,pos=tbp] \\caption{T} \\begin{tabular*}{\\tblwidth}{@{}LLL@{}} … \\end{tabular*} \\end{table}: \"Unknown float option `w'\"; without floatrow, or with sidecap instead, no error (ZeroTeX-NG through compat cases, 2026-11-10)" },
+        ],
+      },
+    ],
     deny: [
       {
         // emulateapj is built on class.aastex (its profile's base), so the deluxetable form's `onlyWhen` lets it in.

@@ -7,7 +7,9 @@ import { PRESETS } from './presets.ts';
  * there (the column, \marginparwidth after FIT_NOTE_COLUMN, from a local probe of each class setting). fancy-shadow gives no
  * size, so todonotes sets the note at \normalsize, framed and shadowed; in a column of 24-34pt (39.61pt at frontiers' 12pt
  * type) its bold title overflows first. Only the shadowed preset is denied (`unless: { shadow: false }`): the sized presets
- * (review \tiny, red-alert and listed-green \scriptsize) and the unframed tag stay judged there.
+ * (review \tiny, red-alert and listed-green \scriptsize) and the unframed tag stay judged there, except under frontiers,
+ * whose 39.61pt column held no framed \scriptsize note in batch 4 round 2 (0 of 208 branches): there only \tiny and the
+ * package's own size stay.
  */
 const NO_ROOM_FOR_A_NORMAL_SIZE_NOTE: readonly (readonly [string, string])[] = [
   ['class.ieeetran', 'ieeetran-journal and ieeetran-conference (29.15pt) and ieeetran-compsoc (28.18pt) 127 of 127 each, ieeeconf-ras (34.20pt) 125 of 125; e.g. ieeetran-journal.A d44e7154a62016494964d result a15de6b8a5, l.258 "Default" 15.98853pt and "theme)" 14.19852pt over'],
@@ -112,6 +114,16 @@ export default defineKey(
           { kind: 'compile', cell: "batch 4 round 1, elsarticle-5p.A: COMPAT-GEOMETRY paperWidth 597.50787pt, oddLeft and evenLeft 37.75394pt, textWidth 522.0pt; local probe of the class setting with FIT_NOTE_COLUMN (ZeroTeX-NG): \\marginparwidth 15.75394pt beside \\marginparsep 11pt; d8abb67840fd4c4265514 result 4e6c7aab15, branch ba9a668c31531c181ceb5 (note.marginnote@italic-unadjusted), l.134 Overfull \\hbox (16.24606pt too wide), 'verbatim' at 8pt; over the five margin-note ways 2,791 not-denied branches fail on overfull boxes (note.marginnote 787, note.notecolumn 729, note.sidenotes 517, note.todonotes 463, note.marginpar 295) and 1,281 pass (note.marginnote 861)" },
         ],
         unless: { inline: true },
+      },
+      {
+        // batch 4 round 2: frontiers' 39.61pt column (at the class's 12pt type) holds a \tiny note, not a framed \scriptsize one.
+        class: 'class.frontiers',
+        reason:
+          "frontiers' margin column is 39.61pt at the class's 12pt type, and a framed note set in \\scriptsize (red-alert, listed-green) overflows it in every branch (by about 10pt); \\tiny (review) passes in most branches, the unframed tag in some, and fancy-shadow is denied with the other normal-size notes below. The rule reads the size alone, so an inline note in \\scriptsize (no preset sets one) is denied too",
+        evidence: [
+          { kind: 'compile', cell: 'batch 4 round 2, frontiers.A: note.todonotes@listed-green passes 0 of 164 not-denied branches (163 on overfull boxes, 1 on page overflow), @red-alert 0 of 44 (44 overfull), against @review 34 of 56 and @tag 18 of 44; e.g. document d1b98c82914859a6eed25, cell cf8feecfc17e80e7b7c24, result fda00fc5f39120f3461ce1499c70b4ae2459900065b90c608bfa8225785df6cd, branch b1228f5a90d4d9c5596ac: Overfull \\hbox (10.40178pt too wide) at lines 122--122' },
+        ],
+        unless: { size: ['\\tiny', ''] },
       },
       ...NO_ROOM_FOR_A_NORMAL_SIZE_NOTE.map(([id, measured]) => ({
         class: id,

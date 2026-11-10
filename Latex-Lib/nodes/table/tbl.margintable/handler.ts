@@ -18,9 +18,14 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
   const full = param(p, 'placement', 'margin') === 'full';
   return {
     // l, c, r and first-left set their p-columns' alignment with >{…\arraybackslash} (columnSpec): array.
+    // The margin table is a \marginpar, which runs the output routine without shipping a page: the limit is raised as
+    // note.marginpar and note.class-margin raise it (batch 4 round 2: tufte-handout.A's margin notes stopped at "Output
+    // loop---100 consecutive dead cycles"; the same mechanism, no failing cell of this way's own). Only raised, never lowered;
+    // table* (`full`) is a float and needs none.
     preamble: () => {
       const packages = [...(rules === 'booktabs' ? ['\\usepackage{booktabs}'] : []), ...(param(p, 'colspec', 'equal') === 'equal' ? [] : ['\\usepackage{array}'])];
-      return packages.length === 0 ? {} : { packages };
+      const declarations = full ? [] : ['\\ifnum\\maxdeadcycles<1000 \\maxdeadcycles=1000 \\fi'];
+      return { ...(packages.length === 0 ? {} : { packages }), ...(declarations.length === 0 ? {} : { declarations }) };
     },
     emit: (node, content, context) => {
       const g = gridOf(node, content);
