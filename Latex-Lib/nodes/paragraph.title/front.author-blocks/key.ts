@@ -90,6 +90,14 @@ const way = minimal({
   ],
   onlyWhen: [
     {
+      // The thanks-jlreq preset's label キーワード： and separator ， are Japanese: only jlreq's fonts have them (batch 4 round 1:
+      // num.unnumbered@tju's CJK heading lost every glyph under the Latin classes).
+      when: { keywordsLabel: 'キーワード：' },
+      classes: ['class.jlreq'],
+      reason: "the Japanese keywords label キーワード： needs CJK glyphs, which jlreq's fonts give and a Latin class's Latin Modern lacks (\"Missing character\")",
+      evidence: [{ kind: 'source', file: 'Latex Related Research/Latex-Template-Examples/class.jlreq/main.tex', line: '119-120 (キーワード： inside the abstract)' }],
+    },
+    {
       when: { separator: 'And-AND' },
       classes: ['class.iclr', 'class.colm', 'class.neurips', 'class.acl'],
       reason: "\\And and \\AND exist only where the style's \\@maketitle defines them as breaks between its author tabulars; under the kernel's \\maketitle they are undefined",

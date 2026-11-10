@@ -153,6 +153,7 @@ export const validateLibrary = (library: Library, nesting: Nesting): string[] =>
       if (rule.pkg !== undefined && pkgResolves(`${at} conflict`, rule.pkg) && rule.unless !== undefined) {
         if (!(rule.unless.option in (packages.get(rule.pkg)?.options ?? {}))) problems.push(`${at}: conflict with ${rule.pkg} unless option ${rule.unless.option}, which is not in its facts`);
       }
+      predicateProblems(`${at} conflict`, rule.when, key.params);
       evidenceProblems(`${at} conflict`, rule.evidence);
     }
     for (const order of key.packages.loadOrder ?? []) {

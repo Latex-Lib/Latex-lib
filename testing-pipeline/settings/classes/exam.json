@@ -1,8 +1,8 @@
 {
   "id": "exam",
-  "description": "The exam class: questions, parts and points.",
+  "description": "The exam class: questions, parts and points. The answers option (exam's \\printanswers): every solution environment prints its body, so the matrix judges box.exam-solution's content where it stands. Without it exam sets a hidden solution's body in a box it drops by design (exam 2023/07/09 v2.704, the students' copy), and every sentinel in it was charged as lost: GitHub run batch 4 round 1 (r20261109215129525), exam.A and exam.B, 672 not-denied box.exam-solution branches failing on sentinel:missing alone (document dd7a71b161ae24cdbc8c8, cell c9034459c1390df5e424a, result dd6f78cb9e), the few that passed holding no sentinel or sharing a document with the answer-key preset's \\printanswers.",
   "class": "exam",
-  "options": [],
+  "options": ["answers"],
   "preamble": [],
   "files": []
 }

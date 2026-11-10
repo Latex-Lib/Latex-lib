@@ -147,7 +147,8 @@ export const resolve = (
       }
     }
     // The document.
-    for (const rule of key.packages.conflicts) {
+    // A conflict with a `when` holds only for the parameters that match it.
+    for (const rule of key.packages.conflicts.filter((r) => matches(r.when, params))) {
       if (rule.way !== undefined && chosen.some((c) => c.key.id === rule.way)) violations.push(`${at}: conflicts with ${rule.way}: ${rule.reason}`);
       if (rule.general !== undefined && (input.general ?? []).includes(rule.general)) violations.push(`${at}: conflicts with General's ${rule.general}, which the document prints: ${rule.reason}`);
       if (rule.pkg !== undefined && loaded.has(rule.pkg) && !key.loads.some((l) => l.pkg === rule.pkg)) {

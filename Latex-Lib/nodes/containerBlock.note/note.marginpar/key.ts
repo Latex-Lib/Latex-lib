@@ -70,6 +70,15 @@ export default defineKey(
           { kind: 'compile', cell: "GitHub run b27-39fa711, asmeconf.A: COMPAT-GEOMETRY paperWidth 614.295pt, oddLeft and evenLeft 36.135pt, textWidth 542.02501pt; d6798e4384649992529a5 result 0a42bff148, one note's words overflow its column by 2.31-33.87pt ('italic' 2.31pt, 'small-' 7.36pt, 'courierNew' 33.87pt); 241 of its 401 not-denied branches below this way fail, almost all on margin-note overfull boxes, and every margin note of d1e3ae8dc1e5d564a7679 result 342075df21 overflows ('short' 2.39pt, 'capes' 4.08pt)" },
         ],
       },
+      {
+        // batch 4 round 1 (OVF-ELS5P): as cas-sc (16.98pt) and asmeconf (14.14pt), margins that leave no column a note fits in.
+        class: 'class.elsarticle-5p',
+        reason:
+          "elsarticle's 5p format leaves no margin a note fits in: its 522pt text block (two 252pt columns) stands 37.75pt from either edge of its 597.51pt page, beside an 11pt \\marginparsep, so the room b22 MC1's fit gives a note column (the margin less \\marginparsep on either side, FIT_NOTE_COLUMN) is 15.75pt, narrower than cas-sc's 16.98pt and than the note's bold title (20.84pt in \\footnotesize): a note's 8pt words overflow it ('verbatim' by 16.25pt, 'small-' by 10.02pt). elsarticle-preprint (a 65pt column) is untouched. An inline note way (box.*) prints in the text; General's margin note stays a class failure (owner item MC3).",
+        evidence: [
+          { kind: 'compile', cell: "batch 4 round 1, elsarticle-5p.A: COMPAT-GEOMETRY paperWidth 597.50787pt, oddLeft and evenLeft 37.75394pt, textWidth 522.0pt; local probe of the class setting with FIT_NOTE_COLUMN (ZeroTeX-NG): \\marginparwidth 15.75394pt beside \\marginparsep 11pt; d8abb67840fd4c4265514 result 4e6c7aab15, branch ba9a668c31531c181ceb5 (note.marginnote@italic-unadjusted), l.134 Overfull \\hbox (16.24606pt too wide), 'verbatim' at 8pt; over the five margin-note ways 2,791 not-denied branches fail on overfull boxes (note.marginnote 787, note.notecolumn 729, note.sidenotes 517, note.todonotes 463, note.marginpar 295) and 1,281 pass (note.marginnote 861)" },
+        ],
+      },
     ],
     // Its body is a box: a float in it is "Not in outer par mode" (04b32896a8, article.A run: branch b9b4ea177bc18de6f86b4,
     // note.marginpar@ragged-small > list.enumerate-pkg > fig.floatrow, l.288); 136 of 324 float branches below it (8 core pairs).

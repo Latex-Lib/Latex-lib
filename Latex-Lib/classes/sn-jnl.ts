@@ -15,7 +15,9 @@ export default defineClass({
   defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "cmd:\\abstract", "env:proof", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\affil", "cmd:\\fnm", "cmd:\\sur", "cmd:\\keywords", "cmd:\\backmatter", "cmd:\\bmhead", "cmd:\\unnumbered", "style:thmstyleone", "style:thmstyletwo", "style:thmstylethree"],
   options: {},
   forbids: {
-    technical: [],
+    technical: [
+      { pkg: "authblk", reason: "sn-jnl.cls defines \\affil itself (its profile's defines), so authblk's \\newcommand\\affil stops at 'Command \\affil already defined' as it loads (front.authblk, the only way that loads it, takes `only` article and so fits every class built on article)", evidence: [{ kind: 'compile', cell: 'batch 4 round 1, sn-jnl.A: front.authblk 17 of 17 branches fail (document d0b50235e4384dee150b6, result 019d40c7ae, l.166)' }] },
+    ],
     policy: [],
   },
   layout: { columns: 1, textwidth: "372.0pt", fontsize: "10.03749pt" },

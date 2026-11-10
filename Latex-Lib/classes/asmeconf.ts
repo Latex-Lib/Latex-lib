@@ -50,7 +50,9 @@ export default defineClass({
     nofontspec: { unloads: ["fontspec", "unicode-math"], description: "outside pdfTeX, turns \\ifac@fontspec off (l.256-257, 369-371), so the block from l.657 loads neither unicode-math nor fontspec and sets no TeX Gyre fonts (whose \\setmathfont{texgyretermes-math} name lookup fails on the runner: b2p probes G4-asmeconf-*); not given by the setting unless the CI session adds it" },
   },
   forbids: {
-    technical: [],
+    technical: [
+      { pkg: "authblk", reason: "asmeconf.cls defines \\affil itself (its profile's defines), so authblk's \\newcommand\\affil stops at 'Command \\affil already defined' as it loads (front.authblk, the only way that loads it, takes `only` article and so fits every class built on article)", evidence: [{ kind: 'compile', cell: 'batch 4 round 1, asmeconf.A: front.authblk 19 of 19 branches fail (document d6e846db7aa0d2d5ecffb, result 3d24735b1e, l.166)' }] },
+    ],
     policy: [],
   },
   layout: { columns: 2, textwidth: "542.025pt", fontsize: "10pt" },

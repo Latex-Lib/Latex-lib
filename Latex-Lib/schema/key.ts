@@ -68,6 +68,8 @@ export type PackageRule = {
   readonly general?: NodeId;
   /** The rule does not hold when that package is loaded with this option (`ntheorem[amsthm]`). */
   readonly unless?: { readonly option: string };
+  /** The rule holds only for the presets whose parameters match (list.class-native's cas form against enumitem; its jacow form is over enumitem). */
+  readonly when?: ParamPredicate;
   readonly reason: string;
   readonly evidence: readonly Evidence[];
 };

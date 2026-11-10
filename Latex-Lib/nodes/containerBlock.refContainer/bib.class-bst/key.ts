@@ -49,6 +49,60 @@ const CLASSES = [
   'class.vldb',
 ] as const;
 
+/** Batch 4 round 1 (GitHub run r20261109215129525), as its evidence names it. */
+const B4R1 = (what: string) => ({ kind: 'compile', cell: `batch 4 round 1: ${what}` }) as const;
+
+/**
+ * The classes (or their settings) that call \bibliographystyle themselves, so main.aux already opens with a \bibstyle: a style of
+ * the list's own is a second one, which BibTeX rejects ('Illegal, another \bibstyle command'), and the build ends with no .bbl,
+ * as under bib.bibtex-bst (CA11). agu's setting makes a later \bibliographystyle{apacite} do nothing (its preamble), so apacite
+ * is the one style the list may name under agu.
+ */
+const OWN_STYLE = [
+  { class: 'class.acl', where: "acl.sty calls \\bibliographystyle{acl_natbib} while it loads (l.195)" },
+  { class: 'class.agu', where: "agujournal2025.cls calls \\bibliographystyle{apacite} while it loads (l.146)" },
+  { class: 'class.ascelike', where: "ascelike.cls calls \\bibliographystyle{ascelike} in its \\AtEndOfClass block" },
+  { class: 'class.bmvc', where: "bmvc2k.cls calls \\bibliographystyle{plainnat} while it loads (l.775)" },
+  { class: 'class.corl', where: "corl_2026.sty calls \\bibliographystyle{corlabbrvnat} while it loads (l.79)" },
+  { class: 'class.ecai', where: "ecai.cls calls \\bibliographystyle{abbrvnat} at its end (l.1327)" },
+  { class: 'class.jmlr-pmlr', where: "jmlr.cls calls \\bibliographystyle{plainnat} while it loads (l.178)" },
+  { class: 'class.jss', where: "jss.cls calls \\bibliographystyle{jss} while it loads (l.65)" },
+  { class: 'class.plos', where: "the plos setting's preamble calls \\bibliographystyle{plos2025} (plos.json)" },
+  { class: 'class.sn-jnl', where: "sn-jnl's sn-mathphys-num option calls \\bibliographystyle{sn-mathphys-num} while the class loads (l.1661-1664)" },
+] as const;
+
+/**
+ * The classes whose natbib is author-year (aa's bibauthoryear, aastex701's \@citestyle{aas}, which emulateapj inherits through its
+ * base, and the conference styles' natbib with no option or \setcitestyle{authoryear}): a numbered style's \bibitem has no
+ * Author(Year) label and natbib stops at 'Bibliography not compatible with author-year citations', as under bib.bibtex-bst (CA2).
+ */
+const AUTHOR_YEAR = ['class.aa', 'class.aastex', 'class.colm', 'class.frontiers', 'class.iclr', 'class.icml', 'class.neurips', 'class.tmlr'] as const;
+
+/**
+ * The styles whose labels author-year natbib reads (measured in batch 4 round 1 under the AUTHOR_YEAR classes: aasjournalv7,
+ * ACM-Reference-Format, elsarticle-num-names, mnras, plainnat pass; the others are author-year styles by their kits), and '' (the
+ * class's own). The numbered ones (asmeconf, asmejour, elsarticle-num, oup-plain, spr-ims-number, ieeenat_fullname) are not here.
+ */
+const AUTHOR_YEAR_STYLES = ['', 'aa', 'aasjournalv7', 'apj', 'apacite', 'cas-model2-names', 'copernicus', 'elsarticle-num-names', 'elsarticle-harv', 'plainnat', 'icml2026', 'iclr2027_conference', 'colm2026_conference', 'tmlr', 'mnras', 'Frontiers-Harvard', 'spr-ims-nameyear', 'ACM-Reference-Format'];
+
+/**
+ * The styles that ship only with their class's kit: neither the engine's distribution nor any other class setting has them, so
+ * \bibliography under another class ends with no .bbl (batch 4 round 1: each of these presets fails no-bbl in every pair but its
+ * own class's and apa7's, whose natbib option leaves the style to apacite).
+ */
+const KIT_STYLES = [
+  { bst: 'aa', class: 'class.aa' },
+  { bst: 'apj', class: 'class.emulateapj' },
+  { bst: 'icml2026', class: 'class.icml' },
+  { bst: 'iclr2027_conference', class: 'class.iclr' },
+  { bst: 'colm2026_conference', class: 'class.colm' },
+  { bst: 'tmlr', class: 'class.tmlr' },
+  { bst: 'ieeenat_fullname', class: 'class.cvpr' },
+  { bst: 'copernicus', class: 'class.copernicus' },
+  { bst: 'Frontiers-Harvard', class: 'class.frontiers' },
+  { bst: ['spr-ims-number', 'spr-ims-nameyear'], class: 'class.imsart' },
+] as const;
+
 export default defineKey(
   minimal({
     id: 'bib.class-bst',
@@ -136,6 +190,45 @@ export default defineKey(
         reason: "\\nobibliography is bibentry's, which the Tufte classes load themselves (with natbib) for their margin citations",
         evidence: [{ kind: 'source', file: 'Latex Related Research/Latex-lib-main/Source/0793-xtufte/latex/xtufte-common.def', line: '791-803' }],
       },
+      // Batch 4 round 1: the list with no \bibliographystyle (class-style, achemso, plos) needs a class that names its style.
+      {
+        when: { bst: '', natbib: 'none' },
+        classes: [...OWN_STYLE.map((r) => r.class), 'class.apa7', 'class.emulateapj', 'class.revtex4-2', 'class.achemso'],
+        reason:
+          "with no \\bibliographystyle the list relies on the class (or its setting) to name the style; under any other class main.aux has no \\bibstyle, BibTeX stops ('I found no \\bibstyle command') and the build ends with no .bbl and every citation undefined. A citation of this way with no list preset of its own is printed with this form (the host prints the way's first preset, class-style)",
+        evidence: [
+          B4R1("class-style fails no-bbl in 33 pairs (aa.A document d29f75a53799a7cb573ac, result f3f3249058fffbd49442b6f0715e27a4fc5dfb5af4d377e9a92aca137ffd82c4) and passes in the 13 whose class names its style (acl, agu, apa7, ascelike, bmvc, corl, ecai, emulateapj, jmlr-pmlr, jss, plos, revtex4-2-aip, revtex4-2-aps); sn-jnl.A fails only because sn-mathphys-num.bst is not among its setting's files (result 002574aed1e7474b06f09d18845e534ff562bf1f6913344216563864bf84a00e)"),
+          B4R1("750 bib.class-bst citation branches end at no-bbl in 34 pairs, their documents printing class-style (aa.A document d7b16b9e6948746066e08, cell c9aebb4c61785f4f97b12, result 333afde60ad6729df489c6ab08a11f8f425c7caf066c493efceb550c24a96d82: 'No file main.bbl.')"),
+        ],
+      },
+      {
+        when: { bst: '', natbib: ['plain', 'authoryear', 'numbers', 'authoryear-longnamesfirst'] },
+        classes: ['class.aaai', 'class.acl', 'class.apa7', 'class.bmvc', 'class.corl', 'class.ecai', 'class.emulateapj', 'class.jmlr-pmlr', 'class.jss', 'class.revtex4-2'],
+        reason:
+          "natbib loaded with no \\bibliographystyle is AAAI's form: aaai2027.sty names its style once natbib is loaded (l.343-355); it also runs where the class or its setting names a style natbib reads (the classes listed, as measured); elsewhere main.aux has no \\bibstyle (no .bbl), or the class's own style meets the way's natbib (plos2025.bst's numbers under natbib's default author-year, ascelike's \\citeyear defined twice)",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/aaai2027.sty', line: '343-355' },
+          B4R1("the aaai preset passes (7 of 9 branches each, the other 2 sentinel:missing) under aaai.A, acl.A, apa7.A, bmvc.A, corl.A, ecai.A, emulateapj.A, jmlr-pmlr.A, jss.A, revtex4-2-aip.A and revtex4-2-aps.A; it fails no-bbl in 31 pairs (aa.A document da34c79b27976a41c389d, result e7e7aa59988946fef61c975c800f169462bd5aafdf19cfc7375cc5fbb8004ee1), 'Bibliography not compatible with author-year citations' under plos.A (result 59240dd46e11dedac835140635404c010ae1e5663711a2cc417430fd8c4c97fb) and 'Command \\citeyear already defined' under ascelike.A (result 8653e6ecec1fcdec7cdc7dd5453515b746b46234124db638018ecccfbe6091a3)"),
+        ],
+      },
+      // Batch 4 round 1: a style only its class's kit ships.
+      ...KIT_STYLES.map((k) => ({
+        when: { bst: k.bst },
+        classes: [k.class],
+        reason: `${[k.bst].flat().join(' and ')}.bst ships only with ${k.class.slice('class.'.length)}'s kit: neither the engine's distribution nor another class setting has it, so under another class BibTeX cannot open the style and the build ends with no .bbl`,
+        evidence: [
+          B4R1("each of the aa, emulateapj, icml, iclr, colm, tmlr, cvpr, copernicus and frontiers presets fails no-bbl in 41 to 45 pairs (aa preset under acmart-sigconf.A, copernicus preset document da258c564cefd0983b37b, result c2128a9a00b6537839c4aecb84d657c5f5ec44db2f92f70ff3e8ed4553e18087); copernicus and frontiers pass under their own class, whose setting holds the .bst (copernicus.A result c4639dc7be7ac7d56fbcf43480db693c87f403c76b653bc519208bf92be71c11)"),
+        ],
+      })),
+      {
+        when: { bst: 'apacite' },
+        classes: ['class.apa7', 'class.agu'],
+        reason:
+          "apacite.bst writes apacite's own commands into the .bbl (\\APACinsertmetastar, the APACrefauthors environment), which only apacite.sty defines; apa7 (natbib option) and agujournal2025 load apacite, under any other class the list stops at 'Undefined control sequence' (l.11 \\APACinsertmetastar of main.bbl)",
+        evidence: [
+          B4R1("the apa7 preset stops at 'Undefined control sequence' in 35 pairs (aa.A document d4f261bb5e7af20713ed7, result 2edce373dde6c33b70edd35f810a34ea8ec1b247964bd59bac75600f27c4be7f) and passes under apa7.A and agu.A (result c0bf94e8bb910d8236809016665d0088b09f08810c5b1cf1a0e0da5d94315170)"),
+        ],
+      },
     ],
     deny: [
       {
@@ -148,6 +241,25 @@ export default defineKey(
           { kind: 'source', file: 'Latex Related Research/Latex-lib-main/Source/0528-achemso/achemso.dtx', line: '2512-2532' },
         ],
       },
+      // Batch 4 round 1: a style of the list's own under a class that names one itself (CA11).
+      ...OWN_STYLE.map((r) => ({
+        class: r.class,
+        unless: { bst: r.class === 'class.agu' ? ['', 'apacite'] : '' },
+        reason: `${r.where}, so main.aux opens with that \\bibstyle; the list's own \\bibliographystyle writes a second one, which BibTeX rejects ('Illegal, another \\bibstyle command'), and the build ends with no .bbl and every citation undefined; the presets with no style (class-style) take the class's`,
+        evidence: [
+          B4R1("every preset with a style fails no-bbl in exactly the pairs acl, agu, ascelike, bmvc, corl, ecai, jmlr-pmlr, jss, plos and sn-jnl, styles the engine has included (aastex preset under acl.A: document df6532c96214ea698855a, result a6f6190551fe3e111205b6468d588bc0690190a681e9d6a67f808f583c4f2eee), and passes in the 26 to 36 other pairs"),
+        ],
+      })),
+      // Batch 4 round 1: a numbered style under author-year natbib (CA2).
+      ...AUTHOR_YEAR.map((c) => ({
+        class: c,
+        unless: { bst: AUTHOR_YEAR_STYLES },
+        reason:
+          "the class's natbib is author-year (CA2; emulateapj through its aastex base); a numbered style's \\bibitem has no Author(Year) label, so natbib writes \\NAT@force@numbers to the .aux and the next run stops at \\begin{document}: 'Package natbib Error: Bibliography not compatible with author-year citations'",
+        evidence: [
+          B4R1("the asmeconf, asmejour, elsarticle-num and oup presets stop so in aa.A, aastex.A, aastex.B, colm.A, emulateapj.A, frontiers.A, iclr.A, icml.A, neurips.A and tmlr.A, 40 branches (asmeconf preset under aa.A: document da1e44f11a32f44b54fa2, cell c5f52c8f1d0297cd2f932, result 990e44c6a0f301ed8af0634fab2a99140f5b41bf883102caa44360175655ad80), and pass in the 26 other pairs"),
+        ],
+      })),
     ],
     // The list's children are written to \jobname.bib as BibTeX source (refContainer/node.ts bibFile), so a child that is not an
     // entry never prints, as for bib.bibtex-bst [OV3].

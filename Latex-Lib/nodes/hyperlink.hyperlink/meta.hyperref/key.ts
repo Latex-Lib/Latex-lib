@@ -26,10 +26,26 @@ export default defineKey(
     },
     presets: PRESETS,
     loads: [
-      // Its options (pagebackref, breaklinks, colorlinks…) are not listed: packages/hyperref.ts gives hyperref no option facts, and
-      // the validator refuses an option the facts lack.
       { pkg: 'hyperref', when: { load: true } },
+      // The options its \usepackage[…]{hyperref} line gives, so a class that loads hyperref itself (acmart, aamas, vldb, aastex,
+      // acl, apa7, asmeconf, asmejour, beamer, bmvc, cas-dc, cas-sc, copernicus, corl, elegantpaper, iopjournal, jmlr, jss, lipics,
+      // mnras, oup-authoring-template, siamart, sn-jnl, tufte-handout, usenix) is unfit for them: the class's options never
+      // include them, and LaTeX stops at "Option clash for package hyperref". Batch 4 round 1: the cvpr preset failed every
+      // branch of every document it was filed in under those 31 pairs (25,633 branches, 2,849 cells; aamas.A
+      // dcd7b2c2949a8e6203db2 cell c5cfa286aba1e5e3b3109 result aa2d67ce83: "already been loaded with options:
+      // [bookmarksnumbered,unicode] ... attempt to load it with options [pagebackref,breaklinks,colorlinks,allcolors=cvprblue]"),
+      // and passed under the classes that do not load hyperref (article.A 213 of 231 branches, the rest other causes).
+      // The valued keys (allcolors=…, linkcolor=…) cannot be named here; colorlinks goes with every colored look in options.
+      { pkg: 'hyperref', options: ['pagebackref'], when: { load: true, backref: 'pagebackref' } },
+      { pkg: 'hyperref', options: ['backref'], when: { load: true, backref: 'backref' } },
+      { pkg: 'hyperref', options: ['breaklinks'], when: { load: true, breaklinks: true } },
+      { pkg: 'hyperref', options: ['colorlinks'], when: { load: true, keysIn: 'options', look: 'colored' } },
+      { pkg: 'hyperref', options: ['hidelinks'], when: { load: true, keysIn: 'options', look: 'hidden' } },
       { pkg: 'xcolor', when: { look: 'colored' } },
+      // hyperref's backref and pagebackref options load backref.sty (\RequirePackage{backref}: batch 4 round 1, aistats.A result
+      // 8d37656db4e1, "(/texmf/tex/latex/hyperref/backref.sty" after "Backreferencing ON"). Listed, though no line prints it, so the
+      // package facts see it: biblatex refuses backref (packages/backref.ts).
+      { pkg: 'backref', when: { load: true, backref: ['backref', 'pagebackref'] } },
     ],
     // With load false the class must load hyperref (its preloads): MDPI's \hyperrefpackage (mdpi.cls l.442-522).
     requiresWhen: [{ when: { load: false }, requires: ['pkg:hyperref'] }],

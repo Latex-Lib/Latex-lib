@@ -9,7 +9,11 @@
  * - an item with text and no label is \entry{}{<text>}: asmejour's \entry stops at a class error when its second argument is
  *   blank (l.1460-1461), so the text is always the meaning, never the symbol.
  * \entry and \EntryHeading are xparse commands with short arguments (no `+`), so an item's further lines are joined to its text
- * with no blank line. A list with no item writes nothing: the environment's list would stop at "missing \item".
+ * with no blank line, and every \par token in it is written \endgraf, the same primitive, which a short argument takes (`noPar`):
+ * an item whose child paragraph is aligned ends it with \par inside its group ({\raggedright …\par}), which stopped at
+ * "Paragraph ended before \entry code was complete" (batch 4 round 1: 440 cells of asmeconf.A and asmejour.A, e.g. asmeconf.A
+ * document d844acc742591a632d3ce, result 0f86b17a75d2). A list with no item writes nothing: the environment's list would stop at
+ * "missing \item".
  * `labelWidth` is the environment's first optional argument (asmeconf's default 2em, asmejour's the widest label from the last
  * run); `title` renames the heading through \nomname, as asmeconf-template.tex l.554 shows (\renewcommand*{\nomname}{List of
  * Symbols}), since asmeconf's first optional argument cannot be left empty to reach the second (\setlength{\nomenwidth}{}).
@@ -18,6 +22,7 @@
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
 import { NARROW_LISTS } from '../node.ts';
+import { noPar } from '../../table/node.ts';
 import key from './key.ts';
 
 /** An item line as list.item writes it: `\<level>[{label}] text` or `\<level>[label] text`. */
@@ -49,8 +54,8 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
       const out: string[] = [];
       items.forEach((item, i) => {
         const parent = item.level === 1 && (items[i + 1]?.level ?? 1) > 1;
-        if (parent || (item.text === '' && item.label !== '')) out.push(`\\EntryHeading{${item.label || item.text}}`);
-        else if (item.text !== '') out.push(`\\entry{${item.label}}{${item.text}}`);
+        if (parent || (item.text === '' && item.label !== '')) out.push(`\\EntryHeading{${noPar(item.label || item.text)}}`);
+        else if (item.text !== '') out.push(`\\entry{${noPar(item.label)}}{${noPar(item.text)}}`);
       });
       const width = text('labelWidth');
       const list = out.length === 0 ? '' : `\\begin{nomenclature}${width === '' ? '' : `[${width}]`}\n${out.join('\n')}\n\\end{nomenclature}\n\n`;

@@ -24,6 +24,18 @@ export default defineKey(
     presets: PRESETS,
     loads: [{ pkg: 'amsmath' }, { pkg: 'lineno' }],
     requires: ['pkg:lineno'],
+    deny: [
+      {
+        class: 'class.jss',
+        reason:
+          "jss.cls prints its title header itself at begindocument/end (l.471): \\maketitle runs `\\@oddhead{\\@myoddhead} \\par` (l.302), where article's \\@oddhead takes no argument, so the header is set in a group and its `\\\\[-1.42cm]` (l.258) ends a line inside it: the \\vadjust that \\\\[…] leaves carries `\\reserved@f`, which \\\\ \\let to \\relax only inside that group. With \\linenumbers on from the preamble, lineno 5.9 (2026/03/08) runs a paragraph's \\vadjust material from \\@LN@do@vadjusts after the paragraph ends, outside the group, so every document stops at \\begin{document} on 'Undefined control sequence' (\\reserved@f). lineno loaded without \\linenumbers (wrap-only) builds; numbering switched on after the class's title (\\AddToHook{begindocument/end}{\\linenumbers}) builds too",
+        evidence: [
+          { kind: 'compile', cell: "batch 4 round 1, jss.A: document d44e7154a62016494964d, cell c5715a8f42ef5bbc9575d, result 0b4701e82e9f, l.184 \\begin{document} 'Undefined control sequence. \\@LN@do@vadjusts ...o@vadjusts \\relax \\reserved@f \\@vspace@calcify {-1.42cm}'; 527 jss.A cells (12,249 judged branches) fail on it, every one holding math.linenomath@agu, and the pair's bisect names math.linenomath@agu the verified culprit (137 documents credited); the 214 cells with only @wrap-only build" },
+          { kind: 'compile', reproducer: "ZeroTeX-NG (local Flouest, 2026-11-09), jss.A: \\usepackage{lineno}\\linenumbers in the preamble stops at l.5 \\begin{document} on the same error; without \\linenumbers, or with \\AddToHook{begindocument/end}{\\linenumbers}: ok. article.A with \\linenumbers: `\\noindent{Header\\\\[-1cm]} \\par` stops on the same error, `\\noindent Header\\\\[-1cm] \\par` is ok (lineno's deferred \\vadjust, not jss alone)" },
+        ],
+        unless: { lineNumbers: false },
+      },
+    ],
     gives: { math: true },
     // Typeset on ZeroTeX-NG under article (both presets) and AGU's agujournal2019.cls [draft] (the agu preset): equation, \[ … \],
     // align with row labels and \\[2pt], a nested aligned and cases, each in linenomath*. class.agu's pinned agujournal2025.cls is

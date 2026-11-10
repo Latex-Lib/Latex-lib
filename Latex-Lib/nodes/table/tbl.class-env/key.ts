@@ -126,6 +126,18 @@ export default defineKey(
         evidence: [{ kind: 'source', file: `${SRC}/0862-plos/plos_latex_template.tex`, line: '107-122' }],
       },
     ],
+    deny: [
+      {
+        // emulateapj is built on class.aastex (its profile's base), so the deluxetable form's `onlyWhen` lets it in.
+        class: 'class.emulateapj',
+        unless: { long: false },
+        reason: "\\startlongtable is AASTeX 6's (aastex701.cls l.11279); emulateapj's older deluxetable has none, so a long deluxetable stops at 'Undefined control sequence' at \\startlongtable (deluxetable without it and ruledtabular pass there)",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/aastex701.cls', line: '11279 (\\startlongtable)' },
+          { kind: 'compile', cell: 'batch 4 round 1 (testing-pipeline/out/fetched/batch4-round1): emulateapj.A, 43 cells whose first error is \\startlongtable (document dba51f3428e714e19b7bc, result 36ca0088fb); tbl.class-env@deluxetable-wide failed all 36 of its not-denied branches there, at the error, while @ruledtabular passed 81 and @deluxetable 13' },
+        ],
+      },
+    ],
     // Every form but \longtab is a float, so it needs a place that takes floats (as tbl.tabular, tbl.booktabs).
     needsWhen: [{ when: { form: FLOATING }, needs: { floats: true } }],
     // A table float is itself a float: no float below it.

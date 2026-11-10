@@ -72,6 +72,13 @@ export default defineKey(
       { when: { env: ['tone', 'block', 'alertblock', 'exampleblock'] }, gives: { floats: false, breakable: false, boxDepth: 1 } },
       { when: { env: ['framed', 'shaded', 'leftbar'] }, gives: { floats: false, footnotes: false, boxDepth: 1 } },
     ],
+    // batch 4 round 1 (OVF-VWCOL): memoir's framed, shaded and leftbar (\MakeFramed) and beamer's blocks (a beamercolorbox) are as
+    // wide as \linewidth: below cols.vwcol, which fits only paragraph lines to its columns, they come out at the full width, as
+    // box.mdframed's and box.awesomebox's blocks do (both need paragraph): 78 of the 79 not-denied branches directly below vwcol
+    // fail (memoir framed 17 of 18, shaded 20 of 20, leftbar 18 of 18; beamer by-tone, block and alert 8 of 8 each), e.g. memoir.A
+    // d4f914c5621b232043bde result 194893d39f, l.108 and l.115, 170.5pt (half the text width). oup's boxtext only sets \leftskip
+    // and \rightskip on its paragraphs, so it needs nothing.
+    needsWhen: [{ when: { env: ['tone', 'block', 'alertblock', 'exampleblock', 'framed', 'shaded', 'leftbar'] }, needs: { paragraph: true } }],
     // Every preset typeset ok under its class (ZeroTeX-NG, 2026-11-07), notes of each tone with a two-paragraph body: beamer and
     // ctexbeamer (beamer-by-tone, beamer-block, beamer-alert and an untitled exampleblock, each in a frame); memoir (framed,
     // shaded, leftbar, and framed and shaded with \FrameSep, \FrameRule and a shade given); oup-authoring-template under

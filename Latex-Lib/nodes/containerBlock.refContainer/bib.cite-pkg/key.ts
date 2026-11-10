@@ -2,6 +2,23 @@ import { defineKey } from '../../../schema/key.ts';
 import { minimal } from '../../../schema/minimal.ts';
 import { PRESETS } from './presets.ts';
 
+const AUTHOR_YEAR_STOP = "the class's natbib is author-year, so spiebib's numbered \\bibitem has no Author(Year) label and natbib stops at 'Bibliography not compatible with author-year citations'";
+const OWN_STYLE_STOP = "the class names its own \\bibliographystyle, so this way's is a second \\bibstyle in main.aux, which BibTeX rejects ('Illegal, another \\bibstyle command'), and the build ends with no .bbl";
+
+/** The classes that refuse cite in forbids.technical and still refuse the list when cite is not loaded (the spie preset). */
+const NO_LOAD_DENIED = [
+  { class: 'class.aastex', why: `${AUTHOR_YEAR_STOP} (aastex701's \\@citestyle{aas}; emulateapj through its base)`, cell: 'aastex.A, aastex.B and emulateapj.A, document d977603f8ebda1cad1886 (aastex.A result e7c6496b2c95acf7…, 7 branches a cell) and de6c8199024c1e07be8ec' },
+  { class: 'class.colm', why: AUTHOR_YEAR_STOP, cell: 'colm.A, documents d977603f8ebda1cad1886 and de6c8199024c1e07be8ec (result 486e68586e7ff931…)' },
+  { class: 'class.frontiers', why: AUTHOR_YEAR_STOP, cell: 'frontiers.A, documents d977603f8ebda1cad1886 and de6c8199024c1e07be8ec (result a2b5cd2b3db61af6…)' },
+  { class: 'class.tmlr', why: AUTHOR_YEAR_STOP, cell: 'tmlr.A, documents d977603f8ebda1cad1886 and de6c8199024c1e07be8ec (result e8d60c89ea848bbf…)' },
+  { class: 'class.achemso', why: `${OWN_STYLE_STOP} (achemso.cls replaces every style with its own)`, cell: 'achemso.A, no-bbl in every cell holding the preset' },
+  { class: 'class.bmvc', why: `${OWN_STYLE_STOP} (bmvc2k.cls l.775)`, cell: 'bmvc.A, no-bbl in every cell holding the preset' },
+  { class: 'class.corl', why: `${OWN_STYLE_STOP} (corl_2026.sty l.79)`, cell: 'corl.A, no-bbl in every cell holding the preset' },
+  { class: 'class.ecai', why: `${OWN_STYLE_STOP} (ecai.cls l.1327)`, cell: 'ecai.A, no-bbl in every cell holding the preset' },
+  { class: 'class.jmlr-pmlr', why: `${OWN_STYLE_STOP} (jmlr.cls l.178)`, cell: 'jmlr-pmlr.A, no-bbl in every cell holding the preset (21 branches over achemso.A, jmlr-pmlr.A and jss.A in the no-bbl check)' },
+  { class: 'class.jss', why: `${OWN_STYLE_STOP} (jss.cls l.65)`, cell: 'jss.A, no-bbl in every cell holding the preset' },
+] as const;
+
 export default defineKey(
   minimal({
     id: 'bib.cite-pkg',
@@ -38,6 +55,15 @@ export default defineKey(
     ],
     // aa's author-year natbib (CA2), and the classes that set their own \bibliographystyle (CA11). Under aastex cite is a technical refusal already.
     deny: [
+      // Batch 4 round 1: the spie preset loads no cite (load false), so the classes that refuse cite in their profiles'
+      // forbids.technical (their natbib) no longer keep it out, and the reason under them is the list itself: spiebib's numbered
+      // \bibitem under author-year natbib, or a second \bibstyle where the class names its own.
+      ...NO_LOAD_DENIED.map((r) => ({
+        class: r.class,
+        unless: { load: true },
+        reason: `with load false nothing loads cite, so the class's refusal of cite (forbids.technical) does not apply, but ${r.why}`,
+        evidence: [{ kind: 'compile', cell: `batch 4 round 1, bib.cite-pkg spie preset: ${r.cell}` }] as const,
+      })),
       // b3p (batch 3, G4): plos's preamble sets \bibliographystyle{plos2025}. corl, bmvc and ecai, which load natbib, refuse cite in
       // their profiles' forbids.technical, as cvpr does.
       {

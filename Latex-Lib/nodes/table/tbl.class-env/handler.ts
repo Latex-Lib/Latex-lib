@@ -27,7 +27,7 @@
 import { withDefaults } from '../../../schema/params.ts';
 import type { Realization } from '../../../schema/realization.ts';
 import { labelKey, param } from '../../protocol.ts';
-import { columnSpec, gridOf, hasHeader, ruledRows, rowLines, spanning, tableAttr } from '../node.ts';
+import { columnSpec, gridOf, hasHeader, noPar, ruledRows, rowLines, spanning, tableAttr } from '../node.ts';
 import key from './key.ts';
 
 type Rules = { readonly top: string; readonly mid: string; readonly bottom: string; readonly between: string };
@@ -65,10 +65,16 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
       switch (form) {
         case 'deluxetable': {
           const g = gridOf(node, content, naturalSpan(''));
-          const lines = g.rows.map((fields) => fields.join(' & '));
+          // \tablehead's argument and the rows \startdata reads up to \enddata are not \long (aastex701.cls l.11264-11420; emulateapj
+          // and REVTeX 4.0 the same), so a cell whose aligned paragraph ends with \par inside its group ({\raggedleft Run\par})
+          // stopped at "Paragraph ended before \zztablehead", "\tablehead" or "\startdata was complete" (batch 4 round 1: 77 cells of
+          // aastex.A, aastex.B and emulateapj.A, e.g. aastex.A document d1b6289b7543f4d58603f, result 0c8b8d02bd71). \endgraf is the same
+          // primitive, which those arguments take (`noPar`).
+          const rows = g.rows.map((fields) => fields.map(noPar));
+          const lines = rows.map((fields) => fields.join(' & '));
           // \tablehead{} even with no header row: the class keeps the head globally (\pt@head), so a headless table after a headed
           // one printed the earlier table's head (probe aastex-deluxe, ZeroTeX-NG, 2026-11-07).
-          const head = [`\\tablehead{${header && lines.length > 0 ? (g.rows[0] ?? []).map((f) => (f.startsWith('\\multicolumn') ? f : `\\colhead{${f}}`)).join(' & ') : ''}}`];
+          const head = [`\\tablehead{${header && lines.length > 0 ? (rows[0] ?? []).map((f) => (f.startsWith('\\multicolumn') ? f : `\\colhead{${f}}`)).join(' & ') : ''}}`];
           const body = header ? lines.slice(1) : lines;
           // \tablecaption and \label before \tablehead (aastex701-sample.tex l.458-466); the class steps the counter itself at
           // \begin{deluxetable} and sets \@currentlabel (l.11299-11302), so a captionless label still refers to the table.

@@ -408,6 +408,16 @@ test('tikzposter refuses hyperref\'s colorlinks (color loaded in a group at \\be
   for (const cls of ['class.article', 'class.a0poster', 'class.beamer']) assert.deepEqual(at(cls, 'hyperlink/hyperlink', 'meta.hyperref', [], { look: 'colored' }), [], cls);
 });
 
+test("hyperref's load-time options clash with a class that loads hyperref itself: the cvpr preset, not the \\hypersetup looks (batch 4 round 1)", () => {
+  const cvpr = library.keys.find((k) => k.id === 'meta.hyperref')?.presets['cvpr']?.params as Record<string, string>;
+  for (const cls of ['class.aamas', 'class.acmart', 'class.apa7', 'class.iopjournal', 'class.cas-dc', 'class.copernicus']) {
+    assert.ok(at(cls, 'hyperlink/hyperlink', 'meta.hyperref', [], cvpr).some((v) => v.includes('Option clash for package hyperref')), cls);
+    assert.deepEqual(at(cls, 'hyperlink/hyperlink', 'meta.hyperref', [], { look: 'colored' }).filter((v) => v.includes('Option clash')), [], cls);
+  }
+  assert.deepEqual(at('class.article', 'hyperlink/hyperlink', 'meta.hyperref', [], cvpr), []);
+  assert.ok(at('class.lipics', 'hyperlink/hyperlink', 'meta.hyperref', [], { backref: 'backref' }).some((v) => v.includes('Option clash for package hyperref')));
+});
+
 test('enumerate.sty cannot pair with a class-supplied \\endenumerate: ascelike refuses list.enumerate-pkg, keeps enumitem', () => {
   const kinds = ['itemize', 'enumerate', 'description'];
   assert.ok(at('class.ascelike', 'containerBlock/listing', 'list.enumerate-pkg', kinds).some((v) => v.includes('ended by \\end{list}')));

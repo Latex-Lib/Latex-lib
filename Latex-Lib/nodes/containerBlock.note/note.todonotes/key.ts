@@ -2,6 +2,27 @@ import { defineKey } from '../../../schema/key.ts';
 import { minimal } from '../../../schema/minimal.ts';
 import { PRESETS } from './presets.ts';
 
+/**
+ * batch 4 round 1 (OVF-TODO): the classes whose margin column cannot hold fancy-shadow's note, each with what was measured
+ * there (the column, \marginparwidth after FIT_NOTE_COLUMN, from a local probe of each class setting). fancy-shadow gives no
+ * size, so todonotes sets the note at \normalsize, framed and shadowed; in a column of 24-34pt (39.61pt at frontiers' 12pt
+ * type) its bold title overflows first. Only the shadowed preset is denied (`unless: { shadow: false }`): the sized presets
+ * (review \tiny, red-alert and listed-green \scriptsize) and the unframed tag stay judged there.
+ */
+const NO_ROOM_FOR_A_NORMAL_SIZE_NOTE: readonly (readonly [string, string])[] = [
+  ['class.ieeetran', 'ieeetran-journal and ieeetran-conference (29.15pt) and ieeetran-compsoc (28.18pt) 127 of 127 each, ieeeconf-ras (34.20pt) 125 of 125; e.g. ieeetran-journal.A d44e7154a62016494964d result a15de6b8a5, l.258 "Default" 15.98853pt and "theme)" 14.19852pt over'],
+  ['class.acmart-acmsmall', '57 of 57 (24pt)'],
+  ['class.cas-dc', '84 of 84 (29.50pt)'],
+  ['class.mnras', '67 of 67 (30.27pt)'],
+  ['class.siamart', '65 of 65 (30.76pt)'],
+  ['class.icassp', '118 of 118 (31.21pt)'],
+  ['class.ijcai', '118 of 118 (32.20pt)'],
+  ['class.copernicus', '117 of 117 (33.20pt)'],
+  ['class.icml', '118 of 118 (33.65pt)'],
+  ['class.usenix', '115 of 115 (34.20pt)'],
+  ['class.frontiers', "109 of 109 (39.61pt, at the class's 12pt type)"],
+];
+
 export default defineKey(
   minimal({
     id: 'note.todonotes',
@@ -82,6 +103,23 @@ export default defineKey(
         // Inline, a note prints in the text at \linewidth, not in the margin.
         unless: { inline: true },
       },
+      {
+        // batch 4 round 1 (OVF-ELS5P): as cas-sc (16.98pt) and asmeconf (14.14pt), margins that leave no column a note fits in.
+        class: 'class.elsarticle-5p',
+        reason:
+          "elsarticle's 5p format leaves no margin a note fits in: its 522pt text block (two 252pt columns) stands 37.75pt from either edge of its 597.51pt page, beside an 11pt \\marginparsep, so the room b22 MC1's fit gives a note column (the margin less \\marginparsep on either side, FIT_NOTE_COLUMN) is 15.75pt, narrower than cas-sc's 16.98pt and than the note's bold title (20.84pt in \\footnotesize): a note's 8pt words overflow it ('verbatim' by 16.25pt, 'small-' by 10.02pt). elsarticle-preprint (a 65pt column) is untouched. An inline note way (box.*) prints in the text; General's margin note stays a class failure (owner item MC3).",
+        evidence: [
+          { kind: 'compile', cell: "batch 4 round 1, elsarticle-5p.A: COMPAT-GEOMETRY paperWidth 597.50787pt, oddLeft and evenLeft 37.75394pt, textWidth 522.0pt; local probe of the class setting with FIT_NOTE_COLUMN (ZeroTeX-NG): \\marginparwidth 15.75394pt beside \\marginparsep 11pt; d8abb67840fd4c4265514 result 4e6c7aab15, branch ba9a668c31531c181ceb5 (note.marginnote@italic-unadjusted), l.134 Overfull \\hbox (16.24606pt too wide), 'verbatim' at 8pt; over the five margin-note ways 2,791 not-denied branches fail on overfull boxes (note.marginnote 787, note.notecolumn 729, note.sidenotes 517, note.todonotes 463, note.marginpar 295) and 1,281 pass (note.marginnote 861)" },
+        ],
+        unless: { inline: true },
+      },
+      ...NO_ROOM_FOR_A_NORMAL_SIZE_NOTE.map(([id, measured]) => ({
+        class: id,
+        reason:
+          "fancy-shadow sets its note at todonotes' own \\normalsize (the preset gives no size), framed and with a drop shadow, and this class's margin column cannot hold a word of it: the note's bold title overflows first. Where the class's type is 9pt and its column 32pt (acmart's sigconf, aamas, vldb) only 5 of 56 fail, and from 38pt up (revtex, aastex, cvpr) almost none; a sized preset or the unframed tag is not denied here",
+        evidence: [{ kind: 'compile' as const, cell: `batch 4 round 1: note.todonotes@fancy-shadow fails on overfull boxes in every not-denied branch, ${measured}` }],
+        unless: { shadow: false },
+      })),
     ],
     loads: [
       { pkg: 'todonotes' },

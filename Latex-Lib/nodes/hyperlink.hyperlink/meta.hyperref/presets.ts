@@ -39,7 +39,10 @@ export const PRESETS = {
     writes: '\\href{…}{…}; \\definecolor{…}{rgb}{…} \\usepackage[pagebackref,breaklinks,colorlinks,allcolors=…]{hyperref}',
     features: ['linked', 'colored-links'],
     params: { look: 'colored', keysIn: 'options', backref: 'pagebackref', breaklinks: true, allColor: 'cvprblue', defineRgb: '0.21,0.49,0.74' },
-    evidence: [{ kind: 'source', file: 'Latex Related Research/Latex-Template-Examples/class.cvpr/main.tex', line: '72-75 (\\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}, \\usepackage[pagebackref,breaklinks,colorlinks,allcolors=cvprblue]{hyperref})' }],
+    evidence: [
+      { kind: 'source', file: 'Latex Related Research/Latex-Template-Examples/class.cvpr/main.tex', line: '72-75 (\\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}, \\usepackage[pagebackref,breaklinks,colorlinks,allcolors=cvprblue]{hyperref})' },
+      { kind: 'compile', cell: 'batch 4 round 1, aamas.A dcd7b2c2949a8e6203db2 cell c5cfa286aba1e5e3b3109 result aa2d67ce8335a8ea0eb32e2a2665f309227c545076f34bb5bc76c87281e1ad6e: "! LaTeX Error: Option clash for package hyperref." (aamas loaded it with [bookmarksnumbered,unicode]); every class that loads hyperref itself is unfit for its load-time options (key loads)' },
+    ],
   },
   // b-unit-55: a class that loads hyperref itself (mdpi, at \begin{document}): the way loads nothing and keeps the class's look.
   'class-loaded': {

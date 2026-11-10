@@ -153,9 +153,10 @@ import { CROSS_PASS, damagingWarnings, type Damage } from './warnings.ts';
  * whole text (l.910-913), and b28's agu.A failed 6,932 not-denied rows on 24pt (and 23.99998pt) overfull boxes, 6,101 of them
  * branches in a tcolorbox or mdframed box the line wide. The b29 probe proved the mechanism: each of the 64 boxes of agu
  * document d18afd388a094cff9c219 ends `\glue(\rightskip) 24.0` (B3C-agu-diag), and none is left with the skip reset to 0pt
- * (B3C-agu-rskip0).
+ * (B3C-agu-rskip0). 11 (batch 4 round 1): a document no branch places a sentinel in that ships no page with no error,
+ * no fatal stop and no missing .bbl has nothing to judge (`noVerdict`), where 10 failed every branch on `no-pages`.
  */
-export const ORACLE_VERSION = 10;
+export const ORACLE_VERSION = 11;
 
 /** What one branch of the document is expected to show: the sentinels its host placed, and the features its ways declare. */
 export type Expected = {
@@ -371,6 +372,15 @@ export const judge = (input: {
   const options = { ...DEFAULTS, ...input.options };
   const reading = readLog(result.log, emitted.latex);
   const { hits, geometry } = readSentinels(result.log);
+  // No page from a document in which no branch places a sentinel and TeX reported nothing (no error, no fatal stop, no
+  // BibTeX failure): nothing in it was there to print, so "No pages of output." is the right output and there is nothing to
+  // judge (11, b4r1: a list holding only an empty custom LaTeX block, d1340ce8cab179087f22a and ded24bbedf8e3a27e2d23, 183
+  // branches in 87 cells; an image way with no file, which prints nothing, d56688b008e9337d96861, 16; a title whose class
+  // prints it only with body text after it, under quantumarticle, aastex, revtex4-2). A document with a sentinel, an error or
+  // a missing .bbl is judged as before.
+  if (reading.pages === 0 && !reading.fatal && reading.errors.length === 0 && !reading.noBbl && !expected.some((e) => e.sentinels.length > 0)) {
+    return { cell, verdicts: [], document: [], noVerdict: 'no branch places a sentinel and TeX shipped no page with no error: nothing in the document prints' };
+  }
   const source = emitted.latex.split('\n');
 
   const own = new Map<BranchId, Failure[]>(expected.map((e) => [e.branch, []]));

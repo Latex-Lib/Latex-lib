@@ -77,6 +77,21 @@ export default defineKey(
         evidence: [{ kind: 'requirement', file: 'Template/template-requirement/IMS_Imsart.md', line: '100' }],
       },
     ],
+    // The cas form's bracket is cas-common.sty's syntax; enumitem, loaded by another list in the document (General's listing,
+    // list.enumitem), replaces enumerate and itemize after the class and reads the bracket as its keys. The jacow form is
+    // written over the enumitem jacow.cls loads, so the rule is the cas form's alone (`when`).
+    conflicts: [
+      {
+        pkg: 'enumitem',
+        when: { form: 'cas' },
+        reason:
+          "cas's patterned enumerate and labelled itemize are cas-common.sty's (l.2491-2534); enumitem, loaded after the class, replaces both environments and reads the bracket as its own keys: \\begin{enumerate}[a)] stops at \"Package enumitem Error: a) undefined\", [(i)] at \"(i) undefined\"",
+        evidence: [
+          { kind: 'compile', cell: 'batch 4 round 1, cas-dc.A, document db8f1b6dc85aa8e7a95a2, result a9ff5c8e369c (l.60 \\begin{enumerate}[a)]): 283 cells under cas-dc.A and cas-sc.A stop at "a) undefined", 289 of their 296 failing branches end in a cas-letters enumerate, each in a document that loads enumitem' },
+          { kind: 'compile', reproducer: '\\documentclass{cas-dc} \\usepackage{enumitem} \\begin{document} \\begin{enumerate}[a)] \\item First \\end{enumerate}: "Package enumitem Error: a) undefined"; with [(i)]: "(i) undefined"; without enumitem both pass (ZeroTeX-NG through compat cases, 2026-11-09)' },
+        ],
+      },
+    ],
     // A list sets its own \parshape at the full \linewidth, as the kernel's lists do (list.kernel's needs).
     needs: { paragraph: true },
     // Typeset (ZeroTeX-NG, 2026-11-07) under apa7, jacow, jmlr, cas-dc and cas-sc; imsart's class files are neither in the MiKTeX

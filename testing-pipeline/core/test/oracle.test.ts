@@ -719,6 +719,10 @@ test('a fatal stop or no page fails every branch as the document, and no unshipp
     expected: expected(),
   });
   assert.deepEqual(checksOf(erred), { A: ['error', 'no-pages:document'], B: ['no-pages:document'] });
+  // No page and no sentinel anywhere, with no error: nothing was there to print, so nothing is judged (11, b4r1).
+  const empty = judge({ cell: 'c', emitted, result: { log: [GEOMETRY, 'No pages of output.'].join('\n'), pages: null, ms: 1 }, expected: expected({ sentinels: [] }, { sentinels: [] }) });
+  assert.equal(empty.verdicts.length, 0);
+  assert.match(empty.noVerdict ?? '', /nothing in the document prints/);
 });
 
 test('the end of the file reached while skipping a conditional is the line it began on; what came after it, or never reached a page, carries it', () => {

@@ -31,9 +31,17 @@ export const realize = (given: { readonly [name: string]: unknown } = {}): Reali
     ...(p['page'] === true ? ['\\renewcommand{\\maketitlehooka}{\\null\\mbox{}\\vfill}', '\\renewcommand{\\maketitlehookd}{\\vfill\\null}'] : []),
   ];
   return {
+    // The hooks in the preamble, the title lines in the body just before \maketitle, as front.maketitle writes them. asmejour's
+    // \title sets its title coffin at once (asmejour-latexlib.cls l.1584-1590, 1709) and imsart's typesets the title
+    // (\vglue, imsart.sty l.2052-2053), so written in the preamble both stopped at "Missing \begin{document}" (batch 4 round 1:
+    // 0 of 17 front.titling title branches pass under asmejour.A and imsart.A, e.g. asmejour.A d4b085cc2fb667108e0e7 result
+    // 9f81ea62ab5f, l.26); with the lines in the body neither stops (ZeroTeX-NG through compat cases, 2026-11-09).
     preamble: (_params, _parentType, node, content) =>
-      node === undefined || content === undefined ? { packages: ['\\usepackage{titling}'] } : { packages: ['\\usepackage{titling}'], declarations: [...hooks, ...titleLinesWith(node, content, param(p, 'date', 'given'))] },
-    emit: () => (p['page'] === true ? '\\begin{titlingpage}\n\\maketitle\n\\end{titlingpage}\n\n' : '\\maketitle\n\n'),
+      node === undefined || content === undefined ? { packages: ['\\usepackage{titling}'] } : { packages: ['\\usepackage{titling}'], declarations: hooks },
+    emit: (node, content) => {
+      const lines = titleLinesWith(node, content, param(p, 'date', 'given')).join('\n');
+      return p['page'] === true ? `${lines}\n\\begin{titlingpage}\n\\maketitle\n\\end{titlingpage}\n\n` : `${lines}\n\\maketitle\n\n`;
+    },
   };
 };
 

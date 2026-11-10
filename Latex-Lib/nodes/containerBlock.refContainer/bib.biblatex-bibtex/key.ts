@@ -38,6 +38,23 @@ export default defineKey(
       // elegantpaper's sample heads its list \ebibname, which the class defines under lang=en (elegantpaper.cls l.257).
       { when: { heading: '\\ebibname' }, requires: ['cmd:\\ebibname'] },
     ],
+    // The matrix files by `onlyWhen`, not by `requiresWhen`, so the elegantpaper preset (load: false) went under every class.
+    onlyWhen: [
+      {
+        when: { load: false },
+        classes: ['class.elegantpaper'],
+        reason: "with load: false the way loads no biblatex and relies on the class's own (elegantpaper.cls l.195-198); under any other class \\addbibresource stops at 'Undefined control sequence', then 'Missing \\begin{document}'",
+        evidence: [
+          { kind: 'compile', cell: 'batch 4 round 1 (testing-pipeline/out/fetched/batch4-round1): 49 cells in 49 pairs whose first error is \\addbibresource, each the elegantpaper preset\'s solo branch (aaai.A document d8b501d5196e6720108f2, result e8e1f5cd1a)' },
+        ],
+      },
+      {
+        when: { heading: '\\ebibname' },
+        classes: ['class.elegantpaper'],
+        reason: "\\ebibname is elegantpaper's (elegantpaper.cls l.257, lang=en)",
+        evidence: [{ kind: 'source', file: 'Latex Related Research/Latex-lib-main/Source/0188-elegantpaper/elegantpaper.cls', line: '257' }],
+      },
+    ],
     // b2p (batch 2, G4): with backend=bibtex, biblatex writes \bibstyle{biblatex} to main.aux and BibTeX makes the .bbl.
     deny: [
       {

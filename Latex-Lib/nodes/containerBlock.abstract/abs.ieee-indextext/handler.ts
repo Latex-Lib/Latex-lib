@@ -12,7 +12,13 @@
  * (the handler is given the node and its content there, as abs.class-native's command form is); the node itself prints the display
  * command. The index terms are the title's templateSpecific.keywords, which an abstract way cannot read: the title way hands them
  * over in \LatexLibIndexTerms (\gdef'd before \maketitle, e.g. to \begin{IEEEkeywords}…\end{IEEEkeywords}), provided empty here.
- * Each class keeps one title-area text, so with two abstract nodes the last one's store wins.
+ * The class keeps one title-area text. The first abstract node's store is kept (\LatexLibIndexTextStore gobbles every later
+ * one) and that node prints it as above; every later abstract node prints its own text in place, in the class's abstract
+ * environment (\LatexLibIndexTextNode). Until batch 4 each store replaced the one before, so only the last node's text printed
+ * (at the first node's place) and every earlier one was lost (GitHub run batch 4 round 1, ieeetran-journal.A document
+ * d159e2fc9d5d9a0575176, result f0d13d3c0b: of its five abs.ieee-indextext branches the four earlier ones never shipped and the
+ * last passed; 612 sentinel:missing branches in each of the three IEEEtran pairs). The preamble's stores and the body's nodes
+ * stand in the same (document) order.
  */
 import type { Realization } from '../../../schema/realization.ts';
 import { abstractBody } from '../node.ts';
@@ -24,16 +30,17 @@ import { abstractBody } from '../node.ts';
  * print it again and a title-less compsoc paper does not lose its abstract (the interim abs.class-native's STORED_ABSTRACT_RELEASE
  * makes for the classes that keep the abstract for \maketitle).
  */
-const INDEX_TEXT_HERE = String.raw`\makeatletter\providecommand*{\LatexLibIndexTextHere}{\ifx\maketitle\relax\expandafter\IEEEdisplaynontitleabstractindextext\else\expandafter\LatexLibIndexTextNow\fi}\providecommand*{\LatexLibIndexTextNow}{\@IEEEtitleabstractindextext\global\let\@IEEEtitleabstractindextext\relax}\makeatother`;
+const INDEX_TEXT_HERE = String.raw`\makeatletter\providecommand*{\LatexLibIndexTextHere}{\ifx\maketitle\relax\expandafter\IEEEdisplaynontitleabstractindextext\else\expandafter\LatexLibIndexTextNow\fi}\providecommand*{\LatexLibIndexTextNow}{\@IEEEtitleabstractindextext\global\let\@IEEEtitleabstractindextext\relax}\providecommand\LatexLibIndexTextStore[1]{\IEEEtitleabstractindextext{#1}\long\gdef\LatexLibIndexTextStore##1{}}\providecommand\LatexLibIndexTextNode[1]{\ifx\LatexLibIndexTextShown\@undefined\gdef\LatexLibIndexTextShown{}\expandafter\@firstoftwo\else\expandafter\@secondoftwo\fi{\LatexLibIndexTextHere}{\begin{abstract}#1\end{abstract}}}\makeatother`;
 
 export const realize = (_given: { readonly [name: string]: unknown } = {}): Realization => ({
   preamble: (_params, _parentType, node, content) =>
     node === undefined || content === undefined
       ? { declarations: ['\\providecommand*{\\LatexLibIndexTerms}{}', INDEX_TEXT_HERE] }
       : {
-          declarations: ['\\providecommand*{\\LatexLibIndexTerms}{}', INDEX_TEXT_HERE, `\\IEEEtitleabstractindextext{\\begin{abstract}\n${abstractBody(node, content)}\n\\end{abstract}\\LatexLibIndexTerms}`],
+          declarations: ['\\providecommand*{\\LatexLibIndexTerms}{}', INDEX_TEXT_HERE, `\\LatexLibIndexTextStore{\\begin{abstract}\n${abstractBody(node, content)}\n\\end{abstract}\\LatexLibIndexTerms}`],
         },
-  emit: () => '\\LatexLibIndexTextHere\n\n',
+  // The first node prints the stored text as the class places it (its own body, the argument, is dropped); a later one its own.
+  emit: (node, content) => `\\LatexLibIndexTextNode{${abstractBody(node, content)}}\n\n`,
 });
 
 export default realize;

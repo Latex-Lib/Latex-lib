@@ -72,7 +72,7 @@ export type CompatTable = {
   /** Parent node, then the parent's way (with a predicate over its params, `way[name=value]`), then the row. */
   readonly parents: { readonly [parent: NodeId]: { readonly [parentWay: string]: CompatRow } };
   readonly packageCombos: {
-    readonly deny: readonly { readonly with: string; readonly unless?: string; readonly reason: string; readonly status: CompatRow['status'] }[];
+    readonly deny: readonly { readonly with: string; readonly unless?: string; readonly when?: string; readonly reason: string; readonly status: CompatRow['status'] }[];
   };
 };
 
@@ -178,6 +178,7 @@ export const compatTable = (key: HandlerKey, ways: readonly HandlerKey[], nestin
       deny: key.packages.conflicts.map((c) => ({
         with: c.way ?? c.pkg ?? (c.general === undefined ? '' : `general:${c.general}`),
         ...(c.unless === undefined ? {} : { unless: `${c.pkg}[${c.unless.option}]` }),
+        ...(c.when === undefined ? {} : { when: predicateText(c.when) }),
         reason: c.reason,
         status: 'untested' as const,
       })),

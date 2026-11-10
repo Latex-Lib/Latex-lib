@@ -35,6 +35,13 @@ export default defineKey(
         reason: "\\keywords{…} as the abstract's last line is elegantpaper's own command (\\vskip 2ex\\par\\noindent\\normalfont{\\bfseries Keywords: } #1); report and ctexrep define no \\keywords",
         evidence: [{ kind: 'source', file: 'Latex Related Research/Latex-lib-main/Source/0188-elegantpaper/elegantpaper.cls', line: '228, 254' }],
       },
+      {
+        // The line-zh preset's label 关键词： and separator ； are CJK, as num.unnumbered@tju's 附录 (batch 4 round 1).
+        when: { label: '关键词：' },
+        classes: ['class.ctexrep'],
+        reason: "the Chinese label 关键词： and the full-width separator need CJK glyphs, which only ctex's fonts give; under report the line would print with every character missing (\"Missing character\")",
+        evidence: [{ kind: 'source', file: 'Latex Related Research/Latex-lib-main/Source/0578-monetjoe-latex-paper-templates/finalversion.tex', line: '3 (ctexbook), 115-129 (\\textbf{关键词}：)' }],
+      },
     ],
     // Typeset ok on ZeroTeX-NG (2026-11-07): elegantpaper (lang=en) with the class's \keywords, report with the bold and the italic
     // line (the second abstract opening with a list), ctexrep (fontset=fandol) with 关键词：; with \LatexLibKeywords empty no line

@@ -12,16 +12,19 @@ import { defineClass } from '../schema/class.ts';
  * - It refuses every standard size, paper and column option with \@latexerr (l.94-110) and loads article itself with fleqn
  *   (l.174), so article is the base and setup B (twocolumn) cannot be used.
  * - Stage: \if@stage@final starts true (l.111) and acp keeps it; \if@cop@home is true only when copernicuslogo.pdf exists
- *   (l.121), which is not shipped, so hyperref is NOT loaded (its \usepackage[bookmarks=true,colorlinks]{hyperref},
- *   l.2310-2329, is inside \if@cop@home) and the final manuscript layout applies (l.177-185).
+ *   (l.121), which is not shipped, so its \usepackage[bookmarks=true,colorlinks]{hyperref} (l.2310-2329, inside
+ *   \if@cop@home) is skipped and the \else branch loads hyperref with [bookmarks=false,pdfborder={0 0 0}] instead (l.2364-2367;
+ *   batch 4 round 1, copernicus.A f66ddb8946: "The package hyperref has already been loaded with options:
+ *   [bookmarks=false,pdfborder={0 0 0}]", right after pifont), and the final manuscript layout applies (l.177-185).
  * - Preloads (load order): etoolbox, iftex (l.26-27), ulem [normalem] (l.1330), fontenc [T5,T3,T1] (l.1331), textcomp [warn]
  *   (l.1332), fontawesome5 (l.1333), upquote, regexpatch (l.1342-1343), babel
  *   (l.1391), array (l.1507), tabularx (l.1531), graphicx, color, amssymb (l.1532-1545), amsmath [intlimits,fleqn,tbtags]
  *   (l.1547), amsthm (l.1554), url (l.1849), accents, cancel, multirow, supertabular, algorithmic (l.1888-1928), algorithm
  *   (l.1955, which loads float), caption (l.1978, final stage; subfig only for discussions), listings (l.1986), subfloat
  *   (l.2033), natbib [authoryear,round] (l.2044), rotating (l.2085), lineno [mathlines,modulo] (l.2093), tikz (l.2140), times
- *   (l.2142) and pifont (l.2309). amsmath's options make a leqno way an 'Option clash', natbib's a numbers, square, super or
- *   sort way, rotating's empty list a figuresright or figuresleft way.
+ *   (l.2142), pifont (l.2309) and hyperref [bookmarks=false,pdfborder={0 0 0}] (l.2366). amsmath's options make a leqno way
+ *   an 'Option clash', natbib's a numbers, square, super or sort way, rotating's empty list a figuresright or figuresleft
+ *   way, and hyperref's a way that gives it a load-time option (meta.hyperref's cvpr preset).
  * - natbib: \bibpunct{(}{)}{;}{a}{,}{,~} (l.2045) and, at \begin{document}, \let\@citex\NAT@citex (l.2054), which replaces
  *   cite.sty's one-optional \@citex with natbib's two-optional one, so cite is refused (as under elsarticle). No
  *   \bibliographystyle is set by the class (grep), so author-year styles work; a numeric style stops natbib ('Bibliography not
@@ -43,11 +46,13 @@ export default defineClass({
     {"pkg": "amsmath", "options": ["intlimits", "fleqn", "tbtags"]}, {"pkg": "amsthm"}, {"pkg": "url"}, {"pkg": "accents"}, {"pkg": "cancel"}, {"pkg": "multirow"}, {"pkg": "supertabular"}, {"pkg": "algorithmic"},
     {"pkg": "float"}, {"pkg": "algorithm"}, {"pkg": "caption"}, {"pkg": "listings"}, {"pkg": "subfloat"}, {"pkg": "natbib", "options": ["authoryear", "round"]}, {"pkg": "rotating"},
     {"pkg": "lineno", "options": ["mathlines", "modulo"]}, {"pkg": "tikz"}, {"pkg": "times"}, {"pkg": "pifont"},
+    {"pkg": "hyperref", "options": ["bookmarks=false", "pdfborder={0 0 0}"]},
   ],
   defines: ["counter:part", "counter:section", "counter:subsection", "counter:subsubsection", "counter:paragraph", "counter:subparagraph", "env:abstract", "env:figure", "env:table", "env:thebibliography", "cmd:\\maketitle", "cmd:\\tableofcontents", "cmd:\\appendix", "cmd:\\Author", "cmd:\\affil", "cmd:\\runningtitle", "cmd:\\runningauthor", "env:acknowledgements", "cmd:\\authorcontribution", "cmd:\\competinginterests", "cmd:\\specialsection", "cmd:\\noappendix", "cmd:\\theolds", "cmd:\\introduction", "cmd:\\conclusions", "cmd:\\tophline", "cmd:\\middlehline", "cmd:\\bottomhline", "cmd:\\firstpage"],
   options: {},
   forbids: {
     technical: [
+      { pkg: "authblk", reason: "copernicus.cls defines \\Authfont and \\affil itself (its profile lists \\affil), so authblk stops at 'Command \\Authfont already defined' as it loads, before it reaches its \\affil (front.authblk, the only way that loads it, takes `only` article and so fits every class built on article)", evidence: [{ kind: 'compile', cell: 'batch 4 round 1, copernicus.A: front.authblk 17 of 17 branches fail (document d0b50235e4384dee150b6, result 078e35f5bd, l.71)' }] },
       { pkg: "cite", reason: "copernicus.cls loads natbib [authoryear,round] (l.2044) and at \\begin{document} lets \\@citex to natbib's two-optional \\NAT@citex (l.2054); cite.sty's \\cite calls \\@citex with one optional argument (cite.sty v5.5 l.302-307), so a citation scans on to the paragraph's end: 'Paragraph ended before \\@citex was complete' (as elsarticle, apa7 and oup-authoring-template: b2p probe G2-apa7-cite, 48 \\@citex errors, no PDF)", evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/copernicus.cls', line: '2043-2054' }, { kind: 'source', file: 'cite.sty (cite v5.5, MiKTeX snapshot 9766)', line: '302-307' }] },
       { pkg: "arydshln", reason: "copernicus.cls loads array and tabularx (l.1507, 1531) and redefines \\@arraycr (l.1528-1530); arydshln's \\hdashline rows then break \\endtabular: 'Extra }, or forgotten $', 'Missing $ inserted' (probe b3q-copernicus-floats-abstract: 28 errors, all at l.150 \\end{tabular} of an arydshln table)", evidence: [{ kind: 'source', file: 'testing-pipeline/settings/classes/files/copernicus.cls', line: '1507-1531' }, { kind: 'compile', cell: 'probe b3q-1 b3q-copernicus-floats-abstract main.log l.1626-1654' }] },
     ],
@@ -57,7 +62,8 @@ export default defineClass({
   vocabulary: {},
   evidence: [
     { kind: 'source', file: 'testing-pipeline/settings/classes/files/copernicus.cls', line: '2-4, 37-38 (latexlib XeTeX patch, \\cop@pdfoutput), 21 (\\ProvidesClass), 94-111 (refused options, stage), 121 (\\if@cop@home), 125 (manuscript), 174 (\\LoadClass[fleqn]{article}), 177-185 (layout)' },
-    { kind: 'source', file: 'testing-pipeline/settings/classes/files/copernicus.cls', line: '26-27, 1330-1391, 1507-1554, 1849-1986, 2033-2093, 2140-2142, 2309 (packages); 2310-2329 (hyperref, only \\if@cop@home)' },
+    { kind: 'source', file: 'testing-pipeline/settings/classes/files/copernicus.cls', line: '26-27, 1330-1391, 1507-1554, 1849-1986, 2033-2093, 2140-2142, 2309 (packages); 2310-2329 (hyperref, only \\if@cop@home), 2364-2367 (hyperref [bookmarks=false,pdfborder={0 0 0}], the \\else branch)' },
+    { kind: 'compile', cell: 'batch 4 round 1, copernicus.A result f66ddb8946d33513eecc019b27ae527e7cd1cdcb4c4701bfbfa246f458934296: "The package hyperref has already been loaded with options: [bookmarks=false,pdfborder={0 0 0}]", loaded after pifont.sty' },
     { kind: 'source', file: 'testing-pipeline/settings/classes/files/copernicus.cls', line: '50 (\\and), 557-558 (running heads), 568-573 (\\title, \\maketitle), 1041 (\\@startsection), 1210-1250 (abstract), 1588 (\\author), 1752-1839 (\\appendix), 2057 (thebibliography)' },
   ],
 });

@@ -38,6 +38,23 @@ export default defineKey(
           { kind: 'compile', cell: 'GitHub run b12-5bdc624, jmlr-pmlr.A: ack.kernel@chapter and @chapter-in-contents, 2 of 2 branches fail' },
         ],
       },
+      // The Tufte classes replace \subsubsection with a class error; the tufte-handout profile's forbids.names (cmd:\subsubsection)
+      // holds the heading node only, and this way's level is checked only as counter:{level}, which tufte defines.
+      {
+        class: 'class.tufte-handout',
+        unless: { level: ['section', 'chapter', 'subsection', 'paragraph'] },
+        reason: "tufte-common.def replaces \\subsubsection with a class error after Bringhurst's levels of headings (l.1649-1659): \\subsubsection*{Acknowledgments} stops at 'Class tufte-handout Error: \\subsubsection is undefined by this class'",
+        evidence: [
+          { kind: 'source', file: 'tufte-common.def (tufte-latex 2015/06/21 v3.5.2)', line: '1649-1659' },
+          { kind: 'compile', cell: 'batch 4 round 1, tufte-handout.A: ack.kernel@subsubsection and @subsubsection-acknowledgments, 1,297 of 1,297 branches fail, 1,165 at their own heading (document d39606ba3b6ab43cf540c, result 20f8824bca, l.96)' },
+        ],
+      },
+      {
+        class: 'class.tufte-book',
+        unless: { level: ['section', 'chapter', 'subsection', 'paragraph'] },
+        reason: "tufte-book inputs the same tufte-common.def, whose \\subsubsection is a class error (l.1649-1659); read from the source, as tufte-book was not in batch 4 round 1",
+        evidence: [{ kind: 'source', file: 'tufte-common.def (tufte-latex 2015/06/21 v3.5.2)', line: '1649-1659' }],
+      },
     ],
     // Typeset on ZeroTeX-NG (2026-11-07): every level, starred and \paragraph{…} unstarred, with \addcontentsline, under
     // article; \subsubsection* under aistats2026 [accepted] and iclr2026_conference; subsection to paragraph under jmlr.

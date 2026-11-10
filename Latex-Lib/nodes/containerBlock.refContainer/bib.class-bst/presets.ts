@@ -207,18 +207,23 @@ export const PRESETS = {
     evidence: [src('0757-frontiers/frontiers.tex', '155-157')],
   },
   'imsart-number': {
-    description: "IMS journals (imsart): natbib with numbers and the IMS numbered style imsart-number.bst.",
-    writes: '\\usepackage[numbers]{natbib} \\nocite{*} \\bibliographystyle{imsart-number} \\bibliography{\\jobname}',
+    description: "IMS journals (imsart): natbib with numbers and the IMS numbered style spr-ims-number.bst.",
+    writes: '\\usepackage[numbers]{natbib} \\nocite{*} \\bibliographystyle{spr-ims-number} \\bibliography{\\jobname}',
     features: ['numeric-citations', 'class-styled', 'external-tool'],
-    params: { natbib: 'numbers', bst: 'imsart-number' },
-    evidence: [{ kind: 'requirement', file: 'Template/template-requirement/IMS_Imsart.md', line: '109-113, 163' }],
+    // The style is spr-ims-number.bst, as the requirement document and the imsart setting's files name it; 'imsart-number' is no
+    // file, and every cell holding the preset, imsart.A's included, ended at no-bbl (batch 4 round 1: document da4d91ec46cb67d963498,
+    // result d3bd1ec0abfc09dc60f746cdc884b02e3f9c507d7ed63dd2a705149533b56f24).
+    params: { natbib: 'numbers', bst: 'spr-ims-number' },
+    evidence: [{ kind: 'requirement', file: 'Template/template-requirement/IMS_Imsart.md', line: '109-113, 163' }, { kind: 'source', file: 'testing-pipeline/settings/classes/imsart.json', line: 'files (spr-ims-number.bst, spr-ims-nameyear.bst)' }],
   },
   'imsart-nameyear': {
-    description: 'IMS journals (imsart): natbib with authoryear and the IMS author-year style imsart-nameyear.bst.',
-    writes: '\\usepackage[authoryear]{natbib} \\nocite{*} \\bibliographystyle{imsart-nameyear} \\bibliography{\\jobname}',
+    description: 'IMS journals (imsart): natbib with authoryear and the IMS author-year style spr-ims-nameyear.bst.',
+    writes: '\\usepackage[authoryear]{natbib} \\nocite{*} \\bibliographystyle{spr-ims-nameyear} \\bibliography{\\jobname}',
     features: ['author-year', 'class-styled', 'external-tool'],
-    params: { natbib: 'authoryear', bst: 'imsart-nameyear' },
-    evidence: [{ kind: 'requirement', file: 'Template/template-requirement/IMS_Imsart.md', line: '109-113, 163' }],
+    // spr-ims-nameyear.bst, as for imsart-number (batch 4 round 1, imsart.A: document d358e852a633e1abda7cb, result
+    // 2dce4a0056078d38b64c53469315c4d4aa866199e4fa9a2df2eaa12c705554e1, no-bbl).
+    params: { natbib: 'authoryear', bst: 'spr-ims-nameyear' },
+    evidence: [{ kind: 'requirement', file: 'Template/template-requirement/IMS_Imsart.md', line: '109-113, 163' }, { kind: 'source', file: 'testing-pipeline/settings/classes/imsart.json', line: 'files (spr-ims-number.bst, spr-ims-nameyear.bst)' }],
   },
   acm: {
     description: "The ACM classes (acmart, aamas, vldb): ACM-Reference-Format.bst, numbered (acmnumeric, the class's default).",

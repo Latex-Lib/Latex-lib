@@ -40,6 +40,19 @@ export default defineKey(
       // \bstctlcite is IEEEtran.cls's (l.4438) and ieeeconf.cls's; IEEEtran.bst only documents it.
       { when: { bstControl: true }, requires: ['cmd:\\bstctlcite'] },
     ],
+    // The classes that have \backmatter, as their profiles list it (and the classes built on them: ut-thesis, tufte-book, ctexbook
+    // on book): the matrix files by `onlyWhen`, not by `requiresWhen`, so the backmatter presets went under every class.
+    onlyWhen: [
+      {
+        when: { backmatter: true },
+        classes: ['class.book', 'class.amsbook', 'class.extbook', 'class.memoir', 'class.scrbook', 'class.frontiers', 'class.oup-authoring-template', 'class.sn-jnl'],
+        reason: "\\backmatter is a book class's command (book.cls, amsbook, memoir, scrbook; Frontiers, OUP and sn-jnl define it too); article, report, scrreprt and the conference classes have none: 'Undefined control sequence' at \\backmatter, and the list's BibTeX run never comes",
+        evidence: [
+          { kind: 'source', file: 'Latex-Lib/classes (book, amsbook, extbook, memoir, scrbook, frontiers, oup-authoring-template, sn-jnl)', line: 'defines: cmd:\\backmatter' },
+          { kind: 'compile', cell: 'batch 4 round 1 (testing-pipeline/out/fetched/batch4-round1): 112 cells in 56 pairs whose first error is \\backmatter, the book-backmatter and amsbook-backmatter presets\' solo branches (acmart-acmsmall.A document db983f84a425c15d4991a, result efbca41127)' },
+        ],
+      },
+    ],
     // The classes that load natbib in author-year mode (CA2), and those that set their own \bibliographystyle (CA11).
     deny: [
       // b3p (batch 3, G4): the classes and styles that set their own \bibliographystyle (CA11), as ascelike, acl and jmlr do.

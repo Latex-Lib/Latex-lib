@@ -74,6 +74,16 @@ export default defineKey(
         reason: 'ascelike loads authblk itself, with no options: a second \\usepackage[max6]{authblk} stops at "Option clash for package authblk", and a plain one does nothing',
         evidence: [ASCELIKE_SOURCE, { kind: 'compile', reproducer: '\\documentclass[Journal]{ascelike} \\usepackage[max6]{authblk}: "LaTeX Error: Option clash for package authblk." (ZeroTeX-NG, 2026-11-07)' }],
       },
+      {
+        class: 'class.icassp',
+        reason:
+          "spconf.sty's \\@maketitle sets the authors from \\name and \\address (the icassp setting makes \\author \\name), and authblk's \\author and \\affil feed neither: \\maketitle stops at \"There's no line here to end\"",
+        evidence: [
+          { kind: 'source', file: 'testing-pipeline/settings/classes/files/spconf.sty', line: '145-172 (\\maketitle, \\@maketitle, \\name, \\address)' },
+          { kind: 'compile', cell: 'batch 4 round 1, icassp.A, document d67bab5107aa4df695acd, result a4301f7063c2 (l.30 \\maketitle): front.authblk passes 0 of 11 title branches under icassp.A, 24 cells stopping there; every other title way passes there' },
+          { kind: 'compile', reproducer: "\\documentclass{article} \\usepackage{spconf} \\makeatletter\\def\\author#1{\\name{#1}}\\makeatother \\usepackage{authblk} \\title{A Title} \\author{Ann Author} \\affil{Dept, Univ} \\begin{document} \\maketitle: \"There's no line here to end\"; with \\name and \\address instead, none (ZeroTeX-NG through compat cases, 2026-11-09)" },
+        ],
+      },
     ],
     targetEngine: 'yes',
   }),

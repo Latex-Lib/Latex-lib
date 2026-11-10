@@ -2,7 +2,7 @@
   "handler": "list.class-native",
   "node": "containerBlock/listing",
   "generatedFrom": {
-    "key": "sha256:35c2995c072199930628c2041d541dc4f2a387e7eea8bc5a7813c4c3dab1ddeb",
+    "key": "sha256:5c8e62dec709c64ad9b6caae13a247dd4def1846ea745e388ef28fc9d51ea4d2",
     "contexts": "sha256:8db64482326e84b00a291c338c13df9b25b81bdb6205276160e24ebb00178228",
     "matrix": null
   },
@@ -408,6 +408,13 @@
     }
   },
   "packageCombos": {
-    "deny": []
+    "deny": [
+      {
+        "with": "enumitem",
+        "when": "form=cas",
+        "reason": "cas's patterned enumerate and labelled itemize are cas-common.sty's (l.2491-2534); enumitem, loaded after the class, replaces both environments and reads the bracket as its own keys: \\begin{enumerate}[a)] stops at \"Package enumitem Error: a) undefined\", [(i)] at \"(i) undefined\"",
+        "status": "untested"
+      }
+    ]
   }
 }

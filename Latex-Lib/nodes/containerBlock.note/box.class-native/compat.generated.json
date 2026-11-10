@@ -2,7 +2,7 @@
   "handler": "box.class-native",
   "node": "containerBlock/note",
   "generatedFrom": {
-    "key": "sha256:f9f88056859fdf3ddd56d985a5aee96a55d8623407f12f7e8c79bddaf088380d",
+    "key": "sha256:56e7c79c82c4eb25c8fad42f67d448d1ae13ebb9a705e675597e46ea21bb2ec9",
     "contexts": "sha256:f593ada8348e3bc89e6616015502a97a24a8913da366aaa0e721d6679e8365b9",
     "matrix": null
   },
@@ -61,9 +61,13 @@
         "status": "derived"
       },
       "cols.vwcol": {
-        "verdict": "ok",
+        "verdict": "deny",
         "source": "derived",
-        "status": "derived"
+        "status": "derived",
+        "reason": "needs paragraph",
+        "lacks": [
+          "needs paragraph"
+        ]
       }
     },
     "containerBlock/listing": {
