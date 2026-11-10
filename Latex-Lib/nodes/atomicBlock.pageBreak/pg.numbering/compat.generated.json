@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:00ad11de14f957819ad60a098f8c78be940866a101a2f1c2d579e00fd5edba77",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:7bb7e1cac89b7dd77a279e936268c0aeabb1c2a13c1bb3b06ad775a5221283d5"
+    "matrix": "sha256:e8f5f7c42d424930e35575edc0ae1736f41b580dae12d804ecf793b13d291c95"
   },
   "parents": {
     "body": {
@@ -13,14 +13,128 @@
         "source": "derived",
         "status": "verified-ok",
         "matrix": {
-          "branches": 364,
-          "pass": 364,
-          "failing": []
+          "branches": 360,
+          "pass": 348,
+          "failing": [],
+          "banned": {
+            "branches": 12,
+            "pass": 0
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "quantumarticle",
+      "preset": "arabic",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "odd-arabic",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "roman",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "upper-roman",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "revtex4-2-aip",
+      "preset": "arabic",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "revtex4-2-aip",
+      "preset": "odd-arabic",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "revtex4-2-aip",
+      "preset": "roman",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "revtex4-2-aip",
+      "preset": "upper-roman",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "revtex4-2-aps",
+      "preset": "arabic",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "revtex4-2-aps",
+      "preset": "odd-arabic",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "revtex4-2-aps",
+      "preset": "roman",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "revtex4-2-aps",
+      "preset": "upper-roman",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    }
+  ]
 }

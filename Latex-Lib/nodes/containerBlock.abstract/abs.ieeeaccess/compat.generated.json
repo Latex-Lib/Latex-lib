@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:5cdec55a217151b035f0f9e9b888fb10f7fcce9a30d7164c5dcd3a0260996345",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:3b2401a1480da39a7b47b88e0f1311cac99cba8b17a7398035fb5a4d4852e9b3"
+    "matrix": "sha256:79cb5abcdaf58fa91b2a735f95aef4d36e0fb14e64463de9b6e79fd1a7d7e84d"
   },
   "parents": {
     "body": {
@@ -17,12 +17,21 @@
           "pass": 1190,
           "failing": [
             "ieeeaccess.A"
-          ]
+          ],
+          "denied": {
+            "branches": 186,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 8,
+            "pass": 1
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

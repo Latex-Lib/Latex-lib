@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:6e5dadd0b5f5942edf63fcf830c26d935d161af014b8bf6624719f4234b2c6b4",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:a96475c023afa4c6a3767e8acedca0f0c7fb7705179b072056ebcc05eec7c395"
+    "matrix": "sha256:effec4c39ef356056f72480bbba897e29757b71772ebc56493882b01f445f737"
   },
   "parents": {
     "body": {
@@ -13,82 +13,107 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 1234,
+          "branches": 1172,
           "pass": 1022,
           "failing": [
-            "aaai.A",
-            "aamas.A",
-            "acmart-acmsmall.A",
-            "acmart-acmtog.A",
-            "acmart-manuscript.A",
-            "acmart-manuscript.B",
-            "acmart-sigconf.A",
-            "acmart-sigplan.A",
-            "aistats.A",
-            "amsart.A",
-            "amsart.B",
-            "apa7.A",
-            "article.A",
-            "article.B",
-            "asmeconf.A",
-            "asmejour.A",
-            "beamer.A",
-            "book.A",
-            "book.B",
-            "cas-dc.A",
-            "cas-sc.A",
-            "cvpr.A",
-            "eccv.A",
-            "elsarticle-3p.A",
-            "elsarticle-5p.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "exam.A",
-            "exam.B",
-            "extarticle.A",
-            "extarticle.B",
-            "icassp.A",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "ijcai.A",
-            "imsart.A",
-            "interact.A",
-            "iopart.A",
-            "iopjournal.A",
-            "jacow.A",
-            "lipics.A",
-            "llncs.A",
-            "llncs.B",
-            "memoir.A",
-            "memoir.B",
-            "mnras.A",
-            "oup-authoring-template.A",
-            "quantumarticle.A",
-            "report.A",
-            "report.B",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A",
-            "scrartcl.A",
-            "scrartcl.B",
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "siamart.A",
-            "spie.A",
-            "tufte-handout.A",
-            "usenix.A",
-            "ut-thesis.A",
-            "vldb.A"
-          ]
+            "quantumarticle.A"
+          ],
+          "denied": {
+            "branches": 135,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 9,
+            "pass": 0
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "quantumarticle",
+      "preset": "alpha",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "amsalpha",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "amsplain",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "apalike",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "ieeetr",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "ieeetran-sorted",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "plain",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "splncs04",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "unsrt",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    }
+  ]
 }

@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:6865f61886299a63f37739bcf91a11999db0dfdb18d9b7fd1cc184cec05ed06b",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:87537c4edf83eb8ce4178fa5eba91f362ef1a7d5bd0031ce40e69e874f59d90e"
+    "matrix": "sha256:88f3d1f7309016e2106555d34c7f2b607dc6e7890f3c7a6eec8f780749629ea6"
   },
   "parents": {
     "body": {
@@ -14,7 +14,7 @@
         "status": "failing",
         "matrix": {
           "branches": 66002,
-          "pass": 61293,
+          "pass": 61310,
           "failing": [
             "achemso.A",
             "acmart-acmsmall.A",
@@ -62,12 +62,21 @@
             "tmlr.A",
             "tufte-handout.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 3142,
+            "pass": 7
+          },
+          "banned": {
+            "branches": 394,
+            "pass": 34
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

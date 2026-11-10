@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:53599cf9ccae770e696a4fe7b339b86192d93a6b82126996b1b5991c3e8c4f19",
     "contexts": "sha256:14e595b5a917207b0202cd81103654b34671bd431b2e4e8a05c64647be89ab4f",
-    "matrix": "sha256:98d07739e18701f227d8dc127ad07f898081aa9dff656d24bd1c64d4799d0a37"
+    "matrix": "sha256:eeb3ecaca799e4be937481dbb116caedf4c3fc46b3f6c75944a5bba2d8c32d7f"
   },
   "parents": {
     "containerBlock/columns": {
@@ -89,7 +89,11 @@
             "book.A",
             "book.B",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 96,
+            "pass": 35
+          }
         }
       }
     },
@@ -232,5 +236,6 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

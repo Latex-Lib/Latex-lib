@@ -1,9 +1,9 @@
 {
   "way": "bib.apacite@cite",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -39,7 +39,11 @@
       "pair": "aaai.A",
       "branches": 20,
       "pass": 20,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -160,7 +164,11 @@
       "pair": "aaai.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -171,7 +179,11 @@
       "pair": "aaai.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -183,17 +195,6 @@
       "branches": 1,
       "pass": 1,
       "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "paragraph/title",
-        "way": "front.authblk"
-      },
-      "pair": "aaai.A",
-      "branches": 1,
-      "pass": 0,
-      "status": "failing"
     },
     {
       "kind": "verified",
@@ -259,7 +260,11 @@
       "pair": "agu.A",
       "branches": 24,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -281,7 +286,11 @@
       "pair": "agu.A",
       "branches": 14,
       "pass": 14,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -347,7 +356,11 @@
       "pair": "agu.A",
       "branches": 20,
       "pass": 20,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -391,7 +404,11 @@
       "pair": "aistats.A",
       "branches": 26,
       "pass": 26,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -402,7 +419,11 @@
       "pair": "aistats.A",
       "branches": 26,
       "pass": 26,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -424,7 +445,11 @@
       "pair": "aistats.A",
       "branches": 21,
       "pass": 21,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -534,7 +559,11 @@
       "pair": "aistats.A",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -545,18 +574,11 @@
       "pair": "aistats.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "paragraph/title",
-        "way": "front.authblk"
-      },
-      "pair": "aistats.A",
-      "branches": 1,
-      "pass": 1,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -584,12 +606,27 @@
       "kind": "verified",
       "parent": {
         "node": "paragraph/title",
+        "way": "front.authblk"
+      },
+      "pair": "aistats.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
         "way": "front.aistats"
       },
       "pair": "aistats.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -622,7 +659,11 @@
       "pair": "amsart.A",
       "branches": 22,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -633,7 +674,11 @@
       "pair": "amsart.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -655,7 +700,11 @@
       "pair": "amsart.A",
       "branches": 19,
       "pass": 19,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -754,7 +803,11 @@
       "pair": "amsart.A",
       "branches": 20,
       "pass": 20,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -820,7 +873,11 @@
       "pair": "amsart.B",
       "branches": 20,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -831,7 +888,11 @@
       "pair": "amsart.B",
       "branches": 20,
       "pass": 20,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -853,7 +914,11 @@
       "pair": "amsart.B",
       "branches": 17,
       "pass": 15,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -952,7 +1017,11 @@
       "pair": "amsart.B",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -1018,7 +1087,11 @@
       "pair": "article.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -1029,7 +1102,11 @@
       "pair": "article.A",
       "branches": 24,
       "pass": 22,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -1051,7 +1128,11 @@
       "pair": "article.A",
       "branches": 21,
       "pass": 21,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -1161,7 +1242,11 @@
       "pair": "article.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1172,18 +1257,11 @@
       "pair": "article.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "paragraph/title",
-        "way": "front.authblk"
-      },
-      "pair": "article.A",
-      "branches": 1,
-      "pass": 1,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -1201,6 +1279,17 @@
       "parent": {
         "node": "paragraph/title",
         "way": "front.titling"
+      },
+      "pair": "article.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.authblk"
       },
       "pair": "article.A",
       "branches": 1,
@@ -1238,7 +1327,11 @@
       "pair": "article.B",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -1249,7 +1342,11 @@
       "pair": "article.B",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -1271,7 +1368,11 @@
       "pair": "article.B",
       "branches": 19,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -1381,7 +1482,11 @@
       "pair": "article.B",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1392,18 +1497,11 @@
       "pair": "article.B",
       "branches": 20,
       "pass": 20,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "paragraph/title",
-        "way": "front.authblk"
-      },
-      "pair": "article.B",
-      "branches": 1,
-      "pass": 1,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -1421,6 +1519,17 @@
       "parent": {
         "node": "paragraph/title",
         "way": "front.titling"
+      },
+      "pair": "article.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.authblk"
       },
       "pair": "article.B",
       "branches": 1,
@@ -1458,7 +1567,11 @@
       "pair": "eccv.A",
       "branches": 16,
       "pass": 14,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1568,7 +1681,11 @@
       "pair": "eccv.A",
       "branches": 26,
       "pass": 25,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1579,7 +1696,11 @@
       "pair": "eccv.A",
       "branches": 21,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1590,7 +1711,11 @@
       "pair": "eccv.A",
       "branches": 21,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1667,7 +1792,11 @@
       "pair": "exam.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -1689,7 +1818,11 @@
       "pair": "exam.A",
       "branches": 14,
       "pass": 14,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -1799,7 +1932,11 @@
       "pair": "exam.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1810,18 +1947,11 @@
       "pair": "exam.A",
       "branches": 20,
       "pass": 20,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "paragraph/title",
-        "way": "front.authblk"
-      },
-      "pair": "exam.A",
-      "branches": 1,
-      "pass": 1,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -1839,6 +1969,17 @@
       "parent": {
         "node": "paragraph/title",
         "way": "front.titling"
+      },
+      "pair": "exam.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.authblk"
       },
       "pair": "exam.A",
       "branches": 1,
@@ -1898,7 +2039,11 @@
       "pair": "exam.B",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -1920,7 +2065,11 @@
       "pair": "exam.B",
       "branches": 12,
       "pass": 12,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2030,7 +2179,11 @@
       "pair": "exam.B",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -2041,18 +2194,11 @@
       "pair": "exam.B",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "paragraph/title",
-        "way": "front.authblk"
-      },
-      "pair": "exam.B",
-      "branches": 1,
-      "pass": 1,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2070,6 +2216,17 @@
       "parent": {
         "node": "paragraph/title",
         "way": "front.titling"
+      },
+      "pair": "exam.B",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.authblk"
       },
       "pair": "exam.B",
       "branches": 1,
@@ -2118,7 +2275,11 @@
       "pair": "extarticle.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2129,7 +2290,11 @@
       "pair": "extarticle.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2151,7 +2316,11 @@
       "pair": "extarticle.A",
       "branches": 19,
       "pass": 19,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2261,7 +2430,11 @@
       "pair": "extarticle.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -2272,7 +2445,11 @@
       "pair": "extarticle.A",
       "branches": 20,
       "pass": 20,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2327,7 +2504,11 @@
       "pair": "extarticle.B",
       "branches": 20,
       "pass": 20,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2338,7 +2519,11 @@
       "pair": "extarticle.B",
       "branches": 20,
       "pass": 20,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2360,7 +2545,11 @@
       "pair": "extarticle.B",
       "branches": 17,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2470,7 +2659,11 @@
       "pair": "extarticle.B",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -2481,7 +2674,11 @@
       "pair": "extarticle.B",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2536,7 +2733,11 @@
       "pair": "icassp.A",
       "branches": 22,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2547,7 +2748,11 @@
       "pair": "icassp.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2569,7 +2774,11 @@
       "pair": "icassp.A",
       "branches": 19,
       "pass": 19,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2679,7 +2888,15 @@
       "pair": "icassp.A",
       "branches": 16,
       "pass": 14,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2690,7 +2907,15 @@
       "pair": "icassp.A",
       "branches": 20,
       "pass": 15,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2778,7 +3003,11 @@
       "pair": "ieeeaccess.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -2789,7 +3018,11 @@
       "pair": "ieeeaccess.A",
       "branches": 12,
       "pass": 12,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2888,7 +3121,11 @@
       "pair": "ieeeaccess.A",
       "branches": 12,
       "pass": 11,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2987,7 +3224,11 @@
       "pair": "ieeeconf-ras.A",
       "branches": 24,
       "pass": 23,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -2998,7 +3239,11 @@
       "pair": "ieeeconf-ras.A",
       "branches": 13,
       "pass": 13,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -3108,7 +3353,11 @@
       "pair": "ieeeconf-ras.A",
       "branches": 12,
       "pass": 11,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3196,7 +3445,11 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 24,
       "pass": 23,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -3207,7 +3460,11 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 13,
       "pass": 13,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -3317,7 +3574,11 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 15,
       "pass": 14,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -3328,7 +3589,11 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 12,
       "pass": 11,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3427,7 +3692,11 @@
       "pair": "ieeetran-conference.A",
       "branches": 24,
       "pass": 23,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -3438,7 +3707,11 @@
       "pair": "ieeetran-conference.A",
       "branches": 13,
       "pass": 13,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -3548,7 +3821,11 @@
       "pair": "ieeetran-conference.A",
       "branches": 12,
       "pass": 11,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3647,7 +3924,11 @@
       "pair": "ieeetran-journal.A",
       "branches": 24,
       "pass": 23,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -3658,7 +3939,11 @@
       "pair": "ieeetran-journal.A",
       "branches": 13,
       "pass": 13,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -3768,7 +4053,11 @@
       "pair": "ieeetran-journal.A",
       "branches": 12,
       "pass": 11,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3856,7 +4145,11 @@
       "pair": "ijcai.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -3867,7 +4160,11 @@
       "pair": "ijcai.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -3889,7 +4186,11 @@
       "pair": "ijcai.A",
       "branches": 19,
       "pass": 19,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -3999,7 +4300,11 @@
       "pair": "ijcai.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -4010,18 +4315,11 @@
       "pair": "ijcai.A",
       "branches": 20,
       "pass": 20,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "paragraph/title",
-        "way": "front.authblk"
-      },
-      "pair": "ijcai.A",
-      "branches": 1,
-      "pass": 1,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4039,6 +4337,17 @@
       "parent": {
         "node": "paragraph/title",
         "way": "front.titling"
+      },
+      "pair": "ijcai.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.authblk"
       },
       "pair": "ijcai.A",
       "branches": 1,
@@ -4087,7 +4396,11 @@
       "pair": "imsart.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4098,7 +4411,11 @@
       "pair": "imsart.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4120,7 +4437,11 @@
       "pair": "imsart.A",
       "branches": 21,
       "pass": 21,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4175,7 +4496,11 @@
       "pair": "imsart.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4230,7 +4555,11 @@
       "pair": "imsart.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -4241,18 +4570,11 @@
       "pair": "imsart.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "paragraph/title",
-        "way": "front.authblk"
-      },
-      "pair": "imsart.A",
-      "branches": 1,
-      "pass": 1,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4270,6 +4592,17 @@
       "parent": {
         "node": "paragraph/title",
         "way": "front.titling"
+      },
+      "pair": "imsart.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.authblk"
       },
       "pair": "imsart.A",
       "branches": 1,
@@ -4318,7 +4651,11 @@
       "pair": "interact.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4329,7 +4666,11 @@
       "pair": "interact.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4351,7 +4692,11 @@
       "pair": "interact.A",
       "branches": 21,
       "pass": 21,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4461,7 +4806,11 @@
       "pair": "interact.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4538,7 +4887,11 @@
       "pair": "iopart.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4560,7 +4913,11 @@
       "pair": "iopart.A",
       "branches": 13,
       "pass": 13,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4659,7 +5016,11 @@
       "pair": "iopart.A",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4714,7 +5075,11 @@
       "pair": "jacow.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4725,7 +5090,11 @@
       "pair": "jacow.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4747,7 +5116,11 @@
       "pair": "jacow.A",
       "branches": 19,
       "pass": 19,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4857,7 +5230,11 @@
       "pair": "jacow.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -4868,18 +5245,11 @@
       "pair": "jacow.A",
       "branches": 20,
       "pass": 20,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "paragraph/title",
-        "way": "front.authblk"
-      },
-      "pair": "jacow.A",
-      "branches": 1,
-      "pass": 1,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4897,6 +5267,17 @@
       "parent": {
         "node": "paragraph/title",
         "way": "front.titling"
+      },
+      "pair": "jacow.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.authblk"
       },
       "pair": "jacow.A",
       "branches": 1,
@@ -4934,7 +5315,11 @@
       "pair": "llncs.A",
       "branches": 16,
       "pass": 14,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5044,7 +5429,11 @@
       "pair": "llncs.A",
       "branches": 26,
       "pass": 25,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -5055,7 +5444,11 @@
       "pair": "llncs.A",
       "branches": 21,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5066,7 +5459,11 @@
       "pair": "llncs.A",
       "branches": 21,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5132,7 +5529,11 @@
       "pair": "llncs.B",
       "branches": 15,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5242,7 +5643,11 @@
       "pair": "llncs.B",
       "branches": 24,
       "pass": 23,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -5253,7 +5658,11 @@
       "pair": "llncs.B",
       "branches": 20,
       "pass": 18,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5264,7 +5673,11 @@
       "pair": "llncs.B",
       "branches": 19,
       "pass": 18,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5319,7 +5732,11 @@
       "pair": "memoir.A",
       "branches": 20,
       "pass": 18,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5330,7 +5747,11 @@
       "pair": "memoir.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -5352,7 +5773,11 @@
       "pair": "memoir.A",
       "branches": 26,
       "pass": 24,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5462,7 +5887,11 @@
       "pair": "memoir.A",
       "branches": 26,
       "pass": 26,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -5473,7 +5902,11 @@
       "pair": "memoir.A",
       "branches": 26,
       "pass": 25,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -5517,7 +5950,11 @@
       "pair": "memoir.B",
       "branches": 19,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5528,7 +5965,11 @@
       "pair": "memoir.B",
       "branches": 20,
       "pass": 18,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5550,7 +5991,11 @@
       "pair": "memoir.B",
       "branches": 24,
       "pass": 22,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5660,7 +6105,11 @@
       "pair": "memoir.B",
       "branches": 24,
       "pass": 22,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5671,7 +6120,11 @@
       "pair": "memoir.B",
       "branches": 24,
       "pass": 22,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5715,7 +6168,11 @@
       "pair": "quantumarticle.A",
       "branches": 32,
       "pass": 3,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 14,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5726,7 +6183,15 @@
       "pair": "quantumarticle.A",
       "branches": 14,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 12,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5737,7 +6202,11 @@
       "pair": "quantumarticle.A",
       "branches": 7,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 7,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5748,7 +6217,11 @@
       "pair": "quantumarticle.A",
       "branches": 7,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 7,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5759,7 +6232,11 @@
       "pair": "quantumarticle.A",
       "branches": 7,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 7,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5770,7 +6247,11 @@
       "pair": "quantumarticle.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5781,7 +6262,11 @@
       "pair": "quantumarticle.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5792,7 +6277,11 @@
       "pair": "quantumarticle.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5803,7 +6292,11 @@
       "pair": "quantumarticle.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5814,7 +6307,11 @@
       "pair": "quantumarticle.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5825,7 +6322,11 @@
       "pair": "quantumarticle.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5836,7 +6337,15 @@
       "pair": "quantumarticle.A",
       "branches": 12,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 10,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5847,7 +6356,11 @@
       "pair": "quantumarticle.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5858,7 +6371,11 @@
       "pair": "quantumarticle.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5891,7 +6408,11 @@
       "pair": "report.A",
       "branches": 24,
       "pass": 22,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5902,7 +6423,11 @@
       "pair": "report.A",
       "branches": 24,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -5924,7 +6449,11 @@
       "pair": "report.A",
       "branches": 30,
       "pass": 28,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5935,7 +6464,11 @@
       "pair": "report.A",
       "branches": 30,
       "pass": 30,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -6045,7 +6578,11 @@
       "pair": "report.A",
       "branches": 28,
       "pass": 27,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -6056,7 +6593,11 @@
       "pair": "report.A",
       "branches": 30,
       "pass": 29,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -6111,7 +6652,11 @@
       "pair": "report.B",
       "branches": 23,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6122,7 +6667,11 @@
       "pair": "report.B",
       "branches": 22,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6144,7 +6693,11 @@
       "pair": "report.B",
       "branches": 28,
       "pass": 26,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6155,7 +6708,11 @@
       "pair": "report.B",
       "branches": 28,
       "pass": 26,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6265,7 +6822,11 @@
       "pair": "report.B",
       "branches": 26,
       "pass": 25,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -6276,7 +6837,11 @@
       "pair": "report.B",
       "branches": 28,
       "pass": 25,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6331,7 +6896,11 @@
       "pair": "scrartcl.A",
       "branches": 20,
       "pass": 20,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -6353,7 +6922,11 @@
       "pair": "scrartcl.A",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -6452,7 +7025,11 @@
       "pair": "scrartcl.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -6463,7 +7040,11 @@
       "pair": "scrartcl.A",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -6474,7 +7055,11 @@
       "pair": "scrartcl.A",
       "branches": 15,
       "pass": 15,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -6540,7 +7125,11 @@
       "pair": "scrartcl.B",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -6562,7 +7151,11 @@
       "pair": "scrartcl.B",
       "branches": 16,
       "pass": 16,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -6661,7 +7254,11 @@
       "pair": "scrartcl.B",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -6672,7 +7269,11 @@
       "pair": "scrartcl.B",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -6683,7 +7284,11 @@
       "pair": "scrartcl.B",
       "branches": 14,
       "pass": 14,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -6749,7 +7354,11 @@
       "pair": "scrbook.A",
       "branches": 18,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6771,7 +7380,11 @@
       "pair": "scrbook.A",
       "branches": 24,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -6782,7 +7395,11 @@
       "pair": "scrbook.A",
       "branches": 24,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6881,7 +7498,11 @@
       "pair": "scrbook.A",
       "branches": 24,
       "pass": 23,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -6892,7 +7513,11 @@
       "pair": "scrbook.A",
       "branches": 24,
       "pass": 22,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -6903,7 +7528,11 @@
       "pair": "scrbook.A",
       "branches": 24,
       "pass": 22,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -6969,7 +7598,11 @@
       "pair": "scrbook.B",
       "branches": 17,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6991,7 +7624,11 @@
       "pair": "scrbook.B",
       "branches": 22,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7002,7 +7639,11 @@
       "pair": "scrbook.B",
       "branches": 22,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7101,7 +7742,11 @@
       "pair": "scrbook.B",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -7112,7 +7757,11 @@
       "pair": "scrbook.B",
       "branches": 22,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7123,7 +7772,11 @@
       "pair": "scrbook.B",
       "branches": 22,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7189,7 +7842,11 @@
       "pair": "scrreprt.A",
       "branches": 18,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7211,7 +7868,11 @@
       "pair": "scrreprt.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -7222,7 +7883,11 @@
       "pair": "scrreprt.A",
       "branches": 24,
       "pass": 22,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7321,7 +7986,11 @@
       "pair": "scrreprt.A",
       "branches": 24,
       "pass": 23,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -7332,7 +8001,11 @@
       "pair": "scrreprt.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -7343,7 +8016,11 @@
       "pair": "scrreprt.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -7409,7 +8086,11 @@
       "pair": "scrreprt.B",
       "branches": 17,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7431,7 +8112,11 @@
       "pair": "scrreprt.B",
       "branches": 22,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7442,7 +8127,11 @@
       "pair": "scrreprt.B",
       "branches": 22,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7541,7 +8230,11 @@
       "pair": "scrreprt.B",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -7552,7 +8245,11 @@
       "pair": "scrreprt.B",
       "branches": 22,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7563,7 +8260,11 @@
       "pair": "scrreprt.B",
       "branches": 22,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7629,7 +8330,11 @@
       "pair": "spie.A",
       "branches": 26,
       "pass": 26,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -7640,7 +8345,11 @@
       "pair": "spie.A",
       "branches": 26,
       "pass": 26,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -7662,7 +8371,11 @@
       "pair": "spie.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -7772,7 +8485,15 @@
       "pair": "spie.A",
       "branches": 19,
       "pass": 15,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7783,18 +8504,15 @@
       "pair": "spie.A",
       "branches": 24,
       "pass": 20,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "paragraph/title",
-        "way": "front.authblk"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
       },
-      "pair": "spie.A",
-      "branches": 1,
-      "pass": 1,
-      "status": "verified-ok"
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7822,12 +8540,623 @@
       "kind": "verified",
       "parent": {
         "node": "paragraph/title",
+        "way": "front.authblk"
+      },
+      "pair": "spie.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "paragraph/title",
         "way": "front.spie"
       },
       "pair": "spie.A",
       "branches": 1,
       "pass": 1,
       "status": "verified-ok"
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "aistats",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.aistats",
+        "preset": "one-column"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "icassp",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "lettered-sections"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "icassp",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty",
+        "preset": "sans"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "icassp",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "to-subsection"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "imsart",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape",
+        "preset": "marker"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 8,
+      "pass": 0,
+      "hardFail": 3,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "numbered"
+      },
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "hardFail": 2,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "roman-sections"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "unnumbered"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 6,
+      "pass": 0,
+      "hardFail": 2,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item",
+        "preset": "item"
+      },
+      "why": "never-passes",
+      "branches": 5,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "space-between"
+      },
+      "why": "never-passes",
+      "branches": 5,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block",
+        "preset": "generic"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.revtex",
+        "preset": "quantum"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "numbered"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "roman-sections"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "to-subsection"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item",
+        "preset": "item"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "space-and-indent"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:labels-changed"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "space-between"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle",
+        "preset": "no-date"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env",
+        "preset": "left-sans"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "spie",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "lettered-sections"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "spie",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty",
+        "preset": "sans"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "spie",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "to-subsection"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.apacite@cite",
+      "classSetting": "spie",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty",
+        "preset": "centered"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
     }
   ]
 }

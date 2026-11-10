@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:91b28c5dd1195d1c1e7435ae83e8e28d8322e6dc8958e2bb80ad5102a96951f9",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:79dbeca5e02c668ae0896c3f881bc0abcbdf9eec7150de0c3b38663bf571d6f8"
+    "matrix": "sha256:2f52060eb35da7562df0b8dbfc7c1379eaad7711bb9fbeb4ff817a15e633edf1"
   },
   "parents": {
     "body": {
@@ -14,7 +14,7 @@
         "status": "failing",
         "matrix": {
           "branches": 58470,
-          "pass": 55571,
+          "pass": 55523,
           "failing": [
             "book.A",
             "book.B",
@@ -26,12 +26,21 @@
             "scrreprt.A",
             "scrreprt.B",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 2365,
+            "pass": 20
+          },
+          "banned": {
+            "branches": 22,
+            "pass": 5
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

@@ -4,10 +4,23 @@
   "generatedFrom": {
     "key": "sha256:198a937c2d516bebb4e84b6bf15fff98cb08febea90aedffd813a1b5bb8b30ff",
     "contexts": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-    "matrix": "sha256:bb9f1921e2f482aa1bab853cd810fad758f873c595dfff4780d1307299f56f40"
+    "matrix": "sha256:8d40f3a663cccba129ddb02b655b60de64a085c2f6dab6335baaaed54f7e2f75"
   },
   "parents": {},
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "frontiers",
+      "preset": "generic",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    }
+  ]
 }

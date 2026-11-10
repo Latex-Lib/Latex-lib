@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:aa9177ba1d82a623ac7d9a2a5ca61fd8232245480fdcb01dbd53d4245a03d223",
     "contexts": "sha256:19ca377618c806eb733d2b157e0258ce2e79a5cd584f9c6a2c2ae6bd83663bc5",
-    "matrix": "sha256:95a5d9455566138f414eeb137a69930117a771b292cac4a3f15cd89a3ccb754a"
+    "matrix": "sha256:629ffc089061a9b741c40dd0aa254b3fa3ef4924ae9002f24b90368400108aed"
   },
   "parents": {
     "body": {
@@ -283,7 +283,11 @@
             "tmlr.A",
             "tufte-handout.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 89,
+            "pass": 0
+          }
         }
       },
       "cols.paracol": {
@@ -343,7 +347,11 @@
             "tmlr.A",
             "tufte-handout.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 89,
+            "pass": 0
+          }
         }
       },
       "cols.revtex-grid": {
@@ -398,7 +406,11 @@
             "siamart.A",
             "tufte-handout.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 42,
+            "pass": 0
+          }
         }
       },
       "cols.vwcol": {
@@ -459,7 +471,11 @@
             "tmlr.A",
             "tufte-handout.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 91,
+            "pass": 0
+          }
         }
       }
     },
@@ -474,50 +490,14 @@
           "failing": [
             "aastex.A",
             "achemso.A",
-            "acmart-acmsmall.A",
-            "acmart-manuscript.A",
-            "acmart-sigconf.A",
-            "agu.A",
-            "amsart.A",
-            "apa7.A",
             "article.A",
-            "ascelike.A",
-            "bmvc.A",
-            "book.A",
-            "cas-dc.A",
-            "cas-sc.A",
-            "colm.A",
-            "copernicus.A",
-            "corl.A",
-            "eccv.A",
             "elegantpaper.A",
-            "elsarticle-3p.A",
-            "elsarticle-preprint.A",
-            "exam.A",
-            "extarticle.A",
-            "iclr.A",
-            "imsart.A",
-            "interact.A",
-            "iopart.A",
-            "iopjournal.A",
-            "jmlr-pmlr.A",
-            "jss.A",
-            "lipics.A",
-            "llncs.A",
-            "mdpi.A",
-            "memoir.A",
-            "neurips.A",
-            "plos.A",
-            "report.A",
-            "scrartcl.A",
-            "scrbook.A",
-            "scrreprt.A",
-            "siamart.A",
-            "sn-jnl.A",
-            "spie.A",
-            "tmlr.A",
-            "ut-thesis.A"
-          ]
+            "extarticle.A"
+          ],
+          "denied": {
+            "branches": 142,
+            "pass": 18
+          }
         }
       }
     },
@@ -531,7 +511,11 @@
           "pass": 25,
           "failing": [
             "agu.A"
-          ]
+          ],
+          "denied": {
+            "branches": 11,
+            "pass": 2
+          }
         }
       },
       "list.class-native": {
@@ -540,14 +524,18 @@
         "status": "failing",
         "matrix": {
           "branches": 124,
-          "pass": 93,
+          "pass": 91,
           "failing": [
             "apa7.A",
             "cas-dc.A",
             "cas-sc.A",
             "imsart.A",
             "jmlr-pmlr.A"
-          ]
+          ],
+          "denied": {
+            "branches": 25,
+            "pass": 4
+          }
         }
       },
       "list.cvlist": {
@@ -561,49 +549,38 @@
         "status": "failing",
         "matrix": {
           "branches": 826,
-          "pass": 617,
+          "pass": 596,
           "failing": [
             "aastex.A",
-            "achemso.A",
             "agu.A",
             "amsart.A",
             "apa7.A",
-            "article.A",
             "bmvc.A",
             "book.A",
-            "cas-dc.A",
             "cas-sc.A",
-            "colm.A",
             "copernicus.A",
-            "corl.A",
-            "eccv.A",
-            "elsarticle-3p.A",
-            "elsarticle-preprint.A",
             "exam.A",
-            "extarticle.A",
-            "iclr.A",
             "imsart.A",
             "interact.A",
             "iopart.A",
-            "iopjournal.A",
-            "jmlr-pmlr.A",
             "jss.A",
-            "lipics.A",
-            "llncs.A",
-            "memoir.A",
-            "neurips.A",
             "plos.A",
             "report.A",
             "scrartcl.A",
             "scrbook.A",
             "scrreprt.A",
-            "siamart.A",
-            "sn-jnl.A",
-            "spie.A",
             "tmlr.A",
             "tufte-handout.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 213,
+            "pass": 35
+          },
+          "banned": {
+            "branches": 19,
+            "pass": 2
+          }
         }
       },
       "list.enumitem": {
@@ -614,62 +591,56 @@
           "branches": 816,
           "pass": 568,
           "failing": [
-            "aastex.A",
             "achemso.A",
-            "agu.A",
             "amsart.A",
-            "apa7.A",
             "article.A",
             "ascelike.A",
             "bmvc.A",
-            "book.A",
-            "cas-dc.A",
             "cas-sc.A",
-            "colm.A",
             "copernicus.A",
-            "corl.A",
             "eccv.A",
-            "elegantpaper.A",
-            "elsarticle-3p.A",
             "elsarticle-preprint.A",
             "exam.A",
             "extarticle.A",
-            "iclr.A",
-            "imsart.A",
             "interact.A",
             "iopart.A",
             "iopjournal.A",
-            "jmlr-pmlr.A",
             "jss.A",
             "lipics.A",
             "llncs.A",
-            "mdpi.A",
             "memoir.A",
-            "neurips.A",
             "plos.A",
             "report.A",
-            "scrartcl.A",
-            "scrbook.A",
-            "scrreprt.A",
-            "siamart.A",
             "sn-jnl.A",
-            "spie.A",
-            "tmlr.A",
             "tufte-handout.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 208,
+            "pass": 18
+          },
+          "banned": {
+            "branches": 37,
+            "pass": 10
+          }
         }
       },
       "list.exam-questions": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 28,
           "pass": 21,
-          "failing": [
-            "exam.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 6,
+            "pass": 1
+          },
+          "banned": {
+            "branches": 3,
+            "pass": 1
+          }
         }
       },
       "list.kernel": {
@@ -678,54 +649,27 @@
         "status": "failing",
         "matrix": {
           "branches": 901,
-          "pass": 721,
+          "pass": 720,
           "failing": [
-            "achemso.A",
-            "acmart-acmsmall.A",
-            "acmart-manuscript.A",
-            "acmart-sigconf.A",
-            "agu.A",
             "amsart.A",
-            "apa7.A",
             "article.A",
-            "ascelike.A",
-            "bmvc.A",
-            "book.A",
-            "cas-dc.A",
-            "cas-sc.A",
-            "colm.A",
-            "copernicus.A",
-            "corl.A",
-            "eccv.A",
-            "elegantpaper.A",
-            "elsarticle-3p.A",
-            "elsarticle-preprint.A",
-            "exam.A",
             "extarticle.A",
-            "iclr.A",
             "imsart.A",
             "interact.A",
             "iopart.A",
-            "iopjournal.A",
-            "jmlr-pmlr.A",
-            "jss.A",
-            "lipics.A",
             "llncs.A",
-            "mdpi.A",
-            "memoir.A",
-            "neurips.A",
-            "plos.A",
-            "report.A",
-            "scrartcl.A",
             "scrbook.A",
             "scrreprt.A",
-            "siamart.A",
-            "sn-jnl.A",
-            "spie.A",
-            "tmlr.A",
-            "tufte-handout.A",
-            "ut-thesis.A"
-          ]
+            "tufte-handout.A"
+          ],
+          "denied": {
+            "branches": 189,
+            "pass": 36
+          },
+          "banned": {
+            "branches": 26,
+            "pass": 9
+          }
         }
       },
       "list.nomenclature": {
@@ -741,23 +685,13 @@
           "branches": 867,
           "pass": 639,
           "failing": [
-            "aastex.A",
             "achemso.A",
             "agu.A",
             "amsart.A",
-            "apa7.A",
             "article.A",
-            "ascelike.A",
-            "bmvc.A",
-            "book.A",
             "cas-dc.A",
-            "cas-sc.A",
             "colm.A",
-            "copernicus.A",
             "corl.A",
-            "eccv.A",
-            "elsarticle-3p.A",
-            "elsarticle-preprint.A",
             "exam.A",
             "extarticle.A",
             "iclr.A",
@@ -768,21 +702,22 @@
             "jmlr-pmlr.A",
             "jss.A",
             "lipics.A",
-            "llncs.A",
-            "memoir.A",
             "neurips.A",
             "plos.A",
-            "report.A",
-            "scrartcl.A",
-            "scrbook.A",
-            "scrreprt.A",
             "siamart.A",
-            "sn-jnl.A",
             "spie.A",
             "tmlr.A",
             "tufte-handout.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 198,
+            "pass": 36
+          },
+          "banned": {
+            "branches": 30,
+            "pass": 4
+          }
         }
       },
       "list.scrextend": {
@@ -791,49 +726,32 @@
         "status": "failing",
         "matrix": {
           "branches": 893,
-          "pass": 734,
+          "pass": 733,
           "failing": [
-            "aastex.A",
-            "agu.A",
-            "amsart.A",
-            "apa7.A",
             "article.A",
-            "ascelike.A",
-            "bmvc.A",
             "book.A",
             "cas-dc.A",
             "cas-sc.A",
-            "colm.A",
             "copernicus.A",
-            "corl.A",
-            "eccv.A",
             "elegantpaper.A",
-            "elsarticle-3p.A",
             "elsarticle-preprint.A",
-            "exam.A",
             "extarticle.A",
-            "iclr.A",
-            "imsart.A",
             "iopart.A",
             "iopjournal.A",
-            "jmlr-pmlr.A",
             "jss.A",
-            "lipics.A",
-            "llncs.A",
-            "mdpi.A",
-            "memoir.A",
-            "neurips.A",
             "plos.A",
             "report.A",
-            "scrartcl.A",
-            "scrbook.A",
-            "scrreprt.A",
-            "siamart.A",
-            "sn-jnl.A",
-            "tmlr.A",
             "tufte-handout.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 173,
+            "pass": 35
+          },
+          "banned": {
+            "branches": 6,
+            "pass": 3
+          }
         }
       }
     },
@@ -846,13 +764,11 @@
       "abs.abstract-pkg": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 70,
-          "pass": 68,
-          "failing": [
-            "lipics.A"
-          ]
+          "pass": 70,
+          "failing": []
         }
       },
       "abs.class-native": {
@@ -951,44 +867,39 @@
         "status": "failing",
         "matrix": {
           "branches": 790,
-          "pass": 654,
+          "pass": 657,
           "failing": [
-            "aastex.A",
-            "achemso.A",
-            "agu.A",
             "amsart.A",
-            "apa7.A",
             "article.A",
             "ascelike.A",
             "bmvc.A",
             "book.A",
             "cas-dc.A",
             "cas-sc.A",
-            "colm.A",
-            "copernicus.A",
-            "corl.A",
             "elsarticle-3p.A",
             "elsarticle-preprint.A",
             "exam.A",
             "extarticle.A",
-            "iclr.A",
             "imsart.A",
             "interact.A",
             "iopart.A",
             "iopjournal.A",
             "jss.A",
-            "memoir.A",
-            "neurips.A",
-            "plos.A",
             "report.A",
             "scrartcl.A",
             "scrbook.A",
             "scrreprt.A",
             "sn-jnl.A",
-            "tmlr.A",
-            "tufte-handout.A",
-            "ut-thesis.A"
-          ]
+            "tufte-handout.A"
+          ],
+          "denied": {
+            "branches": 117,
+            "pass": 35
+          },
+          "banned": {
+            "branches": 26,
+            "pass": 8
+          }
         }
       },
       "thm.class-native": {
@@ -997,12 +908,9 @@
         "status": "failing",
         "matrix": {
           "branches": 331,
-          "pass": 264,
+          "pass": 262,
           "failing": [
-            "acmart-acmsmall.A",
             "acmart-manuscript.A",
-            "acmart-sigconf.A",
-            "amsart.A",
             "cas-dc.A",
             "cas-sc.A",
             "eccv.A",
@@ -1012,11 +920,17 @@
             "jmlr-pmlr.A",
             "lipics.A",
             "llncs.A",
-            "mdpi.A",
             "siamart.A",
-            "sn-jnl.A",
-            "spie.A"
-          ]
+            "sn-jnl.A"
+          ],
+          "denied": {
+            "branches": 43,
+            "pass": 6
+          },
+          "banned": {
+            "branches": 18,
+            "pass": 5
+          }
         }
       },
       "thm.kernel": {
@@ -1025,45 +939,37 @@
         "status": "failing",
         "matrix": {
           "branches": 694,
-          "pass": 545,
+          "pass": 548,
           "failing": [
             "aastex.A",
-            "achemso.A",
-            "agu.A",
             "amsart.A",
-            "apa7.A",
             "article.A",
-            "ascelike.A",
-            "bmvc.A",
             "book.A",
             "cas-dc.A",
             "cas-sc.A",
-            "colm.A",
             "copernicus.A",
-            "corl.A",
-            "elsarticle-3p.A",
-            "elsarticle-preprint.A",
             "exam.A",
             "extarticle.A",
-            "iclr.A",
             "imsart.A",
             "interact.A",
             "iopart.A",
             "iopjournal.A",
-            "jss.A",
             "memoir.A",
-            "neurips.A",
-            "plos.A",
             "report.A",
             "scrartcl.A",
             "scrbook.A",
             "scrreprt.A",
-            "siamart.A",
-            "sn-jnl.A",
-            "tmlr.A",
             "tufte-handout.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 100,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 8,
+            "pass": 2
+          }
         }
       },
       "thm.mdframed": {
@@ -1072,44 +978,18 @@
         "status": "failing",
         "matrix": {
           "branches": 792,
-          "pass": 683,
+          "pass": 684,
           "failing": [
-            "aastex.A",
-            "achemso.A",
-            "agu.A",
-            "amsart.A",
-            "apa7.A",
-            "article.A",
-            "ascelike.A",
-            "bmvc.A",
-            "book.A",
-            "cas-dc.A",
-            "cas-sc.A",
-            "colm.A",
-            "copernicus.A",
-            "corl.A",
-            "elsarticle-3p.A",
-            "elsarticle-preprint.A",
-            "exam.A",
-            "extarticle.A",
-            "iclr.A",
-            "imsart.A",
-            "interact.A",
-            "iopart.A",
-            "iopjournal.A",
-            "jss.A",
-            "memoir.A",
-            "neurips.A",
-            "plos.A",
-            "report.A",
-            "scrartcl.A",
-            "scrbook.A",
-            "scrreprt.A",
-            "sn-jnl.A",
-            "tmlr.A",
-            "tufte-handout.A",
-            "ut-thesis.A"
-          ]
+            "scrartcl.A"
+          ],
+          "denied": {
+            "branches": 193,
+            "pass": 87
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 1
+          }
         }
       },
       "thm.ntheorem": {
@@ -1118,38 +998,27 @@
         "status": "failing",
         "matrix": {
           "branches": 348,
-          "pass": 263,
+          "pass": 262,
           "failing": [
-            "achemso.A",
-            "agu.A",
-            "apa7.A",
-            "article.A",
             "ascelike.A",
-            "bmvc.A",
             "book.A",
             "cas-dc.A",
             "cas-sc.A",
-            "colm.A",
-            "corl.A",
-            "elsarticle-3p.A",
-            "elsarticle-preprint.A",
-            "exam.A",
-            "extarticle.A",
-            "iclr.A",
-            "iopart.A",
-            "iopjournal.A",
-            "jss.A",
             "memoir.A",
-            "neurips.A",
             "plos.A",
             "report.A",
-            "scrartcl.A",
             "scrbook.A",
             "scrreprt.A",
-            "tmlr.A",
-            "tufte-handout.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 62,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 3,
+            "pass": 0
+          }
         }
       },
       "thm.tcolorbox": {
@@ -1158,45 +1027,14 @@
         "status": "failing",
         "matrix": {
           "branches": 1790,
-          "pass": 1486,
+          "pass": 1483,
           "failing": [
-            "aastex.A",
-            "achemso.A",
-            "agu.A",
-            "amsart.A",
-            "apa7.A",
-            "article.A",
-            "ascelike.A",
-            "bmvc.A",
-            "book.A",
-            "cas-dc.A",
-            "cas-sc.A",
-            "colm.A",
-            "copernicus.A",
-            "corl.A",
-            "elsarticle-3p.A",
-            "elsarticle-preprint.A",
-            "exam.A",
-            "extarticle.A",
-            "iclr.A",
-            "imsart.A",
-            "interact.A",
-            "iopart.A",
-            "iopjournal.A",
-            "jss.A",
-            "mdpi.A",
-            "memoir.A",
-            "neurips.A",
-            "plos.A",
-            "report.A",
-            "scrartcl.A",
-            "scrbook.A",
-            "scrreprt.A",
-            "sn-jnl.A",
-            "tmlr.A",
-            "tufte-handout.A",
-            "ut-thesis.A"
-          ]
+            "sn-jnl.A"
+          ],
+          "denied": {
+            "branches": 1150,
+            "pass": 844
+          }
         }
       },
       "thm.tcolorbox[breakable=false]": {
@@ -1214,30 +1052,32 @@
         "status": "failing",
         "matrix": {
           "branches": 576,
-          "pass": 474,
+          "pass": 461,
           "failing": [
-            "aastex.A",
-            "achemso.A",
             "amsart.A",
             "article.A",
             "book.A",
-            "cas-dc.A",
             "cas-sc.A",
-            "exam.A",
             "extarticle.A",
-            "imsart.A",
-            "interact.A",
             "iopart.A",
             "iopjournal.A",
             "memoir.A",
+            "plos.A",
             "report.A",
             "scrartcl.A",
             "scrbook.A",
             "scrreprt.A",
             "sn-jnl.A",
-            "tufte-handout.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 78,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 15,
+            "pass": 0
+          }
         }
       }
     },
@@ -1284,5 +1124,1675 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "aastex",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[bold-labels]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "feature:footnote"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.scrextend[colon-bold]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "feature:footnote",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.kernel[section]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.thmtools[beauty]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "feature:footnote"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing general:containerBlock/listing:kernel",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "feature:footnote"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "repeat-header",
+      "parent": "containerBlock/mathElement thm.amsthm[ams-section]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "feature:footnote"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "repeat-header",
+      "parent": "containerBlock/mathElement thm.mdframed[framed]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "achemso",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "achemso",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumitem[cv-tight]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "acmart-acmsmall",
+      "preset": "repeat-header",
+      "parent": "containerBlock/mathElement thm.class-native[shared]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "acmart-manuscript",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.class-native[cas]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "acmart-sigconf",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.class-native[cas]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "agu",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "agu",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.amsthm[upright]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "agu",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "amsart",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "amsart",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.enumerate-pkg[numbers-dot]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "amsart",
+      "preset": "plain",
+      "parent": "containerBlock/mathElement thm.class-native[llncs]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "amsart",
+      "preset": "plain",
+      "parent": "containerBlock/mathElement thm.class-native[siam]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "amsart",
+      "preset": "plain",
+      "parent": "containerBlock/mathElement thm.kernel[section]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "amsart",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.kernel[triangles]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "amsart",
+      "preset": "repeat-header",
+      "parent": "containerBlock/mathElement thm.class-native[native]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "article",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "article",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.enumerate-pkg[numbers-dot]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "article",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumitem[bullets]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "ascelike",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "ascelike",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[inline]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "ascelike",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.amsthm[global]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "ascelike",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "ascelike",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumitem[bullets]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "bmvc",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "bmvc",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.kernel[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "book",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.enumitem[cv-tight]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "book",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.paralist[bold-labels]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "book",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumitem[bullets]",
+      "why": "fails-mostly",
+      "branches": 3,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[inline]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.class-native[cas]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.kernel[triangles]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "plain",
+      "parent": "containerBlock/mathElement thm.amsthm[colored-head]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "plain",
+      "parent": "containerBlock/mathElement thm.amsthm[global]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "repeat-header",
+      "parent": "containerBlock/mathElement thm.class-native[native]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.kernel[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.enumerate-pkg[roman]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.kernel[dashes]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "plain",
+      "parent": "containerBlock/mathElement thm.class-native[elsarticle]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "plain",
+      "parent": "containerBlock/mathElement thm.kernel[global]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "plain",
+      "parent": "containerBlock/mathElement thm.kernel[shared]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumitem[nextline-descriptions]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.kernel[dashes]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "repeat-header",
+      "parent": "containerBlock/mathElement thm.class-native[llncs]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "colm",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "colm",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumitem[cv-tight]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "copernicus",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing general:containerBlock/listing:enumitem",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "copernicus",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.scrextend[labeling]",
+      "why": "fails-mostly",
+      "branches": 4,
+      "pass": 2,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "corl",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "corl",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumitem[cv-tight]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "elegantpaper",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.enumitem[cv-tight]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "elegantpaper",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumitem[bullets]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "elsarticle-3p",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.amsthm[global]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "elsarticle-3p",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.class-native[cas]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "elsarticle-preprint",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "exam",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.exam-questions[bonus]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "exam",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.kernel[dashes]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "exam",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[paragraphs]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "exam",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "exam",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.enumerate-pkg[numbers-dot]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "exam",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.exam-questions[questions]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside"
+      ]
+    },
+    {
+      "classSetting": "extarticle",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "extarticle",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.enumerate-pkg[numbers-dot]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "iclr",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "iclr",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumitem[cv-tight]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "imsart",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[paragraphs]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "imsart",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "imsart",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.enumerate-pkg[numbers-dot]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "imsart",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "interact",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.enumerate-pkg[numbers-dot]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "interact",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.kernel[dashes]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "interact",
+      "preset": "plain",
+      "parent": "containerBlock/mathElement thm.kernel[shared]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "iopart",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.enumitem[cv-tight]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow",
+        "sentinel:outside"
+      ]
+    },
+    {
+      "classSetting": "iopart",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[inline]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "iopart",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.amsthm[upright]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "iopart",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.enumerate-pkg[numbers-dot]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "iopart",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.kernel[dashes]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "iopart",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.kernel[triangles]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "iopjournal",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "iopjournal",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.enumerate-pkg[numbers-dot]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "iopjournal",
+      "preset": "plain",
+      "parent": "containerBlock/mathElement thm.kernel[section]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "iopjournal",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.kernel[triangles]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "jss",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.kernel[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "lipics",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.kernel[dashes]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "lipics",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.enumerate-pkg[numbers-dot]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "lipics",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumitem[nextline-descriptions]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "llncs",
+      "preset": "plain",
+      "parent": "containerBlock/listing general:containerBlock/listing:enumitem",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "llncs",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside"
+      ]
+    },
+    {
+      "classSetting": "memoir",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "memoir",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.amsthm[global]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow",
+        "sentinel:outside"
+      ]
+    },
+    {
+      "classSetting": "neurips",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "neurips",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumitem[cv-tight]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "plos",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.kernel[dashes]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "plos",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "plos",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumerate-pkg[roman]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "plos",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.kernel[triangles]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "report",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.paralist[bold-labels]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "report",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumitem[bullets]",
+      "why": "fails-mostly",
+      "branches": 3,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "scrartcl",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.enumitem[cv-tight]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "scrartcl",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.amsthm[ams-section]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "scrartcl",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "scrartcl",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.enumerate-pkg[numbers-dot]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "scrbook",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.enumitem[cv-tight]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "scrbook",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.amsthm[ams-section]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "scrbook",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.paralist[bold-labels]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "scrbook",
+      "preset": "plain",
+      "parent": "containerBlock/mathElement thm.amsthm[global]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "scrbook",
+      "preset": "plain",
+      "parent": "containerBlock/mathElement thm.ntheorem[thesis]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "scrbook",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumitem[bullets]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "scrreprt",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.enumitem[cv-tight]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "scrreprt",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.amsthm[ams-section]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "scrreprt",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.paralist[bold-labels]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "scrreprt",
+      "preset": "plain",
+      "parent": "containerBlock/mathElement thm.ntheorem[thesis]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "scrreprt",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumitem[bullets]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "siamart",
+      "preset": "plain",
+      "parent": "containerBlock/mathElement thm.class-native[siam]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "siamart",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumerate-pkg[prefixed]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "siamart",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumitem[nextline-descriptions]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "siamart",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.kernel[triangles]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "sn-jnl",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.enumitem[bullets]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "sn-jnl",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "sn-jnl",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.amsthm[ams-section]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "sn-jnl",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "sn-jnl",
+      "preset": "repeat-header",
+      "parent": "containerBlock/listing list.enumitem[cv-tight]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "spie",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.class-native[cas]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "tmlr",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "tmlr",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[paragraphs]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "tmlr",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.amsthm[ams-section]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.kernel[dashes]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "booktabs",
+      "parent": "containerBlock/listing list.paralist[paragraphs]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.amsthm[ams-section]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "booktabs",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.enumerate-pkg[numbers-dot]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.enumitem[fitted-margin]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "repeat-header",
+      "parent": "containerBlock/mathElement thm.amsthm[global]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ut-thesis",
+      "preset": "plain",
+      "parent": "containerBlock/listing list.paralist[bold-labels]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ut-thesis",
+      "preset": "plain",
+      "parent": "containerBlock/mathElement thm.ntheorem[break]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    }
+  ]
 }

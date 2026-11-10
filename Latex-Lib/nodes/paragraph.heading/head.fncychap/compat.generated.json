@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:0619e0a34df3798f1319952452604a981de615fabb161ddf20bf8efd70224eea",
     "contexts": "sha256:14e595b5a917207b0202cd81103654b34671bd431b2e4e8a05c64647be89ab4f",
-    "matrix": "sha256:1da57f2fc916c452f154f0dab15ecca4d199a1be4d35bcf293048fe34228f25d"
+    "matrix": "sha256:ee61ea3b35a9b0aa839d1b047202c03d0fc6eb1fa65675c509d58806015910f5"
   },
   "parents": {
     "containerBlock/columns": {
@@ -81,24 +81,15 @@
       "cols.twocolumn-cmd": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 431,
           "pass": 419,
-          "failing": [
-            "book.A",
-            "book.B",
-            "jmlr-pmlr.A",
-            "memoir.A",
-            "memoir.B",
-            "report.A",
-            "report.B",
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "ut-thesis.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 12,
+            "pass": 0
+          }
         }
       },
       "cols.vwcol": {
@@ -127,7 +118,11 @@
             "scrreprt.A",
             "scrreprt.B",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 460,
+            "pass": 0
+          }
         }
       }
     },
@@ -146,7 +141,11 @@
             "report.A",
             "report.B",
             "ut-thesis.A"
-          ]
+          ],
+          "banned": {
+            "branches": 6,
+            "pass": 0
+          }
         }
       },
       "num.appendix": {
@@ -276,12 +275,17 @@
             "eccv.A",
             "llncs.A",
             "llncs.B"
-          ]
+          ],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

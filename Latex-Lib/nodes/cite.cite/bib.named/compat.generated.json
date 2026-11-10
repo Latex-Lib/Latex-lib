@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:6bc4281844f4eefef2bc4293e77fe82ff5ce445a0f1013a8ffbe8976979c9a18",
     "contexts": "sha256:f71c32d51d3016c64059e7d491725c08b522482004cfef01186a16c6d9e5d6cb",
-    "matrix": "sha256:260f4aa95fb3240e40e04d4cfa622dcca3df653d908a6f665ec786150336ff72"
+    "matrix": "sha256:9264f9a6caf176fcd6fa430d5e9d5d3384178248c1b3be364dd6c0ad97b8366d"
   },
   "parents": {
     "paragraph/paragraph": {
@@ -19,10 +19,14 @@
         "status": "failing",
         "matrix": {
           "branches": 40,
-          "pass": 17,
+          "pass": 38,
           "failing": [
             "ijcai.A"
-          ]
+          ],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       }
     },
@@ -38,7 +42,7 @@
         "status": "failing",
         "matrix": {
           "branches": 11,
-          "pass": 4,
+          "pass": 10,
           "failing": [
             "ijcai.A"
           ]
@@ -70,10 +74,18 @@
         "status": "failing",
         "matrix": {
           "branches": 20,
-          "pass": 7,
+          "pass": 15,
           "failing": [
             "ijcai.A"
-          ]
+          ],
+          "denied": {
+            "branches": 2,
+            "pass": 1
+          },
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "head.koma-fonts": {
@@ -94,25 +106,33 @@
       "head.sectsty": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 16,
-          "pass": 3,
-          "failing": [
-            "ijcai.A"
-          ]
+          "pass": 15,
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 1
+          }
         }
       },
       "head.titlesec": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 19,
-          "pass": 5,
-          "failing": [
-            "ijcai.A"
-          ]
+          "pass": 16,
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 1
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "head.tufte": {
@@ -125,13 +145,11 @@
       "list.item": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 7,
-          "pass": 5,
-          "failing": [
-            "ijcai.A"
-          ]
+          "pass": 7,
+          "failing": []
         }
       }
     },
@@ -439,13 +457,11 @@
       "front.titling": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 1,
-          "pass": 0,
-          "failing": [
-            "ijcai.A"
-          ]
+          "pass": 1,
+          "failing": []
         }
       },
       "front.tufte": {
@@ -469,5 +485,43 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "ijcai",
+      "preset": "citeauthor",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "ijcai",
+      "preset": "citeauthor",
+      "parent": "paragraph/paragraph para.kernel[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "ijcai",
+      "preset": "shortcite",
+      "parent": "paragraph/heading head.kernel[numbered]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "ijcai",
+      "preset": "shortcite",
+      "parent": "paragraph/heading head.titlesec[display-chapter]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    }
+  ]
 }

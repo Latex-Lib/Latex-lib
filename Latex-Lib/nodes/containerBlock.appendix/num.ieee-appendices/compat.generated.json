@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:28caed99a3e222c95b967f5c88669c34d5883c8a906af107397d5edbe6bd20c4",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:dd25549aaf186aa5a45b944fc01108ba0a5fc728aaf88284b89908b5aa900553"
+    "matrix": "sha256:a1881cf7007c29d1badd2aa7040b30993190c8b5a5c42fb0b10e2eabec46292b"
   },
   "parents": {
     "body": {
@@ -16,17 +16,25 @@
           "branches": 11184,
           "pass": 10687,
           "failing": [
-            "ieeeaccess.A",
             "ieeeconf-ras.A",
             "ieeetran-compsoc.A",
             "ieeetran-conference.A",
             "ieeetran-journal.A"
-          ]
+          ],
+          "denied": {
+            "branches": 443,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 9,
+            "pass": 0
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

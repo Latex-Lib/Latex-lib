@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:221d80e54185c0da626bc2938180d6cafcb0271f874d4c898b11f20ca0f371c2",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:29df0105b4c9401e71aa431eeb2285b9c71d4c6aab073c52f27c0199fb61efb4"
+    "matrix": "sha256:cce337bc570df906f716ee3741a9e5252e1ff07713a20f90d593e5a171e0800d"
   },
   "parents": {
     "body": {
@@ -13,17 +13,13 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 99286,
-          "pass": 93032,
+          "branches": 99260,
+          "pass": 93078,
           "failing": [
-            "aaai.A",
             "aamas.A",
-            "achemso.A",
-            "acl.A",
             "acmart-acmsmall.A",
             "acmart-acmtog.A",
             "acmart-manuscript.A",
-            "acmart-manuscript.B",
             "acmart-sigconf.A",
             "acmart-sigplan.A",
             "agu.A",
@@ -36,26 +32,21 @@
             "asmeconf.A",
             "asmejour.A",
             "beamer.A",
-            "bmvc.A",
             "cas-dc.A",
             "cas-sc.A",
-            "colm.A",
             "copernicus.A",
             "corl.A",
             "cvpr.A",
             "eccv.A",
             "elegantpaper.A",
-            "elsarticle-3p.A",
             "elsarticle-5p.A",
             "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
             "exam.A",
             "exam.B",
             "extarticle.A",
             "extarticle.B",
             "frontiers.A",
             "icassp.A",
-            "iclr.A",
             "icml.A",
             "ieeeconf-ras.A",
             "ieeetran-compsoc.A",
@@ -67,35 +58,60 @@
             "iopjournal.A",
             "jacow.A",
             "jmlr-pmlr.A",
-            "jss.A",
             "lipics.A",
             "llncs.A",
             "llncs.B",
             "memoir.A",
             "memoir.B",
             "mnras.A",
-            "neurips.A",
-            "plos.A",
             "quantumarticle.A",
-            "report.A",
             "report.B",
             "scrartcl.A",
             "scrartcl.B",
             "scrreprt.A",
             "scrreprt.B",
             "siamart.A",
-            "spie.A",
-            "tmlr.A",
             "tufte-handout.A",
             "usenix.A",
-            "ut-thesis.A",
-            "vldb.A"
-          ]
+            "ut-thesis.A"
+          ],
+          "denied": {
+            "branches": 3484,
+            "pass": 34
+          },
+          "banned": {
+            "branches": 783,
+            "pass": 13
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "asmejour",
+      "preset": "kernel",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "renamed",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    }
+  ]
 }

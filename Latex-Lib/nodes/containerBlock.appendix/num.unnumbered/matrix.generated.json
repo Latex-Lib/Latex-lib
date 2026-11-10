@@ -1,9 +1,9 @@
 {
   "way": "num.unnumbered",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -14,7 +14,15 @@
       "pair": "book.A",
       "branches": 1500,
       "pass": 1433,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 49,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -22,7 +30,15 @@
       "pair": "book.B",
       "branches": 1480,
       "pass": 1416,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 48,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -30,7 +46,15 @@
       "pair": "eccv.A",
       "branches": 416,
       "pass": 413,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -38,7 +62,15 @@
       "pair": "llncs.A",
       "branches": 733,
       "pass": 724,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 8,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -46,7 +78,15 @@
       "pair": "llncs.B",
       "branches": 722,
       "pass": 709,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 8,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -54,7 +94,15 @@
       "pair": "memoir.A",
       "branches": 1407,
       "pass": 1362,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 45,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -62,7 +110,15 @@
       "pair": "memoir.B",
       "branches": 1387,
       "pass": 1339,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 44,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -70,7 +126,15 @@
       "pair": "report.A",
       "branches": 1483,
       "pass": 1426,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 49,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -78,7 +142,15 @@
       "pair": "report.B",
       "branches": 1463,
       "pass": 1409,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 48,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -86,7 +158,15 @@
       "pair": "scrbook.A",
       "branches": 1483,
       "pass": 1433,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 49,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -94,7 +174,15 @@
       "pair": "scrbook.B",
       "branches": 1463,
       "pass": 1400,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 48,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -102,7 +190,15 @@
       "pair": "scrreprt.A",
       "branches": 1483,
       "pass": 1433,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 49,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -110,7 +206,15 @@
       "pair": "scrreprt.B",
       "branches": 1463,
       "pass": 1400,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 48,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -118,7 +222,15 @@
       "pair": "ut-thesis.A",
       "branches": 1500,
       "pass": 1449,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 49,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 1
+      }
     }
   ]
 }

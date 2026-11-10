@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:e714881fb96ac4e83e87c05cef131eefe6fd1473a45e12444404153984d4372d",
     "contexts": "sha256:14e595b5a917207b0202cd81103654b34671bd431b2e4e8a05c64647be89ab4f",
-    "matrix": "sha256:3f65e658534318bd255756e012c48b9c5860e6ab27dacbc52a182053313840c6"
+    "matrix": "sha256:56af2199cfb6523432b6ef4d49423bcd43337ecf2d35ff6f505019727e56ef30"
   },
   "parents": {
     "containerBlock/columns": {
@@ -38,7 +38,11 @@
           "failing": [
             "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "banned": {
+            "branches": 4,
+            "pass": 0
+          }
         }
       },
       "cols.paracol": {
@@ -50,7 +54,11 @@
           "pass": 32,
           "failing": [
             "memoir.A"
-          ]
+          ],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "cols.revtex-grid": {
@@ -87,7 +95,11 @@
           "failing": [
             "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "denied": {
+            "branches": 68,
+            "pass": 1
+          }
         }
       }
     },
@@ -104,7 +116,11 @@
         "matrix": {
           "branches": 68,
           "pass": 68,
-          "failing": []
+          "failing": [],
+          "banned": {
+            "branches": 2,
+            "pass": 2
+          }
         }
       },
       "num.appendix-onecolumn": {
@@ -142,7 +158,11 @@
           "failing": [
             "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "banned": {
+            "branches": 2,
+            "pass": 2
+          }
         }
       }
     },
@@ -207,7 +227,11 @@
           "failing": [
             "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "ack.llncs-credits": {
@@ -219,5 +243,6 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

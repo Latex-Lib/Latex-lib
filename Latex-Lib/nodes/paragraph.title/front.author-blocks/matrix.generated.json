@@ -1,9 +1,9 @@
 {
   "way": "front.author-blocks",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -22,7 +22,11 @@
       "pair": "acl.A",
       "branches": 44,
       "pass": 41,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -38,7 +42,11 @@
       "pair": "apa7.A",
       "branches": 31,
       "pass": 29,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -61,8 +69,8 @@
       "parent": null,
       "pair": "ascelike.A",
       "branches": 35,
-      "pass": 0,
-      "status": "failing"
+      "pass": 35,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -70,7 +78,11 @@
       "pair": "asmeconf.A",
       "branches": 33,
       "pass": 31,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -78,7 +90,11 @@
       "pair": "asmejour.A",
       "branches": 33,
       "pass": 31,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -110,7 +126,11 @@
       "pair": "cas-dc.A",
       "branches": 43,
       "pass": 41,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -126,7 +146,11 @@
       "pair": "colm.A",
       "branches": 47,
       "pass": 44,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -142,7 +166,11 @@
       "pair": "corl.A",
       "branches": 29,
       "pass": 27,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -150,7 +178,11 @@
       "pair": "cvpr.A",
       "branches": 53,
       "pass": 50,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -198,7 +230,11 @@
       "pair": "icassp.A",
       "branches": 47,
       "pass": 41,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 6,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -206,7 +242,11 @@
       "pair": "iclr.A",
       "branches": 47,
       "pass": 44,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -230,7 +270,11 @@
       "pair": "imsart.A",
       "branches": 47,
       "pass": 45,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -246,7 +290,11 @@
       "pair": "jacow.A",
       "branches": 59,
       "pass": 56,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -270,7 +318,11 @@
       "pair": "memoir.A",
       "branches": 47,
       "pass": 44,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -278,7 +330,11 @@
       "pair": "memoir.B",
       "branches": 47,
       "pass": 44,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -286,7 +342,11 @@
       "pair": "neurips.A",
       "branches": 47,
       "pass": 44,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -334,7 +394,11 @@
       "pair": "tmlr.A",
       "branches": 31,
       "pass": 29,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -342,7 +406,11 @@
       "pair": "tufte-handout.A",
       "branches": 41,
       "pass": 39,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -350,7 +418,11 @@
       "pair": "usenix.A",
       "branches": 35,
       "pass": 33,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -359,6 +431,20 @@
       "branches": 45,
       "pass": 45,
       "status": "verified-ok"
+    },
+    {
+      "kind": "ban",
+      "way": "front.author-blocks",
+      "classSetting": "memoir",
+      "preset": "usenix",
+      "parent": null,
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 2,
+      "checks": [
+        "error"
+      ]
     }
   ]
 }

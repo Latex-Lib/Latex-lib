@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:f12dd541aff77ac2ac84bab11202ccdbcdd4b1df4b61fb77a655c693a261af36",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:85a4fb00cdcf9de84857dc6f03c93b72dbcba75626bb4abee831e758451a9e78"
+    "matrix": "sha256:a92de0ab433a57ee4817b576e3a0d270b651c60b95ab166aeb45f705634ca038"
   },
   "parents": {
     "body": {
@@ -14,18 +14,27 @@
         "status": "failing",
         "matrix": {
           "branches": 4843,
-          "pass": 3124,
+          "pass": 3677,
           "failing": [
             "aastex.A",
             "aastex.B",
             "revtex4-2-aip.A",
             "revtex4-2-aps.A"
-          ]
+          ],
+          "denied": {
+            "branches": 299,
+            "pass": 128
+          },
+          "banned": {
+            "branches": 128,
+            "pass": 6
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

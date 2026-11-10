@@ -1,9 +1,9 @@
 {
   "way": "abs.class-native",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -14,7 +14,15 @@
       "pair": "aa.A",
       "branches": 665,
       "pass": 544,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 148,
+        "pass": 125
+      },
+      "banned": {
+        "branches": 40,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -133,8 +141,12 @@
       "parent": null,
       "pair": "apa7.A",
       "branches": 1301,
-      "pass": 1228,
-      "status": "failing"
+      "pass": 1227,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 285,
+        "pass": 211
+      }
     },
     {
       "kind": "verified",
@@ -174,7 +186,11 @@
       "pair": "asmejour.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -470,7 +486,11 @@
       "pair": "mdpi.A",
       "branches": 736,
       "pass": 700,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 174,
+        "pass": 138
+      }
     },
     {
       "kind": "verified",
@@ -508,9 +528,17 @@
       "kind": "verified",
       "parent": null,
       "pair": "oup-authoring-template.A",
-      "branches": 934,
-      "pass": 792,
-      "status": "failing"
+      "branches": 914,
+      "pass": 785,
+      "status": "failing",
+      "denied": {
+        "branches": 191,
+        "pass": 118
+      },
+      "banned": {
+        "branches": 16,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -573,8 +601,16 @@
       "parent": null,
       "pair": "sn-jnl.A",
       "branches": 1229,
-      "pass": 858,
-      "status": "failing"
+      "pass": 859,
+      "status": "failing",
+      "denied": {
+        "branches": 254,
+        "pass": 182
+      },
+      "banned": {
+        "branches": 20,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -615,6 +651,34 @@
       "branches": 1,
       "pass": 1,
       "status": "verified-ok"
+    },
+    {
+      "kind": "ban",
+      "way": "abs.class-native",
+      "classSetting": "asmejour",
+      "preset": "environment",
+      "parent": null,
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "abs.class-native",
+      "classSetting": "oup-authoring-template",
+      "preset": "environment",
+      "parent": null,
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
     }
   ]
 }

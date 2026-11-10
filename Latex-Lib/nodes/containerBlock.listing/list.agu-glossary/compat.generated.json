@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:f90f0b2a6c2f6950630234f93c80116845bac7e3551efdbc0119b0083437e32b",
     "contexts": "sha256:8db64482326e84b00a291c338c13df9b25b81bdb6205276160e24ebb00178228",
-    "matrix": "sha256:50e5b348dcb02440af58abcdf94a0836f5c80c99f91b95d09d92f189034e1d93"
+    "matrix": "sha256:4d28ae0917fdcc1768cf025c38ffdaa157254536ae5d5473977be50222267f6a"
   },
   "parents": {
     "body": {
@@ -17,7 +17,15 @@
           "pass": 1602,
           "failing": [
             "agu.A"
-          ]
+          ],
+          "denied": {
+            "branches": 90,
+            "pass": 3
+          },
+          "banned": {
+            "branches": 13,
+            "pass": 5
+          }
         }
       }
     },
@@ -161,13 +169,15 @@
       "cols.multicol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 144,
           "pass": 122,
-          "failing": [
-            "agu.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 28,
+            "pass": 6
+          }
         }
       },
       "cols.paracol": {
@@ -179,7 +189,11 @@
           "pass": 148,
           "failing": [
             "agu.A"
-          ]
+          ],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "cols.revtex-grid": {
@@ -201,7 +215,11 @@
           "pass": 144,
           "failing": [
             "agu.A"
-          ]
+          ],
+          "denied": {
+            "branches": 4,
+            "pass": 3
+          }
         }
       },
       "cols.vwcol": {
@@ -217,7 +235,11 @@
           "pass": 12,
           "failing": [
             "agu.A"
-          ]
+          ],
+          "denied": {
+            "branches": 144,
+            "pass": 12
+          }
         }
       }
     },
@@ -231,7 +253,11 @@
           "pass": 151,
           "failing": [
             "agu.A"
-          ]
+          ],
+          "denied": {
+            "branches": 16,
+            "pass": 0
+          }
         }
       }
     },
@@ -245,7 +271,11 @@
           "pass": 77,
           "failing": [
             "agu.A"
-          ]
+          ],
+          "denied": {
+            "branches": 9,
+            "pass": 0
+          }
         }
       },
       "box.class-native": {
@@ -277,19 +307,25 @@
           "pass": 85,
           "failing": [
             "agu.A"
-          ]
+          ],
+          "denied": {
+            "branches": 6,
+            "pass": 3
+          }
         }
       },
       "box.mdframed": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 278,
           "pass": 255,
-          "failing": [
-            "agu.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 23,
+            "pass": 0
+          }
         }
       },
       "box.mdframed[breakable=false]": {
@@ -300,13 +336,15 @@
       "box.tcolorbox": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 187,
           "pass": 174,
-          "failing": [
-            "agu.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 13,
+            "pass": 0
+          }
         }
       },
       "box.tcolorbox[breakable=false]": {
@@ -343,7 +381,11 @@
           "pass": 167,
           "failing": [
             "agu.A"
-          ]
+          ],
+          "denied": {
+            "branches": 12,
+            "pass": 6
+          }
         }
       },
       "note.marginpar": {
@@ -355,7 +397,11 @@
           "pass": 71,
           "failing": [
             "agu.A"
-          ]
+          ],
+          "denied": {
+            "branches": 25,
+            "pass": 12
+          }
         }
       },
       "note.notecolumn": {
@@ -364,10 +410,14 @@
         "status": "failing",
         "matrix": {
           "branches": 92,
-          "pass": 86,
+          "pass": 88,
           "failing": [
             "agu.A"
-          ]
+          ],
+          "denied": {
+            "branches": 14,
+            "pass": 14
+          }
         }
       },
       "note.sidenotes": {
@@ -379,7 +429,11 @@
           "pass": 88,
           "failing": [
             "agu.A"
-          ]
+          ],
+          "denied": {
+            "branches": 22,
+            "pass": 13
+          }
         }
       },
       "note.todonotes": {
@@ -391,7 +445,11 @@
           "pass": 87,
           "failing": [
             "agu.A"
-          ]
+          ],
+          "denied": {
+            "branches": 26,
+            "pass": 21
+          }
         }
       }
     },
@@ -494,7 +552,11 @@
           "pass": 165,
           "failing": [
             "agu.A"
-          ]
+          ],
+          "denied": {
+            "branches": 3,
+            "pass": 0
+          }
         }
       },
       "thm.mdframed": {
@@ -503,10 +565,14 @@
         "status": "failing",
         "matrix": {
           "branches": 194,
-          "pass": 168,
+          "pass": 169,
           "failing": [
             "agu.A"
-          ]
+          ],
+          "denied": {
+            "branches": 25,
+            "pass": 1
+          }
         }
       },
       "thm.ntheorem": {
@@ -522,13 +588,15 @@
       "thm.tcolorbox": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 400,
           "pass": 353,
-          "failing": [
-            "agu.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 49,
+            "pass": 2
+          }
         }
       },
       "thm.tcolorbox[breakable=false]": {
@@ -539,13 +607,15 @@
       "thm.thmtools": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 42,
           "pass": 39,
-          "failing": [
-            "agu.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 3,
+            "pass": 0
+          }
         }
       }
     },
@@ -576,5 +646,6 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

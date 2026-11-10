@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:482d4c5a415ad9205f8a421860c1895cffdbab5093b3e8a8bf86e82bd18f5af1",
     "contexts": "sha256:9a34444e43ac79586ac5a93aa416a3e6b45fdee3bf9cad3cd215ed2d48d1e81b",
-    "matrix": "sha256:df77f4890cf85b934ce2279aa78f1d6ec4c4103836db32500f06749489378183"
+    "matrix": "sha256:387c4ff8a63e3ca88fc4acf16477f3dc1a5138fa3899ed9680d200b323fdc326"
   },
   "parents": {
     "body": {
@@ -229,10 +229,79 @@
         ],
         "matrix": {
           "branches": 84,
-          "pass": 83,
+          "pass": 18,
           "failing": [
-            "copernicus.A"
-          ]
+            "aa.A",
+            "aaai.A",
+            "achemso.A",
+            "acl.A",
+            "agu.A",
+            "aistats.A",
+            "amsart.A",
+            "amsart.B",
+            "apa7.A",
+            "article.A",
+            "article.B",
+            "asmejour.A",
+            "book.A",
+            "book.B",
+            "cas-dc.A",
+            "colm.A",
+            "copernicus.A",
+            "corl.A",
+            "ecai.A",
+            "eccv.A",
+            "elsarticle-3p.A",
+            "elsarticle-preprint.A",
+            "elsarticle-preprint.B",
+            "exam.A",
+            "exam.B",
+            "extarticle.A",
+            "extarticle.B",
+            "frontiers.A",
+            "icassp.A",
+            "iclr.A",
+            "icml.A",
+            "ieeeconf-ras.A",
+            "ieeetran-compsoc.A",
+            "ieeetran-conference.A",
+            "ieeetran-journal.A",
+            "ijcai.A",
+            "imsart.A",
+            "interact.A",
+            "iopart.A",
+            "iopjournal.A",
+            "jacow.A",
+            "jmlr-pmlr.A",
+            "jss.A",
+            "lipics.A",
+            "llncs.A",
+            "llncs.B",
+            "memoir.A",
+            "memoir.B",
+            "mnras.A",
+            "neurips.A",
+            "oup-authoring-template.A",
+            "plos.A",
+            "report.A",
+            "report.B",
+            "scrartcl.A",
+            "scrartcl.B",
+            "scrbook.A",
+            "scrbook.B",
+            "scrreprt.A",
+            "scrreprt.B",
+            "siamart.A",
+            "sn-jnl.A",
+            "spie.A",
+            "tmlr.A",
+            "usenix.A",
+            "ut-thesis.A"
+          ],
+          "denied": {
+            "branches": 84,
+            "pass": 18
+          }
         }
       },
       "cols.paracol": {
@@ -262,13 +331,15 @@
       "cols.twocolumn-cmd": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 85,
           "pass": 84,
-          "failing": [
-            "copernicus.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "cols.vwcol": {
@@ -373,7 +444,11 @@
             "usenix.A",
             "ut-thesis.A",
             "vldb.A"
-          ]
+          ],
+          "denied": {
+            "branches": 90,
+            "pass": 0
+          }
         }
       }
     },
@@ -381,13 +456,15 @@
       "list.agu-glossary": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 47,
           "pass": 30,
-          "failing": [
-            "agu.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 20,
+            "pass": 3
+          }
         }
       },
       "list.class-native": {
@@ -396,15 +473,16 @@
         "status": "failing",
         "matrix": {
           "branches": 192,
-          "pass": 136,
+          "pass": 135,
           "failing": [
-            "apa7.A",
             "cas-dc.A",
             "cas-sc.A",
-            "imsart.A",
-            "jacow.A",
-            "jmlr-pmlr.A"
-          ]
+            "imsart.A"
+          ],
+          "denied": {
+            "branches": 71,
+            "pass": 17
+          }
         }
       },
       "list.cvlist": {
@@ -418,86 +496,24 @@
         "status": "failing",
         "matrix": {
           "branches": 2212,
-          "pass": 1612,
+          "pass": 1586,
           "failing": [
-            "aa.A",
-            "aaai.A",
-            "aastex.A",
-            "aastex.B",
-            "achemso.A",
-            "acl.A",
-            "agu.A",
-            "aistats.A",
             "amsart.A",
             "amsart.B",
-            "apa7.A",
-            "article.A",
-            "article.B",
-            "asmeconf.A",
-            "asmejour.A",
-            "bmvc.A",
-            "book.A",
-            "book.B",
-            "cas-dc.A",
             "cas-sc.A",
-            "colm.A",
-            "copernicus.A",
-            "corl.A",
-            "ecai.A",
-            "eccv.A",
-            "elsarticle-3p.A",
-            "elsarticle-5p.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "emulateapj.A",
-            "exam.A",
-            "exam.B",
-            "extarticle.A",
-            "extarticle.B",
-            "frontiers.A",
-            "icassp.A",
-            "iclr.A",
-            "icml.A",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "ijcai.A",
-            "imsart.A",
-            "interact.A",
-            "iopart.A",
-            "iopjournal.A",
-            "jmlr-pmlr.A",
-            "jss.A",
-            "lipics.A",
-            "llncs.A",
-            "llncs.B",
-            "memoir.A",
-            "memoir.B",
-            "mnras.A",
-            "neurips.A",
-            "oup-authoring-template.A",
-            "plos.A",
-            "quantumarticle.A",
-            "report.A",
-            "report.B",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A",
             "scrartcl.A",
             "scrartcl.B",
-            "scrbook.A",
             "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "siamart.A",
-            "sn-jnl.A",
-            "spie.A",
-            "tmlr.A",
-            "tufte-handout.A",
-            "usenix.A",
-            "ut-thesis.A"
-          ]
+            "scrreprt.B"
+          ],
+          "denied": {
+            "branches": 781,
+            "pass": 164
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "list.enumitem": {
@@ -505,78 +521,34 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 2659,
-          "pass": 1742,
+          "branches": 2661,
+          "pass": 1737,
           "failing": [
-            "aa.A",
-            "aaai.A",
-            "aastex.A",
-            "aastex.B",
-            "achemso.A",
-            "acl.A",
-            "agu.A",
             "aistats.A",
             "amsart.A",
             "amsart.B",
-            "apa7.A",
             "article.A",
             "article.B",
-            "ascelike.A",
-            "asmeconf.A",
-            "asmejour.A",
-            "bmvc.A",
-            "book.A",
             "book.B",
             "cas-dc.A",
-            "cas-sc.A",
-            "colm.A",
-            "copernicus.A",
-            "corl.A",
-            "cvpr.A",
-            "ecai.A",
-            "eccv.A",
-            "elegantpaper.A",
-            "elsarticle-3p.A",
             "elsarticle-5p.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "emulateapj.A",
             "exam.A",
             "exam.B",
             "extarticle.A",
             "extarticle.B",
-            "frontiers.A",
             "icassp.A",
-            "iclr.A",
-            "icml.A",
-            "ieeeaccess.A",
             "ieeeconf-ras.A",
             "ieeetran-compsoc.A",
             "ieeetran-conference.A",
             "ieeetran-journal.A",
             "ijcai.A",
             "imsart.A",
-            "interact.A",
             "iopart.A",
-            "iopjournal.A",
-            "jacow.A",
-            "jmlr-pmlr.A",
-            "jss.A",
             "lipics.A",
-            "llncs.A",
-            "llncs.B",
-            "mdpi.A",
-            "memoir.A",
             "memoir.B",
             "mnras.A",
-            "neurips.A",
-            "oup-authoring-template.A",
-            "plos.A",
-            "quantumarticle.A",
             "report.A",
             "report.B",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A",
             "scrartcl.A",
             "scrartcl.B",
             "scrbook.A",
@@ -584,13 +556,17 @@
             "scrreprt.A",
             "scrreprt.B",
             "siamart.A",
-            "sn-jnl.A",
-            "spie.A",
-            "tmlr.A",
             "tufte-handout.A",
-            "usenix.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 1041,
+            "pass": 164
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "list.exam-questions": {
@@ -599,11 +575,15 @@
         "status": "failing",
         "matrix": {
           "branches": 83,
-          "pass": 62,
+          "pass": 64,
           "failing": [
             "exam.A",
             "exam.B"
-          ]
+          ],
+          "denied": {
+            "branches": 20,
+            "pass": 4
+          }
         }
       },
       "list.kernel": {
@@ -612,57 +592,21 @@
         "status": "failing",
         "matrix": {
           "branches": 2467,
-          "pass": 2076,
+          "pass": 2158,
           "failing": [
-            "aa.A",
-            "aaai.A",
-            "aamas.A",
-            "aastex.A",
-            "aastex.B",
-            "achemso.A",
-            "acl.A",
-            "acmart-acmsmall.A",
-            "acmart-acmtog.A",
-            "acmart-manuscript.A",
-            "acmart-manuscript.B",
-            "acmart-sigconf.A",
-            "acmart-sigplan.A",
-            "agu.A",
-            "aistats.A",
             "amsart.A",
             "amsart.B",
-            "apa7.A",
             "article.A",
             "article.B",
-            "ascelike.A",
-            "asmeconf.A",
-            "asmejour.A",
-            "bmvc.A",
-            "book.A",
-            "book.B",
             "cas-dc.A",
             "cas-sc.A",
-            "colm.A",
-            "copernicus.A",
-            "corl.A",
-            "cvpr.A",
-            "ecai.A",
-            "eccv.A",
-            "elegantpaper.A",
-            "elsarticle-3p.A",
             "elsarticle-5p.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "emulateapj.A",
             "exam.A",
             "exam.B",
             "extarticle.A",
             "extarticle.B",
             "frontiers.A",
             "icassp.A",
-            "iclr.A",
-            "icml.A",
-            "ieeeaccess.A",
             "ieeeconf-ras.A",
             "ieeetran-compsoc.A",
             "ieeetran-conference.A",
@@ -672,52 +616,41 @@
             "interact.A",
             "iopart.A",
             "iopjournal.A",
-            "jacow.A",
-            "jmlr-pmlr.A",
-            "jss.A",
             "lipics.A",
             "llncs.A",
             "llncs.B",
-            "mdpi.A",
-            "memoir.A",
-            "memoir.B",
             "mnras.A",
-            "neurips.A",
-            "oup-authoring-template.A",
-            "plos.A",
             "quantumarticle.A",
-            "report.A",
-            "report.B",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A",
             "scrartcl.A",
             "scrartcl.B",
             "scrbook.A",
             "scrbook.B",
             "scrreprt.A",
             "scrreprt.B",
-            "siamart.A",
-            "sn-jnl.A",
-            "spie.A",
-            "tmlr.A",
-            "tufte-handout.A",
-            "usenix.A",
-            "ut-thesis.A",
-            "vldb.A"
-          ]
+            "siamart.A"
+          ],
+          "denied": {
+            "branches": 564,
+            "pass": 295
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "list.nomenclature": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 47,
           "pass": 36,
-          "failing": [
-            "asmeconf.A",
-            "asmejour.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 13,
+            "pass": 2
+          }
         }
       },
       "list.paralist": {
@@ -726,49 +659,20 @@
         "status": "failing",
         "matrix": {
           "branches": 2309,
-          "pass": 1778,
+          "pass": 1764,
           "failing": [
-            "aa.A",
-            "aaai.A",
-            "aastex.A",
-            "aastex.B",
-            "achemso.A",
-            "acl.A",
-            "agu.A",
             "aistats.A",
             "amsart.A",
             "amsart.B",
-            "apa7.A",
             "article.A",
             "article.B",
-            "ascelike.A",
-            "asmeconf.A",
-            "asmejour.A",
-            "bmvc.A",
             "book.A",
-            "book.B",
             "cas-dc.A",
-            "cas-sc.A",
-            "colm.A",
-            "copernicus.A",
-            "corl.A",
-            "ecai.A",
-            "eccv.A",
-            "elsarticle-3p.A",
-            "elsarticle-5p.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "emulateapj.A",
             "exam.A",
             "exam.B",
             "extarticle.A",
             "extarticle.B",
-            "frontiers.A",
             "icassp.A",
-            "iclr.A",
-            "icml.A",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
             "ieeetran-compsoc.A",
             "ieeetran-conference.A",
             "ieeetran-journal.A",
@@ -777,36 +681,31 @@
             "interact.A",
             "iopart.A",
             "iopjournal.A",
-            "jmlr-pmlr.A",
-            "jss.A",
             "lipics.A",
             "llncs.A",
             "llncs.B",
             "memoir.A",
             "memoir.B",
-            "mnras.A",
-            "neurips.A",
-            "oup-authoring-template.A",
-            "plos.A",
             "quantumarticle.A",
             "report.A",
             "report.B",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A",
             "scrartcl.A",
             "scrartcl.B",
             "scrbook.A",
             "scrbook.B",
             "scrreprt.A",
             "scrreprt.B",
-            "siamart.A",
-            "sn-jnl.A",
-            "spie.A",
-            "tmlr.A",
             "tufte-handout.A",
-            "usenix.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 654,
+            "pass": 150
+          },
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "list.scrextend": {
@@ -814,85 +713,32 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 2038,
-          "pass": 1708,
+          "branches": 2035,
+          "pass": 1755,
           "failing": [
-            "aa.A",
-            "aaai.A",
-            "aastex.A",
-            "aastex.B",
-            "acl.A",
-            "agu.A",
-            "aistats.A",
             "amsart.A",
             "amsart.B",
-            "apa7.A",
-            "article.A",
             "article.B",
-            "ascelike.A",
-            "asmejour.A",
-            "book.A",
             "book.B",
-            "cas-dc.A",
-            "cas-sc.A",
-            "colm.A",
-            "copernicus.A",
-            "corl.A",
-            "cvpr.A",
-            "ecai.A",
             "eccv.A",
-            "elegantpaper.A",
-            "elsarticle-3p.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "emulateapj.A",
             "exam.A",
-            "exam.B",
-            "extarticle.A",
             "extarticle.B",
-            "frontiers.A",
-            "icassp.A",
-            "iclr.A",
-            "icml.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "ijcai.A",
-            "imsart.A",
-            "iopart.A",
-            "iopjournal.A",
-            "jacow.A",
-            "jmlr-pmlr.A",
-            "jss.A",
-            "lipics.A",
-            "llncs.A",
-            "llncs.B",
-            "mdpi.A",
-            "memoir.A",
-            "memoir.B",
-            "mnras.A",
-            "neurips.A",
-            "oup-authoring-template.A",
-            "plos.A",
-            "quantumarticle.A",
-            "report.A",
             "report.B",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A",
             "scrartcl.A",
             "scrartcl.B",
             "scrbook.A",
             "scrbook.B",
             "scrreprt.A",
-            "scrreprt.B",
-            "siamart.A",
-            "sn-jnl.A",
-            "tmlr.A",
-            "tufte-handout.A",
-            "usenix.A",
-            "ut-thesis.A"
-          ]
+            "scrreprt.B"
+          ],
+          "denied": {
+            "branches": 421,
+            "pass": 163
+          },
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       }
     },
@@ -903,119 +749,39 @@
         "status": "failing",
         "matrix": {
           "branches": 1164,
-          "pass": 1036,
+          "pass": 1032,
           "failing": [
-            "aastex.A",
-            "aastex.B",
-            "achemso.A",
-            "acl.A",
-            "aistats.A",
-            "amsart.A",
             "amsart.B",
-            "apa7.A",
-            "article.A",
-            "article.B",
-            "ascelike.A",
-            "asmeconf.A",
-            "asmejour.A",
-            "bmvc.A",
-            "book.A",
-            "book.B",
-            "cas-dc.A",
-            "cas-sc.A",
-            "colm.A",
-            "copernicus.A",
-            "corl.A",
-            "cvpr.A",
-            "ecai.A",
-            "elsarticle-3p.A",
-            "elsarticle-5p.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "emulateapj.A",
             "exam.A",
-            "exam.B",
-            "extarticle.A",
-            "extarticle.B",
-            "frontiers.A",
-            "icassp.A",
-            "iclr.A",
-            "icml.A",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "ijcai.A",
-            "imsart.A",
-            "iopart.A",
-            "iopjournal.A",
-            "jacow.A",
-            "jss.A",
-            "memoir.A",
-            "memoir.B",
-            "neurips.A",
-            "oup-authoring-template.A",
-            "plos.A",
-            "quantumarticle.A",
-            "report.A",
-            "report.B",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A",
             "scrartcl.A",
             "scrartcl.B",
             "scrbook.A",
             "scrbook.B",
             "scrreprt.A",
-            "scrreprt.B",
-            "sn-jnl.A",
-            "tmlr.A",
-            "tufte-handout.A",
-            "usenix.A",
-            "ut-thesis.A"
-          ]
+            "scrreprt.B"
+          ],
+          "denied": {
+            "branches": 148,
+            "pass": 36
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "thm.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 635,
-          "pass": 572,
-          "failing": [
-            "aa.A",
-            "aamas.A",
-            "acmart-acmsmall.A",
-            "acmart-acmtog.A",
-            "acmart-manuscript.A",
-            "acmart-manuscript.B",
-            "acmart-sigconf.A",
-            "acmart-sigplan.A",
-            "amsart.A",
-            "amsart.B",
-            "cas-dc.A",
-            "cas-sc.A",
-            "eccv.A",
-            "elegantpaper.A",
-            "elsarticle-3p.A",
-            "elsarticle-5p.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "jmlr-pmlr.A",
-            "lipics.A",
-            "llncs.A",
-            "llncs.B",
-            "mdpi.A",
-            "siamart.A",
-            "spie.A",
-            "vldb.A"
-          ]
+          "pass": 568,
+          "failing": [],
+          "denied": {
+            "branches": 110,
+            "pass": 43
+          }
         }
       },
       "thm.kernel": {
@@ -1024,79 +790,22 @@
         "status": "failing",
         "matrix": {
           "branches": 1245,
-          "pass": 1114,
+          "pass": 1118,
           "failing": [
-            "aaai.A",
-            "aastex.A",
-            "aastex.B",
-            "achemso.A",
-            "acl.A",
-            "aistats.A",
             "amsart.A",
             "amsart.B",
-            "apa7.A",
-            "article.A",
-            "article.B",
-            "ascelike.A",
-            "asmeconf.A",
-            "asmejour.A",
-            "bmvc.A",
-            "book.A",
-            "book.B",
-            "cas-dc.A",
-            "cas-sc.A",
-            "colm.A",
-            "copernicus.A",
-            "corl.A",
-            "cvpr.A",
-            "ecai.A",
-            "elsarticle-3p.A",
-            "elsarticle-5p.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "emulateapj.A",
-            "exam.A",
-            "exam.B",
-            "extarticle.A",
-            "extarticle.B",
-            "frontiers.A",
-            "icassp.A",
-            "iclr.A",
-            "icml.A",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "ijcai.A",
-            "imsart.A",
-            "iopart.A",
-            "iopjournal.A",
-            "jacow.A",
-            "jss.A",
-            "memoir.A",
-            "memoir.B",
-            "mnras.A",
-            "neurips.A",
-            "oup-authoring-template.A",
-            "plos.A",
-            "quantumarticle.A",
-            "report.A",
-            "report.B",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A",
-            "scrartcl.A",
             "scrartcl.B",
-            "scrbook.A",
             "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "sn-jnl.A",
-            "tmlr.A",
-            "tufte-handout.A",
-            "usenix.A",
-            "ut-thesis.A"
-          ]
+            "scrreprt.B"
+          ],
+          "denied": {
+            "branches": 256,
+            "pass": 138
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "thm.mdframed": {
@@ -1109,7 +818,7 @@
         ],
         "matrix": {
           "branches": 1737,
-          "pass": 763,
+          "pass": 764,
           "failing": [
             "aaai.A",
             "aastex.A",
@@ -1183,7 +892,11 @@
             "tufte-handout.A",
             "usenix.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 1010,
+            "pass": 39
+          }
         }
       },
       "thm.ntheorem": {
@@ -1192,71 +905,19 @@
         "status": "failing",
         "matrix": {
           "branches": 690,
-          "pass": 614,
+          "pass": 582,
           "failing": [
-            "aaai.A",
-            "aastex.A",
-            "aastex.B",
-            "achemso.A",
-            "acl.A",
-            "aistats.A",
-            "apa7.A",
-            "article.A",
-            "article.B",
-            "ascelike.A",
-            "asmeconf.A",
-            "asmejour.A",
-            "bmvc.A",
-            "book.A",
             "book.B",
-            "cas-dc.A",
-            "cas-sc.A",
-            "colm.A",
-            "corl.A",
-            "cvpr.A",
-            "ecai.A",
-            "elsarticle-3p.A",
-            "elsarticle-5p.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "emulateapj.A",
-            "exam.A",
-            "exam.B",
-            "extarticle.A",
-            "extarticle.B",
-            "icassp.A",
-            "iclr.A",
-            "icml.A",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "ijcai.A",
-            "iopart.A",
-            "iopjournal.A",
-            "jacow.A",
-            "jss.A",
-            "memoir.A",
-            "memoir.B",
-            "mnras.A",
-            "neurips.A",
-            "plos.A",
-            "quantumarticle.A",
-            "report.A",
-            "report.B",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A",
-            "scrartcl.A",
-            "scrartcl.B",
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "tmlr.A",
-            "usenix.A",
-            "ut-thesis.A"
-          ]
+            "scrbook.B"
+          ],
+          "denied": {
+            "branches": 106,
+            "pass": 1
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 1
+          }
         }
       },
       "thm.tcolorbox": {
@@ -1269,7 +930,7 @@
         ],
         "matrix": {
           "branches": 3107,
-          "pass": 1378,
+          "pass": 1376,
           "failing": [
             "aaai.A",
             "aastex.A",
@@ -1344,7 +1005,15 @@
             "tufte-handout.A",
             "usenix.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 1811,
+            "pass": 89
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "thm.tcolorbox[breakable=false]": {
@@ -1364,49 +1033,20 @@
           "branches": 1059,
           "pass": 941,
           "failing": [
-            "aistats.A",
-            "amsart.A",
             "amsart.B",
-            "apa7.A",
-            "article.A",
-            "article.B",
-            "asmejour.A",
-            "book.A",
-            "book.B",
-            "cas-dc.A",
-            "cas-sc.A",
             "copernicus.A",
-            "exam.A",
-            "exam.B",
-            "extarticle.A",
-            "extarticle.B",
-            "icassp.A",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "ijcai.A",
-            "imsart.A",
-            "interact.A",
-            "iopart.A",
-            "iopjournal.A",
-            "memoir.A",
-            "memoir.B",
-            "oup-authoring-template.A",
-            "quantumarticle.A",
-            "report.A",
-            "report.B",
-            "scrartcl.A",
             "scrartcl.B",
-            "scrbook.A",
             "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "sn-jnl.A",
-            "tufte-handout.A",
-            "ut-thesis.A"
-          ]
+            "scrreprt.B"
+          ],
+          "denied": {
+            "branches": 176,
+            "pass": 64
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 1
+          }
         }
       }
     },
@@ -1424,7 +1064,11 @@
           "pass": 0,
           "failing": [
             "aa.A"
-          ]
+          ],
+          "denied": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "abs.abstract-pkg": {
@@ -1582,5 +1226,197 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "asmejour",
+      "preset": "figures-right",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "figures-right",
+      "parent": "containerBlock/mathElement thm.thmtools[beauty]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "sideways",
+      "parent": "containerBlock/listing list.kernel[paren-numbers]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "sideways",
+      "parent": "containerBlock/mathElement thm.amsthm[colored-head]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "sideways",
+      "parent": "containerBlock/mathElement thm.kernel[global]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "sideways",
+      "parent": "containerBlock/mathElement thm.ntheorem[break]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "sideways",
+      "parent": "containerBlock/mathElement thm.tcolorbox[sharp]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "copernicus",
+      "preset": "sideways",
+      "parent": "containerBlock/columns cols.twocolumn-cmd[ruled]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:float-too-large"
+      ]
+    },
+    {
+      "classSetting": "copernicus",
+      "preset": "sideways",
+      "parent": "containerBlock/listing list.kernel[paren-numbers]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:float-too-large"
+      ]
+    },
+    {
+      "classSetting": "copernicus",
+      "preset": "sideways",
+      "parent": "containerBlock/listing list.paralist[paragraphs]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:float-too-large"
+      ]
+    },
+    {
+      "classSetting": "copernicus",
+      "preset": "sideways",
+      "parent": "containerBlock/mathElement thm.amsthm[upright]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:float-too-large"
+      ]
+    },
+    {
+      "classSetting": "copernicus",
+      "preset": "sideways",
+      "parent": "containerBlock/mathElement thm.kernel[global]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:float-too-large"
+      ]
+    },
+    {
+      "classSetting": "eccv",
+      "preset": "figures-right",
+      "parent": "containerBlock/listing list.scrextend[colon-bold]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "eccv",
+      "preset": "sideways",
+      "parent": "containerBlock/columns general:containerBlock/columns:multicol",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "eccv",
+      "preset": "sideways",
+      "parent": "containerBlock/listing list.enumitem[fitted-margin]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "sn-jnl",
+      "preset": "sideways",
+      "parent": "containerBlock/mathElement thm.tcolorbox[boxed]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "rotated-image",
+      "parent": "containerBlock/listing list.enumerate-pkg[prefixed]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "rotated-image",
+      "parent": "containerBlock/listing list.enumitem[nextline-descriptions]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    }
+  ]
 }

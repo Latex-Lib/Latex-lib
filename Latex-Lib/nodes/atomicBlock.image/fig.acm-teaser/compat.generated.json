@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:7f7753089312158105e71a20db23a95de7c58ba0697fe0d75ddea93d1fa79de5",
     "contexts": "sha256:9a34444e43ac79586ac5a93aa416a3e6b45fdee3bf9cad3cd215ed2d48d1e81b",
-    "matrix": "sha256:f89eeab337e5ce6a4d8c70f7dd7d8d4070bca4463e61905c95ab7d8f13892719"
+    "matrix": "sha256:1eb37ea8869a1db2fdf1b33dc4c06f279a8200caf023ebe2429559ce05c081a1"
   },
   "parents": {
     "body": {
@@ -247,7 +247,11 @@
           "pass": 143,
           "failing": [
             "acmart-acmsmall.A"
-          ]
+          ],
+          "denied": {
+            "branches": 40,
+            "pass": 40
+          }
         }
       },
       "list.nomenclature": {
@@ -275,20 +279,15 @@
       "thm.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 75,
           "pass": 67,
-          "failing": [
-            "aamas.A",
-            "acmart-acmsmall.A",
-            "acmart-acmtog.A",
-            "acmart-manuscript.A",
-            "acmart-manuscript.B",
-            "acmart-sigconf.A",
-            "acmart-sigplan.A",
-            "vldb.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 24,
+            "pass": 16
+          }
         }
       },
       "thm.kernel": {
@@ -477,5 +476,6 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

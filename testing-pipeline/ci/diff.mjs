@@ -190,7 +190,7 @@ for (const p of now.values()) {
 let cellsKept = 0;
 for (const r of runs.values()) cellsKept += r.cells.size;
 const skipped = unparsable === 0 ? '' : ` (${fmt(unparsable)} not JSON, skipped)`;
-const headline = `${fmt(lineCount)} ledger lines read${skipped}, ${fmt(cellsKept)} cells kept for this run, ${now.size} pair(s): ${fmt(passCount)} of ${fmt(branchCount)} judged branches pass${deniedCount === 0 ? '' : ` (${fmt(deniedCount)} more are denied in their context and left out)`}.`;
+const headline = `${fmt(lineCount)} ledger lines read${skipped}, ${fmt(cellsKept)} cells kept for this run, ${now.size} pair(s): ${fmt(passCount)} of ${fmt(branchCount)} judged branches pass${deniedCount === 0 ? '' : ` (${fmt(deniedCount)} more are denied in their context or banned by the matrix, and left out)`}.`;
 if (previous === undefined) {
   const why = previousMissing ? `the previous verdicts at ${previousFile} are missing` : 'with no --previous';
   console.log(`diff: ${headline} Wrote ${join(store, 'verdicts.json.gz')}; ${why}, there is nothing to compare.`);
@@ -284,7 +284,7 @@ const runsOf = (m) => {
 const out = [];
 out.push('# What changed since the previous run', '');
 out.push(`This run (${runsOf(now)}) against the previous verdicts (${previousFile}, written ${previous.at ?? '?'}; ${runsOf(before)}). ${headline}`, '');
-out.push(`**${fmt(total.regressed)} newly failing** (regressions), **${fmt(total.fixed)} newly passing**, ${fmt(total.still)} still failing (${fmt(total.changed)} with another first check), ${fmt(total.fresh)} new (${fmt(total.freshFail)} failing), ${fmt(total.gone)} gone. Branches are compared by pair and branch id${total.denied === 0 ? '' : `; ${fmt(total.denied)} denied in their context are left out of every count`}${total.flips === 0 ? '' : `; ${fmt(total.flips)} moved between a pass and ${LABELS}, which flips between runs of the same LaTeX, and are counted apart`}.`, '');
+out.push(`**${fmt(total.regressed)} newly failing** (regressions), **${fmt(total.fixed)} newly passing**, ${fmt(total.still)} still failing (${fmt(total.changed)} with another first check), ${fmt(total.fresh)} new (${fmt(total.freshFail)} failing), ${fmt(total.gone)} gone. Branches are compared by pair and branch id${total.denied === 0 ? '' : `; ${fmt(total.denied)} denied in their context or banned by the matrix are left out of every count`}${total.flips === 0 ? '' : `; ${fmt(total.flips)} moved between a pass and ${LABELS}, which flips between runs of the same LaTeX, and are counted apart`}.`, '');
 if (total.unjudged > 0) out.push(`${fmt(total.unjudged)} cell(s) had no verdict (the engine threw): their branches the previous run judged count as failing with \`threw\`; ${fmt(total.unknown)} of those cells held none the previous run knew.`, '');
 out.push('## By pair', '', '| Pair | Branches | Pass | Newly failing | Newly passing | Still failing | New (failing) | Gone | No verdict | Denied |', '|---|---|---|---|---|---|---|---|---|---|');
 for (const r of rows.sort((a, b) => b.regressed - a.regressed || b.fixed - a.fixed || (a.pair < b.pair ? -1 : 1))) {

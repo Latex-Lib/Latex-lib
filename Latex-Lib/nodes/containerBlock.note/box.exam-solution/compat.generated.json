@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:cd36fdc3ac3c962fd4aa110c03fe69ff895516ecdb03d41fa51cbe8f35510827",
     "contexts": "sha256:f593ada8348e3bc89e6616015502a97a24a8913da366aaa0e721d6679e8365b9",
-    "matrix": "sha256:17d9319340c8fb7f5a92bf081d3fa22b56af3c58f6eade0fd9122c7c3f0368e3"
+    "matrix": "sha256:286eb58519b46d23b62eef6fd4f9726a78abbf262fad93a4e2b0b85ab4aa0bba"
   },
   "parents": {
     "body": {
@@ -18,7 +18,11 @@
           "failing": [
             "exam.A",
             "exam.B"
-          ]
+          ],
+          "denied": {
+            "branches": 30,
+            "pass": 0
+          }
         }
       }
     },
@@ -97,7 +101,11 @@
           "failing": [
             "exam.A",
             "exam.B"
-          ]
+          ],
+          "denied": {
+            "branches": 32,
+            "pass": 1
+          }
         }
       }
     },
@@ -120,53 +128,57 @@
       "list.enumerate-pkg": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 53,
           "pass": 51,
-          "failing": [
-            "exam.A",
-            "exam.B"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "list.enumitem": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 53,
           "pass": 51,
-          "failing": [
-            "exam.A",
-            "exam.B"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "list.exam-questions": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 53,
           "pass": 51,
-          "failing": [
-            "exam.A",
-            "exam.B"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "list.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 53,
           "pass": 51,
-          "failing": [
-            "exam.A",
-            "exam.B"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "list.nomenclature": {
@@ -177,27 +189,29 @@
       "list.paralist": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 53,
           "pass": 51,
-          "failing": [
-            "exam.A",
-            "exam.B"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "list.scrextend": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 53,
           "pass": 51,
-          "failing": [
-            "exam.A",
-            "exam.B"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       }
     },
@@ -292,26 +306,29 @@
       "thm.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 63,
           "pass": 61,
-          "failing": [
-            "exam.A",
-            "exam.B"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "thm.mdframed": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 77,
           "pass": 76,
-          "failing": [
-            "exam.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 1
+          }
         }
       },
       "thm.ntheorem": {
@@ -332,9 +349,12 @@
           "branches": 154,
           "pass": 148,
           "failing": [
-            "exam.A",
             "exam.B"
-          ]
+          ],
+          "denied": {
+            "branches": 4,
+            "pass": 0
+          }
         }
       },
       "thm.tcolorbox[breakable=false]": {
@@ -345,19 +365,21 @@
       "thm.thmtools": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 29,
           "pass": 27,
-          "failing": [
-            "exam.A",
-            "exam.B"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

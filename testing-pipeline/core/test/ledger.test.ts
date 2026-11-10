@@ -103,6 +103,10 @@ test("a denied branch's verdict names its denial, and one the contexts allow nam
     { branch: 'b2', pass: false, failures: [own], denied: 'thm.tcolorbox > tbl.booktabs' },
   ]);
   assert.deepEqual(ledgerLine(outcome, newRun(), 'e', judgement).verdicts?.map((v) => 'denied' in v), [false, false], 'no lookup, no denial');
+  // A matrix ban holds under one class setting: the lookup is given the cell's.
+  const banned = (branch: string, classSetting: string) => (branch === 'b1' && classSetting === 'article' ? 'ban:never-passes (document body) > tbl.booktabs' : undefined);
+  assert.deepEqual(ledgerLine(outcome, newRun(), 'e', judgement, banned).verdicts?.map((v) => v.denied), ['ban:never-passes (document body) > tbl.booktabs', undefined]);
+  assert.deepEqual(ledgerLine({ ...outcome, cell: { ...cell, classSetting: 'llncs' } }, newRun(), 'e', judgement, banned).verdicts?.map((v) => v.denied), [undefined, undefined]);
 });
 
 test("a verdict's line holds its own failures; the document's are written once, under problems", () => {

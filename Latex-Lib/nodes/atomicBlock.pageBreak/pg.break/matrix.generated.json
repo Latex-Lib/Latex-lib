@@ -1,9 +1,9 @@
 {
   "way": "pg.break",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -188,14 +188,6 @@
       "kind": "verified",
       "parent": null,
       "pair": "asmejour.A",
-      "branches": 4,
-      "pass": 4,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": null,
-      "pair": "beamer.A",
       "branches": 4,
       "pass": 4,
       "status": "verified-ok"
@@ -589,8 +581,12 @@
       "parent": null,
       "pair": "quantumarticle.A",
       "branches": 4,
-      "pass": 4,
-      "status": "verified-ok"
+      "pass": 0,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -613,16 +609,24 @@
       "parent": null,
       "pair": "revtex4-2-aip.A",
       "branches": 4,
-      "pass": 4,
-      "status": "verified-ok"
+      "pass": 0,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
       "parent": null,
       "pair": "revtex4-2-aps.A",
       "branches": 4,
-      "pass": 4,
-      "status": "verified-ok"
+      "pass": 0,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -735,6 +739,150 @@
       "branches": 4,
       "pass": 4,
       "status": "verified-ok"
+    },
+    {
+      "kind": "ban",
+      "way": "pg.break",
+      "classSetting": "quantumarticle",
+      "preset": "clearpage",
+      "parent": null,
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "pg.break",
+      "classSetting": "quantumarticle",
+      "preset": "newpage",
+      "parent": null,
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "pg.break",
+      "classSetting": "quantumarticle",
+      "preset": "odd-page",
+      "parent": null,
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "pg.break",
+      "classSetting": "quantumarticle",
+      "preset": "soft-break",
+      "parent": null,
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "pg.break",
+      "classSetting": "revtex4-2-aip",
+      "preset": "clearpage",
+      "parent": null,
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "pg.break",
+      "classSetting": "revtex4-2-aip",
+      "preset": "newpage",
+      "parent": null,
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "pg.break",
+      "classSetting": "revtex4-2-aip",
+      "preset": "odd-page",
+      "parent": null,
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "pg.break",
+      "classSetting": "revtex4-2-aip",
+      "preset": "soft-break",
+      "parent": null,
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "pg.break",
+      "classSetting": "revtex4-2-aps",
+      "preset": "clearpage",
+      "parent": null,
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "pg.break",
+      "classSetting": "revtex4-2-aps",
+      "preset": "newpage",
+      "parent": null,
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "pg.break",
+      "classSetting": "revtex4-2-aps",
+      "preset": "odd-page",
+      "parent": null,
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "pg.break",
+      "classSetting": "revtex4-2-aps",
+      "preset": "soft-break",
+      "parent": null,
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
     }
   ]
 }

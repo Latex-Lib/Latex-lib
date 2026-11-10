@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:ea47fd21378e99ce5ff3123e12611984b2b5303ccbfc434ee29ce762e97b2555",
     "contexts": "sha256:727329aa3d95c49746933c3e53b7a4abb0c973698fbe6250d56be1cb138893f9",
-    "matrix": "sha256:411033e26c7391a331a8c8b771f413c3ad823e16c5bf95a2836572a5de408650"
+    "matrix": "sha256:75ba828854e5642f9c6a26ab2ef790f4ef7124f105d365705baf0ed4886ecd07"
   },
   "parents": {
     "paragraph/paragraph": {
@@ -29,8 +29,8 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 3457,
-          "pass": 3339,
+          "branches": 3456,
+          "pass": 3346,
           "failing": [
             "aa.A",
             "aaai.A",
@@ -126,13 +126,11 @@
       "list.item": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 602,
-          "pass": 601,
-          "failing": [
-            "apa7.A"
-          ]
+          "pass": 602,
+          "failing": []
         }
       }
     },
@@ -207,13 +205,15 @@
       "front.aistats": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 1,
           "pass": 0,
-          "failing": [
-            "aistats.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.ams-topmatter": {
@@ -259,27 +259,21 @@
       "front.authblk": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
-          "branches": 28,
-          "pass": 25,
-          "failing": [
-            "aaai.A",
-            "ascelike.A",
-            "cvpr.A"
-          ]
+          "branches": 26,
+          "pass": 26,
+          "failing": []
         }
       },
       "front.author-blocks": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 94,
-          "pass": 92,
-          "failing": [
-            "ascelike.A"
-          ]
+          "pass": 94,
+          "failing": []
         }
       },
       "front.beamer-title": {
@@ -320,38 +314,39 @@
           "branches": 91,
           "pass": 86,
           "failing": [
-            "frontiers.A",
             "llncs.B",
             "scrartcl.B",
             "scrbook.B",
             "scrreprt.B"
-          ]
+          ],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 81,
-          "pass": 78,
-          "failing": [
-            "ascelike.A",
-            "frontiers.A",
-            "oup-authoring-template.A"
-          ]
+          "pass": 79,
+          "failing": [],
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "front.copernicus": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 1,
-          "pass": 0,
-          "failing": [
-            "copernicus.A"
-          ]
+          "pass": 1,
+          "failing": []
         }
       },
       "front.corl": {
@@ -579,15 +574,15 @@
       "front.maketitle": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 81,
-          "pass": 78,
-          "failing": [
-            "ascelike.A",
-            "frontiers.A",
-            "oup-authoring-template.A"
-          ]
+          "pass": 79,
+          "failing": [],
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "front.mdpi": {
@@ -618,13 +613,15 @@
       "front.oup": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 1,
           "pass": 0,
-          "failing": [
-            "oup-authoring-template.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.revtex": {
@@ -690,14 +687,15 @@
       "front.titling": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 72,
-          "pass": 70,
-          "failing": [
-            "ascelike.A",
-            "copernicus.A"
-          ]
+          "pass": 71,
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.tufte": {
@@ -731,5 +729,147 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "aistats",
+      "preset": "raw",
+      "parent": "paragraph/title front.aistats[one-column]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "raw",
+      "parent": "paragraph/title general:paragraph/title:kernel",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "copernicus",
+      "preset": "raw",
+      "parent": "paragraph/title front.titling[centered]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "frontiers",
+      "preset": "raw",
+      "parent": "paragraph/title front.center-block[generic]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "frontiers",
+      "preset": "raw",
+      "parent": "paragraph/title front.class-native[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "frontiers",
+      "preset": "raw",
+      "parent": "paragraph/title front.maketitle[no-date]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "frontiers",
+      "preset": "raw",
+      "parent": "paragraph/title general:paragraph/title:kernel",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "imsart",
+      "preset": "raw",
+      "parent": "paragraph/title general:paragraph/title:kernel",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "raw",
+      "parent": "paragraph/title front.class-native[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "raw",
+      "parent": "paragraph/title front.maketitle[no-date]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "raw",
+      "parent": "paragraph/title front.oup[oup]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "raw",
+      "parent": "paragraph/title general:paragraph/title:kernel",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "spie",
+      "preset": "raw",
+      "parent": "codeEscape code.escape[marker]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "spie",
+      "preset": "raw",
+      "parent": "codeEscape general:codeEscape:listings+xcolor",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    }
+  ]
 }

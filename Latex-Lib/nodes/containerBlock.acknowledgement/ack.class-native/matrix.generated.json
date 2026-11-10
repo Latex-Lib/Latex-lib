@@ -1,9 +1,9 @@
 {
   "way": "ack.class-native",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -30,7 +30,15 @@
       "pair": "aastex.A",
       "branches": 636,
       "pass": 603,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 22,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 11,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -38,7 +46,15 @@
       "pair": "aastex.B",
       "branches": 628,
       "pass": 597,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 21,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 11,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -134,7 +150,15 @@
       "pair": "revtex4-2-aip.A",
       "branches": 672,
       "pass": 637,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 18,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 7,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -142,7 +166,15 @@
       "pair": "revtex4-2-aps.A",
       "branches": 672,
       "pass": 637,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 18,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 7,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -150,7 +182,15 @@
       "pair": "spie.A",
       "branches": 425,
       "pass": 414,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 4,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",

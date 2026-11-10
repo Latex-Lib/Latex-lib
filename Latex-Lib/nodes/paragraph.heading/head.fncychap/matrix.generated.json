@@ -1,9 +1,9 @@
 {
   "way": "head.fncychap",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -47,7 +47,11 @@
       "pair": "book.A",
       "branches": 32,
       "pass": 28,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -58,18 +62,11 @@
       "pair": "book.A",
       "branches": 32,
       "pass": 31,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/appendix",
-        "way": "num.appendices-env"
-      },
-      "pair": "book.A",
-      "branches": 64,
-      "pass": 60,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -113,7 +110,26 @@
       "pair": "book.A",
       "branches": 32,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 32,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "book.A",
+      "branches": 64,
+      "pass": 60,
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -187,7 +203,11 @@
       "pair": "book.B",
       "branches": 32,
       "pass": 29,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -198,18 +218,11 @@
       "pair": "book.B",
       "branches": 32,
       "pass": 31,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/appendix",
-        "way": "num.appendices-env"
-      },
-      "pair": "book.B",
-      "branches": 64,
-      "pass": 61,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -253,7 +266,26 @@
       "pair": "book.B",
       "branches": 32,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 32,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "book.B",
+      "branches": 64,
+      "pass": 61,
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -305,7 +337,11 @@
       "pair": "eccv.A",
       "branches": 24,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -371,7 +407,11 @@
       "pair": "eccv.A",
       "branches": 24,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 24,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -417,24 +457,17 @@
     {
       "kind": "verified",
       "parent": {
-        "node": "containerBlock/appendix",
-        "way": "general:containerBlock/appendix:kernel"
-      },
-      "pair": "jmlr-pmlr.A",
-      "branches": 33,
-      "pass": 32,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
         "node": "containerBlock/columns",
         "way": "general:containerBlock/columns:multicol"
       },
       "pair": "jmlr-pmlr.A",
       "branches": 17,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -478,6 +511,21 @@
       "pair": "jmlr-pmlr.A",
       "branches": 17,
       "pass": 16,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel"
+      },
+      "pair": "jmlr-pmlr.A",
+      "branches": 33,
+      "pass": 32,
       "status": "failing"
     },
     {
@@ -607,7 +655,11 @@
       "pair": "llncs.A",
       "branches": 34,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -736,7 +788,11 @@
       "pair": "llncs.B",
       "branches": 34,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -799,7 +855,11 @@
       "pair": "memoir.A",
       "branches": 34,
       "pass": 33,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -810,7 +870,11 @@
       "pair": "memoir.A",
       "branches": 34,
       "pass": 33,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -854,7 +918,11 @@
       "pair": "memoir.A",
       "branches": 34,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -928,7 +996,11 @@
       "pair": "memoir.B",
       "branches": 34,
       "pass": 33,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -939,7 +1011,11 @@
       "pair": "memoir.B",
       "branches": 34,
       "pass": 33,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -983,7 +1059,11 @@
       "pair": "memoir.B",
       "branches": 34,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1046,7 +1126,11 @@
       "pair": "report.A",
       "branches": 34,
       "pass": 30,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1057,18 +1141,11 @@
       "pair": "report.A",
       "branches": 34,
       "pass": 33,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/appendix",
-        "way": "num.appendices-env"
-      },
-      "pair": "report.A",
-      "branches": 68,
-      "pass": 64,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1112,7 +1189,26 @@
       "pair": "report.A",
       "branches": 34,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "report.A",
+      "branches": 68,
+      "pass": 64,
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1186,7 +1282,11 @@
       "pair": "report.B",
       "branches": 34,
       "pass": 31,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1197,18 +1297,11 @@
       "pair": "report.B",
       "branches": 34,
       "pass": 33,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/appendix",
-        "way": "num.appendices-env"
-      },
-      "pair": "report.B",
-      "branches": 68,
-      "pass": 66,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1252,7 +1345,26 @@
       "pair": "report.B",
       "branches": 34,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "report.B",
+      "branches": 68,
+      "pass": 66,
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1292,7 +1404,7 @@
       },
       "pair": "scrbook.A",
       "branches": 68,
-      "pass": 66,
+      "pass": 65,
       "status": "failing"
     },
     {
@@ -1304,7 +1416,11 @@
       "pair": "scrbook.A",
       "branches": 34,
       "pass": 32,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1315,7 +1431,11 @@
       "pair": "scrbook.A",
       "branches": 34,
       "pass": 33,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1325,7 +1445,7 @@
       },
       "pair": "scrbook.A",
       "branches": 34,
-      "pass": 20,
+      "pass": 18,
       "status": "failing"
     },
     {
@@ -1359,7 +1479,11 @@
       "pair": "scrbook.A",
       "branches": 34,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1410,7 +1534,7 @@
       },
       "pair": "scrbook.B",
       "branches": 68,
-      "pass": 63,
+      "pass": 64,
       "status": "failing"
     },
     {
@@ -1422,7 +1546,11 @@
       "pair": "scrbook.B",
       "branches": 34,
       "pass": 30,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1433,7 +1561,11 @@
       "pair": "scrbook.B",
       "branches": 34,
       "pass": 33,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1477,7 +1609,11 @@
       "pair": "scrbook.B",
       "branches": 34,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1529,7 +1665,11 @@
       "pair": "scrreprt.A",
       "branches": 34,
       "pass": 33,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1540,7 +1680,11 @@
       "pair": "scrreprt.A",
       "branches": 34,
       "pass": 33,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1584,7 +1728,11 @@
       "pair": "scrreprt.A",
       "branches": 34,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1647,7 +1795,11 @@
       "pair": "scrreprt.B",
       "branches": 34,
       "pass": 31,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1658,7 +1810,11 @@
       "pair": "scrreprt.B",
       "branches": 34,
       "pass": 33,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1702,7 +1858,11 @@
       "pair": "scrreprt.B",
       "branches": 34,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1765,7 +1925,11 @@
       "pair": "ut-thesis.A",
       "branches": 32,
       "pass": 29,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1776,18 +1940,11 @@
       "pair": "ut-thesis.A",
       "branches": 32,
       "pass": 31,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/appendix",
-        "way": "num.appendices-env"
-      },
-      "pair": "ut-thesis.A",
-      "branches": 64,
-      "pass": 60,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1831,7 +1988,26 @@
       "pair": "ut-thesis.A",
       "branches": 32,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 32,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "num.appendices-env"
+      },
+      "pair": "ut-thesis.A",
+      "branches": 64,
+      "pass": 60,
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",

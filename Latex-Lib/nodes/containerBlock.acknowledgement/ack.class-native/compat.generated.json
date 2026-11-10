@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:92ece541b0b4b32a1829572ea547c52ad03c1cce7912ed34fd150f224156cc28",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:172094fdb75eb63fb247035948bb5ec787cd146cd7541615fa45e8ed6cf9d301"
+    "matrix": "sha256:1ba393ae994f9e1246abb99da7018a9fcfc333bf44838a9ebca9365db954f2e4"
   },
   "parents": {
     "body": {
@@ -21,12 +21,21 @@
             "revtex4-2-aip.A",
             "revtex4-2-aps.A",
             "spie.A"
-          ]
+          ],
+          "denied": {
+            "branches": 83,
+            "pass": 1
+          },
+          "banned": {
+            "branches": 39,
+            "pass": 4
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

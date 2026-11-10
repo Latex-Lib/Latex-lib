@@ -48,13 +48,17 @@ export type LedgerLine = {
 
 /**
  * A branch's verdict as the ledger keeps it. `denied` is the host's reason when its nesting contexts deny the branch (the host's
- * `contextDenied`, as `<giver> > <way>`): such a branch is compiled only to test the denial, so reports count it apart (b23; a run
+ * `contextDenied`, as `<giver> > <way>`), or when the library bans its last step under the cell's class setting (`ban:<why>
+ * <parent> > <way>`, 2026-11-10): such a branch is compiled only to test the denial, so reports count it apart (b23; a run
  * before b23 wrote none, and a reader recomputes it from that run's tree).
  */
 export type LedgerVerdict = Pick<Verdict, 'branch' | 'pass' | 'failures'> & { readonly denied?: string };
 
-/** The denial of a branch the host's nesting contexts deny, else nothing (`LedgerVerdict.denied`). */
-export type DeniedOf = (branch: BranchId) => string | undefined;
+/**
+ * The denial of a branch under a class setting, else nothing (`LedgerVerdict.denied`): the host's nesting contexts deny it, or
+ * the library bans its last step under that class setting (the host's matrix bans, 2026-11-10).
+ */
+export type DeniedOf = (branch: BranchId, classSetting: string) => string | undefined;
 
 export type Run = { readonly id: string; readonly at: string };
 
@@ -106,7 +110,7 @@ export const ledgerLine = (outcome: CellOutcome, run: Run, engine: string, judge
           // failure before them is one only some branches carry (`oracle.ts`, a skipped end of file): it stays.
           // A denied branch's verdict names its denial (`LedgerVerdict.denied`).
           verdicts: judgement.verdicts.map(({ branch, pass, failures }) => {
-            const denied = deniedOf?.(branch);
+            const denied = deniedOf?.(branch, cell.classSetting);
             return { branch, pass, failures: failures.slice(0, Math.max(0, failures.length - judgement.document.length)), ...(denied === undefined ? {} : { denied }) };
           }),
           problems: judgement.document,

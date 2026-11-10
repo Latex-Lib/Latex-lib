@@ -4,20 +4,22 @@
   "generatedFrom": {
     "key": "sha256:f87016553132d4b63b517d475553b894cce6b857fb7c83d863f6757c8dbbd3d9",
     "contexts": "sha256:9a34444e43ac79586ac5a93aa416a3e6b45fdee3bf9cad3cd215ed2d48d1e81b",
-    "matrix": "sha256:e87c079d3af41414af1d09f058a585a9b088925ac3fcfcafc7cc6e6f47993080"
+    "matrix": "sha256:ee7514f544185d7b65c8752583dc6452bc4cc432406a75a9825aeccb2ee0ec86"
   },
   "parents": {
     "body": {
       "(document body)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 91,
           "pass": 90,
-          "failing": [
-            "spie.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       }
     },
@@ -199,13 +201,15 @@
       "cols.multicol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 84,
           "pass": 83,
-          "failing": [
-            "interact.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "cols.paracol": {
@@ -221,15 +225,11 @@
       "cols.revtex-grid": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 4,
-          "pass": 1,
-          "failing": [
-            "aastex.B",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A"
-          ]
+          "pass": 4,
+          "failing": []
         }
       },
       "cols.tikzposter": {
@@ -250,102 +250,15 @@
       "cols.vwcol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 90,
           "pass": 0,
-          "failing": [
-            "aa.A",
-            "aaai.A",
-            "aamas.A",
-            "aastex.A",
-            "aastex.B",
-            "achemso.A",
-            "acl.A",
-            "acmart-acmsmall.A",
-            "acmart-acmtog.A",
-            "acmart-manuscript.A",
-            "acmart-manuscript.B",
-            "acmart-sigconf.A",
-            "acmart-sigplan.A",
-            "agu.A",
-            "aistats.A",
-            "amsart.A",
-            "amsart.B",
-            "apa7.A",
-            "article.A",
-            "article.B",
-            "ascelike.A",
-            "asmeconf.A",
-            "asmejour.A",
-            "bmvc.A",
-            "book.A",
-            "book.B",
-            "cas-dc.A",
-            "cas-sc.A",
-            "colm.A",
-            "copernicus.A",
-            "corl.A",
-            "cvpr.A",
-            "ecai.A",
-            "eccv.A",
-            "elegantpaper.A",
-            "elsarticle-3p.A",
-            "elsarticle-5p.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "emulateapj.A",
-            "exam.A",
-            "exam.B",
-            "extarticle.A",
-            "extarticle.B",
-            "frontiers.A",
-            "icassp.A",
-            "iclr.A",
-            "icml.A",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "ijcai.A",
-            "imsart.A",
-            "interact.A",
-            "iopart.A",
-            "iopjournal.A",
-            "jacow.A",
-            "jmlr-pmlr.A",
-            "jss.A",
-            "lipics.A",
-            "llncs.A",
-            "llncs.B",
-            "mdpi.A",
-            "memoir.A",
-            "memoir.B",
-            "mnras.A",
-            "neurips.A",
-            "oup-authoring-template.A",
-            "plos.A",
-            "quantumarticle.A",
-            "report.A",
-            "report.B",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A",
-            "scrartcl.A",
-            "scrartcl.B",
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "siamart.A",
-            "sn-jnl.A",
-            "spie.A",
-            "tmlr.A",
-            "tufte-handout.A",
-            "usenix.A",
-            "ut-thesis.A",
-            "vldb.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 90,
+            "pass": 0
+          }
         }
       }
     },
@@ -359,7 +272,11 @@
           "pass": 54,
           "failing": [
             "agu.A"
-          ]
+          ],
+          "denied": {
+            "branches": 1,
+            "pass": 1
+          }
         }
       },
       "list.class-native": {
@@ -368,14 +285,17 @@
         "status": "failing",
         "matrix": {
           "branches": 199,
-          "pass": 183,
+          "pass": 182,
           "failing": [
             "apa7.A",
             "cas-dc.A",
             "cas-sc.A",
-            "imsart.A",
-            "jmlr-pmlr.A"
-          ]
+            "imsart.A"
+          ],
+          "denied": {
+            "branches": 6,
+            "pass": 1
+          }
         }
       },
       "list.cvlist": {
@@ -389,46 +309,20 @@
         "status": "failing",
         "matrix": {
           "branches": 2243,
-          "pass": 2136,
+          "pass": 2138,
           "failing": [
             "aa.A",
-            "aaai.A",
-            "aastex.A",
-            "aastex.B",
-            "achemso.A",
-            "acl.A",
-            "agu.A",
             "aistats.A",
             "amsart.A",
-            "amsart.B",
-            "apa7.A",
             "article.A",
-            "article.B",
-            "asmeconf.A",
-            "asmejour.A",
             "beamer.A",
-            "bmvc.A",
             "book.A",
             "book.B",
             "cas-dc.A",
             "cas-sc.A",
-            "colm.A",
-            "copernicus.A",
-            "corl.A",
-            "ecai.A",
-            "eccv.A",
-            "elsarticle-3p.A",
-            "elsarticle-5p.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "exam.A",
-            "exam.B",
             "extarticle.A",
-            "extarticle.B",
             "frontiers.A",
             "icassp.A",
-            "iclr.A",
-            "icml.A",
             "ieeeaccess.A",
             "ieeeconf-ras.A",
             "ieeetran-compsoc.A",
@@ -438,37 +332,27 @@
             "imsart.A",
             "interact.A",
             "iopart.A",
-            "iopjournal.A",
-            "jmlr-pmlr.A",
-            "jss.A",
-            "lipics.A",
-            "llncs.A",
-            "llncs.B",
             "memoir.A",
-            "memoir.B",
             "mnras.A",
-            "neurips.A",
             "oup-authoring-template.A",
-            "plos.A",
-            "quantumarticle.A",
             "report.A",
             "report.B",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A",
-            "scrartcl.A",
-            "scrartcl.B",
             "scrbook.A",
             "scrbook.B",
             "scrreprt.A",
             "scrreprt.B",
             "siamart.A",
-            "sn-jnl.A",
-            "spie.A",
-            "tmlr.A",
             "tufte-handout.A",
-            "usenix.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 42,
+            "pass": 41
+          },
+          "banned": {
+            "branches": 60,
+            "pass": 0
+          }
         }
       },
       "list.enumitem": {
@@ -476,92 +360,27 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 2557,
+          "branches": 2556,
           "pass": 2425,
           "failing": [
-            "aa.A",
-            "aaai.A",
-            "aastex.A",
-            "aastex.B",
-            "achemso.A",
-            "acl.A",
-            "agu.A",
-            "aistats.A",
-            "amsart.A",
-            "amsart.B",
-            "apa7.A",
-            "article.A",
-            "article.B",
-            "ascelike.A",
-            "asmeconf.A",
-            "asmejour.A",
-            "bmvc.A",
-            "book.A",
             "book.B",
             "cas-dc.A",
             "cas-sc.A",
-            "colm.A",
-            "copernicus.A",
-            "corl.A",
-            "cvpr.A",
-            "ecai.A",
-            "eccv.A",
-            "elegantpaper.A",
-            "elsarticle-3p.A",
-            "elsarticle-5p.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "emulateapj.A",
-            "exam.A",
-            "exam.B",
-            "extarticle.A",
-            "extarticle.B",
-            "frontiers.A",
-            "icassp.A",
-            "iclr.A",
-            "icml.A",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "ijcai.A",
-            "imsart.A",
             "interact.A",
-            "iopart.A",
-            "iopjournal.A",
-            "jacow.A",
-            "jmlr-pmlr.A",
-            "jss.A",
-            "lipics.A",
-            "llncs.A",
             "llncs.B",
-            "mdpi.A",
-            "memoir.A",
-            "memoir.B",
             "mnras.A",
-            "neurips.A",
-            "oup-authoring-template.A",
-            "plos.A",
-            "quantumarticle.A",
-            "report.A",
             "report.B",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A",
-            "scrartcl.A",
-            "scrartcl.B",
-            "scrbook.A",
             "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "siamart.A",
-            "sn-jnl.A",
-            "spie.A",
-            "tmlr.A",
-            "tufte-handout.A",
-            "usenix.A",
-            "ut-thesis.A"
-          ]
+            "scrreprt.B"
+          ],
+          "denied": {
+            "branches": 82,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 39,
+            "pass": 0
+          }
         }
       },
       "list.exam-questions": {
@@ -574,7 +393,15 @@
           "failing": [
             "exam.A",
             "exam.B"
-          ]
+          ],
+          "denied": {
+            "branches": 2,
+            "pass": 2
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "list.kernel": {
@@ -583,7 +410,7 @@
         "status": "failing",
         "matrix": {
           "branches": 2494,
-          "pass": 2278,
+          "pass": 2279,
           "failing": [
             "aa.A",
             "aaai.A",
@@ -624,7 +451,6 @@
             "elsarticle-5p.A",
             "elsarticle-preprint.A",
             "elsarticle-preprint.B",
-            "emulateapj.A",
             "exam.A",
             "exam.B",
             "extarticle.A",
@@ -675,7 +501,15 @@
             "usenix.A",
             "ut-thesis.A",
             "vldb.A"
-          ]
+          ],
+          "denied": {
+            "branches": 90,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "list.nomenclature": {
@@ -688,7 +522,11 @@
           "failing": [
             "asmeconf.A",
             "asmejour.A"
-          ]
+          ],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "list.paralist": {
@@ -697,12 +535,10 @@
         "status": "failing",
         "matrix": {
           "branches": 2430,
-          "pass": 2258,
+          "pass": 2259,
           "failing": [
             "aa.A",
             "aaai.A",
-            "aastex.A",
-            "aastex.B",
             "achemso.A",
             "acl.A",
             "agu.A",
@@ -729,7 +565,6 @@
             "elsarticle-5p.A",
             "elsarticle-preprint.A",
             "elsarticle-preprint.B",
-            "emulateapj.A",
             "exam.A",
             "exam.B",
             "extarticle.A",
@@ -777,7 +612,15 @@
             "tufte-handout.A",
             "usenix.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 78,
+            "pass": 73
+          },
+          "banned": {
+            "branches": 3,
+            "pass": 0
+          }
         }
       },
       "list.scrextend": {
@@ -791,16 +634,13 @@
             "aistats.A",
             "amsart.A",
             "amsart.B",
-            "article.A",
             "article.B",
             "beamer.A",
-            "book.A",
             "book.B",
             "cas-dc.A",
             "cas-sc.A",
             "exam.A",
             "exam.B",
-            "extarticle.A",
             "extarticle.B",
             "icassp.A",
             "ieeeconf-ras.A",
@@ -809,16 +649,8 @@
             "ieeetran-journal.A",
             "ijcai.A",
             "imsart.A",
-            "iopart.A",
-            "iopjournal.A",
-            "lipics.A",
-            "llncs.A",
-            "llncs.B",
-            "memoir.A",
             "memoir.B",
             "mnras.A",
-            "quantumarticle.A",
-            "report.A",
             "report.B",
             "revtex4-2-aip.A",
             "revtex4-2-aps.A",
@@ -829,9 +661,12 @@
             "scrreprt.A",
             "scrreprt.B",
             "siamart.A",
-            "tufte-handout.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 40,
+            "pass": 0
+          }
         }
       }
     },
@@ -846,19 +681,12 @@
           "failing": [
             "achemso.A",
             "asmejour.A",
-            "book.A",
-            "book.B",
-            "interact.A",
-            "memoir.A",
-            "memoir.B",
-            "report.A",
-            "report.B",
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "ut-thesis.A"
-          ]
+            "interact.A"
+          ],
+          "denied": {
+            "branches": 11,
+            "pass": 0
+          }
         }
       },
       "thm.class-native": {
@@ -867,125 +695,37 @@
         "status": "failing",
         "matrix": {
           "branches": 669,
-          "pass": 629,
+          "pass": 630,
           "failing": [
-            "aamas.A",
-            "acmart-acmsmall.A",
-            "acmart-acmtog.A",
-            "acmart-manuscript.A",
-            "acmart-manuscript.B",
-            "acmart-sigconf.A",
-            "acmart-sigplan.A",
-            "amsart.A",
-            "amsart.B",
             "beamer.A",
-            "cas-dc.A",
-            "cas-sc.A",
-            "eccv.A",
-            "elegantpaper.A",
-            "elsarticle-3p.A",
-            "elsarticle-5p.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "jmlr-pmlr.A",
-            "lipics.A",
-            "llncs.A",
-            "llncs.B",
-            "mdpi.A",
-            "oup-authoring-template.A",
-            "siamart.A",
-            "sn-jnl.A",
-            "spie.A",
-            "vldb.A"
-          ]
+            "elsarticle-3p.A"
+          ],
+          "denied": {
+            "branches": 35,
+            "pass": 1
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "thm.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 1238,
-          "pass": 1161,
-          "failing": [
-            "aaai.A",
-            "aastex.A",
-            "aastex.B",
-            "achemso.A",
-            "acl.A",
-            "agu.A",
-            "aistats.A",
-            "amsart.A",
-            "amsart.B",
-            "apa7.A",
-            "article.A",
-            "article.B",
-            "ascelike.A",
-            "asmeconf.A",
-            "asmejour.A",
-            "bmvc.A",
-            "book.A",
-            "book.B",
-            "cas-dc.A",
-            "cas-sc.A",
-            "colm.A",
-            "copernicus.A",
-            "corl.A",
-            "cvpr.A",
-            "ecai.A",
-            "elsarticle-3p.A",
-            "elsarticle-5p.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "emulateapj.A",
-            "exam.A",
-            "exam.B",
-            "extarticle.A",
-            "extarticle.B",
-            "frontiers.A",
-            "icassp.A",
-            "iclr.A",
-            "icml.A",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "ijcai.A",
-            "imsart.A",
-            "interact.A",
-            "iopart.A",
-            "iopjournal.A",
-            "jacow.A",
-            "jss.A",
-            "memoir.A",
-            "memoir.B",
-            "mnras.A",
-            "neurips.A",
-            "oup-authoring-template.A",
-            "plos.A",
-            "quantumarticle.A",
-            "report.A",
-            "report.B",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A",
-            "scrartcl.A",
-            "scrartcl.B",
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "sn-jnl.A",
-            "tmlr.A",
-            "tufte-handout.A",
-            "usenix.A",
-            "ut-thesis.A"
-          ]
+          "pass": 1163,
+          "failing": [],
+          "denied": {
+            "branches": 72,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 5,
+            "pass": 2
+          }
         }
       },
       "thm.mdframed": {
@@ -994,73 +734,41 @@
         "status": "failing",
         "matrix": {
           "branches": 1601,
-          "pass": 1545,
+          "pass": 1546,
           "failing": [
-            "aistats.A",
-            "amsart.A",
-            "amsart.B",
-            "apa7.A",
-            "article.A",
-            "article.B",
-            "asmejour.A",
-            "book.A",
-            "book.B",
             "cas-dc.A",
             "cas-sc.A",
-            "exam.A",
-            "exam.B",
-            "extarticle.A",
-            "extarticle.B",
-            "icassp.A",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "ijcai.A",
-            "imsart.A",
-            "interact.A",
-            "iopart.A",
-            "iopjournal.A",
-            "memoir.A",
-            "memoir.B",
             "mnras.A",
-            "quantumarticle.A",
-            "report.A",
-            "report.B",
-            "scrartcl.A",
             "scrartcl.B",
-            "scrbook.A",
             "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "tufte-handout.A",
-            "ut-thesis.A"
-          ]
+            "scrreprt.B"
+          ],
+          "denied": {
+            "branches": 38,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 20,
+            "pass": 9
+          }
         }
       },
       "thm.ntheorem": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 720,
-          "pass": 707,
-          "failing": [
-            "apa7.A",
-            "asmejour.A",
-            "book.A",
-            "book.B",
-            "memoir.A",
-            "memoir.B",
-            "report.A",
-            "report.B",
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "ut-thesis.A"
-          ]
+          "pass": 708,
+          "failing": [],
+          "denied": {
+            "branches": 11,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 1
+          }
         }
       },
       "thm.tcolorbox": {
@@ -1069,82 +777,22 @@
         "status": "failing",
         "matrix": {
           "branches": 3304,
-          "pass": 3140,
+          "pass": 3141,
           "failing": [
-            "aaai.A",
             "aastex.A",
             "aastex.B",
-            "achemso.A",
-            "acl.A",
-            "agu.A",
-            "aistats.A",
-            "amsart.A",
             "amsart.B",
-            "apa7.A",
-            "article.A",
-            "article.B",
-            "ascelike.A",
-            "asmeconf.A",
-            "asmejour.A",
-            "bmvc.A",
-            "book.A",
-            "book.B",
             "cas-dc.A",
             "cas-sc.A",
-            "colm.A",
-            "copernicus.A",
-            "corl.A",
-            "cvpr.A",
-            "ecai.A",
-            "elsarticle-3p.A",
-            "elsarticle-5p.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "emulateapj.A",
-            "exam.A",
-            "exam.B",
-            "extarticle.A",
-            "extarticle.B",
-            "frontiers.A",
-            "icassp.A",
-            "iclr.A",
-            "icml.A",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "ijcai.A",
-            "imsart.A",
-            "interact.A",
-            "iopart.A",
-            "iopjournal.A",
-            "jacow.A",
-            "jss.A",
-            "mdpi.A",
-            "memoir.A",
-            "memoir.B",
             "mnras.A",
-            "neurips.A",
-            "oup-authoring-template.A",
-            "plos.A",
-            "quantumarticle.A",
-            "report.A",
-            "report.B",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A",
-            "scrartcl.A",
-            "scrartcl.B",
-            "scrbook.A",
             "scrbook.B",
-            "scrreprt.A",
             "scrreprt.B",
-            "sn-jnl.A",
-            "tmlr.A",
-            "tufte-handout.A",
-            "usenix.A",
-            "ut-thesis.A"
-          ]
+            "sn-jnl.A"
+          ],
+          "denied": {
+            "branches": 146,
+            "pass": 0
+          }
         }
       },
       "thm.tcolorbox[breakable=false]": {
@@ -1158,47 +806,21 @@
         "status": "failing",
         "matrix": {
           "branches": 1042,
-          "pass": 1000,
+          "pass": 999,
           "failing": [
-            "aistats.A",
-            "amsart.A",
             "amsart.B",
-            "article.A",
-            "article.B",
             "asmejour.A",
-            "book.A",
-            "book.B",
-            "cas-dc.A",
-            "cas-sc.A",
-            "exam.A",
-            "exam.B",
-            "extarticle.A",
-            "extarticle.B",
-            "icassp.A",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "ijcai.A",
-            "imsart.A",
-            "interact.A",
-            "iopart.A",
-            "iopjournal.A",
-            "memoir.A",
-            "memoir.B",
             "quantumarticle.A",
-            "report.A",
-            "report.B",
-            "scrartcl.A",
-            "scrartcl.B",
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "tufte-handout.A",
-            "ut-thesis.A"
-          ]
+            "tufte-handout.A"
+          ],
+          "denied": {
+            "branches": 37,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       }
     },
@@ -1342,5 +964,1931 @@
         "status": "untested"
       }
     ]
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "aa",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aaai",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aaai",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aamas",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.paralist[paragraphs]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "achemso",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "achemso",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "acl",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "acl",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "acmart-acmsmall",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "acmart-acmtog",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "acmart-manuscript",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "acmart-sigconf",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "acmart-sigplan",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "agu",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "agu",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aistats",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aistats",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "amsart",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "amsart",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "amsart",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "apa7",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "apa7",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "article",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "article",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "article",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ascelike",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "asmeconf",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "asmeconf",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "boxed",
+      "parent": "containerBlock/mathElement thm.kernel[global]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "boxed",
+      "parent": "containerBlock/mathElement thm.ntheorem[break]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "here",
+      "parent": "containerBlock/mathElement thm.mdframed[thick]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "bmvc",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "bmvc",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "book",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "book",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:labels-changed"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "here",
+      "parent": "containerBlock/listing list.kernel[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error",
+        "warning:float-too-large"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "here",
+      "parent": "containerBlock/mathElement thm.kernel[global]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "here",
+      "parent": "containerBlock/mathElement thm.mdframed[thick]",
+      "why": "fails-mostly",
+      "branches": 7,
+      "pass": 3,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "here",
+      "parent": "containerBlock/mathElement thm.thmtools[beauty]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "here",
+      "parent": "containerBlock/mathElement thm.kernel[global]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "here",
+      "parent": "containerBlock/mathElement thm.mdframed[thick]",
+      "why": "fails-mostly",
+      "branches": 7,
+      "pass": 3,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "here",
+      "parent": "containerBlock/mathElement thm.thmtools[beauty]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "ruled",
+      "parent": "containerBlock/mathElement thm.class-native[llncs]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "colm",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "colm",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "copernicus",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "copernicus",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "corl",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "corl",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cvpr",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ecai",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ecai",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "eccv",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "eccv",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "elegantpaper",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "elsarticle-3p",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "elsarticle-3p",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "elsarticle-5p",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "elsarticle-5p",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "elsarticle-preprint",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "elsarticle-preprint",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.paralist[paragraphs]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "exam",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "exam",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "exam",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "exam",
+      "preset": "ruled",
+      "parent": "containerBlock/listing list.exam-questions[questions]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "extarticle",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "extarticle",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "extarticle",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "frontiers",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "frontiers",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "icassp",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "icassp",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "icassp",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "iclr",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "iclr",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "icml",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "icml",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeeaccess",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeeconf-ras",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeeconf-ras",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-compsoc",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-compsoc",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-conference",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-conference",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-journal",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-journal",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "ijcai",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ijcai",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ijcai",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "imsart",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "imsart",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "imsart",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "interact",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.multicol[unbalanced]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "interact",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "interact",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "interact",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "iopart",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "iopart",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "iopart",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "iopjournal",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "iopjournal",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "iopjournal",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "jacow",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "jmlr-pmlr",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "jmlr-pmlr",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "jss",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "jss",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "lipics",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "lipics",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "lipics",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "llncs",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "llncs",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "llncs",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "mdpi",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "memoir",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "memoir",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "memoir",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:labels-changed"
+      ]
+    },
+    {
+      "classSetting": "mnras",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "mnras",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "mnras",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "mnras",
+      "preset": "here",
+      "parent": "containerBlock/listing list.kernel[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "mnras",
+      "preset": "here",
+      "parent": "containerBlock/mathElement thm.mdframed[thick]",
+      "why": "fails-mostly",
+      "branches": 4,
+      "pass": 2,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "neurips",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "neurips",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "plos",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "plos",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "report",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "report",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:labels-changed"
+      ]
+    },
+    {
+      "classSetting": "revtex4-2-aip",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "revtex4-2-aip",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "revtex4-2-aps",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "revtex4-2-aps",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "scrartcl",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "scrartcl",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "scrartcl",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "scrbook",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "scrbook",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow",
+        "warning:labels-changed"
+      ]
+    },
+    {
+      "classSetting": "scrreprt",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "scrreprt",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow",
+        "warning:labels-changed"
+      ]
+    },
+    {
+      "classSetting": "siamart",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "siamart",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "siamart",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "sn-jnl",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "sn-jnl",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "spie",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "spie",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "spie",
+      "preset": "here",
+      "parent": "containerBlock/mathElement thm.class-native[shared]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "spie",
+      "preset": "here",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "tmlr",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tmlr",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "usenix",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "usenix",
+      "preset": "boxed",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ut-thesis",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ut-thesis",
+      "preset": "here",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:labels-changed",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "vldb",
+      "preset": "boxed",
+      "parent": "containerBlock/columns cols.vwcol[equal]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    }
+  ]
 }

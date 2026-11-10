@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:624d508142d5c031ce0159cf9bba12a3e33b409635bfca5d4eb6dc3e71221877",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:5d61fc68013a1e19ee0f81b24cc7212c3274ba289cd8f9424962a64e16f0b5c1"
+    "matrix": "sha256:0dd01ab23140f5fe772cfed92933525fd7e22c878d6e94b48f0e53fe318a5a2a"
   },
   "parents": {
     "body": {
@@ -17,12 +17,21 @@
           "pass": 859,
           "failing": [
             "beamer.A"
-          ]
+          ],
+          "denied": {
+            "branches": 41,
+            "pass": 3
+          },
+          "banned": {
+            "branches": 13,
+            "pass": 2
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:fd88778a78737ea7a14bccedce7ac828e2557c7ff0ed0db343e1503817e32c14",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:ea9a7c6fc1fbad9ef29cfd331babbe0ccbf643a4f70ead52dfb45e69fd03053b"
+    "matrix": "sha256:89d9ca1eda70d734591f172b4591780a8e7ca09db5dd740873fe3015b0535c37"
   },
   "parents": {
     "body": {
@@ -13,8 +13,8 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 125048,
-          "pass": 104169,
+          "branches": 124988,
+          "pass": 104231,
           "failing": [
             "aa.A",
             "aaai.A",
@@ -101,12 +101,88 @@
             "usenix.A",
             "ut-thesis.A",
             "vldb.A"
-          ]
+          ],
+          "denied": {
+            "branches": 21212,
+            "pass": 6413
+          },
+          "banned": {
+            "branches": 591,
+            "pass": 91
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "cas-sc",
+      "preset": "unbalanced",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "iclr",
+      "preset": "unbalanced",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "ieeeconf-ras",
+      "preset": "ragged",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "ieeeconf-ras",
+      "preset": "unbalanced",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "ijcai",
+      "preset": "unbalanced",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "neurips",
+      "preset": "unbalanced",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    }
+  ]
 }

@@ -1,9 +1,9 @@
 {
   "way": "head.class-styled",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -69,7 +69,11 @@
       "pair": "scrartcl.A",
       "branches": 34,
       "pass": 33,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -91,7 +95,11 @@
       "pair": "scrartcl.A",
       "branches": 34,
       "pass": 32,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 32
+      }
     },
     {
       "kind": "verified",
@@ -165,7 +173,11 @@
       "pair": "scrartcl.B",
       "branches": 34,
       "pass": 33,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -187,7 +199,11 @@
       "pair": "scrartcl.B",
       "branches": 34,
       "pass": 32,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 32
+      }
     },
     {
       "kind": "verified",
@@ -205,7 +221,7 @@
       },
       "pair": "scrbook.A",
       "branches": 68,
-      "pass": 57,
+      "pass": 53,
       "status": "failing"
     },
     {
@@ -272,7 +288,11 @@
       "pair": "scrbook.A",
       "branches": 34,
       "pass": 32,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 32
+      }
     },
     {
       "kind": "verified",
@@ -323,7 +343,7 @@
       },
       "pair": "scrbook.B",
       "branches": 68,
-      "pass": 52,
+      "pass": 56,
       "status": "failing"
     },
     {
@@ -390,7 +410,11 @@
       "pair": "scrbook.B",
       "branches": 34,
       "pass": 14,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 14
+      }
     },
     {
       "kind": "verified",
@@ -497,7 +521,11 @@
       "pair": "scrreprt.A",
       "branches": 34,
       "pass": 32,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 32
+      }
     },
     {
       "kind": "verified",
@@ -615,7 +643,11 @@
       "pair": "scrreprt.B",
       "branches": 34,
       "pass": 14,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 14
+      }
     },
     {
       "kind": "verified",

@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:863b17b0e1fbe15e30bdcd1a5d84233bbe2ce9f923b04990833c442eb4549ed9",
     "contexts": "sha256:9a34444e43ac79586ac5a93aa416a3e6b45fdee3bf9cad3cd215ed2d48d1e81b",
-    "matrix": "sha256:077ce4373fb2cca775a4121b4244bca92bec06223cfdbc74824f6d9b2fc600b6"
+    "matrix": "sha256:d4f2506f59e4e9cb49b3f023340f60ab6d435dcb4801f74c5dea15ea36d318fe"
   },
   "parents": {
     "body": {
@@ -272,13 +272,15 @@
       "list.enumerate-pkg": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 37,
           "pass": 31,
-          "failing": [
-            "tufte-handout.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 8,
+            "pass": 2
+          }
         }
       },
       "list.enumitem": {
@@ -290,7 +292,11 @@
           "pass": 28,
           "failing": [
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 11,
+            "pass": 3
+          }
         }
       },
       "list.exam-questions": {
@@ -301,13 +307,15 @@
       "list.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 37,
           "pass": 29,
-          "failing": [
-            "tufte-handout.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 10,
+            "pass": 2
+          }
         }
       },
       "list.nomenclature": {
@@ -318,25 +326,29 @@
       "list.paralist": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 37,
           "pass": 29,
-          "failing": [
-            "tufte-handout.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 10,
+            "pass": 2
+          }
         }
       },
       "list.scrextend": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 37,
           "pass": 23,
-          "failing": [
-            "tufte-handout.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 14,
+            "pass": 0
+          }
         }
       }
     },
@@ -344,13 +356,15 @@
       "thm.amsthm": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 23,
           "pass": 22,
-          "failing": [
-            "tufte-handout.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "thm.class-native": {
@@ -361,13 +375,15 @@
       "thm.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 19,
           "pass": 16,
-          "failing": [
-            "tufte-handout.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 3,
+            "pass": 0
+          }
         }
       },
       "thm.mdframed": {
@@ -383,7 +399,11 @@
           "pass": 11,
           "failing": [
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 17,
+            "pass": 0
+          }
         }
       },
       "thm.ntheorem": {
@@ -409,7 +429,11 @@
           "pass": 31,
           "failing": [
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 25,
+            "pass": 0
+          }
         }
       },
       "thm.tcolorbox[breakable=false]": {
@@ -424,13 +448,15 @@
       "thm.thmtools": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 16,
-          "pass": 13,
-          "failing": [
-            "tufte-handout.A"
-          ]
+          "pass": 14,
+          "failing": [],
+          "denied": {
+            "branches": 3,
+            "pass": 1
+          }
         }
       }
     },
@@ -586,5 +612,6 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:49dcb670a5e8fae765a73171dec926371c32b72df5d2537818f5fee55edb49b4",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:12440b86d310fec0e42f1dc2260deb04d6b1cd36f2eb7cdbe5d53004012753f8"
+    "matrix": "sha256:304aea9d93aab45b3247a839cde6282701c60d4d3763f32fca3861984a5858a5"
   },
   "parents": {
     "body": {
@@ -13,8 +13,8 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 188844,
-          "pass": 179475,
+          "branches": 188794,
+          "pass": 179629,
           "failing": [
             "aaai.A",
             "aamas.A",
@@ -23,7 +23,6 @@
             "acmart-acmsmall.A",
             "acmart-acmtog.A",
             "acmart-manuscript.A",
-            "acmart-manuscript.B",
             "acmart-sigconf.A",
             "acmart-sigplan.A",
             "agu.A",
@@ -44,11 +43,9 @@
             "cvpr.A",
             "ecai.A",
             "eccv.A",
-            "elegantpaper.A",
             "elsarticle-3p.A",
             "elsarticle-5p.A",
             "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
             "exam.A",
             "exam.B",
             "extarticle.A",
@@ -67,7 +64,6 @@
             "interact.A",
             "iopart.A",
             "iopjournal.A",
-            "jacow.A",
             "jmlr-pmlr.A",
             "jss.A",
             "lipics.A",
@@ -78,7 +74,6 @@
             "mnras.A",
             "neurips.A",
             "plos.A",
-            "report.A",
             "report.B",
             "scrartcl.A",
             "scrartcl.B",
@@ -90,12 +85,21 @@
             "tufte-handout.A",
             "usenix.A",
             "vldb.A"
-          ]
+          ],
+          "denied": {
+            "branches": 6839,
+            "pass": 55
+          },
+          "banned": {
+            "branches": 683,
+            "pass": 47
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

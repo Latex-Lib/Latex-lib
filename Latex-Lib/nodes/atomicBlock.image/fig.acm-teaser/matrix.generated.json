@@ -1,9 +1,9 @@
 {
   "way": "fig.acm-teaser",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -17,7 +17,11 @@
       "pair": "aamas.A",
       "branches": 13,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -27,8 +31,12 @@
       },
       "pair": "aamas.A",
       "branches": 20,
-      "pass": 19,
-      "status": "failing"
+      "pass": 20,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 7,
+        "pass": 7
+      }
     },
     {
       "kind": "verified",
@@ -39,7 +47,11 @@
       "pair": "aamas.A",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 5,
+        "pass": 5
+      }
     },
     {
       "kind": "verified",
@@ -61,7 +73,11 @@
       "pair": "aamas.A",
       "branches": 9,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -94,7 +110,11 @@
       "pair": "aamas.A",
       "branches": 5,
       "pass": 5,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 4,
+        "pass": 4
+      }
     },
     {
       "kind": "verified",
@@ -105,7 +125,11 @@
       "pair": "aamas.A",
       "branches": 7,
       "pass": 6,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 4,
+        "pass": 3
+      }
     },
     {
       "kind": "verified",
@@ -116,7 +140,11 @@
       "pair": "aamas.A",
       "branches": 6,
       "pass": 5,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -149,7 +177,11 @@
       "pair": "aamas.A",
       "branches": 10,
       "pass": 10,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -160,7 +192,11 @@
       "pair": "acmart-acmsmall.A",
       "branches": 13,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -170,8 +206,12 @@
       },
       "pair": "acmart-acmsmall.A",
       "branches": 21,
-      "pass": 20,
-      "status": "failing"
+      "pass": 21,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 7,
+        "pass": 7
+      }
     },
     {
       "kind": "verified",
@@ -182,7 +222,11 @@
       "pair": "acmart-acmsmall.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 5,
+        "pass": 5
+      }
     },
     {
       "kind": "verified",
@@ -204,7 +248,11 @@
       "pair": "acmart-acmsmall.A",
       "branches": 10,
       "pass": 9,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -237,7 +285,11 @@
       "pair": "acmart-acmsmall.A",
       "branches": 5,
       "pass": 5,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 4,
+        "pass": 4
+      }
     },
     {
       "kind": "verified",
@@ -248,7 +300,11 @@
       "pair": "acmart-acmsmall.A",
       "branches": 7,
       "pass": 6,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 4,
+        "pass": 3
+      }
     },
     {
       "kind": "verified",
@@ -259,7 +315,11 @@
       "pair": "acmart-acmsmall.A",
       "branches": 6,
       "pass": 5,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -292,7 +352,11 @@
       "pair": "acmart-acmsmall.A",
       "branches": 10,
       "pass": 10,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -303,7 +367,11 @@
       "pair": "acmart-acmtog.A",
       "branches": 13,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -313,8 +381,12 @@
       },
       "pair": "acmart-acmtog.A",
       "branches": 20,
-      "pass": 19,
-      "status": "failing"
+      "pass": 20,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 7,
+        "pass": 7
+      }
     },
     {
       "kind": "verified",
@@ -325,7 +397,11 @@
       "pair": "acmart-acmtog.A",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 5,
+        "pass": 5
+      }
     },
     {
       "kind": "verified",
@@ -347,7 +423,11 @@
       "pair": "acmart-acmtog.A",
       "branches": 9,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -380,7 +460,11 @@
       "pair": "acmart-acmtog.A",
       "branches": 5,
       "pass": 5,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 4,
+        "pass": 4
+      }
     },
     {
       "kind": "verified",
@@ -391,7 +475,11 @@
       "pair": "acmart-acmtog.A",
       "branches": 7,
       "pass": 6,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 4,
+        "pass": 3
+      }
     },
     {
       "kind": "verified",
@@ -402,7 +490,11 @@
       "pair": "acmart-acmtog.A",
       "branches": 6,
       "pass": 5,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -435,7 +527,11 @@
       "pair": "acmart-acmtog.A",
       "branches": 10,
       "pass": 10,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -446,7 +542,11 @@
       "pair": "acmart-manuscript.A",
       "branches": 13,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -456,8 +556,12 @@
       },
       "pair": "acmart-manuscript.A",
       "branches": 21,
-      "pass": 20,
-      "status": "failing"
+      "pass": 21,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 7,
+        "pass": 7
+      }
     },
     {
       "kind": "verified",
@@ -468,7 +572,11 @@
       "pair": "acmart-manuscript.A",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 5,
+        "pass": 5
+      }
     },
     {
       "kind": "verified",
@@ -490,7 +598,11 @@
       "pair": "acmart-manuscript.A",
       "branches": 10,
       "pass": 9,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -523,7 +635,11 @@
       "pair": "acmart-manuscript.A",
       "branches": 5,
       "pass": 5,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 4,
+        "pass": 4
+      }
     },
     {
       "kind": "verified",
@@ -534,7 +650,11 @@
       "pair": "acmart-manuscript.A",
       "branches": 7,
       "pass": 6,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 4,
+        "pass": 3
+      }
     },
     {
       "kind": "verified",
@@ -545,7 +665,11 @@
       "pair": "acmart-manuscript.A",
       "branches": 6,
       "pass": 5,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -578,7 +702,11 @@
       "pair": "acmart-manuscript.A",
       "branches": 10,
       "pass": 10,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -589,7 +717,11 @@
       "pair": "acmart-manuscript.B",
       "branches": 13,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -599,8 +731,12 @@
       },
       "pair": "acmart-manuscript.B",
       "branches": 20,
-      "pass": 19,
-      "status": "failing"
+      "pass": 20,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 7,
+        "pass": 7
+      }
     },
     {
       "kind": "verified",
@@ -611,7 +747,11 @@
       "pair": "acmart-manuscript.B",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 5,
+        "pass": 5
+      }
     },
     {
       "kind": "verified",
@@ -633,7 +773,11 @@
       "pair": "acmart-manuscript.B",
       "branches": 9,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -666,7 +810,11 @@
       "pair": "acmart-manuscript.B",
       "branches": 5,
       "pass": 5,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 4,
+        "pass": 4
+      }
     },
     {
       "kind": "verified",
@@ -677,7 +825,11 @@
       "pair": "acmart-manuscript.B",
       "branches": 7,
       "pass": 6,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 4,
+        "pass": 3
+      }
     },
     {
       "kind": "verified",
@@ -688,7 +840,11 @@
       "pair": "acmart-manuscript.B",
       "branches": 6,
       "pass": 5,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -721,7 +877,11 @@
       "pair": "acmart-manuscript.B",
       "branches": 10,
       "pass": 10,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -732,7 +892,11 @@
       "pair": "acmart-sigconf.A",
       "branches": 13,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -742,8 +906,12 @@
       },
       "pair": "acmart-sigconf.A",
       "branches": 21,
-      "pass": 20,
-      "status": "failing"
+      "pass": 21,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 7,
+        "pass": 7
+      }
     },
     {
       "kind": "verified",
@@ -754,7 +922,11 @@
       "pair": "acmart-sigconf.A",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 5,
+        "pass": 5
+      }
     },
     {
       "kind": "verified",
@@ -776,7 +948,11 @@
       "pair": "acmart-sigconf.A",
       "branches": 10,
       "pass": 9,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -809,7 +985,11 @@
       "pair": "acmart-sigconf.A",
       "branches": 5,
       "pass": 5,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 4,
+        "pass": 4
+      }
     },
     {
       "kind": "verified",
@@ -820,7 +1000,11 @@
       "pair": "acmart-sigconf.A",
       "branches": 7,
       "pass": 6,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 4,
+        "pass": 3
+      }
     },
     {
       "kind": "verified",
@@ -831,7 +1015,11 @@
       "pair": "acmart-sigconf.A",
       "branches": 6,
       "pass": 5,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -864,7 +1052,11 @@
       "pair": "acmart-sigconf.A",
       "branches": 10,
       "pass": 10,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -875,7 +1067,11 @@
       "pair": "acmart-sigplan.A",
       "branches": 13,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -885,8 +1081,12 @@
       },
       "pair": "acmart-sigplan.A",
       "branches": 20,
-      "pass": 19,
-      "status": "failing"
+      "pass": 20,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 7,
+        "pass": 7
+      }
     },
     {
       "kind": "verified",
@@ -897,7 +1097,11 @@
       "pair": "acmart-sigplan.A",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 5,
+        "pass": 5
+      }
     },
     {
       "kind": "verified",
@@ -919,7 +1123,11 @@
       "pair": "acmart-sigplan.A",
       "branches": 9,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -952,7 +1160,11 @@
       "pair": "acmart-sigplan.A",
       "branches": 5,
       "pass": 5,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 4,
+        "pass": 4
+      }
     },
     {
       "kind": "verified",
@@ -963,7 +1175,11 @@
       "pair": "acmart-sigplan.A",
       "branches": 7,
       "pass": 6,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 4,
+        "pass": 3
+      }
     },
     {
       "kind": "verified",
@@ -974,7 +1190,11 @@
       "pair": "acmart-sigplan.A",
       "branches": 6,
       "pass": 5,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1007,7 +1227,11 @@
       "pair": "acmart-sigplan.A",
       "branches": 10,
       "pass": 10,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1018,7 +1242,11 @@
       "pair": "vldb.A",
       "branches": 13,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1028,8 +1256,12 @@
       },
       "pair": "vldb.A",
       "branches": 20,
-      "pass": 19,
-      "status": "failing"
+      "pass": 20,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 7,
+        "pass": 7
+      }
     },
     {
       "kind": "verified",
@@ -1040,7 +1272,11 @@
       "pair": "vldb.A",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 5,
+        "pass": 5
+      }
     },
     {
       "kind": "verified",
@@ -1062,7 +1298,11 @@
       "pair": "vldb.A",
       "branches": 9,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -1095,7 +1335,11 @@
       "pair": "vldb.A",
       "branches": 5,
       "pass": 5,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 4,
+        "pass": 4
+      }
     },
     {
       "kind": "verified",
@@ -1106,7 +1350,11 @@
       "pair": "vldb.A",
       "branches": 7,
       "pass": 6,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 4,
+        "pass": 3
+      }
     },
     {
       "kind": "verified",
@@ -1117,7 +1365,11 @@
       "pair": "vldb.A",
       "branches": 6,
       "pass": 5,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1150,7 +1402,11 @@
       "pair": "vldb.A",
       "branches": 10,
       "pass": 10,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     }
   ]
 }

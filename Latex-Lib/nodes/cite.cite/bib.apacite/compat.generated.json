@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:bced83bd9a73a34869f964b76acd8269ca95385e4c51ee673f45ec089b15be03",
     "contexts": "sha256:f71c32d51d3016c64059e7d491725c08b522482004cfef01186a16c6d9e5d6cb",
-    "matrix": "sha256:d91e1c5943cb3ede586d3935bcde410e83005aa89595bc96d3fd2b9f2d9945a5"
+    "matrix": "sha256:b3abf713052b3acb893c8deb17801cfe2250a78b8321f7a5319d7856717c8218"
   },
   "parents": {
     "paragraph/paragraph": {
@@ -43,7 +43,11 @@
             "scrbook.A",
             "scrbook.B",
             "spie.A"
-          ]
+          ],
+          "banned": {
+            "branches": 14,
+            "pass": 0
+          }
         }
       }
     },
@@ -61,10 +65,13 @@
           "branches": 448,
           "pass": 437,
           "failing": [
-            "quantumarticle.A",
             "scrbook.A",
             "scrbook.B"
-          ]
+          ],
+          "banned": {
+            "branches": 7,
+            "pass": 0
+          }
         }
       },
       "head.class-styled": {
@@ -76,9 +83,12 @@
           "pass": 116,
           "failing": [
             "scrbook.A",
-            "scrbook.B",
-            "scrreprt.B"
-          ]
+            "scrbook.B"
+          ],
+          "denied": {
+            "branches": 12,
+            "pass": 8
+          }
         }
       },
       "head.copernicus": {
@@ -94,30 +104,26 @@
           "branches": 262,
           "pass": 239,
           "failing": [
-            "eccv.A",
-            "llncs.A",
-            "llncs.B",
-            "memoir.A",
-            "memoir.B",
-            "report.A",
-            "report.B",
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B"
-          ]
+            "scrbook.A"
+          ],
+          "denied": {
+            "branches": 22,
+            "pass": 0
+          }
         }
       },
       "head.ieee-raise": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 15,
           "pass": 14,
-          "failing": [
-            "ieeetran-compsoc.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 1
+          }
         }
       },
       "head.kernel": {
@@ -128,27 +134,22 @@
           "branches": 729,
           "pass": 685,
           "failing": [
-            "aaai.A",
             "amsart.B",
-            "eccv.A",
             "icassp.A",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "llncs.A",
-            "llncs.B",
-            "memoir.B",
-            "quantumarticle.A",
             "report.A",
             "report.B",
             "scrartcl.B",
             "scrbook.A",
-            "scrbook.B",
-            "scrreprt.B",
             "spie.A"
-          ]
+          ],
+          "denied": {
+            "branches": 66,
+            "pass": 47
+          },
+          "banned": {
+            "branches": 16,
+            "pass": 0
+          }
         }
       },
       "head.koma-fonts": {
@@ -159,23 +160,26 @@
           "branches": 121,
           "pass": 115,
           "failing": [
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.B"
-          ]
+            "scrbook.A"
+          ],
+          "denied": {
+            "branches": 12,
+            "pass": 8
+          }
         }
       },
       "head.memoir-style": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 50,
           "pass": 47,
-          "failing": [
-            "memoir.A",
-            "memoir.B"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 4,
+            "pass": 1
+          }
         }
       },
       "head.plain": {
@@ -191,31 +195,16 @@
           "branches": 467,
           "pass": 439,
           "failing": [
-            "aaai.A",
-            "aistats.A",
-            "article.A",
-            "article.B",
-            "eccv.A",
-            "exam.A",
-            "exam.B",
-            "extarticle.A",
-            "extarticle.B",
-            "icassp.A",
-            "ijcai.A",
-            "imsart.A",
-            "jacow.A",
-            "llncs.A",
-            "llncs.B",
-            "report.A",
-            "report.B",
-            "scrartcl.A",
-            "scrartcl.B",
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
             "spie.A"
-          ]
+          ],
+          "denied": {
+            "branches": 48,
+            "pass": 24
+          },
+          "banned": {
+            "branches": 3,
+            "pass": 0
+          }
         }
       },
       "head.titlesec": {
@@ -228,9 +217,12 @@
           "failing": [
             "amsart.B",
             "article.B",
-            "extarticle.B",
-            "report.B"
-          ]
+            "extarticle.B"
+          ],
+          "denied": {
+            "branches": 48,
+            "pass": 46
+          }
         }
       },
       "head.tufte": {
@@ -243,13 +235,15 @@
       "list.item": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 261,
           "pass": 254,
-          "failing": [
-            "quantumarticle.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 7,
+            "pass": 0
+          }
         }
       }
     },
@@ -292,13 +286,15 @@
       "front.aistats": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 1,
           "pass": 0,
-          "failing": [
-            "aistats.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.ams-topmatter": {
@@ -329,13 +325,11 @@
       "front.authblk": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
-          "branches": 10,
+          "branches": 9,
           "pass": 9,
-          "failing": [
-            "aaai.A"
-          ]
+          "failing": []
         }
       },
       "front.author-blocks": {
@@ -372,23 +366,28 @@
           "pass": 32,
           "failing": [
             "llncs.B",
-            "quantumarticle.A",
             "scrartcl.B",
             "scrbook.B",
             "scrreprt.B"
-          ]
+          ],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 36,
           "pass": 35,
-          "failing": [
-            "quantumarticle.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.copernicus": {
@@ -566,13 +565,15 @@
       "front.maketitle": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 36,
           "pass": 35,
-          "failing": [
-            "quantumarticle.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.mdpi": {
@@ -598,13 +599,15 @@
       "front.revtex": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 1,
           "pass": 0,
-          "failing": [
-            "quantumarticle.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.siam": {
@@ -645,13 +648,15 @@
       "front.titlepage-env": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 34,
           "pass": 33,
-          "failing": [
-            "quantumarticle.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.titling": {
@@ -685,5 +690,355 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "aistats",
+      "preset": "parenthetical",
+      "parent": "paragraph/title front.aistats[one-column]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "icassp",
+      "preset": "parenthetical",
+      "parent": "paragraph/heading head.kernel[lettered-sections]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "icassp",
+      "preset": "parenthetical",
+      "parent": "paragraph/heading head.sectsty[sans]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "icassp",
+      "preset": "textual",
+      "parent": "paragraph/heading head.kernel[to-subsection]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "imsart",
+      "preset": "textual",
+      "parent": "paragraph/title general:paragraph/title:kernel",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": "codeEscape code.escape[marker]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": "codeEscape general:codeEscape:listings+xcolor",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": "paragraph/heading general:paragraph/heading:kernel",
+      "why": "never-passes",
+      "branches": 8,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": "paragraph/heading head.class-native[class]",
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": "paragraph/heading head.kernel[numbered]",
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": "paragraph/heading head.kernel[roman-sections]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": "paragraph/heading head.kernel[unnumbered]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": "paragraph/lstParagraph general:paragraph/lstParagraph:kernel",
+      "why": "never-passes",
+      "branches": 6,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": "paragraph/lstParagraph list.item[item]",
+      "why": "never-passes",
+      "branches": 5,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": "paragraph/paragraph para.kernel[class]",
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": "paragraph/paragraph para.kernel[space-between]",
+      "why": "never-passes",
+      "branches": 5,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": "paragraph/title front.center-block[generic]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": "paragraph/title front.class-native[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": "paragraph/title front.revtex[quantum]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": "paragraph/heading general:paragraph/heading:kernel",
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": "paragraph/heading head.class-native[class]",
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": "paragraph/heading head.kernel[numbered]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": "paragraph/heading head.kernel[roman-sections]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": "paragraph/heading head.kernel[to-subsection]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": "paragraph/lstParagraph general:paragraph/lstParagraph:kernel",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": "paragraph/lstParagraph list.item[item]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": "paragraph/paragraph para.kernel[class]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": "paragraph/paragraph para.kernel[space-and-indent]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:labels-changed"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": "paragraph/paragraph para.kernel[space-between]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": "paragraph/title front.maketitle[no-date]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": "paragraph/title front.titlepage-env[left-sans]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": "paragraph/title general:paragraph/title:kernel",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "spie",
+      "preset": "parenthetical",
+      "parent": "paragraph/heading head.kernel[lettered-sections]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "spie",
+      "preset": "parenthetical",
+      "parent": "paragraph/heading head.sectsty[sans]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "spie",
+      "preset": "textual",
+      "parent": "paragraph/heading head.kernel[to-subsection]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "spie",
+      "preset": "textual",
+      "parent": "paragraph/heading head.sectsty[centered]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    }
+  ]
 }

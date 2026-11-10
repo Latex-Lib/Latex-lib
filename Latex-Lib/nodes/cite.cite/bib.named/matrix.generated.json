@@ -1,9 +1,9 @@
 {
   "way": "bib.named@cite",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -16,8 +16,16 @@
       },
       "pair": "ijcai.A",
       "branches": 20,
-      "pass": 7,
-      "status": "failing"
+      "pass": 15,
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -27,8 +35,12 @@
       },
       "pair": "ijcai.A",
       "branches": 16,
-      "pass": 3,
-      "status": "failing"
+      "pass": 15,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -71,8 +83,8 @@
       },
       "pair": "ijcai.A",
       "branches": 1,
-      "pass": 0,
-      "status": "failing"
+      "pass": 1,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -82,7 +94,7 @@
       },
       "pair": "ijcai.A",
       "branches": 40,
-      "pass": 17,
+      "pass": 38,
       "status": "failing"
     },
     {
@@ -93,8 +105,12 @@
       },
       "pair": "ijcai.A",
       "branches": 40,
-      "pass": 17,
-      "status": "failing"
+      "pass": 38,
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -104,8 +120,12 @@
       },
       "pair": "ijcai.A",
       "branches": 22,
-      "pass": 6,
-      "status": "failing"
+      "pass": 20,
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -115,8 +135,12 @@
       },
       "pair": "ijcai.A",
       "branches": 22,
-      "pass": 8,
-      "status": "failing"
+      "pass": 18,
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -126,8 +150,16 @@
       },
       "pair": "ijcai.A",
       "branches": 19,
-      "pass": 5,
-      "status": "failing"
+      "pass": 16,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -137,7 +169,7 @@
       },
       "pair": "ijcai.A",
       "branches": 11,
-      "pass": 4,
+      "pass": 10,
       "status": "failing"
     },
     {
@@ -148,8 +180,8 @@
       },
       "pair": "ijcai.A",
       "branches": 7,
-      "pass": 5,
-      "status": "failing"
+      "pass": 7,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -159,8 +191,8 @@
       },
       "pair": "ijcai.A",
       "branches": 7,
-      "pass": 5,
-      "status": "failing"
+      "pass": 7,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -238,6 +270,70 @@
       "branches": 2,
       "pass": 2,
       "status": "verified-ok"
+    },
+    {
+      "kind": "ban",
+      "way": "bib.named@cite",
+      "classSetting": "ijcai",
+      "preset": "citeauthor",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.named@cite",
+      "classSetting": "ijcai",
+      "preset": "citeauthor",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.named@cite",
+      "classSetting": "ijcai",
+      "preset": "shortcite",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "numbered"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.named@cite",
+      "classSetting": "ijcai",
+      "preset": "shortcite",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "display-chapter"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
     }
   ]
 }

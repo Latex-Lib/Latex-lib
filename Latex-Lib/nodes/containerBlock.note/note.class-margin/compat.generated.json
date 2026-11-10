@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:907f6b3705c2b9b7bfbba7633d06e216eae60f7b3dfaefa21bf1eaa62c0513a5",
     "contexts": "sha256:f593ada8348e3bc89e6616015502a97a24a8913da366aaa0e721d6679e8365b9",
-    "matrix": "sha256:c915c994d713bdc3dcee1be235260e85dbb55a68fff84083d190e849a74fbb1e"
+    "matrix": "sha256:569b400d381a934326eba3d5678acfe86441f98280ab574752ae4403ff51c11c"
   },
   "parents": {
     "body": {
@@ -14,7 +14,7 @@
         "status": "failing",
         "matrix": {
           "branches": 1780,
-          "pass": 1454,
+          "pass": 1505,
           "failing": [
             "scrartcl.A",
             "scrartcl.B",
@@ -23,7 +23,11 @@
             "scrreprt.A",
             "scrreprt.B",
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 129,
+            "pass": 0
+          }
         }
       }
     },
@@ -85,7 +89,11 @@
             "scrreprt.A",
             "scrreprt.B",
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 120,
+            "pass": 103
+          }
         }
       },
       "cols.paracol": {
@@ -147,7 +155,11 @@
             "scrreprt.A",
             "scrreprt.B",
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 120,
+            "pass": 0
+          }
         }
       }
     },
@@ -170,37 +182,29 @@
       "list.enumerate-pkg": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 231,
           "pass": 166,
-          "failing": [
-            "scrartcl.A",
-            "scrartcl.B",
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "tufte-handout.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 70,
+            "pass": 5
+          }
         }
       },
       "list.enumitem": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 231,
           "pass": 166,
-          "failing": [
-            "scrartcl.A",
-            "scrartcl.B",
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "tufte-handout.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 70,
+            "pass": 5
+          }
         }
       },
       "list.exam-questions": {
@@ -211,19 +215,15 @@
       "list.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 231,
           "pass": 166,
-          "failing": [
-            "scrartcl.A",
-            "scrartcl.B",
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "tufte-handout.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 70,
+            "pass": 5
+          }
         }
       },
       "list.nomenclature": {
@@ -239,14 +239,12 @@
           "branches": 231,
           "pass": 165,
           "failing": [
-            "scrartcl.A",
-            "scrartcl.B",
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "tufte-handout.A"
-          ]
+            "scrbook.A"
+          ],
+          "denied": {
+            "branches": 70,
+            "pass": 5
+          }
         }
       },
       "list.scrextend": {
@@ -257,14 +255,12 @@
           "branches": 231,
           "pass": 163,
           "failing": [
-            "scrartcl.A",
-            "scrartcl.B",
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 70,
+            "pass": 5
+          }
         }
       }
     },
@@ -392,9 +388,12 @@
             "scrbook.A",
             "scrbook.B",
             "scrreprt.A",
-            "scrreprt.B",
-            "tufte-handout.A"
-          ]
+            "scrreprt.B"
+          ],
+          "denied": {
+            "branches": 46,
+            "pass": 3
+          }
         }
       },
       "thm.class-native": {
@@ -415,9 +414,16 @@
             "scrbook.A",
             "scrbook.B",
             "scrreprt.A",
-            "scrreprt.B",
-            "tufte-handout.A"
-          ]
+            "scrreprt.B"
+          ],
+          "denied": {
+            "branches": 46,
+            "pass": 2
+          },
+          "banned": {
+            "branches": 6,
+            "pass": 0
+          }
         }
       },
       "thm.mdframed": {
@@ -439,7 +445,11 @@
             "scrreprt.A",
             "scrreprt.B",
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 303,
+            "pass": 36
+          }
         }
       },
       "thm.ntheorem": {
@@ -450,14 +460,19 @@
           "branches": 174,
           "pass": 127,
           "failing": [
-            "scrartcl.A",
-            "scrartcl.B",
             "scrbook.A",
             "scrbook.B",
             "scrreprt.A",
-            "scrreprt.B",
-            "tufte-handout.A"
-          ]
+            "scrreprt.B"
+          ],
+          "denied": {
+            "branches": 22,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 4,
+            "pass": 0
+          }
         }
       },
       "thm.tcolorbox": {
@@ -479,7 +494,11 @@
             "scrreprt.A",
             "scrreprt.B",
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 610,
+            "pass": 72
+          }
         }
       },
       "thm.tcolorbox[breakable=false]": {
@@ -499,19 +518,21 @@
           "branches": 209,
           "pass": 143,
           "failing": [
-            "scrartcl.A",
-            "scrartcl.B",
             "scrbook.A",
             "scrbook.B",
             "scrreprt.A",
-            "scrreprt.B",
-            "tufte-handout.A"
-          ]
+            "scrreprt.B"
+          ],
+          "denied": {
+            "branches": 42,
+            "pass": 2
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

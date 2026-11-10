@@ -22,6 +22,17 @@
  * matrix confirms it. A row with a predicate over the parent's params keeps
  * its status: the matrix does not split on those params yet.
  *
+ * Matrix bans (2026-11-10): the pipeline's `compat tables` also bans the steps
+ * the matrix shows failing (the testing pipeline's `host-flouest/src/bans.ts`:
+ * a way under one preset, directly below one parent way under its preset,
+ * under one class setting; banned when it never passed, or when at least half
+ * its branches failed on a check that is not a layout warning). They are the
+ * table's `bans`. An allowed row (ok, adapt) is judged on the branches left
+ * once the context denials and the bans are taken out: `verified-ok` then
+ * means it passed everywhere the rules and the bans allow it, and `failing`
+ * names the class settings where an allowed, unbanned branch still failed. A
+ * deny or fallback row is judged on all its branches, as before.
+ *
  * `generatedFrom` holds the hashes of what the table was made from (the key,
  * the contexts, the matrix table), so `checkCompat` finds a stale one. The
  * file is never edited by hand.
@@ -44,18 +55,48 @@ export type MatrixTable = {
   readonly way: WayId;
   readonly from: { readonly [input: string]: string };
   readonly entries: readonly (
-    | { readonly kind: 'verified'; readonly parent: { readonly node: NodeId; readonly way: WayId } | null; readonly pair: string; readonly branches: number; readonly pass: number }
+    | {
+        readonly kind: 'verified';
+        readonly parent: { readonly node: NodeId; readonly way: WayId } | null;
+        readonly pair: string;
+        readonly branches: number;
+        readonly pass: number;
+        /** Of those, the branches the host's nesting contexts denied, and the allowed ones a ban covers, each with how many passed. */
+        readonly denied?: Excluded;
+        readonly banned?: Excluded;
+      }
+    | MatrixBan
     | { readonly kind: 'rule'; readonly candidate: string; readonly rule: { readonly [name: string]: Json } }
     | { readonly kind: 'pending'; readonly candidates: readonly string[] }
   )[];
+};
+
+/** Branches taken out of a verified entry, and how many of them passed. */
+export type Excluded = { readonly branches: number; readonly pass: number };
+
+/** A matrix ban: the way under one preset, directly below one parent way under its preset (none: the document body), under one class setting. */
+export type MatrixBan = {
+  readonly kind: 'ban';
+  readonly way: WayId;
+  readonly classSetting: string;
+  readonly preset: string;
+  readonly parent: { readonly node: NodeId; readonly way: WayId; readonly preset: string } | null;
+  readonly why: 'never-passes' | 'fails-mostly';
+  readonly branches: number;
+  readonly pass: number;
+  readonly hardFail: number;
+  readonly checks: readonly string[];
 };
 
 export type CompatRow = {
   readonly verdict: 'ok' | 'deny' | 'adapt' | 'fallback';
   readonly source: 'derived' | 'authored';
   readonly status: 'derived' | 'untested' | 'verified-ok' | 'failing' | 'verified-fail';
-  /** From the matrix: branches holding the step, how many passed, and the class settings where some failed. */
-  readonly matrix?: { readonly branches: number; readonly pass: number; readonly failing: readonly string[] };
+  /**
+   * From the matrix: branches holding the step, how many passed, and the class settings where some failed (for an allowed
+   * row, an allowed, unbanned branch); how many were context denials and how many a ban covers, when any.
+   */
+  readonly matrix?: { readonly branches: number; readonly pass: number; readonly failing: readonly string[]; readonly denied?: Excluded; readonly banned?: Excluded };
   /** For a derived deny: what the context lacks. */
   readonly lacks?: readonly string[];
   /** For an adapt: the parameters set. */
@@ -74,6 +115,16 @@ export type CompatTable = {
   readonly packageCombos: {
     readonly deny: readonly { readonly with: string; readonly unless?: string; readonly when?: string; readonly reason: string; readonly status: CompatRow['status'] }[];
   };
+  /** The matrix bans on the way, from its matrix table: where, why, and what the matrix measured there. */
+  readonly bans: readonly {
+    readonly classSetting: string;
+    readonly preset: string;
+    readonly parent: string;
+    readonly why: MatrixBan['why'];
+    readonly branches: number;
+    readonly pass: number;
+    readonly checks: readonly string[];
+  }[];
 };
 
 /** How a predicate reads in a row's name: `name=value|value`, names in order. */
@@ -112,15 +163,33 @@ const parentRows = (parent: NodeId, ways: readonly HandlerKey[], entry: ParentEn
 const applies = (rule: ParentWayRule | AdaptRule, row: ParentRow): boolean =>
   (rule.way === '*' || rule.way === row.way) && (rule.when === undefined || (row.when !== undefined && canonical(rule.when) === canonical(row.when)));
 
-/** What the matrix says about one row: the verified entries for its parent node and way, summed. */
-const verifiedFor = (matrix: MatrixTable | undefined, parent: NodeId, row: ParentRow): CompatRow['matrix'] | undefined => {
+const sum = (xs: readonly (Excluded | undefined)[]): Excluded | undefined => {
+  const given = xs.filter((x): x is Excluded => x !== undefined);
+  return given.length === 0 ? undefined : { branches: given.reduce((n, x) => n + x.branches, 0), pass: given.reduce((n, x) => n + x.pass, 0) };
+};
+
+/**
+ * What the matrix says about one row: the verified entries for its parent node and way, summed. `allowed`: whether the row
+ * allows the way, so that its failing class settings are those where a branch neither denied nor banned failed.
+ */
+const verifiedFor = (matrix: MatrixTable | undefined, parent: NodeId, row: ParentRow, allowed: boolean): CompatRow['matrix'] | undefined => {
   if (matrix === undefined || row.when !== undefined) return undefined;
   const entries = matrix.entries.flatMap((e) => (e.kind !== 'verified' ? [] : [e])).filter((e) =>
     parent === BODY ? e.parent === null : e.parent !== null && e.parent.node === parent && (row.way === null ? e.parent.way.startsWith('general:') : e.parent.way === row.way),
   );
   if (entries.length === 0) return undefined;
-  const failing = [...new Set(entries.filter((e) => e.pass < e.branches).map((e) => e.pair))].sort();
-  return { branches: entries.reduce((n, e) => n + e.branches, 0), pass: entries.reduce((n, e) => n + e.pass, 0), failing };
+  const fails = (e: (typeof entries)[number]): boolean =>
+    allowed ? e.pass - (e.denied?.pass ?? 0) - (e.banned?.pass ?? 0) < e.branches - (e.denied?.branches ?? 0) - (e.banned?.branches ?? 0) : e.pass < e.branches;
+  const failing = [...new Set(entries.filter(fails).map((e) => e.pair))].sort();
+  const denied = sum(entries.map((e) => e.denied));
+  const banned = sum(entries.map((e) => e.banned));
+  return {
+    branches: entries.reduce((n, e) => n + e.branches, 0),
+    pass: entries.reduce((n, e) => n + e.pass, 0),
+    failing,
+    ...(denied === undefined ? {} : { denied }),
+    ...(banned === undefined ? {} : { banned }),
+  };
 };
 
 /** A row with what the matrix found: verified-ok, failing, or verified-fail once an accepted rule names the way or every branch of a deny failed. */
@@ -146,7 +215,6 @@ export const compatTable = (key: HandlerKey, ways: readonly HandlerKey[], nestin
     const fallback = entry?.fallback ?? key.fallback;
     const table: { [parentWay: string]: CompatRow } = {};
     for (const row of rows) {
-      const found = verifiedFor(matrix, parent, row);
       const deny = (entry?.deny ?? []).find((r) => applies(r, row));
       const adapt = (entry?.adapt ?? []).find((r) => applies(r, row));
       const allow = (entry?.allow ?? []).find((r) => applies(r, row));
@@ -165,7 +233,7 @@ export const compatTable = (key: HandlerKey, ways: readonly HandlerKey[], nestin
               : lacks.length > 0
                 ? fallbackRow(lacks.join('; '), 'derived')
                 : { verdict: 'ok', source: 'derived', status: 'derived' };
-      table[row.name] = withMatrix(made, found, accepted);
+      table[row.name] = withMatrix(made, verifiedFor(matrix, parent, row, made.verdict === 'ok' || made.verdict === 'adapt'), accepted);
     }
     parents[parent] = table;
   }
@@ -183,6 +251,21 @@ export const compatTable = (key: HandlerKey, ways: readonly HandlerKey[], nestin
         status: 'untested' as const,
       })),
     },
+    bans: (matrix?.entries ?? []).flatMap((e) =>
+      e.kind !== 'ban'
+        ? []
+        : [
+            {
+              classSetting: e.classSetting,
+              preset: e.preset,
+              parent: e.parent === null ? '(document body)' : `${e.parent.node} ${e.parent.way}${e.parent.preset === '' ? '' : `[${e.parent.preset}]`}`,
+              why: e.why,
+              branches: e.branches,
+              pass: e.pass,
+              checks: e.checks,
+            },
+          ],
+    ),
   };
 };
 

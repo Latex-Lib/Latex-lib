@@ -4,10 +4,52 @@
   "generatedFrom": {
     "key": "sha256:8acd1c5b0821bdec5ef510ca09f78525678783e06a15725df494c771b37fa400",
     "contexts": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-    "matrix": "sha256:ec71502ae0d2def616e6f93d37f5e54b4e96917183e3c2355607d46f84ac27d3"
+    "matrix": "sha256:1e557c3dab6f6633ef9ece074173538d159d696bdef2ac6b71923f15ba41ce1c"
   },
   "parents": {},
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "frontiers",
+      "preset": "kernel",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "frontiers",
+      "preset": "no-date",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "kernel",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "no-date",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": []
+    }
+  ]
 }

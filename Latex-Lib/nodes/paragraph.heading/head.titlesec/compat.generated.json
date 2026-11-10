@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:07853c38b395c744a2e6fc081a027a7c8f441380f84aa1bf6c8ac10f953fe56e",
     "contexts": "sha256:14e595b5a917207b0202cd81103654b34671bd431b2e4e8a05c64647be89ab4f",
-    "matrix": "sha256:f3d04b661949f222c4112fe64c8ef50454067c4df470fe3126f58f481e1d2620"
+    "matrix": "sha256:c08a6bd9b75f0cbcb8ab0399d10d7c4bd93cce8daf0e56a289802dd2f5331393"
   },
   "parents": {
     "containerBlock/columns": {
@@ -39,7 +39,7 @@
         "status": "failing",
         "matrix": {
           "branches": 1383,
-          "pass": 1011,
+          "pass": 1015,
           "failing": [
             "aa.A",
             "achemso.A",
@@ -98,7 +98,11 @@
             "tufte-handout.A",
             "usenix.A",
             "ut-thesis.A"
-          ]
+          ],
+          "banned": {
+            "branches": 90,
+            "pass": 0
+          }
         }
       },
       "cols.paracol": {
@@ -107,18 +111,16 @@
         "status": "failing",
         "matrix": {
           "branches": 810,
-          "pass": 751,
+          "pass": 749,
           "failing": [
             "article.A",
             "book.A",
             "copernicus.A",
-            "corl.A",
             "elegantpaper.A",
             "elsarticle-3p.A",
             "elsarticle-preprint.A",
             "exam.A",
             "extarticle.A",
-            "jmlr-pmlr.A",
             "lipics.A",
             "plos.A",
             "report.A",
@@ -126,7 +128,11 @@
             "sn-jnl.A",
             "spie.A",
             "tufte-handout.A"
-          ]
+          ],
+          "banned": {
+            "branches": 19,
+            "pass": 0
+          }
         }
       },
       "cols.revtex-grid": {
@@ -145,19 +151,17 @@
         "status": "failing",
         "matrix": {
           "branches": 1184,
-          "pass": 1089,
+          "pass": 1094,
           "failing": [
             "amsart.A",
             "amsart.B",
             "article.A",
-            "ascelike.A",
             "colm.A",
             "corl.A",
             "cvpr.A",
             "elsarticle-preprint.A",
             "extarticle.A",
             "iclr.A",
-            "ijcai.A",
             "interact.A",
             "iopjournal.A",
             "lipics.A",
@@ -165,7 +169,11 @@
             "plos.A",
             "sn-jnl.A",
             "tufte-handout.A"
-          ]
+          ],
+          "banned": {
+            "branches": 14,
+            "pass": 0
+          }
         }
       },
       "cols.vwcol": {
@@ -178,7 +186,7 @@
         ],
         "matrix": {
           "branches": 1644,
-          "pass": 815,
+          "pass": 817,
           "failing": [
             "aa.A",
             "aastex.A",
@@ -246,7 +254,11 @@
             "tufte-handout.A",
             "usenix.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 1644,
+            "pass": 817
+          }
         }
       }
     },
@@ -257,21 +269,20 @@
         "status": "failing",
         "matrix": {
           "branches": 1088,
-          "pass": 1067,
+          "pass": 1070,
           "failing": [
             "acl.A",
             "article.B",
-            "ascelike.A",
-            "book.B",
             "elegantpaper.A",
             "exam.A",
             "icassp.A",
-            "ijcai.A",
-            "report.B",
-            "sn-jnl.A",
             "tufte-handout.A",
             "ut-thesis.A"
-          ]
+          ],
+          "banned": {
+            "branches": 5,
+            "pass": 2
+          }
         }
       },
       "num.appendix": {
@@ -283,9 +294,12 @@
           "pass": 186,
           "failing": [
             "book.A",
-            "book.B",
-            "report.B"
-          ]
+            "book.B"
+          ],
+          "banned": {
+            "branches": 6,
+            "pass": 1
+          }
         }
       },
       "num.appendix-onecolumn": {
@@ -307,7 +321,11 @@
           "pass": 33,
           "failing": [
             "cvpr.A"
-          ]
+          ],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "num.handset": {
@@ -373,13 +391,15 @@
       "ack.bmhead": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 17,
           "pass": 16,
-          "failing": [
-            "sn-jnl.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 2,
+            "pass": 1
+          }
         }
       },
       "ack.class-command": {
@@ -437,35 +457,18 @@
           "branches": 895,
           "pass": 845,
           "failing": [
-            "achemso.A",
-            "acl.A",
-            "aistats.A",
-            "article.A",
-            "article.B",
-            "ascelike.A",
             "book.A",
             "book.B",
-            "copernicus.A",
             "cvpr.A",
-            "ecai.A",
-            "elegantpaper.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "emulateapj.A",
             "exam.B",
-            "extarticle.A",
-            "extarticle.B",
-            "frontiers.A",
-            "icassp.A",
-            "icml.A",
-            "ijcai.A",
-            "oup-authoring-template.A",
             "report.A",
             "report.B",
-            "sn-jnl.A",
-            "usenix.A",
             "ut-thesis.A"
-          ]
+          ],
+          "banned": {
+            "branches": 29,
+            "pass": 2
+          }
         }
       },
       "ack.llncs-credits": {
@@ -477,5 +480,18 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "tufte-handout",
+      "preset": "sans-colored",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    }
+  ]
 }

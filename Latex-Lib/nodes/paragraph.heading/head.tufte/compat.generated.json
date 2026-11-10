@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:9437d0c4342fc0b5bf1ac3657098ed46e6d3a6e08680c9655d7325831aeabced",
     "contexts": "sha256:14e595b5a917207b0202cd81103654b34671bd431b2e4e8a05c64647be89ab4f",
-    "matrix": "sha256:0eda4afa2e2f55d29236c5820ece3dbd53b2e90d79947a61179e944446e748c8"
+    "matrix": "sha256:a01b647867c9580bebd519473c18b58c18148d31002d96cf96f354ebaffa3ea2"
   },
   "parents": {
     "containerBlock/columns": {
@@ -85,7 +85,11 @@
         "matrix": {
           "branches": 14,
           "pass": 14,
-          "failing": []
+          "failing": [],
+          "denied": {
+            "branches": 14,
+            "pass": 14
+          }
         }
       }
     },
@@ -196,5 +200,6 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

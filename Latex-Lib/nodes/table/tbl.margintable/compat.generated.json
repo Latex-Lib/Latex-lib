@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:e8c399f0a9dbb84f68e3fff2648375137edf58f783d21f632166b1cad82d6354",
     "contexts": "sha256:19ca377618c806eb733d2b157e0258ce2e79a5cd584f9c6a2c2ae6bd83663bc5",
-    "matrix": "sha256:011eabb8042496f2f0598805325e8f5f12b647c96940b318c00dca4ee997d3ec"
+    "matrix": "sha256:d384424954d37fd6f796640ef37f9625b546b70c5cb2df00ab5035238595d5bf"
   },
   "parents": {
     "body": {
@@ -23,13 +23,15 @@
       "num.appendices-env": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 2,
           "pass": 0,
-          "failing": [
-            "tufte-handout.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "num.appendix": {
@@ -189,19 +191,25 @@
           "pass": 0,
           "failing": [
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "cols.paracol": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 2,
           "pass": 0,
-          "failing": [
-            "tufte-handout.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "cols.revtex-grid": {
@@ -241,7 +249,11 @@
           "pass": 0,
           "failing": [
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       }
     },
@@ -278,22 +290,36 @@
         "status": "failing",
         "matrix": {
           "branches": 26,
-          "pass": 15,
+          "pass": 16,
           "failing": [
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 8,
+            "pass": 1
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "list.enumitem": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 26,
-          "pass": 18,
-          "failing": [
-            "tufte-handout.A"
-          ]
+          "pass": 17,
+          "failing": [],
+          "denied": {
+            "branches": 8,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 1
+          }
         }
       },
       "list.exam-questions": {
@@ -310,7 +336,15 @@
           "pass": 13,
           "failing": [
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 8,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 4,
+            "pass": 0
+          }
         }
       },
       "list.nomenclature": {
@@ -327,19 +361,33 @@
           "pass": 13,
           "failing": [
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 8,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 4,
+            "pass": 0
+          }
         }
       },
       "list.scrextend": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 26,
           "pass": 17,
-          "failing": [
-            "tufte-handout.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 8,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       }
     },
@@ -453,7 +501,15 @@
           "pass": 11,
           "failing": [
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 4,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 9,
+            "pass": 1
+          }
         }
       },
       "thm.class-native": {
@@ -464,13 +520,19 @@
       "thm.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 20,
           "pass": 15,
-          "failing": [
-            "tufte-handout.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 4,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "thm.mdframed": {
@@ -486,7 +548,11 @@
           "pass": 0,
           "failing": [
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 29,
+            "pass": 0
+          }
         }
       },
       "thm.ntheorem": {
@@ -495,8 +561,12 @@
         "status": "verified-ok",
         "matrix": {
           "branches": 8,
-          "pass": 8,
-          "failing": []
+          "pass": 7,
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "thm.tcolorbox": {
@@ -512,7 +582,11 @@
           "pass": 0,
           "failing": [
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 58,
+            "pass": 0
+          }
         }
       },
       "thm.tcolorbox[breakable=false]": {
@@ -530,10 +604,18 @@
         "status": "failing",
         "matrix": {
           "branches": 16,
-          "pass": 11,
+          "pass": 10,
           "failing": [
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 4,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       }
     },
@@ -580,5 +662,220 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": "containerBlock/listing general:containerBlock/listing:kernel",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": "containerBlock/listing list.enumerate-pkg[roman]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": "containerBlock/listing list.enumitem[fitted-margin]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": "containerBlock/listing list.kernel[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": "containerBlock/listing list.kernel[dashes]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": "containerBlock/listing list.kernel[paren-numbers]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": "containerBlock/listing list.paralist[paragraphs]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "sentinel:outside"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": "containerBlock/listing list.scrextend[labeling]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": "containerBlock/mathElement general:containerBlock/mathElement:amsthm",
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "sentinel:outside"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": "containerBlock/mathElement general:containerBlock/mathElement:amsthm+hyperref",
+      "why": "never-passes",
+      "branches": 7,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": "containerBlock/mathElement thm.amsthm[ams-section]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": "containerBlock/mathElement thm.amsthm[colored-head]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": "containerBlock/mathElement thm.amsthm[global]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "sentinel:outside"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": "containerBlock/mathElement thm.amsthm[upright]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "sentinel:outside"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": "containerBlock/mathElement thm.kernel[global]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "margin-small",
+      "parent": "containerBlock/listing list.kernel[dashes]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "margin",
+      "parent": "containerBlock/mathElement thm.amsthm[ams-section]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:off-paper"
+      ]
+    }
+  ]
 }

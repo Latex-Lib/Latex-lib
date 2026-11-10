@@ -1,9 +1,9 @@
 {
   "way": "box.class-native",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -17,7 +17,11 @@
       "pair": "beamer.A",
       "branches": 51,
       "pass": 46,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -28,7 +32,11 @@
       "pair": "beamer.A",
       "branches": 51,
       "pass": 48,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -39,7 +47,11 @@
       "pair": "beamer.A",
       "branches": 70,
       "pass": 67,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -61,7 +73,11 @@
       "pair": "beamer.A",
       "branches": 51,
       "pass": 48,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -72,7 +88,11 @@
       "pair": "beamer.A",
       "branches": 33,
       "pass": 27,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -127,7 +147,11 @@
       "pair": "beamer.A",
       "branches": 31,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 31,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -135,7 +159,11 @@
       "pair": "beamer.A",
       "branches": 320,
       "pass": 308,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 5,
+        "pass": 3
+      }
     },
     {
       "kind": "verified",
@@ -152,6 +180,36 @@
       "kind": "verified",
       "parent": {
         "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm"
+      },
+      "pair": "beamer.A",
+      "branches": 65,
+      "pass": 59,
+      "status": "failing",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+hyperref+lib:breakable+lib:skins+tcolorbox"
+      },
+      "pair": "beamer.A",
+      "branches": 18,
+      "pass": 12,
+      "status": "failing",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
         "way": "thm.amsthm"
       },
       "pair": "beamer.A",
@@ -163,34 +221,16 @@
       "kind": "verified",
       "parent": {
         "node": "containerBlock/mathElement",
-        "way": "general:containerBlock/mathElement:amsthm"
-      },
-      "pair": "beamer.A",
-      "branches": 65,
-      "pass": 59,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "general:containerBlock/mathElement:amsthm+hyperref+lib:breakable+lib:skins+tcolorbox"
-      },
-      "pair": "beamer.A",
-      "branches": 18,
-      "pass": 12,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
         "way": "general:containerBlock/mathElement:amsthm+hyperref"
       },
       "pair": "beamer.A",
       "branches": 18,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -220,7 +260,11 @@
       "pair": "memoir.A",
       "branches": 622,
       "pass": 585,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 37,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -230,8 +274,8 @@
       },
       "pair": "memoir.A",
       "branches": 109,
-      "pass": 103,
-      "status": "failing"
+      "pass": 109,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -241,8 +285,12 @@
       },
       "pair": "memoir.A",
       "branches": 209,
-      "pass": 201,
-      "status": "failing"
+      "pass": 202,
+      "status": "failing",
+      "denied": {
+        "branches": 6,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -252,8 +300,12 @@
       },
       "pair": "memoir.A",
       "branches": 99,
-      "pass": 90,
-      "status": "failing"
+      "pass": 96,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -264,7 +316,11 @@
       "pair": "memoir.A",
       "branches": 79,
       "pass": 76,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -275,7 +331,11 @@
       "pair": "memoir.A",
       "branches": 80,
       "pass": 77,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -286,7 +346,11 @@
       "pair": "memoir.A",
       "branches": 80,
       "pass": 77,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -297,7 +361,11 @@
       "pair": "memoir.A",
       "branches": 94,
       "pass": 85,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -308,7 +376,11 @@
       "pair": "memoir.A",
       "branches": 79,
       "pass": 76,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -319,7 +391,11 @@
       "pair": "memoir.A",
       "branches": 81,
       "pass": 78,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -329,8 +405,12 @@
       },
       "pair": "memoir.A",
       "branches": 102,
-      "pass": 94,
-      "status": "failing"
+      "pass": 100,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -341,7 +421,11 @@
       "pair": "memoir.A",
       "branches": 79,
       "pass": 76,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -351,8 +435,12 @@
       },
       "pair": "memoir.A",
       "branches": 108,
-      "pass": 99,
-      "status": "failing"
+      "pass": 105,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -363,7 +451,11 @@
       "pair": "memoir.A",
       "branches": 80,
       "pass": 77,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -384,8 +476,12 @@
       },
       "pair": "memoir.A",
       "branches": 104,
-      "pass": 95,
-      "status": "failing"
+      "pass": 101,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -418,7 +514,11 @@
       "pair": "memoir.A",
       "branches": 43,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 43,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -428,8 +528,12 @@
       },
       "pair": "memoir.A",
       "branches": 106,
-      "pass": 97,
-      "status": "failing"
+      "pass": 103,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -461,8 +565,12 @@
       },
       "pair": "memoir.A",
       "branches": 101,
-      "pass": 92,
-      "status": "failing"
+      "pass": 98,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -472,8 +580,12 @@
       },
       "pair": "memoir.A",
       "branches": 105,
-      "pass": 96,
-      "status": "failing"
+      "pass": 102,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -492,7 +604,11 @@
       "pair": "memoir.B",
       "branches": 622,
       "pass": 585,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 37,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -502,8 +618,8 @@
       },
       "pair": "memoir.B",
       "branches": 106,
-      "pass": 100,
-      "status": "failing"
+      "pass": 106,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -514,7 +630,11 @@
       "pair": "memoir.B",
       "branches": 203,
       "pass": 196,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 6,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -524,8 +644,12 @@
       },
       "pair": "memoir.B",
       "branches": 96,
-      "pass": 87,
-      "status": "failing"
+      "pass": 93,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -536,7 +660,11 @@
       "pair": "memoir.B",
       "branches": 76,
       "pass": 73,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -547,7 +675,11 @@
       "pair": "memoir.B",
       "branches": 77,
       "pass": 74,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -558,7 +690,11 @@
       "pair": "memoir.B",
       "branches": 77,
       "pass": 74,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -569,7 +705,11 @@
       "pair": "memoir.B",
       "branches": 91,
       "pass": 82,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -580,7 +720,11 @@
       "pair": "memoir.B",
       "branches": 76,
       "pass": 73,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -591,7 +735,11 @@
       "pair": "memoir.B",
       "branches": 78,
       "pass": 75,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -601,8 +749,12 @@
       },
       "pair": "memoir.B",
       "branches": 99,
-      "pass": 92,
-      "status": "failing"
+      "pass": 98,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -613,7 +765,11 @@
       "pair": "memoir.B",
       "branches": 76,
       "pass": 73,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -623,8 +779,12 @@
       },
       "pair": "memoir.B",
       "branches": 105,
-      "pass": 96,
-      "status": "failing"
+      "pass": 102,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -635,7 +795,11 @@
       "pair": "memoir.B",
       "branches": 77,
       "pass": 74,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -656,8 +820,12 @@
       },
       "pair": "memoir.B",
       "branches": 101,
-      "pass": 92,
-      "status": "failing"
+      "pass": 98,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -690,7 +858,11 @@
       "pair": "memoir.B",
       "branches": 43,
       "pass": 3,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 43,
+        "pass": 3
+      }
     },
     {
       "kind": "verified",
@@ -700,8 +872,12 @@
       },
       "pair": "memoir.B",
       "branches": 106,
-      "pass": 97,
-      "status": "failing"
+      "pass": 103,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -733,8 +909,12 @@
       },
       "pair": "memoir.B",
       "branches": 98,
-      "pass": 89,
-      "status": "failing"
+      "pass": 95,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -744,8 +924,12 @@
       },
       "pair": "memoir.B",
       "branches": 102,
-      "pass": 93,
-      "status": "failing"
+      "pass": 99,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -754,7 +938,7 @@
         "way": "general:containerBlock/listing:kernel"
       },
       "pair": "oup-authoring-template.A",
-      "branches": 24,
+      "branches": 23,
       "pass": 14,
       "status": "failing"
     },
@@ -765,7 +949,7 @@
         "way": "general:containerBlock/listing:enumitem"
       },
       "pair": "oup-authoring-template.A",
-      "branches": 24,
+      "branches": 23,
       "pass": 14,
       "status": "failing"
     },
@@ -776,9 +960,13 @@
         "way": "list.enumitem"
       },
       "pair": "oup-authoring-template.A",
-      "branches": 24,
-      "pass": 15,
-      "status": "failing"
+      "branches": 23,
+      "pass": 14,
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -789,7 +977,15 @@
       "pair": "oup-authoring-template.A",
       "branches": 24,
       "pass": 15,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 5,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -799,8 +995,12 @@
       },
       "pair": "oup-authoring-template.A",
       "branches": 24,
-      "pass": 14,
-      "status": "failing"
+      "pass": 15,
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -809,9 +1009,17 @@
         "way": "thm.class-native"
       },
       "pair": "oup-authoring-template.A",
-      "branches": 33,
+      "branches": 32,
       "pass": 0,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 18,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -831,9 +1039,13 @@
         "way": "list.enumerate-pkg"
       },
       "pair": "oup-authoring-template.A",
-      "branches": 24,
-      "pass": 15,
-      "status": "failing"
+      "branches": 23,
+      "pass": 14,
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -842,9 +1054,17 @@
         "way": "list.paralist"
       },
       "pair": "oup-authoring-template.A",
-      "branches": 24,
+      "branches": 23,
       "pass": 14,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -855,15 +1075,34 @@
       "pair": "oup-authoring-template.A",
       "branches": 13,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 12,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
       "parent": null,
       "pair": "oup-authoring-template.A",
-      "branches": 128,
-      "pass": 121,
+      "branches": 119,
+      "pass": 112,
       "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "abs.class-native"
+      },
+      "pair": "oup-authoring-template.A",
+      "branches": 13,
+      "pass": 13,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -872,9 +1111,13 @@
         "way": "thm.tcolorbox"
       },
       "pair": "oup-authoring-template.A",
-      "branches": 66,
-      "pass": 58,
-      "status": "failing"
+      "branches": 65,
+      "pass": 63,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -883,9 +1126,13 @@
         "way": "general:containerBlock/mathElement:amsthm+lib:breakable+lib:skins+tcolorbox"
       },
       "pair": "oup-authoring-template.A",
-      "branches": 30,
-      "pass": 0,
-      "status": "failing"
+      "branches": 29,
+      "pass": 1,
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -894,9 +1141,17 @@
         "way": "thm.mdframed"
       },
       "pair": "oup-authoring-template.A",
-      "branches": 33,
+      "branches": 32,
       "pass": 0,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 19,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -927,9 +1182,17 @@
         "way": "thm.kernel"
       },
       "pair": "oup-authoring-template.A",
-      "branches": 27,
+      "branches": 26,
       "pass": 0,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 14,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -938,8 +1201,8 @@
         "way": "cols.twocolumn-cmd"
       },
       "pair": "oup-authoring-template.A",
-      "branches": 14,
-      "pass": 14,
+      "branches": 13,
+      "pass": 13,
       "status": "verified-ok"
     },
     {
@@ -949,9 +1212,13 @@
         "way": "cols.vwcol"
       },
       "pair": "oup-authoring-template.A",
-      "branches": 14,
+      "branches": 13,
       "pass": 0,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 5,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -960,9 +1227,17 @@
         "way": "general:containerBlock/mathElement:amsthm+hyperref+lib:breakable+lib:skins+tcolorbox"
       },
       "pair": "oup-authoring-template.A",
-      "branches": 35,
-      "pass": 0,
-      "status": "failing"
+      "branches": 34,
+      "pass": 1,
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -973,7 +1248,11 @@
       "pair": "oup-authoring-template.A",
       "branches": 29,
       "pass": 0,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 15,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -982,9 +1261,17 @@
         "way": "general:containerBlock/mathElement:amsthm"
       },
       "pair": "oup-authoring-template.A",
-      "branches": 34,
+      "branches": 33,
       "pass": 0,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 21,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -995,18 +1282,317 @@
       "pair": "oup-authoring-template.A",
       "branches": 36,
       "pass": 0,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 22,
+        "pass": 0
+      }
     },
     {
-      "kind": "verified",
+      "kind": "ban",
+      "way": "box.class-native",
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
       "parent": {
-        "node": "containerBlock/abstract",
-        "way": "abs.class-native"
+        "node": "containerBlock/listing",
+        "way": "list.kernel",
+        "preset": "class"
       },
-      "pair": "oup-authoring-template.A",
-      "branches": 14,
-      "pass": 14,
-      "status": "verified-ok"
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "box.class-native",
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.kernel",
+        "preset": "paren-numbers"
+      },
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "box.class-native",
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.paralist",
+        "preset": "compact"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "box.class-native",
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 19,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "box.class-native",
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+hyperref",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 22,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "box.class-native",
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm",
+        "preset": "ams-section"
+      },
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "box.class-native",
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm",
+        "preset": "colored-head"
+      },
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "box.class-native",
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm",
+        "preset": "global"
+      },
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "box.class-native",
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm",
+        "preset": "upright"
+      },
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "box.class-native",
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.class-native",
+        "preset": "thmstyle"
+      },
+      "why": "never-passes",
+      "branches": 18,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "box.class-native",
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.kernel",
+        "preset": "global"
+      },
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "box.class-native",
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.kernel",
+        "preset": "section"
+      },
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "box.class-native",
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.kernel",
+        "preset": "shared"
+      },
+      "why": "never-passes",
+      "branches": 5,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "box.class-native",
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.mdframed",
+        "preset": "framed"
+      },
+      "why": "never-passes",
+      "branches": 8,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "box.class-native",
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.mdframed",
+        "preset": "thick"
+      },
+      "why": "never-passes",
+      "branches": 10,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "box.class-native",
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.thmtools",
+        "preset": "beauty"
+      },
+      "why": "never-passes",
+      "branches": 6,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "box.class-native",
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.thmtools",
+        "preset": "kao"
+      },
+      "why": "never-passes",
+      "branches": 6,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
     }
   ]
 }

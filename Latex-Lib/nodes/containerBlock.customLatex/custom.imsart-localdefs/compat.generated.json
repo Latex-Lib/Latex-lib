@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:6a1492c5de73dcb1f9d9c6f8a41782dce8ad7ec111ee4b51cbfdb9f3c6bc15e9",
     "contexts": "sha256:b429906652b3b8d65b742d417c56c2273e7dfd30e390c34f7b6dd3cebdc7d83f",
-    "matrix": "sha256:9d820ae80e0d345e2e8cd30c20a6ccf5f6bcf95cfc05ce4077d12f06ea30c493"
+    "matrix": "sha256:88b677f1ffa90acdce36f57242ac7ace559aed7e348d6154e5d747908e37c7a7"
   },
   "parents": {
     "body": {
@@ -95,13 +95,15 @@
       "(General)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 27,
           "pass": 26,
-          "failing": [
-            "imsart.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       }
     },
@@ -124,25 +126,29 @@
       "thm.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 19,
           "pass": 18,
-          "failing": [
-            "imsart.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "thm.mdframed": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 25,
           "pass": 24,
-          "failing": [
-            "imsart.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "thm.ntheorem": {
@@ -153,13 +159,15 @@
       "thm.tcolorbox": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 50,
           "pass": 48,
-          "failing": [
-            "imsart.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "thm.tcolorbox[breakable=false]": {
@@ -170,13 +178,15 @@
       "thm.thmtools": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 16,
           "pass": 15,
-          "failing": [
-            "imsart.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       }
     },
@@ -284,7 +294,11 @@
         "matrix": {
           "branches": 21,
           "pass": 21,
-          "failing": []
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 1
+          }
         }
       },
       "list.cvlist": {
@@ -299,7 +313,11 @@
         "matrix": {
           "branches": 21,
           "pass": 21,
-          "failing": []
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 1
+          }
         }
       },
       "list.enumitem": {
@@ -309,7 +327,11 @@
         "matrix": {
           "branches": 21,
           "pass": 21,
-          "failing": []
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 1
+          }
         }
       },
       "list.exam-questions": {
@@ -324,7 +346,11 @@
         "matrix": {
           "branches": 21,
           "pass": 21,
-          "failing": []
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 1
+          }
         }
       },
       "list.nomenclature": {
@@ -339,7 +365,11 @@
         "matrix": {
           "branches": 21,
           "pass": 21,
-          "failing": []
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 1
+          }
         }
       },
       "list.scrextend": {
@@ -349,12 +379,17 @@
         "matrix": {
           "branches": 21,
           "pass": 21,
-          "failing": []
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 1
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

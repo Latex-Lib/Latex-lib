@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:b1fbc84db70eb51a2f7a447643235f2e96ace3f6051db4985e2edd5b88c76ae0",
     "contexts": "sha256:14e595b5a917207b0202cd81103654b34671bd431b2e4e8a05c64647be89ab4f",
-    "matrix": "sha256:073c58b2f68bd98450cf46e9ea03f5c5597048eee4780d4b41d1de00e08bc29d"
+    "matrix": "sha256:b8e8a469230f2d1c70110637c0933c092bffb338b50765f9e3320e2755a92f85"
   },
   "parents": {
     "containerBlock/columns": {
@@ -39,7 +39,7 @@
         "status": "failing",
         "matrix": {
           "branches": 1988,
-          "pass": 1888,
+          "pass": 1890,
           "failing": [
             "aaai.A",
             "aamas.A",
@@ -52,8 +52,6 @@
             "acmart-sigplan.A",
             "agu.A",
             "aistats.A",
-            "amsart.A",
-            "amsart.B",
             "article.A",
             "article.B",
             "ascelike.A",
@@ -82,11 +80,7 @@
             "icassp.A",
             "iclr.A",
             "icml.A",
-            "ieeeconf-ras.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
             "ijcai.A",
-            "imsart.A",
             "interact.A",
             "iopart.A",
             "iopjournal.A",
@@ -108,14 +102,17 @@
             "scrbook.B",
             "scrreprt.A",
             "scrreprt.B",
-            "siamart.A",
             "sn-jnl.A",
             "spie.A",
             "tmlr.A",
             "usenix.A",
             "ut-thesis.A",
             "vldb.A"
-          ]
+          ],
+          "banned": {
+            "branches": 72,
+            "pass": 44
+          }
         }
       },
       "cols.paracol": {
@@ -124,38 +121,35 @@
         "status": "failing",
         "matrix": {
           "branches": 1136,
-          "pass": 1109,
+          "pass": 1108,
           "failing": [
             "amsart.A",
             "article.A",
             "book.A",
-            "corl.A",
             "elsarticle-3p.A",
             "elsarticle-preprint.A",
             "exam.A",
             "extarticle.A",
-            "imsart.A",
-            "jmlr-pmlr.A",
             "jss.A",
             "report.A",
-            "siamart.A",
             "sn-jnl.A",
             "tufte-handout.A",
             "ut-thesis.A"
-          ]
+          ],
+          "banned": {
+            "branches": 7,
+            "pass": 0
+          }
         }
       },
       "cols.revtex-grid": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 22,
-          "pass": 17,
-          "failing": [
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A"
-          ]
+          "pass": 22,
+          "failing": []
         }
       },
       "cols.tikzposter": {
@@ -169,26 +163,23 @@
         "status": "failing",
         "matrix": {
           "branches": 1331,
-          "pass": 1289,
+          "pass": 1292,
           "failing": [
-            "ascelike.A",
             "book.A",
             "book.B",
-            "eccv.A",
-            "ijcai.A",
-            "llncs.A",
-            "llncs.B",
             "memoir.A",
-            "quantumarticle.A",
             "report.A",
             "report.B",
             "scrbook.A",
             "scrbook.B",
             "scrreprt.A",
             "scrreprt.B",
-            "sn-jnl.A",
             "ut-thesis.A"
-          ]
+          ],
+          "banned": {
+            "branches": 25,
+            "pass": 8
+          }
         }
       },
       "cols.vwcol": {
@@ -201,7 +192,7 @@
         ],
         "matrix": {
           "branches": 2118,
-          "pass": 979,
+          "pass": 985,
           "failing": [
             "aa.A",
             "aaai.A",
@@ -293,7 +284,11 @@
             "usenix.A",
             "ut-thesis.A",
             "vldb.A"
-          ]
+          ],
+          "denied": {
+            "branches": 2118,
+            "pass": 985
+          }
         }
       }
     },
@@ -306,37 +301,23 @@
           "branches": 1203,
           "pass": 1121,
           "failing": [
-            "aaai.A",
-            "acl.A",
-            "aistats.A",
             "article.A",
             "article.B",
-            "ascelike.A",
-            "bmvc.A",
             "book.A",
             "book.B",
-            "elegantpaper.A",
             "exam.A",
             "exam.B",
             "icassp.A",
             "icml.A",
-            "ijcai.A",
-            "imsart.A",
-            "interact.A",
-            "iopjournal.A",
-            "jacow.A",
-            "jmlr-pmlr.A",
-            "jss.A",
-            "lipics.A",
-            "oup-authoring-template.A",
-            "plos.A",
             "report.A",
             "report.B",
-            "sn-jnl.A",
             "spie.A",
-            "usenix.A",
             "ut-thesis.A"
-          ]
+          ],
+          "banned": {
+            "branches": 49,
+            "pass": 0
+          }
         }
       },
       "num.appendix": {
@@ -361,7 +342,11 @@
             "scrreprt.A",
             "scrreprt.B",
             "ut-thesis.A"
-          ]
+          ],
+          "banned": {
+            "branches": 7,
+            "pass": 0
+          }
         }
       },
       "num.appendix-onecolumn": {
@@ -405,7 +390,11 @@
             "ieeetran-compsoc.A",
             "ieeetran-conference.A",
             "ieeetran-journal.A"
-          ]
+          ],
+          "banned": {
+            "branches": 3,
+            "pass": 0
+          }
         }
       },
       "num.mdpi-appendix": {
@@ -423,15 +412,15 @@
       "num.unnumbered": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 460,
           "pass": 457,
-          "failing": [
-            "eccv.A",
-            "llncs.A",
-            "llncs.B"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 12,
+            "pass": 9
+          }
         }
       }
     },
@@ -459,13 +448,15 @@
       "ack.bmhead": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 18,
           "pass": 16,
-          "failing": [
-            "sn-jnl.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "ack.class-command": {
@@ -497,7 +488,11 @@
           "pass": 80,
           "failing": [
             "spie.A"
-          ]
+          ],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "ack.class-native[env=ack]": {
@@ -523,13 +518,11 @@
         "status": "failing",
         "matrix": {
           "branches": 2266,
-          "pass": 2181,
+          "pass": 2182,
           "failing": [
             "achemso.A",
             "acl.A",
             "aistats.A",
-            "amsart.A",
-            "amsart.B",
             "apa7.A",
             "article.A",
             "article.B",
@@ -550,12 +543,10 @@
             "icml.A",
             "ieeeaccess.A",
             "ijcai.A",
-            "imsart.A",
             "jmlr-pmlr.A",
             "lipics.A",
             "memoir.A",
             "memoir.B",
-            "oup-authoring-template.A",
             "plos.A",
             "quantumarticle.A",
             "report.A",
@@ -566,11 +557,14 @@
             "scrbook.B",
             "scrreprt.A",
             "scrreprt.B",
-            "siamart.A",
             "sn-jnl.A",
             "usenix.A",
             "ut-thesis.A"
-          ]
+          ],
+          "banned": {
+            "branches": 25,
+            "pass": 2
+          }
         }
       },
       "ack.llncs-credits": {
@@ -587,5 +581,25 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "revtex4-2-aip",
+      "preset": "to-subsection",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "revtex4-2-aps",
+      "preset": "to-subsection",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    }
+  ]
 }

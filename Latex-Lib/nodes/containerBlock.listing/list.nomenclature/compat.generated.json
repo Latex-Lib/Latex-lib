@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:454303851e0edf8f5224edc1fba49efe15f1a17e413074d15d76360ce43c3c14",
     "contexts": "sha256:8db64482326e84b00a291c338c13df9b25b81bdb6205276160e24ebb00178228",
-    "matrix": "sha256:ff621280fe804924db70d7ad031fb2f0d0f4b9f1023e1696973b9867fc70bfbf"
+    "matrix": "sha256:73f38c4f732a62ca87d462b36cae0eca33e0941f23b52434ec34536b8dea0042"
   },
   "parents": {
     "body": {
@@ -16,9 +16,16 @@
           "branches": 1110,
           "pass": 1031,
           "failing": [
-            "asmeconf.A",
-            "asmejour.A"
-          ]
+            "asmeconf.A"
+          ],
+          "denied": {
+            "branches": 72,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       }
     },
@@ -160,9 +167,12 @@
           "branches": 88,
           "pass": 79,
           "failing": [
-            "asmeconf.A",
-            "asmejour.A"
-          ]
+            "asmeconf.A"
+          ],
+          "denied": {
+            "branches": 9,
+            "pass": 1
+          }
         }
       },
       "cols.paracol": {
@@ -189,7 +199,11 @@
           "pass": 81,
           "failing": [
             "asmeconf.A"
-          ]
+          ],
+          "denied": {
+            "branches": 1,
+            "pass": 1
+          }
         }
       },
       "cols.vwcol": {
@@ -206,7 +220,11 @@
           "failing": [
             "asmeconf.A",
             "asmejour.A"
-          ]
+          ],
+          "denied": {
+            "branches": 96,
+            "pass": 18
+          }
         }
       }
     },
@@ -219,9 +237,12 @@
           "branches": 110,
           "pass": 99,
           "failing": [
-            "asmeconf.A",
             "asmejour.A"
-          ]
+          ],
+          "denied": {
+            "branches": 10,
+            "pass": 0
+          }
         }
       }
     },
@@ -229,14 +250,19 @@
       "box.awesomebox": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 66,
           "pass": 61,
-          "failing": [
-            "asmeconf.A",
-            "asmejour.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 4,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 1
+          }
         }
       },
       "box.class-native": {
@@ -269,7 +295,15 @@
           "failing": [
             "asmeconf.A",
             "asmejour.A"
-          ]
+          ],
+          "denied": {
+            "branches": 4,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 1
+          }
         }
       },
       "box.mdframed": {
@@ -280,9 +314,12 @@
           "branches": 184,
           "pass": 169,
           "failing": [
-            "asmeconf.A",
             "asmejour.A"
-          ]
+          ],
+          "denied": {
+            "branches": 14,
+            "pass": 0
+          }
         }
       },
       "box.mdframed[breakable=false]": {
@@ -293,14 +330,15 @@
       "box.tcolorbox": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 120,
           "pass": 110,
-          "failing": [
-            "asmeconf.A",
-            "asmejour.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 10,
+            "pass": 0
+          }
         }
       },
       "box.tcolorbox[breakable=false]": {
@@ -337,7 +375,15 @@
           "pass": 43,
           "failing": [
             "asmejour.A"
-          ]
+          ],
+          "denied": {
+            "branches": 7,
+            "pass": 2
+          },
+          "banned": {
+            "branches": 4,
+            "pass": 1
+          }
         }
       },
       "note.marginpar": {
@@ -349,7 +395,15 @@
           "pass": 14,
           "failing": [
             "asmejour.A"
-          ]
+          ],
+          "denied": {
+            "branches": 10,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "note.notecolumn": {
@@ -358,10 +412,18 @@
         "status": "failing",
         "matrix": {
           "branches": 30,
-          "pass": 20,
+          "pass": 21,
           "failing": [
             "asmejour.A"
-          ]
+          ],
+          "denied": {
+            "branches": 4,
+            "pass": 2
+          },
+          "banned": {
+            "branches": 4,
+            "pass": 0
+          }
         }
       },
       "note.sidenotes": {
@@ -370,10 +432,14 @@
         "status": "failing",
         "matrix": {
           "branches": 30,
-          "pass": 18,
+          "pass": 17,
           "failing": [
             "asmejour.A"
-          ]
+          ],
+          "denied": {
+            "branches": 7,
+            "pass": 0
+          }
         }
       },
       "note.todonotes": {
@@ -385,7 +451,15 @@
           "pass": 20,
           "failing": [
             "asmejour.A"
-          ]
+          ],
+          "denied": {
+            "branches": 9,
+            "pass": 3
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       }
     },
@@ -404,7 +478,11 @@
           "pass": 175,
           "failing": [
             "asmeconf.A"
-          ]
+          ],
+          "banned": {
+            "branches": 2,
+            "pass": 2
+          }
         }
       },
       "abs.class-native": {
@@ -452,7 +530,11 @@
           "failing": [
             "asmeconf.A",
             "asmejour.A"
-          ]
+          ],
+          "banned": {
+            "branches": 17,
+            "pass": 0
+          }
         }
       },
       "abs.keywords": {
@@ -492,22 +574,30 @@
           "branches": 108,
           "pass": 105,
           "failing": [
-            "asmeconf.A",
-            "asmejour.A"
-          ]
+            "asmeconf.A"
+          ],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 2
+          }
         }
       },
       "thm.mdframed": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 122,
           "pass": 109,
-          "failing": [
-            "asmeconf.A",
-            "asmejour.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 13,
+            "pass": 0
+          }
         }
       },
       "thm.ntheorem": {
@@ -528,9 +618,12 @@
           "branches": 258,
           "pass": 229,
           "failing": [
-            "asmeconf.A",
-            "asmejour.A"
-          ]
+            "asmeconf.A"
+          ],
+          "denied": {
+            "branches": 27,
+            "pass": 0
+          }
         }
       },
       "thm.tcolorbox[breakable=false]": {
@@ -541,14 +634,15 @@
       "thm.thmtools": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 28,
           "pass": 26,
-          "failing": [
-            "asmeconf.A",
-            "asmejour.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       }
     },
@@ -579,5 +673,118 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "asmeconf",
+      "preset": "class",
+      "parent": "containerBlock/note general:containerBlock/note:marginnote+xcolor",
+      "why": "never-passes",
+      "branches": 10,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "asmeconf",
+      "preset": "list-of-symbols",
+      "parent": "containerBlock/note general:containerBlock/note:marginnote+xcolor",
+      "why": "never-passes",
+      "branches": 6,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "class",
+      "parent": "containerBlock/note box.awesomebox[by-tone]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "class",
+      "parent": "containerBlock/note note.marginnote[colored]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "class",
+      "parent": "containerBlock/note note.marginpar[ragged-small]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "class",
+      "parent": "containerBlock/note note.notecolumn[margin]",
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "class",
+      "parent": "containerBlock/note note.todonotes[review]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "class",
+      "parent": "containerBlock/note note.todonotes[tag]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "list-of-symbols",
+      "parent": "containerBlock/note box.fancybox[oval]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "list-of-symbols",
+      "parent": "containerBlock/note note.marginnote[small-sans]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "error"
+      ]
+    }
+  ]
 }

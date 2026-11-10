@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:89b804aab0956764fb72c72c1a63c563f1c3b4f9ab80c81db60de858fc0ebb1a",
     "contexts": "sha256:9a34444e43ac79586ac5a93aa416a3e6b45fdee3bf9cad3cd215ed2d48d1e81b",
-    "matrix": "sha256:dbc7642e79aea822bbb1db29eeeb2b8130da1d40c0bdb082c71b38bf86df2583"
+    "matrix": "sha256:206c78594a27050c7734ff29efd2b16cd4a7b0d73c3593c4918631f662adf75c"
   },
   "parents": {
     "body": {
@@ -175,7 +175,11 @@
         "matrix": {
           "branches": 2,
           "pass": 2,
-          "failing": []
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 2
+          }
         }
       },
       "cols.paracol": {
@@ -226,13 +230,15 @@
       "list.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 4,
           "pass": 3,
-          "failing": [
-            "apa7.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "list.cvlist": {
@@ -243,30 +249,29 @@
       "list.enumerate-pkg": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 21,
           "pass": 17,
-          "failing": [
-            "achemso.A",
-            "apa7.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 4,
+            "pass": 0
+          }
         }
       },
       "list.enumitem": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 34,
-          "pass": 28,
-          "failing": [
-            "aa.A",
-            "achemso.A",
-            "apa7.A",
-            "jmlr-pmlr.A",
-            "mdpi.A"
-          ]
+          "pass": 27,
+          "failing": [],
+          "denied": {
+            "branches": 9,
+            "pass": 2
+          }
         }
       },
       "list.exam-questions": {
@@ -277,17 +282,15 @@
       "list.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 25,
-          "pass": 17,
-          "failing": [
-            "achemso.A",
-            "apa7.A",
-            "ieeeaccess.A",
-            "jmlr-pmlr.A",
-            "mdpi.A"
-          ]
+          "pass": 18,
+          "failing": [],
+          "denied": {
+            "branches": 9,
+            "pass": 2
+          }
         }
       },
       "list.nomenclature": {
@@ -298,33 +301,33 @@
       "list.paralist": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 21,
           "pass": 11,
-          "failing": [
-            "aastex.A",
-            "aastex.B",
-            "achemso.A",
-            "apa7.A",
-            "ieeeaccess.A",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 6,
+            "pass": 2
+          },
+          "banned": {
+            "branches": 6,
+            "pass": 0
+          }
         }
       },
       "list.scrextend": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 24,
-          "pass": 19,
-          "failing": [
-            "apa7.A",
-            "jmlr-pmlr.A",
-            "mdpi.A"
-          ]
+          "pass": 18,
+          "failing": [],
+          "denied": {
+            "branches": 6,
+            "pass": 0
+          }
         }
       }
     },
@@ -332,14 +335,19 @@
       "thm.amsthm": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 12,
           "pass": 9,
-          "failing": [
-            "achemso.A",
-            "apa7.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "thm.class-native": {
@@ -349,24 +357,29 @@
         "matrix": {
           "branches": 12,
           "pass": 12,
-          "failing": []
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 1
+          }
         }
       },
       "thm.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 11,
           "pass": 5,
-          "failing": [
-            "aastex.A",
-            "aastex.B",
-            "emulateapj.A",
-            "ieeeaccess.A",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 5,
+            "pass": 0
+          }
         }
       },
       "thm.mdframed": {
@@ -386,23 +399,25 @@
             "ieeeaccess.A",
             "revtex4-2-aip.A",
             "revtex4-2-aps.A"
-          ]
+          ],
+          "denied": {
+            "branches": 7,
+            "pass": 0
+          }
         }
       },
       "thm.ntheorem": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 9,
           "pass": 4,
-          "failing": [
-            "aastex.A",
-            "aastex.B",
-            "emulateapj.A",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 5,
+            "pass": 0
+          }
         }
       },
       "thm.tcolorbox": {
@@ -424,7 +439,11 @@
             "mdpi.A",
             "revtex4-2-aip.A",
             "revtex4-2-aps.A"
-          ]
+          ],
+          "denied": {
+            "branches": 27,
+            "pass": 2
+          }
         }
       },
       "thm.tcolorbox[breakable=false]": {
@@ -439,18 +458,19 @@
       "thm.thmtools": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 19,
           "pass": 13,
-          "failing": [
-            "aastex.A",
-            "aastex.B",
-            "achemso.A",
-            "emulateapj.A",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 5,
+            "pass": 0
+          }
         }
       }
     },
@@ -587,5 +607,218 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "aastex",
+      "preset": "turnpage",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:float-too-large"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "turnpage",
+      "parent": "containerBlock/mathElement thm.kernel[shared]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "turnpage",
+      "parent": "containerBlock/mathElement thm.ntheorem[break]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:float-too-large",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "turnpage",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "achemso",
+      "preset": "graph",
+      "parent": "containerBlock/mathElement general:containerBlock/mathElement:amsthm+hyperref",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "achemso",
+      "preset": "graph",
+      "parent": "containerBlock/mathElement thm.amsthm[ams-section]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "apa7",
+      "preset": "fit-figure",
+      "parent": "containerBlock/appendix general:containerBlock/appendix:kernel",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "apa7",
+      "preset": "fit-figure",
+      "parent": "containerBlock/listing list.paralist[inline]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "turnpage",
+      "parent": "containerBlock/mathElement thm.kernel[shared]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "turnpage",
+      "parent": "containerBlock/mathElement thm.ntheorem[break]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:float-too-large",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "turnpage",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "revtex4-2-aip",
+      "preset": "turnpage",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:float-too-large",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "revtex4-2-aip",
+      "preset": "turnpage",
+      "parent": "containerBlock/mathElement thm.kernel[shared]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "revtex4-2-aip",
+      "preset": "turnpage",
+      "parent": "containerBlock/mathElement thm.ntheorem[break]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:float-too-large",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "revtex4-2-aip",
+      "preset": "turnpage",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "revtex4-2-aps",
+      "preset": "turnpage",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:float-too-large",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "revtex4-2-aps",
+      "preset": "turnpage",
+      "parent": "containerBlock/mathElement thm.kernel[shared]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "revtex4-2-aps",
+      "preset": "turnpage",
+      "parent": "containerBlock/mathElement thm.ntheorem[break]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:float-too-large",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "revtex4-2-aps",
+      "preset": "turnpage",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    }
+  ]
 }

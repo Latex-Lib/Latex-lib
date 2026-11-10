@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:b23d3663d1fe1a29b8a9f3d69b37a0ba431d0b56862658ad41f739f59d776586",
     "contexts": "sha256:f71c32d51d3016c64059e7d491725c08b522482004cfef01186a16c6d9e5d6cb",
-    "matrix": "sha256:46dc7e1681295bf5c6ea318b595a30f7c5e7b26c12b52c66f221f24e50b39c0e"
+    "matrix": "sha256:1c2f088007d206f9fc8ab797b6c5acae3da91362fb9db920df6b2c2bfe4e648f"
   },
   "parents": {
     "paragraph/paragraph": {
@@ -69,7 +69,11 @@
             "scrreprt.B",
             "siamart.A",
             "tufte-handout.A"
-          ]
+          ],
+          "banned": {
+            "branches": 9,
+            "pass": 0
+          }
         }
       }
     },
@@ -82,10 +86,12 @@
           "branches": 88,
           "pass": 83,
           "failing": [
-            "book.A",
-            "book.B",
-            "ut-thesis.A"
-          ]
+            "book.A"
+          ],
+          "denied": {
+            "branches": 6,
+            "pass": 2
+          }
         }
       },
       "head.class-native": {
@@ -97,20 +103,25 @@
           "pass": 536,
           "failing": [
             "quantumarticle.A"
-          ]
+          ],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "head.class-styled": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 126,
           "pass": 122,
-          "failing": [
-            "scrbook.B",
-            "scrreprt.B"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 12,
+            "pass": 8
+          }
         }
       },
       "head.copernicus": {
@@ -127,31 +138,26 @@
           "pass": 297,
           "failing": [
             "book.A",
-            "book.B",
-            "llncs.A",
-            "llncs.B",
-            "memoir.A",
-            "memoir.B",
-            "report.A",
-            "report.B",
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "ut-thesis.A"
-          ]
+            "report.A"
+          ],
+          "denied": {
+            "branches": 26,
+            "pass": 0
+          }
         }
       },
       "head.ieee-raise": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 15,
           "pass": 14,
-          "failing": [
-            "ieeetran-compsoc.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 1
+          }
         }
       },
       "head.kernel": {
@@ -162,72 +168,50 @@
           "branches": 873,
           "pass": 815,
           "failing": [
-            "aaai.A",
-            "aistats.A",
-            "amsart.A",
-            "amsart.B",
-            "article.A",
-            "article.B",
             "book.A",
             "book.B",
-            "cas-dc.A",
-            "cas-sc.A",
-            "exam.A",
-            "exam.B",
-            "extarticle.A",
-            "extarticle.B",
             "icassp.A",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "ijcai.A",
-            "imsart.A",
-            "interact.A",
-            "iopart.A",
-            "iopjournal.A",
-            "lipics.A",
-            "llncs.A",
-            "llncs.B",
-            "memoir.A",
-            "memoir.B",
-            "mnras.A",
             "quantumarticle.A",
             "report.A",
             "report.B",
-            "scrbook.B",
-            "scrreprt.B",
-            "siamart.A",
-            "tufte-handout.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 78,
+            "pass": 34
+          },
+          "banned": {
+            "branches": 6,
+            "pass": 0
+          }
         }
       },
       "head.koma-fonts": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 121,
           "pass": 117,
-          "failing": [
-            "scrbook.B",
-            "scrreprt.B"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 12,
+            "pass": 8
+          }
         }
       },
       "head.memoir-style": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 50,
           "pass": 46,
-          "failing": [
-            "memoir.A",
-            "memoir.B"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 4,
+            "pass": 0
+          }
         }
       },
       "head.plain": {
@@ -243,33 +227,13 @@
           "branches": 524,
           "pass": 496,
           "failing": [
-            "aaai.A",
-            "aistats.A",
-            "article.A",
-            "article.B",
-            "book.A",
             "book.B",
-            "exam.A",
-            "exam.B",
-            "extarticle.A",
-            "extarticle.B",
-            "icassp.A",
-            "ijcai.A",
-            "imsart.A",
-            "iopjournal.A",
-            "lipics.A",
-            "llncs.A",
-            "llncs.B",
-            "report.A",
-            "report.B",
-            "scrartcl.A",
-            "scrartcl.B",
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "ut-thesis.A"
-          ]
+            "icassp.A"
+          ],
+          "denied": {
+            "branches": 52,
+            "pass": 26
+          }
         }
       },
       "head.titlesec": {
@@ -280,46 +244,36 @@
           "branches": 585,
           "pass": 551,
           "failing": [
-            "aistats.A",
-            "amsart.A",
             "amsart.B",
-            "article.A",
             "book.A",
-            "book.B",
-            "cas-dc.A",
-            "cas-sc.A",
-            "exam.A",
-            "extarticle.A",
-            "icassp.A",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "ijcai.A",
-            "imsart.A",
-            "interact.A",
-            "iopart.A",
-            "iopjournal.A",
-            "lipics.A",
-            "report.A",
-            "report.B",
-            "siamart.A",
-            "tufte-handout.A",
-            "ut-thesis.A"
-          ]
+            "book.B"
+          ],
+          "denied": {
+            "branches": 61,
+            "pass": 32
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "head.tufte": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 12,
           "pass": 11,
-          "failing": [
-            "tufte-handout.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 1
+          },
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       }
     },
@@ -371,13 +325,15 @@
       "front.aistats": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 1,
           "pass": 0,
-          "failing": [
-            "aistats.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.ams-topmatter": {
@@ -408,13 +364,11 @@
       "front.authblk": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
-          "branches": 11,
+          "branches": 10,
           "pass": 10,
-          "failing": [
-            "aaai.A"
-          ]
+          "failing": []
         }
       },
       "front.author-blocks": {
@@ -470,13 +424,15 @@
       "front.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 43,
           "pass": 42,
-          "failing": [
-            "siamart.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.copernicus": {
@@ -664,13 +620,15 @@
       "front.maketitle": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 43,
           "pass": 42,
-          "failing": [
-            "siamart.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.mdpi": {
@@ -711,13 +669,15 @@
       "front.siam": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 1,
           "pass": 0,
-          "failing": [
-            "siamart.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.sn-jnl": {
@@ -796,5 +756,316 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "aistats",
+      "preset": "textual",
+      "parent": "paragraph/title front.aistats[one-column]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "icassp",
+      "preset": "autocite",
+      "parent": "paragraph/heading head.kernel[lettered-sections]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "icassp",
+      "preset": "autocite",
+      "parent": "paragraph/heading head.kernel[numbered]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "icassp",
+      "preset": "textual",
+      "parent": "paragraph/heading head.kernel[unnumbered]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "icassp",
+      "preset": "textual",
+      "parent": "paragraph/heading head.titlesec[run-in]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "ieeeconf-ras",
+      "preset": "textual",
+      "parent": "codeEscape code.escape[marker]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeeconf-ras",
+      "preset": "textual",
+      "parent": "codeEscape general:codeEscape:listings+xcolor",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-compsoc",
+      "preset": "textual",
+      "parent": "codeEscape code.escape[marker]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-compsoc",
+      "preset": "textual",
+      "parent": "codeEscape general:codeEscape:listings+xcolor",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-compsoc",
+      "preset": "textual",
+      "parent": "paragraph/paragraph para.kernel[space-between]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:duplicated"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-conference",
+      "preset": "textual",
+      "parent": "codeEscape code.escape[marker]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-conference",
+      "preset": "textual",
+      "parent": "codeEscape general:codeEscape:listings+xcolor",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-conference",
+      "preset": "textual",
+      "parent": "paragraph/paragraph para.kernel[space-between]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:duplicated"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-journal",
+      "preset": "textual",
+      "parent": "codeEscape code.escape[marker]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-journal",
+      "preset": "textual",
+      "parent": "codeEscape general:codeEscape:listings+xcolor",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-journal",
+      "preset": "textual",
+      "parent": "paragraph/paragraph para.kernel[space-between]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:duplicated"
+      ]
+    },
+    {
+      "classSetting": "imsart",
+      "preset": "autocite",
+      "parent": "paragraph/title general:paragraph/title:kernel",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "autocite",
+      "parent": "paragraph/heading head.class-native[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "autocite",
+      "parent": "paragraph/heading head.kernel[numbered]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "autocite",
+      "parent": "paragraph/heading head.kernel[roman-sections]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "autocite",
+      "parent": "paragraph/paragraph para.kernel[class]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "sentinel:off-paper"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "autocite",
+      "parent": "paragraph/paragraph para.kernel[space-between]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "parenthetical",
+      "parent": "paragraph/heading head.kernel[roman-sections]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": "paragraph/heading general:paragraph/heading:kernel",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "textual",
+      "parent": "paragraph/paragraph para.kernel[space-and-indent]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "error",
+        "sentinel:missing",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "siamart",
+      "preset": "parenthetical",
+      "parent": "paragraph/title front.class-native[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "siamart",
+      "preset": "parenthetical",
+      "parent": "paragraph/title front.maketitle[no-date]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "siamart",
+      "preset": "parenthetical",
+      "parent": "paragraph/title front.siam[ams]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "parenthetical",
+      "parent": "paragraph/heading head.tufte[paragraph]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    }
+  ]
 }

@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:0fe9a8097c1ad1141c19dbb30f58e9d060c6b1339e543a2e201de547521ac4ea",
     "contexts": "sha256:f593ada8348e3bc89e6616015502a97a24a8913da366aaa0e721d6679e8365b9",
-    "matrix": "sha256:cda370d74edfa6c6c4c78c6a78f8afffd9549cb9079e31e7c16c915014eb3c43"
+    "matrix": "sha256:2b26536a47277333b21f8f57a4085b8c6ea0822c926ca3880b62827216d809bb"
   },
   "parents": {
     "body": {
@@ -16,9 +16,12 @@
           "branches": 422,
           "pass": 397,
           "failing": [
-            "memoir.A",
-            "memoir.B"
-          ]
+            "memoir.A"
+          ],
+          "denied": {
+            "branches": 20,
+            "pass": 0
+          }
         }
       }
     },
@@ -53,7 +56,11 @@
           "failing": [
             "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "cols.paracol": {
@@ -65,7 +72,11 @@
           "pass": 0,
           "failing": [
             "memoir.A"
-          ]
+          ],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "cols.revtex-grid": {
@@ -104,7 +115,11 @@
           "failing": [
             "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "denied": {
+            "branches": 28,
+            "pass": 0
+          }
         }
       }
     },
@@ -134,7 +149,11 @@
           "failing": [
             "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "list.enumitem": {
@@ -145,9 +164,16 @@
           "branches": 53,
           "pass": 47,
           "failing": [
-            "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 3,
+            "pass": 0
+          }
         }
       },
       "list.exam-questions": {
@@ -165,7 +191,11 @@
           "failing": [
             "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "list.nomenclature": {
@@ -183,7 +213,11 @@
           "failing": [
             "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "list.scrextend": {
@@ -196,7 +230,11 @@
           "failing": [
             "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       }
     },
@@ -283,7 +321,11 @@
           "failing": [
             "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "thm.class-native": {
@@ -301,7 +343,15 @@
           "failing": [
             "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "thm.mdframed": {
@@ -314,7 +364,11 @@
           "failing": [
             "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "denied": {
+            "branches": 2,
+            "pass": 1
+          }
         }
       },
       "thm.ntheorem": {
@@ -327,7 +381,11 @@
           "failing": [
             "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "thm.tcolorbox": {
@@ -340,7 +398,11 @@
           "failing": [
             "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "denied": {
+            "branches": 4,
+            "pass": 0
+          }
         }
       },
       "thm.tcolorbox[breakable=false]": {
@@ -358,12 +420,51 @@
           "failing": [
             "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "memoir",
+      "preset": "memoir",
+      "parent": "containerBlock/listing list.enumitem[nextline-descriptions]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "memoir",
+      "preset": "wide",
+      "parent": "containerBlock/listing list.enumitem[nextline-descriptions]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "memoir",
+      "preset": "wide",
+      "parent": "containerBlock/mathElement thm.kernel[global]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    }
+  ]
 }

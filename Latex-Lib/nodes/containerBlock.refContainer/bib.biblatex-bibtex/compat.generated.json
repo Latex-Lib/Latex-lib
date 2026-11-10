@@ -4,61 +4,22 @@
   "generatedFrom": {
     "key": "sha256:19e4c9d89ddc713d1c21e5660a6ac3228fcf52e7f192a905d9a605a53f2a0e7e",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:285cfdfa6ec7516aae06d2e071114729c81bd26ce487143a6f93ff979e9b8235"
+    "matrix": "sha256:abdad555185915ed26f6dda96785e563c8276e77cdf41d8e9397acf4c06abd2c"
   },
   "parents": {
     "body": {
       "(document body)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 568,
           "pass": 485,
-          "failing": [
-            "aaai.A",
-            "aistats.A",
-            "amsart.A",
-            "amsart.B",
-            "article.A",
-            "article.B",
-            "book.A",
-            "book.B",
-            "cas-dc.A",
-            "cas-sc.A",
-            "exam.A",
-            "exam.B",
-            "extarticle.A",
-            "extarticle.B",
-            "icassp.A",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "ijcai.A",
-            "imsart.A",
-            "interact.A",
-            "iopart.A",
-            "iopjournal.A",
-            "lipics.A",
-            "llncs.A",
-            "llncs.B",
-            "memoir.A",
-            "memoir.B",
-            "mnras.A",
-            "quantumarticle.A",
-            "report.A",
-            "report.B",
-            "scrartcl.A",
-            "scrartcl.B",
-            "scrbook.A",
-            "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "siamart.A",
-            "ut-thesis.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 83,
+            "pass": 0
+          }
         }
       }
     }
@@ -71,5 +32,6 @@
         "status": "untested"
       }
     ]
-  }
+  },
+  "bans": []
 }

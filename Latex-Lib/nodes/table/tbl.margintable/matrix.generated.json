@@ -1,9 +1,9 @@
 {
   "way": "tbl.margintable",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -17,7 +17,15 @@
       "pair": "tufte-handout.A",
       "branches": 26,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 8,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 4,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -28,7 +36,15 @@
       "pair": "tufte-handout.A",
       "branches": 26,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 8,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -58,7 +74,15 @@
       "pair": "tufte-handout.A",
       "branches": 24,
       "pass": 11,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 4,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 9,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -69,7 +93,11 @@
       "pair": "tufte-handout.A",
       "branches": 26,
       "pass": 17,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 8,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -80,7 +108,15 @@
       "pair": "tufte-handout.A",
       "branches": 26,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 8,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -91,7 +127,15 @@
       "pair": "tufte-handout.A",
       "branches": 26,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 8,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -101,8 +145,16 @@
       },
       "pair": "tufte-handout.A",
       "branches": 26,
-      "pass": 18,
-      "status": "failing"
+      "pass": 17,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 8,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -113,7 +165,15 @@
       "pair": "tufte-handout.A",
       "branches": 33,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 8,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 7,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -124,7 +184,11 @@
       "pair": "tufte-handout.A",
       "branches": 4,
       "pass": 4,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -134,8 +198,16 @@
       },
       "pair": "tufte-handout.A",
       "branches": 26,
-      "pass": 15,
-      "status": "failing"
+      "pass": 16,
+      "status": "failing",
+      "denied": {
+        "branches": 8,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -146,7 +218,15 @@
       "pair": "tufte-handout.A",
       "branches": 20,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 4,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -156,8 +236,16 @@
       },
       "pair": "tufte-handout.A",
       "branches": 16,
-      "pass": 11,
-      "status": "failing"
+      "pass": 10,
+      "status": "failing",
+      "denied": {
+        "branches": 4,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -179,7 +267,11 @@
       "pair": "tufte-handout.A",
       "branches": 33,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 33,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -190,7 +282,11 @@
       "pair": "tufte-handout.A",
       "branches": 29,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 29,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -201,7 +297,11 @@
       "pair": "tufte-handout.A",
       "branches": 32,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 32,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -212,7 +312,11 @@
       "pair": "tufte-handout.A",
       "branches": 58,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 58,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -223,7 +327,11 @@
       "pair": "tufte-handout.A",
       "branches": 2,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -233,8 +341,16 @@
       },
       "pair": "tufte-handout.A",
       "branches": 33,
-      "pass": 21,
-      "status": "failing"
+      "pass": 20,
+      "status": "failing",
+      "denied": {
+        "branches": 8,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -255,7 +371,33 @@
       },
       "pair": "tufte-handout.A",
       "branches": 8,
-      "pass": 8,
+      "pass": 7,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "abs.kernel"
+      },
+      "pair": "tufte-handout.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:titlesec"
+      },
+      "pair": "tufte-handout.A",
+      "branches": 2,
+      "pass": 2,
       "status": "verified-ok"
     },
     {
@@ -272,35 +414,17 @@
     {
       "kind": "verified",
       "parent": {
-        "node": "containerBlock/abstract",
-        "way": "abs.kernel"
-      },
-      "pair": "tufte-handout.A",
-      "branches": 2,
-      "pass": 2,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
         "node": "containerBlock/columns",
         "way": "cols.vwcol"
       },
       "pair": "tufte-handout.A",
       "branches": 2,
       "pass": 0,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/appendix",
-        "way": "general:containerBlock/appendix:titlesec"
-      },
-      "pair": "tufte-handout.A",
-      "branches": 2,
-      "pass": 2,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -311,7 +435,11 @@
       "pair": "tufte-handout.A",
       "branches": 2,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -322,7 +450,11 @@
       "pair": "tufte-handout.A",
       "branches": 2,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -333,7 +465,11 @@
       "pair": "tufte-handout.A",
       "branches": 2,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -345,6 +481,345 @@
       "branches": 2,
       "pass": 2,
       "status": "verified-ok"
+    },
+    {
+      "kind": "ban",
+      "way": "tbl.margintable",
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "general:containerBlock/listing:kernel",
+        "preset": ""
+      },
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "hardFail": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "tbl.margintable",
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.enumerate-pkg",
+        "preset": "roman"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 2,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "tbl.margintable",
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.enumitem",
+        "preset": "fitted-margin"
+      },
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "hardFail": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "tbl.margintable",
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.kernel",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "sentinel:outside"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "tbl.margintable",
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.kernel",
+        "preset": "dashes"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "tbl.margintable",
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.kernel",
+        "preset": "paren-numbers"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "tbl.margintable",
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.paralist",
+        "preset": "paragraphs"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "warning:overfull-hbox",
+        "sentinel:outside"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "tbl.margintable",
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.scrextend",
+        "preset": "labeling"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "tbl.margintable",
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "hardFail": 3,
+      "checks": [
+        "warning:overfull-hbox",
+        "sentinel:outside"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "tbl.margintable",
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+hyperref",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 7,
+      "pass": 0,
+      "hardFail": 6,
+      "checks": [
+        "warning:overfull-hbox",
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "tbl.margintable",
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm",
+        "preset": "ams-section"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "tbl.margintable",
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm",
+        "preset": "colored-head"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 2,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "tbl.margintable",
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm",
+        "preset": "global"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "warning:overfull-hbox",
+        "sentinel:outside"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "tbl.margintable",
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm",
+        "preset": "upright"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "warning:overfull-hbox",
+        "sentinel:outside"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "tbl.margintable",
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.kernel",
+        "preset": "global"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "tbl.margintable",
+      "classSetting": "tufte-handout",
+      "preset": "full",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.thmtools",
+        "preset": "kao"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "tbl.margintable",
+      "classSetting": "tufte-handout",
+      "preset": "margin-small",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.kernel",
+        "preset": "dashes"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "tbl.margintable",
+      "classSetting": "tufte-handout",
+      "preset": "margin",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm",
+        "preset": "ams-section"
+      },
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "hardFail": 1,
+      "checks": [
+        "sentinel:off-paper"
+      ]
     }
   ]
 }

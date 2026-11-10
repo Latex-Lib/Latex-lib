@@ -1,9 +1,9 @@
 {
   "way": "fig.margin",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -17,7 +17,11 @@
       "pair": "tufte-handout.A",
       "branches": 37,
       "pass": 29,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 10,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -28,7 +32,11 @@
       "pair": "tufte-handout.A",
       "branches": 37,
       "pass": 29,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 10,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -38,8 +46,12 @@
       },
       "pair": "tufte-handout.A",
       "branches": 37,
-      "pass": 28,
-      "status": "failing"
+      "pass": 29,
+      "status": "failing",
+      "denied": {
+        "branches": 9,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -49,8 +61,12 @@
       },
       "pair": "tufte-handout.A",
       "branches": 37,
-      "pass": 25,
-      "status": "failing"
+      "pass": 26,
+      "status": "failing",
+      "denied": {
+        "branches": 10,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -61,7 +77,11 @@
       "pair": "tufte-handout.A",
       "branches": 37,
       "pass": 28,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 11,
+        "pass": 3
+      }
     },
     {
       "kind": "verified",
@@ -72,7 +92,11 @@
       "pair": "tufte-handout.A",
       "branches": 37,
       "pass": 23,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 14,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -94,7 +118,26 @@
       "pair": "tufte-handout.A",
       "branches": 37,
       "pass": 31,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 8,
+        "pass": 2
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+hyperref+lib:breakable+lib:skins+tcolorbox"
+      },
+      "pair": "tufte-handout.A",
+      "branches": 32,
+      "pass": 18,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 14,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -105,7 +148,26 @@
       "pair": "tufte-handout.A",
       "branches": 32,
       "pass": 27,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 5,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm"
+      },
+      "pair": "tufte-handout.A",
+      "branches": 23,
+      "pass": 22,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -116,7 +178,11 @@
       "pair": "tufte-handout.A",
       "branches": 56,
       "pass": 31,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 25,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -138,7 +204,11 @@
       "pair": "tufte-handout.A",
       "branches": 19,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -160,7 +230,11 @@
       "pair": "tufte-handout.A",
       "branches": 31,
       "pass": 14,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 17,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -212,7 +286,26 @@
       "pair": "tufte-handout.A",
       "branches": 28,
       "pass": 11,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 17,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.thmtools"
+      },
+      "pair": "tufte-handout.A",
+      "branches": 16,
+      "pass": 14,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -223,18 +316,11 @@
       "pair": "tufte-handout.A",
       "branches": 32,
       "pass": 29,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "general:containerBlock/mathElement:amsthm+hyperref+lib:breakable+lib:skins+tcolorbox"
-      },
-      "pair": "tufte-handout.A",
-      "branches": 32,
-      "pass": 18,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 5,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -261,28 +347,6 @@
     {
       "kind": "verified",
       "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "thm.amsthm"
-      },
-      "pair": "tufte-handout.A",
-      "branches": 23,
-      "pass": 22,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "thm.thmtools"
-      },
-      "pair": "tufte-handout.A",
-      "branches": 16,
-      "pass": 13,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
         "node": "containerBlock/columns",
         "way": "cols.paracol"
       },
@@ -305,6 +369,17 @@
     {
       "kind": "verified",
       "parent": {
+        "node": "containerBlock/abstract",
+        "way": "abs.kernel"
+      },
+      "pair": "tufte-handout.A",
+      "branches": 1,
+      "pass": 1,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
         "node": "containerBlock/appendix",
         "way": "general:containerBlock/appendix:titlesec"
       },
@@ -318,17 +393,6 @@
       "parent": {
         "node": "containerBlock/appendix",
         "way": "num.appendices-env"
-      },
-      "pair": "tufte-handout.A",
-      "branches": 1,
-      "pass": 1,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/abstract",
-        "way": "abs.kernel"
       },
       "pair": "tufte-handout.A",
       "branches": 1,

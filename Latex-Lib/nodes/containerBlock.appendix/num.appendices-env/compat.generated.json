@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:7cef98edf823496d68fbf91ca1a8349b5737ce75b3229bed7b26ee699cb4ba01",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:e813e689e0f6286bad9c7f2a23410ded7ad477b2135572a1f4d2a603e7946a4f"
+    "matrix": "sha256:b76bf50cdf04ea6f5369ae75fc1a39a1402f4972238a5c9cd535ef0ccb3e1c05"
   },
   "parents": {
     "body": {
@@ -13,10 +13,9 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 46782,
-          "pass": 44362,
+          "branches": 46768,
+          "pass": 44352,
           "failing": [
-            "aaai.A",
             "achemso.A",
             "acl.A",
             "aistats.A",
@@ -58,12 +57,33 @@
             "tufte-handout.A",
             "usenix.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 1853,
+            "pass": 15
+          },
+          "banned": {
+            "branches": 196,
+            "pass": 40
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "sn-jnl",
+      "preset": "oup",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    }
+  ]
 }

@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:863a1f4d1033fd275296ecde3d1bba59d5aee0e62ae3ba3d68ca39ad9a005609",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:4c56ebd1a67279a2096ac9e2dea3ff4d82de70e4bb88c93259f1f489fd27d13b"
+    "matrix": "sha256:92e063c6502c289253b8c44c8c0a081e55aebff3a824ca4c2820e273f1fae838"
   },
   "parents": {
     "body": {
@@ -13,19 +13,13 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 123947,
-          "pass": 118155,
+          "branches": 123869,
+          "pass": 118191,
           "failing": [
             "aa.A",
             "aaai.A",
-            "aamas.A",
             "achemso.A",
-            "acl.A",
             "acmart-acmsmall.A",
-            "acmart-acmtog.A",
-            "acmart-manuscript.A",
-            "acmart-manuscript.B",
-            "acmart-sigconf.A",
             "acmart-sigplan.A",
             "agu.A",
             "aistats.A",
@@ -38,7 +32,6 @@
             "asmeconf.A",
             "asmejour.A",
             "beamer.A",
-            "bmvc.A",
             "book.A",
             "book.B",
             "cas-dc.A",
@@ -47,13 +40,10 @@
             "copernicus.A",
             "corl.A",
             "cvpr.A",
-            "ecai.A",
-            "eccv.A",
             "elegantpaper.A",
             "elsarticle-3p.A",
             "elsarticle-5p.A",
             "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
             "exam.A",
             "exam.B",
             "extarticle.A",
@@ -72,12 +62,9 @@
             "interact.A",
             "iopart.A",
             "iopjournal.A",
-            "jacow.A",
             "jmlr-pmlr.A",
             "jss.A",
             "lipics.A",
-            "llncs.A",
-            "llncs.B",
             "mdpi.A",
             "memoir.A",
             "memoir.B",
@@ -97,17 +84,24 @@
             "siamart.A",
             "sn-jnl.A",
             "spie.A",
-            "tmlr.A",
             "tufte-handout.A",
             "usenix.A",
-            "ut-thesis.A",
-            "vldb.A"
-          ]
+            "ut-thesis.A"
+          ],
+          "denied": {
+            "branches": 6278,
+            "pass": 2332
+          },
+          "banned": {
+            "branches": 604,
+            "pass": 113
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

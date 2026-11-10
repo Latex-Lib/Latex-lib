@@ -1,9 +1,9 @@
 {
   "way": "bib.class-bst@cite",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -16,7 +16,7 @@
       },
       "pair": "acl.A",
       "branches": 33,
-      "pass": 31,
+      "pass": 32,
       "status": "failing"
     },
     {
@@ -27,8 +27,8 @@
       },
       "pair": "acl.A",
       "branches": 27,
-      "pass": 26,
-      "status": "failing"
+      "pass": 27,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -38,8 +38,12 @@
       },
       "pair": "acl.A",
       "branches": 15,
-      "pass": 11,
-      "status": "failing"
+      "pass": 14,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -49,8 +53,8 @@
       },
       "pair": "acl.A",
       "branches": 14,
-      "pass": 10,
-      "status": "failing"
+      "pass": 14,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -60,8 +64,8 @@
       },
       "pair": "acl.A",
       "branches": 14,
-      "pass": 11,
-      "status": "failing"
+      "pass": 14,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -93,8 +97,12 @@
       },
       "pair": "acl.A",
       "branches": 13,
-      "pass": 11,
-      "status": "failing"
+      "pass": 12,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -105,7 +113,11 @@
       "pair": "acl.A",
       "branches": 10,
       "pass": 10,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -225,8 +237,8 @@
       },
       "pair": "agu.A",
       "branches": 5,
-      "pass": 4,
-      "status": "failing"
+      "pass": 5,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -358,7 +370,11 @@
       "pair": "apa7.A",
       "branches": 15,
       "pass": 14,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -402,7 +418,11 @@
       "pair": "apa7.A",
       "branches": 13,
       "pass": 11,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -413,7 +433,11 @@
       "pair": "apa7.A",
       "branches": 11,
       "pass": 11,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -533,8 +557,12 @@
       },
       "pair": "ascelike.A",
       "branches": 11,
-      "pass": 4,
-      "status": "failing"
+      "pass": 9,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -544,8 +572,12 @@
       },
       "pair": "ascelike.A",
       "branches": 3,
-      "pass": 0,
-      "status": "failing"
+      "pass": 2,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -555,8 +587,12 @@
       },
       "pair": "ascelike.A",
       "branches": 7,
-      "pass": 3,
-      "status": "failing"
+      "pass": 6,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -567,7 +603,11 @@
       "pair": "ascelike.A",
       "branches": 5,
       "pass": 5,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -588,8 +628,8 @@
       },
       "pair": "ascelike.A",
       "branches": 1,
-      "pass": 0,
-      "status": "failing"
+      "pass": 1,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -610,7 +650,7 @@
       },
       "pair": "ascelike.A",
       "branches": 11,
-      "pass": 8,
+      "pass": 10,
       "status": "failing"
     },
     {
@@ -621,7 +661,7 @@
       },
       "pair": "ascelike.A",
       "branches": 12,
-      "pass": 8,
+      "pass": 10,
       "status": "failing"
     },
     {
@@ -643,8 +683,12 @@
       },
       "pair": "ascelike.A",
       "branches": 4,
-      "pass": 2,
-      "status": "failing"
+      "pass": 3,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -676,8 +720,8 @@
       },
       "pair": "ascelike.A",
       "branches": 2,
-      "pass": 0,
-      "status": "failing"
+      "pass": 2,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -687,8 +731,8 @@
       },
       "pair": "ascelike.A",
       "branches": 1,
-      "pass": 0,
-      "status": "failing"
+      "pass": 1,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -721,7 +765,11 @@
       "pair": "bmvc.A",
       "branches": 15,
       "pass": 14,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -754,7 +802,11 @@
       "pair": "bmvc.A",
       "branches": 13,
       "pass": 12,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -765,7 +817,11 @@
       "pair": "bmvc.A",
       "branches": 11,
       "pass": 11,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -896,8 +952,8 @@
       },
       "pair": "corl.A",
       "branches": 33,
-      "pass": 32,
-      "status": "failing"
+      "pass": 33,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -907,7 +963,7 @@
       },
       "pair": "corl.A",
       "branches": 28,
-      "pass": 26,
+      "pass": 27,
       "status": "failing"
     },
     {
@@ -918,8 +974,12 @@
       },
       "pair": "corl.A",
       "branches": 16,
-      "pass": 11,
-      "status": "failing"
+      "pass": 14,
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -929,7 +989,7 @@
       },
       "pair": "corl.A",
       "branches": 16,
-      "pass": 10,
+      "pass": 14,
       "status": "failing"
     },
     {
@@ -940,8 +1000,12 @@
       },
       "pair": "corl.A",
       "branches": 16,
-      "pass": 11,
-      "status": "failing"
+      "pass": 14,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -973,8 +1037,16 @@
       },
       "pair": "corl.A",
       "branches": 14,
-      "pass": 11,
-      "status": "failing"
+      "pass": 12,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -985,7 +1057,11 @@
       "pair": "corl.A",
       "branches": 11,
       "pass": 11,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1073,7 +1149,11 @@
       "pair": "corl.A",
       "branches": 7,
       "pass": 5,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1139,7 +1219,11 @@
       "pair": "ecai.A",
       "branches": 13,
       "pass": 12,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1194,7 +1278,11 @@
       "pair": "ecai.A",
       "branches": 12,
       "pass": 11,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1326,7 +1414,11 @@
       "pair": "emulateapj.A",
       "branches": 25,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1337,7 +1429,15 @@
       "pair": "emulateapj.A",
       "branches": 14,
       "pass": 4,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1348,7 +1448,11 @@
       "pair": "emulateapj.A",
       "branches": 12,
       "pass": 4,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1359,7 +1463,15 @@
       "pair": "emulateapj.A",
       "branches": 11,
       "pass": 7,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1392,7 +1504,15 @@
       "pair": "emulateapj.A",
       "branches": 10,
       "pass": 6,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1458,7 +1578,11 @@
       "pair": "emulateapj.A",
       "branches": 5,
       "pass": 2,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1524,7 +1648,11 @@
       "pair": "jmlr-pmlr.A",
       "branches": 12,
       "pass": 9,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1534,7 +1662,7 @@
       },
       "pair": "jmlr-pmlr.A",
       "branches": 13,
-      "pass": 7,
+      "pass": 9,
       "status": "failing"
     },
     {
@@ -1556,8 +1684,12 @@
       },
       "pair": "jmlr-pmlr.A",
       "branches": 16,
-      "pass": 11,
-      "status": "failing"
+      "pass": 13,
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1589,8 +1721,16 @@
       },
       "pair": "jmlr-pmlr.A",
       "branches": 14,
-      "pass": 8,
-      "status": "failing"
+      "pass": 9,
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1601,7 +1741,11 @@
       "pair": "jmlr-pmlr.A",
       "branches": 11,
       "pass": 11,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1689,7 +1833,11 @@
       "pair": "jmlr-pmlr.A",
       "branches": 7,
       "pass": 4,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1755,7 +1903,11 @@
       "pair": "jss.A",
       "branches": 15,
       "pass": 14,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1787,8 +1939,12 @@
       },
       "pair": "jss.A",
       "branches": 13,
-      "pass": 11,
-      "status": "failing"
+      "pass": 13,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -1799,7 +1955,11 @@
       "pair": "jss.A",
       "branches": 11,
       "pass": 11,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1909,7 +2069,11 @@
       "pair": "plos.A",
       "branches": 2,
       "pass": 2,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -2041,7 +2205,11 @@
       "pair": "revtex4-2-aip.A",
       "branches": 19,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2063,7 +2231,11 @@
       "pair": "revtex4-2-aip.A",
       "branches": 12,
       "pass": 12,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2096,7 +2268,11 @@
       "pair": "revtex4-2-aip.A",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -2183,7 +2359,7 @@
       },
       "pair": "revtex4-2-aps.A",
       "branches": 31,
-      "pass": 29,
+      "pass": 30,
       "status": "failing"
     },
     {
@@ -2194,7 +2370,7 @@
       },
       "pair": "revtex4-2-aps.A",
       "branches": 30,
-      "pass": 28,
+      "pass": 29,
       "status": "failing"
     },
     {
@@ -2205,8 +2381,12 @@
       },
       "pair": "revtex4-2-aps.A",
       "branches": 19,
-      "pass": 15,
-      "status": "failing"
+      "pass": 17,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2216,8 +2396,8 @@
       },
       "pair": "revtex4-2-aps.A",
       "branches": 18,
-      "pass": 16,
-      "status": "failing"
+      "pass": 18,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -2228,7 +2408,11 @@
       "pair": "revtex4-2-aps.A",
       "branches": 12,
       "pass": 12,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2260,8 +2444,12 @@
       },
       "pair": "revtex4-2-aps.A",
       "branches": 14,
-      "pass": 12,
-      "status": "failing"
+      "pass": 13,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -2304,8 +2492,8 @@
       },
       "pair": "revtex4-2-aps.A",
       "branches": 8,
-      "pass": 6,
-      "status": "failing"
+      "pass": 8,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -2348,8 +2536,12 @@
       },
       "pair": "sn-jnl.A",
       "branches": 33,
-      "pass": 8,
-      "status": "failing"
+      "pass": 0,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 33,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2359,8 +2551,12 @@
       },
       "pair": "sn-jnl.A",
       "branches": 26,
-      "pass": 9,
-      "status": "failing"
+      "pass": 0,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 26,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2370,8 +2566,16 @@
       },
       "pair": "sn-jnl.A",
       "branches": 17,
-      "pass": 7,
-      "status": "failing"
+      "pass": 0,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 16,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2381,8 +2585,12 @@
       },
       "pair": "sn-jnl.A",
       "branches": 17,
-      "pass": 5,
-      "status": "failing"
+      "pass": 0,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 17,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2392,8 +2600,12 @@
       },
       "pair": "sn-jnl.A",
       "branches": 17,
-      "pass": 4,
-      "status": "failing"
+      "pass": 0,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 17,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2403,8 +2615,12 @@
       },
       "pair": "sn-jnl.A",
       "branches": 5,
-      "pass": 1,
-      "status": "failing"
+      "pass": 0,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 5,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2414,8 +2630,12 @@
       },
       "pair": "sn-jnl.A",
       "branches": 3,
-      "pass": 1,
-      "status": "failing"
+      "pass": 0,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2425,8 +2645,16 @@
       },
       "pair": "sn-jnl.A",
       "branches": 16,
-      "pass": 2,
-      "status": "failing"
+      "pass": 0,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 14,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2437,7 +2665,11 @@
       "pair": "sn-jnl.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2448,7 +2680,11 @@
       "pair": "sn-jnl.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2459,7 +2695,11 @@
       "pair": "sn-jnl.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2470,7 +2710,11 @@
       "pair": "sn-jnl.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2481,7 +2725,11 @@
       "pair": "sn-jnl.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2492,7 +2740,11 @@
       "pair": "sn-jnl.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2502,8 +2754,12 @@
       },
       "pair": "sn-jnl.A",
       "branches": 8,
-      "pass": 1,
-      "status": "failing"
+      "pass": 0,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 8,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2514,7 +2770,11 @@
       "pair": "sn-jnl.A",
       "branches": 2,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2525,7 +2785,1389 @@
       "pair": "sn-jnl.A",
       "branches": 2,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "ascelike",
+      "preset": "ascelike-textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "numbered"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "ascelike",
+      "preset": "ascelike-textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "display-chapter"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "ascelike",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "corl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "corl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "numbered"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "corl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "compact"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "corl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "emulateapj",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "no-indent"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "sentinel:missing"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "emulateapj",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "emulateapj",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "emulateapj",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "compact"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "emulateapj",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "emulateapj",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "emulateapj",
+      "preset": "revtex-online",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "emulateapj",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "emulateapj",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "numbered"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "emulateapj",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "roman-sections"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "jmlr-pmlr",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "jmlr-pmlr",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "numbered"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "jmlr-pmlr",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "compact"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "jmlr-pmlr",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "jmlr-pmlr",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "jmlr-pmlr",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "numbered"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 7,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "lettered-sections"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "numbered"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "roman-sections"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "unnumbered"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "compact"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "run-in"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item",
+        "preset": "item"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 9,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "no-indent"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "space-and-indent"
+      },
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "achemso-number",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "space-between"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "cite",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape",
+        "preset": "marker"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "cite",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 6,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "numbered"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "roman-sections"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "unnumbered"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "compact"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item",
+        "preset": "item"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 6,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "no-indent"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "space-and-indent"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block",
+        "preset": "generic"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "cite",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titlepage-env",
+        "preset": "left-sans"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 5,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "numbered"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "to-subsection"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "display-chapter"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "run-in"
+      },
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "list.item",
+        "preset": "item"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 12,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "no-indent"
+      },
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "space-and-indent"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "space-between"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "parenthetical",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle",
+        "preset": "no-date"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 7,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "general:paragraph/heading:titlesec",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "numbered"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "roman-sections"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/lstParagraph",
+        "way": "general:paragraph/lstParagraph:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "general:paragraph/paragraph:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 6,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "no-indent"
+      },
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling",
+        "preset": "centered"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "bib.class-bst@cite",
+      "classSetting": "sn-jnl",
+      "preset": "textual",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
     }
   ]
 }

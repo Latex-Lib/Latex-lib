@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:6fb269d92932e2ef91d66190c8ad82cbe9d52da83810fba5f208a5445ac5f089",
     "contexts": "sha256:f71c32d51d3016c64059e7d491725c08b522482004cfef01186a16c6d9e5d6cb",
-    "matrix": "sha256:1363807ed7e250608e4c9da691ed3a40c59f7aeb388d27eed3cd6b65f60f96cd"
+    "matrix": "sha256:c59d1d1e82fe1cc1dd3a46be4abdab788a4b64b210b38c7e104a1c7bffdef9db"
   },
   "parents": {
     "paragraph/paragraph": {
@@ -29,8 +29,8 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 3347,
-          "pass": 3198,
+          "branches": 3346,
+          "pass": 3205,
           "failing": [
             "aa.A",
             "aamas.A",
@@ -115,7 +115,11 @@
             "usenix.A",
             "ut-thesis.A",
             "vldb.A"
-          ]
+          ],
+          "banned": {
+            "branches": 17,
+            "pass": 6
+          }
         }
       }
     },
@@ -129,9 +133,12 @@
           "pass": 80,
           "failing": [
             "book.A",
-            "book.B",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 6,
+            "pass": 3
+          }
         }
       },
       "head.class-native": {
@@ -159,7 +166,11 @@
             "scrreprt.B",
             "tufte-handout.A",
             "ut-thesis.A"
-          ]
+          ],
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "head.class-styled": {
@@ -171,19 +182,25 @@
           "pass": 125,
           "failing": [
             "scrartcl.B"
-          ]
+          ],
+          "denied": {
+            "branches": 12,
+            "pass": 12
+          }
         }
       },
       "head.copernicus": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 20,
           "pass": 19,
-          "failing": [
-            "copernicus.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 1
+          }
         }
       },
       "head.fncychap": {
@@ -207,21 +224,26 @@
             "scrbook.A",
             "scrbook.B",
             "scrreprt.A",
-            "scrreprt.B",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 28,
+            "pass": 0
+          }
         }
       },
       "head.ieee-raise": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 15,
           "pass": 13,
-          "failing": [
-            "ieeetran-compsoc.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "head.kernel": {
@@ -230,82 +252,30 @@
         "status": "failing",
         "matrix": {
           "branches": 1683,
-          "pass": 1594,
+          "pass": 1593,
           "failing": [
-            "aa.A",
-            "aamas.A",
-            "aastex.A",
-            "aastex.B",
-            "achemso.A",
-            "acl.A",
-            "acmart-acmsmall.A",
-            "acmart-acmtog.A",
-            "acmart-manuscript.A",
-            "acmart-manuscript.B",
-            "acmart-sigconf.A",
-            "acmart-sigplan.A",
             "aistats.A",
-            "apa7.A",
-            "article.A",
             "article.B",
-            "asmeconf.A",
-            "bmvc.A",
-            "book.A",
             "book.B",
-            "cas-dc.A",
-            "cas-sc.A",
-            "colm.A",
-            "corl.A",
             "cvpr.A",
-            "ecai.A",
             "eccv.A",
-            "elegantpaper.A",
-            "elsarticle-3p.A",
-            "elsarticle-5p.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "emulateapj.A",
-            "exam.A",
             "exam.B",
-            "extarticle.A",
             "extarticle.B",
-            "frontiers.A",
-            "icassp.A",
-            "iclr.A",
-            "icml.A",
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A",
-            "ijcai.A",
-            "interact.A",
-            "iopart.A",
-            "iopjournal.A",
-            "jacow.A",
-            "jmlr-pmlr.A",
-            "lipics.A",
-            "llncs.A",
+            "jss.A",
             "llncs.B",
-            "memoir.A",
-            "memoir.B",
-            "mnras.A",
-            "neurips.A",
-            "plos.A",
-            "quantumarticle.A",
-            "report.A",
             "report.B",
             "revtex4-2-aip.A",
             "revtex4-2-aps.A",
-            "scrbook.A",
-            "sn-jnl.A",
-            "spie.A",
-            "tmlr.A",
-            "tufte-handout.A",
-            "usenix.A",
-            "ut-thesis.A",
-            "vldb.A"
-          ]
+            "scrbook.A"
+          ],
+          "denied": {
+            "branches": 162,
+            "pass": 89
+          },
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "head.koma-fonts": {
@@ -322,7 +292,11 @@
             "scrbook.B",
             "scrreprt.A",
             "scrreprt.B"
-          ]
+          ],
+          "denied": {
+            "branches": 12,
+            "pass": 12
+          }
         }
       },
       "head.memoir-style": {
@@ -333,9 +307,12 @@
           "branches": 50,
           "pass": 43,
           "failing": [
-            "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "denied": {
+            "branches": 4,
+            "pass": 0
+          }
         }
       },
       "head.plain": {
@@ -351,60 +328,19 @@
           "branches": 989,
           "pass": 925,
           "failing": [
-            "aa.A",
-            "achemso.A",
-            "acl.A",
-            "aistats.A",
-            "apa7.A",
-            "article.A",
-            "article.B",
-            "ascelike.A",
-            "asmeconf.A",
-            "asmejour.A",
-            "bmvc.A",
-            "book.A",
-            "book.B",
-            "colm.A",
-            "copernicus.A",
-            "corl.A",
-            "cvpr.A",
             "eccv.A",
-            "elegantpaper.A",
-            "elsarticle-3p.A",
-            "elsarticle-5p.A",
-            "elsarticle-preprint.A",
-            "elsarticle-preprint.B",
-            "exam.A",
-            "exam.B",
-            "extarticle.A",
-            "extarticle.B",
-            "icassp.A",
-            "iclr.A",
-            "icml.A",
-            "ijcai.A",
-            "imsart.A",
-            "iopjournal.A",
-            "jacow.A",
-            "jmlr-pmlr.A",
-            "jss.A",
-            "lipics.A",
-            "llncs.A",
-            "llncs.B",
-            "neurips.A",
-            "plos.A",
-            "report.A",
-            "report.B",
-            "scrartcl.A",
-            "scrartcl.B",
             "scrbook.A",
             "scrbook.B",
-            "scrreprt.A",
-            "scrreprt.B",
-            "spie.A",
-            "tmlr.A",
-            "usenix.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 105,
+            "pass": 51
+          },
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "head.titlesec": {
@@ -415,9 +351,6 @@
           "branches": 1182,
           "pass": 931,
           "failing": [
-            "aa.A",
-            "aastex.A",
-            "aastex.B",
             "achemso.A",
             "acl.A",
             "aistats.A",
@@ -427,9 +360,7 @@
             "article.B",
             "ascelike.A",
             "asmeconf.A",
-            "asmejour.A",
             "book.A",
-            "book.B",
             "cas-dc.A",
             "cas-sc.A",
             "colm.A",
@@ -442,12 +373,10 @@
             "elsarticle-5p.A",
             "elsarticle-preprint.A",
             "elsarticle-preprint.B",
-            "emulateapj.A",
             "exam.A",
             "exam.B",
             "extarticle.A",
             "extarticle.B",
-            "frontiers.A",
             "icassp.A",
             "iclr.A",
             "icml.A",
@@ -459,17 +388,13 @@
             "ijcai.A",
             "imsart.A",
             "interact.A",
-            "iopart.A",
             "iopjournal.A",
             "jacow.A",
             "jmlr-pmlr.A",
             "lipics.A",
-            "mnras.A",
             "neurips.A",
-            "oup-authoring-template.A",
             "plos.A",
             "report.A",
-            "report.B",
             "siamart.A",
             "sn-jnl.A",
             "spie.A",
@@ -477,7 +402,15 @@
             "tufte-handout.A",
             "usenix.A",
             "ut-thesis.A"
-          ]
+          ],
+          "denied": {
+            "branches": 127,
+            "pass": 77
+          },
+          "banned": {
+            "branches": 95,
+            "pass": 0
+          }
         }
       },
       "head.tufte": {
@@ -489,7 +422,11 @@
           "pass": 10,
           "failing": [
             "tufte-handout.A"
-          ]
+          ],
+          "denied": {
+            "branches": 1,
+            "pass": 1
+          }
         }
       }
     },
@@ -497,13 +434,11 @@
       "list.item": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 580,
-          "pass": 579,
-          "failing": [
-            "apa7.A"
-          ]
+          "pass": 580,
+          "failing": []
         }
       }
     },
@@ -546,13 +481,15 @@
       "front.aistats": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 1,
           "pass": 0,
-          "failing": [
-            "aistats.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.ams-topmatter": {
@@ -598,26 +535,21 @@
       "front.authblk": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
-          "branches": 27,
-          "pass": 25,
-          "failing": [
-            "ascelike.A",
-            "cvpr.A"
-          ]
+          "branches": 26,
+          "pass": 26,
+          "failing": []
         }
       },
       "front.author-blocks": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 92,
-          "pass": 90,
-          "failing": [
-            "ascelike.A"
-          ]
+          "pass": 92,
+          "failing": []
         }
       },
       "front.beamer-title": {
@@ -633,13 +565,15 @@
       "front.bmvc": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 1,
           "pass": 0,
-          "failing": [
-            "bmvc.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.cas": {
@@ -660,38 +594,39 @@
           "branches": 88,
           "pass": 83,
           "failing": [
-            "frontiers.A",
             "llncs.B",
             "scrartcl.B",
             "scrbook.B",
             "scrreprt.B"
-          ]
+          ],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 80,
-          "pass": 77,
-          "failing": [
-            "ascelike.A",
-            "frontiers.A",
-            "oup-authoring-template.A"
-          ]
+          "pass": 78,
+          "failing": [],
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "front.copernicus": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 1,
-          "pass": 0,
-          "failing": [
-            "copernicus.A"
-          ]
+          "pass": 1,
+          "failing": []
         }
       },
       "front.corl": {
@@ -919,15 +854,15 @@
       "front.maketitle": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 80,
-          "pass": 77,
-          "failing": [
-            "ascelike.A",
-            "frontiers.A",
-            "oup-authoring-template.A"
-          ]
+          "pass": 78,
+          "failing": [],
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "front.mdpi": {
@@ -953,13 +888,15 @@
       "front.oup": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 1,
           "pass": 0,
-          "failing": [
-            "oup-authoring-template.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.revtex": {
@@ -1025,26 +962,29 @@
       "front.titling": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 71,
-          "pass": 69,
-          "failing": [
-            "ascelike.A",
-            "copernicus.A"
-          ]
+          "pass": 70,
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.tufte": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 1,
           "pass": 0,
-          "failing": [
-            "tufte-handout.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "front.ut-thesis": {
@@ -1068,5 +1008,1143 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "aa",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/paragraph para.kernel[space-and-indent]",
+      "why": "fails-mostly",
+      "branches": 4,
+      "pass": 2,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "achemso",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "acl",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "acl",
+      "preset": "text-font",
+      "parent": "paragraph/paragraph para.kernel[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "acl",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aistats",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "aistats",
+      "preset": "text-font",
+      "parent": "paragraph/title front.aistats[one-column]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "aistats",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "amsart",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "amsart",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "article",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "article",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ascelike",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/heading head.titlesec[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "ascelike",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "asmejour",
+      "preset": "text-font",
+      "parent": "paragraph/title general:paragraph/title:kernel",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "bmvc",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/title front.bmvc[bmvc]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "book",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "colm",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "colm",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "copernicus",
+      "preset": "typewriter",
+      "parent": "paragraph/title front.titling[centered]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "corl",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "corl",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cvpr",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cvpr",
+      "preset": "text-font",
+      "parent": "paragraph/paragraph para.kernel[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cvpr",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "cvpr",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "ecai",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "eccv",
+      "preset": "text-font",
+      "parent": "paragraph/heading head.sectsty[roman-medium]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "elsarticle-3p",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "elsarticle-5p",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "elsarticle-5p",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "elsarticle-preprint",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "elsarticle-preprint",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "extarticle",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "extarticle",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "frontiers",
+      "preset": "text-font",
+      "parent": "paragraph/heading head.class-native[class]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "frontiers",
+      "preset": "text-font",
+      "parent": "paragraph/paragraph para.kernel[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "frontiers",
+      "preset": "text-font",
+      "parent": "paragraph/title front.center-block[generic]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "frontiers",
+      "preset": "text-font",
+      "parent": "paragraph/title front.class-native[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "frontiers",
+      "preset": "text-font",
+      "parent": "paragraph/title front.maketitle[no-date]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "frontiers",
+      "preset": "text-font",
+      "parent": "paragraph/title general:paragraph/title:kernel",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "frontiers",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "icassp",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "icassp",
+      "preset": "text-font",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "icassp",
+      "preset": "text-font",
+      "parent": "paragraph/paragraph para.kernel[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "icassp",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.kernel[numbered]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "icassp",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "iclr",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "iclr",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "icml",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "icml",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeeconf-ras",
+      "preset": "sans-anywhere",
+      "parent": "codeEscape general:codeEscape:listings+xcolor",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeeconf-ras",
+      "preset": "typewriter",
+      "parent": "codeEscape code.escape[marker]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-compsoc",
+      "preset": "sans-anywhere",
+      "parent": "codeEscape general:codeEscape:listings+xcolor",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-compsoc",
+      "preset": "text-font",
+      "parent": "paragraph/paragraph para.kernel[space-between]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:duplicated"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-compsoc",
+      "preset": "typewriter",
+      "parent": "codeEscape code.escape[marker]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-conference",
+      "preset": "sans-anywhere",
+      "parent": "codeEscape general:codeEscape:listings+xcolor",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-conference",
+      "preset": "text-font",
+      "parent": "paragraph/paragraph para.kernel[space-between]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:duplicated"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-conference",
+      "preset": "typewriter",
+      "parent": "codeEscape code.escape[marker]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-journal",
+      "preset": "sans-anywhere",
+      "parent": "codeEscape general:codeEscape:listings+xcolor",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-journal",
+      "preset": "text-font",
+      "parent": "paragraph/paragraph para.kernel[space-between]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:duplicated"
+      ]
+    },
+    {
+      "classSetting": "ieeetran-journal",
+      "preset": "typewriter",
+      "parent": "codeEscape code.escape[marker]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ijcai",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "ijcai",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "imsart",
+      "preset": "text-font",
+      "parent": "paragraph/title general:paragraph/title:kernel",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "imsart",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "interact",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "interact",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "interact",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "iopart",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "iopjournal",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "iopjournal",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "jacow",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "lipics",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "lipics",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "lipics",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "mnras",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "neurips",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "neurips",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "text-font",
+      "parent": "paragraph/title front.class-native[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "text-font",
+      "parent": "paragraph/title front.maketitle[no-date]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "text-font",
+      "parent": "paragraph/title front.oup[oup]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "text-font",
+      "parent": "paragraph/title general:paragraph/title:kernel",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "plos",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "plos",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "plos",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "quantumarticle",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/paragraph para.kernel[space-and-indent]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "report",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "siamart",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "sn-jnl",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "sn-jnl",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "spie",
+      "preset": "sans-anywhere",
+      "parent": "codeEscape code.escape[marker]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "spie",
+      "preset": "typewriter",
+      "parent": "codeEscape general:codeEscape:listings+xcolor",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "text-font",
+      "parent": "paragraph/title front.tufte[title-page]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "tufte-handout",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "usenix",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/heading head.titlesec[cv-ruled]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "usenix",
+      "preset": "text-font",
+      "parent": "paragraph/paragraph para.kernel[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "usenix",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ut-thesis",
+      "preset": "sans-anywhere",
+      "parent": "paragraph/heading head.titlesec[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "ut-thesis",
+      "preset": "typewriter",
+      "parent": "paragraph/heading head.titlesec[sans-colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    }
+  ]
 }

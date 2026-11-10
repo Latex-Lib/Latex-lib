@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:5c8e62dec709c64ad9b6caae13a247dd4def1846ea745e388ef28fc9d51ea4d2",
     "contexts": "sha256:8db64482326e84b00a291c338c13df9b25b81bdb6205276160e24ebb00178228",
-    "matrix": "sha256:84ed535caf1747d7ed2a46da2a914e69b9ac061a967c1b237aad08a401e0cb00"
+    "matrix": "sha256:d63e2d9484fda1aadceb938e0f87fa4bb1807401ed6b6d82e97b009b58582934"
   },
   "parents": {
     "body": {
@@ -14,15 +14,21 @@
         "status": "failing",
         "matrix": {
           "branches": 5038,
-          "pass": 4502,
+          "pass": 4667,
           "failing": [
             "apa7.A",
             "cas-dc.A",
             "cas-sc.A",
-            "imsart.A",
-            "jacow.A",
-            "jmlr-pmlr.A"
-          ]
+            "imsart.A"
+          ],
+          "denied": {
+            "branches": 319,
+            "pass": 4
+          },
+          "banned": {
+            "branches": 17,
+            "pass": 4
+          }
         }
       }
     },
@@ -33,9 +39,8 @@
         "status": "failing",
         "matrix": {
           "branches": 293,
-          "pass": 289,
+          "pass": 292,
           "failing": [
-            "apa7.A",
             "jacow.A"
           ]
         }
@@ -170,15 +175,16 @@
         "status": "failing",
         "matrix": {
           "branches": 407,
-          "pass": 342,
+          "pass": 344,
           "failing": [
-            "apa7.A",
             "cas-dc.A",
             "cas-sc.A",
-            "imsart.A",
-            "jacow.A",
-            "jmlr-pmlr.A"
-          ]
+            "imsart.A"
+          ],
+          "denied": {
+            "branches": 75,
+            "pass": 18
+          }
         }
       },
       "cols.paracol": {
@@ -187,14 +193,21 @@
         "status": "failing",
         "matrix": {
           "branches": 361,
-          "pass": 346,
+          "pass": 350,
           "failing": [
-            "apa7.A",
             "cas-dc.A",
             "cas-sc.A",
             "imsart.A",
             "jmlr-pmlr.A"
-          ]
+          ],
+          "denied": {
+            "branches": 5,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "cols.revtex-grid": {
@@ -218,7 +231,11 @@
             "cas-dc.A",
             "cas-sc.A",
             "imsart.A"
-          ]
+          ],
+          "denied": {
+            "branches": 9,
+            "pass": 6
+          }
         }
       },
       "cols.vwcol": {
@@ -239,7 +256,11 @@
             "imsart.A",
             "jacow.A",
             "jmlr-pmlr.A"
-          ]
+          ],
+          "denied": {
+            "branches": 410,
+            "pass": 120
+          }
         }
       }
     },
@@ -250,15 +271,18 @@
         "status": "failing",
         "matrix": {
           "branches": 458,
-          "pass": 396,
+          "pass": 397,
           "failing": [
             "apa7.A",
             "cas-dc.A",
             "cas-sc.A",
-            "imsart.A",
             "jacow.A",
             "jmlr-pmlr.A"
-          ]
+          ],
+          "denied": {
+            "branches": 55,
+            "pass": 2
+          }
         }
       }
     },
@@ -275,9 +299,12 @@
             "cas-dc.A",
             "cas-sc.A",
             "imsart.A",
-            "jacow.A",
             "jmlr-pmlr.A"
-          ]
+          ],
+          "denied": {
+            "branches": 25,
+            "pass": 0
+          }
         }
       },
       "box.class-native": {
@@ -306,15 +333,16 @@
         "status": "failing",
         "matrix": {
           "branches": 239,
-          "pass": 221,
+          "pass": 222,
           "failing": [
-            "apa7.A",
             "cas-dc.A",
             "cas-sc.A",
-            "imsart.A",
-            "jacow.A",
             "jmlr-pmlr.A"
-          ]
+          ],
+          "denied": {
+            "branches": 17,
+            "pass": 4
+          }
         }
       },
       "box.mdframed": {
@@ -326,12 +354,12 @@
           "pass": 680,
           "failing": [
             "apa7.A",
-            "cas-dc.A",
-            "cas-sc.A",
-            "imsart.A",
-            "jacow.A",
-            "jmlr-pmlr.A"
-          ]
+            "cas-dc.A"
+          ],
+          "denied": {
+            "branches": 49,
+            "pass": 1
+          }
         }
       },
       "box.mdframed[breakable=false]": {
@@ -347,13 +375,12 @@
           "branches": 481,
           "pass": 438,
           "failing": [
-            "apa7.A",
-            "cas-dc.A",
-            "cas-sc.A",
-            "imsart.A",
-            "jacow.A",
             "jmlr-pmlr.A"
-          ]
+          ],
+          "denied": {
+            "branches": 41,
+            "pass": 0
+          }
         }
       },
       "box.tcolorbox[breakable=false]": {
@@ -391,10 +418,16 @@
           "failing": [
             "apa7.A",
             "cas-dc.A",
-            "imsart.A",
-            "jacow.A",
-            "jmlr-pmlr.A"
-          ]
+            "imsart.A"
+          ],
+          "denied": {
+            "branches": 27,
+            "pass": 12
+          },
+          "banned": {
+            "branches": 3,
+            "pass": 0
+          }
         }
       },
       "note.marginpar": {
@@ -405,12 +438,17 @@
           "branches": 198,
           "pass": 164,
           "failing": [
-            "apa7.A",
             "cas-dc.A",
-            "imsart.A",
-            "jacow.A",
-            "jmlr-pmlr.A"
-          ]
+            "imsart.A"
+          ],
+          "denied": {
+            "branches": 52,
+            "pass": 28
+          },
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "note.notecolumn": {
@@ -423,10 +461,16 @@
           "failing": [
             "apa7.A",
             "cas-dc.A",
-            "imsart.A",
-            "jacow.A",
-            "jmlr-pmlr.A"
-          ]
+            "imsart.A"
+          ],
+          "denied": {
+            "branches": 35,
+            "pass": 20
+          },
+          "banned": {
+            "branches": 11,
+            "pass": 0
+          }
         }
       },
       "note.sidenotes": {
@@ -435,14 +479,21 @@
         "status": "failing",
         "matrix": {
           "branches": 202,
-          "pass": 158,
+          "pass": 157,
           "failing": [
             "apa7.A",
             "cas-dc.A",
             "imsart.A",
-            "jacow.A",
             "jmlr-pmlr.A"
-          ]
+          ],
+          "denied": {
+            "branches": 46,
+            "pass": 23
+          },
+          "banned": {
+            "branches": 11,
+            "pass": 0
+          }
         }
       },
       "note.todonotes": {
@@ -451,13 +502,20 @@
         "status": "failing",
         "matrix": {
           "branches": 191,
-          "pass": 169,
+          "pass": 170,
           "failing": [
             "apa7.A",
             "cas-dc.A",
-            "imsart.A",
             "jacow.A"
-          ]
+          ],
+          "denied": {
+            "branches": 49,
+            "pass": 39
+          },
+          "banned": {
+            "branches": 3,
+            "pass": 0
+          }
         }
       }
     },
@@ -477,19 +535,25 @@
           "failing": [
             "cas-dc.A",
             "cas-sc.A"
-          ]
+          ],
+          "banned": {
+            "branches": 4,
+            "pass": 2
+          }
         }
       },
       "abs.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 97,
           "pass": 95,
-          "failing": [
-            "apa7.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 23,
+            "pass": 21
+          }
         }
       },
       "abs.class-native[form=command]": {
@@ -534,7 +598,11 @@
             "cas-sc.A",
             "jacow.A",
             "jmlr-pmlr.A"
-          ]
+          ],
+          "banned": {
+            "branches": 6,
+            "pass": 2
+          }
         }
       },
       "abs.keywords": {
@@ -555,9 +623,8 @@
         "status": "failing",
         "matrix": {
           "branches": 456,
-          "pass": 439,
+          "pass": 443,
           "failing": [
-            "apa7.A",
             "cas-dc.A",
             "cas-sc.A"
           ]
@@ -571,10 +638,16 @@
           "branches": 303,
           "pass": 296,
           "failing": [
-            "cas-dc.A",
-            "cas-sc.A",
-            "jmlr-pmlr.A"
-          ]
+            "cas-dc.A"
+          ],
+          "denied": {
+            "branches": 4,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "thm.kernel": {
@@ -585,12 +658,12 @@
           "branches": 430,
           "pass": 423,
           "failing": [
-            "apa7.A",
-            "cas-dc.A",
-            "cas-sc.A",
-            "imsart.A",
-            "jacow.A"
-          ]
+            "cas-dc.A"
+          ],
+          "denied": {
+            "branches": 6,
+            "pass": 0
+          }
         }
       },
       "thm.mdframed": {
@@ -599,14 +672,18 @@
         "status": "failing",
         "matrix": {
           "branches": 473,
-          "pass": 420,
+          "pass": 424,
           "failing": [
-            "apa7.A",
-            "cas-dc.A",
-            "cas-sc.A",
-            "imsart.A",
-            "jacow.A"
-          ]
+            "cas-dc.A"
+          ],
+          "denied": {
+            "branches": 49,
+            "pass": 1
+          },
+          "banned": {
+            "branches": 1,
+            "pass": 1
+          }
         }
       },
       "thm.ntheorem": {
@@ -625,14 +702,17 @@
         "status": "failing",
         "matrix": {
           "branches": 950,
-          "pass": 816,
+          "pass": 815,
           "failing": [
             "apa7.A",
             "cas-dc.A",
             "cas-sc.A",
-            "imsart.A",
-            "jacow.A"
-          ]
+            "imsart.A"
+          ],
+          "denied": {
+            "branches": 132,
+            "pass": 4
+          }
         }
       },
       "thm.tcolorbox[breakable=false]": {
@@ -643,17 +723,15 @@
       "thm.thmtools": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 86,
           "pass": 80,
-          "failing": [
-            "apa7.A",
-            "cas-dc.A",
-            "cas-sc.A",
-            "imsart.A",
-            "jacow.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 6,
+            "pass": 0
+          }
         }
       }
     },
@@ -691,5 +769,150 @@
         "status": "untested"
       }
     ]
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-letters",
+      "parent": "containerBlock/note note.marginnote[colored]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-letters",
+      "parent": "containerBlock/note note.notecolumn[colored-column]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-letters",
+      "parent": "containerBlock/note note.notecolumn[margin]",
+      "why": "never-passes",
+      "branches": 6,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-letters",
+      "parent": "containerBlock/note note.sidenotes[floating]",
+      "why": "never-passes",
+      "branches": 7,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-roman",
+      "parent": "containerBlock/note note.marginnote[colored]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-roman",
+      "parent": "containerBlock/note note.marginpar[reversed]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-roman",
+      "parent": "containerBlock/note note.notecolumn[margin]",
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-roman",
+      "parent": "containerBlock/note note.sidenotes[fixed]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-roman",
+      "parent": "containerBlock/note note.sidenotes[floating]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-roman",
+      "parent": "containerBlock/note note.todonotes[red-alert]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-roman",
+      "parent": "containerBlock/note note.todonotes[tag]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-letters",
+      "parent": "containerBlock/note general:containerBlock/note:marginnote+xcolor",
+      "why": "never-passes",
+      "branches": 14,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-roman",
+      "parent": "containerBlock/note general:containerBlock/note:marginnote+xcolor",
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    }
+  ]
 }

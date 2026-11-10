@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:16701925c4d24f90f2ee812687c311f051fcf5015aed025aeb2eee2bfad98744",
     "contexts": "sha256:14d2bab480b628956ef66f35e17279156d9d30fffeca011a488ae87ffc914acf",
-    "matrix": "sha256:ca8e2635e81836174e69084c8ebc4f67e08b20b2accca5e68c57539bbcc75339"
+    "matrix": "sha256:fa2f97e67394a4de8800886bb8818cf169e30137895f32e02468f025fc03af9c"
   },
   "parents": {
     "body": {
@@ -210,17 +210,15 @@
       "(General)": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 166,
           "pass": 161,
-          "failing": [
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 8,
+            "pass": 3
+          }
         }
       }
     },
@@ -228,17 +226,15 @@
       "box.awesomebox": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 132,
           "pass": 127,
-          "failing": [
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 5,
+            "pass": 0
+          }
         }
       },
       "box.class-native": {
@@ -280,17 +276,15 @@
       "box.mdframed": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 396,
           "pass": 381,
-          "failing": [
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 15,
+            "pass": 0
+          }
         }
       },
       "box.mdframed[breakable=false]": {
@@ -301,17 +295,15 @@
       "box.tcolorbox": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 264,
           "pass": 254,
-          "failing": [
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 10,
+            "pass": 0
+          }
         }
       },
       "box.tcolorbox[breakable=false]": {
@@ -366,7 +358,11 @@
             "ieeetran-compsoc.A",
             "ieeetran-conference.A",
             "ieeetran-journal.A"
-          ]
+          ],
+          "denied": {
+            "branches": 31,
+            "pass": 19
+          }
         }
       },
       "note.notecolumn": {
@@ -375,13 +371,17 @@
         "status": "failing",
         "matrix": {
           "branches": 107,
-          "pass": 45,
+          "pass": 48,
           "failing": [
             "ieeeconf-ras.A",
             "ieeetran-compsoc.A",
             "ieeetran-conference.A",
             "ieeetran-journal.A"
-          ]
+          ],
+          "denied": {
+            "branches": 12,
+            "pass": 12
+          }
         }
       },
       "note.sidenotes": {
@@ -396,7 +396,11 @@
             "ieeetran-compsoc.A",
             "ieeetran-conference.A",
             "ieeetran-journal.A"
-          ]
+          ],
+          "denied": {
+            "branches": 23,
+            "pass": 23
+          }
         }
       },
       "note.todonotes": {
@@ -411,7 +415,11 @@
             "ieeetran-compsoc.A",
             "ieeetran-conference.A",
             "ieeetran-journal.A"
-          ]
+          ],
+          "denied": {
+            "branches": 15,
+            "pass": 15
+          }
         }
       }
     },
@@ -442,7 +450,11 @@
             "ieeetran-compsoc.A",
             "ieeetran-conference.A",
             "ieeetran-journal.A"
-          ]
+          ],
+          "denied": {
+            "branches": 5,
+            "pass": 5
+          }
         }
       },
       "list.enumitem": {
@@ -456,7 +468,11 @@
             "ieeetran-compsoc.A",
             "ieeetran-conference.A",
             "ieeetran-journal.A"
-          ]
+          ],
+          "denied": {
+            "branches": 5,
+            "pass": 5
+          }
         }
       },
       "list.exam-questions": {
@@ -475,7 +491,11 @@
             "ieeetran-compsoc.A",
             "ieeetran-conference.A",
             "ieeetran-journal.A"
-          ]
+          ],
+          "denied": {
+            "branches": 5,
+            "pass": 5
+          }
         }
       },
       "list.nomenclature": {
@@ -494,7 +514,11 @@
             "ieeetran-compsoc.A",
             "ieeetran-conference.A",
             "ieeetran-journal.A"
-          ]
+          ],
+          "denied": {
+            "branches": 5,
+            "pass": 5
+          }
         }
       },
       "list.scrextend": {
@@ -508,7 +532,11 @@
             "ieeetran-compsoc.A",
             "ieeetran-conference.A",
             "ieeetran-journal.A"
-          ]
+          ],
+          "denied": {
+            "branches": 4,
+            "pass": 4
+          }
         }
       }
     },
@@ -608,49 +636,43 @@
       "thm.class-native": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 161,
           "pass": 156,
-          "failing": [
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 5,
+            "pass": 0
+          }
         }
       },
       "thm.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 112,
           "pass": 107,
-          "failing": [
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 5,
+            "pass": 0
+          }
         }
       },
       "thm.mdframed": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 151,
           "pass": 146,
-          "failing": [
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 5,
+            "pass": 0
+          }
         }
       },
       "thm.ntheorem": {
@@ -666,17 +688,15 @@
       "thm.tcolorbox": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 312,
           "pass": 302,
-          "failing": [
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 10,
+            "pass": 0
+          }
         }
       },
       "thm.tcolorbox[breakable=false]": {
@@ -687,17 +707,15 @@
       "thm.thmtools": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 78,
           "pass": 73,
-          "failing": [
-            "ieeeaccess.A",
-            "ieeeconf-ras.A",
-            "ieeetran-compsoc.A",
-            "ieeetran-conference.A",
-            "ieeetran-journal.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 5,
+            "pass": 0
+          }
         }
       }
     },
@@ -728,5 +746,6 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

@@ -1,9 +1,9 @@
 {
   "way": "list.agu-glossary",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -28,7 +28,11 @@
       "pair": "agu.A",
       "branches": 200,
       "pass": 177,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 22,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -39,7 +43,11 @@
       "pair": "agu.A",
       "branches": 94,
       "pass": 88,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 6,
+        "pass": 3
+      }
     },
     {
       "kind": "verified",
@@ -50,7 +58,11 @@
       "pair": "agu.A",
       "branches": 89,
       "pass": 77,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 9,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -61,7 +73,11 @@
       "pair": "agu.A",
       "branches": 91,
       "pass": 85,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 6,
+        "pass": 3
+      }
     },
     {
       "kind": "verified",
@@ -72,7 +88,11 @@
       "pair": "agu.A",
       "branches": 278,
       "pass": 255,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 23,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -83,7 +103,11 @@
       "pair": "agu.A",
       "branches": 187,
       "pass": 174,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 13,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -94,7 +118,11 @@
       "pair": "agu.A",
       "branches": 176,
       "pass": 167,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 12,
+        "pass": 6
+      }
     },
     {
       "kind": "verified",
@@ -105,7 +133,11 @@
       "pair": "agu.A",
       "branches": 85,
       "pass": 71,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 25,
+        "pass": 12
+      }
     },
     {
       "kind": "verified",
@@ -115,8 +147,12 @@
       },
       "pair": "agu.A",
       "branches": 92,
-      "pass": 86,
-      "status": "failing"
+      "pass": 88,
+      "status": "failing",
+      "denied": {
+        "branches": 14,
+        "pass": 14
+      }
     },
     {
       "kind": "verified",
@@ -127,7 +163,11 @@
       "pair": "agu.A",
       "branches": 99,
       "pass": 88,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 22,
+        "pass": 13
+      }
     },
     {
       "kind": "verified",
@@ -138,7 +178,11 @@
       "pair": "agu.A",
       "branches": 96,
       "pass": 87,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 26,
+        "pass": 21
+      }
     },
     {
       "kind": "verified",
@@ -149,7 +193,11 @@
       "pair": "agu.A",
       "branches": 172,
       "pass": 151,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 16,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -171,7 +219,11 @@
       "pair": "agu.A",
       "branches": 42,
       "pass": 39,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -179,7 +231,15 @@
       "pair": "agu.A",
       "branches": 1721,
       "pass": 1602,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 90,
+        "pass": 3
+      },
+      "banned": {
+        "branches": 13,
+        "pass": 5
+      }
     },
     {
       "kind": "verified",
@@ -190,6 +250,21 @@
       "pair": "agu.A",
       "branches": 199,
       "pass": 194,
+      "status": "failing",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm"
+      },
+      "pair": "agu.A",
+      "branches": 195,
+      "pass": 193,
       "status": "failing"
     },
     {
@@ -234,7 +309,11 @@
       "pair": "agu.A",
       "branches": 400,
       "pass": 353,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 49,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -244,19 +323,12 @@
       },
       "pair": "agu.A",
       "branches": 194,
-      "pass": 168,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "thm.amsthm"
-      },
-      "pair": "agu.A",
-      "branches": 195,
-      "pass": 193,
-      "status": "failing"
+      "pass": 169,
+      "status": "failing",
+      "denied": {
+        "branches": 25,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -267,18 +339,11 @@
       "pair": "agu.A",
       "branches": 144,
       "pass": 122,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/acknowledgement",
-        "way": "ack.class-command"
-      },
-      "pair": "agu.A",
-      "branches": 97,
-      "pass": 97,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 28,
+        "pass": 6
+      }
     },
     {
       "kind": "verified",
@@ -300,7 +365,11 @@
       "pair": "agu.A",
       "branches": 144,
       "pass": 119,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 21,
+        "pass": 4
+      }
     },
     {
       "kind": "verified",
@@ -311,7 +380,11 @@
       "pair": "agu.A",
       "branches": 143,
       "pass": 123,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 25,
+        "pass": 5
+      }
     },
     {
       "kind": "verified",
@@ -322,7 +395,22 @@
       "pair": "agu.A",
       "branches": 146,
       "pass": 144,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 4,
+        "pass": 3
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/acknowledgement",
+        "way": "ack.class-command"
+      },
+      "pair": "agu.A",
+      "branches": 97,
+      "pass": 97,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -333,7 +421,11 @@
       "pair": "agu.A",
       "branches": 174,
       "pass": 165,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -355,7 +447,11 @@
       "pair": "agu.A",
       "branches": 144,
       "pass": 12,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 144,
+        "pass": 12
+      }
     },
     {
       "kind": "verified",
@@ -377,7 +473,11 @@
       "pair": "agu.A",
       "branches": 151,
       "pass": 148,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     }
   ]
 }

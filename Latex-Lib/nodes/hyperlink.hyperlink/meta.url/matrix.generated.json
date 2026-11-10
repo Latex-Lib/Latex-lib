@@ -1,9 +1,9 @@
 {
   "way": "meta.url",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -50,7 +50,11 @@
       "pair": "aa.A",
       "branches": 20,
       "pass": 17,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -61,7 +65,11 @@
       "pair": "aa.A",
       "branches": 8,
       "pass": 7,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -72,7 +80,15 @@
       "pair": "aa.A",
       "branches": 11,
       "pass": 9,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -149,7 +165,11 @@
       "pair": "aa.A",
       "branches": 10,
       "pass": 9,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -259,7 +279,11 @@
       "pair": "aamas.A",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -402,7 +426,11 @@
       "pair": "aastex.A",
       "branches": 32,
       "pass": 28,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -424,7 +452,11 @@
       "pair": "aastex.A",
       "branches": 18,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -435,7 +467,11 @@
       "pair": "aastex.A",
       "branches": 10,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -468,7 +504,11 @@
       "pair": "aastex.A",
       "branches": 8,
       "pass": 7,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -545,7 +585,11 @@
       "pair": "aastex.B",
       "branches": 32,
       "pass": 28,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -567,7 +611,11 @@
       "pair": "aastex.B",
       "branches": 18,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -578,7 +626,11 @@
       "pair": "aastex.B",
       "branches": 10,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -611,7 +663,11 @@
       "pair": "aastex.B",
       "branches": 8,
       "pass": 7,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -699,7 +755,11 @@
       "pair": "achemso.A",
       "branches": 24,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -710,7 +770,11 @@
       "pair": "achemso.A",
       "branches": 24,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -732,7 +796,11 @@
       "pair": "achemso.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -743,7 +811,11 @@
       "pair": "achemso.A",
       "branches": 18,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -754,7 +826,15 @@
       "pair": "achemso.A",
       "branches": 21,
       "pass": 17,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -853,7 +933,11 @@
       "pair": "acl.A",
       "branches": 40,
       "pass": 37,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -864,7 +948,11 @@
       "pair": "acl.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -875,7 +963,11 @@
       "pair": "acl.A",
       "branches": 22,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -897,7 +989,11 @@
       "pair": "acl.A",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -908,7 +1004,11 @@
       "pair": "acl.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -919,7 +1019,15 @@
       "pair": "acl.A",
       "branches": 19,
       "pass": 14,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1106,7 +1214,11 @@
       "pair": "acmart-acmsmall.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1282,7 +1394,11 @@
       "pair": "acmart-acmtog.A",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1458,7 +1574,11 @@
       "pair": "acmart-manuscript.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1634,7 +1754,11 @@
       "pair": "acmart-manuscript.B",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1810,7 +1934,11 @@
       "pair": "acmart-sigconf.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1986,7 +2114,11 @@
       "pair": "acmart-sigplan.A",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -2140,7 +2272,11 @@
       "pair": "aistats.A",
       "branches": 26,
       "pass": 25,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -2151,7 +2287,11 @@
       "pair": "aistats.A",
       "branches": 26,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2173,7 +2313,11 @@
       "pair": "aistats.A",
       "branches": 22,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -2184,7 +2328,11 @@
       "pair": "aistats.A",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -2195,7 +2343,15 @@
       "pair": "aistats.A",
       "branches": 21,
       "pass": 17,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2338,7 +2494,11 @@
       "pair": "aistats.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2371,7 +2531,11 @@
       "pair": "amsart.A",
       "branches": 22,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2382,7 +2546,11 @@
       "pair": "amsart.A",
       "branches": 22,
       "pass": 17,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2404,7 +2572,11 @@
       "pair": "amsart.A",
       "branches": 20,
       "pass": 20,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2415,7 +2587,15 @@
       "pair": "amsart.A",
       "branches": 19,
       "pass": 14,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2569,7 +2749,11 @@
       "pair": "amsart.B",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -2580,7 +2764,11 @@
       "pair": "amsart.B",
       "branches": 20,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2602,7 +2790,11 @@
       "pair": "amsart.B",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2613,7 +2805,15 @@
       "pair": "amsart.B",
       "branches": 17,
       "pass": 11,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2756,7 +2956,11 @@
       "pair": "apa7.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2778,7 +2982,11 @@
       "pair": "apa7.A",
       "branches": 20,
       "pass": 18,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2789,7 +2997,11 @@
       "pair": "apa7.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -2865,8 +3077,8 @@
       },
       "pair": "apa7.A",
       "branches": 9,
-      "pass": 8,
-      "status": "failing"
+      "pass": 9,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -2876,8 +3088,8 @@
       },
       "pair": "apa7.A",
       "branches": 9,
-      "pass": 8,
-      "status": "failing"
+      "pass": 9,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -2976,7 +3188,11 @@
       "pair": "article.A",
       "branches": 24,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -2987,7 +3203,11 @@
       "pair": "article.A",
       "branches": 24,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3009,7 +3229,11 @@
       "pair": "article.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -3020,7 +3244,11 @@
       "pair": "article.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -3031,7 +3259,15 @@
       "pair": "article.A",
       "branches": 21,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3196,7 +3432,11 @@
       "pair": "article.B",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -3207,7 +3447,11 @@
       "pair": "article.B",
       "branches": 22,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3229,7 +3473,11 @@
       "pair": "article.B",
       "branches": 20,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -3240,7 +3488,11 @@
       "pair": "article.B",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -3251,7 +3503,15 @@
       "pair": "article.B",
       "branches": 19,
       "pass": 15,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3416,7 +3676,11 @@
       "pair": "ascelike.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -3427,7 +3691,11 @@
       "pair": "ascelike.A",
       "branches": 24,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -3449,7 +3717,11 @@
       "pair": "ascelike.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -3460,7 +3732,11 @@
       "pair": "ascelike.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -3471,7 +3747,15 @@
       "pair": "ascelike.A",
       "branches": 21,
       "pass": 14,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3481,8 +3765,8 @@
       },
       "pair": "ascelike.A",
       "branches": 1,
-      "pass": 0,
-      "status": "failing"
+      "pass": 1,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -3503,8 +3787,8 @@
       },
       "pair": "ascelike.A",
       "branches": 1,
-      "pass": 0,
-      "status": "failing"
+      "pass": 1,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -3514,8 +3798,8 @@
       },
       "pair": "ascelike.A",
       "branches": 1,
-      "pass": 0,
-      "status": "failing"
+      "pass": 1,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -3580,8 +3864,8 @@
       },
       "pair": "ascelike.A",
       "branches": 1,
-      "pass": 0,
-      "status": "failing"
+      "pass": 1,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -3591,8 +3875,8 @@
       },
       "pair": "ascelike.A",
       "branches": 2,
-      "pass": 0,
-      "status": "failing"
+      "pass": 2,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -3602,8 +3886,8 @@
       },
       "pair": "ascelike.A",
       "branches": 1,
-      "pass": 0,
-      "status": "failing"
+      "pass": 1,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -3636,7 +3920,11 @@
       "pair": "asmeconf.A",
       "branches": 20,
       "pass": 20,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -3647,7 +3935,11 @@
       "pair": "asmeconf.A",
       "branches": 20,
       "pass": 18,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3669,7 +3961,11 @@
       "pair": "asmeconf.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -3680,7 +3976,11 @@
       "pair": "asmeconf.A",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -3691,7 +3991,11 @@
       "pair": "asmeconf.A",
       "branches": 17,
       "pass": 15,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -3856,7 +4160,11 @@
       "pair": "asmejour.A",
       "branches": 20,
       "pass": 20,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -3867,7 +4175,11 @@
       "pair": "asmejour.A",
       "branches": 20,
       "pass": 18,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3889,7 +4201,11 @@
       "pair": "asmejour.A",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -3900,7 +4216,11 @@
       "pair": "asmejour.A",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -3911,7 +4231,11 @@
       "pair": "asmejour.A",
       "branches": 17,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -3922,7 +4246,11 @@
       "pair": "asmejour.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4076,7 +4404,11 @@
       "pair": "beamer.A",
       "branches": 17,
       "pass": 17,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4175,7 +4507,11 @@
       "pair": "beamer.A",
       "branches": 8,
       "pass": 8,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -4241,7 +4577,11 @@
       "pair": "bmvc.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4263,7 +4603,11 @@
       "pair": "bmvc.A",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -4274,7 +4618,11 @@
       "pair": "bmvc.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -4417,7 +4765,11 @@
       "pair": "bmvc.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4450,7 +4802,11 @@
       "pair": "book.A",
       "branches": 24,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4461,7 +4817,11 @@
       "pair": "book.A",
       "branches": 24,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4472,7 +4832,11 @@
       "pair": "book.A",
       "branches": 30,
       "pass": 27,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -4494,7 +4858,11 @@
       "pair": "book.A",
       "branches": 30,
       "pass": 25,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4505,7 +4873,11 @@
       "pair": "book.A",
       "branches": 30,
       "pass": 29,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -4516,7 +4888,11 @@
       "pair": "book.A",
       "branches": 28,
       "pass": 27,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -4527,7 +4903,15 @@
       "pair": "book.A",
       "branches": 30,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4681,7 +5065,11 @@
       "pair": "book.B",
       "branches": 23,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4692,7 +5080,11 @@
       "pair": "book.B",
       "branches": 22,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4703,7 +5095,11 @@
       "pair": "book.B",
       "branches": 28,
       "pass": 27,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -4725,7 +5121,11 @@
       "pair": "book.B",
       "branches": 28,
       "pass": 24,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4736,7 +5136,11 @@
       "pair": "book.B",
       "branches": 28,
       "pass": 26,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -4747,7 +5151,11 @@
       "pair": "book.B",
       "branches": 26,
       "pass": 25,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -4758,7 +5166,15 @@
       "pair": "book.B",
       "branches": 28,
       "pass": 27,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4912,7 +5328,11 @@
       "pair": "cas-dc.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -4923,7 +5343,11 @@
       "pair": "cas-dc.A",
       "branches": 24,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4945,7 +5369,11 @@
       "pair": "cas-dc.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -4956,7 +5384,11 @@
       "pair": "cas-dc.A",
       "branches": 21,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -5132,7 +5564,11 @@
       "pair": "cas-sc.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -5143,7 +5579,11 @@
       "pair": "cas-sc.A",
       "branches": 24,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5165,7 +5605,11 @@
       "pair": "cas-sc.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -5176,7 +5620,15 @@
       "pair": "cas-sc.A",
       "branches": 21,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5352,7 +5804,11 @@
       "pair": "colm.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -5363,7 +5819,11 @@
       "pair": "colm.A",
       "branches": 24,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5385,7 +5845,11 @@
       "pair": "colm.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -5396,7 +5860,11 @@
       "pair": "colm.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -5407,7 +5875,15 @@
       "pair": "colm.A",
       "branches": 21,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5572,7 +6048,11 @@
       "pair": "copernicus.A",
       "branches": 26,
       "pass": 26,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -5583,7 +6063,11 @@
       "pair": "copernicus.A",
       "branches": 26,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -5605,7 +6089,11 @@
       "pair": "copernicus.A",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -5616,7 +6104,11 @@
       "pair": "copernicus.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -5627,7 +6119,11 @@
       "pair": "copernicus.A",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -5638,7 +6134,11 @@
       "pair": "copernicus.A",
       "branches": 23,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -5748,7 +6248,11 @@
       "pair": "copernicus.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5769,8 +6273,8 @@
       },
       "pair": "copernicus.A",
       "branches": 1,
-      "pass": 0,
-      "status": "failing"
+      "pass": 1,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -5803,7 +6307,11 @@
       "pair": "corl.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -5814,7 +6322,11 @@
       "pair": "corl.A",
       "branches": 24,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5836,7 +6348,11 @@
       "pair": "corl.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -5847,7 +6363,11 @@
       "pair": "corl.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -5858,7 +6378,15 @@
       "pair": "corl.A",
       "branches": 21,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6023,7 +6551,11 @@
       "pair": "cvpr.A",
       "branches": 42,
       "pass": 39,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6034,7 +6566,11 @@
       "pair": "cvpr.A",
       "branches": 26,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -6045,7 +6581,11 @@
       "pair": "cvpr.A",
       "branches": 26,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6067,7 +6607,11 @@
       "pair": "cvpr.A",
       "branches": 23,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -6078,7 +6622,11 @@
       "pair": "cvpr.A",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -6089,7 +6637,15 @@
       "pair": "cvpr.A",
       "branches": 23,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      },
+      "banned": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6205,17 +6761,6 @@
       "kind": "verified",
       "parent": {
         "node": "paragraph/title",
-        "way": "front.authblk"
-      },
-      "pair": "cvpr.A",
-      "branches": 1,
-      "pass": 0,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "paragraph/title",
         "way": "front.author-blocks"
       },
       "pair": "cvpr.A",
@@ -6254,7 +6799,11 @@
       "pair": "ecai.A",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -6265,7 +6814,11 @@
       "pair": "ecai.A",
       "branches": 20,
       "pass": 17,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6287,7 +6840,11 @@
       "pair": "ecai.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -6298,7 +6855,15 @@
       "pair": "ecai.A",
       "branches": 17,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6452,7 +7017,11 @@
       "pair": "eccv.A",
       "branches": 16,
       "pass": 14,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6474,7 +7043,11 @@
       "pair": "eccv.A",
       "branches": 21,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6485,7 +7058,15 @@
       "pair": "eccv.A",
       "branches": 26,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6562,7 +7143,11 @@
       "pair": "eccv.A",
       "branches": 21,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6650,7 +7235,11 @@
       "pair": "elegantpaper.A",
       "branches": 24,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -6661,7 +7250,11 @@
       "pair": "elegantpaper.A",
       "branches": 24,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6683,7 +7276,11 @@
       "pair": "elegantpaper.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -6694,7 +7291,11 @@
       "pair": "elegantpaper.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -6705,7 +7306,11 @@
       "pair": "elegantpaper.A",
       "branches": 21,
       "pass": 17,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -6881,7 +7486,11 @@
       "pair": "elsarticle-3p.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -6892,7 +7501,11 @@
       "pair": "elsarticle-3p.A",
       "branches": 22,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6914,7 +7527,11 @@
       "pair": "elsarticle-3p.A",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -6925,7 +7542,11 @@
       "pair": "elsarticle-3p.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -6936,7 +7557,15 @@
       "pair": "elsarticle-3p.A",
       "branches": 19,
       "pass": 14,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7079,7 +7708,11 @@
       "pair": "elsarticle-5p.A",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -7090,7 +7723,11 @@
       "pair": "elsarticle-5p.A",
       "branches": 20,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -7112,7 +7749,11 @@
       "pair": "elsarticle-5p.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -7123,7 +7764,11 @@
       "pair": "elsarticle-5p.A",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -7134,7 +7779,15 @@
       "pair": "elsarticle-5p.A",
       "branches": 17,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7277,7 +7930,11 @@
       "pair": "elsarticle-preprint.A",
       "branches": 22,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -7288,7 +7945,11 @@
       "pair": "elsarticle-preprint.A",
       "branches": 22,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7310,7 +7971,11 @@
       "pair": "elsarticle-preprint.A",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -7321,7 +7986,11 @@
       "pair": "elsarticle-preprint.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -7332,7 +8001,15 @@
       "pair": "elsarticle-preprint.A",
       "branches": 19,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7475,7 +8152,11 @@
       "pair": "elsarticle-preprint.B",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -7486,7 +8167,11 @@
       "pair": "elsarticle-preprint.B",
       "branches": 20,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7508,7 +8193,11 @@
       "pair": "elsarticle-preprint.B",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -7519,7 +8208,11 @@
       "pair": "elsarticle-preprint.B",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -7530,7 +8223,15 @@
       "pair": "elsarticle-preprint.B",
       "branches": 17,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7673,7 +8374,11 @@
       "pair": "emulateapj.A",
       "branches": 14,
       "pass": 14,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -7684,7 +8389,11 @@
       "pair": "emulateapj.A",
       "branches": 14,
       "pass": 12,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7706,7 +8415,11 @@
       "pair": "emulateapj.A",
       "branches": 13,
       "pass": 12,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -7717,7 +8430,11 @@
       "pair": "emulateapj.A",
       "branches": 12,
       "pass": 10,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7871,7 +8588,11 @@
       "pair": "exam.A",
       "branches": 24,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -7893,7 +8614,11 @@
       "pair": "exam.A",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -7904,7 +8629,11 @@
       "pair": "exam.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -7915,7 +8644,11 @@
       "pair": "exam.A",
       "branches": 14,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -8102,7 +8835,11 @@
       "pair": "exam.B",
       "branches": 22,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -8124,7 +8861,11 @@
       "pair": "exam.B",
       "branches": 18,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -8135,7 +8876,11 @@
       "pair": "exam.B",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -8146,7 +8891,11 @@
       "pair": "exam.B",
       "branches": 12,
       "pass": 11,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -8322,7 +9071,11 @@
       "pair": "extarticle.A",
       "branches": 22,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -8333,7 +9086,11 @@
       "pair": "extarticle.A",
       "branches": 22,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -8355,7 +9112,11 @@
       "pair": "extarticle.A",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -8366,7 +9127,11 @@
       "pair": "extarticle.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -8377,7 +9142,15 @@
       "pair": "extarticle.A",
       "branches": 19,
       "pass": 11,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -8531,7 +9304,11 @@
       "pair": "extarticle.B",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -8542,7 +9319,11 @@
       "pair": "extarticle.B",
       "branches": 20,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -8564,7 +9345,11 @@
       "pair": "extarticle.B",
       "branches": 18,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -8575,7 +9360,11 @@
       "pair": "extarticle.B",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -8586,7 +9375,15 @@
       "pair": "extarticle.B",
       "branches": 17,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -8716,8 +9513,8 @@
         "way": "general:paragraph/paragraph:kernel"
       },
       "pair": "frontiers.A",
-      "branches": 38,
-      "pass": 24,
+      "branches": 37,
+      "pass": 27,
       "status": "failing"
     },
     {
@@ -8740,7 +9537,11 @@
       "pair": "frontiers.A",
       "branches": 20,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -8751,7 +9552,11 @@
       "pair": "frontiers.A",
       "branches": 10,
       "pass": 6,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -8762,7 +9567,11 @@
       "pair": "frontiers.A",
       "branches": 16,
       "pass": 14,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -8773,7 +9582,15 @@
       "pair": "frontiers.A",
       "branches": 11,
       "pass": 9,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -8784,7 +9601,11 @@
       "pair": "frontiers.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -8795,7 +9616,11 @@
       "pair": "frontiers.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -8806,7 +9631,11 @@
       "pair": "frontiers.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -8817,7 +9646,11 @@
       "pair": "frontiers.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -8826,9 +9659,13 @@
         "way": "para.kernel"
       },
       "pair": "frontiers.A",
-      "branches": 27,
-      "pass": 16,
-      "status": "failing"
+      "branches": 26,
+      "pass": 19,
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -8916,7 +9753,11 @@
       "pair": "icassp.A",
       "branches": 40,
       "pass": 36,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -8927,7 +9768,11 @@
       "pair": "icassp.A",
       "branches": 22,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -8938,7 +9783,11 @@
       "pair": "icassp.A",
       "branches": 22,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -8960,7 +9809,15 @@
       "pair": "icassp.A",
       "branches": 20,
       "pass": 18,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -8971,7 +9828,11 @@
       "pair": "icassp.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -8982,7 +9843,15 @@
       "pair": "icassp.A",
       "branches": 19,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      },
+      "banned": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -9147,7 +10016,11 @@
       "pair": "iclr.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -9158,7 +10031,11 @@
       "pair": "iclr.A",
       "branches": 24,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -9180,7 +10057,11 @@
       "pair": "iclr.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -9191,7 +10072,11 @@
       "pair": "iclr.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -9202,7 +10087,15 @@
       "pair": "iclr.A",
       "branches": 21,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -9367,7 +10260,11 @@
       "pair": "icml.A",
       "branches": 24,
       "pass": 23,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -9378,7 +10275,11 @@
       "pair": "icml.A",
       "branches": 24,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -9400,7 +10301,11 @@
       "pair": "icml.A",
       "branches": 21,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -9411,7 +10316,11 @@
       "pair": "icml.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -9422,7 +10331,15 @@
       "pair": "icml.A",
       "branches": 20,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -9620,7 +10537,11 @@
       "pair": "ieeeaccess.A",
       "branches": 22,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -9631,7 +10552,11 @@
       "pair": "ieeeaccess.A",
       "branches": 12,
       "pass": 11,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -9697,7 +10622,11 @@
       "pair": "ieeeaccess.A",
       "branches": 12,
       "pass": 11,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -9829,7 +10758,11 @@
       "pair": "ieeeconf-ras.A",
       "branches": 24,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -9840,7 +10773,11 @@
       "pair": "ieeeconf-ras.A",
       "branches": 13,
       "pass": 11,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -9917,7 +10854,11 @@
       "pair": "ieeeconf-ras.A",
       "branches": 12,
       "pass": 11,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -9961,7 +10902,11 @@
       "pair": "ieeeconf-ras.A",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -9972,7 +10917,11 @@
       "pair": "ieeeconf-ras.A",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -10016,7 +10965,11 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 41,
       "pass": 38,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -10038,7 +10991,11 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 24,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -10049,7 +11006,11 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 15,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -10060,7 +11021,11 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 13,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -10137,7 +11102,11 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 12,
       "pass": 11,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -10181,7 +11150,11 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -10192,7 +11165,11 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -10247,7 +11224,11 @@
       "pair": "ieeetran-conference.A",
       "branches": 41,
       "pass": 38,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -10269,7 +11250,11 @@
       "pair": "ieeetran-conference.A",
       "branches": 24,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -10280,7 +11265,11 @@
       "pair": "ieeetran-conference.A",
       "branches": 13,
       "pass": 11,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -10357,7 +11346,11 @@
       "pair": "ieeetran-conference.A",
       "branches": 12,
       "pass": 11,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -10401,7 +11394,11 @@
       "pair": "ieeetran-conference.A",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -10412,7 +11409,11 @@
       "pair": "ieeetran-conference.A",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -10467,7 +11468,11 @@
       "pair": "ieeetran-journal.A",
       "branches": 41,
       "pass": 38,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -10489,7 +11494,11 @@
       "pair": "ieeetran-journal.A",
       "branches": 24,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -10500,7 +11509,11 @@
       "pair": "ieeetran-journal.A",
       "branches": 13,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -10577,7 +11590,11 @@
       "pair": "ieeetran-journal.A",
       "branches": 12,
       "pass": 11,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -10621,7 +11638,11 @@
       "pair": "ieeetran-journal.A",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -10632,7 +11653,11 @@
       "pair": "ieeetran-journal.A",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -10698,7 +11723,11 @@
       "pair": "ijcai.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -10709,7 +11738,11 @@
       "pair": "ijcai.A",
       "branches": 22,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -10731,7 +11764,11 @@
       "pair": "ijcai.A",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -10742,7 +11779,11 @@
       "pair": "ijcai.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -10753,7 +11794,15 @@
       "pair": "ijcai.A",
       "branches": 19,
       "pass": 14,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -10929,7 +11978,11 @@
       "pair": "imsart.A",
       "branches": 24,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -10940,7 +11993,11 @@
       "pair": "imsart.A",
       "branches": 24,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -10962,7 +12019,11 @@
       "pair": "imsart.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -10973,7 +12034,11 @@
       "pair": "imsart.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -10984,7 +12049,15 @@
       "pair": "imsart.A",
       "branches": 21,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -10995,7 +12068,11 @@
       "pair": "imsart.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -11160,7 +12237,11 @@
       "pair": "interact.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -11170,8 +12251,12 @@
       },
       "pair": "interact.A",
       "branches": 24,
-      "pass": 20,
-      "status": "failing"
+      "pass": 19,
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -11193,7 +12278,11 @@
       "pair": "interact.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -11204,7 +12293,15 @@
       "pair": "interact.A",
       "branches": 21,
       "pass": 15,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -11380,7 +12477,11 @@
       "pair": "iopart.A",
       "branches": 22,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -11402,7 +12503,11 @@
       "pair": "iopart.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -11413,7 +12518,15 @@
       "pair": "iopart.A",
       "branches": 13,
       "pass": 11,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -11556,7 +12669,11 @@
       "pair": "iopjournal.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -11567,7 +12684,11 @@
       "pair": "iopjournal.A",
       "branches": 24,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -11589,7 +12710,11 @@
       "pair": "iopjournal.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -11600,7 +12725,11 @@
       "pair": "iopjournal.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -11611,7 +12740,15 @@
       "pair": "iopjournal.A",
       "branches": 21,
       "pass": 15,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -11721,7 +12858,11 @@
       "pair": "jacow.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -11732,7 +12873,11 @@
       "pair": "jacow.A",
       "branches": 22,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -11754,7 +12899,11 @@
       "pair": "jacow.A",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -11765,7 +12914,11 @@
       "pair": "jacow.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -11776,7 +12929,15 @@
       "pair": "jacow.A",
       "branches": 19,
       "pass": 15,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -11941,7 +13102,11 @@
       "pair": "jmlr-pmlr.A",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -11952,7 +13117,11 @@
       "pair": "jmlr-pmlr.A",
       "branches": 19,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -11985,7 +13154,11 @@
       "pair": "jmlr-pmlr.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -11996,7 +13169,11 @@
       "pair": "jmlr-pmlr.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -12007,7 +13184,11 @@
       "pair": "jmlr-pmlr.A",
       "branches": 21,
       "pass": 17,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -12183,7 +13364,11 @@
       "pair": "jss.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -12204,8 +13389,12 @@
       },
       "pair": "jss.A",
       "branches": 20,
-      "pass": 20,
-      "status": "verified-ok"
+      "pass": 19,
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -12216,7 +13405,11 @@
       "pair": "jss.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -12326,7 +13519,11 @@
       "pair": "lipics.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -12337,7 +13534,11 @@
       "pair": "lipics.A",
       "branches": 24,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -12359,7 +13560,11 @@
       "pair": "lipics.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -12370,7 +13575,11 @@
       "pair": "lipics.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -12381,7 +13590,15 @@
       "pair": "lipics.A",
       "branches": 21,
       "pass": 14,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -12546,7 +13763,11 @@
       "pair": "llncs.A",
       "branches": 16,
       "pass": 14,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -12568,7 +13789,11 @@
       "pair": "llncs.A",
       "branches": 21,
       "pass": 17,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -12579,7 +13804,11 @@
       "pair": "llncs.A",
       "branches": 26,
       "pass": 25,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -12656,7 +13885,11 @@
       "pair": "llncs.A",
       "branches": 21,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -12744,7 +13977,11 @@
       "pair": "llncs.B",
       "branches": 15,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -12766,7 +14003,11 @@
       "pair": "llncs.B",
       "branches": 20,
       "pass": 17,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -12777,7 +14018,11 @@
       "pair": "llncs.B",
       "branches": 24,
       "pass": 23,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -12854,7 +14099,11 @@
       "pair": "llncs.B",
       "branches": 19,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -12931,7 +14180,11 @@
       "pair": "memoir.A",
       "branches": 20,
       "pass": 18,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -12942,7 +14195,11 @@
       "pair": "memoir.A",
       "branches": 22,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -12964,7 +14221,11 @@
       "pair": "memoir.A",
       "branches": 26,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -12975,7 +14236,11 @@
       "pair": "memoir.A",
       "branches": 26,
       "pass": 25,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -12986,7 +14251,11 @@
       "pair": "memoir.A",
       "branches": 26,
       "pass": 24,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -13129,7 +14398,11 @@
       "pair": "memoir.B",
       "branches": 19,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -13140,7 +14413,11 @@
       "pair": "memoir.B",
       "branches": 20,
       "pass": 18,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -13162,7 +14439,11 @@
       "pair": "memoir.B",
       "branches": 24,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -13173,7 +14454,11 @@
       "pair": "memoir.B",
       "branches": 24,
       "pass": 23,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -13184,7 +14469,11 @@
       "pair": "memoir.B",
       "branches": 24,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -13349,7 +14638,11 @@
       "pair": "mnras.A",
       "branches": 20,
       "pass": 17,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -13360,7 +14653,15 @@
       "pair": "mnras.A",
       "branches": 11,
       "pass": 9,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -13426,7 +14727,11 @@
       "pair": "mnras.A",
       "branches": 10,
       "pass": 9,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -13536,7 +14841,11 @@
       "pair": "neurips.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -13547,7 +14856,11 @@
       "pair": "neurips.A",
       "branches": 24,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -13569,7 +14882,11 @@
       "pair": "neurips.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -13580,7 +14897,11 @@
       "pair": "neurips.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -13591,7 +14912,15 @@
       "pair": "neurips.A",
       "branches": 21,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -13733,7 +15062,7 @@
       },
       "pair": "oup-authoring-template.A",
       "branches": 39,
-      "pass": 31,
+      "pass": 35,
       "status": "failing"
     },
     {
@@ -13744,7 +15073,7 @@
       },
       "pair": "oup-authoring-template.A",
       "branches": 39,
-      "pass": 31,
+      "pass": 34,
       "status": "failing"
     },
     {
@@ -13767,7 +15096,11 @@
       "pair": "oup-authoring-template.A",
       "branches": 22,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -13789,7 +15122,11 @@
       "pair": "oup-authoring-template.A",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -13800,7 +15137,15 @@
       "pair": "oup-authoring-template.A",
       "branches": 12,
       "pass": 10,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -13811,7 +15156,11 @@
       "pair": "oup-authoring-template.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -13833,7 +15182,11 @@
       "pair": "oup-authoring-template.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -13844,7 +15197,11 @@
       "pair": "oup-authoring-template.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -13899,7 +15256,11 @@
       "pair": "oup-authoring-template.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -13932,7 +15293,11 @@
       "pair": "plos.A",
       "branches": 24,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -13943,7 +15308,11 @@
       "pair": "plos.A",
       "branches": 24,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -13965,7 +15334,11 @@
       "pair": "plos.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -13976,7 +15349,11 @@
       "pair": "plos.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -13987,7 +15364,15 @@
       "pair": "plos.A",
       "branches": 21,
       "pass": 14,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -14141,7 +15526,11 @@
       "pair": "quantumarticle.A",
       "branches": 34,
       "pass": 31,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -14152,7 +15541,11 @@
       "pair": "quantumarticle.A",
       "branches": 14,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -14174,7 +15567,11 @@
       "pair": "quantumarticle.A",
       "branches": 12,
       "pass": 11,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -14262,7 +15659,11 @@
       "pair": "report.A",
       "branches": 24,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -14273,7 +15674,11 @@
       "pair": "report.A",
       "branches": 24,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -14295,7 +15700,11 @@
       "pair": "report.A",
       "branches": 30,
       "pass": 25,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -14306,7 +15715,11 @@
       "pair": "report.A",
       "branches": 30,
       "pass": 29,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -14317,7 +15730,11 @@
       "pair": "report.A",
       "branches": 28,
       "pass": 27,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -14328,7 +15745,15 @@
       "pair": "report.A",
       "branches": 30,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -14482,7 +15907,11 @@
       "pair": "report.B",
       "branches": 23,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -14493,7 +15922,11 @@
       "pair": "report.B",
       "branches": 22,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -14515,7 +15948,11 @@
       "pair": "report.B",
       "branches": 28,
       "pass": 24,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -14526,7 +15963,11 @@
       "pair": "report.B",
       "branches": 28,
       "pass": 26,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -14537,7 +15978,11 @@
       "pair": "report.B",
       "branches": 26,
       "pass": 25,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -14548,7 +15993,15 @@
       "pair": "report.B",
       "branches": 28,
       "pass": 27,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -14679,7 +16132,7 @@
       },
       "pair": "revtex4-2-aip.A",
       "branches": 37,
-      "pass": 35,
+      "pass": 36,
       "status": "failing"
     },
     {
@@ -14690,7 +16143,7 @@
       },
       "pair": "revtex4-2-aip.A",
       "branches": 37,
-      "pass": 35,
+      "pass": 36,
       "status": "failing"
     },
     {
@@ -14701,8 +16154,12 @@
       },
       "pair": "revtex4-2-aip.A",
       "branches": 20,
-      "pass": 17,
-      "status": "failing"
+      "pass": 19,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -14712,8 +16169,12 @@
       },
       "pair": "revtex4-2-aip.A",
       "branches": 20,
-      "pass": 17,
-      "status": "failing"
+      "pass": 19,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -14735,7 +16196,11 @@
       "pair": "revtex4-2-aip.A",
       "branches": 18,
       "pass": 15,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -14746,7 +16211,11 @@
       "pair": "revtex4-2-aip.A",
       "branches": 15,
       "pass": 15,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -14833,7 +16302,7 @@
       },
       "pair": "revtex4-2-aps.A",
       "branches": 37,
-      "pass": 35,
+      "pass": 36,
       "status": "failing"
     },
     {
@@ -14844,7 +16313,7 @@
       },
       "pair": "revtex4-2-aps.A",
       "branches": 37,
-      "pass": 35,
+      "pass": 36,
       "status": "failing"
     },
     {
@@ -14855,8 +16324,12 @@
       },
       "pair": "revtex4-2-aps.A",
       "branches": 20,
-      "pass": 17,
-      "status": "failing"
+      "pass": 19,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -14866,8 +16339,12 @@
       },
       "pair": "revtex4-2-aps.A",
       "branches": 20,
-      "pass": 17,
-      "status": "failing"
+      "pass": 19,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -14889,7 +16366,11 @@
       "pair": "revtex4-2-aps.A",
       "branches": 18,
       "pass": 15,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -14900,7 +16381,11 @@
       "pair": "revtex4-2-aps.A",
       "branches": 15,
       "pass": 15,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -15010,7 +16495,11 @@
       "pair": "scrartcl.A",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -15032,7 +16521,11 @@
       "pair": "scrartcl.A",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -15043,7 +16536,11 @@
       "pair": "scrartcl.A",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -15054,7 +16551,11 @@
       "pair": "scrartcl.A",
       "branches": 15,
       "pass": 14,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -15065,7 +16566,11 @@
       "pair": "scrartcl.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -15219,7 +16724,11 @@
       "pair": "scrartcl.B",
       "branches": 18,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -15241,7 +16750,11 @@
       "pair": "scrartcl.B",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -15252,7 +16765,11 @@
       "pair": "scrartcl.B",
       "branches": 16,
       "pass": 16,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -15263,7 +16780,11 @@
       "pair": "scrartcl.B",
       "branches": 14,
       "pass": 11,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -15274,7 +16795,11 @@
       "pair": "scrartcl.B",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -15428,7 +16953,11 @@
       "pair": "scrbook.A",
       "branches": 18,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -15450,7 +16979,11 @@
       "pair": "scrbook.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -15461,7 +16994,11 @@
       "pair": "scrbook.A",
       "branches": 24,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -15472,7 +17009,11 @@
       "pair": "scrbook.A",
       "branches": 24,
       "pass": 22,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -15483,7 +17024,11 @@
       "pair": "scrbook.A",
       "branches": 24,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -15494,7 +17039,11 @@
       "pair": "scrbook.A",
       "branches": 24,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -15648,7 +17197,11 @@
       "pair": "scrbook.B",
       "branches": 17,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -15670,7 +17223,11 @@
       "pair": "scrbook.B",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -15681,7 +17238,11 @@
       "pair": "scrbook.B",
       "branches": 22,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -15692,7 +17253,11 @@
       "pair": "scrbook.B",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -15703,7 +17268,11 @@
       "pair": "scrbook.B",
       "branches": 22,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -15714,7 +17283,11 @@
       "pair": "scrbook.B",
       "branches": 22,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -15868,7 +17441,11 @@
       "pair": "scrreprt.A",
       "branches": 18,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -15890,7 +17467,11 @@
       "pair": "scrreprt.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -15901,7 +17482,11 @@
       "pair": "scrreprt.A",
       "branches": 24,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -15912,7 +17497,11 @@
       "pair": "scrreprt.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -15923,7 +17512,11 @@
       "pair": "scrreprt.A",
       "branches": 24,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -15934,7 +17527,11 @@
       "pair": "scrreprt.A",
       "branches": 24,
       "pass": 23,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -16088,7 +17685,11 @@
       "pair": "scrreprt.B",
       "branches": 17,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -16110,7 +17711,11 @@
       "pair": "scrreprt.B",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -16121,7 +17726,11 @@
       "pair": "scrreprt.B",
       "branches": 22,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -16132,7 +17741,11 @@
       "pair": "scrreprt.B",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -16143,7 +17756,11 @@
       "pair": "scrreprt.B",
       "branches": 22,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -16154,7 +17771,11 @@
       "pair": "scrreprt.B",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -16319,7 +17940,11 @@
       "pair": "siamart.A",
       "branches": 22,
       "pass": 17,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -16341,7 +17966,11 @@
       "pair": "siamart.A",
       "branches": 18,
       "pass": 18,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -16352,7 +17981,15 @@
       "pair": "siamart.A",
       "branches": 13,
       "pass": 10,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -16495,7 +18132,11 @@
       "pair": "sn-jnl.A",
       "branches": 26,
       "pass": 26,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -16506,7 +18147,11 @@
       "pair": "sn-jnl.A",
       "branches": 26,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -16528,7 +18173,11 @@
       "pair": "sn-jnl.A",
       "branches": 24,
       "pass": 23,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -16539,7 +18188,15 @@
       "pair": "sn-jnl.A",
       "branches": 23,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -16704,7 +18361,11 @@
       "pair": "spie.A",
       "branches": 26,
       "pass": 26,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -16715,7 +18376,11 @@
       "pair": "spie.A",
       "branches": 26,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -16737,7 +18402,11 @@
       "pair": "spie.A",
       "branches": 24,
       "pass": 23,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -16748,7 +18417,11 @@
       "pair": "spie.A",
       "branches": 19,
       "pass": 18,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -16759,7 +18432,11 @@
       "pair": "spie.A",
       "branches": 22,
       "pass": 17,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -16847,7 +18524,11 @@
       "pair": "spie.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -16858,7 +18539,11 @@
       "pair": "spie.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -16935,7 +18620,11 @@
       "pair": "tmlr.A",
       "branches": 24,
       "pass": 24,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -16946,7 +18635,11 @@
       "pair": "tmlr.A",
       "branches": 24,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -16968,7 +18661,11 @@
       "pair": "tmlr.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -16979,7 +18676,11 @@
       "pair": "tmlr.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -16990,7 +18691,11 @@
       "pair": "tmlr.A",
       "branches": 21,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -17155,7 +18860,11 @@
       "pair": "tufte-handout.A",
       "branches": 21,
       "pass": 14,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -17166,7 +18875,11 @@
       "pair": "tufte-handout.A",
       "branches": 24,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -17177,7 +18890,15 @@
       "pair": "tufte-handout.A",
       "branches": 15,
       "pass": 8,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -17188,7 +18909,11 @@
       "pair": "tufte-handout.A",
       "branches": 12,
       "pass": 10,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -17254,7 +18979,11 @@
       "pair": "tufte-handout.A",
       "branches": 11,
       "pass": 10,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -17353,7 +19082,11 @@
       "pair": "tufte-handout.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -17374,8 +19107,12 @@
       },
       "pair": "usenix.A",
       "branches": 40,
-      "pass": 37,
-      "status": "failing"
+      "pass": 36,
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -17386,7 +19123,11 @@
       "pair": "usenix.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -17397,7 +19138,11 @@
       "pair": "usenix.A",
       "branches": 22,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -17419,7 +19164,11 @@
       "pair": "usenix.A",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -17430,7 +19179,11 @@
       "pair": "usenix.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -17441,7 +19194,15 @@
       "pair": "usenix.A",
       "branches": 19,
       "pass": 15,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -17606,7 +19367,11 @@
       "pair": "ut-thesis.A",
       "branches": 24,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -17617,7 +19382,11 @@
       "pair": "ut-thesis.A",
       "branches": 24,
       "pass": 19,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -17628,7 +19397,11 @@
       "pair": "ut-thesis.A",
       "branches": 30,
       "pass": 26,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -17650,7 +19423,11 @@
       "pair": "ut-thesis.A",
       "branches": 30,
       "pass": 24,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -17661,7 +19438,11 @@
       "pair": "ut-thesis.A",
       "branches": 30,
       "pass": 29,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -17672,7 +19453,11 @@
       "pair": "ut-thesis.A",
       "branches": 28,
       "pass": 25,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -17683,7 +19468,15 @@
       "pair": "ut-thesis.A",
       "branches": 30,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -17870,7 +19663,11 @@
       "pair": "vldb.A",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -17992,6 +19789,1870 @@
       "branches": 1,
       "pass": 1,
       "status": "verified-ok"
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "aa",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "aastex",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "space-and-indent"
+      },
+      "why": "fails-mostly",
+      "branches": 4,
+      "pass": 2,
+      "hardFail": 2,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "achemso",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "acl",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "acl",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "acl",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "aistats",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "aistats",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.aistats",
+        "preset": "one-column"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "aistats",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "amsart",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "amsart",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "article",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:page-overflow",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "article",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "ascelike",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "compact"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "ascelike",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "asmejour",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "bmvc",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.bmvc",
+        "preset": "bmvc"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "book",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "cas-sc",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "colm",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "colm",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "copernicus",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.titling",
+        "preset": "centered"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "corl",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "corl",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "cvpr",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "cvpr",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "cvpr",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "cvpr",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "ecai",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "eccv",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.sectsty",
+        "preset": "roman-medium"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "elsarticle-3p",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "elsarticle-5p",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "elsarticle-5p",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "elsarticle-preprint",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:page-overflow",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "elsarticle-preprint",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "extarticle",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:page-overflow",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "extarticle",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "frontiers",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.class-native",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "frontiers",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "frontiers",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.center-block",
+        "preset": "generic"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "frontiers",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "frontiers",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle",
+        "preset": "no-date"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "frontiers",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "frontiers",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "icassp",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "icassp",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "icassp",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "icassp",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.kernel",
+        "preset": "numbered"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "icassp",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "iclr",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "iclr",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "icml",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "icml",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "ieeeconf-ras",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "ieeeconf-ras",
+      "preset": "typewriter",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape",
+        "preset": "marker"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "ieeetran-compsoc",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "ieeetran-compsoc",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "space-between"
+      },
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "hardFail": 1,
+      "checks": [
+        "sentinel:duplicated"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "ieeetran-compsoc",
+      "preset": "typewriter",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape",
+        "preset": "marker"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "ieeetran-conference",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "ieeetran-conference",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "space-between"
+      },
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "hardFail": 1,
+      "checks": [
+        "sentinel:duplicated"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "ieeetran-conference",
+      "preset": "typewriter",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape",
+        "preset": "marker"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "ieeetran-journal",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "ieeetran-journal",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "space-between"
+      },
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "hardFail": 1,
+      "checks": [
+        "sentinel:duplicated"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "ieeetran-journal",
+      "preset": "typewriter",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape",
+        "preset": "marker"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "ijcai",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "ijcai",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "imsart",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "imsart",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "interact",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "interact",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "interact",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "iopart",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "iopjournal",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "iopjournal",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "jacow",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "lipics",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "lipics",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "lipics",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "mnras",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "neurips",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "neurips",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "oup-authoring-template",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.class-native",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "oup-authoring-template",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.maketitle",
+        "preset": "no-date"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "oup-authoring-template",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.oup",
+        "preset": "oup"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "oup-authoring-template",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "general:paragraph/title:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "oup-authoring-template",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "plos",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "plos",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "plos",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "quantumarticle",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "space-and-indent"
+      },
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "hardFail": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "report",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "siamart",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "sn-jnl",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "sn-jnl",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "spie",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "codeEscape",
+        "way": "code.escape",
+        "preset": "marker"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "spie",
+      "preset": "typewriter",
+      "parent": {
+        "node": "codeEscape",
+        "way": "general:codeEscape:listings+xcolor",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "tufte-handout",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/title",
+        "way": "front.tufte",
+        "preset": "title-page"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "tufte-handout",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "tufte-handout",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "usenix",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "cv-ruled"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "usenix",
+      "preset": "text-font",
+      "parent": {
+        "node": "paragraph/paragraph",
+        "way": "para.kernel",
+        "preset": "class"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "usenix",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "ut-thesis",
+      "preset": "sans-anywhere",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "compact"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "meta.url",
+      "classSetting": "ut-thesis",
+      "preset": "typewriter",
+      "parent": {
+        "node": "paragraph/heading",
+        "way": "head.titlesec",
+        "preset": "sans-colored"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
     }
   ]
 }

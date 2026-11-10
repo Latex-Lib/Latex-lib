@@ -1,9 +1,9 @@
 {
   "way": "fig.caption-only",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -17,7 +17,11 @@
       "pair": "plos.A",
       "branches": 23,
       "pass": 23,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 10,
+        "pass": 10
+      }
     },
     {
       "kind": "verified",
@@ -28,7 +32,11 @@
       "pair": "plos.A",
       "branches": 26,
       "pass": 26,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 6,
+        "pass": 6
+      }
     },
     {
       "kind": "verified",
@@ -50,7 +58,11 @@
       "pair": "plos.A",
       "branches": 12,
       "pass": 12,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -61,7 +73,11 @@
       "pair": "plos.A",
       "branches": 38,
       "pass": 38,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 21,
+        "pass": 21
+      }
     },
     {
       "kind": "verified",
@@ -71,8 +87,12 @@
       },
       "pair": "plos.A",
       "branches": 20,
-      "pass": 19,
-      "status": "failing"
+      "pass": 20,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 4,
+        "pass": 4
+      }
     },
     {
       "kind": "verified",
@@ -94,7 +114,11 @@
       "pair": "plos.A",
       "branches": 19,
       "pass": 18,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 9,
+        "pass": 8
+      }
     },
     {
       "kind": "verified",
@@ -105,7 +129,11 @@
       "pair": "plos.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 6,
+        "pass": 6
+      }
     },
     {
       "kind": "verified",
@@ -115,8 +143,12 @@
       },
       "pair": "plos.A",
       "branches": 13,
-      "pass": 12,
-      "status": "failing"
+      "pass": 13,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 5,
+        "pass": 5
+      }
     },
     {
       "kind": "verified",
@@ -127,7 +159,11 @@
       "pair": "plos.A",
       "branches": 19,
       "pass": 19,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -138,29 +174,11 @@
       "pair": "plos.A",
       "branches": 22,
       "pass": 22,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "general:containerBlock/mathElement:amsthm"
-      },
-      "pair": "plos.A",
-      "branches": 21,
-      "pass": 20,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "thm.mdframed"
-      },
-      "pair": "plos.A",
-      "branches": 18,
-      "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 5,
+        "pass": 5
+      }
     },
     {
       "kind": "verified",
@@ -171,7 +189,41 @@
       "pair": "plos.A",
       "branches": 16,
       "pass": 16,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 2
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm"
+      },
+      "pair": "plos.A",
+      "branches": 21,
+      "pass": 20,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.mdframed"
+      },
+      "pair": "plos.A",
+      "branches": 18,
+      "pass": 17,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 9,
+        "pass": 8
+      }
     },
     {
       "kind": "verified",
@@ -182,7 +234,11 @@
       "pair": "plos.A",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 6,
+        "pass": 5
+      }
     },
     {
       "kind": "verified",
@@ -193,7 +249,11 @@
       "pair": "plos.A",
       "branches": 21,
       "pass": 21,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 10,
+        "pass": 10
+      }
     },
     {
       "kind": "verified",
@@ -204,7 +264,11 @@
       "pair": "plos.A",
       "branches": 1,
       "pass": 1,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -226,7 +290,11 @@
       "pair": "plos.A",
       "branches": 5,
       "pass": 5,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",

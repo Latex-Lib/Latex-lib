@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:d8de6a06a7f689ea216122b06ae4c9947d1b77c373d1c6197ac81b581dc5888f",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:e6f52ceeaf3283d843c7093d01a3c013d7995b2f80f255a69a01d957c29a49ba"
+    "matrix": "sha256:fa506c961afe37ead7c21c26f3e1449fa9d6b084cf6f90ffe6997b2ab09bc944"
   },
   "parents": {
     "body": {
@@ -17,12 +17,21 @@
           "pass": 723,
           "failing": [
             "copernicus.A"
-          ]
+          ],
+          "denied": {
+            "branches": 48,
+            "pass": 3
+          },
+          "banned": {
+            "branches": 3,
+            "pass": 0
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

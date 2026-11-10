@@ -1,9 +1,9 @@
 {
   "way": "para.ieee-parstart",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -47,7 +47,11 @@
       "pair": "ieeeaccess.A",
       "branches": 46,
       "pass": 45,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -69,7 +73,11 @@
       "pair": "ieeeaccess.A",
       "branches": 41,
       "pass": 40,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -91,7 +99,11 @@
       "pair": "ieeeaccess.A",
       "branches": 123,
       "pass": 120,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -102,7 +114,11 @@
       "pair": "ieeeaccess.A",
       "branches": 82,
       "pass": 80,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -113,7 +129,11 @@
       "pair": "ieeeaccess.A",
       "branches": 58,
       "pass": 45,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 13,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -124,7 +144,37 @@
       "pair": "ieeeaccess.A",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/columns",
+        "way": "cols.vwcol"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 19,
+      "pass": 18,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 42,
+      "pass": 42,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -146,7 +196,11 @@
       "pair": "ieeeaccess.A",
       "branches": 90,
       "pass": 88,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -157,18 +211,11 @@
       "pair": "ieeeaccess.A",
       "branches": 44,
       "pass": 44,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "thm.amsthm"
-      },
-      "pair": "ieeeaccess.A",
-      "branches": 42,
-      "pass": 42,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -179,7 +226,11 @@
       "pair": "ieeeaccess.A",
       "branches": 39,
       "pass": 38,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -245,7 +296,11 @@
       "pair": "ieeeaccess.A",
       "branches": 37,
       "pass": 36,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -279,17 +334,6 @@
       "branches": 9,
       "pass": 9,
       "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/columns",
-        "way": "cols.vwcol"
-      },
-      "pair": "ieeeaccess.A",
-      "branches": 19,
-      "pass": 18,
-      "status": "failing"
     },
     {
       "kind": "verified",
@@ -333,7 +377,11 @@
       "pair": "ieeeaccess.A",
       "branches": 38,
       "pass": 37,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -399,7 +447,11 @@
       "pair": "ieeeconf-ras.A",
       "branches": 53,
       "pass": 51,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -432,7 +484,11 @@
       "pair": "ieeeconf-ras.A",
       "branches": 32,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 3,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -443,7 +499,11 @@
       "pair": "ieeeconf-ras.A",
       "branches": 31,
       "pass": 30,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -454,7 +514,22 @@
       "pair": "ieeeconf-ras.A",
       "branches": 9,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm"
+      },
+      "pair": "ieeeconf-ras.A",
+      "branches": 14,
+      "pass": 14,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -465,7 +540,11 @@
       "pair": "ieeeconf-ras.A",
       "branches": 33,
       "pass": 28,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -476,7 +555,15 @@
       "pair": "ieeeconf-ras.A",
       "branches": 25,
       "pass": 22,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -498,7 +585,11 @@
       "pair": "ieeeconf-ras.A",
       "branches": 43,
       "pass": 42,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -514,24 +605,17 @@
     {
       "kind": "verified",
       "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "thm.amsthm"
-      },
-      "pair": "ieeeconf-ras.A",
-      "branches": 14,
-      "pass": 14,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
         "node": "containerBlock/footnote",
         "way": "general:containerBlock/footnote:footnotehyper"
       },
       "pair": "ieeeconf-ras.A",
       "branches": 19,
       "pass": 12,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 7,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -553,7 +637,11 @@
       "pair": "ieeeconf-ras.A",
       "branches": 33,
       "pass": 32,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -630,7 +718,11 @@
       "pair": "ieeeconf-ras.A",
       "branches": 28,
       "pass": 27,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -740,7 +832,11 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 55,
       "pass": 53,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -773,7 +869,15 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 32,
       "pass": 8,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 3,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 5,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -784,7 +888,11 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 32,
       "pass": 31,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -795,7 +903,22 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 9,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm"
+      },
+      "pair": "ieeetran-compsoc.A",
+      "branches": 14,
+      "pass": 14,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -806,7 +929,11 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 33,
       "pass": 28,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -817,7 +944,15 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 26,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -839,7 +974,11 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 44,
       "pass": 43,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -855,24 +994,17 @@
     {
       "kind": "verified",
       "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "thm.amsthm"
-      },
-      "pair": "ieeetran-compsoc.A",
-      "branches": 14,
-      "pass": 14,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
         "node": "containerBlock/footnote",
         "way": "general:containerBlock/footnote:footnotehyper"
       },
       "pair": "ieeetran-compsoc.A",
       "branches": 19,
       "pass": 12,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 7,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -894,7 +1026,11 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 33,
       "pass": 32,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -971,7 +1107,11 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 28,
       "pass": 27,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1081,7 +1221,11 @@
       "pair": "ieeetran-conference.A",
       "branches": 55,
       "pass": 54,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1114,7 +1258,15 @@
       "pair": "ieeetran-conference.A",
       "branches": 32,
       "pass": 7,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 3,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 5,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1124,8 +1276,12 @@
       },
       "pair": "ieeetran-conference.A",
       "branches": 32,
-      "pass": 17,
-      "status": "failing"
+      "pass": 18,
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1136,7 +1292,22 @@
       "pair": "ieeetran-conference.A",
       "branches": 9,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm"
+      },
+      "pair": "ieeetran-conference.A",
+      "branches": 14,
+      "pass": 14,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -1147,7 +1318,11 @@
       "pair": "ieeetran-conference.A",
       "branches": 33,
       "pass": 28,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1158,7 +1333,15 @@
       "pair": "ieeetran-conference.A",
       "branches": 26,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1180,7 +1363,11 @@
       "pair": "ieeetran-conference.A",
       "branches": 44,
       "pass": 43,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1196,24 +1383,17 @@
     {
       "kind": "verified",
       "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "thm.amsthm"
-      },
-      "pair": "ieeetran-conference.A",
-      "branches": 14,
-      "pass": 14,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
         "node": "containerBlock/footnote",
         "way": "general:containerBlock/footnote:footnotehyper"
       },
       "pair": "ieeetran-conference.A",
       "branches": 19,
       "pass": 12,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 7,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1235,7 +1415,11 @@
       "pair": "ieeetran-conference.A",
       "branches": 33,
       "pass": 32,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1312,7 +1496,11 @@
       "pair": "ieeetran-conference.A",
       "branches": 28,
       "pass": 27,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1422,7 +1610,11 @@
       "pair": "ieeetran-journal.A",
       "branches": 55,
       "pass": 54,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1455,7 +1647,15 @@
       "pair": "ieeetran-journal.A",
       "branches": 32,
       "pass": 7,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 3,
+        "pass": 1
+      },
+      "banned": {
+        "branches": 5,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1465,8 +1665,12 @@
       },
       "pair": "ieeetran-journal.A",
       "branches": 32,
-      "pass": 17,
-      "status": "failing"
+      "pass": 18,
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1477,7 +1681,22 @@
       "pair": "ieeetran-journal.A",
       "branches": 9,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm"
+      },
+      "pair": "ieeetran-journal.A",
+      "branches": 14,
+      "pass": 14,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -1488,7 +1707,11 @@
       "pair": "ieeetran-journal.A",
       "branches": 33,
       "pass": 28,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1499,7 +1722,15 @@
       "pair": "ieeetran-journal.A",
       "branches": 26,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1521,7 +1752,11 @@
       "pair": "ieeetran-journal.A",
       "branches": 44,
       "pass": 43,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1537,24 +1772,17 @@
     {
       "kind": "verified",
       "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "thm.amsthm"
-      },
-      "pair": "ieeetran-journal.A",
-      "branches": 14,
-      "pass": 14,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
         "node": "containerBlock/footnote",
         "way": "general:containerBlock/footnote:footnotehyper"
       },
       "pair": "ieeetran-journal.A",
       "branches": 19,
       "pass": 12,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 7,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1576,7 +1804,11 @@
       "pair": "ieeetran-journal.A",
       "branches": 33,
       "pass": 32,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1653,7 +1885,11 @@
       "pair": "ieeetran-journal.A",
       "branches": 28,
       "pass": 27,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1709,6 +1945,132 @@
       "branches": 19,
       "pass": 19,
       "status": "verified-ok"
+    },
+    {
+      "kind": "ban",
+      "way": "para.ieee-parstart",
+      "classSetting": "ieeeconf-ras",
+      "preset": "ieeetran",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.todonotes",
+        "preset": "tag"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "para.ieee-parstart",
+      "classSetting": "ieeetran-compsoc",
+      "preset": "ieeetran",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.notecolumn",
+        "preset": "colored-column"
+      },
+      "why": "never-passes",
+      "branches": 5,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "para.ieee-parstart",
+      "classSetting": "ieeetran-compsoc",
+      "preset": "ieeetran",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.todonotes",
+        "preset": "tag"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "para.ieee-parstart",
+      "classSetting": "ieeetran-conference",
+      "preset": "ieeetran",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.notecolumn",
+        "preset": "colored-column"
+      },
+      "why": "never-passes",
+      "branches": 5,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "para.ieee-parstart",
+      "classSetting": "ieeetran-conference",
+      "preset": "ieeetran",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.todonotes",
+        "preset": "tag"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "para.ieee-parstart",
+      "classSetting": "ieeetran-journal",
+      "preset": "ieeetran",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.notecolumn",
+        "preset": "colored-column"
+      },
+      "why": "never-passes",
+      "branches": 5,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "para.ieee-parstart",
+      "classSetting": "ieeetran-journal",
+      "preset": "ieeetran",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.todonotes",
+        "preset": "tag"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
     }
   ]
 }

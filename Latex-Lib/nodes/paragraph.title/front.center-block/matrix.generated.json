@@ -1,9 +1,9 @@
 {
   "way": "front.center-block",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -374,7 +374,11 @@
       "pair": "frontiers.A",
       "branches": 12,
       "pass": 3,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 9,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -590,7 +594,11 @@
       "pair": "quantumarticle.A",
       "branches": 20,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -686,7 +694,11 @@
       "pair": "sn-jnl.A",
       "branches": 12,
       "pass": 11,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -735,6 +747,20 @@
       "branches": 12,
       "pass": 12,
       "status": "verified-ok"
+    },
+    {
+      "kind": "ban",
+      "way": "front.center-block",
+      "classSetting": "frontiers",
+      "preset": "generic",
+      "parent": null,
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
     }
   ]
 }

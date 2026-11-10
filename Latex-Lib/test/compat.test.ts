@@ -91,6 +91,48 @@ test("the matrix's verdicts make a row verified-ok or failing, naming the class 
   assert.deepEqual(checkCompat(root, keys, NESTING), ['way thm.tcolorbox: compat.generated.json is stale (npm run generate)']);
 });
 
+test("an allowed row is judged without its context denials and banned branches, a deny row on all of them, and the bans are the table's", () => {
+  const ban = {
+    kind: 'ban' as const,
+    way: 'thm.tcolorbox',
+    classSetting: 'llncs',
+    preset: 'boxed',
+    parent: null,
+    why: 'never-passes' as const,
+    branches: 1,
+    pass: 0,
+    hardFail: 1,
+    checks: ['error'],
+  };
+  const matrix = (banned: { branches: number; pass: number } | undefined) => ({
+    way: 'thm.tcolorbox',
+    from: { plan: 'p' },
+    entries: [
+      // Two of the four at the top of the document failed: one in a branch the contexts deny further down, one the ban covers.
+      { kind: 'verified' as const, parent: null, pair: 'llncs.A', branches: 4, pass: 2, denied: { branches: 1, pass: 0 }, ...(banned === undefined ? {} : { banned }) },
+      ban,
+    ],
+  });
+  const table = compatTable(BOXED, keys, NESTING, matrix({ branches: 1, pass: 0 }));
+  assert.deepEqual(table.parents.body?.['(document body)'], {
+    verdict: 'ok',
+    source: 'derived',
+    status: 'verified-ok',
+    matrix: { branches: 4, pass: 2, failing: [], denied: { branches: 1, pass: 0 }, banned: { branches: 1, pass: 0 } },
+  });
+  assert.deepEqual(table.bans, [{ classSetting: 'llncs', preset: 'boxed', parent: '(document body)', why: 'never-passes', branches: 1, pass: 0, checks: ['error'] }]);
+  assert.equal(compatTable(BOXED, keys, NESTING, matrix(undefined)).parents.body?.['(document body)']?.status, 'failing', 'the failure no ban covers still counts');
+  const floated = key('fig.floated', 'paragraph/paragraph', { context: { gives: {}, needs: { floats: true } } });
+  const denyRow = (pass: number) =>
+    compatTable(floated, keys, NESTING, {
+      way: 'fig.floated',
+      from: { plan: 'p' },
+      entries: [{ kind: 'verified', parent: { node: 'containerBlock/mathElement', way: 'thm.tcolorbox' }, pair: 'article.A', branches: 3, pass, denied: { branches: 3, pass } }],
+    }).parents['containerBlock/mathElement']?.['thm.tcolorbox']?.status;
+  assert.equal(denyRow(0), 'verified-fail', 'a deny row counts its denied branches: they are what tests it');
+  assert.equal(denyRow(1), 'failing');
+});
+
 test('a need its default params add is derived, and a deny no branch of which passed is verified-fail', () => {
   const floated = key('fig.floated', 'paragraph/paragraph', {
     params: { float: { type: 'boolean', default: true, description: 'a figure float' } },

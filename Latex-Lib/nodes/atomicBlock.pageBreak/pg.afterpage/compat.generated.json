@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:92ac4baa1adf9716ad7c10e3d1c47444cee0633ce3467788a6cba7353947d4c2",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:cb69b1c30c997691f9fe782584e6d030b3260bc70f4766a1716867f042bc9cfe"
+    "matrix": "sha256:ca8031f00c1a3fe5a47ae53a9395afbd0582474f1ee3a10dbaf034a98afb57c2"
   },
   "parents": {
     "body": {
@@ -14,13 +14,73 @@
         "status": "verified-ok",
         "matrix": {
           "branches": 182,
-          "pass": 182,
-          "failing": []
+          "pass": 176,
+          "failing": [],
+          "banned": {
+            "branches": 6,
+            "pass": 0
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "elsarticle-5p",
+      "preset": "flush-after",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "elsarticle-5p",
+      "preset": "odd-after",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "flush-after",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "odd-after",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "revtex4-2-aip",
+      "preset": "flush-after",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "revtex4-2-aip",
+      "preset": "odd-after",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    }
+  ]
 }

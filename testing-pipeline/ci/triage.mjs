@@ -102,7 +102,7 @@ const excerpt = (result) => {
 const fmt = (n) => n.toLocaleString('en-US');
 const out = [];
 const total = [...pairs.values()].reduce((t, p) => ({ pass: t.pass + p.pass, fail: t.fail + p.fail, denied: t.denied + p.denied, cells: t.cells + p.cells }), { pass: 0, fail: 0, denied: 0, cells: 0 });
-out.push('# Triage', '', `${fmt(cells)} cells in ${pairs.size} pair(s): ${fmt(total.pass)} branches pass, ${fmt(total.fail)} fail${total.denied === 0 ? '' : ` (${fmt(total.denied)} denied in their context, left out)`}. Biggest groups first; fix the cause of a group, not its cells (BATCHES.md step 6).`, '');
+out.push('# Triage', '', `${fmt(cells)} cells in ${pairs.size} pair(s): ${fmt(total.pass)} branches pass, ${fmt(total.fail)} fail${total.denied === 0 ? '' : ` (${fmt(total.denied)} denied in their context or banned by the matrix, left out)`}. Biggest groups first; fix the cause of a group, not its cells (BATCHES.md step 6).`, '');
 out.push('## By pair', '', '| Pair | Cells | Branches pass | Fail | Pass rate | Cells failing |', '|---|---|---|---|---|---|');
 for (const [pair, p] of [...pairs].sort((a, b) => b[1].fail - a[1].fail)) {
   out.push(`| ${pair} | ${fmt(p.cells)} | ${fmt(p.pass)} | ${fmt(p.fail)} | ${p.pass + p.fail === 0 ? '-' : `${Math.round((100 * p.pass) / (p.pass + p.fail))}%`} | ${fmt(p.failingCells)} |`);

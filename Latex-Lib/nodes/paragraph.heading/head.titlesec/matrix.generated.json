@@ -1,9 +1,9 @@
 {
   "way": "head.titlesec",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -69,7 +69,11 @@
       "pair": "aa.A",
       "branches": 8,
       "pass": 3,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -80,7 +84,11 @@
       "pair": "aa.A",
       "branches": 16,
       "pass": 7,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 16,
+        "pass": 7
+      }
     },
     {
       "kind": "verified",
@@ -143,7 +151,11 @@
       "pair": "aastex.A",
       "branches": 14,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 14,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -206,7 +218,11 @@
       "pair": "aastex.B",
       "branches": 14,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 14,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -258,7 +274,11 @@
       "pair": "achemso.A",
       "branches": 9,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -280,7 +300,11 @@
       "pair": "achemso.A",
       "branches": 18,
       "pass": 10,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -302,7 +326,11 @@
       "pair": "achemso.A",
       "branches": 18,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 18,
+        "pass": 8
+      }
     },
     {
       "kind": "verified",
@@ -331,7 +359,7 @@
       "parent": null,
       "pair": "acl.A",
       "branches": 20,
-      "pass": 14,
+      "pass": 15,
       "status": "failing"
     },
     {
@@ -342,8 +370,8 @@
       },
       "pair": "acl.A",
       "branches": 27,
-      "pass": 26,
-      "status": "failing"
+      "pass": 27,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -365,7 +393,11 @@
       "pair": "acl.A",
       "branches": 18,
       "pass": 11,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -376,7 +408,11 @@
       "pair": "acl.A",
       "branches": 8,
       "pass": 7,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -386,8 +422,12 @@
       },
       "pair": "acl.A",
       "branches": 9,
-      "pass": 4,
-      "status": "failing"
+      "pass": 5,
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -398,7 +438,11 @@
       "pair": "acl.A",
       "branches": 18,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -420,7 +464,11 @@
       "pair": "acl.A",
       "branches": 16,
       "pass": 9,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 16,
+        "pass": 9
+      }
     },
     {
       "kind": "verified",
@@ -505,7 +553,11 @@
       "pair": "agu.A",
       "branches": 6,
       "pass": 3,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 6,
+        "pass": 3
+      }
     },
     {
       "kind": "verified",
@@ -568,7 +620,11 @@
       "pair": "aistats.A",
       "branches": 34,
       "pass": 31,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -579,7 +635,11 @@
       "pair": "aistats.A",
       "branches": 17,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -590,7 +650,11 @@
       "pair": "aistats.A",
       "branches": 17,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -601,7 +665,11 @@
       "pair": "aistats.A",
       "branches": 34,
       "pass": 26,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -623,7 +691,11 @@
       "pair": "aistats.A",
       "branches": 34,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 20
+      }
     },
     {
       "kind": "verified",
@@ -719,7 +791,11 @@
       "pair": "amsart.A",
       "branches": 34,
       "pass": 27,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -730,7 +806,11 @@
       "pair": "amsart.A",
       "branches": 34,
       "pass": 29,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -741,7 +821,11 @@
       "pair": "amsart.A",
       "branches": 34,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 17
+      }
     },
     {
       "kind": "verified",
@@ -826,7 +910,11 @@
       "pair": "amsart.B",
       "branches": 34,
       "pass": 24,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -837,7 +925,11 @@
       "pair": "amsart.B",
       "branches": 34,
       "pass": 29,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -848,7 +940,11 @@
       "pair": "amsart.B",
       "branches": 34,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 17
+      }
     },
     {
       "kind": "verified",
@@ -889,7 +985,11 @@
       "pair": "article.A",
       "branches": 34,
       "pass": 31,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -900,7 +1000,11 @@
       "pair": "article.A",
       "branches": 17,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -911,7 +1015,11 @@
       "pair": "article.A",
       "branches": 17,
       "pass": 14,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -922,7 +1030,11 @@
       "pair": "article.A",
       "branches": 34,
       "pass": 25,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -944,7 +1056,11 @@
       "pair": "article.A",
       "branches": 34,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 17
+      }
     },
     {
       "kind": "verified",
@@ -966,7 +1082,11 @@
       "pair": "article.A",
       "branches": 34,
       "pass": 30,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1007,7 +1127,11 @@
       "pair": "article.B",
       "branches": 34,
       "pass": 29,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1018,7 +1142,11 @@
       "pair": "article.B",
       "branches": 17,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1029,7 +1157,11 @@
       "pair": "article.B",
       "branches": 17,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1040,7 +1172,11 @@
       "pair": "article.B",
       "branches": 34,
       "pass": 25,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1062,7 +1198,11 @@
       "pair": "article.B",
       "branches": 34,
       "pass": 22,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 22
+      }
     },
     {
       "kind": "verified",
@@ -1091,8 +1231,12 @@
       },
       "pair": "ascelike.A",
       "branches": 31,
-      "pass": 21,
-      "status": "failing"
+      "pass": 22,
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1125,7 +1269,11 @@
       "pair": "ascelike.A",
       "branches": 11,
       "pass": 9,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1135,8 +1283,8 @@
       },
       "pair": "ascelike.A",
       "branches": 10,
-      "pass": 9,
-      "status": "failing"
+      "pass": 10,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -1146,8 +1294,12 @@
       },
       "pair": "ascelike.A",
       "branches": 20,
-      "pass": 10,
-      "status": "failing"
+      "pass": 12,
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1157,8 +1309,8 @@
       },
       "pair": "ascelike.A",
       "branches": 21,
-      "pass": 18,
-      "status": "failing"
+      "pass": 21,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -1168,8 +1320,12 @@
       },
       "pair": "ascelike.A",
       "branches": 20,
-      "pass": 8,
-      "status": "failing"
+      "pass": 9,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 20,
+        "pass": 9
+      }
     },
     {
       "kind": "verified",
@@ -1179,8 +1335,8 @@
       },
       "pair": "ascelike.A",
       "branches": 21,
-      "pass": 20,
-      "status": "failing"
+      "pass": 21,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -1287,7 +1443,11 @@
       "pair": "asmeconf.A",
       "branches": 20,
       "pass": 9,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 20,
+        "pass": 9
+      }
     },
     {
       "kind": "verified",
@@ -1383,7 +1543,11 @@
       "pair": "asmejour.A",
       "branches": 20,
       "pass": 9,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 20,
+        "pass": 9
+      }
     },
     {
       "kind": "verified",
@@ -1402,7 +1566,11 @@
       "pair": "book.A",
       "branches": 64,
       "pass": 59,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1435,7 +1603,11 @@
       "pair": "book.A",
       "branches": 32,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1446,7 +1618,11 @@
       "pair": "book.A",
       "branches": 32,
       "pass": 29,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1457,7 +1633,11 @@
       "pair": "book.A",
       "branches": 32,
       "pass": 24,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1479,7 +1659,11 @@
       "pair": "book.A",
       "branches": 32,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 32,
+        "pass": 15
+      }
     },
     {
       "kind": "verified",
@@ -1501,7 +1685,11 @@
       "pair": "book.A",
       "branches": 64,
       "pass": 64,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1512,7 +1700,11 @@
       "pair": "book.A",
       "branches": 32,
       "pass": 28,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1523,7 +1715,11 @@
       "pair": "book.A",
       "branches": 32,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1542,7 +1738,11 @@
       "pair": "book.B",
       "branches": 64,
       "pass": 63,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1575,7 +1775,11 @@
       "pair": "book.B",
       "branches": 32,
       "pass": 22,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1586,7 +1790,11 @@
       "pair": "book.B",
       "branches": 32,
       "pass": 30,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1597,7 +1805,11 @@
       "pair": "book.B",
       "branches": 32,
       "pass": 27,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1619,7 +1831,11 @@
       "pair": "book.B",
       "branches": 32,
       "pass": 10,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 32,
+        "pass": 10
+      }
     },
     {
       "kind": "verified",
@@ -1641,7 +1857,11 @@
       "pair": "book.B",
       "branches": 64,
       "pass": 63,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1652,7 +1872,11 @@
       "pair": "book.B",
       "branches": 32,
       "pass": 24,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1748,7 +1972,11 @@
       "pair": "cas-dc.A",
       "branches": 30,
       "pass": 14,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 30,
+        "pass": 14
+      }
     },
     {
       "kind": "verified",
@@ -1844,7 +2072,11 @@
       "pair": "cas-sc.A",
       "branches": 30,
       "pass": 24,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1866,7 +2098,11 @@
       "pair": "cas-sc.A",
       "branches": 30,
       "pass": 14,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 30,
+        "pass": 14
+      }
     },
     {
       "kind": "verified",
@@ -1962,7 +2198,11 @@
       "pair": "colm.A",
       "branches": 18,
       "pass": 10,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1973,7 +2213,11 @@
       "pair": "colm.A",
       "branches": 18,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1984,7 +2228,11 @@
       "pair": "colm.A",
       "branches": 18,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 18,
+        "pass": 8
+      }
     },
     {
       "kind": "verified",
@@ -2058,7 +2306,11 @@
       "pair": "copernicus.A",
       "branches": 8,
       "pass": 7,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2102,7 +2354,11 @@
       "pair": "copernicus.A",
       "branches": 16,
       "pass": 7,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 16,
+        "pass": 7
+      }
     },
     {
       "kind": "verified",
@@ -2142,7 +2398,7 @@
       "parent": null,
       "pair": "corl.A",
       "branches": 20,
-      "pass": 18,
+      "pass": 19,
       "status": "failing"
     },
     {
@@ -2153,8 +2409,8 @@
       },
       "pair": "corl.A",
       "branches": 27,
-      "pass": 26,
-      "status": "failing"
+      "pass": 27,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -2197,7 +2453,7 @@
       },
       "pair": "corl.A",
       "branches": 9,
-      "pass": 5,
+      "pass": 6,
       "status": "failing"
     },
     {
@@ -2209,7 +2465,11 @@
       "pair": "corl.A",
       "branches": 18,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2220,7 +2480,11 @@
       "pair": "corl.A",
       "branches": 17,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2231,7 +2495,11 @@
       "pair": "corl.A",
       "branches": 16,
       "pass": 7,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 16,
+        "pass": 7
+      }
     },
     {
       "kind": "verified",
@@ -2253,7 +2521,11 @@
       "pair": "corl.A",
       "branches": 18,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2294,7 +2566,11 @@
       "pair": "cvpr.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2316,7 +2592,11 @@
       "pair": "cvpr.A",
       "branches": 11,
       "pass": 4,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2327,7 +2607,11 @@
       "pair": "cvpr.A",
       "branches": 22,
       "pass": 6,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2338,7 +2622,11 @@
       "pair": "cvpr.A",
       "branches": 22,
       "pass": 8,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2349,7 +2637,11 @@
       "pair": "cvpr.A",
       "branches": 22,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 22,
+        "pass": 13
+      }
     },
     {
       "kind": "verified",
@@ -2371,7 +2663,11 @@
       "pair": "cvpr.A",
       "branches": 44,
       "pass": 33,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2423,7 +2719,11 @@
       "pair": "ecai.A",
       "branches": 9,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2445,7 +2745,11 @@
       "pair": "ecai.A",
       "branches": 20,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2467,7 +2771,11 @@
       "pair": "ecai.A",
       "branches": 18,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 18,
+        "pass": 8
+      }
     },
     {
       "kind": "verified",
@@ -2519,7 +2827,11 @@
       "pair": "elegantpaper.A",
       "branches": 7,
       "pass": 6,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2563,7 +2875,11 @@
       "pair": "elegantpaper.A",
       "branches": 14,
       "pass": 6,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 14,
+        "pass": 6
+      }
     },
     {
       "kind": "verified",
@@ -2585,7 +2901,11 @@
       "pair": "elegantpaper.A",
       "branches": 14,
       "pass": 11,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2659,7 +2979,11 @@
       "pair": "elsarticle-3p.A",
       "branches": 22,
       "pass": 15,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2681,7 +3005,11 @@
       "pair": "elsarticle-3p.A",
       "branches": 22,
       "pass": 10,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 22,
+        "pass": 10
+      }
     },
     {
       "kind": "verified",
@@ -2692,14 +3020,18 @@
       "pair": "elsarticle-3p.A",
       "branches": 22,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
       "parent": null,
       "pair": "elsarticle-5p.A",
       "branches": 24,
-      "pass": 23,
+      "pass": 21,
       "status": "failing"
     },
     {
@@ -2733,7 +3065,11 @@
       "pair": "elsarticle-5p.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2755,7 +3091,11 @@
       "pair": "elsarticle-5p.A",
       "branches": 11,
       "pass": 7,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2766,7 +3106,11 @@
       "pair": "elsarticle-5p.A",
       "branches": 22,
       "pass": 14,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2788,7 +3132,11 @@
       "pair": "elsarticle-5p.A",
       "branches": 22,
       "pass": 10,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 22,
+        "pass": 10
+      }
     },
     {
       "kind": "verified",
@@ -2829,7 +3177,11 @@
       "pair": "elsarticle-preprint.A",
       "branches": 22,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2840,7 +3192,11 @@
       "pair": "elsarticle-preprint.A",
       "branches": 11,
       "pass": 10,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2851,7 +3207,11 @@
       "pair": "elsarticle-preprint.A",
       "branches": 11,
       "pass": 8,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2862,7 +3222,11 @@
       "pair": "elsarticle-preprint.A",
       "branches": 22,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2884,7 +3248,11 @@
       "pair": "elsarticle-preprint.A",
       "branches": 22,
       "pass": 10,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 22,
+        "pass": 10
+      }
     },
     {
       "kind": "verified",
@@ -2895,7 +3263,11 @@
       "pair": "elsarticle-preprint.A",
       "branches": 22,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2936,7 +3308,11 @@
       "pair": "elsarticle-preprint.B",
       "branches": 22,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2947,7 +3323,11 @@
       "pair": "elsarticle-preprint.B",
       "branches": 11,
       "pass": 10,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2958,7 +3338,11 @@
       "pair": "elsarticle-preprint.B",
       "branches": 11,
       "pass": 7,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2969,7 +3353,11 @@
       "pair": "elsarticle-preprint.B",
       "branches": 22,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -2991,15 +3379,23 @@
       "pair": "elsarticle-preprint.B",
       "branches": 22,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 22,
+        "pass": 13
+      }
     },
     {
       "kind": "verified",
       "parent": null,
       "pair": "emulateapj.A",
       "branches": 20,
-      "pass": 18,
-      "status": "failing"
+      "pass": 16,
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3010,7 +3406,11 @@
       "pair": "emulateapj.A",
       "branches": 27,
       "pass": 22,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3021,7 +3421,11 @@
       "pair": "emulateapj.A",
       "branches": 18,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3032,7 +3436,11 @@
       "pair": "emulateapj.A",
       "branches": 18,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3043,7 +3451,11 @@
       "pair": "emulateapj.A",
       "branches": 8,
       "pass": 7,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3054,7 +3466,11 @@
       "pair": "emulateapj.A",
       "branches": 18,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 18,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -3128,7 +3544,11 @@
       "pair": "exam.A",
       "branches": 34,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 17
+      }
     },
     {
       "kind": "verified",
@@ -3150,7 +3570,11 @@
       "pair": "exam.A",
       "branches": 34,
       "pass": 30,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3224,7 +3648,11 @@
       "pair": "exam.B",
       "branches": 34,
       "pass": 22,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 22
+      }
     },
     {
       "kind": "verified",
@@ -3276,7 +3704,11 @@
       "pair": "extarticle.A",
       "branches": 34,
       "pass": 31,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3287,7 +3719,11 @@
       "pair": "extarticle.A",
       "branches": 17,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3298,7 +3734,11 @@
       "pair": "extarticle.A",
       "branches": 17,
       "pass": 14,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3309,7 +3749,11 @@
       "pair": "extarticle.A",
       "branches": 34,
       "pass": 25,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3331,7 +3775,11 @@
       "pair": "extarticle.A",
       "branches": 34,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 17
+      }
     },
     {
       "kind": "verified",
@@ -3342,7 +3790,11 @@
       "pair": "extarticle.A",
       "branches": 34,
       "pass": 30,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3383,7 +3835,11 @@
       "pair": "extarticle.B",
       "branches": 34,
       "pass": 29,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3394,7 +3850,11 @@
       "pair": "extarticle.B",
       "branches": 17,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3405,7 +3865,11 @@
       "pair": "extarticle.B",
       "branches": 17,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3416,7 +3880,11 @@
       "pair": "extarticle.B",
       "branches": 34,
       "pass": 25,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3438,7 +3906,11 @@
       "pair": "extarticle.B",
       "branches": 34,
       "pass": 22,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 22
+      }
     },
     {
       "kind": "verified",
@@ -3457,7 +3929,11 @@
       "pair": "frontiers.A",
       "branches": 27,
       "pass": 25,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3490,7 +3966,11 @@
       "pair": "frontiers.A",
       "branches": 9,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3501,7 +3981,11 @@
       "pair": "frontiers.A",
       "branches": 9,
       "pass": 3,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3512,7 +3996,11 @@
       "pair": "frontiers.A",
       "branches": 18,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 18,
+        "pass": 8
+      }
     },
     {
       "kind": "verified",
@@ -3531,7 +4019,11 @@
       "pair": "icassp.A",
       "branches": 51,
       "pass": 40,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3542,7 +4034,11 @@
       "pair": "icassp.A",
       "branches": 34,
       "pass": 26,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3553,7 +4049,11 @@
       "pair": "icassp.A",
       "branches": 34,
       "pass": 31,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3564,7 +4064,11 @@
       "pair": "icassp.A",
       "branches": 17,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3575,7 +4079,11 @@
       "pair": "icassp.A",
       "branches": 17,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3586,7 +4094,11 @@
       "pair": "icassp.A",
       "branches": 34,
       "pass": 26,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3608,7 +4120,11 @@
       "pair": "icassp.A",
       "branches": 34,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 20
+      }
     },
     {
       "kind": "verified",
@@ -3693,7 +4209,11 @@
       "pair": "iclr.A",
       "branches": 18,
       "pass": 11,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3704,7 +4224,11 @@
       "pair": "iclr.A",
       "branches": 18,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3715,7 +4239,11 @@
       "pair": "iclr.A",
       "branches": 18,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 18,
+        "pass": 8
+      }
     },
     {
       "kind": "verified",
@@ -3778,7 +4306,11 @@
       "pair": "icml.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3789,7 +4321,11 @@
       "pair": "icml.A",
       "branches": 9,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3800,7 +4336,11 @@
       "pair": "icml.A",
       "branches": 9,
       "pass": 5,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3811,7 +4351,11 @@
       "pair": "icml.A",
       "branches": 18,
       "pass": 10,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -3833,7 +4377,11 @@
       "pair": "icml.A",
       "branches": 18,
       "pass": 11,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 18,
+        "pass": 11
+      }
     },
     {
       "kind": "verified",
@@ -3929,7 +4477,11 @@
       "pair": "ieeeaccess.A",
       "branches": 34,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 20
+      }
     },
     {
       "kind": "verified",
@@ -4014,7 +4566,11 @@
       "pair": "ieeeconf-ras.A",
       "branches": 34,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 17
+      }
     },
     {
       "kind": "verified",
@@ -4099,7 +4655,11 @@
       "pair": "ieeetran-compsoc.A",
       "branches": 34,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 20
+      }
     },
     {
       "kind": "verified",
@@ -4184,7 +4744,11 @@
       "pair": "ieeetran-conference.A",
       "branches": 34,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 17
+      }
     },
     {
       "kind": "verified",
@@ -4269,7 +4833,11 @@
       "pair": "ieeetran-journal.A",
       "branches": 34,
       "pass": 20,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 20
+      }
     },
     {
       "kind": "verified",
@@ -4287,7 +4855,7 @@
       "parent": null,
       "pair": "ijcai.A",
       "branches": 38,
-      "pass": 35,
+      "pass": 37,
       "status": "failing"
     },
     {
@@ -4298,8 +4866,12 @@
       },
       "pair": "ijcai.A",
       "branches": 54,
-      "pass": 52,
-      "status": "failing"
+      "pass": 53,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4321,7 +4893,11 @@
       "pair": "ijcai.A",
       "branches": 36,
       "pass": 34,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4332,7 +4908,11 @@
       "pair": "ijcai.A",
       "branches": 18,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4342,8 +4922,12 @@
       },
       "pair": "ijcai.A",
       "branches": 18,
-      "pass": 13,
-      "status": "failing"
+      "pass": 14,
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4353,8 +4937,12 @@
       },
       "pair": "ijcai.A",
       "branches": 36,
-      "pass": 26,
-      "status": "failing"
+      "pass": 28,
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4364,8 +4952,8 @@
       },
       "pair": "ijcai.A",
       "branches": 36,
-      "pass": 34,
-      "status": "failing"
+      "pass": 36,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -4375,8 +4963,12 @@
       },
       "pair": "ijcai.A",
       "branches": 36,
-      "pass": 17,
-      "status": "failing"
+      "pass": 18,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 36,
+        "pass": 18
+      }
     },
     {
       "kind": "verified",
@@ -4386,8 +4978,8 @@
       },
       "pair": "ijcai.A",
       "branches": 36,
-      "pass": 34,
-      "status": "failing"
+      "pass": 36,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -4461,7 +5053,11 @@
       "pair": "imsart.A",
       "branches": 34,
       "pass": 27,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4483,7 +5079,11 @@
       "pair": "imsart.A",
       "branches": 34,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 17
+      }
     },
     {
       "kind": "verified",
@@ -4546,7 +5146,11 @@
       "pair": "interact.A",
       "branches": 34,
       "pass": 32,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4568,7 +5172,11 @@
       "pair": "interact.A",
       "branches": 17,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4579,7 +5187,11 @@
       "pair": "interact.A",
       "branches": 34,
       "pass": 25,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4590,7 +5202,11 @@
       "pair": "interact.A",
       "branches": 34,
       "pass": 29,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4601,7 +5217,11 @@
       "pair": "interact.A",
       "branches": 34,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 17
+      }
     },
     {
       "kind": "verified",
@@ -4686,7 +5306,11 @@
       "pair": "iopart.A",
       "branches": 17,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4697,7 +5321,11 @@
       "pair": "iopart.A",
       "branches": 34,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 17
+      }
     },
     {
       "kind": "verified",
@@ -4727,7 +5355,11 @@
       "pair": "iopjournal.A",
       "branches": 45,
       "pass": 42,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4749,7 +5381,11 @@
       "pair": "iopjournal.A",
       "branches": 30,
       "pass": 29,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4771,7 +5407,11 @@
       "pair": "iopjournal.A",
       "branches": 15,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4793,7 +5433,11 @@
       "pair": "iopjournal.A",
       "branches": 30,
       "pass": 25,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4804,7 +5448,11 @@
       "pair": "iopjournal.A",
       "branches": 30,
       "pass": 14,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 30,
+        "pass": 14
+      }
     },
     {
       "kind": "verified",
@@ -4900,7 +5548,11 @@
       "pair": "jacow.A",
       "branches": 26,
       "pass": 18,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4922,7 +5574,11 @@
       "pair": "jacow.A",
       "branches": 26,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 26,
+        "pass": 13
+      }
     },
     {
       "kind": "verified",
@@ -4940,8 +5596,8 @@
       "parent": null,
       "pair": "jmlr-pmlr.A",
       "branches": 20,
-      "pass": 19,
-      "status": "failing"
+      "pass": 20,
+      "status": "verified-ok"
     },
     {
       "kind": "verified",
@@ -4952,7 +5608,11 @@
       "pair": "jmlr-pmlr.A",
       "branches": 27,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -4995,7 +5655,7 @@
       },
       "pair": "jmlr-pmlr.A",
       "branches": 9,
-      "pass": 5,
+      "pass": 6,
       "status": "failing"
     },
     {
@@ -5029,7 +5689,11 @@
       "pair": "jmlr-pmlr.A",
       "branches": 16,
       "pass": 7,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 16,
+        "pass": 7
+      }
     },
     {
       "kind": "verified",
@@ -5051,7 +5715,11 @@
       "pair": "jmlr-pmlr.A",
       "branches": 18,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5092,7 +5760,11 @@
       "pair": "lipics.A",
       "branches": 30,
       "pass": 28,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5114,7 +5786,11 @@
       "pair": "lipics.A",
       "branches": 15,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5125,7 +5801,11 @@
       "pair": "lipics.A",
       "branches": 30,
       "pass": 24,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5136,7 +5816,11 @@
       "pair": "lipics.A",
       "branches": 30,
       "pass": 25,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5147,7 +5831,11 @@
       "pair": "lipics.A",
       "branches": 30,
       "pass": 18,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 30,
+        "pass": 18
+      }
     },
     {
       "kind": "verified",
@@ -5169,7 +5857,11 @@
       "pair": "lipics.A",
       "branches": 30,
       "pass": 27,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5265,7 +5957,11 @@
       "pair": "mdpi.A",
       "branches": 6,
       "pass": 2,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 6,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -5350,7 +6046,11 @@
       "pair": "mnras.A",
       "branches": 15,
       "pass": 11,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5361,7 +6061,11 @@
       "pair": "mnras.A",
       "branches": 30,
       "pass": 25,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 30,
+        "pass": 25
+      }
     },
     {
       "kind": "verified",
@@ -5435,7 +6139,11 @@
       "pair": "neurips.A",
       "branches": 18,
       "pass": 11,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5446,7 +6154,11 @@
       "pair": "neurips.A",
       "branches": 18,
       "pass": 13,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5457,7 +6169,11 @@
       "pair": "neurips.A",
       "branches": 18,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 18,
+        "pass": 8
+      }
     },
     {
       "kind": "verified",
@@ -5531,7 +6247,11 @@
       "pair": "oup-authoring-template.A",
       "branches": 9,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5542,7 +6262,11 @@
       "pair": "oup-authoring-template.A",
       "branches": 9,
       "pass": 5,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5553,7 +6277,11 @@
       "pair": "oup-authoring-template.A",
       "branches": 18,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 18,
+        "pass": 8
+      }
     },
     {
       "kind": "verified",
@@ -5605,7 +6333,11 @@
       "pair": "plos.A",
       "branches": 20,
       "pass": 19,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5627,7 +6359,11 @@
       "pair": "plos.A",
       "branches": 10,
       "pass": 7,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5638,7 +6374,11 @@
       "pair": "plos.A",
       "branches": 20,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5649,7 +6389,11 @@
       "pair": "plos.A",
       "branches": 20,
       "pass": 15,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5660,7 +6404,11 @@
       "pair": "plos.A",
       "branches": 20,
       "pass": 9,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 20,
+        "pass": 9
+      }
     },
     {
       "kind": "verified",
@@ -5682,7 +6430,11 @@
       "pair": "plos.A",
       "branches": 20,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5701,7 +6453,11 @@
       "pair": "report.A",
       "branches": 68,
       "pass": 63,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -5734,7 +6490,11 @@
       "pair": "report.A",
       "branches": 34,
       "pass": 33,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -5745,7 +6505,11 @@
       "pair": "report.A",
       "branches": 34,
       "pass": 31,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -5756,7 +6520,11 @@
       "pair": "report.A",
       "branches": 34,
       "pass": 26,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5778,7 +6546,11 @@
       "pair": "report.A",
       "branches": 34,
       "pass": 17,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 17
+      }
     },
     {
       "kind": "verified",
@@ -5789,7 +6561,11 @@
       "pair": "report.A",
       "branches": 68,
       "pass": 68,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -5811,7 +6587,11 @@
       "pair": "report.A",
       "branches": 34,
       "pass": 30,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5822,7 +6602,11 @@
       "pair": "report.A",
       "branches": 34,
       "pass": 34,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -5841,7 +6625,11 @@
       "pair": "report.B",
       "branches": 68,
       "pass": 67,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5874,7 +6662,11 @@
       "pair": "report.B",
       "branches": 34,
       "pass": 32,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5885,7 +6677,11 @@
       "pair": "report.B",
       "branches": 34,
       "pass": 32,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5896,7 +6692,11 @@
       "pair": "report.B",
       "branches": 34,
       "pass": 29,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5918,7 +6718,11 @@
       "pair": "report.B",
       "branches": 34,
       "pass": 10,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 34,
+        "pass": 10
+      }
     },
     {
       "kind": "verified",
@@ -5929,7 +6733,11 @@
       "pair": "report.B",
       "branches": 68,
       "pass": 67,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -5951,15 +6759,19 @@
       "pair": "report.B",
       "branches": 34,
       "pass": 33,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
       "parent": null,
       "pair": "revtex4-2-aip.A",
       "branches": 24,
-      "pass": 24,
-      "status": "verified-ok"
+      "pass": 22,
+      "status": "failing"
     },
     {
       "kind": "verified",
@@ -6014,7 +6826,11 @@
       "pair": "revtex4-2-aip.A",
       "branches": 22,
       "pass": 18,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 22,
+        "pass": 18
+      }
     },
     {
       "kind": "verified",
@@ -6099,7 +6915,11 @@
       "pair": "revtex4-2-aps.A",
       "branches": 22,
       "pass": 18,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 22,
+        "pass": 18
+      }
     },
     {
       "kind": "verified",
@@ -6184,7 +7004,11 @@
       "pair": "siamart.A",
       "branches": 15,
       "pass": 11,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6195,7 +7019,11 @@
       "pair": "siamart.A",
       "branches": 30,
       "pass": 14,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 30,
+        "pass": 14
+      }
     },
     {
       "kind": "verified",
@@ -6206,15 +7034,23 @@
       "pair": "siamart.A",
       "branches": 30,
       "pass": 27,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
       "parent": null,
       "pair": "sn-jnl.A",
       "branches": 20,
-      "pass": 18,
-      "status": "failing"
+      "pass": 17,
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6224,8 +7060,12 @@
       },
       "pair": "sn-jnl.A",
       "branches": 27,
-      "pass": 25,
-      "status": "failing"
+      "pass": 24,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6236,7 +7076,11 @@
       "pair": "sn-jnl.A",
       "branches": 18,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6247,7 +7091,11 @@
       "pair": "sn-jnl.A",
       "branches": 18,
       "pass": 15,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6258,7 +7106,11 @@
       "pair": "sn-jnl.A",
       "branches": 8,
       "pass": 7,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6269,7 +7121,11 @@
       "pair": "sn-jnl.A",
       "branches": 9,
       "pass": 5,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6280,7 +7136,11 @@
       "pair": "sn-jnl.A",
       "branches": 18,
       "pass": 10,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6291,7 +7151,11 @@
       "pair": "sn-jnl.A",
       "branches": 17,
       "pass": 11,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6302,7 +7166,11 @@
       "pair": "sn-jnl.A",
       "branches": 16,
       "pass": 7,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 16,
+        "pass": 7
+      }
     },
     {
       "kind": "verified",
@@ -6313,7 +7181,11 @@
       "pair": "sn-jnl.A",
       "branches": 17,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -6324,7 +7196,11 @@
       "pair": "sn-jnl.A",
       "branches": 17,
       "pass": 16,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6334,8 +7210,12 @@
       },
       "pair": "sn-jnl.A",
       "branches": 18,
-      "pass": 16,
-      "status": "failing"
+      "pass": 14,
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6431,7 +7311,11 @@
       "pair": "spie.A",
       "branches": 26,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 26,
+        "pass": 13
+      }
     },
     {
       "kind": "verified",
@@ -6464,7 +7348,11 @@
       "pair": "spie.A",
       "branches": 26,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6560,7 +7448,11 @@
       "pair": "tmlr.A",
       "branches": 18,
       "pass": 8,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 18,
+        "pass": 8
+      }
     },
     {
       "kind": "verified",
@@ -6590,7 +7482,11 @@
       "pair": "tufte-handout.A",
       "branches": 16,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6634,7 +7530,11 @@
       "pair": "tufte-handout.A",
       "branches": 28,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6645,7 +7545,11 @@
       "pair": "tufte-handout.A",
       "branches": 28,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6656,7 +7560,11 @@
       "pair": "tufte-handout.A",
       "branches": 14,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 14,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6689,7 +7597,11 @@
       "pair": "tufte-handout.A",
       "branches": 28,
       "pass": 25,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6730,7 +7642,11 @@
       "pair": "usenix.A",
       "branches": 22,
       "pass": 21,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6741,7 +7657,11 @@
       "pair": "usenix.A",
       "branches": 11,
       "pass": 10,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6752,7 +7672,11 @@
       "pair": "usenix.A",
       "branches": 11,
       "pass": 7,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6763,7 +7687,11 @@
       "pair": "usenix.A",
       "branches": 22,
       "pass": 16,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6785,7 +7713,11 @@
       "pair": "usenix.A",
       "branches": 22,
       "pass": 12,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 22,
+        "pass": 12
+      }
     },
     {
       "kind": "verified",
@@ -6815,7 +7747,11 @@
       "pair": "ut-thesis.A",
       "branches": 64,
       "pass": 53,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6848,7 +7784,11 @@
       "pair": "ut-thesis.A",
       "branches": 32,
       "pass": 30,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6870,7 +7810,11 @@
       "pair": "ut-thesis.A",
       "branches": 32,
       "pass": 25,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -6892,7 +7836,11 @@
       "pair": "ut-thesis.A",
       "branches": 32,
       "pass": 15,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 32,
+        "pass": 15
+      }
     },
     {
       "kind": "verified",
@@ -6937,6 +7885,20 @@
       "branches": 32,
       "pass": 32,
       "status": "verified-ok"
+    },
+    {
+      "kind": "ban",
+      "way": "head.titlesec",
+      "classSetting": "tufte-handout",
+      "preset": "sans-colored",
+      "parent": null,
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
     }
   ]
 }

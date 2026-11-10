@@ -1,9 +1,9 @@
 {
   "way": "list.nomenclature",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -28,7 +28,11 @@
       "pair": "asmeconf.A",
       "branches": 66,
       "pass": 61,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -39,7 +43,15 @@
       "pair": "asmeconf.A",
       "branches": 31,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 16,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -50,7 +62,11 @@
       "pair": "asmeconf.A",
       "branches": 33,
       "pass": 31,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -61,7 +77,11 @@
       "pair": "asmeconf.A",
       "branches": 33,
       "pass": 30,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -72,7 +92,11 @@
       "pair": "asmeconf.A",
       "branches": 92,
       "pass": 85,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 7,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -83,7 +107,11 @@
       "pair": "asmeconf.A",
       "branches": 60,
       "pass": 55,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 5,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -94,7 +122,11 @@
       "pair": "asmeconf.A",
       "branches": 55,
       "pass": 50,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 5,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -105,7 +137,11 @@
       "pair": "asmeconf.A",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -113,7 +149,15 @@
       "pair": "asmeconf.A",
       "branches": 507,
       "pass": 471,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 30,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -124,17 +168,21 @@
       "pair": "asmeconf.A",
       "branches": 65,
       "pass": 63,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
       "parent": {
-        "node": "containerBlock/abstract",
-        "way": "abs.abstract-pkg"
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm"
       },
       "pair": "asmeconf.A",
-      "branches": 82,
-      "pass": 81,
+      "branches": 55,
+      "pass": 54,
       "status": "failing"
     },
     {
@@ -168,7 +216,11 @@
       "pair": "asmeconf.A",
       "branches": 123,
       "pass": 110,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 11,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -179,18 +231,11 @@
       "pair": "asmeconf.A",
       "branches": 58,
       "pass": 53,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "thm.amsthm"
-      },
-      "pair": "asmeconf.A",
-      "branches": 55,
-      "pass": 54,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 5,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -212,7 +257,11 @@
       "pair": "asmeconf.A",
       "branches": 61,
       "pass": 55,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 5,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -234,7 +283,11 @@
       "pair": "asmeconf.A",
       "branches": 41,
       "pass": 37,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -245,7 +298,11 @@
       "pair": "asmeconf.A",
       "branches": 40,
       "pass": 35,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 7,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -256,7 +313,11 @@
       "pair": "asmeconf.A",
       "branches": 51,
       "pass": 49,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -289,7 +350,11 @@
       "pair": "asmeconf.A",
       "branches": 38,
       "pass": 35,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 5,
+        "pass": 3
+      }
     },
     {
       "kind": "verified",
@@ -300,6 +365,21 @@
       "pair": "asmeconf.A",
       "branches": 45,
       "pass": 8,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 45,
+        "pass": 8
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/abstract",
+        "way": "abs.abstract-pkg"
+      },
+      "pair": "asmeconf.A",
+      "branches": 82,
+      "pass": 81,
       "status": "failing"
     },
     {
@@ -311,7 +391,11 @@
       "pair": "asmeconf.A",
       "branches": 66,
       "pass": 64,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -322,7 +406,11 @@
       "pair": "asmeconf.A",
       "branches": 46,
       "pass": 28,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -333,7 +421,11 @@
       "pair": "asmejour.A",
       "branches": 44,
       "pass": 43,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -344,7 +436,11 @@
       "pair": "asmejour.A",
       "branches": 72,
       "pass": 65,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 7,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -355,7 +451,11 @@
       "pair": "asmejour.A",
       "branches": 31,
       "pass": 21,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -366,7 +466,15 @@
       "pair": "asmejour.A",
       "branches": 33,
       "pass": 30,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -377,7 +485,15 @@
       "pair": "asmejour.A",
       "branches": 33,
       "pass": 29,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -388,7 +504,11 @@
       "pair": "asmejour.A",
       "branches": 92,
       "pass": 84,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 7,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -399,7 +519,11 @@
       "pair": "asmejour.A",
       "branches": 60,
       "pass": 55,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 5,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -410,7 +534,15 @@
       "pair": "asmejour.A",
       "branches": 64,
       "pass": 43,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 7,
+        "pass": 2
+      },
+      "banned": {
+        "branches": 4,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -421,7 +553,15 @@
       "pair": "asmejour.A",
       "branches": 30,
       "pass": 14,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 10,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -431,8 +571,16 @@
       },
       "pair": "asmejour.A",
       "branches": 30,
-      "pass": 20,
-      "status": "failing"
+      "pass": 21,
+      "status": "failing",
+      "denied": {
+        "branches": 4,
+        "pass": 2
+      },
+      "banned": {
+        "branches": 4,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -442,8 +590,12 @@
       },
       "pair": "asmejour.A",
       "branches": 30,
-      "pass": 18,
-      "status": "failing"
+      "pass": 17,
+      "status": "failing",
+      "denied": {
+        "branches": 7,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -454,7 +606,15 @@
       "pair": "asmejour.A",
       "branches": 29,
       "pass": 20,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 9,
+        "pass": 3
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -465,7 +625,11 @@
       "pair": "asmejour.A",
       "branches": 55,
       "pass": 49,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 5,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -476,7 +640,11 @@
       "pair": "asmejour.A",
       "branches": 14,
       "pass": 13,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -484,7 +652,15 @@
       "pair": "asmejour.A",
       "branches": 603,
       "pass": 560,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 42,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -495,17 +671,21 @@
       "pair": "asmejour.A",
       "branches": 71,
       "pass": 70,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
       "parent": {
-        "node": "containerBlock/abstract",
-        "way": "abs.abstract-pkg"
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm"
       },
       "pair": "asmejour.A",
-      "branches": 94,
-      "pass": 94,
+      "branches": 61,
+      "pass": 61,
       "status": "verified-ok"
     },
     {
@@ -517,7 +697,11 @@
       "pair": "asmejour.A",
       "branches": 31,
       "pass": 31,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -539,7 +723,11 @@
       "pair": "asmejour.A",
       "branches": 135,
       "pass": 119,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 16,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -550,18 +738,11 @@
       "pair": "asmejour.A",
       "branches": 64,
       "pass": 56,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "thm.amsthm"
-      },
-      "pair": "asmejour.A",
-      "branches": 61,
-      "pass": 61,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 8,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -583,7 +764,15 @@
       "pair": "asmejour.A",
       "branches": 67,
       "pass": 60,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 7,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -599,13 +788,36 @@
     {
       "kind": "verified",
       "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+hyperref"
+      },
+      "pair": "asmejour.A",
+      "branches": 72,
+      "pass": 71,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
         "node": "containerBlock/columns",
         "way": "general:containerBlock/columns:multicol"
       },
       "pair": "asmejour.A",
       "branches": 46,
       "pass": 39,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 10,
+        "pass": 3
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -616,7 +828,11 @@
       "pair": "asmejour.A",
       "branches": 44,
       "pass": 44,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -627,7 +843,11 @@
       "pair": "asmejour.A",
       "branches": 44,
       "pass": 39,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 8,
+        "pass": 3
+      }
     },
     {
       "kind": "verified",
@@ -638,7 +858,11 @@
       "pair": "asmejour.A",
       "branches": 47,
       "pass": 42,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 6,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -649,7 +873,15 @@
       "pair": "asmejour.A",
       "branches": 57,
       "pass": 56,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -671,18 +903,26 @@
       "pair": "asmejour.A",
       "branches": 51,
       "pass": 10,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 51,
+        "pass": 10
+      }
     },
     {
       "kind": "verified",
       "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "general:containerBlock/mathElement:amsthm+hyperref"
+        "node": "containerBlock/abstract",
+        "way": "abs.abstract-pkg"
       },
       "pair": "asmejour.A",
-      "branches": 72,
-      "pass": 71,
-      "status": "failing"
+      "branches": 94,
+      "pass": 94,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 2,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -693,7 +933,192 @@
       "pair": "asmejour.A",
       "branches": 52,
       "pass": 12,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 15,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "ban",
+      "way": "list.nomenclature",
+      "classSetting": "asmeconf",
+      "preset": "class",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "general:containerBlock/note:marginnote+xcolor",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 10,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "list.nomenclature",
+      "classSetting": "asmeconf",
+      "preset": "list-of-symbols",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "general:containerBlock/note:marginnote+xcolor",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 6,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "list.nomenclature",
+      "classSetting": "asmejour",
+      "preset": "class",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.awesomebox",
+        "preset": "by-tone"
+      },
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "list.nomenclature",
+      "classSetting": "asmejour",
+      "preset": "class",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.marginnote",
+        "preset": "colored"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "list.nomenclature",
+      "classSetting": "asmejour",
+      "preset": "class",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.marginpar",
+        "preset": "ragged-small"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "list.nomenclature",
+      "classSetting": "asmejour",
+      "preset": "class",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.notecolumn",
+        "preset": "margin"
+      },
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "list.nomenclature",
+      "classSetting": "asmejour",
+      "preset": "class",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.todonotes",
+        "preset": "review"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "list.nomenclature",
+      "classSetting": "asmejour",
+      "preset": "class",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.todonotes",
+        "preset": "tag"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "list.nomenclature",
+      "classSetting": "asmejour",
+      "preset": "list-of-symbols",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "box.fancybox",
+        "preset": "oval"
+      },
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "list.nomenclature",
+      "classSetting": "asmejour",
+      "preset": "list-of-symbols",
+      "parent": {
+        "node": "containerBlock/note",
+        "way": "note.marginnote",
+        "preset": "small-sans"
+      },
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
     }
   ]
 }

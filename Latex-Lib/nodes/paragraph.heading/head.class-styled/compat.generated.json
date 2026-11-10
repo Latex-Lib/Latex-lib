@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:2b175218ca35665146357828158be3c4a5bbe65565a42bcc516392899342140c",
     "contexts": "sha256:14e595b5a917207b0202cd81103654b34671bd431b2e4e8a05c64647be89ab4f",
-    "matrix": "sha256:ae52c1ced63fdc85f43b6f8798e4c35378f634381eb20ab6f7d83b6c43bcb802"
+    "matrix": "sha256:838ed6c4bbafc945db3a5786084e6a1e1d1d0df83a97ac33105d050395d0601b"
   },
   "parents": {
     "containerBlock/columns": {
@@ -36,11 +36,13 @@
           "branches": 204,
           "pass": 200,
           "failing": [
-            "scrartcl.A",
-            "scrartcl.B",
             "scrbook.A",
             "scrreprt.A"
-          ]
+          ],
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "cols.paracol": {
@@ -95,7 +97,11 @@
             "scrbook.B",
             "scrreprt.A",
             "scrreprt.B"
-          ]
+          ],
+          "denied": {
+            "branches": 204,
+            "pass": 156
+          }
         }
       }
     },
@@ -228,5 +234,6 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

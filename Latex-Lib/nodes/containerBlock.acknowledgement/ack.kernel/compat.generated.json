@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:9c3330a5e517e73d1af96f5011b25f291e66067419142eb81a734dab72a532f6",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:09983dfbfd680b5dcd53afcde867b5bbae1f2accaaf3f669db0420123f11e4b6"
+    "matrix": "sha256:efaf947577ec6524b23854c14d995f686c1b7e33716c07cd863ad32b6f40a615"
   },
   "parents": {
     "body": {
@@ -13,20 +13,17 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 86915,
-          "pass": 81935,
+          "branches": 86882,
+          "pass": 82042,
           "failing": [
             "aa.A",
-            "aaai.A",
             "aamas.A",
             "aastex.A",
             "aastex.B",
             "achemso.A",
             "acl.A",
-            "acmart-acmsmall.A",
             "acmart-acmtog.A",
             "acmart-manuscript.A",
-            "acmart-manuscript.B",
             "acmart-sigconf.A",
             "acmart-sigplan.A",
             "agu.A",
@@ -75,7 +72,6 @@
             "interact.A",
             "iopart.A",
             "iopjournal.A",
-            "jacow.A",
             "jmlr-pmlr.A",
             "jss.A",
             "lipics.A",
@@ -99,19 +95,27 @@
             "scrbook.B",
             "scrreprt.A",
             "scrreprt.B",
-            "siamart.A",
             "sn-jnl.A",
             "spie.A",
             "tmlr.A",
             "usenix.A",
             "ut-thesis.A",
             "vldb.A"
-          ]
+          ],
+          "denied": {
+            "branches": 3325,
+            "pass": 73
+          },
+          "banned": {
+            "branches": 361,
+            "pass": 32
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

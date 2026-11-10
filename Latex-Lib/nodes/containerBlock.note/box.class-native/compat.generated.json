@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:56e7c79c82c4eb25c8fad42f67d448d1ae13ebb9a705e675597e46ea21bb2ec9",
     "contexts": "sha256:f593ada8348e3bc89e6616015502a97a24a8913da366aaa0e721d6679e8365b9",
-    "matrix": "sha256:2f69dfa463440a527453029c2267fe65531cbd3126f02ce8f26a77fc6c956ff9"
+    "matrix": "sha256:ef2e94ebd50a95c284e220d81480bd05da683d7ad9a3cca376da3751390f859c"
   },
   "parents": {
     "body": {
@@ -13,14 +13,16 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 1692,
-          "pass": 1599,
+          "branches": 1683,
+          "pass": 1590,
           "failing": [
             "beamer.A",
-            "memoir.A",
-            "memoir.B",
             "oup-authoring-template.A"
-          ]
+          ],
+          "denied": {
+            "branches": 79,
+            "pass": 3
+          }
         }
       }
     },
@@ -85,8 +87,8 @@
         "source": "derived",
         "status": "verified-ok",
         "matrix": {
-          "branches": 134,
-          "pass": 134,
+          "branches": 133,
+          "pass": 133,
           "failing": []
         }
       },
@@ -99,14 +101,18 @@
           "needs paragraph"
         ],
         "matrix": {
-          "branches": 131,
+          "branches": 130,
           "pass": 4,
           "failing": [
             "beamer.A",
             "memoir.A",
             "memoir.B",
             "oup-authoring-template.A"
-          ]
+          ],
+          "denied": {
+            "branches": 122,
+            "pass": 4
+          }
         }
       }
     },
@@ -131,14 +137,15 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 232,
-          "pass": 214,
+          "branches": 231,
+          "pass": 213,
           "failing": [
-            "beamer.A",
-            "memoir.A",
-            "memoir.B",
             "oup-authoring-template.A"
-          ]
+          ],
+          "denied": {
+            "branches": 10,
+            "pass": 0
+          }
         }
       },
       "list.enumitem": {
@@ -146,13 +153,15 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 179,
-          "pass": 164,
+          "branches": 178,
+          "pass": 163,
           "failing": [
-            "memoir.A",
-            "memoir.B",
             "oup-authoring-template.A"
-          ]
+          ],
+          "denied": {
+            "branches": 7,
+            "pass": 0
+          }
         }
       },
       "list.exam-questions": {
@@ -168,10 +177,16 @@
           "branches": 183,
           "pass": 168,
           "failing": [
-            "memoir.A",
-            "memoir.B",
             "oup-authoring-template.A"
-          ]
+          ],
+          "denied": {
+            "branches": 7,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 5,
+            "pass": 0
+          }
         }
       },
       "list.nomenclature": {
@@ -184,13 +199,19 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 179,
+          "branches": 178,
           "pass": 163,
           "failing": [
-            "memoir.A",
-            "memoir.B",
             "oup-authoring-template.A"
-          ]
+          ],
+          "denied": {
+            "branches": 7,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       },
       "list.scrextend": {
@@ -199,13 +220,14 @@
         "status": "failing",
         "matrix": {
           "branches": 232,
-          "pass": 213,
+          "pass": 214,
           "failing": [
-            "beamer.A",
-            "memoir.A",
-            "memoir.B",
             "oup-authoring-template.A"
-          ]
+          ],
+          "denied": {
+            "branches": 10,
+            "pass": 0
+          }
         }
       }
     },
@@ -230,8 +252,8 @@
         "source": "derived",
         "status": "verified-ok",
         "matrix": {
-          "branches": 14,
-          "pass": 14,
+          "branches": 13,
+          "pass": 13,
           "failing": []
         }
       },
@@ -293,12 +315,18 @@
         "status": "failing",
         "matrix": {
           "branches": 248,
-          "pass": 201,
+          "pass": 213,
           "failing": [
-            "memoir.A",
-            "memoir.B",
             "oup-authoring-template.A"
-          ]
+          ],
+          "denied": {
+            "branches": 6,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 15,
+            "pass": 0
+          }
         }
       },
       "thm.class-native": {
@@ -306,12 +334,19 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 103,
+          "branches": 102,
           "pass": 67,
           "failing": [
-            "beamer.A",
             "oup-authoring-template.A"
-          ]
+          ],
+          "denied": {
+            "branches": 4,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 18,
+            "pass": 0
+          }
         }
       },
       "thm.kernel": {
@@ -319,13 +354,19 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 238,
-          "pass": 193,
+          "branches": 237,
+          "pass": 205,
           "failing": [
-            "memoir.A",
-            "memoir.B",
             "oup-authoring-template.A"
-          ]
+          ],
+          "denied": {
+            "branches": 7,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 14,
+            "pass": 0
+          }
         }
       },
       "thm.mdframed": {
@@ -333,13 +374,19 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 234,
-          "pass": 186,
+          "branches": 233,
+          "pass": 198,
           "failing": [
-            "memoir.A",
-            "memoir.B",
             "oup-authoring-template.A"
-          ]
+          ],
+          "denied": {
+            "branches": 7,
+            "pass": 3
+          },
+          "banned": {
+            "branches": 19,
+            "pass": 0
+          }
         }
       },
       "thm.ntheorem": {
@@ -352,7 +399,11 @@
           "failing": [
             "memoir.A",
             "memoir.B"
-          ]
+          ],
+          "denied": {
+            "branches": 6,
+            "pass": 0
+          }
         }
       },
       "thm.tcolorbox": {
@@ -360,13 +411,16 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 478,
-          "pass": 455,
+          "branches": 477,
+          "pass": 461,
           "failing": [
             "memoir.A",
-            "memoir.B",
-            "oup-authoring-template.A"
-          ]
+            "memoir.B"
+          ],
+          "denied": {
+            "branches": 14,
+            "pass": 0
+          }
         }
       },
       "thm.tcolorbox[breakable=false]": {
@@ -377,20 +431,213 @@
       "thm.thmtools": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 212,
-          "pass": 181,
-          "failing": [
-            "memoir.A",
-            "memoir.B",
-            "oup-authoring-template.A"
-          ]
+          "pass": 193,
+          "failing": [],
+          "denied": {
+            "branches": 7,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 12,
+            "pass": 0
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": "containerBlock/listing list.kernel[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": "containerBlock/listing list.kernel[paren-numbers]",
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": "containerBlock/mathElement general:containerBlock/mathElement:amsthm",
+      "why": "never-passes",
+      "branches": 19,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": "containerBlock/mathElement general:containerBlock/mathElement:amsthm+hyperref",
+      "why": "never-passes",
+      "branches": 22,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": "containerBlock/mathElement thm.amsthm[ams-section]",
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": "containerBlock/mathElement thm.amsthm[colored-head]",
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": "containerBlock/mathElement thm.amsthm[global]",
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": "containerBlock/mathElement thm.amsthm[upright]",
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": "containerBlock/mathElement thm.class-native[thmstyle]",
+      "why": "never-passes",
+      "branches": 18,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": "containerBlock/mathElement thm.kernel[global]",
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": "containerBlock/mathElement thm.kernel[section]",
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": "containerBlock/mathElement thm.kernel[shared]",
+      "why": "never-passes",
+      "branches": 5,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": "containerBlock/mathElement thm.mdframed[framed]",
+      "why": "never-passes",
+      "branches": 8,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": "containerBlock/mathElement thm.mdframed[thick]",
+      "why": "never-passes",
+      "branches": 10,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": "containerBlock/mathElement thm.thmtools[beauty]",
+      "why": "never-passes",
+      "branches": 6,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "oup-authoring-template",
+      "preset": "oup",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "never-passes",
+      "branches": 6,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    }
+  ]
 }

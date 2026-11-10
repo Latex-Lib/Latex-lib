@@ -1,9 +1,9 @@
 {
   "way": "fig.class-float",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -50,7 +50,11 @@
       "pair": "aa.A",
       "branches": 2,
       "pass": 2,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -72,7 +76,11 @@
       "pair": "aa.A",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -83,7 +91,11 @@
       "pair": "aa.A",
       "branches": 2,
       "pass": 2,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -113,7 +125,11 @@
       "pair": "aastex.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -146,7 +162,11 @@
       "pair": "aastex.A",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -168,13 +188,43 @@
       "pair": "aastex.A",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
       "parent": {
         "node": "containerBlock/mathElement",
         "way": "thm.tcolorbox"
+      },
+      "pair": "aastex.A",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.ntheorem"
+      },
+      "pair": "aastex.A",
+      "branches": 1,
+      "pass": 0,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+lib:breakable+lib:skins+tcolorbox"
       },
       "pair": "aastex.A",
       "branches": 2,
@@ -196,34 +246,16 @@
       "kind": "verified",
       "parent": {
         "node": "containerBlock/mathElement",
-        "way": "thm.ntheorem"
-      },
-      "pair": "aastex.A",
-      "branches": 1,
-      "pass": 0,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "general:containerBlock/mathElement:amsthm+lib:breakable+lib:skins+tcolorbox"
-      },
-      "pair": "aastex.A",
-      "branches": 2,
-      "pass": 2,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
         "way": "thm.thmtools"
       },
       "pair": "aastex.A",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -234,7 +266,11 @@
       "pair": "aastex.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -245,7 +281,11 @@
       "pair": "aastex.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -267,7 +307,11 @@
       "pair": "aastex.B",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -300,7 +344,11 @@
       "pair": "aastex.B",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -322,13 +370,43 @@
       "pair": "aastex.B",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
       "parent": {
         "node": "containerBlock/mathElement",
         "way": "thm.tcolorbox"
+      },
+      "pair": "aastex.B",
+      "branches": 2,
+      "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.ntheorem"
+      },
+      "pair": "aastex.B",
+      "branches": 1,
+      "pass": 0,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+lib:breakable+lib:skins+tcolorbox"
       },
       "pair": "aastex.B",
       "branches": 2,
@@ -350,34 +428,16 @@
       "kind": "verified",
       "parent": {
         "node": "containerBlock/mathElement",
-        "way": "thm.ntheorem"
-      },
-      "pair": "aastex.B",
-      "branches": 1,
-      "pass": 0,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "general:containerBlock/mathElement:amsthm+lib:breakable+lib:skins+tcolorbox"
-      },
-      "pair": "aastex.B",
-      "branches": 2,
-      "pass": 2,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
         "way": "thm.thmtools"
       },
       "pair": "aastex.B",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -388,7 +448,11 @@
       "pair": "aastex.B",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -399,7 +463,11 @@
       "pair": "aastex.B",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -421,7 +489,11 @@
       "pair": "achemso.A",
       "branches": 7,
       "pass": 4,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -431,8 +503,12 @@
       },
       "pair": "achemso.A",
       "branches": 11,
-      "pass": 10,
-      "status": "failing"
+      "pass": 9,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -443,7 +519,11 @@
       "pair": "achemso.A",
       "branches": 5,
       "pass": 4,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -465,7 +545,11 @@
       "pair": "achemso.A",
       "branches": 5,
       "pass": 4,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -476,7 +560,11 @@
       "pair": "achemso.A",
       "branches": 9,
       "pass": 7,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -487,7 +575,11 @@
       "pair": "achemso.A",
       "branches": 10,
       "pass": 7,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -498,18 +590,26 @@
       "pair": "achemso.A",
       "branches": 11,
       "pass": 10,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
       "parent": {
         "node": "containerBlock/mathElement",
-        "way": "thm.mdframed"
+        "way": "thm.tcolorbox"
       },
       "pair": "achemso.A",
-      "branches": 4,
+      "branches": 9,
       "pass": 2,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 7,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -520,7 +620,11 @@
       "pair": "achemso.A",
       "branches": 6,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 5,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -531,7 +635,30 @@
       "pair": "achemso.A",
       "branches": 1,
       "pass": 1,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm"
+      },
+      "pair": "achemso.A",
+      "branches": 4,
+      "pass": 2,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -548,45 +675,16 @@
       "kind": "verified",
       "parent": {
         "node": "containerBlock/mathElement",
-        "way": "thm.tcolorbox"
-      },
-      "pair": "achemso.A",
-      "branches": 9,
-      "pass": 2,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "general:containerBlock/mathElement:amsthm+hyperref"
-      },
-      "pair": "achemso.A",
-      "branches": 6,
-      "pass": 2,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "thm.amsthm"
+        "way": "thm.mdframed"
       },
       "pair": "achemso.A",
       "branches": 4,
       "pass": 2,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "thm.kernel"
-      },
-      "pair": "achemso.A",
-      "branches": 4,
-      "pass": 4,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -603,12 +701,46 @@
       "kind": "verified",
       "parent": {
         "node": "containerBlock/mathElement",
+        "way": "thm.kernel"
+      },
+      "pair": "achemso.A",
+      "branches": 4,
+      "pass": 4,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
         "way": "general:containerBlock/mathElement:amsthm+hyperref+lib:breakable+lib:skins+tcolorbox"
       },
       "pair": "achemso.A",
       "branches": 5,
       "pass": 3,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+hyperref"
+      },
+      "pair": "achemso.A",
+      "branches": 6,
+      "pass": 2,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -630,18 +762,11 @@
       "pair": "apa7.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/listing",
-        "way": "list.class-native"
-      },
-      "pair": "apa7.A",
-      "branches": 4,
-      "pass": 3,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -651,8 +776,12 @@
       },
       "pair": "apa7.A",
       "branches": 5,
-      "pass": 3,
-      "status": "failing"
+      "pass": 4,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -663,7 +792,15 @@
       "pair": "apa7.A",
       "branches": 3,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -674,7 +811,11 @@
       "pair": "apa7.A",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -685,7 +826,11 @@
       "pair": "apa7.A",
       "branches": 3,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -696,7 +841,11 @@
       "pair": "apa7.A",
       "branches": 3,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -707,7 +856,11 @@
       "pair": "apa7.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -718,7 +871,11 @@
       "pair": "apa7.A",
       "branches": 6,
       "pass": 2,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 5,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -729,18 +886,26 @@
       "pair": "apa7.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
       "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "thm.mdframed"
+        "node": "containerBlock/listing",
+        "way": "list.class-native"
       },
       "pair": "apa7.A",
-      "branches": 1,
-      "pass": 0,
-      "status": "failing"
+      "branches": 4,
+      "pass": 3,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -752,6 +917,21 @@
       "branches": 4,
       "pass": 3,
       "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.mdframed"
+      },
+      "pair": "apa7.A",
+      "branches": 1,
+      "pass": 0,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -784,7 +964,11 @@
       "pair": "apa7.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -795,7 +979,11 @@
       "pair": "emulateapj.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -828,7 +1016,11 @@
       "pair": "emulateapj.A",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -850,7 +1042,11 @@
       "pair": "emulateapj.A",
       "branches": 3,
       "pass": 2,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -861,18 +1057,11 @@
       "pair": "emulateapj.A",
       "branches": 3,
       "pass": 2,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/listing",
-        "way": "list.enumitem"
-      },
-      "pair": "emulateapj.A",
-      "branches": 1,
-      "pass": 1,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -883,7 +1072,11 @@
       "pair": "emulateapj.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -894,6 +1087,17 @@
       "pair": "emulateapj.A",
       "branches": 2,
       "pass": 2,
+      "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.enumitem"
+      },
+      "pair": "emulateapj.A",
+      "branches": 1,
+      "pass": 1,
       "status": "verified-ok"
     },
     {
@@ -916,7 +1120,11 @@
       "pair": "emulateapj.A",
       "branches": 3,
       "pass": 2,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -927,7 +1135,11 @@
       "pair": "emulateapj.A",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -960,29 +1172,11 @@
       "pair": "ieeeaccess.A",
       "branches": 4,
       "pass": 3,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/listing",
-        "way": "list.kernel"
-      },
-      "pair": "ieeeaccess.A",
-      "branches": 4,
-      "pass": 2,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/listing",
-        "way": "list.paralist"
-      },
-      "pair": "ieeeaccess.A",
-      "branches": 3,
-      "pass": 2,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -993,7 +1187,41 @@
       "pair": "ieeeaccess.A",
       "branches": 7,
       "pass": 6,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.kernel"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 4,
+      "pass": 2,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.paralist"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 3,
+      "pass": 2,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1005,17 +1233,6 @@
       "branches": 2,
       "pass": 2,
       "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "thm.mdframed"
-      },
-      "pair": "ieeeaccess.A",
-      "branches": 3,
-      "pass": 1,
-      "status": "failing"
     },
     {
       "kind": "verified",
@@ -1043,12 +1260,42 @@
       "kind": "verified",
       "parent": {
         "node": "containerBlock/mathElement",
+        "way": "thm.mdframed"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 3,
+      "pass": 1,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
         "way": "general:containerBlock/mathElement:amsthm+hyperref"
       },
       "pair": "ieeeaccess.A",
       "branches": 2,
       "pass": 2,
       "status": "verified-ok"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.kernel"
+      },
+      "pair": "ieeeaccess.A",
+      "branches": 2,
+      "pass": 1,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1071,17 +1318,6 @@
       "branches": 1,
       "pass": 1,
       "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "thm.kernel"
-      },
-      "pair": "ieeeaccess.A",
-      "branches": 2,
-      "pass": 1,
-      "status": "failing"
     },
     {
       "kind": "verified",
@@ -1158,7 +1394,11 @@
       "pair": "jmlr-pmlr.A",
       "branches": 3,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1169,7 +1409,11 @@
       "pair": "jmlr-pmlr.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1180,7 +1424,11 @@
       "pair": "jmlr-pmlr.A",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1191,7 +1439,11 @@
       "pair": "mdpi.A",
       "branches": 11,
       "pass": 10,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1202,7 +1454,11 @@
       "pair": "mdpi.A",
       "branches": 15,
       "pass": 14,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
@@ -1213,7 +1469,11 @@
       "pair": "mdpi.A",
       "branches": 7,
       "pass": 6,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1234,8 +1494,12 @@
       },
       "pair": "mdpi.A",
       "branches": 9,
-      "pass": 8,
-      "status": "failing"
+      "pass": 7,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1245,8 +1509,12 @@
       },
       "pair": "mdpi.A",
       "branches": 11,
-      "pass": 7,
-      "status": "failing"
+      "pass": 8,
+      "status": "failing",
+      "denied": {
+        "branches": 5,
+        "pass": 3
+      }
     },
     {
       "kind": "verified",
@@ -1263,23 +1531,31 @@
       "kind": "verified",
       "parent": {
         "node": "containerBlock/mathElement",
-        "way": "general:containerBlock/mathElement:amsthm"
-      },
-      "pair": "mdpi.A",
-      "branches": 6,
-      "pass": 6,
-      "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
         "way": "thm.tcolorbox"
       },
       "pair": "mdpi.A",
       "branches": 16,
       "pass": 6,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 11,
+        "pass": 1
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm"
+      },
+      "pair": "mdpi.A",
+      "branches": 6,
+      "pass": 6,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1290,7 +1566,11 @@
       "pair": "mdpi.A",
       "branches": 5,
       "pass": 2,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1301,7 +1581,11 @@
       "pair": "mdpi.A",
       "branches": 1,
       "pass": 1,
-      "status": "verified-ok"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -1323,7 +1607,11 @@
       "pair": "revtex4-2-aip.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1345,7 +1633,11 @@
       "pair": "revtex4-2-aip.A",
       "branches": 5,
       "pass": 4,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1356,7 +1648,11 @@
       "pair": "revtex4-2-aip.A",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1378,7 +1674,11 @@
       "pair": "revtex4-2-aip.A",
       "branches": 3,
       "pass": 2,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1389,6 +1689,36 @@
       "pair": "revtex4-2-aip.A",
       "branches": 3,
       "pass": 2,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.ntheorem"
+      },
+      "pair": "revtex4-2-aip.A",
+      "branches": 1,
+      "pass": 0,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+lib:breakable+lib:skins+tcolorbox"
+      },
+      "pair": "revtex4-2-aip.A",
+      "branches": 2,
+      "pass": 1,
       "status": "failing"
     },
     {
@@ -1401,28 +1731,6 @@
       "branches": 1,
       "pass": 1,
       "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "thm.ntheorem"
-      },
-      "pair": "revtex4-2-aip.A",
-      "branches": 1,
-      "pass": 0,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "general:containerBlock/mathElement:amsthm+lib:breakable+lib:skins+tcolorbox"
-      },
-      "pair": "revtex4-2-aip.A",
-      "branches": 2,
-      "pass": 1,
-      "status": "failing"
     },
     {
       "kind": "verified",
@@ -1444,7 +1752,11 @@
       "pair": "revtex4-2-aip.A",
       "branches": 3,
       "pass": 2,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1455,7 +1767,11 @@
       "pair": "revtex4-2-aip.A",
       "branches": 3,
       "pass": 2,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1466,7 +1782,11 @@
       "pair": "revtex4-2-aip.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1488,7 +1808,11 @@
       "pair": "revtex4-2-aps.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1510,7 +1834,11 @@
       "pair": "revtex4-2-aps.A",
       "branches": 5,
       "pass": 4,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1521,7 +1849,11 @@
       "pair": "revtex4-2-aps.A",
       "branches": 2,
       "pass": 1,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1543,7 +1875,11 @@
       "pair": "revtex4-2-aps.A",
       "branches": 3,
       "pass": 2,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1554,6 +1890,36 @@
       "pair": "revtex4-2-aps.A",
       "branches": 3,
       "pass": 2,
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.ntheorem"
+      },
+      "pair": "revtex4-2-aps.A",
+      "branches": 1,
+      "pass": 0,
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+lib:breakable+lib:skins+tcolorbox"
+      },
+      "pair": "revtex4-2-aps.A",
+      "branches": 2,
+      "pass": 1,
       "status": "failing"
     },
     {
@@ -1566,28 +1932,6 @@
       "branches": 1,
       "pass": 1,
       "status": "verified-ok"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "thm.ntheorem"
-      },
-      "pair": "revtex4-2-aps.A",
-      "branches": 1,
-      "pass": 0,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/mathElement",
-        "way": "general:containerBlock/mathElement:amsthm+lib:breakable+lib:skins+tcolorbox"
-      },
-      "pair": "revtex4-2-aps.A",
-      "branches": 2,
-      "pass": 1,
-      "status": "failing"
     },
     {
       "kind": "verified",
@@ -1609,7 +1953,11 @@
       "pair": "revtex4-2-aps.A",
       "branches": 3,
       "pass": 2,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1620,7 +1968,11 @@
       "pair": "revtex4-2-aps.A",
       "branches": 3,
       "pass": 2,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1631,7 +1983,11 @@
       "pair": "revtex4-2-aps.A",
       "branches": 1,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -1643,6 +1999,350 @@
       "branches": 2,
       "pass": 2,
       "status": "verified-ok"
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "aastex",
+      "preset": "turnpage",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.paralist",
+        "preset": "compact"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:float-too-large"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "aastex",
+      "preset": "turnpage",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.kernel",
+        "preset": "shared"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "aastex",
+      "preset": "turnpage",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.ntheorem",
+        "preset": "break"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:float-too-large",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "aastex",
+      "preset": "turnpage",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.thmtools",
+        "preset": "kao"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "achemso",
+      "preset": "graph",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "general:containerBlock/mathElement:amsthm+hyperref",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "achemso",
+      "preset": "graph",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.amsthm",
+        "preset": "ams-section"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": []
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "apa7",
+      "preset": "fit-figure",
+      "parent": {
+        "node": "containerBlock/appendix",
+        "way": "general:containerBlock/appendix:kernel",
+        "preset": ""
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "apa7",
+      "preset": "fit-figure",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.paralist",
+        "preset": "inline"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "emulateapj",
+      "preset": "turnpage",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.kernel",
+        "preset": "shared"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "emulateapj",
+      "preset": "turnpage",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.ntheorem",
+        "preset": "break"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:float-too-large",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "emulateapj",
+      "preset": "turnpage",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.thmtools",
+        "preset": "kao"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "revtex4-2-aip",
+      "preset": "turnpage",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.paralist",
+        "preset": "compact"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:float-too-large",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "revtex4-2-aip",
+      "preset": "turnpage",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.kernel",
+        "preset": "shared"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "revtex4-2-aip",
+      "preset": "turnpage",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.ntheorem",
+        "preset": "break"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:float-too-large",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "revtex4-2-aip",
+      "preset": "turnpage",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.thmtools",
+        "preset": "kao"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "revtex4-2-aps",
+      "preset": "turnpage",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.paralist",
+        "preset": "compact"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:float-too-large",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "revtex4-2-aps",
+      "preset": "turnpage",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.kernel",
+        "preset": "shared"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "revtex4-2-aps",
+      "preset": "turnpage",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.ntheorem",
+        "preset": "break"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:float-too-large",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "fig.class-float",
+      "classSetting": "revtex4-2-aps",
+      "preset": "turnpage",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.thmtools",
+        "preset": "kao"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
     }
   ]
 }

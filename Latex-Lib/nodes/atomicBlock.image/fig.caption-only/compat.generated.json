@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:6d9b955ef0d4fa844a8d8593c2797fa548a74be75b84624d62dd5250db292c71",
     "contexts": "sha256:9a34444e43ac79586ac5a93aa416a3e6b45fdee3bf9cad3cd215ed2d48d1e81b",
-    "matrix": "sha256:3496d6a55441085f77a4f51ef8cb9a1ea5148c9de36db8ce59bfc8c10726ce03"
+    "matrix": "sha256:90f3661eb6263ff601072498757e173a2a7b1512e204b61cb85ed812cd168279"
   },
   "parents": {
     "body": {
@@ -225,19 +225,25 @@
         "matrix": {
           "branches": 22,
           "pass": 22,
-          "failing": []
+          "failing": [],
+          "denied": {
+            "branches": 6,
+            "pass": 6
+          }
         }
       },
       "list.enumitem": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 19,
           "pass": 18,
-          "failing": [
-            "plos.A"
-          ]
+          "failing": [],
+          "denied": {
+            "branches": 9,
+            "pass": 8
+          }
         }
       },
       "list.exam-questions": {
@@ -248,13 +254,15 @@
       "list.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 13,
-          "pass": 12,
-          "failing": [
-            "plos.A"
-          ]
+          "pass": 13,
+          "failing": [],
+          "denied": {
+            "branches": 5,
+            "pass": 5
+          }
         }
       },
       "list.nomenclature": {
@@ -269,7 +277,11 @@
         "matrix": {
           "branches": 22,
           "pass": 22,
-          "failing": []
+          "failing": [],
+          "denied": {
+            "branches": 5,
+            "pass": 5
+          }
         }
       },
       "list.scrextend": {
@@ -279,7 +291,11 @@
         "matrix": {
           "branches": 26,
           "pass": 26,
-          "failing": []
+          "failing": [],
+          "denied": {
+            "branches": 6,
+            "pass": 6
+          }
         }
       }
     },
@@ -291,7 +307,11 @@
         "matrix": {
           "branches": 16,
           "pass": 16,
-          "failing": []
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 2
+          }
         }
       },
       "thm.class-native": {
@@ -322,7 +342,11 @@
           "pass": 17,
           "failing": [
             "plos.A"
-          ]
+          ],
+          "denied": {
+            "branches": 9,
+            "pass": 8
+          }
         }
       },
       "thm.ntheorem": {
@@ -332,7 +356,11 @@
         "matrix": {
           "branches": 5,
           "pass": 5,
-          "failing": []
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 1
+          }
         }
       },
       "thm.tcolorbox": {
@@ -346,7 +374,11 @@
         "matrix": {
           "branches": 38,
           "pass": 38,
-          "failing": []
+          "failing": [],
+          "denied": {
+            "branches": 21,
+            "pass": 21
+          }
         }
       },
       "thm.tcolorbox[breakable=false]": {
@@ -365,7 +397,11 @@
         "matrix": {
           "branches": 12,
           "pass": 12,
-          "failing": []
+          "failing": [],
+          "denied": {
+            "branches": 1,
+            "pass": 1
+          }
         }
       }
     },
@@ -517,5 +553,6 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

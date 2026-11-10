@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:4a5a408a9cd716fa912398e8b3730f32802914c22b87bee10b2b80da1e5a4d73",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:c65dd17986c5e16ad4f8a2eef14cb8cdbc2548243fe984ee955bad9afd53ad55"
+    "matrix": "sha256:af2108d2a374072080d3d7693b76301c26ecdd467a925518f4d5881eb8e57e74"
   },
   "parents": {
     "body": {
@@ -14,11 +14,19 @@
         "status": "failing",
         "matrix": {
           "branches": 2226,
-          "pass": 2114,
+          "pass": 2116,
           "failing": [
             "revtex4-2-aip.A",
             "revtex4-2-aps.A"
-          ]
+          ],
+          "denied": {
+            "branches": 414,
+            "pass": 330
+          },
+          "banned": {
+            "branches": 7,
+            "pass": 0
+          }
         }
       }
     }
@@ -36,5 +44,6 @@
         "status": "untested"
       }
     ]
-  }
+  },
+  "bans": []
 }

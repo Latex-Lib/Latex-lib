@@ -1,9 +1,9 @@
 {
   "way": "math.kernel@paragraph/mathPara",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -951,7 +951,7 @@
       },
       "pair": "apa7.A",
       "branches": 94,
-      "pass": 86,
+      "pass": 87,
       "status": "failing"
     },
     {
@@ -962,7 +962,7 @@
       },
       "pair": "apa7.A",
       "branches": 47,
-      "pass": 41,
+      "pass": 42,
       "status": "failing"
     },
     {
@@ -973,7 +973,7 @@
       },
       "pair": "apa7.A",
       "branches": 47,
-      "pass": 43,
+      "pass": 44,
       "status": "failing"
     },
     {
@@ -984,7 +984,7 @@
       },
       "pair": "apa7.A",
       "branches": 47,
-      "pass": 41,
+      "pass": 42,
       "status": "failing"
     },
     {
@@ -995,7 +995,7 @@
       },
       "pair": "apa7.A",
       "branches": 47,
-      "pass": 40,
+      "pass": 41,
       "status": "failing"
     },
     {
@@ -2051,7 +2051,7 @@
       },
       "pair": "elsarticle-5p.A",
       "branches": 82,
-      "pass": 77,
+      "pass": 76,
       "status": "failing"
     },
     {
@@ -2216,7 +2216,7 @@
       },
       "pair": "emulateapj.A",
       "branches": 76,
-      "pass": 71,
+      "pass": 70,
       "status": "failing"
     },
     {
@@ -2490,7 +2490,7 @@
         "way": "general:containerBlock/blockMath:kernel"
       },
       "pair": "frontiers.A",
-      "branches": 45,
+      "branches": 44,
       "pass": 41,
       "status": "failing"
     },
@@ -2501,7 +2501,7 @@
         "way": "math.amsmath@containerBlock/blockMath"
       },
       "pair": "frontiers.A",
-      "branches": 45,
+      "branches": 44,
       "pass": 41,
       "status": "failing"
     },
@@ -2512,7 +2512,18 @@
         "way": "math.kernel@containerBlock/blockMath"
       },
       "pair": "frontiers.A",
-      "branches": 45,
+      "branches": 44,
+      "pass": 39,
+      "status": "failing"
+    },
+    {
+      "kind": "verified",
+      "parent": {
+        "node": "containerBlock/blockMath",
+        "way": "math.mathtools"
+      },
+      "pair": "frontiers.A",
+      "branches": 44,
       "pass": 39,
       "status": "failing"
     },
@@ -2523,19 +2534,8 @@
         "way": "math.linenomath"
       },
       "pair": "frontiers.A",
-      "branches": 45,
-      "pass": 41,
-      "status": "failing"
-    },
-    {
-      "kind": "verified",
-      "parent": {
-        "node": "containerBlock/blockMath",
-        "way": "math.mathtools"
-      },
-      "pair": "frontiers.A",
-      "branches": 45,
-      "pass": 39,
+      "branches": 15,
+      "pass": 12,
       "status": "failing"
     },
     {
@@ -3950,22 +3950,22 @@
       "kind": "verified",
       "parent": {
         "node": "containerBlock/blockMath",
-        "way": "math.linenomath"
+        "way": "math.mathtools"
       },
       "pair": "oup-authoring-template.A",
       "branches": 46,
-      "pass": 42,
+      "pass": 41,
       "status": "failing"
     },
     {
       "kind": "verified",
       "parent": {
         "node": "containerBlock/blockMath",
-        "way": "math.mathtools"
+        "way": "math.linenomath"
       },
       "pair": "oup-authoring-template.A",
-      "branches": 46,
-      "pass": 41,
+      "branches": 14,
+      "pass": 11,
       "status": "failing"
     },
     {
@@ -4031,7 +4031,7 @@
       },
       "pair": "quantumarticle.A",
       "branches": 82,
-      "pass": 77,
+      "pass": 76,
       "status": "failing"
     },
     {
@@ -4251,7 +4251,7 @@
       },
       "pair": "revtex4-2-aps.A",
       "branches": 88,
-      "pass": 81,
+      "pass": 82,
       "status": "failing"
     },
     {

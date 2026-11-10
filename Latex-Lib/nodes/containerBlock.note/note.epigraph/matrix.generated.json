@@ -1,9 +1,9 @@
 {
   "way": "note.epigraph",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -14,7 +14,11 @@
       "pair": "memoir.A",
       "branches": 211,
       "pass": 196,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 10,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -25,7 +29,11 @@
       "pair": "memoir.A",
       "branches": 70,
       "pass": 62,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -36,7 +44,11 @@
       "pair": "memoir.A",
       "branches": 27,
       "pass": 24,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -47,7 +59,11 @@
       "pair": "memoir.A",
       "branches": 26,
       "pass": 24,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -58,7 +74,11 @@
       "pair": "memoir.A",
       "branches": 27,
       "pass": 25,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -69,7 +89,11 @@
       "pair": "memoir.A",
       "branches": 31,
       "pass": 28,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -80,7 +104,15 @@
       "pair": "memoir.A",
       "branches": 27,
       "pass": 24,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -91,7 +123,11 @@
       "pair": "memoir.A",
       "branches": 26,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -102,7 +138,11 @@
       "pair": "memoir.A",
       "branches": 34,
       "pass": 33,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -113,7 +153,11 @@
       "pair": "memoir.A",
       "branches": 26,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -124,7 +168,11 @@
       "pair": "memoir.A",
       "branches": 27,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -135,7 +183,11 @@
       "pair": "memoir.A",
       "branches": 35,
       "pass": 31,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -146,7 +198,11 @@
       "pair": "memoir.A",
       "branches": 32,
       "pass": 27,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -168,7 +224,15 @@
       "pair": "memoir.A",
       "branches": 34,
       "pass": 31,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -179,7 +243,11 @@
       "pair": "memoir.A",
       "branches": 15,
       "pass": 0,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -201,7 +269,11 @@
       "pair": "memoir.A",
       "branches": 14,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 14,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -212,7 +284,11 @@
       "pair": "memoir.A",
       "branches": 35,
       "pass": 33,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -256,7 +332,11 @@
       "pair": "memoir.A",
       "branches": 33,
       "pass": 30,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -267,7 +347,11 @@
       "pair": "memoir.A",
       "branches": 35,
       "pass": 32,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -278,7 +362,11 @@
       "pair": "memoir.A",
       "branches": 14,
       "pass": 0,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -286,7 +374,11 @@
       "pair": "memoir.B",
       "branches": 211,
       "pass": 201,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 10,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -297,7 +389,11 @@
       "pair": "memoir.B",
       "branches": 68,
       "pass": 60,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -308,7 +404,11 @@
       "pair": "memoir.B",
       "branches": 26,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -319,7 +419,11 @@
       "pair": "memoir.B",
       "branches": 25,
       "pass": 22,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -330,7 +434,11 @@
       "pair": "memoir.B",
       "branches": 26,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -341,7 +449,11 @@
       "pair": "memoir.B",
       "branches": 30,
       "pass": 27,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -352,7 +464,15 @@
       "pair": "memoir.B",
       "branches": 26,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -363,7 +483,11 @@
       "pair": "memoir.B",
       "branches": 25,
       "pass": 22,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -374,7 +498,11 @@
       "pair": "memoir.B",
       "branches": 33,
       "pass": 30,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -385,7 +513,11 @@
       "pair": "memoir.B",
       "branches": 25,
       "pass": 22,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -396,7 +528,11 @@
       "pair": "memoir.B",
       "branches": 26,
       "pass": 23,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -407,7 +543,11 @@
       "pair": "memoir.B",
       "branches": 34,
       "pass": 31,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -418,7 +558,11 @@
       "pair": "memoir.B",
       "branches": 31,
       "pass": 26,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -440,7 +584,15 @@
       "pair": "memoir.B",
       "branches": 33,
       "pass": 30,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -451,7 +603,11 @@
       "pair": "memoir.B",
       "branches": 15,
       "pass": 0,
-      "status": "failing"
+      "status": "failing",
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -473,7 +629,11 @@
       "pair": "memoir.B",
       "branches": 14,
       "pass": 0,
-      "status": "failing"
+      "status": "verified-ok",
+      "denied": {
+        "branches": 14,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -484,7 +644,11 @@
       "pair": "memoir.B",
       "branches": 35,
       "pass": 32,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -528,7 +692,11 @@
       "pair": "memoir.B",
       "branches": 32,
       "pass": 29,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -539,7 +707,65 @@
       "pair": "memoir.B",
       "branches": 34,
       "pass": 32,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 1,
+        "pass": 0
+      }
+    },
+    {
+      "kind": "ban",
+      "way": "note.epigraph",
+      "classSetting": "memoir",
+      "preset": "memoir",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.enumitem",
+        "preset": "nextline-descriptions"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "note.epigraph",
+      "classSetting": "memoir",
+      "preset": "wide",
+      "parent": {
+        "node": "containerBlock/listing",
+        "way": "list.enumitem",
+        "preset": "nextline-descriptions"
+      },
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "kind": "ban",
+      "way": "note.epigraph",
+      "classSetting": "memoir",
+      "preset": "wide",
+      "parent": {
+        "node": "containerBlock/mathElement",
+        "way": "thm.kernel",
+        "preset": "global"
+      },
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "hardFail": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
     }
   ]
 }

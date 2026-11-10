@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:a67fbb2eecb52dd249ade7b90a71e124a6b93ee3a6fff966e916d5bbc9a2ee62",
     "contexts": "sha256:14e595b5a917207b0202cd81103654b34671bd431b2e4e8a05c64647be89ab4f",
-    "matrix": "sha256:0d1e7bbe485b55872eff36bc0b9c352e2dd7210f70348b251c50be27e433a0b0"
+    "matrix": "sha256:ebd312ae677009fa1a2b052634a13b2adadee77b611d1465131507c280fd1b45"
   },
   "parents": {
     "containerBlock/columns": {
@@ -35,7 +35,11 @@
         "matrix": {
           "branches": 16,
           "pass": 16,
-          "failing": []
+          "failing": [],
+          "banned": {
+            "branches": 2,
+            "pass": 2
+          }
         }
       },
       "cols.paracol": {
@@ -45,7 +49,11 @@
         "matrix": {
           "branches": 16,
           "pass": 16,
-          "failing": []
+          "failing": [],
+          "banned": {
+            "branches": 2,
+            "pass": 2
+          }
         }
       },
       "cols.revtex-grid": {
@@ -65,7 +73,11 @@
         "matrix": {
           "branches": 16,
           "pass": 16,
-          "failing": []
+          "failing": [],
+          "banned": {
+            "branches": 2,
+            "pass": 2
+          }
         }
       },
       "cols.vwcol": {
@@ -81,7 +93,11 @@
           "pass": 9,
           "failing": [
             "copernicus.A"
-          ]
+          ],
+          "denied": {
+            "branches": 16,
+            "pass": 9
+          }
         }
       }
     },
@@ -89,13 +105,15 @@
       "num.appendices-env": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 16,
           "pass": 14,
-          "failing": [
-            "copernicus.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "num.appendix": {
@@ -188,13 +206,15 @@
       "ack.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 16,
           "pass": 14,
-          "failing": [
-            "copernicus.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "ack.llncs-credits": {
@@ -206,5 +226,6 @@
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

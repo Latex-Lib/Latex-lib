@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:d3c287f6098c9ab649598d94f44e204e5580e1f27bbd32ab60a45a16a40ad713",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:038a1d466e63d2d80955223bf01845def7bafda444896ad767d177cd4ec3c4e4"
+    "matrix": "sha256:2572c031090a2dc2e9e13b3a363dd089ae6f0b5836f74a05eb3958a96bae7c7a"
   },
   "parents": {
     "body": {
@@ -17,12 +17,31 @@
           "pass": 0,
           "failing": [
             "interact.A"
-          ]
+          ],
+          "denied": {
+            "branches": 2,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 1,
+            "pass": 0
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "interact",
+      "preset": "interact",
+      "parent": "(document body)",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    }
+  ]
 }

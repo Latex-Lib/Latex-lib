@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:b1715c11fecb47a7530de278a1f7f7cd3ee771b0878cfb4ee0da027c03830d46",
     "contexts": "sha256:19ca377618c806eb733d2b157e0258ce2e79a5cd584f9c6a2c2ae6bd83663bc5",
-    "matrix": "sha256:871b2b75fc0b65c75a369448d3caf81334bbbe614b96dbc9fc83507d58c49b53"
+    "matrix": "sha256:c48d36bdee7aae8500f57606732bc33a8cfd0f42760b33e9416242d2e97fe686"
   },
   "parents": {
     "body": {
@@ -32,7 +32,11 @@
         "matrix": {
           "branches": 11,
           "pass": 11,
-          "failing": []
+          "failing": [],
+          "banned": {
+            "branches": 2,
+            "pass": 2
+          }
         }
       },
       "num.appendix": {
@@ -138,15 +142,15 @@
       "ack.kernel": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 29,
           "pass": 26,
-          "failing": [
-            "cas-dc.A",
-            "cas-sc.A",
-            "emulateapj.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 7,
+            "pass": 4
+          }
         }
       },
       "ack.llncs-credits": {
@@ -205,7 +209,11 @@
             "interact.A",
             "iopart.A",
             "oup-authoring-template.A"
-          ]
+          ],
+          "denied": {
+            "branches": 9,
+            "pass": 0
+          }
         }
       },
       "cols.paracol": {
@@ -216,9 +224,12 @@
           "branches": 12,
           "pass": 9,
           "failing": [
-            "cas-dc.A",
             "cas-sc.A"
-          ]
+          ],
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "cols.revtex-grid": {
@@ -227,13 +238,15 @@
         "status": "failing",
         "matrix": {
           "branches": 12,
-          "pass": 2,
+          "pass": 8,
           "failing": [
             "aastex.A",
-            "aastex.B",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A"
-          ]
+            "aastex.B"
+          ],
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "cols.tikzposter": {
@@ -248,14 +261,15 @@
       "cols.twocolumn-cmd": {
         "verdict": "ok",
         "source": "derived",
-        "status": "failing",
+        "status": "verified-ok",
         "matrix": {
           "branches": 15,
           "pass": 13,
-          "failing": [
-            "cas-dc.A",
-            "cas-sc.A"
-          ]
+          "failing": [],
+          "banned": {
+            "branches": 2,
+            "pass": 0
+          }
         }
       },
       "cols.vwcol": {
@@ -280,7 +294,11 @@
             "iopart.A",
             "mdpi.A",
             "oup-authoring-template.A"
-          ]
+          ],
+          "denied": {
+            "branches": 16,
+            "pass": 0
+          }
         }
       }
     },
@@ -295,9 +313,8 @@
         ],
         "matrix": {
           "branches": 307,
-          "pass": 25,
+          "pass": 29,
           "failing": [
-            "aa.A",
             "aastex.A",
             "aastex.B",
             "cas-dc.A",
@@ -311,7 +328,11 @@
             "plos.A",
             "revtex4-2-aip.A",
             "revtex4-2-aps.A"
-          ]
+          ],
+          "denied": {
+            "branches": 298,
+            "pass": 20
+          }
         }
       }
     },
@@ -331,7 +352,15 @@
           "failing": [
             "cas-dc.A",
             "cas-sc.A"
-          ]
+          ],
+          "denied": {
+            "branches": 20,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 14,
+            "pass": 6
+          }
         }
       },
       "list.cvlist": {
@@ -345,22 +374,25 @@
         "status": "failing",
         "matrix": {
           "branches": 235,
-          "pass": 129,
+          "pass": 131,
           "failing": [
-            "aa.A",
             "aastex.A",
-            "aastex.B",
             "cas-dc.A",
             "cas-sc.A",
-            "copernicus.A",
-            "emulateapj.A",
             "interact.A",
             "iopart.A",
-            "oup-authoring-template.A",
             "plos.A",
             "revtex4-2-aip.A",
             "revtex4-2-aps.A"
-          ]
+          ],
+          "denied": {
+            "branches": 77,
+            "pass": 3
+          },
+          "banned": {
+            "branches": 22,
+            "pass": 4
+          }
         }
       },
       "list.enumitem": {
@@ -371,21 +403,20 @@
           "branches": 278,
           "pass": 151,
           "failing": [
-            "aa.A",
-            "aastex.A",
             "aastex.B",
             "cas-dc.A",
             "cas-sc.A",
-            "copernicus.A",
-            "emulateapj.A",
-            "interact.A",
             "iopart.A",
-            "mdpi.A",
-            "oup-authoring-template.A",
-            "plos.A",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A"
-          ]
+            "oup-authoring-template.A"
+          ],
+          "denied": {
+            "branches": 106,
+            "pass": 5
+          },
+          "banned": {
+            "branches": 21,
+            "pass": 3
+          }
         }
       },
       "list.exam-questions": {
@@ -399,23 +430,24 @@
         "status": "failing",
         "matrix": {
           "branches": 222,
-          "pass": 114,
+          "pass": 117,
           "failing": [
-            "aa.A",
-            "aastex.A",
-            "aastex.B",
             "cas-dc.A",
             "cas-sc.A",
-            "copernicus.A",
-            "emulateapj.A",
             "interact.A",
             "iopart.A",
-            "mdpi.A",
-            "oup-authoring-template.A",
             "plos.A",
             "revtex4-2-aip.A",
             "revtex4-2-aps.A"
-          ]
+          ],
+          "denied": {
+            "branches": 79,
+            "pass": 3
+          },
+          "banned": {
+            "branches": 24,
+            "pass": 7
+          }
         }
       },
       "list.nomenclature": {
@@ -429,22 +461,23 @@
         "status": "failing",
         "matrix": {
           "branches": 228,
-          "pass": 116,
+          "pass": 117,
           "failing": [
-            "aa.A",
-            "aastex.A",
-            "aastex.B",
             "cas-dc.A",
             "cas-sc.A",
-            "copernicus.A",
-            "emulateapj.A",
             "interact.A",
             "iopart.A",
-            "oup-authoring-template.A",
-            "plos.A",
             "revtex4-2-aip.A",
             "revtex4-2-aps.A"
-          ]
+          ],
+          "denied": {
+            "branches": 79,
+            "pass": 1
+          },
+          "banned": {
+            "branches": 27,
+            "pass": 5
+          }
         }
       },
       "list.scrextend": {
@@ -453,22 +486,23 @@
         "status": "failing",
         "matrix": {
           "branches": 228,
-          "pass": 134,
+          "pass": 135,
           "failing": [
-            "aa.A",
-            "aastex.A",
-            "aastex.B",
             "cas-dc.A",
             "cas-sc.A",
-            "copernicus.A",
-            "emulateapj.A",
             "iopart.A",
-            "mdpi.A",
-            "oup-authoring-template.A",
             "plos.A",
             "revtex4-2-aip.A",
             "revtex4-2-aps.A"
-          ]
+          ],
+          "denied": {
+            "branches": 78,
+            "pass": 5
+          },
+          "banned": {
+            "branches": 7,
+            "pass": 1
+          }
         }
       }
     },
@@ -497,7 +531,11 @@
           "failing": [
             "cas-dc.A",
             "cas-sc.A"
-          ]
+          ],
+          "banned": {
+            "branches": 2,
+            "pass": 2
+          }
         }
       },
       "abs.class-native": {
@@ -507,7 +545,11 @@
         "matrix": {
           "branches": 2,
           "pass": 2,
-          "failing": []
+          "failing": [],
+          "denied": {
+            "branches": 2,
+            "pass": 2
+          }
         }
       },
       "abs.class-native[form=command]": {
@@ -594,21 +636,23 @@
         "status": "failing",
         "matrix": {
           "branches": 209,
-          "pass": 134,
+          "pass": 138,
           "failing": [
-            "aastex.A",
-            "aastex.B",
             "cas-dc.A",
             "cas-sc.A",
-            "copernicus.A",
-            "emulateapj.A",
             "interact.A",
             "iopart.A",
-            "oup-authoring-template.A",
-            "plos.A",
             "revtex4-2-aip.A",
             "revtex4-2-aps.A"
-          ]
+          ],
+          "denied": {
+            "branches": 51,
+            "pass": 2
+          },
+          "banned": {
+            "branches": 13,
+            "pass": 4
+          }
         }
       },
       "thm.class-native": {
@@ -617,14 +661,20 @@
         "status": "failing",
         "matrix": {
           "branches": 110,
-          "pass": 60,
+          "pass": 65,
           "failing": [
-            "aa.A",
             "cas-dc.A",
             "cas-sc.A",
-            "mdpi.A",
-            "oup-authoring-template.A"
-          ]
+            "mdpi.A"
+          ],
+          "denied": {
+            "branches": 30,
+            "pass": 3
+          },
+          "banned": {
+            "branches": 12,
+            "pass": 2
+          }
         }
       },
       "thm.kernel": {
@@ -633,21 +683,22 @@
         "status": "failing",
         "matrix": {
           "branches": 209,
-          "pass": 130,
+          "pass": 132,
           "failing": [
-            "aastex.A",
-            "aastex.B",
             "cas-dc.A",
             "cas-sc.A",
             "copernicus.A",
-            "emulateapj.A",
             "interact.A",
-            "iopart.A",
-            "oup-authoring-template.A",
-            "plos.A",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A"
-          ]
+            "iopart.A"
+          ],
+          "denied": {
+            "branches": 59,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 14,
+            "pass": 6
+          }
         }
       },
       "thm.mdframed": {
@@ -674,7 +725,11 @@
             "plos.A",
             "revtex4-2-aip.A",
             "revtex4-2-aps.A"
-          ]
+          ],
+          "denied": {
+            "branches": 253,
+            "pass": 2
+          }
         }
       },
       "thm.ntheorem": {
@@ -683,15 +738,19 @@
         "status": "failing",
         "matrix": {
           "branches": 50,
-          "pass": 32,
+          "pass": 33,
           "failing": [
-            "aastex.A",
-            "aastex.B",
             "cas-dc.A",
-            "cas-sc.A",
-            "iopart.A",
             "plos.A"
-          ]
+          ],
+          "denied": {
+            "branches": 9,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 8,
+            "pass": 2
+          }
         }
       },
       "thm.tcolorbox": {
@@ -719,7 +778,11 @@
             "plos.A",
             "revtex4-2-aip.A",
             "revtex4-2-aps.A"
-          ]
+          ],
+          "denied": {
+            "branches": 528,
+            "pass": 32
+          }
         }
       },
       "thm.tcolorbox[breakable=false]": {
@@ -737,21 +800,21 @@
         "status": "failing",
         "matrix": {
           "branches": 148,
-          "pass": 74,
+          "pass": 77,
           "failing": [
             "aastex.A",
             "aastex.B",
-            "cas-dc.A",
             "cas-sc.A",
-            "copernicus.A",
-            "emulateapj.A",
-            "interact.A",
-            "iopart.A",
-            "oup-authoring-template.A",
-            "plos.A",
-            "revtex4-2-aip.A",
-            "revtex4-2-aps.A"
-          ]
+            "iopart.A"
+          ],
+          "denied": {
+            "branches": 56,
+            "pass": 0
+          },
+          "banned": {
+            "branches": 16,
+            "pass": 6
+          }
         }
       }
     },
@@ -805,5 +868,1016 @@
         "status": "untested"
       }
     ]
-  }
+  },
+  "bans": [
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable-wide",
+      "parent": "containerBlock/listing general:containerBlock/listing:kernel",
+      "why": "fails-mostly",
+      "branches": 4,
+      "pass": 2,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable-wide",
+      "parent": "containerBlock/listing list.enumerate-pkg[numbers-dot]",
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable-wide",
+      "parent": "containerBlock/listing list.enumerate-pkg[roman]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable-wide",
+      "parent": "containerBlock/listing list.enumitem[cv-tight]",
+      "why": "fails-mostly",
+      "branches": 4,
+      "pass": 2,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable-wide",
+      "parent": "containerBlock/listing list.kernel[dashes]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable-wide",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "fails-mostly",
+      "branches": 4,
+      "pass": 2,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable-wide",
+      "parent": "containerBlock/listing list.paralist[inline]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable-wide",
+      "parent": "containerBlock/listing list.scrextend[labeling]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable-wide",
+      "parent": "containerBlock/mathElement thm.amsthm[colored-head]",
+      "why": "fails-mostly",
+      "branches": 4,
+      "pass": 2,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable-wide",
+      "parent": "containerBlock/mathElement thm.kernel[global]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable",
+      "parent": "containerBlock/listing general:containerBlock/listing:enumitem",
+      "why": "fails-mostly",
+      "branches": 4,
+      "pass": 2,
+      "checks": [
+        "sentinel:outside"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable",
+      "parent": "containerBlock/listing list.kernel[class]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable",
+      "parent": "containerBlock/listing list.kernel[paren-numbers]",
+      "why": "fails-mostly",
+      "branches": 4,
+      "pass": 2,
+      "checks": [
+        "sentinel:outside"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable",
+      "parent": "containerBlock/listing list.paralist[inline]",
+      "why": "fails-mostly",
+      "branches": 6,
+      "pass": 2,
+      "checks": [
+        "sentinel:outside"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable",
+      "parent": "containerBlock/mathElement general:containerBlock/mathElement:amsthm",
+      "why": "fails-mostly",
+      "branches": 4,
+      "pass": 2,
+      "checks": [
+        "sentinel:outside"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable",
+      "parent": "containerBlock/mathElement general:containerBlock/mathElement:amsthm+hyperref",
+      "why": "never-passes",
+      "branches": 4,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable",
+      "parent": "containerBlock/mathElement thm.amsthm[ams-section]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable",
+      "parent": "containerBlock/mathElement thm.kernel[shared]",
+      "why": "fails-mostly",
+      "branches": 4,
+      "pass": 2,
+      "checks": [
+        "sentinel:outside"
+      ]
+    },
+    {
+      "classSetting": "aastex",
+      "preset": "deluxetable",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "fails-mostly",
+      "branches": 6,
+      "pass": 2,
+      "checks": [
+        "sentinel:outside"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing general:containerBlock/listing:enumitem",
+      "why": "fails-mostly",
+      "branches": 9,
+      "pass": 3,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing general:containerBlock/listing:kernel",
+      "why": "fails-mostly",
+      "branches": 9,
+      "pass": 4,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.class-native[cas-letters]",
+      "why": "fails-mostly",
+      "branches": 3,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.class-native[cas-roman]",
+      "why": "fails-mostly",
+      "branches": 4,
+      "pass": 2,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.enumerate-pkg[numbers-dot]",
+      "why": "fails-mostly",
+      "branches": 3,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.enumerate-pkg[roman]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.enumitem[cv-tight]",
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.kernel[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.kernel[dashes]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.kernel[triangles]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.paralist[inline]",
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/mathElement general:containerBlock/mathElement:amsthm",
+      "why": "fails-mostly",
+      "branches": 12,
+      "pass": 4,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/mathElement thm.amsthm[colored-head]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/mathElement thm.class-native[elsarticle]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/mathElement thm.class-native[native]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/mathElement thm.class-native[shared]",
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/mathElement thm.kernel[section]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/mathElement thm.ntheorem[break]",
+      "why": "fails-mostly",
+      "branches": 4,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "fails-mostly",
+      "branches": 3,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-dc",
+      "preset": "cas",
+      "parent": "containerBlock/listing list.kernel[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing general:containerBlock/listing:enumitem",
+      "why": "fails-mostly",
+      "branches": 9,
+      "pass": 3,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing general:containerBlock/listing:kernel",
+      "why": "fails-mostly",
+      "branches": 9,
+      "pass": 3,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.class-native[cas-letters]",
+      "why": "fails-mostly",
+      "branches": 3,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.class-native[cas-roman]",
+      "why": "fails-mostly",
+      "branches": 4,
+      "pass": 2,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.enumerate-pkg[numbers-dot]",
+      "why": "fails-mostly",
+      "branches": 3,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.enumerate-pkg[paren-letters]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.enumerate-pkg[roman]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.enumitem[cv-tight]",
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.kernel[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.kernel[dashes]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.kernel[triangles]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/listing list.paralist[inline]",
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/mathElement general:containerBlock/mathElement:amsthm",
+      "why": "fails-mostly",
+      "branches": 12,
+      "pass": 4,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/mathElement thm.amsthm[colored-head]",
+      "why": "never-passes",
+      "branches": 2,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/mathElement thm.class-native[elsarticle]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/mathElement thm.class-native[native]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/mathElement thm.class-native[shared]",
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/mathElement thm.kernel[section]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/mathElement thm.ntheorem[break]",
+      "why": "fails-mostly",
+      "branches": 4,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas-columns",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "fails-mostly",
+      "branches": 3,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "cas-sc",
+      "preset": "cas",
+      "parent": "containerBlock/listing list.kernel[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "deluxetable",
+      "parent": "containerBlock/listing general:containerBlock/listing:enumitem",
+      "why": "fails-mostly",
+      "branches": 3,
+      "pass": 1,
+      "checks": [
+        "error",
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "deluxetable",
+      "parent": "containerBlock/listing general:containerBlock/listing:kernel",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "deluxetable",
+      "parent": "containerBlock/listing list.enumitem[letters]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "deluxetable",
+      "parent": "containerBlock/listing list.kernel[class]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "deluxetable",
+      "parent": "containerBlock/listing list.kernel[paren-numbers]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "error",
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "deluxetable",
+      "parent": "containerBlock/listing list.paralist[inline]",
+      "why": "fails-mostly",
+      "branches": 3,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox",
+        "error"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "deluxetable",
+      "parent": "containerBlock/listing list.paralist[paragraphs]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "deluxetable",
+      "parent": "containerBlock/listing list.scrextend[colon-bold]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "deluxetable",
+      "parent": "containerBlock/listing list.scrextend[labeling]",
+      "why": "fails-mostly",
+      "branches": 4,
+      "pass": 1,
+      "checks": [
+        "error"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "deluxetable",
+      "parent": "containerBlock/mathElement general:containerBlock/mathElement:amsthm",
+      "why": "fails-mostly",
+      "branches": 3,
+      "pass": 1,
+      "checks": [
+        "error",
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "deluxetable",
+      "parent": "containerBlock/mathElement general:containerBlock/mathElement:amsthm+hyperref",
+      "why": "never-passes",
+      "branches": 3,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "deluxetable",
+      "parent": "containerBlock/mathElement thm.amsthm[ams-section]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "deluxetable",
+      "parent": "containerBlock/mathElement thm.kernel[shared]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "emulateapj",
+      "preset": "deluxetable",
+      "parent": "containerBlock/mathElement thm.thmtools[kao]",
+      "why": "fails-mostly",
+      "branches": 4,
+      "pass": 2,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox",
+        "error"
+      ]
+    },
+    {
+      "classSetting": "iopart",
+      "preset": "iopart",
+      "parent": "containerBlock/listing list.enumitem[fitted-margin]",
+      "why": "fails-mostly",
+      "branches": 2,
+      "pass": 1,
+      "checks": [
+        "sentinel:outside",
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "iopart",
+      "preset": "iopart",
+      "parent": "containerBlock/mathElement general:containerBlock/mathElement:amsthm+hyperref",
+      "why": "fails-mostly",
+      "branches": 20,
+      "pass": 2,
+      "checks": [
+        "warning:overfull-hbox",
+        "sentinel:outside",
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "mdpi",
+      "preset": "mdpi",
+      "parent": "containerBlock/listing list.enumitem[nextline-descriptions]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "mdpi",
+      "preset": "mdpi",
+      "parent": "containerBlock/listing list.enumitem[no-item-space]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "mdpi",
+      "preset": "mdpi",
+      "parent": "containerBlock/listing list.kernel[dashes]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:overfull-hbox"
+      ]
+    },
+    {
+      "classSetting": "plos",
+      "preset": "plos",
+      "parent": "containerBlock/listing list.paralist[compact]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": [
+        "warning:page-overflow"
+      ]
+    },
+    {
+      "classSetting": "revtex4-2-aip",
+      "preset": "ruledtabular",
+      "parent": "containerBlock/listing list.enumitem[nextline-descriptions]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    },
+    {
+      "classSetting": "revtex4-2-aps",
+      "preset": "ruledtabular",
+      "parent": "containerBlock/listing list.enumitem[nextline-descriptions]",
+      "why": "never-passes",
+      "branches": 1,
+      "pass": 0,
+      "checks": []
+    }
+  ]
 }

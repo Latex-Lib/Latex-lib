@@ -4,7 +4,7 @@
   "generatedFrom": {
     "key": "sha256:34ffdaa760f99990daabe110c6cd76dd88bd0f1095b02013eeb17cdd41b7de2c",
     "contexts": "sha256:0e878d2368a17f3b583512b8bd47be9797684e8ec8520816cfa7e59af4550e4b",
-    "matrix": "sha256:6e8f909a8f076b43a64ee4f4a862e26dd198b0b57b39b1af5b5d657e43342763"
+    "matrix": "sha256:53b532562e8c7e8cada4f54ddfd0faae83828a96e5b7378c21e2ffb66962b421"
   },
   "parents": {
     "body": {
@@ -13,8 +13,8 @@
         "source": "derived",
         "status": "failing",
         "matrix": {
-          "branches": 123442,
-          "pass": 27571,
+          "branches": 123393,
+          "pass": 27742,
           "failing": [
             "aa.A",
             "aaai.A",
@@ -107,12 +107,21 @@
             "usenix.A",
             "ut-thesis.A",
             "vldb.A"
-          ]
+          ],
+          "denied": {
+            "branches": 109152,
+            "pass": 15833
+          },
+          "banned": {
+            "branches": 476,
+            "pass": 1
+          }
         }
       }
     }
   },
   "packageCombos": {
     "deny": []
-  }
+  },
+  "bans": []
 }

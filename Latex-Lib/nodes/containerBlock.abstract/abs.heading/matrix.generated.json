@@ -1,9 +1,9 @@
 {
   "way": "abs.heading",
   "from": {
-    "store": "30443e4809580cbd65da36d8efca2a82361e4c9124faf955aa1b3feedacf6bef",
+    "store": "6a7b304e29195d6a75d49ecdd8e1f352c0a27288439f0ad808d55a1ede48fae5",
     "engine": "flouest-zerotex:eaa5bd68ee7dc4968c21ae7a57ce8864ad3b4f3f9fd8786160ed88f1d699d1f7",
-    "runs": "r20261110022619593,r20261110022630505",
+    "runs": "r20261110085146614,r20261110085432176",
     "oracle": "11",
     "source": "compat tables: a fetched run, not recompiled"
   },
@@ -13,8 +13,16 @@
       "parent": null,
       "pair": "book.A",
       "branches": 5405,
-      "pass": 5172,
-      "status": "failing"
+      "pass": 5171,
+      "status": "failing",
+      "denied": {
+        "branches": 213,
+        "pass": 3
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -22,7 +30,15 @@
       "pair": "book.B",
       "branches": 5343,
       "pass": 5112,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 210,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 1
+      }
     },
     {
       "kind": "verified",
@@ -30,15 +46,31 @@
       "pair": "plos.A",
       "branches": 2207,
       "pass": 2113,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 86,
+        "pass": 3
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 2
+      }
     },
     {
       "kind": "verified",
       "parent": null,
       "pair": "report.A",
       "branches": 5411,
-      "pass": 5177,
-      "status": "failing"
+      "pass": 5176,
+      "status": "failing",
+      "denied": {
+        "branches": 213,
+        "pass": 3
+      },
+      "banned": {
+        "branches": 2,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
@@ -46,47 +78,87 @@
       "pair": "report.B",
       "branches": 5349,
       "pass": 5108,
-      "status": "failing"
+      "status": "failing",
+      "denied": {
+        "branches": 210,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
       "parent": null,
       "pair": "scrbook.A",
       "branches": 7379,
-      "pass": 7008,
-      "status": "failing"
+      "pass": 7007,
+      "status": "failing",
+      "denied": {
+        "branches": 307,
+        "pass": 4
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
       "parent": null,
       "pair": "scrbook.B",
       "branches": 7296,
-      "pass": 6875,
-      "status": "failing"
+      "pass": 6854,
+      "status": "failing",
+      "denied": {
+        "branches": 303,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
       "parent": null,
       "pair": "scrreprt.A",
       "branches": 7379,
-      "pass": 6996,
-      "status": "failing"
+      "pass": 6995,
+      "status": "failing",
+      "denied": {
+        "branches": 307,
+        "pass": 4
+      },
+      "banned": {
+        "branches": 3,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
       "parent": null,
       "pair": "scrreprt.B",
       "branches": 7296,
-      "pass": 6857,
-      "status": "failing"
+      "pass": 6836,
+      "status": "failing",
+      "denied": {
+        "branches": 303,
+        "pass": 0
+      },
+      "banned": {
+        "branches": 1,
+        "pass": 0
+      }
     },
     {
       "kind": "verified",
       "parent": null,
       "pair": "ut-thesis.A",
       "branches": 5405,
-      "pass": 5153,
-      "status": "failing"
+      "pass": 5151,
+      "status": "failing",
+      "denied": {
+        "branches": 213,
+        "pass": 3
+      },
+      "banned": {
+        "branches": 6,
+        "pass": 2
+      }
     }
   ]
 }
